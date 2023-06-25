@@ -16,10 +16,10 @@ ErrorDetectorInterval::~ErrorDetectorInterval() {
     // TODO Auto-generated destructor stub
 }
 
-vector<idMsg> ErrorDetectorInterval::determineAndGetAppendedDependencies(vector<dep>& delivered, ProbabilisticClock messageClock)
+vector<idMsg> ErrorDetectorInterval::determineAndGetAppendedDependencies(vector<messageInfo>& delivered, ProbabilisticClock messageClock)
 {
     vector<idMsg> dependencies;
-    for(const dep t: delivered)
+    for(const messageInfo t: delivered)
     {
         if(t.recvtime > simTime() - 2*deltaTS ) // appends messages delivered in the last 2\deltaT seconds
             dependencies.push_back(t.id);
@@ -27,24 +27,24 @@ vector<idMsg> ErrorDetectorInterval::determineAndGetAppendedDependencies(vector<
     return dependencies;
 }
 
-bool ErrorDetectorInterval::isConsideredAsDependency(dep message, dep possibleDep)
+bool ErrorDetectorInterval::isConsideredAsDependency(messageInfo message, messageInfo possibleDep)
 {
     return(possibleDep.recvtime < message.recvtime - 2*deltaTR - cdelay);
 }
 
-bool ErrorDetectorInterval::isConsideredAsPossibleDependency(dep message, dep possibleDep)
+bool ErrorDetectorInterval::isConsideredAsPossibleDependency(messageInfo message, messageInfo possibleDep)
 {
     return(possibleDep.recvtime > message.recvtime - 2*deltaTR - cdelay);
 }
 
 
-vector<idMsg> ErrorDetectorInterval::sortPossibleDependenciesSet(dep message, vector<dep> baseCombineSet, Controller* controller)
+vector<idMsg> ErrorDetectorInterval::sortPossibleDependenciesSet(messageInfo message, vector<messageInfo> baseCombineSet, Controller* controller)
 {
-    vector<dep> BaseCombineSetRes;
+    vector<messageInfo> BaseCombineSetRes;
     vector<idMsg> res;
-    vector<dep>::iterator resit;
+    vector<messageInfo>::iterator resit;
 
-    for(dep d: baseCombineSet)
+    for(messageInfo d: baseCombineSet)
     {
         for(resit = BaseCombineSetRes.begin(); resit != BaseCombineSetRes.end(); resit++)
         {
@@ -53,7 +53,7 @@ vector<idMsg> ErrorDetectorInterval::sortPossibleDependenciesSet(dep message, ve
         }
         BaseCombineSetRes.insert(resit, d);
     }
-    for(dep msg : BaseCombineSetRes)
+    for(messageInfo msg : BaseCombineSetRes)
         res.push_back(msg.id);
     return res;
 }

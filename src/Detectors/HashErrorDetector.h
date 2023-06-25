@@ -38,12 +38,12 @@ class HashErrorDetector : public ErrorDetector{
 public:
     HashErrorDetector();
     virtual ~HashErrorDetector();
-    bool hashTest(dep message, const vector<dep>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies, Controller* controller, SimulationParameters* params);
-    bool hashPartialDependencies(dep message, const vector<dep>& delivered, const vector<unsigned int>& incrementedClockEntries, Controller* controller, SimulationParameters* params);
-    bool hashTotalDependencies(dep message, const vector<dep>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies, Controller* controller, SimulationParameters* params);
-    TotalDependencies createBaseDependencies(dep message, const vector<dep>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies);
-    bool isPossibleDependency(dep message, dep possibleDep);
-    vector<dep> createPossibleDependenciesSet(dep message, const vector<dep>& messageToChooseFrom, const vector<unsigned int>& incrementedClockEntries, Controller* controller);
+    bool hashTest(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies, Controller* controller, SimulationParameters* params);
+    bool hashPartialDependencies(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, Controller* controller, SimulationParameters* params);
+    bool hashTotalDependencies(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies, Controller* controller, SimulationParameters* params);
+    TotalDependencies createBaseDependencies(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies);
+    bool isPossibleDependency(messageInfo message, messageInfo possibleDep);
+    vector<messageInfo> createPossibleDependenciesSet(messageInfo message, const vector<messageInfo>& messageToChooseFrom, const vector<unsigned int>& incrementedClockEntries, Controller* controller);
     void incrementnbMsgWronglyConsideredCausalDep(unsigned int entry);
     void incrementnbMsgToCombine(unsigned int entry);
     void incrementnbOperationsForHash(unsigned int entry);
@@ -51,11 +51,16 @@ public:
     size_t hashPartialDependencies(const PartialDependencies& dependencies);
     size_t hashDependencies(const vector<unsigned int>& dependencies);
     size_t hashingF(const vector<uint32_t>& vec);
-    vector<idMsg> determineAndGetAppendedDependencies(const vector<dep>& delivered);
 
-    virtual bool isConsideredAsDependency(dep message, dep possibleDep) = 0;
-    virtual bool isConsideredAsPossibleDependency(dep message, dep possibleDep) = 0;
-    virtual vector<idMsg> sortPossibleDependenciesSet(dep message, vector<dep> baseCombineSet, Controller* controller) = 0;
+    virtual bool isConsideredAsDependency(messageInfo message, messageInfo possibleDep) = 0;
+    virtual bool isConsideredAsPossibleDependency(messageInfo message, messageInfo possibleDep) = 0;
+    virtual vector<idMsg> sortPossibleDependenciesSet(messageInfo message, vector<messageInfo> baseCombineSet, Controller* controller) = 0;
+
+    AppMsg* prepareMessage(AppMsg* m, const vector<messageInfo>& delivered, const ProbabilisticClock& clock, const vector<unsigned int>& processDependencies);
+
+
+    virtual PartialDependencies getPartialDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock) = 0;
+    virtual vector<idMsg> determineAndGetAppendedDependencies(const vector<messageInfo>& delivered) = 0;
 
     hash<string> hasher;
     static map<int,vector<unsigned int>> collisionController;

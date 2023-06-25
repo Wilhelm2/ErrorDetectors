@@ -19,6 +19,8 @@
 #include <regex>
 #include <omnetpp.h>
 
+#include "../Messages/AppMsg_m.h"
+
 using namespace std;
 using namespace omnetpp;
 
@@ -26,6 +28,7 @@ class ErrorDetector {
 public:
     ErrorDetector();
     virtual ~ErrorDetector() = 0;
+    virtual AppMsg* prepareMessage(AppMsg* m) = 0;
 };
 
 #endif /* ERRORDETECTOR_H_ */

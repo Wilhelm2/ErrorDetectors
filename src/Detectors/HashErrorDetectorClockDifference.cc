@@ -17,10 +17,10 @@ ErrorDetectorClockDifference::~ErrorDetectorClockDifference() {
 }
 
 
-vector<idMsg> ErrorDetectorClockDifference::determineAndGetAppendedDependencies(const vector<dep>& delivered, const ProbabilisticClock& messageClock)
+vector<idMsg> ErrorDetectorClockDifference::determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& messageClock)
 {
     vector<idMsg> dependencies;
-    for(const dep t: delivered)
+    for(const messageInfo t: delivered)
     {
         if(messageClock.clockEntryDifference(t.clock) < clockDifferenceConsideredDependency)
             dependencies.push_back(t.id);
@@ -28,24 +28,24 @@ vector<idMsg> ErrorDetectorClockDifference::determineAndGetAppendedDependencies(
     return dependencies;
 }
 
-bool ErrorDetectorClockDifference::isConsideredAsDependency(dep message, dep possibleDep)
+bool ErrorDetectorClockDifference::isConsideredAsDependency(messageInfo message, messageInfo possibleDep)
 {
     return message.clock.clockEntryDifference(possibleDep.clock) >= clockDifferenceConsideredDependency;
 }
 
-bool ErrorDetectorClockDifference::isConsideredAsPossibleDependency(dep message, dep possibleDep)
+bool ErrorDetectorClockDifference::isConsideredAsPossibleDependency(messageInfo message, messageInfo possibleDep)
 {
     return message.clock.clockEntryDifference(possibleDep.clock) < clockDifferenceConsideredDependency;
 }
 
 
-vector<idMsg> ErrorDetectorClockDifference::sortPossibleDependenciesSet(dep message, vector<dep> baseCombineSet, Controller* controller)
+vector<idMsg> ErrorDetectorClockDifference::sortPossibleDependenciesSet(messageInfo message, vector<messageInfo> baseCombineSet, Controller* controller)
 {
-    vector<tuple<unsigned int,dep>> BaseCombineSetRes;
+    vector<tuple<unsigned int,messageInfo>> BaseCombineSetRes;
     vector<idMsg> res;
-    vector<tuple<unsigned int, dep>>::iterator resit;
+    vector<tuple<unsigned int, messageInfo>>::iterator resit;
 
-    for(dep d: baseCombineSet)
+    for(messageInfo d: baseCombineSet)
     {
         unsigned int difference = message.clock.clockEntryDifference(d.clock);
         for(resit = BaseCombineSetRes.begin(); resit != BaseCombineSetRes.end(); resit++)
@@ -56,7 +56,7 @@ vector<idMsg> ErrorDetectorClockDifference::sortPossibleDependenciesSet(dep mess
         BaseCombineSetRes.insert(resit, make_tuple(difference,d));
     }
 
-    for(tuple<unsigned int,dep> msg : BaseCombineSetRes)
+    for(tuple<unsigned int,messageInfo> msg : BaseCombineSetRes)
         res.push_back(get<1>(msg).id);
     return res;
 }
@@ -67,11 +67,11 @@ void ErrorDetectorClockDifference::setClockDifferenceConsideredDependency(unsign
     cerr<<"clockDifferenceConsideredDependency = " << clockDifferenceConsideredDependency<<endl;
 }
 
-PartialDependencies ErrorDetectorClockDifference::getPartialDependencies(const vector<dep>& delivered, const ProbabilisticClock& clock)
+PartialDependencies ErrorDetectorClockDifference::getPartialDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock)
 {
-    dep message; message.clock = clock;
+    messageInfo message; message.clock = clock;
     PartialDependencies depVector;
-    for(dep d : delivered)
+    for(messageInfo d : delivered)
     {
         if(isConsideredAsPossibleDependency(message, d))
             depVector.set(d.id);

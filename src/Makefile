@@ -44,12 +44,11 @@ OBJS = \
     $O/Detectors/HashErrorDetectorClockDifference.o \
     $O/Detectors/HashErrorDetectorInterval.o \
     $O/Detectors/MostefaouiErrorDetector.o \
-    $O/Nodes/Node.o \
-    $O/Nodes/NodeRecovery.o \
-    $O/Nodes/NodeWithoutRecovery.o \
-    $O/Nodes/NodeWithRecoveryTest.o \
-    $O/Stats/Stats.o \
-    $O/Stats/StatsRecovery.o \
+    $O/Nodes/NodeBase.o \
+    $O/Nodes/NodeDetector.o \
+    $O/Nodes/NodeNoControl.o \
+    $O/Nodes/NodePC.o \
+    $O/Nodes/NodeWithControl.o \
     $O/Messages/AppMsg_m.o \
     $O/Messages/depReq_m.o \
     $O/Messages/depRsp_m.o \

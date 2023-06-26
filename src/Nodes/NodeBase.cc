@@ -48,7 +48,6 @@ void NodeBase::initializeCommunications()
     send(m, outGate);
 }
 
-
 void NodeBase::handleMessage(cMessage *msg)
 {
     if (msg == broadcastTimer) {

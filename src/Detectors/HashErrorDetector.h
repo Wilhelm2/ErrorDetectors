@@ -36,16 +36,17 @@ class HashErrorDetector : public ErrorDetector{
 public:
     HashErrorDetector();
     virtual ~HashErrorDetector();
-    bool hashTest(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies, Controller* controller, SimulationParameters* params);
-    bool hashPartialDependencies(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, Controller* controller, SimulationParameters* params);
-    bool hashTotalDependencies(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies, Controller* controller, SimulationParameters* params);
-    TotalDependencies createBaseDependencies(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies);
-    bool isPossibleDependency(messageInfo message, messageInfo possibleDep);
-    vector<messageInfo> createPossibleDependenciesSet(messageInfo message, const vector<messageInfo>& messageToChooseFrom, const vector<unsigned int>& incrementedClockEntries, Controller* controller);
+
+    virtual bool test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params, const vector<messageInfo>& delivered);
+    bool hashPartialDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, Controller* controller, SimulationParameters* params);
+    bool hashTotalDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, const TotalDependencies& processDependencies, Controller* controller, SimulationParameters* params);
+    TotalDependencies createBaseDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, const TotalDependencies& processDependencies);
+    bool isPossibleDependency(const messageInfo& message, const messageInfo& possibleDep);
+    vector<messageInfo> createPossibleDependenciesSet(const messageInfo& message, const vector<messageInfo>& messageToChooseFrom, const vector<unsigned int>& incrementedClockEntries, Controller* controller);
     void incrementnbMsgWronglyConsideredCausalDep(unsigned int entry);
     void incrementnbMsgToCombine(unsigned int entry);
     void incrementnbOperationsForHash(unsigned int entry);
-    size_t hashTotalDependencies(TotalDependencies dependencies);
+    size_t hashTotalDependencies(const TotalDependencies& dependencies);
     size_t hashPartialDependencies(const PartialDependencies& dependencies);
     size_t hashDependencies(const vector<unsigned int>& dependencies);
     size_t hashingF(const vector<uint32_t>& vec);
@@ -54,11 +55,11 @@ public:
     virtual bool isConsideredAsPossibleDependency(messageInfo message, messageInfo possibleDep) = 0;
     virtual vector<idMsg> sortPossibleDependenciesSet(messageInfo message, vector<messageInfo> baseCombineSet, Controller* controller) = 0;
 
-    AppMsg* prepareMessage(AppMsg* m, const vector<messageInfo>& delivered, const ProbabilisticClock& clock, const vector<unsigned int>& processDependencies);
+    AppMsg* prepareMessage(AppMsg* m, const vector<messageInfo>& delivered, const ProbabilisticClock& clock, const TotalDependencies& processDependencies);
 
 
     virtual PartialDependencies getPartialDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock) = 0;
-    virtual vector<idMsg> determineAndGetAppendedDependencies(const vector<messageInfo>& delivered) = 0;
+    virtual vector<idMsg> determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock) = 0;
 
     hash<string> hasher;
     static map<int,vector<unsigned int>> collisionController;

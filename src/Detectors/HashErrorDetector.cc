@@ -28,23 +28,22 @@ HashErrorDetector::~HashErrorDetector() {
     // TODO Auto-generated destructor stub
 }
 
-bool HashErrorDetector::hashTest(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies, Controller* controller, SimulationParameters* params)
+bool HashErrorDetector::test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params, const vector<messageInfo>& delivered)
 {
     if(SimulationParameters::depAppended == SimulationParameters::Dependencies::Total)
-        return hashTotalDependencies(message, delivered, incrementedClockEntries, processDependencies, controller, params);
+        return hashTotalDependencies(message, delivered, incrementedClockEntries, processDependencies, control, params);
     else
-        return hashPartialDependencies(message, delivered, incrementedClockEntries, controller, params);
+        return hashPartialDependencies(message, delivered, incrementedClockEntries, control, params);
 }
 
-bool HashErrorDetector::hashPartialDependencies(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, Controller* controller, SimulationParameters* params)
+bool HashErrorDetector::hashPartialDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, Controller* controller, SimulationParameters* params)
 {
     PartialDependencies baseDependencies;
     unsigned int nbHashs = 0;
 
     vector<idMsg> possibleDependencies = sortPossibleDependenciesSet(message, createPossibleDependenciesSet(message, delivered, incrementedClockEntries, controller), controller);
-
     vector<vector<bool>> testedDependencySets = params->getDependencyCombinations(possibleDependencies.size());
-    for(vector<bool> isDepConsideredVec : testedDependencySets)
+    for(vector<bool>& isDepConsideredVec : testedDependencySets)
     {
         baseDependencies.clear();
         for(unsigned int i=0; i<isDepConsideredVec.size(); i++)
@@ -69,7 +68,7 @@ bool HashErrorDetector::hashPartialDependencies(messageInfo message, const vecto
     return false;
 }
 
-bool HashErrorDetector::hashTotalDependencies(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies, Controller* controller, SimulationParameters* params)
+bool HashErrorDetector::hashTotalDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, const TotalDependencies& processDependencies, Controller* controller, SimulationParameters* params)
 {
     TotalDependencies baseDependencies = createBaseDependencies(message, delivered, incrementedClockEntries, processDependencies);
     TotalDependencies copieBaseDependencies;
@@ -110,7 +109,7 @@ bool HashErrorDetector::hashTotalDependencies(messageInfo message, const vector<
     return false;
 }
 
-TotalDependencies HashErrorDetector::createBaseDependencies(messageInfo message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, TotalDependencies processDependencies)
+TotalDependencies HashErrorDetector::createBaseDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, const TotalDependencies& processDependencies)
 {
 //    for (unsigned int entry : incrementedClockEntries) commented because interfers with hash computed with clock difference (+small impact)
   //          message.clock.decreaseEntry(entry); // improvment to detect concurrent messages
@@ -124,7 +123,7 @@ TotalDependencies HashErrorDetector::createBaseDependencies(messageInfo message,
     return baseDependencies;
 }
 
-bool HashErrorDetector::isPossibleDependency(messageInfo message, messageInfo possibleDep)
+bool HashErrorDetector::isPossibleDependency(const messageInfo& message, const messageInfo& possibleDep)
 {
     if(!(possibleDep.clock <= message.clock))
         return false;
@@ -143,7 +142,7 @@ bool HashErrorDetector::isPossibleDependency(messageInfo message, messageInfo po
     return true;
 }
 
-vector<messageInfo> HashErrorDetector::createPossibleDependenciesSet(messageInfo message, const vector<messageInfo>& messageToChooseFrom, const vector<unsigned int>& incrementedClockEntries, Controller* controller)
+vector<messageInfo> HashErrorDetector::createPossibleDependenciesSet(const messageInfo& message, const vector<messageInfo>& messageToChooseFrom, const vector<unsigned int>& incrementedClockEntries, Controller* controller)
 {
 //    for (unsigned int entry : incrementedClockEntries) commented because interfers with hash computed with clock difference (+small impact)
   //      message.clock.decreaseEntry(entry); // Improvement to detect concurrent messages
@@ -157,12 +156,9 @@ vector<messageInfo> HashErrorDetector::createPossibleDependenciesSet(messageInfo
         {
             BaseCombineSet.push_back(possibleDep);
             if(!controller->isDependency(message.id, possibleDep.id))
-            {
                 falseDetected ++;
-            }
         }
     }
-
     incrementnbMsgWronglyConsideredCausalDep(falseDetected);
     incrementnbMsgToCombine(BaseCombineSet.size());
     return BaseCombineSet;
@@ -203,10 +199,10 @@ void HashErrorDetector::incrementnbOperationsForHash(unsigned int entry)
     }
 }
 
-size_t HashErrorDetector::hashTotalDependencies(TotalDependencies dependencies)
+size_t HashErrorDetector::hashTotalDependencies(const TotalDependencies& dependencies)
 {
     hashStats.nbHash++;
-    incrementnbOperationsForHash(dependencies.getDependencies().size());
+    incrementnbOperationsForHash(dependencies.size());
     return hashDependencies(dependencies.getDependencies());
 }
 
@@ -252,7 +248,7 @@ size_t HashErrorDetector::hashingF(const vector<uint32_t>& vec){
   return seed;
 }
 
-AppMsg* HashErrorDetector::prepareMessage(AppMsg* m, const vector<messageInfo>& delivered, const ProbabilisticClock& clock, const vector<unsigned int>& processDependencies)
+AppMsg* HashErrorDetector::prepareMessage(AppMsg* m, const vector<messageInfo>& delivered, const ProbabilisticClock& clock, const TotalDependencies& processDependencies)
 {
     if(SimulationParameters::depAppended == SimulationParameters::Dependencies::Total)
         m->setHash(hashTotalDependencies(processDependencies));
@@ -260,7 +256,7 @@ AppMsg* HashErrorDetector::prepareMessage(AppMsg* m, const vector<messageInfo>& 
         m->setHash(hashPartialDependencies(getPartialDependencies(delivered,clock)));
 
     if(APPENDDEPENDENCIES)
-        m->setDependencies(determineAndGetAppendedDependencies(delivered)); //, m->getPC()));
+        m->setDependencies(determineAndGetAppendedDependencies(delivered, m->getPC()));
     return m;
 }
 

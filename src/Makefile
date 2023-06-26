@@ -34,6 +34,7 @@ OBJS = \
     $O/communicationDispatcher.o \
     $O/Controller.o \
     $O/simulationParameters.o \
+    $O/Stats.o \
     $O/Clocks/DCS.o \
     $O/Clocks/ProbabilisticClock.o \
     $O/Dependencies/Dependencies.o \

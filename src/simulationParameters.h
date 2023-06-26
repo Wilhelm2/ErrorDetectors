@@ -62,6 +62,8 @@ class SimulationParameters : public cSimpleModule
     static Delivery DeliveryController;
     enum class Dependencies {Total, Partial};
     static Dependencies depAppended;
+    bool recovering;
+
 
     #define LIMIT_HASHS 200 // ATTENTION DOIT ÊTRE LE MÊME POUR LES MSG DANS COMPLETEHASHTEST ET RECOVERYTEST SINON DOIT
                         // AJOUTER ITERATIVEDELIVERY APRÈS RECOVERYMSG.PUSH_BACK DANS RECOVERYTEST SINON PEUT TROUVER

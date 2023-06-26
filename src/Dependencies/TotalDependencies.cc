@@ -55,7 +55,7 @@ bool TotalDependencies::operator<(TotalDependencies compareDep)
     return false;
 }
 
-vector<unsigned int> TotalDependencies::getDependencies()
+vector<unsigned int> TotalDependencies::getDependencies() const
 {
     return dependencies;
 }
@@ -118,4 +118,9 @@ void TotalDependencies::printComparisionWith(TotalDependencies dep)
         if(dependencies[i] != dep[i])
             cerr << "entry " << i << " message dependency " << dependencies[i] << " and value of compared set of dependencies " << dep[i]<<endl;
     }
+}
+
+unsigned int TotalDependencies::size() const
+{
+    return dependencies.size();
 }

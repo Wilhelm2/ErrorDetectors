@@ -16,13 +16,12 @@ ErrorDetectorClockDifference::~ErrorDetectorClockDifference() {
     // TODO Auto-generated destructor stub
 }
 
-
-vector<idMsg> ErrorDetectorClockDifference::determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& messageClock)
+vector<idMsg> ErrorDetectorClockDifference::determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock)
 {
     vector<idMsg> dependencies;
     for(const messageInfo t: delivered)
     {
-        if(messageClock.clockEntryDifference(t.clock) < clockDifferenceConsideredDependency)
+        if(clock.clockEntryDifference(t.clock) < clockDifferenceConsideredDependency)
             dependencies.push_back(t.id);
     }
     return dependencies;

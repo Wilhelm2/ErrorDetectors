@@ -30,16 +30,18 @@ void NodeDetector::initialize()
     if(params->DeliveryController == SimulationParameters::Delivery::Mostefaoui)
         detector = new MostefaouiErrorDetector();
     else if(params->DeliveryController == SimulationParameters::Delivery::HashClockDifference)
+    {
         detector = new ErrorDetectorClockDifference();
+        ((ErrorDetectorClockDifference*)detector)->setClockDifferenceConsideredDependency(params->nbNodes/params->delaySend, params->entriesIncrementedByProcess[0].size());
+    }
     else
         detector = new ErrorDetectorInterval();
-//    detector.setClockDifferenceConsideredDependency(params->nbNodes/params->delaySend, params->entriesIncrementedByProcess[0].size());
 }
 
 AppMsg* NodeDetector::createAppMsg()
 {
     AppMsg* m = NodeWithControl::createAppMsg();
-    m = detector->prepareMessage(m);
+    m = detector->prepareMessage(m, delivered, clock, deliveredMessagesTracker);
     return m;
 }
 

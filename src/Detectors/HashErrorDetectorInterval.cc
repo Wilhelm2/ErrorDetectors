@@ -16,7 +16,7 @@ ErrorDetectorInterval::~ErrorDetectorInterval() {
     // TODO Auto-generated destructor stub
 }
 
-vector<idMsg> ErrorDetectorInterval::determineAndGetAppendedDependencies(vector<messageInfo>& delivered, ProbabilisticClock messageClock)
+vector<idMsg> ErrorDetectorInterval::determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock)
 {
     vector<idMsg> dependencies;
     for(const messageInfo t: delivered)
@@ -57,3 +57,16 @@ vector<idMsg> ErrorDetectorInterval::sortPossibleDependenciesSet(messageInfo mes
         res.push_back(msg.id);
     return res;
 }
+
+PartialDependencies ErrorDetectorInterval::getPartialDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock)
+{
+    messageInfo message; message.clock = clock;
+    PartialDependencies depVector;
+    for(messageInfo d : delivered)
+    {
+        if(isConsideredAsPossibleDependency(message, d))
+            depVector.set(d.id);
+    }
+    return depVector;
+}
+

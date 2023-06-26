@@ -15,6 +15,8 @@
 
 #include "NodeWithRecovery.h"
 
+Define_Module(NodeWithRecovery);
+
 NodeWithRecovery::NodeWithRecovery() {
     // TODO Auto-generated constructor stub
 
@@ -82,7 +84,7 @@ void NodeWithRecovery::processDepReq(DepReq* m)
 //    std::cerr<< simTime()<<"Node "<<m->getIdRequester() << " requests the dependencies of msg: " << m->getIdMsgToRecover().id<<","<<m->getIdMsgToRecover().seq<<endl;
     DepRsp* msg = new DepRsp();
     msg->setIdMsgToRecover(m->getIdMsgToRecover());
-    for(msgDependency msgDep: localSentMsgDependencies)
+    for(const msgDependency& msgDep: localSentMsgDependencies)
     {
         if(msgDep.seqMsg == m->getIdMsgToRecover().seq)
         {
@@ -114,7 +116,7 @@ void NodeWithRecovery::processRcvRspDep(DepRsp* m)
 
 void NodeWithRecovery::pushbackMessagesInRecovery()
 {
-    for(messageInfo msgR : messagesToRecover)
+    for(const messageInfo& msgR : messagesToRecover)
     {
         vector<messageInfo>::iterator it = pendingMsg.begin();
         while(it != pendingMsg.end() && it->recvtime > msgR.recvtime)
@@ -180,7 +182,7 @@ bool NodeWithRecovery::testDeliverMessage(messageInfo m)
 {
     if(clock.satisfiesDeliveryCondition(m.clock, params->getEntriesIncrementedByProcess(m.id.id)))
     {
-        if(detector->test(m, getIndexIncrementedEntries(m.id.id), clock, deliveredMessagesTracker, control, params))
+        if(detector->test(m, getIndexIncrementedEntries(m.id.id), clock, deliveredMessagesTracker, control, params, delivered))
             deliverMsg(m);
         else
         {
@@ -204,7 +206,6 @@ bool NodeWithRecovery::testDeliverMessage(messageInfo m)
 
 void NodeWithRecovery::requestDependencies(messageInfo m)
 {
-    cerr<< "\t\tNode " << id << " sends request for message " << m.id.id << ","<<m.id.seq<<endl;
     statsRecovery.nbRecoveries++;
     inRecovery = true;
     currRecovery = m;

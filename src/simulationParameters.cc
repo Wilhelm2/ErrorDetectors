@@ -27,6 +27,8 @@ void SimulationParameters::initialize()
     delaySend = par("delaySend");
     clockLength = par("clockLength");
     vector<vector<unsigned int>>  entriesIncrementedByProcess;
+    recovering = par("recovering");
+    DeliveryController = static_cast<SimulationParameters::Delivery>( (int) par("deliveryOption"));
 
     initializeClockEntriesToIncrement();
     computeDependecyCombinationsArray();

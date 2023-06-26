@@ -34,8 +34,8 @@ class ErrorDetector {
 public:
     ErrorDetector();
     virtual ~ErrorDetector() = 0;
-    virtual AppMsg* prepareMessage(AppMsg* m) = 0;
-    virtual bool test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params) = 0;
+    virtual AppMsg* prepareMessage(AppMsg* m, const vector<messageInfo>& delivered, const ProbabilisticClock& clock, const TotalDependencies& processDependencies) = 0;
+    virtual bool test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params, const vector<messageInfo>& delivered) = 0;
     stats_errorDetector stats;
 };
 

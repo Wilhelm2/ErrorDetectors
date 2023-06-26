@@ -15,6 +15,8 @@
 
 #include "NodeWithRecoveryTest.h"
 
+Define_Module(NodeWithRecoveryTest);
+
 NodeWithRecoveryTest::NodeWithRecoveryTest() {
     // TODO Auto-generated constructor stub
 
@@ -28,7 +30,7 @@ bool NodeWithRecoveryTest::testDeliverMessage(messageInfo m)
 {
     if(clock.satisfiesDeliveryCondition(m.clock, params->getEntriesIncrementedByProcess(m.id.id)))
     {
-        if(detector->test(m, getIndexIncrementedEntries(m.id.id), clock, deliveredMessagesTracker, control, params))
+        if(detector->test(m, getIndexIncrementedEntries(m.id.id), clock, deliveredMessagesTracker, control, params, delivered))
             deliverMsg(m);
         else
         {
@@ -55,8 +57,8 @@ bool NodeWithRecoveryTest::testDeliverMessage(messageInfo m)
     return false;
 }
 
-// begins recovery if returns true. Returns false if all dependencies were reiceived but not delivered yet (because of current recovery or clock delivery conditions not satisfied yet)
-bool NodeWithRecoveryTest::recoveryTest(messageInfo message, vector<messageInfo>& delivered, vector<unsigned int> incrementedClockEntries)
+// begins recovery if returns true. Returns false if all dependencies were received but not delivered yet (because of current recovery or clock delivery conditions not satisfied yet)
+bool NodeWithRecoveryTest::recoveryTest(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries)
 {
     HashErrorDetector* detector = dynamic_cast<HashErrorDetector*> (this->detector);
     TotalDependencies baseDependencies = detector->createBaseDependencies(message, delivered, incrementedClockEntries, deliveredMessagesTracker);
@@ -77,11 +79,8 @@ bool NodeWithRecoveryTest::recoveryTest(messageInfo message, vector<messageInfo>
     }
 
     TotalDependencies tmpBaseDependencies = baseDependencies;
-
     vector<idMsg> messagesToCombine = detector->sortPossibleDependenciesSet(message, detector->createPossibleDependenciesSet(message, delivered, incrementedClockEntries, control), control);
     vector<idMsg> messagesToCombineRecovery = createRecoveredMessagesToCombine(message, incrementedClockEntries);
-
-
     vector<vector<bool>> testedDependencySets = params->getDependencyCombinations(messagesToCombine.size());
     for(vector<bool> isDepConsideredVec : testedDependencySets)
     {
@@ -112,7 +111,7 @@ bool NodeWithRecoveryTest::recoveryTest(messageInfo message, vector<messageInfo>
 }
 
 // tests with messages in recovery
-bool NodeWithRecoveryTest::TryCombinationsRecoveringMessages(messageInfo message, unsigned int& nbHashs, TotalDependencies baseDependencies, vector<idMsg> messagesToCombine)
+bool NodeWithRecoveryTest::TryCombinationsRecoveringMessages(const messageInfo& message, unsigned int& nbHashs, const TotalDependencies& baseDependencies, const vector<idMsg>& messagesToCombine)
 {
     TotalDependencies tmpBaseDependencies;
     HashErrorDetector* detector = dynamic_cast<HashErrorDetector*> (this->detector);
@@ -138,7 +137,7 @@ bool NodeWithRecoveryTest::TryCombinationsRecoveringMessages(messageInfo message
     return true;
 }
 
-vector<idMsg> NodeWithRecoveryTest::createRecoveredMessagesToCombine(messageInfo message, vector<unsigned int> incrementedClockEntries)
+vector<idMsg> NodeWithRecoveryTest::createRecoveredMessagesToCombine(const messageInfo& message, const vector<unsigned int>& incrementedClockEntries)
 {
     vector<messageInfo> recoveredTmp;
     HashErrorDetector* detector = dynamic_cast<HashErrorDetector*> (this->detector);

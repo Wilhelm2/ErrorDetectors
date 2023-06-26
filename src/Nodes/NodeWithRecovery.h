@@ -35,30 +35,23 @@ typedef struct s_recoveredMessage{
     TotalDependencies dependencies;
 } recoveredMessage;
 
-
 class NodeWithRecovery : public NodeDetector
 {
     public:
         NodeWithRecovery();
         virtual ~NodeWithRecovery();
-
         virtual void handleMessage(cMessage *msg) override;
-
         virtual void processMessage(cMessage* msg);
         void processDepReq(DepReq* m);
         void processRcvRspDep(DepRsp* m);
+        void pushbackMessagesInRecovery();
 
         virtual void iterativeDelivery();
-
-        virtual bool testDeliverMessage(messageInfo m);
-
-
-
         bool tryDeliverMessageInRecovery();
         bool tryDeliverPendingMessages();
-        void requestDependencies(messageInfo m);
 
-        void pushbackMessagesInRecovery();
+        virtual bool testDeliverMessage(messageInfo m);
+        void requestDependencies(messageInfo m);
         virtual AppMsg* prepareBroadcast();
 
         stats_recovery statsRecovery;

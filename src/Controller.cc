@@ -67,7 +67,6 @@ vector<msg>::iterator Controller::searchMessage(idMsg idM)
 
     for(vector<msg>::iterator it = processBroadcastedMessages[idM.id].begin(); it != processBroadcastedMessages[idM.id].end(); ++it)
     {
-        //std::cout << "msg with seq " << (*it)->seq << endl;
         if(it->seq == idM.seq)
             return it;
     }
@@ -88,7 +87,6 @@ bool Controller::notifyDeliverMessage(idMsg idM, unsigned int idDest)
   //              std::cerr<< "Not delivered dependencies from Node "<<i<<" seq "<<processDependencies[idDest][i]<< " to " << m.dependencies[i]<<endl;
             processDependencies[idDest][i] = max(m->dependencies[i],processDependencies[idDest][i]);
         }
-        //throw"";
     }
     else
     {

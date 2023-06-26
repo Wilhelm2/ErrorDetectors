@@ -15,6 +15,8 @@
 
 #include "NodeWithoutRecovery.h"
 
+Define_Module(NodeWithoutRecovery);
+
 NodeWithoutRecovery::NodeWithoutRecovery() {
     // TODO Auto-generated constructor stub
 
@@ -23,7 +25,6 @@ NodeWithoutRecovery::NodeWithoutRecovery() {
 NodeWithoutRecovery::~NodeWithoutRecovery() {
     // TODO Auto-generated destructor stub
 }
-
 
 void NodeWithoutRecovery::processMessage(cMessage* msg)
 {
@@ -38,7 +39,6 @@ void NodeWithoutRecovery::processMessage(cMessage* msg)
     else
         scheduleAt(simTime()+ delay, msg);
 }
-
 
 void NodeWithoutRecovery::iterativeDelivery()
 {
@@ -67,12 +67,12 @@ bool NodeWithoutRecovery::testDeliverMessage(messageInfo message)
     {
         if(!control->canCausallyDeliverMessage(message.id, id))
         {
-            if(!detector->test(message, getIndexIncrementedEntries(message.id.id), clock, deliveredMessagesTracker, control, params))
+            if(!detector->test(message, getIndexIncrementedEntries(message.id.id), clock, deliveredMessagesTracker, control, params, delivered))
                 detector->stats.trueNegative++;
         }
         else
         {
-            if(!detector->test(message, getIndexIncrementedEntries(message.id.id), clock, deliveredMessagesTracker, control, params))
+            if(!detector->test(message, getIndexIncrementedEntries(message.id.id), clock, deliveredMessagesTracker, control, params, delivered))
                 detector->stats.falseNegative++;
         }
         return true;

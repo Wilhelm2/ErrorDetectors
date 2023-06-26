@@ -25,4 +25,6 @@ simple SimulationParameters
         int clockLength;
         double delaySend;
         double PEAKSPERDELAY;
+        bool recovering;
+        int deliveryOption;
 }

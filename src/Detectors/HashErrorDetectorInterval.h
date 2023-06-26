@@ -20,10 +20,11 @@ public:
     // seperate deltaTR and deltaTS so that deltaTR can be set to 0 when the message load is low
     simtime_t deltaTS = *(new SimTime(140, SIMTIME_MS));
 
-    vector<idMsg> determineAndGetAppendedDependencies(vector<messageInfo>& delivered, ProbabilisticClock messageClock);
+    virtual vector<idMsg> determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock);
     bool isConsideredAsDependency(messageInfo message, messageInfo possibleDep);
     bool isConsideredAsPossibleDependency(messageInfo message, messageInfo possibleDep);
     vector<idMsg> sortPossibleDependenciesSet(messageInfo message, vector<messageInfo> baseCombineSet, Controller* controller);
+    PartialDependencies getPartialDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock);
 
 };
 

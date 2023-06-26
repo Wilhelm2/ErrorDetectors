@@ -30,14 +30,14 @@ public:
     bool operator==(TotalDependencies compareDep);
     bool operator<(TotalDependencies compareDep);
 
-    vector<unsigned int> getDependencies();
+    vector<unsigned int> getDependencies() const;
     bool includesDependencies(TotalDependencies dependenciesToCheck);
     bool includesDependencies(vector<idMsg> dependenciesToCheck);
     void print();
     void printErr();
     bool SatisfiesDeliveryConditions(TotalDependencies MessageDependencies, unsigned int idMessageSender);
     void printComparisionWith(TotalDependencies dep);
-
+    unsigned int size() const;
 
 
     vector<unsigned int> dependencies;

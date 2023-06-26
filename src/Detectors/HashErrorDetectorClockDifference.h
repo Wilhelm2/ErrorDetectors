@@ -15,7 +15,7 @@ class ErrorDetectorClockDifference : public HashErrorDetector
     public:
         ErrorDetectorClockDifference();
         virtual ~ErrorDetectorClockDifference();
-        vector<idMsg> determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& messageClock);
+        virtual vector<idMsg> determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock);
         bool isConsideredAsDependency(messageInfo message, messageInfo possibleDep);
         bool isConsideredAsPossibleDependency(messageInfo message, messageInfo possibleDep);
         vector<idMsg> sortPossibleDependenciesSet(messageInfo message, vector<messageInfo> baseCombineSet, Controller* controller);

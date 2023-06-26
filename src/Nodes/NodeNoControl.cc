@@ -15,6 +15,8 @@
 
 #include "NodeNoControl.h"
 
+Define_Module(NodeNoControl);
+
 NodeNoControl::NodeNoControl() {
     // TODO Auto-generated constructor stub
 

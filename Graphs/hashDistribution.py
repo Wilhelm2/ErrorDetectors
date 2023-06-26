@@ -10,6 +10,7 @@ import numpy as np
 nodes = ast.literal_eval(sys.argv[1])
 clockSizes = ast.literal_eval(sys.argv[2]) #[20,10,7,5,4,3,2.5]
 delaySend = ast.literal_eval(sys.argv[3])
+deliveryOption = int(sys.argv[4])
 
 for c in clockSizes:
     for n in nodes:
@@ -17,13 +18,12 @@ for c in clockSizes:
         falseNegatives = []
         trueNegatives  = []
 
-        f=open("data/clocksize"+ str(c) +"Nodes" + str(n) + "/doneCombinationsToFindHashFile.dat",'r') 
+        f=open("data/clocksize"+ str(c) +"Nodes" + str(n)  + "D:" + str(deliveryOption) +  "/doneCombinationsToFindHashFile.dat",'r') 
         line = f.readlines()[-1].split(" ")[0:-1]
         line = [int(tmp) for tmp in line]
         for i in range(0,len(line)):
             for y in range(0,line[i]):
                 x.append(i)
-        print(x)
         plt.yscale('log')
 #        plt.xticks(range(0,x[-1],x[-1]/10+1))
         plt.xticks(range(0,201,20))

@@ -15,6 +15,8 @@
 
 #include "NodePC.h"
 
+Define_Module(NodePC);
+
 NodePC::NodePC() {
     // TODO Auto-generated constructor stub
 

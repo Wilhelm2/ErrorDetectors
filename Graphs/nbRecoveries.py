@@ -17,11 +17,11 @@ for c in clockSizes:
 	
 	for n in nodes:
 		x.append(n/delaySend)
-		f=open("data/clocksize"+ str(c) +"Nodes" + str(n) + "/nbRecoveriesFile.dat",'r') 
+		f=open("data/clocksize"+ str(c) +"Nodes" + str(n) + "D:" + str(deliveryOption) + "/nbRecoveriesFile.dat",'r') 
 		lines = f.readlines()[-1]
 		yR.append(float(lines.split(" ")[0]))
 
-		f=open("data/clocksize"+ str(c) +"Nodes" + str(n) + "/nbAvoidedRecoveriesFile.dat",'r') 
+		f=open("data/clocksize"+ str(c) +"Nodes" + str(n) + "D:" + str(deliveryOption) + "/nbAvoidedRecoveriesFile.dat",'r') 
 		lines = f.readlines()[-1]
 		lines = lines.split(" ")
 		yAR.append(float(lines[1]))

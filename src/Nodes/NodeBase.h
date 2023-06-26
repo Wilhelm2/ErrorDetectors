@@ -45,11 +45,10 @@ class NodeBase : public cSimpleModule
         virtual void handleMessage(cMessage *msg) override;
 
         virtual AppMsg* prepareBroadcast();
-        AppMsg* createAppMsg();
+        virtual AppMsg* createAppMsg();
 
         virtual void processMessage(cMessage* msg) = 0;
         virtual bool deliverMsg(messageInfo message);
-
 
         unsigned int id = idCountNodeDep++;
         unsigned int seq = 0;
@@ -58,14 +57,11 @@ class NodeBase : public cSimpleModule
         simtime_t baseTimeBroadcast ;
         std::default_random_engine generatorSendDistribution;
         static std::normal_distribution<double> sendDistribution;
-
+        cGate* outGate;
 
         SimulationParameters* params;
         statsNode stats;
         Controller* control;
-
-        cGate* outGate;
-
 };
 
 #endif /* NODES_NODEBASE_H_ */

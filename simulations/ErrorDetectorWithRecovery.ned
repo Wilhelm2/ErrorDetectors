@@ -11,7 +11,7 @@ network ErrorDetectorWithRecovery
 
 	submodules:
 		simParams: SimulationParameters;
-		Nodes[290]: NodeWithoutRecovery;
+		Nodes[300]: NodeWithRecovery;
 		control: Controller;
 		stat: Stats;
 		Communications: CommunicationDispatcher;
@@ -306,4 +306,14 @@ network ErrorDetectorWithRecovery
 		Nodes[287].gate <--> Channel <--> Communications.neighbour++;
 		Nodes[288].gate <--> Channel <--> Communications.neighbour++;
 		Nodes[289].gate <--> Channel <--> Communications.neighbour++;
+		Nodes[290].gate <--> Channel <--> Communications.neighbour++;
+		Nodes[291].gate <--> Channel <--> Communications.neighbour++;
+		Nodes[292].gate <--> Channel <--> Communications.neighbour++;
+		Nodes[293].gate <--> Channel <--> Communications.neighbour++;
+		Nodes[294].gate <--> Channel <--> Communications.neighbour++;
+		Nodes[295].gate <--> Channel <--> Communications.neighbour++;
+		Nodes[296].gate <--> Channel <--> Communications.neighbour++;
+		Nodes[297].gate <--> Channel <--> Communications.neighbour++;
+		Nodes[298].gate <--> Channel <--> Communications.neighbour++;
+		Nodes[299].gate <--> Channel <--> Communications.neighbour++;
 }

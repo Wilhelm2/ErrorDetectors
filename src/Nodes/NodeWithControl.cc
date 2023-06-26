@@ -24,7 +24,6 @@ NodeWithControl::~NodeWithControl() {
     // TODO Auto-generated destructor stub
 }
 
-
 void NodeWithControl::initialize()
 {
     NodeBase::initialize();
@@ -37,6 +36,7 @@ AppMsg* NodeWithControl::createAppMsg()
 {
     AppMsg* m = NodeBase::createAppMsg();
     m->setPC(clock);
+    cout<<"added clock to message "<<endl;
     return m;
 }
 
@@ -53,8 +53,9 @@ AppMsg* NodeWithControl::prepareBroadcast()
 
 void NodeWithControl::removeOldMessages()
 {
-    vector<messageInfo>::iterator it;
-    while(it != delivered.end() && it->recvtime < simTime()-SimTime(2, SIMTIME_S))
+    vector<messageInfo>::iterator it = delivered.begin();
+    while(it != delivered.end() && it->recvtime < (simTime()-SimTime(2, SIMTIME_S))
+            )
         it++;
     delivered.erase(delivered.begin(),it);
 }

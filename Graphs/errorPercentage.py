@@ -7,7 +7,8 @@ from matplotlib.ticker import FormatStrFormatter
 
 nodes = ast.literal_eval(sys.argv[1])
 clockSizes = ast.literal_eval(sys.argv[2])  # [20,10,7,5,4,3,2.5]
-delaySend = ast.literal_eval(sys.argv[3])
+delaySend = float(sys.argv[3])
+deliveryOption = int(sys.argv[4])
 
 for c in clockSizes:
     plt.figure()
@@ -19,13 +20,13 @@ for c in clockSizes:
     print(nodes)
     for n in nodes:
         x.append(n/delaySend)
-        f=open("data/clocksize"+ str(c) +"Nodes" + str(n) + "/trueFalseNegativesFile.dat",'r') 
+        f=open("data/clocksize"+str(c)+ "Nodes"+ str(n)  + "D:" + str(deliveryOption) + "/trueFalseNegativesFile.dat",'r') 
         lines = f.readlines()[-1]
         totalErrors = float(lines.split(" ")[0]) + float(lines.split(" ")[1])
         falseErrors = float(lines.split(" ")[0])
         trueErrors  = float(lines.split(" ")[1])
 
-        f=open("data/clocksize"+ str(c) +"Nodes" + str(n) + "/nbDeliveredMessagesFile.dat",'r') 
+        f=open("data/clocksize"+ str(c) +"Nodes" + str(n) + "D:" + str(deliveryOption) + "/nbDeliveredMessagesFile.dat",'r') 
         lines = f.readlines()[-1]
         totalDelivered = float(lines.split(" ")[0])
         if totalDelivered > 0:

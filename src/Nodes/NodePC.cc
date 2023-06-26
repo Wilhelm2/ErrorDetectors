@@ -40,7 +40,7 @@ void NodePC::processMessage(cMessage* msg)
 
 bool NodePC::testDeliverMessage(messageInfo message)
 {
-    return clock.satisfiesDeliveryCondition(message.clock, params->getEntriesIncrementedByProcess(message.id.id));
+    return clock.satisfiesDeliveryCondition(message.clock, getIndexIncrementedEntries(message.id.id));
 }
 
 void NodePC::iterativeDelivery()

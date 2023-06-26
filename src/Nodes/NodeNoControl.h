@@ -25,7 +25,6 @@ class NodeNoControl : public NodeBase
         NodeNoControl();
         virtual ~NodeNoControl();
         virtual void processMessage(cMessage* msg);
-        virtual bool deliverMsg(messageInfo message);
 };
 
 #endif /* NODES_NODENOCONTROL_H_ */

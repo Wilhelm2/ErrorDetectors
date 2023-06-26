@@ -24,11 +24,16 @@ MostefaouiErrorDetector::~MostefaouiErrorDetector() {
     // TODO Auto-generated destructor stub
 }
 
-bool MostefaouiErrorDetector::test(unsigned int idMsg, ProbabilisticClock& PCMsg, vector<unsigned int> incrementedEntries, ProbabilisticClock processClock)
+bool MostefaouiErrorDetector::test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params)
 {
     // test if exists an entry $i$ such that V[i] == m.V[i] -1
-    for(int i : incrementedEntries)
-        if(processClock[i] == (PCMsg[i] -1))
+    for(int i : incrementedClockEntries)
+        if(processClock[i] == (message.clock[i] -1))
             return true;
     return false;
+}
+
+AppMsg* prepareMessage(AppMsg* m)
+{
+    return m;
 }

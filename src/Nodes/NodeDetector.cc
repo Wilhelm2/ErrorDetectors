@@ -27,14 +27,19 @@ NodeDetector::~NodeDetector() {
 void NodeDetector::initialize()
 {
     NodeWithControl::initialize();
-
+    if(params->DeliveryController == SimulationParameters::Delivery::Mostefaoui)
+        detector = new MostefaouiErrorDetector();
+    else if(params->DeliveryController == SimulationParameters::Delivery::HashClockDifference)
+        detector = new ErrorDetectorClockDifference();
+    else
+        detector = new ErrorDetectorInterval();
 //    detector.setClockDifferenceConsideredDependency(params->nbNodes/params->delaySend, params->entriesIncrementedByProcess[0].size());
 }
 
 AppMsg* NodeDetector::createAppMsg()
 {
     AppMsg* m = NodeWithControl::createAppMsg();
-    m = detector.prepareMessage(m);
+    m = detector->prepareMessage(m);
     return m;
 }
 

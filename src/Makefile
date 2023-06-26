@@ -49,6 +49,9 @@ OBJS = \
     $O/Nodes/NodeNoControl.o \
     $O/Nodes/NodePC.o \
     $O/Nodes/NodeWithControl.o \
+    $O/Nodes/NodeWithoutRecovery.o \
+    $O/Nodes/NodeWithRecovery.o \
+    $O/Nodes/NodeWithRecoveryTest.o \
     $O/Messages/AppMsg_m.o \
     $O/Messages/depReq_m.o \
     $O/Messages/depRsp_m.o \

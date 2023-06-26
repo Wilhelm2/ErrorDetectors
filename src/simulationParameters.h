@@ -58,7 +58,7 @@ class SimulationParameters : public cSimpleModule
 
     #define APPENDDEPENDENCIES false
     #define COLLISION_CONTROL false
-    enum class Delivery {NOTHING, ClockComparison, Mostefaoui, Hash};
+    enum class Delivery {NOTHING, ClockComparison, Mostefaoui, HashClockDifference, HashIntervalDifference};
     static Delivery DeliveryController;
     enum class Dependencies {Total, Partial};
     static Dependencies depAppended;

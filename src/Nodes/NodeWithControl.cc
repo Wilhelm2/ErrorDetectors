@@ -73,7 +73,15 @@ void NodeWithControl::RecvAppMsg(AppMsg*m)
 {
     messageInfo msg (m->getId(), simTime(), m->getHash(), m->getDependencies(), m->getPC());
     if(testDeliverMessage(msg))
+    {
+        deliverMsg(msg);
         iterativeDelivery();
+    }
     else
         pendingMsg.push_back(msg);
+}
+
+const vector<unsigned int>& NodeWithControl::getIndexIncrementedEntries(unsigned int idSource)
+{
+    return params->entriesIncrementedByProcess[idSource%params->nbCombinations];
 }

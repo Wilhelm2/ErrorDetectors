@@ -24,15 +24,13 @@
 #include "../Detectors/ErrorDetector.h"
 
 
-typedef struct s_stats_errorDetector{
+typedef struct s_stats_hashErrorDetector{
     unsigned int nbHash=0;
     vector<unsigned int> nbMsgWronglyConsideredCausalDep; // entry i : in msgACombiner number of concurrent messages wronly considered as being causal dependencies
     vector<unsigned int> nbMsgToCombine;
     vector<unsigned int> doneCombinationsToFindHash; // entry i : required i hashs to find the message hash
     vector<unsigned int> nbOperationsForHash;
-    unsigned int falseNegative = 0; // hashTest returns false even though all dependencies are delivered
-    unsigned int trueNegative = 0; // hashTest returns false and message can effectively not be delivered
-}stats_errorDetector;
+}stats_hashErrorDetector;
 
 class HashErrorDetector : public ErrorDetector{
 public:
@@ -64,7 +62,7 @@ public:
 
     hash<string> hasher;
     static map<int,vector<unsigned int>> collisionController;
-    stats_errorDetector stats;
+    stats_hashErrorDetector hashStats;
 
 };
 

@@ -24,8 +24,8 @@ class MostefaouiErrorDetector: public ErrorDetector{
 public:
     MostefaouiErrorDetector();
     virtual ~MostefaouiErrorDetector();
-    static bool test(unsigned int idMsg, ProbabilisticClock& PCMsg, vector<unsigned int> incrementedEntries, ProbabilisticClock processClock);
-
+    virtual bool test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params);
+    virtual AppMsg* prepareMessage(AppMsg* m);
 };
 
 #endif /* DETECTORS_MOSTEFAOUIERRORDETECTOR_H_ */

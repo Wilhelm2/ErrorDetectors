@@ -20,15 +20,23 @@
 #include <omnetpp.h>
 
 #include "../Messages/AppMsg_m.h"
+#include "../Controller.h"
 
 using namespace std;
 using namespace omnetpp;
+
+typedef struct s_stats_errorDetector{
+    unsigned int falseNegative = 0; // hashTest returns false even though all dependencies are delivered
+    unsigned int trueNegative = 0; // hashTest returns false and message can effectively not be delivered
+}stats_errorDetector;
 
 class ErrorDetector {
 public:
     ErrorDetector();
     virtual ~ErrorDetector() = 0;
     virtual AppMsg* prepareMessage(AppMsg* m) = 0;
+    virtual bool test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params) = 0;
+    stats_errorDetector stats;
 };
 
 #endif /* ERRORDETECTOR_H_ */

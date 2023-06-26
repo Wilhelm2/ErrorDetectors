@@ -19,6 +19,8 @@
 #include "NodeWithControl.h"
 #include "../structures.h"
 #include "../Detectors/HashErrorDetectorClockDifference.h"
+#include "../Detectors/HashErrorDetectorInterval.h"
+#include "../Detectors/MostefaouiErrorDetector.h"
 
 class NodeDetector : public NodeWithControl
 {
@@ -34,7 +36,7 @@ public:
     virtual bool testDeliverMessage(messageInfo message) = 0;
     virtual void iterativeDelivery() = 0;
 
-    ErrorDetector detector;
+    ErrorDetector* detector;
 };
 
 #endif /* NODES_NODEDETECTOR_H_ */

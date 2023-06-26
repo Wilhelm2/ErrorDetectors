@@ -35,6 +35,8 @@ class NodeWithControl : public NodeBase
         void removeOldMessages();
         virtual bool deliverMsg(messageInfo message);
         void RecvAppMsg(AppMsg*m);
+        const vector<unsigned int>& getIndexIncrementedEntries(unsigned int idSource);
+
 
         virtual void processMessage(cMessage* msg) = 0;
         virtual bool testDeliverMessage(messageInfo message) = 0;

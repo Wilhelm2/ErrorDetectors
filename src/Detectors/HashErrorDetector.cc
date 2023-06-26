@@ -18,10 +18,10 @@
 map<int,vector<unsigned int>> HashErrorDetector::collisionController;
 
 HashErrorDetector::HashErrorDetector() {
-    stats.nbMsgWronglyConsideredCausalDep.resize(200,0);
-    stats.nbMsgToCombine.resize(200,0);
-    stats.doneCombinationsToFindHash.resize(LIMIT_HASHS+1,0);
-    stats.nbOperationsForHash.resize(200,0);
+    hashStats.nbMsgWronglyConsideredCausalDep.resize(200,0);
+    hashStats.nbMsgToCombine.resize(200,0);
+    hashStats.doneCombinationsToFindHash.resize(LIMIT_HASHS+1,0);
+    hashStats.nbOperationsForHash.resize(200,0);
 }
 
 HashErrorDetector::~HashErrorDetector() {
@@ -55,7 +55,7 @@ bool HashErrorDetector::hashPartialDependencies(messageInfo message, const vecto
         nbHashs++;
         if(message.hash == hashPartialDependencies(baseDependencies))
         {
-            stats.doneCombinationsToFindHash[nbHashs]++;
+            hashStats.doneCombinationsToFindHash[nbHashs]++;
             return true;
         }
     }
@@ -63,7 +63,7 @@ bool HashErrorDetector::hashPartialDependencies(messageInfo message, const vecto
     baseDependencies.clear();
     if(message.hash == hashPartialDependencies(baseDependencies))
     {
-        stats.doneCombinationsToFindHash[nbHashs]++;
+        hashStats.doneCombinationsToFindHash[nbHashs]++;
         return true;
     }
     return false;
@@ -83,7 +83,7 @@ bool HashErrorDetector::hashTotalDependencies(messageInfo message, const vector<
     nbHashs++;
     if(message.hash == hashTotalDependencies(baseDependencies))
     {
-        stats.doneCombinationsToFindHash[nbHashs]++;
+        hashStats.doneCombinationsToFindHash[nbHashs]++;
         return true;
     }
     vector<messageInfo> set = createPossibleDependenciesSet(message, delivered, incrementedClockEntries, controller);
@@ -101,7 +101,7 @@ bool HashErrorDetector::hashTotalDependencies(messageInfo message, const vector<
         nbHashs++;
         if(message.hash == hashTotalDependencies(copieBaseDependencies))
         {
-            stats.doneCombinationsToFindHash[nbHashs]++;
+            hashStats.doneCombinationsToFindHash[nbHashs]++;
             return true;
         }
     }
@@ -170,8 +170,8 @@ vector<messageInfo> HashErrorDetector::createPossibleDependenciesSet(messageInfo
 
 void HashErrorDetector::incrementnbMsgWronglyConsideredCausalDep(unsigned int entry)
 {
-    if(entry < stats.nbMsgWronglyConsideredCausalDep.size())
-        stats.nbMsgWronglyConsideredCausalDep[entry]++;
+    if(entry < hashStats.nbMsgWronglyConsideredCausalDep.size())
+        hashStats.nbMsgWronglyConsideredCausalDep[entry]++;
     else
     {
         cerr<<"INCREMENTS nbMsgWronglyConsideredCausalDep OUT OF BOUND"<<endl;
@@ -181,8 +181,8 @@ void HashErrorDetector::incrementnbMsgWronglyConsideredCausalDep(unsigned int en
 
 void HashErrorDetector::incrementnbMsgToCombine(unsigned int entry)
 {
-    if(entry < stats.nbMsgToCombine.size())
-        stats.nbMsgToCombine[entry]++;
+    if(entry < hashStats.nbMsgToCombine.size())
+        hashStats.nbMsgToCombine[entry]++;
     else
     {
         cerr<<"INCREMENTS nbMsgToCombine OUT OF BOUND "<<entry<<endl;
@@ -192,12 +192,12 @@ void HashErrorDetector::incrementnbMsgToCombine(unsigned int entry)
 
 void HashErrorDetector::incrementnbOperationsForHash(unsigned int entry)
 {
-    if(entry < stats.nbOperationsForHash.size())
-        stats.nbOperationsForHash[entry]++;
+    if(entry < hashStats.nbOperationsForHash.size())
+        hashStats.nbOperationsForHash[entry]++;
     else
     {
-        stats.nbOperationsForHash.resize(entry+1);
-        stats.nbOperationsForHash[entry]++;
+        hashStats.nbOperationsForHash.resize(entry+1);
+        hashStats.nbOperationsForHash[entry]++;
         cerr<<"resize nbOperationsForHash "<<entry<<endl;
 //        throw "INCREMENTS nbMsgToCombine OUT OF BOUND";
     }
@@ -205,7 +205,7 @@ void HashErrorDetector::incrementnbOperationsForHash(unsigned int entry)
 
 size_t HashErrorDetector::hashTotalDependencies(TotalDependencies dependencies)
 {
-    stats.nbHash++;
+    hashStats.nbHash++;
     incrementnbOperationsForHash(dependencies.getDependencies().size());
     return hashDependencies(dependencies.getDependencies());
 }
@@ -217,7 +217,7 @@ size_t HashErrorDetector::hashPartialDependencies(const PartialDependencies& dep
     for(auto entry : tmp)
         depvector.push_back(entry.second.seq*entry.second.id); // multiply by id too to decrease collisions
 
-    stats.nbHash++;
+    hashStats.nbHash++;
     incrementnbOperationsForHash(depvector.size());
     return hashDependencies(depvector);
 }

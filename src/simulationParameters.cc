@@ -16,7 +16,7 @@
 #include "simulationParameters.h"
 
 Define_Module(SimulationParameters);
-SimulationParameters::Delivery SimulationParameters::DeliveryController = SimulationParameters::Delivery::Hash;
+SimulationParameters::Delivery SimulationParameters::DeliveryController = SimulationParameters::Delivery::HashClockDifference;
 SimulationParameters::Dependencies SimulationParameters::depAppended = SimulationParameters::Dependencies::Partial;
 
 void SimulationParameters::initialize()

@@ -30,7 +30,7 @@
 *.exe
 *.out
 *.app
-code/out
+out
 src/ErrorDetectors
 src/ErrorDetectors_dbg
 

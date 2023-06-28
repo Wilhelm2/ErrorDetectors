@@ -43,21 +43,22 @@ typedef struct s_msg
 
 
 class Controller : public cSimpleModule{
-public:
-    Controller();
-    virtual ~Controller();
-    virtual void initialize(int stage);
-    void notifySendMessage(unsigned int idSender, unsigned int seq);
-    vector<msg>::iterator searchMessage(idMsg idM);
-    bool notifyDeliverMessage(idMsg idM, unsigned int idDest);
-    void printDeliveryError(string errorReason, idMsg idM, unsigned int destProcess, TotalDependencies messageDependencies, TotalDependencies processDependencies);
-    bool canCausallyDeliverMessage(idMsg idM, unsigned int idDest);
-    void deleteMessage(idMsg idM);
-    bool isDependency(idMsg idM, idMsg idDep);
+    public:
+        Controller();
+        virtual ~Controller();
+        bool isDependency(idMsg idM, idMsg idDep);
+        void notifySendMessage(unsigned int idSender, unsigned int seq);
+        bool notifyDeliverMessage(idMsg idM, unsigned int idDest);
+        bool canCausallyDeliverMessage(idMsg idM, unsigned int idDest);
+    private:
+        virtual void initialize(int stage);
+        vector<msg>::iterator searchMessage(idMsg idM);
+        void printDeliveryError(string errorReason, idMsg idM, unsigned int destProcess, const TotalDependencies& messageDependencies, const TotalDependencies& processDependencies);
+        void deleteMessage(idMsg idM);
 
-    vector<vector<msg>> processBroadcastedMessages; // a vector of msg for each process
-    vector<TotalDependencies> processDependencies;
-    SimulationParameters* params;
+        vector<vector<msg>> processBroadcastedMessages; // a vector of msg for each process
+        vector<TotalDependencies> processDependencies;
+        SimulationParameters* params;
 };
 
 Define_Module(Controller);

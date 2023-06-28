@@ -28,11 +28,25 @@ void SimulationParameters::initialize()
     clockLength = par("clockLength");
     vector<vector<unsigned int>>  entriesIncrementedByProcess;
     recovering = par("recovering");
-    DeliveryController = static_cast<SimulationParameters::Delivery>( (int) par("deliveryOption"));
 
+    initializeDeliveryController();
     initializeClockEntriesToIncrement();
     computeDependecyCombinationsArray();
+}
 
+void SimulationParameters::initializeDeliveryController()
+{
+    unsigned int deliveryOption = par("deliveryOption");
+    if(deliveryOption == 0)
+        DeliveryController = SimulationParameters::Delivery::NOTHING;
+    else if(deliveryOption == 1)
+        DeliveryController = SimulationParameters::Delivery::ClockComparison;
+    else if(deliveryOption == 2)
+        DeliveryController = SimulationParameters::Delivery::Mostefaoui;
+    else if(deliveryOption == 4)
+        DeliveryController = SimulationParameters::Delivery::HashIntervalDifference;
+    else
+        DeliveryController = SimulationParameters::Delivery::HashClockDifference;
 }
 
 void SimulationParameters::handleMessage(cMessage *msg)
@@ -94,8 +108,6 @@ vector<vector<unsigned int>> SimulationParameters::EvenCombinations(unsigned int
         combinations.push_back(res);
     }
     std::shuffle(combinations.begin(), combinations.end(),  std::default_random_engine {} );
-
-
 
 /*    vector<unsigned int> verif; verif.resize(M);
     for(vector<unsigned int> v : combinations)

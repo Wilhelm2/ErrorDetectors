@@ -20,25 +20,26 @@
 #include "TotalDependencies.h"
 
 class PartialDependencies : public Dependencies {
-public:
-    PartialDependencies();
-    PartialDependencies(map<unsigned int,idMsg> dependencies);
-    virtual ~PartialDependencies();
+    public:
+        PartialDependencies();
+        PartialDependencies(const map<unsigned int,idMsg>& dependencies);
+        virtual ~PartialDependencies();
 
-    unsigned int& operator[](unsigned int i);
-    bool operator==(PartialDependencies compareDep);
-    bool operator<(PartialDependencies compareDep);
+        unsigned int& operator[](unsigned int i);
+        unsigned int at(unsigned int i) const;
+        bool operator==(const PartialDependencies& compareDep) const;
+        bool operator<(const PartialDependencies& compareDep) const;
 
-    map<unsigned int,idMsg> getDependencies() const;
-    bool includesDependencies(PartialDependencies dependenciesToCheck);
-    void print();
-    void printErr();
-    bool SatisfiesDeliveryConditions(PartialDependencies MessageDependencies, unsigned int idMessageSender);
-    void printComparisionWith(PartialDependencies dep);
-    void clear();
-    void set(idMsg id);
-
-    map<unsigned int,idMsg> dependencies;
+        map<unsigned int,idMsg> getDependencies() const;
+        bool includesDependencies(const PartialDependencies& dependenciesToCheck);
+        void print();
+        void printErr();
+        bool SatisfiesDeliveryConditions(const PartialDependencies& MessageDependencies, unsigned int idMessageSender);
+        void printComparisionWith(const PartialDependencies& dep);
+        void clear();
+        void set(idMsg id);
+    private:
+        map<unsigned int,idMsg> dependencies;
 };
 
 #endif /* DEPENDENCIES_PARTIALDEPENDENCIES_H_ */

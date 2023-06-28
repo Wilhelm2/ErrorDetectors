@@ -33,6 +33,7 @@ class SimulationParameters : public cSimpleModule
   protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+    void initializeDeliveryController();
     void initializeClockEntriesToIncrement();
     vector<vector<unsigned int>> EvenCombinations(unsigned int N, unsigned int k, unsigned int M);
     vector<vector<unsigned int>> computeEntryCombinations(unsigned int N, unsigned int K);
@@ -41,7 +42,6 @@ class SimulationParameters : public cSimpleModule
     vector<vector<bool>> DependencyCombinations(unsigned int nbPossibleDep);
     vector<vector<bool>> DependencyCombinationsTwo(unsigned int nbPossibleDep);
     vector<vector<bool>> binominalCoefficient(unsigned int N, unsigned int K);
-
 
   public:
     simtime_t determineFirstSendTimeInMs(unsigned int id);
@@ -64,12 +64,10 @@ class SimulationParameters : public cSimpleModule
     static Dependencies depAppended;
     bool recovering;
 
-
     #define LIMIT_HASHS 200 // ATTENTION DOIT ÊTRE LE MÊME POUR LES MSG DANS COMPLETEHASHTEST ET RECOVERYTEST SINON DOIT
                         // AJOUTER ITERATIVEDELIVERY APRÈS RECOVERYMSG.PUSH_BACK DANS RECOVERYTEST SINON PEUT TROUVER
                         // UN ENSEMBLE DE DEPENDANCES QUE N'A PAS TROUVÉ DANS COMLPETEHASHTEST MAIS NE VA JAMAIS LE DÉLIVRER
     #define ASSUMED_CONCURRENT_MESSAGES 10
-
 };
 
 #endif

@@ -20,7 +20,7 @@ for c in clockSizes:
 	
 	for n in nodes:
 		x.append(n/delaySend)
-		f=open("data/clocksize"+ str(c) +"Nodes" + str(n)  + "D:" + str(deliveryOption) + "/nbHashsFile.dat",'r') 
+		f=open("data/clocksize"+ str(c) +"Nodes" + str(n) + "D:" + str(deliveryOption) + "/nbHashsFile.dat",'r') 
 		lines = f.readlines()[-1]
 		y.append(float(lines.split(" ")[0]))
 	

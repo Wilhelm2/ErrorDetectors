@@ -23,6 +23,7 @@
 typedef struct s_stats_recovery{
     unsigned int nbRecoveries = 0;
     unsigned int nbAvoidedRecoveries = 0;
+    unsigned int jumpedBroadcasts = 0;
 } stats_recovery;
 
 typedef struct s_sentMsgDependency{
@@ -40,6 +41,8 @@ class NodeWithRecovery : public NodeDetector
     public:
         NodeWithRecovery();
         virtual ~NodeWithRecovery();
+
+    protected:
         virtual void handleMessage(cMessage *msg) override;
         virtual void processMessage(cMessage* msg);
         void processDepReq(DepReq* m);
@@ -50,8 +53,8 @@ class NodeWithRecovery : public NodeDetector
         bool tryDeliverMessageInRecovery();
         bool tryDeliverPendingMessages();
 
-        virtual bool testDeliverMessage(messageInfo m);
-        void requestDependencies(messageInfo m);
+        virtual bool testDeliverMessage(const messageInfo& m);
+        void requestDependencies(const messageInfo& m);
         virtual AppMsg* prepareBroadcast();
 
         stats_recovery statsRecovery;
@@ -62,6 +65,8 @@ class NodeWithRecovery : public NodeDetector
         vector<msgDependency> localSentMsgDependencies;
         vector<messageInfo> messagesToRecover;
         vector<recoveredMessage> recoveredMessages;
+
+        friend class Stats;
 };
 
 #endif /* NODES_NODEWITHRECOVERY_H_ */

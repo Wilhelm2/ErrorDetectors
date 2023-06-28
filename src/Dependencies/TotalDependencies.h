@@ -20,28 +20,28 @@
 
 
 class TotalDependencies : public Dependencies {
-public:
-    TotalDependencies();
-    TotalDependencies(vector<unsigned int> dependencies);
-    TotalDependencies(unsigned int size);
-    virtual ~TotalDependencies();
+    public:
+        TotalDependencies();
+        TotalDependencies(const vector<unsigned int>& dependencies);
+        TotalDependencies(unsigned int size);
+        virtual ~TotalDependencies();
 
-    unsigned int& operator[](unsigned int i);
-    bool operator==(TotalDependencies compareDep);
-    bool operator<(TotalDependencies compareDep);
+        unsigned int& operator[](unsigned int i);
+        unsigned int operator[](unsigned int i) const;
+        bool operator==(const TotalDependencies& compareDep);
+        bool operator<(const TotalDependencies& compareDep);
 
-    vector<unsigned int> getDependencies() const;
-    bool includesDependencies(TotalDependencies dependenciesToCheck);
-    bool includesDependencies(vector<idMsg> dependenciesToCheck);
-    void print();
-    void printErr();
-    bool SatisfiesDeliveryConditions(TotalDependencies MessageDependencies, unsigned int idMessageSender);
-    void printComparisionWith(TotalDependencies dep);
-    unsigned int size() const;
+        vector<unsigned int> getDependencies() const;
+        bool includesDependencies(const TotalDependencies& dependenciesToCheck);
+        bool includesDependencies(const vector<idMsg>& dependenciesToCheck);
+        void print();
+        void printErr() const;
+        bool SatisfiesDeliveryConditions(const TotalDependencies& MessageDependencies, unsigned int idMessageSender);
+        void printComparisionWith(const TotalDependencies& dep);
+        unsigned int size() const;
 
-
-    vector<unsigned int> dependencies;
-
+    private:
+        vector<unsigned int> dependencies;
 };
 
 #endif /* DEPENDENCIES_TOTALDEPENDENCIES_H_ */

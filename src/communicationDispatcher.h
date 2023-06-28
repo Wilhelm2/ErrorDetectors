@@ -40,22 +40,21 @@ typedef struct s_statsCommunicationModule
 
 class CommunicationDispatcher : public cSimpleModule
 {
-  protected:
-    virtual void initialize();
-    virtual void handleMessage(cMessage *msg);
-    void broadcastAppMessage(AppMsg* m);
-    simtime_t computeDelay(unsigned int idSourceProcess, unsigned int idTargetProcess);
-    void incrementDelayIntervals(unsigned int entry);
+    private:
+        virtual void initialize();
+        virtual void handleMessage(cMessage *msg);
+        void broadcastAppMessage(AppMsg* m);
+        simtime_t computeDelay(unsigned int idSourceProcess, unsigned int idTargetProcess);
+        void incrementDelayIntervals(unsigned int entry);
 
-    vector<cGate*> gates;
+        vector<cGate*> gates;
 
-    std::default_random_engine generatorChannelDelay;
-    std::normal_distribution<double> distributionChannelDelayPair = std::normal_distribution<double>(CHANNELDELAY,30000.);
-    std::normal_distribution<double> distributionChannelDelayImpair = std::normal_distribution<double>(CHANNELDELAY,30000.);
-    vector<int> channelRandNumber;
-    statsCommunicationModule stats;
-
-    SimulationParameters* params;
+        std::default_random_engine generatorChannelDelay;
+        std::normal_distribution<double> distributionChannelDelayPair = std::normal_distribution<double>(CHANNELDELAY,30000.);
+        std::normal_distribution<double> distributionChannelDelayImpair = std::normal_distribution<double>(CHANNELDELAY,30000.);
+        vector<int> channelRandNumber;
+        statsCommunicationModule stats;
+        SimulationParameters* params;
 };
 
 #endif

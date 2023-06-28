@@ -27,7 +27,6 @@ NodeWithControl::~NodeWithControl() {
 void NodeWithControl::initialize()
 {
     NodeBase::initialize();
-
     clock = ProbabilisticClock(params->clockLength);
     deliveredMessagesTracker = TotalDependencies(params->nbNodes);
 }
@@ -36,7 +35,6 @@ AppMsg* NodeWithControl::createAppMsg()
 {
     AppMsg* m = NodeBase::createAppMsg();
     m->setPC(clock);
-    cout<<"added clock to message "<<endl;
     return m;
 }
 
@@ -54,16 +52,14 @@ AppMsg* NodeWithControl::prepareBroadcast()
 void NodeWithControl::removeOldMessages()
 {
     vector<messageInfo>::iterator it = delivered.begin();
-    while(it != delivered.end() && it->recvtime < (simTime()-SimTime(2, SIMTIME_S))
-            )
+    while(it != delivered.end() && it->recvtime < (simTime()-SimTime(2, SIMTIME_S)))
         it++;
     delivered.erase(delivered.begin(),it);
 }
 
-bool NodeWithControl::deliverMsg(messageInfo message)
+bool NodeWithControl::deliverMsg(const messageInfo& message)
 {
     bool causallyDelivered = NodeBase::deliverMsg(message);
-
     delivered.push_back(message);
     clock.incrementEntries(params->getEntriesIncrementedByProcess(message.id.id));
     deliveredMessagesTracker[message.id.id]++;
@@ -74,10 +70,7 @@ void NodeWithControl::RecvAppMsg(AppMsg*m)
 {
     messageInfo msg (m->getId(), simTime(), m->getHash(), m->getDependencies(), m->getPC());
     if(testDeliverMessage(msg))
-    {
-        deliverMsg(msg);
         iterativeDelivery();
-    }
     else
         pendingMsg.push_back(msg);
 }

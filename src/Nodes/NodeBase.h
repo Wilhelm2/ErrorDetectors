@@ -36,7 +36,7 @@ typedef struct s_statsNode {
 
 class NodeBase : public cSimpleModule
 {
-    public:
+    protected:
         NodeBase();
         virtual ~NodeBase();
 
@@ -48,9 +48,9 @@ class NodeBase : public cSimpleModule
         virtual AppMsg* createAppMsg();
 
         virtual void processMessage(cMessage* msg) = 0;
-        virtual bool deliverMsg(messageInfo message);
+        virtual bool deliverMsg(const messageInfo& message);
 
-        unsigned int id = idCountNodeDep++;
+        const unsigned int id = idCountNodeDep++;
         unsigned int seq = 0;
 
         cMessage* broadcastTimer = new cMessage();
@@ -62,6 +62,8 @@ class NodeBase : public cSimpleModule
         SimulationParameters* params;
         statsNode stats;
         Controller* control;
+
+        friend class Stats;
 };
 
 #endif /* NODES_NODEBASE_H_ */

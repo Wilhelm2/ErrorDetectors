@@ -24,9 +24,10 @@ class NodeWithoutRecovery : public NodeDetector
         NodeWithoutRecovery();
         virtual ~NodeWithoutRecovery();
 
+    protected:
         virtual void processMessage(cMessage* msg);
         virtual void iterativeDelivery();
-        virtual bool testDeliverMessage(messageInfo message);
+        virtual bool testDeliverMessage(const messageInfo& message);
 
 };
 

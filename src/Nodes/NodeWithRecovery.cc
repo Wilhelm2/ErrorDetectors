@@ -28,24 +28,18 @@ NodeWithRecovery::~NodeWithRecovery() {
 
 void NodeWithRecovery::handleMessage(cMessage *msg)
 {
-    if (msg == broadcastTimer) {
-        if(simTime()==0)
-            baseTimeBroadcast = params->determineFirstSendTimeInMs(id);
-        else
-        {
-            if(inRecovery) // See paper explanation. This is because during recovery a node does not deliver messages. Hence, its clock is smaller and the message has much higher chances to be considered as a causal dependency by concurrent messages
-                delayedAppMgsBroadcast = true;
-            else
-                send(prepareBroadcast(), outGate);
-            baseTimeBroadcast += SimTime(params->delaySend*1000, SIMTIME_MS) ; // SIMTIME_MS because if done in SIMTIME_S then will truncate even if delaySend is not a round number
-        }
+    if(msg == broadcastTimer && inRecovery)
+    {
+        delayedAppMgsBroadcast = true;
+        statsRecovery.jumpedBroadcasts++;
+        baseTimeBroadcast += SimTime(params->delaySend*1000, SIMTIME_MS) ; // SIMTIME_MS because if done in SIMTIME_S then will truncate even if delaySend is not a round number
         simtime_t nextBroadcastTime  = baseTimeBroadcast+SimTime(sendDistribution(generatorSendDistribution), SIMTIME_US) ;
         if(nextBroadcastTime  < simTime())
             nextBroadcastTime = baseTimeBroadcast;
         scheduleAt(nextBroadcastTime , msg);
     }
     else
-        processMessage(msg);
+        NodeWithControl::handleMessage(msg);
 }
 
 void NodeWithRecovery::processMessage(cMessage* msg)
@@ -81,7 +75,7 @@ void NodeWithRecovery::processMessage(cMessage* msg)
 
 void NodeWithRecovery::processDepReq(DepReq* m)
 {
-//    std::cerr<< simTime()<<"Node "<<m->getIdRequester() << " requests the dependencies of msg: " << m->getIdMsgToRecover().id<<","<<m->getIdMsgToRecover().seq<<endl;
+//    std::cerr<< simTime()<<"Node " << id << " receives depreq from Node "<<m->getIdRequester() << " which requests the dependencies of msg: " << m->getIdMsgToRecover().id<<","<<m->getIdMsgToRecover().seq<<endl;
     DepRsp* msg = new DepRsp();
     msg->setIdMsgToRecover(m->getIdMsgToRecover());
     for(const msgDependency& msgDep: localSentMsgDependencies)
@@ -100,10 +94,14 @@ void NodeWithRecovery::processDepReq(DepReq* m)
 
 void NodeWithRecovery::processRcvRspDep(DepRsp* m)
 {
+//    cerr<<"node "<< id << " got reply for message " << m->getIdMsgToRecover().id <<"," << m->getIdMsgToRecover().seq<<endl;
     pushbackMessagesInRecovery();
     inRecovery = false;
-    if(deliveredMessagesTracker.includesDependencies(m->getDependencies()))
+    if(deliveredMessagesTracker.SatisfiesDeliveryConditions(m->getDependencies(),m->getIdMsgToRecover().id))
+    {
+//        cerr<< "Node "<<id<<"delivers message " << currRecovery.id.id << "," << currRecovery.id.seq<<endl;
         deliverMsg(currRecovery);
+    }
     else
         recoveredMessages.push_back({currRecovery,m->getDependencies()});
     iterativeDelivery(); // checks for messages that can now be delivered or if there is another recovery to start
@@ -121,10 +119,7 @@ void NodeWithRecovery::pushbackMessagesInRecovery()
         vector<messageInfo>::iterator it = pendingMsg.begin();
         while(it != pendingMsg.end() && it->recvtime > msgR.recvtime)
             it++;
-        if(it==pendingMsg.end())
-            pendingMsg.push_back(msgR);
-        else
-            pendingMsg.insert(it,msgR);
+        pendingMsg.insert(it,msgR);
     }
     messagesToRecover.clear();
     return;
@@ -136,10 +131,10 @@ void NodeWithRecovery::iterativeDelivery()
     do
     {
         messageDelivered=false;
-        if(tryDeliverMessageInRecovery()) // to skip pending messages and directly pass again to see if recovered messages can be delivered
+        if(tryDeliverMessageInRecovery())
         {
             messageDelivered = true;
-            continue;
+            continue; // to skip pending messages and directly pass again to see if recovered messages can be delivered
         }
         if(tryDeliverPendingMessages())
             messageDelivered = true;
@@ -152,7 +147,7 @@ bool NodeWithRecovery::tryDeliverMessageInRecovery()
     vector<recoveredMessage>::iterator it;
     for(it=recoveredMessages.begin() ; it!= recoveredMessages.end() ; it++ )
     {
-        if(deliveredMessagesTracker.includesDependencies(it->dependencies))
+        if(deliveredMessagesTracker.SatisfiesDeliveryConditions(it->dependencies,it->msg.id.id))
         {
             deliverMsg(it->msg);
             recoveredMessages.erase(it);
@@ -164,21 +159,18 @@ bool NodeWithRecovery::tryDeliverMessageInRecovery()
 
 bool NodeWithRecovery::tryDeliverPendingMessages()
 {
-    bool messageDelivered=false;
-    for(vector<messageInfo>::iterator it=pendingMsg.begin(); it!=pendingMsg.end(); /*fait dans la boucle à cause du erase*/)
+    for(vector<messageInfo>::iterator it=pendingMsg.begin(); it!=pendingMsg.end(); it++)
     {
         if(testDeliverMessage(*it))
         {
-            it = pendingMsg.erase(it);
-            messageDelivered = true;
+            pendingMsg.erase(it);
+            return true;
         }
-        else
-            it++;
     }
-    return messageDelivered;
+    return false;
 }
 
-bool NodeWithRecovery::testDeliverMessage(messageInfo m)
+bool NodeWithRecovery::testDeliverMessage(const messageInfo& m)
 {
     if(clock.satisfiesDeliveryCondition(m.clock, params->getEntriesIncrementedByProcess(m.id.id)))
     {
@@ -196,7 +188,7 @@ bool NodeWithRecovery::testDeliverMessage(messageInfo m)
             else
             {
                 requestDependencies(m);
-                cerr<<"node " << id << " can causally deliver message " << m.id.id << "," << m.id.seq<< " "<< control->canCausallyDeliverMessage(m.id, id)<<endl;
+//                cerr<<"node " << id << " can causally deliver message " << m.id.id << "," << m.id.seq<< " "<< control->canCausallyDeliverMessage(m.id, id)<<endl;
             }
         }
         return true;
@@ -204,7 +196,7 @@ bool NodeWithRecovery::testDeliverMessage(messageInfo m)
     return false;
 }
 
-void NodeWithRecovery::requestDependencies(messageInfo m)
+void NodeWithRecovery::requestDependencies(const messageInfo& m)
 {
     statsRecovery.nbRecoveries++;
     inRecovery = true;
@@ -221,4 +213,3 @@ AppMsg* NodeWithRecovery::prepareBroadcast()
     localSentMsgDependencies.push_back({seq,deliveredMessagesTracker});
     return m;
 }
-

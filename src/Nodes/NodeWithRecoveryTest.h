@@ -24,8 +24,10 @@ class NodeWithRecoveryTest : public NodeWithRecovery
         NodeWithRecoveryTest();
         virtual ~NodeWithRecoveryTest();
 
-        bool testDeliverMessage(messageInfo m);
+    protected:
+        bool testDeliverMessage(const messageInfo& m);
         bool recoveryTest(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries);
+        bool tryHash(const messageInfo& message, const TotalDependencies& dependencies, unsigned doneHashes);
         bool TryCombinationsRecoveringMessages(const messageInfo& message, unsigned int& nbHashs, const TotalDependencies& baseDependencies, const vector<idMsg>& messagesToCombine);
         vector<idMsg> createRecoveredMessagesToCombine(const messageInfo& message, const vector<unsigned int>& incrementedClockEntries);
 

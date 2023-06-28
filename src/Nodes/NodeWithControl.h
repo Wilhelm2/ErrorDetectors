@@ -28,24 +28,26 @@ class NodeWithControl : public NodeBase
         NodeWithControl();
         virtual ~NodeWithControl();
 
+    protected:
         virtual void initialize() override;
 
         virtual AppMsg* createAppMsg();
         virtual AppMsg* prepareBroadcast();
         void removeOldMessages();
-        virtual bool deliverMsg(messageInfo message);
+        virtual bool deliverMsg(const messageInfo& message);
         void RecvAppMsg(AppMsg*m);
         const vector<unsigned int>& getIndexIncrementedEntries(unsigned int idSource);
 
-
         virtual void processMessage(cMessage* msg) = 0;
-        virtual bool testDeliverMessage(messageInfo message) = 0;
+        virtual bool testDeliverMessage(const messageInfo& message) = 0;
         virtual void iterativeDelivery() = 0;
 
         ProbabilisticClock clock;
         TotalDependencies deliveredMessagesTracker ; // tracks dependencies of process
         vector<messageInfo> pendingMsg;
         vector<messageInfo> delivered;
+
+        friend class Stats;
 };
 
 #endif /* NODES_NODEWITHCONTROL_H_ */

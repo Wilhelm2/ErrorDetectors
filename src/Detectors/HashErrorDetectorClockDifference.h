@@ -16,12 +16,13 @@ class ErrorDetectorClockDifference : public HashErrorDetector
         ErrorDetectorClockDifference();
         virtual ~ErrorDetectorClockDifference();
         virtual vector<idMsg> determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock);
-        bool isConsideredAsDependency(messageInfo message, messageInfo possibleDep);
-        bool isConsideredAsPossibleDependency(messageInfo message, messageInfo possibleDep);
-        vector<idMsg> sortPossibleDependenciesSet(messageInfo message, vector<messageInfo> baseCombineSet, Controller* controller);
+        bool isConsideredAsDependency(const messageInfo& message, const messageInfo& possibleDep);
+        bool isConsideredAsPossibleDependency(const messageInfo& message, const messageInfo& possibleDep);
+        vector<idMsg> sortPossibleDependenciesSet(const messageInfo& message, const vector<messageInfo>& baseCombineSet, Controller* controller);
         void setClockDifferenceConsideredDependency(unsigned int messageLoad, unsigned nbIncrementedEntries);
         PartialDependencies getPartialDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock);
 
+    private:
         unsigned int clockDifferenceConsideredDependency = 100;
         unsigned int clockDifferenceConsideredNotDependency = 0;
 };

@@ -24,8 +24,9 @@ class NodePC : public NodeWithControl
         NodePC();
         virtual ~NodePC();
 
+    protected:
         virtual void processMessage(cMessage* msg);
-        virtual bool testDeliverMessage(messageInfo message);
+        virtual bool testDeliverMessage(const messageInfo& message);
         virtual void iterativeDelivery();
 
 };

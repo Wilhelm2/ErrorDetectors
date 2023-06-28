@@ -3,8 +3,8 @@ from shutil import copyfile
 import subprocess
 
 
-if len(sys.argv) != 7:
-	print sys.argv[0] + " nbNodes clockSize sendWindow peaksPerSecond deliveryOption recovering"  
+if len(sys.argv) != 6:
+	print sys.argv[0] + " nbNodes clockSize sendWindow peaksPerSecond deliveryOption"  
 	exit(1)
 
 nbNodes = sys.argv[1]
@@ -12,7 +12,7 @@ clockSize = sys.argv[2]
 sendWindow = sys.argv[3]
 peaksPerSecond = sys.argv[4]
 deliveryOption = sys.argv[5]
-recovering = sys.argv[6]
+recovering = "true" if (deliveryOption=='5' or deliveryOption=='6') else "false"
 
 def writeInitFile(nbNodes, clockSize, sendWindow, peaksPerSecond):
 	with open("omnetpp.ini","w") as f:

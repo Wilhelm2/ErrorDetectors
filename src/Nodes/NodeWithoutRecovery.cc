@@ -49,7 +49,6 @@ void NodeWithoutRecovery::iterativeDelivery()
         {
             if(testDeliverMessage(*it))
             {
-                deliverMsg(*it);
                 it=pendingMsg.erase(it);
                 hasDeliveredMessage=true;
             }
@@ -61,7 +60,7 @@ void NodeWithoutRecovery::iterativeDelivery()
     return ;
 }
 
-bool NodeWithoutRecovery::testDeliverMessage(messageInfo message)
+bool NodeWithoutRecovery::testDeliverMessage(const messageInfo& message)
 {
     if(clock.satisfiesDeliveryCondition(message.clock, params->getEntriesIncrementedByProcess(message.id.id)))
     {
@@ -75,6 +74,7 @@ bool NodeWithoutRecovery::testDeliverMessage(messageInfo message)
             if(!detector->test(message, getIndexIncrementedEntries(message.id.id), clock, deliveredMessagesTracker, control, params, delivered))
                 detector->stats.falseNegative++;
         }
+        deliverMsg(message);
         return true;
     }
     return false;

@@ -41,10 +41,9 @@ void Controller::initialize(int stage)
     cSimpleModule::initialize(stage);
     params =  dynamic_cast<SimulationParameters*> (getModuleByPath((string(PACKAGENAME)+".simParams").c_str()));
     processDependencies.resize(params->nbNodes);
-    for(vector<TotalDependencies>::iterator it = processDependencies.begin(); it != processDependencies.end(); it++ )
-        *it = TotalDependencies(params->nbNodes);
+    for(TotalDependencies& it : processDependencies)
+        it = TotalDependencies(params->nbNodes);
     processBroadcastedMessages.resize(params->nbNodes);
-    //testModule();
 }
 
 void Controller::notifySendMessage(unsigned int idSender,unsigned  int seq)
@@ -107,7 +106,7 @@ bool Controller::notifyDeliverMessage(idMsg idM, unsigned int idDest)
     return correctDelivery;
 }
 
-void Controller::printDeliveryError(string errorReason, idMsg idM, unsigned int destProcess, TotalDependencies messageDependencies, TotalDependencies processDependencies)
+void Controller::printDeliveryError(string errorReason, idMsg idM, unsigned int destProcess, const TotalDependencies& messageDependencies, const TotalDependencies& processDependencies)
 {
     cerr <<"BroadcastController " <<  errorReason << " idMsg " << idM.id << ","<< idM.seq << " destination " << destProcess<<endl;
     cerr << "Process clock: " ;
@@ -129,7 +128,6 @@ void Controller::deleteMessage(idMsg idM)
     for(it = processBroadcastedMessages[idM.id].begin(); it != processBroadcastedMessages[idM.id].end(); ++it )
         if( it->seq == idM.seq)
             break;
-
     if(it == processBroadcastedMessages[idM.id].end())
         throw "Message not found";
     processBroadcastedMessages[idM.id].erase(it);

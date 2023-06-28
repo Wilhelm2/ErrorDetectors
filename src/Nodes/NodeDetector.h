@@ -24,19 +24,21 @@
 
 class NodeDetector : public NodeWithControl
 {
-public:
-    NodeDetector();
-    virtual ~NodeDetector();
-    virtual void initialize() override;
+    protected:
+        NodeDetector();
+        virtual ~NodeDetector();
+        virtual void initialize() override;
 
-    AppMsg* createAppMsg();
-    AppMsg* prepareBroadcast();
+        AppMsg* createAppMsg();
+        AppMsg* prepareBroadcast();
 
-    virtual void processMessage(cMessage* msg) = 0;
-    virtual bool testDeliverMessage(messageInfo message) = 0;
-    virtual void iterativeDelivery() = 0;
+        virtual void processMessage(cMessage* msg) = 0;
+        virtual bool testDeliverMessage(const messageInfo& message) = 0;
+        virtual void iterativeDelivery() = 0;
 
-    ErrorDetector* detector;
+        ErrorDetector* detector;
+
+        friend class Stats;
 };
 
 #endif /* NODES_NODEDETECTOR_H_ */

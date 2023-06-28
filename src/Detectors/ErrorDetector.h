@@ -31,12 +31,17 @@ typedef struct s_stats_errorDetector{
 }stats_errorDetector;
 
 class ErrorDetector {
-public:
-    ErrorDetector();
-    virtual ~ErrorDetector() = 0;
-    virtual AppMsg* prepareMessage(AppMsg* m, const vector<messageInfo>& delivered, const ProbabilisticClock& clock, const TotalDependencies& processDependencies) = 0;
-    virtual bool test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params, const vector<messageInfo>& delivered) = 0;
-    stats_errorDetector stats;
+    public:
+        ErrorDetector();
+        virtual ~ErrorDetector() = 0;
+        virtual AppMsg* prepareMessage(AppMsg* m, const vector<messageInfo>& delivered, const ProbabilisticClock& clock, const TotalDependencies& processDependencies) = 0;
+        virtual bool test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params, const vector<messageInfo>& delivered) = 0;
+    private:
+        stats_errorDetector stats;
+    friend class Stats;
+    friend class NodeWithoutRecovery;
+    friend class NodeWithRecovery;
+    friend class NodeWithRecoveryTest;
 };
 
 #endif /* ERRORDETECTOR_H_ */

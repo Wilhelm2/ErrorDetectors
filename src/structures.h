@@ -20,7 +20,6 @@ typedef struct s_id
 } idMsg;
 #define IDMSG_EQ(idM1,idM2) (idM1.id == idM2.id && idM1.seq == idM2.seq)
 
-
 typedef struct s_messageInfo
 {
     idMsg id;
@@ -42,7 +41,6 @@ typedef struct s_messageInfo
 
     }
 }messageInfo;
-
 
 #define CHANNELDELAY 100000.
 #define PACKAGENAME "ErrorDetectorWithRecovery"

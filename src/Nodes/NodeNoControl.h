@@ -24,6 +24,7 @@ class NodeNoControl : public NodeBase
     public:
         NodeNoControl();
         virtual ~NodeNoControl();
+    private:
         virtual void processMessage(cMessage* msg);
 };
 

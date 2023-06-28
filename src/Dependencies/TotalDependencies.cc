@@ -20,7 +20,7 @@ TotalDependencies::TotalDependencies() {
 
 }
 
-TotalDependencies::TotalDependencies(vector<unsigned int> dependencies)
+TotalDependencies::TotalDependencies(const vector<unsigned int>& dependencies)
 {
     this->dependencies = dependencies;
 }
@@ -39,7 +39,12 @@ unsigned int& TotalDependencies::operator[](unsigned int i)
     return dependencies[i];
 }
 
-bool TotalDependencies::operator==(TotalDependencies compareDep)
+unsigned int TotalDependencies::operator[](unsigned int i) const
+{
+    return dependencies[i];
+}
+
+bool TotalDependencies::operator==(const TotalDependencies& compareDep)
 {
     for(unsigned int i=0; i<dependencies.size(); i++)
         if(dependencies[i] != compareDep.getDependencies()[i])
@@ -47,7 +52,7 @@ bool TotalDependencies::operator==(TotalDependencies compareDep)
     return true;
 }
 
-bool TotalDependencies::operator<(TotalDependencies compareDep)
+bool TotalDependencies::operator<(const TotalDependencies& compareDep)
 {
     for(unsigned int i=0; i<dependencies.size(); i++)
         if(dependencies[i] < compareDep[i])
@@ -60,7 +65,7 @@ vector<unsigned int> TotalDependencies::getDependencies() const
     return dependencies;
 }
 
-bool TotalDependencies::includesDependencies(TotalDependencies dependenciesToCheck)
+bool TotalDependencies::includesDependencies(const TotalDependencies& dependenciesToCheck)
 {
     for(unsigned int i=0; i<dependencies.size(); i++)
         if(dependencies[i] < dependenciesToCheck[i])
@@ -68,14 +73,13 @@ bool TotalDependencies::includesDependencies(TotalDependencies dependenciesToChe
     return true;
 }
 
-bool TotalDependencies::includesDependencies(vector<idMsg> dependenciesToCheck)
+bool TotalDependencies::includesDependencies(const vector<idMsg>& dependenciesToCheck)
 {
-    for(idMsg id : dependenciesToCheck)
+    for(const idMsg& id : dependenciesToCheck)
         if(dependencies[id.id] < id.seq)
             return false;
     return true;
 }
-
 
 void TotalDependencies::print()
 {
@@ -84,14 +88,14 @@ void TotalDependencies::print()
     cout<< endl;
 }
 
-void TotalDependencies::printErr()
+void TotalDependencies::printErr() const
 {
     for(unsigned int elt : dependencies)
         cerr << elt << "\t";
     cerr<< endl;
 }
 
-bool TotalDependencies::SatisfiesDeliveryConditions(TotalDependencies MessageDependencies, unsigned int idMessageSender)
+bool TotalDependencies::SatisfiesDeliveryConditions(const TotalDependencies& MessageDependencies, unsigned int idMessageSender)
 {
     for(unsigned int i=0; i < dependencies.size(); i++)
     {
@@ -111,7 +115,7 @@ bool TotalDependencies::SatisfiesDeliveryConditions(TotalDependencies MessageDep
     return true;
 }
 
-void TotalDependencies::printComparisionWith(TotalDependencies dep)
+void TotalDependencies::printComparisionWith(const TotalDependencies& dep)
 {
     for(unsigned int i=0; i<dependencies.size(); i++)
     {

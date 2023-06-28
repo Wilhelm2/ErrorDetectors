@@ -17,7 +17,6 @@
 
 std::normal_distribution<double> NodeBase::sendDistribution = std::normal_distribution<double>(0.,10000.);
 
-
 NodeBase::NodeBase() {
     // TODO Auto-generated constructor stub
 
@@ -70,7 +69,6 @@ void NodeBase::handleMessage(cMessage *msg)
 AppMsg* NodeBase::prepareBroadcast()
 {
     AppMsg* m = createAppMsg();
-
     control->notifySendMessage(id, seq);
     control->notifyDeliverMessage({id, seq}, id);
     std::cerr<<simTime()<< " BROADCASTMSG " << id << "," << seq <<endl;
@@ -85,7 +83,7 @@ AppMsg* NodeBase::createAppMsg()
     return m;
 }
 
-bool NodeBase::deliverMsg(messageInfo message)
+bool NodeBase::deliverMsg(const messageInfo& message)
 {
 //        cout<<"Node " << id << " delivers " << message.id.id << ","<<message.id.seq<<endl;
     stats.nbDeliveredMessages++;

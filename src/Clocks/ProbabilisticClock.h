@@ -23,26 +23,26 @@
 using namespace std;
 
 class ProbabilisticClock {
-public:
-    ProbabilisticClock();
-    ProbabilisticClock(unsigned int size);
-    virtual ~ProbabilisticClock();
+    public:
+        ProbabilisticClock();
+        ProbabilisticClock(unsigned int size);
+        virtual ~ProbabilisticClock();
 
-    bool operator<=(const ProbabilisticClock& PC) const;
-    unsigned int& operator[](unsigned int i);
-    unsigned int operator[](unsigned int i) const;
-    unsigned int size() const;
+        bool operator<=(const ProbabilisticClock& PC) const;
+        unsigned int& operator[](unsigned int i);
+        unsigned int operator[](unsigned int i) const;
+        unsigned int size() const;
 
 
-    void incrementEntries(const vector<unsigned int>& entries);
-    bool satisfiesDeliveryCondition(const ProbabilisticClock& PC, const vector<unsigned int>& sendIncrementedEntries) const;
+        void incrementEntries(const vector<unsigned int>& entries);
+        bool satisfiesDeliveryCondition(const ProbabilisticClock& PC, const vector<unsigned int>& sendIncrementedEntries) const;
 
-    void printClock()const;
-    void decreaseEntry(unsigned int entry);
-    unsigned int clockEntryDifference(const ProbabilisticClock& PC) const;
-    const unsigned int at(unsigned int entry) const;
-
-    vector<unsigned int> clock;
+        void printClock()const;
+        void decreaseEntry(unsigned int entry);
+        unsigned int clockEntryDifference(const ProbabilisticClock& PC) const;
+        const unsigned int at(unsigned int entry) const;
+    private:
+        vector<unsigned int> clock;
 };
 
 #endif /* PROBABILISTICCLOCK_H_ */

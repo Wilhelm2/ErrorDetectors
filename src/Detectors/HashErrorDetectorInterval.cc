@@ -19,7 +19,7 @@ ErrorDetectorInterval::~ErrorDetectorInterval() {
 vector<idMsg> ErrorDetectorInterval::determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock)
 {
     vector<idMsg> dependencies;
-    for(const messageInfo t: delivered)
+    for(const messageInfo& t: delivered)
     {
         if(t.recvtime > simTime() - 2*deltaTS ) // appends messages delivered in the last 2\deltaT seconds
             dependencies.push_back(t.id);
@@ -27,24 +27,23 @@ vector<idMsg> ErrorDetectorInterval::determineAndGetAppendedDependencies(const v
     return dependencies;
 }
 
-bool ErrorDetectorInterval::isConsideredAsDependency(messageInfo message, messageInfo possibleDep)
+bool ErrorDetectorInterval::isConsideredAsDependency(const messageInfo& message, const messageInfo& possibleDep)
 {
     return(possibleDep.recvtime < message.recvtime - 2*deltaTR - cdelay);
 }
 
-bool ErrorDetectorInterval::isConsideredAsPossibleDependency(messageInfo message, messageInfo possibleDep)
+bool ErrorDetectorInterval::isConsideredAsPossibleDependency(const messageInfo& message, const messageInfo& possibleDep)
 {
     return(possibleDep.recvtime > message.recvtime - 2*deltaTR - cdelay);
 }
 
-
-vector<idMsg> ErrorDetectorInterval::sortPossibleDependenciesSet(messageInfo message, vector<messageInfo> baseCombineSet, Controller* controller)
+vector<idMsg> ErrorDetectorInterval::sortPossibleDependenciesSet(const messageInfo& message, const vector<messageInfo>& baseCombineSet, Controller* controller)
 {
     vector<messageInfo> BaseCombineSetRes;
     vector<idMsg> res;
     vector<messageInfo>::iterator resit;
 
-    for(messageInfo d: baseCombineSet)
+    for(const messageInfo& d: baseCombineSet)
     {
         for(resit = BaseCombineSetRes.begin(); resit != BaseCombineSetRes.end(); resit++)
         {
@@ -53,7 +52,7 @@ vector<idMsg> ErrorDetectorInterval::sortPossibleDependenciesSet(messageInfo mes
         }
         BaseCombineSetRes.insert(resit, d);
     }
-    for(messageInfo msg : BaseCombineSetRes)
+    for(const messageInfo& msg : BaseCombineSetRes)
         res.push_back(msg.id);
     return res;
 }
@@ -62,11 +61,10 @@ PartialDependencies ErrorDetectorInterval::getPartialDependencies(const vector<m
 {
     messageInfo message; message.clock = clock;
     PartialDependencies depVector;
-    for(messageInfo d : delivered)
+    for(const messageInfo& d : delivered)
     {
         if(isConsideredAsPossibleDependency(message, d))
             depVector.set(d.id);
     }
     return depVector;
 }
-

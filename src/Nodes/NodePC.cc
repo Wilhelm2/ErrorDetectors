@@ -40,9 +40,15 @@ void NodePC::processMessage(cMessage* msg)
         scheduleAt(simTime()+ delay, msg);
 }
 
-bool NodePC::testDeliverMessage(messageInfo message)
+bool NodePC::testDeliverMessage(const messageInfo& message)
 {
-    return clock.satisfiesDeliveryCondition(message.clock, getIndexIncrementedEntries(message.id.id));
+    if(clock.satisfiesDeliveryCondition(message.clock, getIndexIncrementedEntries(message.id.id)))
+    {
+        deliverMsg(message);
+        return true;
+    }
+    else
+        return false;
 }
 
 void NodePC::iterativeDelivery()
@@ -54,7 +60,6 @@ void NodePC::iterativeDelivery()
         {
             if(testDeliverMessage(*it))
             {
-                deliverMsg(*it);
                 it=pendingMsg.erase(it);
                 hasDeliveredMessage=true;
             }

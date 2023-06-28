@@ -50,7 +50,6 @@ void Stats::initialize()
         nbRecoveriesFile.open("data/nbRecoveriesFile.dat",std::ios::out);
         nbAvoidedRecoveriesFile.open("data/nbAvoidedRecoveriesFile.dat",std::ios::out);
     }
-
 }
 
 void Stats::handleMessage(cMessage *msg)
@@ -63,7 +62,6 @@ void Stats::handleMessage(cMessage *msg)
     writeNbSentDependencies();
     writeControlDataSize();
 
-    cerr<<"value of delivery " << (int)params->DeliveryController<<endl;
     if(params->DeliveryController != SimulationParameters::Delivery::NOTHING)
     {
         printBuffersStates();
@@ -85,6 +83,7 @@ void Stats::handleMessage(cMessage *msg)
         WriteTotalNbRecoveries();
         writeNbAvoidedRecoveries();
         printNbMessagesToRecover();
+        printNbJumpedBroadcasts();
     }
 
     if(simTime()==100)
@@ -286,12 +285,22 @@ void Stats::writeNbAvoidedRecoveries()
 
 void Stats::printNbMessagesToRecover()
 {
-
     cerr<< "Number of messages to recover for each process :"<<endl;
     for(NodeBase* n : nodes)
     {
         NodeWithRecovery* nr = dynamic_cast<NodeWithRecovery*>(n);
         cerr<<nr->messagesToRecover.size()<< " ";
+    }
+    cerr<<endl;
+}
+
+void Stats::printNbJumpedBroadcasts()
+{
+    cerr<< "Number of jumped broadcasts for each process :"<<endl;
+    for(NodeBase* n : nodes)
+    {
+        NodeWithRecovery* nr = dynamic_cast<NodeWithRecovery*>(n);
+        cerr<<nr->statsRecovery.jumpedBroadcasts<< " ";
     }
     cerr<<endl;
 }

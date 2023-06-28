@@ -27,20 +27,17 @@
 #include "structures.h"
 using namespace omnetpp;
 
-
 class NodeBase;
-
 
 class Stats : public cSimpleModule
 {
-  protected:
+  private:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
 
     vector<NodeBase*> nodes;
     SimulationParameters* params;
 
-  public :
     void writeNbDeliveredMessages();
     void writeNbFalseDeliveredMessages();
     void writeNbSentDependencies();
@@ -55,6 +52,7 @@ class Stats : public cSimpleModule
     void WriteTotalNbRecoveries();
     void writeNbAvoidedRecoveries();
     void printNbMessagesToRecover();
+    void printNbJumpedBroadcasts();
     bool usesHashDetector();
 
     std::ofstream nbRecoveriesFile;

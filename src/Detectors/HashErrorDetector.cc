@@ -89,7 +89,7 @@ bool HashErrorDetector::hashTotalDependencies(const messageInfo& message, const 
     vector<idMsg> possibleDependencies = sortPossibleDependenciesSet(message, set, controller);
 
     vector<vector<bool>> testedDependencySets = params->getDependencyCombinations(possibleDependencies.size());
-    for(vector<bool> isDepConsideredVec : testedDependencySets)
+    for(const vector<bool>& isDepConsideredVec : testedDependencySets)
     {
         copieBaseDependencies = baseDependencies;
         for(unsigned int i=0; i<isDepConsideredVec.size(); i++)
@@ -115,7 +115,7 @@ TotalDependencies HashErrorDetector::createBaseDependencies(const messageInfo& m
   //          message.clock.decreaseEntry(entry); // improvment to detect concurrent messages
     TotalDependencies baseDependencies = processDependencies;
     // check for concurrent messages to remove from the base dependencies
-    for(messageInfo possibleDep : delivered)
+    for(const messageInfo& possibleDep : delivered)
     {
         if(!isPossibleDependency(message, possibleDep) || !isConsideredAsDependency(message, possibleDep)) // message cannot be a dependency or received to recently (in which case it is considered as possible dependency)
             baseDependencies[possibleDep.id.id] = min(possibleDep.id.seq-1, baseDependencies[possibleDep.id.id]);
@@ -131,7 +131,7 @@ bool HashErrorDetector::isPossibleDependency(const messageInfo& message, const m
     {
         if(isConsideredAsPossibleDependency(message, possibleDep))
         {
-            for(idMsg dependency: message.dependencies)
+            for(const idMsg& dependency: message.dependencies)
             {
                 if(IDMSG_EQ(dependency, possibleDep.id))
                     return true; // received too recently but in dependencies
@@ -150,7 +150,7 @@ vector<messageInfo> HashErrorDetector::createPossibleDependenciesSet(const messa
     vector<messageInfo> BaseCombineSet;
     unsigned int falseDetected = 0;
 
-    for(messageInfo possibleDep : messageToChooseFrom)
+    for(const messageInfo& possibleDep : messageToChooseFrom)
     {
         if(isPossibleDependency(message, possibleDep) && isConsideredAsPossibleDependency(message, possibleDep))
         {
@@ -210,7 +210,7 @@ size_t HashErrorDetector::hashPartialDependencies(const PartialDependencies& dep
 {
     map<unsigned int, idMsg> tmp = dependencies.getDependencies();
     vector<unsigned int> depvector;
-    for(auto entry : tmp)
+    for(const auto& entry : tmp)
         depvector.push_back(entry.second.seq*entry.second.id); // multiply by id too to decrease collisions
 
     hashStats.nbHash++;

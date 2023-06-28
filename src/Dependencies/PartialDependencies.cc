@@ -24,11 +24,10 @@ PartialDependencies::~PartialDependencies() {
     // TODO Auto-generated destructor stub
 }
 
-PartialDependencies::PartialDependencies(map<unsigned int,idMsg> dependencies)
+PartialDependencies::PartialDependencies(const map<unsigned int,idMsg>& dependencies)
 {
     this->dependencies = dependencies;
 }
-
 
 unsigned int& PartialDependencies::operator[](unsigned int i)
 {
@@ -36,25 +35,30 @@ unsigned int& PartialDependencies::operator[](unsigned int i)
     return dependencies[i].seq;
 }
 
-bool PartialDependencies::operator==(PartialDependencies compareDep)
+unsigned int PartialDependencies::at(unsigned int i) const
 {
-    for(tuple<unsigned int,idMsg> m : compareDep.getDependencies())
+    return dependencies.at(i).seq;
+}
+
+bool PartialDependencies::operator==(const PartialDependencies& compareDep) const
+{
+    for(const tuple<unsigned int,idMsg> m : compareDep.getDependencies())
     {
         if(dependencies.find(get<0>(m))==dependencies.end())
             return false;
-        if(get<1>(m).seq!= dependencies[get<0>(m)].seq)
+        if(get<1>(m).seq != dependencies.at(get<0>(m)).seq)
             return false;
     }
     return true;
 }
 
-bool PartialDependencies::operator<(PartialDependencies compareDep)
+bool PartialDependencies::operator<(const PartialDependencies& compareDep) const
 {
     for(tuple<unsigned int,idMsg> m : compareDep.getDependencies())
     {
         if(dependencies.find(get<0>(m))==dependencies.end())
             return false;
-        if(get<1>(m).seq >= dependencies[get<0>(m)].seq)
+        if(get<1>(m).seq >= dependencies.at(get<0>(m)).seq)
             return false;
     }
     return true;
@@ -65,7 +69,7 @@ map<unsigned int, idMsg> PartialDependencies::getDependencies() const
     return dependencies;
 }
 
-bool PartialDependencies::includesDependencies(PartialDependencies dependenciesToCheck)
+bool PartialDependencies::includesDependencies(const PartialDependencies& dependenciesToCheck)
 {
     return dependenciesToCheck < *this;
 }
@@ -84,27 +88,27 @@ void PartialDependencies::printErr()
     cerr<< endl;
 }
 
-bool PartialDependencies::SatisfiesDeliveryConditions(PartialDependencies MessageDependencies, unsigned int idMessageSender)
+bool PartialDependencies::SatisfiesDeliveryConditions(const PartialDependencies& MessageDependencies, unsigned int idMessageSender)
 {
     for(unsigned int i=0; i < dependencies.size(); i++)
     {
-        if(MessageDependencies[i]==0)// No causal dependency + necessary because MessageDependencies[i] -1 provokes buffer underflow
+        if(MessageDependencies.at(i) == 0)// No causal dependency + necessary because MessageDependencies[i] -1 provokes buffer underflow
             continue;
         if(i == idMessageSender)
         {
-            if( dependencies[i].seq < (MessageDependencies[i]-1) )
+            if( dependencies.at(i).seq < (MessageDependencies.at(i)-1) )
                 return false;
         }
         else
         {
-            if( dependencies[i].seq < MessageDependencies[i] )
+            if( dependencies.at(i).seq < MessageDependencies.at(i) )
                 return false;
         }
     }
     return true;
 }
 
-void PartialDependencies::printComparisionWith(PartialDependencies dep)
+void PartialDependencies::printComparisionWith(const PartialDependencies& dep)
 {
     for(auto d: dependencies)
         cerr<<d.second.id << "," << d.second.seq<<endl;
@@ -112,7 +116,6 @@ void PartialDependencies::printComparisionWith(PartialDependencies dep)
     for(auto d: dep.getDependencies())
         cerr<<d.second.id << "," << d.second.seq<<endl;
 }
-
 
 void PartialDependencies::clear()
 {

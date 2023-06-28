@@ -26,7 +26,7 @@ NodeWithRecoveryTest::~NodeWithRecoveryTest() {
     // TODO Auto-generated destructor stub
 }
 
-bool NodeWithRecoveryTest::testDeliverMessage(messageInfo m)
+bool NodeWithRecoveryTest::testDeliverMessage(const messageInfo& m)
 {
     if(clock.satisfiesDeliveryCondition(m.clock, params->getEntriesIncrementedByProcess(m.id.id)))
     {
@@ -46,7 +46,7 @@ bool NodeWithRecoveryTest::testDeliverMessage(messageInfo m)
                 if(recoveryTest(m, delivered, params->entriesIncrementedByProcess[m.id.id%params->nbCombinations]))
                 {
                     requestDependencies(m);
-                    cerr<<"node " << id << " can causally deliver message " << m.id.id << "," << m.id.seq<< " "<< control->canCausallyDeliverMessage(m.id, id)<<endl;
+//                    cerr<<"node " << id << " can causally deliver message " << m.id.id << "," << m.id.seq<< " "<< control->canCausallyDeliverMessage(m.id, id)<<endl;
                 }
                 else
                     statsRecovery.nbAvoidedRecoveries++;
@@ -64,25 +64,20 @@ bool NodeWithRecoveryTest::recoveryTest(const messageInfo& message, const vector
     TotalDependencies baseDependencies = detector->createBaseDependencies(message, delivered, incrementedClockEntries, deliveredMessagesTracker);
     unsigned int nbHashs = 0;
 
-    for(const idMsg t: message.dependencies)
+    for(const idMsg& t: message.dependencies)
     {
         if(baseDependencies[t.id] < t.seq)
             baseDependencies[t.id] = t.seq;
     }
     nbHashs++;
-    detector->hashStats.nbHash++;
-    if(message.hash == detector->hashTotalDependencies(baseDependencies)) // tests if finds a hash with only the base dependencies in case the node didn't deliver some of them
-    {
-        detector->hashStats.doneCombinationsToFindHash[nbHashs]++;
-        recoveredMessages.push_back({message, baseDependencies});
+    if(tryHash(message, baseDependencies, nbHashs))
         return false;
-    }
 
     TotalDependencies tmpBaseDependencies = baseDependencies;
     vector<idMsg> messagesToCombine = detector->sortPossibleDependenciesSet(message, detector->createPossibleDependenciesSet(message, delivered, incrementedClockEntries, control), control);
     vector<idMsg> messagesToCombineRecovery = createRecoveredMessagesToCombine(message, incrementedClockEntries);
     vector<vector<bool>> testedDependencySets = params->getDependencyCombinations(messagesToCombine.size());
-    for(vector<bool> isDepConsideredVec : testedDependencySets)
+    for(const vector<bool>& isDepConsideredVec : testedDependencySets)
     {
         tmpBaseDependencies = baseDependencies;
         for(unsigned int i=0; i<isDepConsideredVec.size(); i++)
@@ -91,33 +86,40 @@ bool NodeWithRecoveryTest::recoveryTest(const messageInfo& message, const vector
                 tmpBaseDependencies[messagesToCombine[i].id] = messagesToCombine[i].seq;
         }
         nbHashs++;
-        detector->hashStats.nbHash++;
-        if(message.hash == detector->hashTotalDependencies(tmpBaseDependencies))
-        {
-            detector->hashStats.doneCombinationsToFindHash[nbHashs]++;
-            recoveredMessages.push_back({message, tmpBaseDependencies});
+        if(tryHash(message, tmpBaseDependencies, nbHashs))
             return false;
-        }
 
-        // tests with taking into account recovering messages
+        // tests with taking into account messages in recovery
         if(!TryCombinationsRecoveringMessages(message, nbHashs, tmpBaseDependencies, messagesToCombineRecovery))
             return false;
     }
 
-    // test by taking into account recovering messages
+    // test by taking into account messages in recovery
     if(!TryCombinationsRecoveringMessages(message, nbHashs, baseDependencies, messagesToCombineRecovery))
         return false;
     return true;
 }
 
+bool NodeWithRecoveryTest::tryHash(const messageInfo& message, const TotalDependencies& dependencies, unsigned doneHashes)
+{
+    HashErrorDetector* detector = dynamic_cast<HashErrorDetector*> (this->detector);
+    detector->hashStats.nbHash++;
+    if(message.hash == detector->hashTotalDependencies(dependencies))
+    {
+        detector->hashStats.doneCombinationsToFindHash[doneHashes]++;
+        recoveredMessages.push_back({message, dependencies});
+        return true;
+    }
+    return false;
+}
+
+
 // tests with messages in recovery
 bool NodeWithRecoveryTest::TryCombinationsRecoveringMessages(const messageInfo& message, unsigned int& nbHashs, const TotalDependencies& baseDependencies, const vector<idMsg>& messagesToCombine)
 {
     TotalDependencies tmpBaseDependencies;
-    HashErrorDetector* detector = dynamic_cast<HashErrorDetector*> (this->detector);
-
     vector<vector<bool>> testedDependencySets = params->getDependencyCombinations(messagesToCombine.size());
-    for(vector<bool> isDepConsideredVec : testedDependencySets)
+    for(const vector<bool>& isDepConsideredVec : testedDependencySets)
     {
         tmpBaseDependencies = baseDependencies;
         for(unsigned int i=0; i<isDepConsideredVec.size(); i++)
@@ -126,13 +128,8 @@ bool NodeWithRecoveryTest::TryCombinationsRecoveringMessages(const messageInfo& 
                 tmpBaseDependencies[messagesToCombine[i].id] = messagesToCombine[i].seq;
         }
         nbHashs++;
-        detector->hashStats.nbHash++;
-        if(detector->hashTotalDependencies(tmpBaseDependencies))
-        {
-            recoveredMessages.push_back({message, tmpBaseDependencies});
-            detector->hashStats.doneCombinationsToFindHash[nbHashs]++;
+        if(tryHash(message, tmpBaseDependencies, nbHashs))
             return false;
-        }
     }
     return true;
 }
@@ -142,7 +139,7 @@ vector<idMsg> NodeWithRecoveryTest::createRecoveredMessagesToCombine(const messa
     vector<messageInfo> recoveredTmp;
     HashErrorDetector* detector = dynamic_cast<HashErrorDetector*> (this->detector);
 
-    for(const recoveredMessage tmp : recoveredMessages)
+    for(const recoveredMessage& tmp : recoveredMessages)
         recoveredTmp.push_back(tmp.msg);
     if(inRecovery)
         recoveredTmp.push_back(currRecovery);

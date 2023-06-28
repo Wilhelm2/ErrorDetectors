@@ -41,7 +41,7 @@ src/ErrorDetectors_dbg
 # Data 
 Graphs/*
 !Graphs/*.py
-code/simulations/data
+simulations/data
 
 .cmdenv-log
 code/out

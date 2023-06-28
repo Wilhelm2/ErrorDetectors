@@ -40,6 +40,7 @@ class HashErrorDetector : public ErrorDetector{
         virtual bool test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params, const vector<messageInfo>& delivered);
         bool hashPartialDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, Controller* controller, SimulationParameters* params);
         bool hashTotalDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, const TotalDependencies& processDependencies, Controller* controller, SimulationParameters* params);
+        bool hashIsEqual(size_t messageHash, size_t dependenciesHash, unsigned int nbComputedHashes);
         TotalDependencies createBaseDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, const TotalDependencies& processDependencies);
         bool isPossibleDependency(const messageInfo& message, const messageInfo& possibleDep);
         vector<messageInfo> createPossibleDependenciesSet(const messageInfo& message, const vector<messageInfo>& messageToChooseFrom, const vector<unsigned int>& incrementedClockEntries, Controller* controller);

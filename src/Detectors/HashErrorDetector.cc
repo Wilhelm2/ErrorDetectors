@@ -52,17 +52,18 @@ bool HashErrorDetector::hashPartialDependencies(const messageInfo& message, cons
                 baseDependencies.set(possibleDependencies[i]);
         }
         nbHashs++;
-        if(message.hash == hashPartialDependencies(baseDependencies))
-        {
-            hashStats.doneCombinationsToFindHash[nbHashs]++;
+        if(hashIsEqual(message.hash, hashPartialDependencies(baseDependencies), nbHashs))
             return true;
-        }
     }
     nbHashs++;
-    baseDependencies.clear();
-    if(message.hash == hashPartialDependencies(baseDependencies))
+    return hashIsEqual(message.hash, hashPartialDependencies({}), nbHashs); // tries to compute the hash with no dependencies
+}
+
+bool HashErrorDetector::hashIsEqual(size_t messageHash, size_t dependenciesHash, unsigned int nbComputedHashes)
+{
+    if(messageHash == dependenciesHash)
     {
-        hashStats.doneCombinationsToFindHash[nbHashs]++;
+        hashStats.doneCombinationsToFindHash[nbComputedHashes]++;
         return true;
     }
     return false;
@@ -80,11 +81,8 @@ bool HashErrorDetector::hashTotalDependencies(const messageInfo& message, const 
             return false;
     }
     nbHashs++;
-    if(message.hash == hashTotalDependencies(baseDependencies))
-    {
-        hashStats.doneCombinationsToFindHash[nbHashs]++;
+    if(hashIsEqual(message.hash, hashTotalDependencies(baseDependencies), nbHashs))
         return true;
-    }
     vector<messageInfo> set = createPossibleDependenciesSet(message, delivered, incrementedClockEntries, controller);
     vector<idMsg> possibleDependencies = sortPossibleDependenciesSet(message, set, controller);
 
@@ -98,11 +96,8 @@ bool HashErrorDetector::hashTotalDependencies(const messageInfo& message, const 
                 copieBaseDependencies[possibleDependencies[i].id] = possibleDependencies[i].seq;
         }
         nbHashs++;
-        if(message.hash == hashTotalDependencies(copieBaseDependencies))
-        {
-            hashStats.doneCombinationsToFindHash[nbHashs]++;
+        if(hashIsEqual(message.hash, hashTotalDependencies(copieBaseDependencies), nbHashs))
             return true;
-        }
     }
 //    if(compareHashedDepToHash(vModele, message.hash, nbHashs))
   //      return true;
@@ -186,19 +181,6 @@ void HashErrorDetector::incrementnbMsgToCombine(unsigned int entry)
     }
 }
 
-void HashErrorDetector::incrementnbOperationsForHash(unsigned int entry)
-{
-    if(entry < hashStats.nbOperationsForHash.size())
-        hashStats.nbOperationsForHash[entry]++;
-    else
-    {
-        hashStats.nbOperationsForHash.resize(entry+1);
-        hashStats.nbOperationsForHash[entry]++;
-        cerr<<"resize nbOperationsForHash "<<entry<<endl;
-//        throw "INCREMENTS nbMsgToCombine OUT OF BOUND";
-    }
-}
-
 size_t HashErrorDetector::hashTotalDependencies(const TotalDependencies& dependencies)
 {
     hashStats.nbHash++;
@@ -216,6 +198,19 @@ size_t HashErrorDetector::hashPartialDependencies(const PartialDependencies& dep
     hashStats.nbHash++;
     incrementnbOperationsForHash(depvector.size());
     return hashDependencies(depvector);
+}
+
+void HashErrorDetector::incrementnbOperationsForHash(unsigned int entry)
+{
+    if(entry < hashStats.nbOperationsForHash.size())
+        hashStats.nbOperationsForHash[entry]++;
+    else
+    {
+        hashStats.nbOperationsForHash.resize(entry+1);
+        hashStats.nbOperationsForHash[entry]++;
+        cerr<<"resize nbOperationsForHash "<<entry<<endl;
+//        throw "INCREMENTS nbMsgToCombine OUT OF BOUND";
+    }
 }
 
 size_t HashErrorDetector::hashDependencies(const vector<unsigned int>& dependencies)

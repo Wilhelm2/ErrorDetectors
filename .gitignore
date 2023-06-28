@@ -30,7 +30,9 @@
 *.exe
 *.out
 *.app
-code/out/*
+code/out
+src/ErrorDetectors
+src/ErrorDetectors_dbg
 
 # Graph files 
 *.eps

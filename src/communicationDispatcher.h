@@ -47,7 +47,7 @@ typedef struct s_statsCommunicationModule
     unsigned int delayIntervals[200]={0};
 }statsCommunicationModule;
 
-/** @class CommunicationDispatcher.h
+/** @class CommunicationDispatcher
     @brief Class used to connect nodes. 
  * The system is organized in a star formation with the communicationDispatcher in the midle.  
  * All nodes are connected to the communicationDispatcher and send messages to each other through the communicationDispatcher.

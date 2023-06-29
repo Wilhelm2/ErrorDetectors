@@ -43,7 +43,7 @@ bool NodeWithRecoveryTest::testDeliverMessage(const messageInfo& m)
                 messagesToRecover.push_back(m);
             else
             {
-                if(recoveryTest(m, delivered, params->entriesIncrementedByProcess[m.id.id%params->nbCombinations]))
+                if(recoveryTest(m, delivered, params->entriesIncrementedByProcess[m.id.id%params->entriesIncrementedByProcess.size()]))
                 {
                     requestDependencies(m);
 //                    cerr<<"node " << id << " can causally deliver message " << m.id.id << "," << m.id.seq<< " "<< control->canCausallyDeliverMessage(m.id, id)<<endl;

@@ -68,6 +68,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Module to control that nodes deliver application messages exactly once and in causal order.  
+ <a href="class_controller.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_controller_8h_source.html">Controller.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Controller:</div>
@@ -79,7 +82,7 @@ Collaboration diagram for Controller:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_controller__coll__graph.png" border="0" usemap="#_controller_coll__map" alt="Collaboration graph"/></div>
 <map name="_controller_coll__map" id="_controller_coll__map">
-<area shape="rect" id="node3" href="class_simulation_parameters.html" title="TODO &#45; Generated class. " alt="" coords="99,95,249,121"/>
+<area shape="rect" id="node3" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. " alt="" coords="99,95,249,121"/>
 <area shape="rect" id="node4" href="class_dependencies.html" title="Dependencies" alt="" coords="140,5,245,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -91,35 +94,48 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ab87934c4f7a266cfdb86e0f36bc1b5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">~Controller</a> ()</td></tr>
 <tr class="separator:a0ab87934c4f7a266cfdb86e0f36bc1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad76a99df69bf99705dc18ba72b4b04c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad76a99df69bf99705dc18ba72b4b04c2">isDependency</a> (<a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> idM, <a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> idDep)</td></tr>
+<tr class="memdesc:ad76a99df69bf99705dc18ba72b4b04c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a message is a causal dependency of another message.  <a href="#ad76a99df69bf99705dc18ba72b4b04c2">More...</a><br /></td></tr>
 <tr class="separator:ad76a99df69bf99705dc18ba72b4b04c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7207304a07534e50a690f26c765b4a71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a7207304a07534e50a690f26c765b4a71">notifySendMessage</a> (unsigned int idSender, unsigned int seq)</td></tr>
+<tr class="memdesc:a7207304a07534e50a690f26c765b4a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by nodees when broadcasting a message to save the broadcasted message at the controller.  <a href="#a7207304a07534e50a690f26c765b4a71">More...</a><br /></td></tr>
 <tr class="separator:a7207304a07534e50a690f26c765b4a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8905abf1976e737410ac0142001e38a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a8905abf1976e737410ac0142001e38a0">notifyDeliverMessage</a> (<a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> idM, unsigned int idDest)</td></tr>
+<tr class="memdesc:a8905abf1976e737410ac0142001e38a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a node when delivering a message to notify the controller of the delivery, which verifies that the node delivers the message only once and in causal order.  <a href="#a8905abf1976e737410ac0142001e38a0">More...</a><br /></td></tr>
 <tr class="separator:a8905abf1976e737410ac0142001e38a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab57c4459f002be63b4deda1d7c3c3e29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ab57c4459f002be63b4deda1d7c3c3e29">canCausallyDeliverMessage</a> (<a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> idM, unsigned int idDest)</td></tr>
+<tr class="memdesc:ab57c4459f002be63b4deda1d7c3c3e29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that a proces can causally deliver a message.  <a href="#ab57c4459f002be63b4deda1d7c3c3e29">More...</a><br /></td></tr>
 <tr class="separator:ab57c4459f002be63b4deda1d7c3c3e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aa813a54b625a16ee0c039838b8cdd661"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa813a54b625a16ee0c039838b8cdd661">initialize</a> (int stage)</td></tr>
-<tr class="separator:aa813a54b625a16ee0c039838b8cdd661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d5755bc8fed07cebd88f857f0f83df"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a28d5755bc8fed07cebd88f857f0f83df">initialize</a> ()</td></tr>
+<tr class="memdesc:a28d5755bc8fed07cebd88f857f0f83df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the controller.  <a href="#a28d5755bc8fed07cebd88f857f0f83df">More...</a><br /></td></tr>
+<tr class="separator:a28d5755bc8fed07cebd88f857f0f83df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa32d5c18e9e30caf2900527e42b93d44"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa32d5c18e9e30caf2900527e42b93d44">searchMessage</a> (<a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> idM)</td></tr>
+<tr class="memdesc:aa32d5c18e9e30caf2900527e42b93d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the structure associated to a broadcasted message.  <a href="#aa32d5c18e9e30caf2900527e42b93d44">More...</a><br /></td></tr>
 <tr class="separator:aa32d5c18e9e30caf2900527e42b93d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad43f12368786278dd1171226b666395d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad43f12368786278dd1171226b666395d">printDeliveryError</a> (string errorReason, <a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> idM, unsigned int destProcess, const <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &amp;messageDependencies, const <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &amp;<a class="el" href="class_controller.html#ae8234cd96adbdeff4b56a59f6c54df58">processDependencies</a>)</td></tr>
-<tr class="separator:ad43f12368786278dd1171226b666395d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c4ebef8d344e10e86c1b4f95171281"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aa3c4ebef8d344e10e86c1b4f95171281">printDeliveryError</a> (string errorReason, <a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> idM, unsigned int destnode, const <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &amp;messageDependencies, const <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &amp;<a class="el" href="class_controller.html#ade3eeb8e78c5307d518e3b43967c4bac">nodeDependencies</a>)</td></tr>
+<tr class="memdesc:aa3c4ebef8d344e10e86c1b4f95171281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to print delivery errors.  <a href="#aa3c4ebef8d344e10e86c1b4f95171281">More...</a><br /></td></tr>
+<tr class="separator:aa3c4ebef8d344e10e86c1b4f95171281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab250759d5c511ceb8f35fdf9e42583cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ab250759d5c511ceb8f35fdf9e42583cd">deleteMessage</a> (<a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> idM)</td></tr>
+<tr class="memdesc:ab250759d5c511ceb8f35fdf9e42583cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to remove messages delivered by all processes.  <a href="#ab250759d5c511ceb8f35fdf9e42583cd">More...</a><br /></td></tr>
 <tr class="separator:ab250759d5c511ceb8f35fdf9e42583cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ae96146dee6f60ecd94bfe40b9fc658ad"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; <a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ae96146dee6f60ecd94bfe40b9fc658ad">processBroadcastedMessages</a></td></tr>
-<tr class="separator:ae96146dee6f60ecd94bfe40b9fc658ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8234cd96adbdeff4b56a59f6c54df58"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ae8234cd96adbdeff4b56a59f6c54df58">processDependencies</a></td></tr>
-<tr class="separator:ae8234cd96adbdeff4b56a59f6c54df58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4016e696420b0a6b14308b117070b506"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; <a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a4016e696420b0a6b14308b117070b506">nodeBroadcastedMessages</a></td></tr>
+<tr class="memdesc:a4016e696420b0a6b14308b117070b506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains for each node $p_i$ a structure per message that is currently broadcasted (not yet delivered by all nodes).  <a href="#a4016e696420b0a6b14308b117070b506">More...</a><br /></td></tr>
+<tr class="separator:a4016e696420b0a6b14308b117070b506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3eeb8e78c5307d518e3b43967c4bac"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ade3eeb8e78c5307d518e3b43967c4bac">nodeDependencies</a></td></tr>
+<tr class="memdesc:ade3eeb8e78c5307d518e3b43967c4bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the dependencies for each node.  <a href="#ade3eeb8e78c5307d518e3b43967c4bac">More...</a><br /></td></tr>
+<tr class="separator:ade3eeb8e78c5307d518e3b43967c4bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81d7fe43b78ef7601e6b36c3df38ce79"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_simulation_parameters.html">SimulationParameters</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a81d7fe43b78ef7601e6b36c3df38ce79">params</a></td></tr>
+<tr class="memdesc:a81d7fe43b78ef7601e6b36c3df38ce79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the simulation parameters to avoid looking them up in each function.  <a href="#a81d7fe43b78ef7601e6b36c3df38ce79">More...</a><br /></td></tr>
 <tr class="separator:a81d7fe43b78ef7601e6b36c3df38ce79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Module to control that nodes deliver application messages exactly once and in causal order. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a95c56822d667e94b031451729ce069a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95c56822d667e94b031451729ce069a9">&#9670;&nbsp;</a></span>Controller()</h2>
 
@@ -189,6 +205,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Verifies that a proces can causally deliver a message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idM</td><td>The message to deliver. </td></tr>
+    <tr><td class="paramname">idDest</td><td>The process that will deliver the message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the process can deliver the message in causal order and false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="ab250759d5c511ceb8f35fdf9e42583cd"></a>
@@ -215,10 +241,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Called to remove messages delivered by all processes. </p>
+<p>Raises an error if the message is not registered. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idM</td><td>The message's identificator. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="aa813a54b625a16ee0c039838b8cdd661"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa813a54b625a16ee0c039838b8cdd661">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="a28d5755bc8fed07cebd88f857f0f83df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d5755bc8fed07cebd88f857f0f83df">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,8 +263,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void Controller::initialize </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>stage</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -240,6 +273,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initializes the controller. </p>
 
 </div>
 </div>
@@ -269,6 +304,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks if a message is a causal dependency of another message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idM</td><td>Message of which wants to check the dependency. </td></tr>
+    <tr><td class="paramname">idDep</td><td>Dependency to be checked. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if idDep is a dependency of idM and false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="a8905abf1976e737410ac0142001e38a0"></a>
@@ -296,6 +341,16 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Called by a node when delivering a message to notify the controller of the delivery, which verifies that the node delivers the message only once and in causal order. </p>
+<p>The function exists if the node has already delivered the message. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idM</td><td>the message's identificator. </td></tr>
+    <tr><td class="paramname">idDest</td><td>the id of the node which delivers the message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean set to true if the node delivered the message in cuasal order and false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -325,10 +380,19 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Called by nodees when broadcasting a message to save the broadcasted message at the controller. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idSender</td><td>Identificator of the node that broadcasted the message. </td></tr>
+    <tr><td class="paramname">seq</td><td>Sequence number idSender associated to the message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ad43f12368786278dd1171226b666395d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad43f12368786278dd1171226b666395d">&#9670;&nbsp;</a></span>printDeliveryError()</h2>
+<a id="aa3c4ebef8d344e10e86c1b4f95171281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c4ebef8d344e10e86c1b4f95171281">&#9670;&nbsp;</a></span>printDeliveryError()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,7 +416,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>destProcess</em>, </td>
+          <td class="paramname"><em>destnode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -364,7 +428,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &amp;&#160;</td>
-          <td class="paramname"><em>processDependencies</em>&#160;</td>
+          <td class="paramname"><em>nodeDependencies</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -378,6 +442,18 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Called to print delivery errors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">errorReason</td><td>The delivery error. </td></tr>
+    <tr><td class="paramname">idM</td><td>The identificator of the wrongly delivered message. </td></tr>
+    <tr><td class="paramname">destnode</td><td>The identificator of the process which delivered the message. </td></tr>
+    <tr><td class="paramname">messageDependencies</td><td>The message's causal dependencies. </td></tr>
+    <tr><td class="paramname">nodeDependencies</td><td>Tracks the messages delivered by the process. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -405,9 +481,68 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Searches the structure associated to a broadcasted message. </p>
+<p>Raises an error if the message is not registered. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idM</td><td>the message's unique identificator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns an iterator pointing to the message's structure. </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4016e696420b0a6b14308b117070b506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4016e696420b0a6b14308b117070b506">&#9670;&nbsp;</a></span>nodeBroadcastedMessages</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;vector&lt;<a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a>&gt; &gt; Controller::nodeBroadcastedMessages</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contains for each node $p_i$ a structure per message that is currently broadcasted (not yet delivered by all nodes). </p>
+<p>nodeBroadcastedMessages[0] contains a structure per message that $p_0$ currently broadcasts. </p>
+
+</div>
+</div>
+<a id="ade3eeb8e78c5307d518e3b43967c4bac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3eeb8e78c5307d518e3b43967c4bac">&#9670;&nbsp;</a></span>nodeDependencies</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="class_total_dependencies.html">TotalDependencies</a>&gt; Controller::nodeDependencies</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contains the dependencies for each node. </p>
+<p>nodeDependencies[0] contains the total dependencies tracking the messages delivered by $p_0$. </p>
+
+</div>
+</div>
 <a id="a81d7fe43b78ef7601e6b36c3df38ce79"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81d7fe43b78ef7601e6b36c3df38ce79">&#9670;&nbsp;</a></span>params</h2>
 
@@ -428,49 +563,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ae96146dee6f60ecd94bfe40b9fc658ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae96146dee6f60ecd94bfe40b9fc658ad">&#9670;&nbsp;</a></span>processBroadcastedMessages</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt;vector&lt;<a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a>&gt; &gt; Controller::processBroadcastedMessages</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae8234cd96adbdeff4b56a59f6c54df58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8234cd96adbdeff4b56a59f6c54df58">&#9670;&nbsp;</a></span>processDependencies</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt;<a class="el" href="class_total_dependencies.html">TotalDependencies</a>&gt; Controller::processDependencies</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Reference to the simulation parameters to avoid looking them up in each function. </p>
 
 </div>
 </div>

@@ -53,7 +53,7 @@ void Stats::initialize()
         doneCombinationsToFindHashFile.open("data/doneCombinationsToFindHashFile.dat",std::ios::out);
         nbOperationsForHashFile.open("data/nbOperationsForHashFile.dat",std::ios::out);
     }
-    if(params->recovering)
+    if(usesRecoveries())
     {
         nbRecoveriesFile.open("data/nbRecoveriesFile.dat",std::ios::out);
         nbAvoidedRecoveriesFile.open("data/nbAvoidedRecoveriesFile.dat",std::ios::out);
@@ -91,7 +91,7 @@ void Stats::handleMessage(cMessage *msg)
         writeDoneCombinationsToFindHash();
         writeNbOperationsForHashFile();
     }
-    if(params->recovering)
+    if(usesRecoveries())
     {
         WriteTotalNbRecoveries();
         writeNbAvoidedRecoveries();
@@ -352,5 +352,12 @@ void Stats::printNbJumpedBroadcasts()
  */
 bool Stats::usesHashDetector()
 {
-    return params->DeliveryController == SimulationParameters::Delivery::HashClockDifference ||params->DeliveryController == SimulationParameters::Delivery::HashIntervalDifference;
+    return params->DeliveryController == SimulationParameters::Delivery::HashClockDifference ||params->DeliveryController == SimulationParameters::Delivery::HashIntervalDifference ||params->DeliveryController == SimulationParameters::Delivery::Recovery ||params->DeliveryController == SimulationParameters::Delivery::RecoveryTest;
+}
+
+/** @brief Determines if nodes are recovering the causal dependencies of messages.
+ */
+bool Stats::usesRecoveries()
+{
+    return params->DeliveryController == SimulationParameters::Delivery::Recovery ||params->DeliveryController == SimulationParameters::Delivery::RecoveryTest;
 }

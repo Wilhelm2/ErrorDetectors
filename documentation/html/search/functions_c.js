@@ -9,7 +9,7 @@ var searchData=
   ['print',['print',['../class_partial_dependencies.html#a9a9346473ba5de6a1bdffb44145f8fca',1,'PartialDependencies::print()'],['../class_total_dependencies.html#abd5c49f26000acb2c45d8b967922c7e7',1,'TotalDependencies::print()']]],
   ['printclock',['printClock',['../class_probabilistic_clock.html#a1169d9d5442d55c4dd4e2e730bc2b008',1,'ProbabilisticClock']]],
   ['printcomparisionwith',['printComparisionWith',['../class_partial_dependencies.html#ad6e8fb1bff79b43dab24727b3511caf0',1,'PartialDependencies::printComparisionWith()'],['../class_total_dependencies.html#a56c23f6400891bc8acb3a2bd03f42b12',1,'TotalDependencies::printComparisionWith()']]],
-  ['printdeliveryerror',['printDeliveryError',['../class_controller.html#ad43f12368786278dd1171226b666395d',1,'Controller']]],
+  ['printdeliveryerror',['printDeliveryError',['../class_controller.html#aa3c4ebef8d344e10e86c1b4f95171281',1,'Controller']]],
   ['printerr',['printErr',['../class_partial_dependencies.html#ac4c98e7d381b9e9efa54a094d1da729d',1,'PartialDependencies::printErr()'],['../class_total_dependencies.html#a514df10fe452f2000ceec5e279eae802',1,'TotalDependencies::printErr()']]],
   ['printnbjumpedbroadcasts',['printNbJumpedBroadcasts',['../class_stats.html#aaba10264a569b9240a300ddc341e6a8c',1,'Stats']]],
   ['printnbmessagestorecover',['printNbMessagesToRecover',['../class_stats.html#ae2c59851f26885a62c2e65fda16d47ee',1,'Stats']]],

@@ -245,6 +245,9 @@ $(function() {
 , <a class="el" href="structs__id.html#a5c4ca3342296868576159a20ebe9909d">s_id</a>
 , <a class="el" href="structs__message_info.html#a6c2928774199848fd25b4e8ffb7870c2">s_messageInfo</a>
 </li>
+<li>idCounter
+: <a class="el" href="class_node_base.html#a3d577a517665ac5bcf9ed9495945fe31">NodeBase</a>
+</li>
 <li>idMsgToRecover
 : <a class="el" href="class_dep_req.html#a8547e169d4670212c0b612924dda94cc">DepReq</a>
 , <a class="el" href="class_dep_rsp.html#a7b777428e859ba7a6f083e13f6431cf4">DepRsp</a>
@@ -291,9 +294,6 @@ $(function() {
 </li>
 <li>nbAvoidedRecoveriesFile
 : <a class="el" href="class_stats.html#a2c1cbc31715b84b8e40206c5b3dc7c5f">Stats</a>
-</li>
-<li>nbCombinations
-: <a class="el" href="class_simulation_parameters.html#a8f1c0671b131ea807d8a04cd9b15d9b8">SimulationParameters</a>
 </li>
 <li>nbDeliveredMessages
 : <a class="el" href="structs__stats_node.html#a1e33dd5d17c1008ea127e4f86a7616e1">s_statsNode</a>
@@ -346,6 +346,12 @@ $(function() {
 <li>nbSentDependenciesFile
 : <a class="el" href="class_stats.html#a26404a5110226c52970e3c261c6d8126">Stats</a>
 </li>
+<li>nodeBroadcastedMessages
+: <a class="el" href="class_controller.html#a4016e696420b0a6b14308b117070b506">Controller</a>
+</li>
+<li>nodeDependencies
+: <a class="el" href="class_controller.html#ade3eeb8e78c5307d518e3b43967c4bac">Controller</a>
+</li>
 <li>nodeId
 : <a class="el" href="class_init.html#abc9fcf6151621f0ac808cd29e14239c9">Init</a>
 </li>
@@ -378,12 +384,6 @@ $(function() {
 <li>pendingMsg
 : <a class="el" href="class_node_with_control.html#af38ffbedc82038536c77314f22ea6b57">NodeWithControl</a>
 </li>
-<li>processBroadcastedMessages
-: <a class="el" href="class_controller.html#ae96146dee6f60ecd94bfe40b9fc658ad">Controller</a>
-</li>
-<li>processDependencies
-: <a class="el" href="class_controller.html#ae8234cd96adbdeff4b56a59f6c54df58">Controller</a>
-</li>
 <li>propertynames
 : <a class="el" href="class_app_msg_dep_descriptor.html#a03578bf1418ef896a9abfcded857b728">AppMsgDepDescriptor</a>
 , <a class="el" href="class_app_msg_descriptor.html#a4fb3b9dd77f943bb3aa1587c8d28c1c8">AppMsgDescriptor</a>
@@ -409,9 +409,6 @@ $(function() {
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>recoveredMessages
 : <a class="el" href="class_node_with_recovery.html#adf6b319a727cd9ec43a6cc68cbf99bbb">NodeWithRecovery</a>
-</li>
-<li>recovering
-: <a class="el" href="class_simulation_parameters.html#a637db4137ba6b25de7e75db1582d6532">SimulationParameters</a>
 </li>
 <li>recvtime
 : <a class="el" href="structs__message_info.html#a3600b24205dc07ce06774af44976c107">s_messageInfo</a>

@@ -29,19 +29,28 @@
 using namespace std;
 using namespace omnetpp;
 
-
+/** Contains the information required to verify that the message is delivered exactly once by every node.
+ */
 typedef struct s_msg
 {
-    // id not required since struct belongs to a vector associated with the message's sending process
+    // id not required since the structure belongs to a vector associated with the message's sending node
+    /** Sequence number associated to the message to identify it uniquely.*/
     unsigned int seq;
+    /** The message's dependencies.*/
     TotalDependencies dependencies;
-    unsigned int deliveredAtNbPs = 0; // number of nodes that delivered the message
-    vector<bool> psHasDelivered; // array to control multiple deliveries
+    /** Number of nodes that delivered the message. Used to delete messages once delivered by all nodes.*/
+    unsigned int deliveredAtNbPs = 0;
+    /** Array to control multiple deliveries.*/
+    vector<bool> psHasDelivered;
+    /** The message's sending time.*/
     simtime_t sendTime;
+    /** Time at which each node delivers the message. Used for statistics to compute the average delivery time*/
     vector<simtime_t> deliveredAtTime;
 }msg;
 
-
+/** Module to control that nodes deliver application messages exactly once and in causal order.
+ *
+ */
 class Controller : public cSimpleModule{
     public:
         Controller();
@@ -51,13 +60,16 @@ class Controller : public cSimpleModule{
         bool notifyDeliverMessage(idMsg idM, unsigned int idDest);
         bool canCausallyDeliverMessage(idMsg idM, unsigned int idDest);
     private:
-        virtual void initialize(int stage);
+        virtual void initialize();
         vector<msg>::iterator searchMessage(idMsg idM);
-        void printDeliveryError(string errorReason, idMsg idM, unsigned int destProcess, const TotalDependencies& messageDependencies, const TotalDependencies& processDependencies);
+        void printDeliveryError(string errorReason, idMsg idM, unsigned int destnode, const TotalDependencies& messageDependencies, const TotalDependencies& nodeDependencies);
         void deleteMessage(idMsg idM);
 
-        vector<vector<msg>> processBroadcastedMessages; // a vector of msg for each process
-        vector<TotalDependencies> processDependencies;
+        /** Contains for each node $p_i$ a structure per message that is currently broadcasted (not yet delivered by all nodes). nodeBroadcastedMessages[0] contains a structure per message that $p_0$ currently broadcasts.*/
+        vector<vector<msg>> nodeBroadcastedMessages;
+        /** Contains the dependencies for each node. nodeDependencies[0] contains the total dependencies tracking the messages delivered by $p_0$.*/
+        vector<TotalDependencies> nodeDependencies;
+        /** Reference to the simulation parameters to avoid looking them up in each function.*/
         SimulationParameters* params;
 };
 

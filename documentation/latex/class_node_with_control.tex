@@ -6,7 +6,8 @@
 
 
 
-Inheritance diagram for Node\+With\+Control\+:\nopagebreak
+Inheritance diagram for Node\+With\+Control\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Inheritance diagram for Node\+With\+Control\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Node\+With\+Control\+:\nopagebreak
+Collaboration diagram for Node\+With\+Control\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,21 +35,21 @@ virtual \hyperlink{class_node_with_control_a6e752e38f0e233e7debfaaf4ae26fb2d}{$\
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{class_node_with_control_a08c8e80fd67b52c51c642d7c66fe729c}{initialize} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes the node by scheduling it\textquotesingle{}s broadcast\+Timer, initializing its connection with the communication dispatcher and looking up the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} and \hyperlink{class_controller}{Controller} modules. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_control_a7772568c2836f5f204952ebe659e0049}{create\+App\+Msg} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates an application message and initializes it. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_control_ab871014cf3f42d834f8d34ad5498174c}{prepare\+Broadcast} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_control_add681efe156d989a717d2cd979f5ac9f}{remove\+Old\+Messages} ()
 \item 
 virtual bool \hyperlink{class_node_with_control_aada7451be61be592b27188b6249afef2}{deliver\+Msg} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message)
-\item 
+\begin{DoxyCompactList}\small\item\em Delivers a message and verifies its delivery in causal order. \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_control_ae177f5f64edcc09a3875e5afdc82edd2}{Recv\+App\+Msg} (\hyperlink{class_app_msg}{App\+Msg} $\ast$m)
 \item 
 const vector$<$ unsigned int $>$ \& \hyperlink{class_node_with_control_acf1daba46cfa16eb2bd7cbd399c2624b}{get\+Index\+Incremented\+Entries} (unsigned int id\+Source)
 \item 
 virtual void \hyperlink{class_node_with_control_af532082fab76c38d8c50ca90e991f4c3}{process\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})=0
-\item 
+\begin{DoxyCompactList}\small\item\em Called at reception of messages from other nodes in order to process them. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{class_node_with_control_a84df0beabbaed80e7da017d592480515}{test\+Deliver\+Message} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message)=0
 \item 
 virtual void \hyperlink{class_node_with_control_a4f78078272b90937e0746c797443b37d}{iterative\+Delivery} ()=0
@@ -95,6 +97,13 @@ class \hyperlink{class_node_with_control_a129f65b6976377739eb6231b6962985e}{Stat
 
 
 
+Creates an application message and initializes it. 
+
+\begin{DoxyReturn}{Returns}
+The application message. 
+\end{DoxyReturn}
+
+
 Reimplemented from \hyperlink{class_node_base_ac8b9e21b1cc32fd86aaa6c956b93a7c3}{Node\+Base}.
 
 
@@ -107,6 +116,18 @@ Reimplemented in \hyperlink{class_node_detector_a7100349647350ad5e3aeb1ed4669c72
 \subsubsection{\texorpdfstring{deliver\+Msg()}{deliverMsg()}}
 {\footnotesize\ttfamily bool Node\+With\+Control\+::deliver\+Msg (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Delivers a message and verifies its delivery in causal order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The information about the message to deliver. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the message has been delivered in causal order and false otherwise. 
+\end{DoxyReturn}
 
 
 Reimplemented from \hyperlink{class_node_base_a49052382add1123da26db6bfb687d254}{Node\+Base}.
@@ -122,6 +143,10 @@ Reimplemented from \hyperlink{class_node_base_a49052382add1123da26db6bfb687d254}
 \index{initialize@{initialize}!Node\+With\+Control@{Node\+With\+Control}}
 \subsubsection{\texorpdfstring{initialize()}{initialize()}}
 {\footnotesize\ttfamily void Node\+With\+Control\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the node by scheduling it\textquotesingle{}s broadcast\+Timer, initializing its connection with the communication dispatcher and looking up the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} and \hyperlink{class_controller}{Controller} modules. 
 
 
 
@@ -149,6 +174,13 @@ Implemented in \hyperlink{class_node_with_recovery_a9b61912f38b62452584dc80bf261
 
 
 
+Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. 
+
+\begin{DoxyReturn}{Returns}
+The application message to broadcast. 
+\end{DoxyReturn}
+
+
 Reimplemented from \hyperlink{class_node_base_a66c1dee9d15119bc3e68da71067ff6cd}{Node\+Base}.
 
 
@@ -160,6 +192,10 @@ Reimplemented in \hyperlink{class_node_with_recovery_a33d8e8775fd69cb647b38a54b3
 \index{process\+Message@{process\+Message}!Node\+With\+Control@{Node\+With\+Control}}
 \subsubsection{\texorpdfstring{process\+Message()}{processMessage()}}
 {\footnotesize\ttfamily virtual void Node\+With\+Control\+::process\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Called at reception of messages from other nodes in order to process them. 
 
 
 

@@ -14,7 +14,7 @@
 #include "Clocks/ProbabilisticClock.h"
 
 /** @struct s_id
- *  @brief Each message has an unique identifier composed of the id of the node $p_i$ that sent it and the sequence number $p_i$ associated to the message
+ *  @brief Each message has a unique identifier composed of the id of the node $p_i$ that sent it and the sequence number $p_i$ associated to the message
  */
 typedef struct s_id
 {

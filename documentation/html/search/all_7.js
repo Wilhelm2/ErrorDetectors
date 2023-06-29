@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['h',['h',['../class_communication_dispatcher_1_1h.html',1,'CommunicationDispatcher']]],
-  ['handlemessage',['handleMessage',['../class_communication_dispatcher.html#af7be3dbf46282e78d41d3d194f5ff246',1,'CommunicationDispatcher::handleMessage()'],['../class_node_base.html#add2450264be5dd616f9f9ac94e83b988',1,'NodeBase::handleMessage()'],['../class_node_with_recovery.html#a901c89606b84898e13fe8a66228acd9f',1,'NodeWithRecovery::handleMessage()'],['../class_simulation_parameters.html#a9966d132ac2b5dc248973185a1a8deb4',1,'SimulationParameters::handleMessage()'],['../class_stats.html#adaf8eb884008cdcb1f8a08df41566d16',1,'Stats::handleMessage()']]],
+  ['handlebroadcasttimer',['handleBroadcastTimer',['../class_node_base.html#a65273f043d18d6f021199fba050700b5',1,'NodeBase']]],
+  ['handlemessage',['handleMessage',['../class_communication_dispatcher.html#af7be3dbf46282e78d41d3d194f5ff246',1,'CommunicationDispatcher::handleMessage()'],['../class_node_base.html#add2450264be5dd616f9f9ac94e83b988',1,'NodeBase::handleMessage()'],['../class_node_with_recovery.html#a901c89606b84898e13fe8a66228acd9f',1,'NodeWithRecovery::handleMessage()'],['../class_simulation_parameters.html#a8983c7bf9d840f8b4a9a4d55c04d581a',1,'SimulationParameters::handleMessage()'],['../class_stats.html#adaf8eb884008cdcb1f8a08df41566d16',1,'Stats::handleMessage()']]],
   ['hash',['hash',['../class_app_msg.html#a8b73e331d42d97d9e51603dc5352307f',1,'AppMsg::hash()'],['../structs__message_info.html#a9b627c36e814fbbd04a89bc6e827e4ff',1,'s_messageInfo::hash()']]],
   ['hashclockdifference',['HashClockDifference',['../class_simulation_parameters.html#ae08444273809241f502aa422205f7307a9a46ad9fb926b8b78ba9395f96aa6af0',1,'SimulationParameters']]],
   ['hashdependencies',['hashDependencies',['../class_hash_error_detector.html#a37d0ee7d8a01b530a03262e4483c53d9',1,'HashErrorDetector']]],

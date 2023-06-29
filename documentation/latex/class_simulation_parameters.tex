@@ -2,7 +2,7 @@
 \label{class_simulation_parameters}\index{Simulation\+Parameters@{Simulation\+Parameters}}
 
 
-T\+O\+DO -\/ Generated class.  
+Contains the simulation parameters set in the .ini file found in the simulations folder.  
 
 
 
@@ -36,75 +36,75 @@ enum \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307}{D
 \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307a59feb63389b0898ec47a4ab58d1be6f6}{Delivery\+::\+Mostefaoui}, 
 \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307a9a46ad9fb926b8b78ba9395f96aa6af0}{Delivery\+::\+Hash\+Clock\+Difference}, 
 \newline
-\hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307ae3d02f7a43cb7e3e7d667a67f84c3e32}{Delivery\+::\+Hash\+Interval\+Difference}
- \}
+\hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307ae3d02f7a43cb7e3e7d667a67f84c3e32}{Delivery\+::\+Hash\+Interval\+Difference}, 
+\hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307ad8afbc541b39d23648c823057cffe3a5}{Delivery\+::\+Recovery}, 
+\hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307a54bac2e6b76064db3dcf3d7c3a7b787b}{Delivery\+::\+Recovery\+Test}
+ \}\begin{DoxyCompactList}\small\item\em Defines the simulation\textquotesingle{}s type of delivery control. \end{DoxyCompactList}
 \item 
 enum \hyperlink{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dff}{Dependencies} \{ \hyperlink{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dffa96b0141273eabab320119c467cdcaf17}{Dependencies\+::\+Total}, 
 \hyperlink{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dffa44ffd38a6dea695cbe2b34efdcc6cf27}{Dependencies\+::\+Partial}
- \}
+ \}\begin{DoxyCompactList}\small\item\em Defines the type of dependencies used by hash-\/based error detectors to compute the hash of broadcasted messages. \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 simtime\+\_\+t \hyperlink{class_simulation_parameters_acf83b84e172a799e1db3bf9554c4787f}{determine\+First\+Send\+Time\+In\+Ms} (unsigned int id)
-\item 
-const vector$<$ unsigned int $>$ \& \hyperlink{class_simulation_parameters_aec302fa13d17be02d116829100ccbf70}{get\+Entries\+Incremented\+By\+Process} (unsigned int process\+Id)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines the simulation time of the first broadcast of node id. \end{DoxyCompactList}\item 
+const vector$<$ unsigned int $>$ \& \hyperlink{class_simulation_parameters_aa8a52acbc3c5d374decafb59dcf0e971}{get\+Entries\+Incremented\+By\+Process} (unsigned int node\+Id)
+\begin{DoxyCompactList}\small\item\em Getter of the entries incremented by nodes. \end{DoxyCompactList}\item 
 const vector$<$ vector$<$ bool $>$ $>$ \& \hyperlink{class_simulation_parameters_a39008b8c9ed5c7c27dbfe7c5355d8062}{get\+Dependency\+Combinations} (unsigned int nb\+Possible\+Dependencies)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the sets of dependency combinations for a given number of possible dependencies. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 unsigned int \hyperlink{class_simulation_parameters_a96391a1b611de11ca4d0babba7117872}{nb\+Nodes}
-\item 
+\begin{DoxyCompactList}\small\item\em Number of nodes the system contains. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_simulation_parameters_a34b25081ba9b20aa461c03ab3ade034b}{clock\+Length}
-\item 
-double \hyperlink{class_simulation_parameters_a57cd536ac7c057b5c2d5c85faa4d846d}{P\+E\+A\+K\+S\+P\+E\+R\+D\+E\+L\+AY}
-\item 
+\begin{DoxyCompactList}\small\item\em Clock size that process use to track causality. \end{DoxyCompactList}\item 
 double \hyperlink{class_simulation_parameters_ae02521fdf6d81eff5e620a6a021106d3}{delay\+Send}
-\item 
+\begin{DoxyCompactList}\small\item\em All nodes broadcast a message in delay\+Send ms. \end{DoxyCompactList}\item 
+double \hyperlink{class_simulation_parameters_a57cd536ac7c057b5c2d5c85faa4d846d}{P\+E\+A\+K\+S\+P\+E\+R\+D\+E\+L\+AY}
+\begin{DoxyCompactList}\small\item\em Number of broadcast peaks per delay\+Send, i.\+e. \end{DoxyCompactList}\item 
 vector$<$ vector$<$ unsigned int $>$ $>$ \hyperlink{class_simulation_parameters_a069a04754400916fc6b5f9f5baff2d32}{entries\+Incremented\+By\+Process}
-\item 
-unsigned int \hyperlink{class_simulation_parameters_a8f1c0671b131ea807d8a04cd9b15d9b8}{nb\+Combinations}
-\item 
+\begin{DoxyCompactList}\small\item\em Vector containing the set of entries incremented by processes when broadcasting a message. \end{DoxyCompactList}\item 
 vector$<$ vector$<$ vector$<$ bool $>$ $>$ $>$ \hyperlink{class_simulation_parameters_a1e884901020cad738db1aceaa6700d9f}{dependency\+Combinations}
-\item 
-bool \hyperlink{class_simulation_parameters_a637db4137ba6b25de7e75db1582d6532}{recovering}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Vector containing the dependencies to set in the hash computation of hash-\/based error detectors following the number of messages that are considered of might being causal dependencies of the message to deliver. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307}{Delivery} \hyperlink{class_simulation_parameters_ab379e91439dd9d4179096d30f930d459}{Delivery\+Controller} = \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307a9a46ad9fb926b8b78ba9395f96aa6af0}{Simulation\+Parameters\+::\+Delivery\+::\+Hash\+Clock\+Difference}
-\item 
+\begin{DoxyCompactList}\small\item\em Determines the type of the simulation\textquotesingle{}s delivery control. \end{DoxyCompactList}\item 
 static \hyperlink{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dff}{Dependencies} \hyperlink{class_simulation_parameters_ad0c30ae3194fb07ca8a456331fce1add}{dep\+Appended} = \hyperlink{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dffa44ffd38a6dea695cbe2b34efdcc6cf27}{Simulation\+Parameters\+::\+Dependencies\+::\+Partial}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Determines the type of dependencies used by hash-\/based error detectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{class_simulation_parameters_a1fa495ef59a10cb9a0aff42f3e2625ef}{initialize} ()
-\item 
-virtual void \hyperlink{class_simulation_parameters_a9966d132ac2b5dc248973185a1a8deb4}{handle\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})
+\begin{DoxyCompactList}\small\item\em Initializes \hyperlink{class_stats}{Stats} by reading the simulation parameters, and by computing the dependencies to increment as well as the dependencies sets to test. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_simulation_parameters_a8983c7bf9d840f8b4a9a4d55c04d581a}{handle\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})
 \item 
 void \hyperlink{class_simulation_parameters_afec1fdd41805feba54ad575a4542aab1}{initialize\+Delivery\+Controller} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Converts the delivery\+Option simulation parameter into the \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307}{Simulation\+Parameters\+::\+Delivery} enum type. \end{DoxyCompactList}\item 
 void \hyperlink{class_simulation_parameters_aeef091d6ca357795fa7ff6b3661fb2fd}{initialize\+Clock\+Entries\+To\+Increment} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Uses the formula given by Mostéfaoui to determine the number of entries \$k\$ a process increments when broadcasting a message. \end{DoxyCompactList}\item 
 vector$<$ vector$<$ unsigned int $>$ $>$ \hyperlink{class_simulation_parameters_ae7a743b60e8ac2352e4845b104038bde}{Even\+Combinations} (unsigned int N, unsigned int k, unsigned int M)
-\item 
-vector$<$ vector$<$ unsigned int $>$ $>$ \hyperlink{class_simulation_parameters_a6157da0870526895f7619d614e3b72d0}{compute\+Entry\+Combinations} (unsigned int N, unsigned int K)
-\item 
+\begin{DoxyCompactList}\small\item\em Builds vectors of \$k\$ entries to increment when broadcasting a message. \end{DoxyCompactList}\item 
+vector$<$ vector$<$ unsigned int $>$ $>$ \hyperlink{class_simulation_parameters_ae665fb3295f28d46514597f88c690d4a}{compute\+Entry\+Combinations} (unsigned int M, unsigned int K)
+\begin{DoxyCompactList}\small\item\em Builds vectors of \$k\$ entries to increment when broadcasting a message. \end{DoxyCompactList}\item 
 void \hyperlink{class_simulation_parameters_a09bec9dc793646bd71f610eee824dc21}{compute\+Dependecy\+Combinations\+Array} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the dependency combinations for dependecies sets going from 1 to 1000 dependencies. \end{DoxyCompactList}\item 
 vector$<$ vector$<$ bool $>$ $>$ \hyperlink{class_simulation_parameters_a9694dd5f7c2028efe03dc273d8fdcbd7}{Dependency\+Combinations} (unsigned int nb\+Possible\+Dep)
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the set of dependencies combinations for a given number of possible dependencies. \end{DoxyCompactList}\item 
 vector$<$ vector$<$ bool $>$ $>$ \hyperlink{class_simulation_parameters_a4e6bb792e1487214e5cf1d64c8841064}{Dependency\+Combinations\+Two} (unsigned int nb\+Possible\+Dep)
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the set of dependencies combinations for a given number of possible dependencies. \end{DoxyCompactList}\item 
 vector$<$ vector$<$ bool $>$ $>$ \hyperlink{class_simulation_parameters_ab0615d3df4a78df81566d219e6e9529f}{binominal\+Coefficient} (unsigned int N, unsigned int K)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-T\+O\+DO -\/ Generated class. 
+Contains the simulation parameters set in the .ini file found in the simulations folder. 
+
+The class reads the simulation parameters at the beginning of the simulation and other classes get access to those parameters through this class. 
 
 \subsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_simulation_parameters_ae08444273809241f502aa422205f7307}\label{class_simulation_parameters_ae08444273809241f502aa422205f7307}} 
@@ -113,25 +113,37 @@ T\+O\+DO -\/ Generated class.
 \subsubsection{\texorpdfstring{Delivery}{Delivery}}
 {\footnotesize\ttfamily enum \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307}{Simulation\+Parameters\+::\+Delivery}\hspace{0.3cm}{\ttfamily [strong]}}
 
+
+
+Defines the simulation\textquotesingle{}s type of delivery control. 
+
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+T\+H\+I\+NG@{N\+O\+T\+H\+I\+NG}!Simulation\+Parameters@{Simulation\+Parameters}}\index{Simulation\+Parameters@{Simulation\+Parameters}!N\+O\+T\+H\+I\+NG@{N\+O\+T\+H\+I\+NG}}}\mbox{\Hypertarget{class_simulation_parameters_ae08444273809241f502aa422205f7307a8697250efc73639dd2a6e7da243ac68b}\label{class_simulation_parameters_ae08444273809241f502aa422205f7307a8697250efc73639dd2a6e7da243ac68b}} 
-N\+O\+T\+H\+I\+NG&\\
+N\+O\+T\+H\+I\+NG&No control, meaning that messages are delivered straight upon reception without any control. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Clock\+Comparison@{Clock\+Comparison}!Simulation\+Parameters@{Simulation\+Parameters}}\index{Simulation\+Parameters@{Simulation\+Parameters}!Clock\+Comparison@{Clock\+Comparison}}}\mbox{\Hypertarget{class_simulation_parameters_ae08444273809241f502aa422205f7307a3ccf7e50009c796055e4814c7219f2df}\label{class_simulation_parameters_ae08444273809241f502aa422205f7307a3ccf7e50009c796055e4814c7219f2df}} 
-Clock\+Comparison&\\
+Clock\+Comparison&Uses Probabilistic clocks to causally order messages. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Mostefaoui@{Mostefaoui}!Simulation\+Parameters@{Simulation\+Parameters}}\index{Simulation\+Parameters@{Simulation\+Parameters}!Mostefaoui@{Mostefaoui}}}\mbox{\Hypertarget{class_simulation_parameters_ae08444273809241f502aa422205f7307a59feb63389b0898ec47a4ab58d1be6f6}\label{class_simulation_parameters_ae08444273809241f502aa422205f7307a59feb63389b0898ec47a4ab58d1be6f6}} 
-Mostefaoui&\\
+Mostefaoui&Uses Probabilistic clocks to causally order messages and executes the error detector of Mostéfaoui on a message \$m\$\textquotesingle{}s clock before delivering \$m\$. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Hash\+Clock\+Difference@{Hash\+Clock\+Difference}!Simulation\+Parameters@{Simulation\+Parameters}}\index{Simulation\+Parameters@{Simulation\+Parameters}!Hash\+Clock\+Difference@{Hash\+Clock\+Difference}}}\mbox{\Hypertarget{class_simulation_parameters_ae08444273809241f502aa422205f7307a9a46ad9fb926b8b78ba9395f96aa6af0}\label{class_simulation_parameters_ae08444273809241f502aa422205f7307a9a46ad9fb926b8b78ba9395f96aa6af0}} 
-Hash\+Clock\+Difference&\\
+Hash\+Clock\+Difference&Uses Probabilistic clocks to causally order messages and executes the hash-\/based error detector with the clock difference technique on a message \$m\$\textquotesingle{}s clock before delivering \$m\$. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Hash\+Interval\+Difference@{Hash\+Interval\+Difference}!Simulation\+Parameters@{Simulation\+Parameters}}\index{Simulation\+Parameters@{Simulation\+Parameters}!Hash\+Interval\+Difference@{Hash\+Interval\+Difference}}}\mbox{\Hypertarget{class_simulation_parameters_ae08444273809241f502aa422205f7307ae3d02f7a43cb7e3e7d667a67f84c3e32}\label{class_simulation_parameters_ae08444273809241f502aa422205f7307ae3d02f7a43cb7e3e7d667a67f84c3e32}} 
-Hash\+Interval\+Difference&\\
+Hash\+Interval\+Difference&Uses Probabilistic clocks to causally order messages and executes the hash-\/based error detector with the interval technique on a message \$m\$\textquotesingle{}s clock before delivering \$m\$. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Recovery@{Recovery}!Simulation\+Parameters@{Simulation\+Parameters}}\index{Simulation\+Parameters@{Simulation\+Parameters}!Recovery@{Recovery}}}\mbox{\Hypertarget{class_simulation_parameters_ae08444273809241f502aa422205f7307ad8afbc541b39d23648c823057cffe3a5}\label{class_simulation_parameters_ae08444273809241f502aa422205f7307ad8afbc541b39d23648c823057cffe3a5}} 
+Recovery&Uses Probabilistic clocks to causally order messages and executes the hash-\/based error detector with the clock difference technique on a message \$m\$\textquotesingle{}s clock before delivering \$m\$, and recovers the dependencies of \$m\$ if the error detector concludes that \$m\$ might not be causally ordered. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Recovery\+Test@{Recovery\+Test}!Simulation\+Parameters@{Simulation\+Parameters}}\index{Simulation\+Parameters@{Simulation\+Parameters}!Recovery\+Test@{Recovery\+Test}}}\mbox{\Hypertarget{class_simulation_parameters_ae08444273809241f502aa422205f7307a54bac2e6b76064db3dcf3d7c3a7b787b}\label{class_simulation_parameters_ae08444273809241f502aa422205f7307a54bac2e6b76064db3dcf3d7c3a7b787b}} 
+Recovery\+Test&Uses Probabilistic clocks to causally order messages and executes the hash-\/based error detector with the clock difference technique on a message \$m\$\textquotesingle{}s clock before delivering \$m\$, executes the recovery\+Test if the error detector concludes that \$m\$ might not be causally ordered, and recovers the dependencies of \$m\$ if the recovery test does not succeed in finding a dependencies set for \$m\$. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -141,13 +153,17 @@ Hash\+Interval\+Difference&\\
 \subsubsection{\texorpdfstring{Dependencies}{Dependencies}}
 {\footnotesize\ttfamily enum \hyperlink{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dff}{Simulation\+Parameters\+::\+Dependencies}\hspace{0.3cm}{\ttfamily [strong]}}
 
+
+
+Defines the type of dependencies used by hash-\/based error detectors to compute the hash of broadcasted messages. 
+
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Total@{Total}!Simulation\+Parameters@{Simulation\+Parameters}}\index{Simulation\+Parameters@{Simulation\+Parameters}!Total@{Total}}}\mbox{\Hypertarget{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dffa96b0141273eabab320119c467cdcaf17}\label{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dffa96b0141273eabab320119c467cdcaf17}} 
-Total&\\
+Total&A node computes the hash of messages it broadcasts with the full dependency vector of the message to broadcast, ie with a dependency vector containing one entry per process in the system. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Partial@{Partial}!Simulation\+Parameters@{Simulation\+Parameters}}\index{Simulation\+Parameters@{Simulation\+Parameters}!Partial@{Partial}}}\mbox{\Hypertarget{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dffa44ffd38a6dea695cbe2b34efdcc6cf27}\label{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dffa44ffd38a6dea695cbe2b34efdcc6cf27}} 
-Partial&\\
+Partial&A node computes the hash of messages it broadcasts with only a subset of dependencies of the message to broadcast. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -166,53 +182,147 @@ Partial&\\
 \subsubsection{\texorpdfstring{compute\+Dependecy\+Combinations\+Array()}{computeDependecyCombinationsArray()}}
 {\footnotesize\ttfamily void Simulation\+Parameters\+::compute\+Dependecy\+Combinations\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_simulation_parameters_a6157da0870526895f7619d614e3b72d0}\label{class_simulation_parameters_a6157da0870526895f7619d614e3b72d0}} 
+
+
+Computes the dependency combinations for dependecies sets going from 1 to 1000 dependencies. 
+
+\mbox{\Hypertarget{class_simulation_parameters_ae665fb3295f28d46514597f88c690d4a}\label{class_simulation_parameters_ae665fb3295f28d46514597f88c690d4a}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!compute\+Entry\+Combinations@{compute\+Entry\+Combinations}}
 \index{compute\+Entry\+Combinations@{compute\+Entry\+Combinations}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{compute\+Entry\+Combinations()}{computeEntryCombinations()}}
-{\footnotesize\ttfamily vector$<$ vector$<$ unsigned int $>$ $>$ Simulation\+Parameters\+::compute\+Entry\+Combinations (\begin{DoxyParamCaption}\item[{unsigned int}]{N,  }\item[{unsigned int}]{K }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily vector$<$ vector$<$ unsigned int $>$ $>$ Simulation\+Parameters\+::compute\+Entry\+Combinations (\begin{DoxyParamCaption}\item[{unsigned int}]{M,  }\item[{unsigned int}]{K }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Builds vectors of \$k\$ entries to increment when broadcasting a message. 
+
+This function does not ensure an even distribution. 
+\begin{DoxyParams}{Parameters}
+{\em M} & Size of the Probabilistic clock. \\
+\hline
+{\em Number} & of entries nodes increment when broadcasting a message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing sets of PC entry indexes to increment when broadcasting a message. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_simulation_parameters_a9694dd5f7c2028efe03dc273d8fdcbd7}\label{class_simulation_parameters_a9694dd5f7c2028efe03dc273d8fdcbd7}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!Dependency\+Combinations@{Dependency\+Combinations}}
 \index{Dependency\+Combinations@{Dependency\+Combinations}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{Dependency\+Combinations()}{DependencyCombinations()}}
 {\footnotesize\ttfamily vector$<$ vector$<$ bool $>$ $>$ Simulation\+Parameters\+::\+Dependency\+Combinations (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Possible\+Dep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Computes the set of dependencies combinations for a given number of possible dependencies. 
+
+For example, with 4 possible dependencies the returned vector (with 1=true and 0=false) will be\+: \{ \{1111\}, \{0111\}, \{1011\}, \{0011\}, \{1101\}, \{0101\}, \{1001\}, \{0001\}, \{1110\}, \{0110\}, \{1010\}, \{0010\}, \{1100\}, \{0100\}, \{1000\}, \{0000\}. 
+\begin{DoxyParams}{Parameters}
+{\em nb\+Possible\+Dep} & Number of possible dependencies. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing vectors \$v\$ of booleans, with \$v\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}=false\$ meaning that the dependency \$j\$ should not be considered in the \$ith\$ hash computed for a message with nb\+Possible\+Dep possible dependencies. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_simulation_parameters_a4e6bb792e1487214e5cf1d64c8841064}\label{class_simulation_parameters_a4e6bb792e1487214e5cf1d64c8841064}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!Dependency\+Combinations\+Two@{Dependency\+Combinations\+Two}}
 \index{Dependency\+Combinations\+Two@{Dependency\+Combinations\+Two}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{Dependency\+Combinations\+Two()}{DependencyCombinationsTwo()}}
 {\footnotesize\ttfamily vector$<$ vector$<$ bool $>$ $>$ Simulation\+Parameters\+::\+Dependency\+Combinations\+Two (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Possible\+Dep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Computes the set of dependencies combinations for a given number of possible dependencies. 
+
+For example, with 4 possible dependencies the returned vector (with 1=true and 0=false) will be\+: \{ \{1111\}, \{0111\}, \{1011\}, \{1101\}, \{1110\}, \{0011\}, \{1001\}, \{1100\}, \{1010\}, \{0110\}, \{0101\}, \{0001\}, \{1000\}, \{0100\}, \{0010\}, \{0000\}. 
+\begin{DoxyParams}{Parameters}
+{\em nb\+Possible\+Dep} & Number of possible dependencies. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing vectors \$v\$ of booleans, with \$v\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}=false\$ meaning that the dependency \$j\$ should not be considered in the \$ith\$ hash computed for a message with nb\+Possible\+Dep possible dependencies. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_simulation_parameters_acf83b84e172a799e1db3bf9554c4787f}\label{class_simulation_parameters_acf83b84e172a799e1db3bf9554c4787f}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!determine\+First\+Send\+Time\+In\+Ms@{determine\+First\+Send\+Time\+In\+Ms}}
 \index{determine\+First\+Send\+Time\+In\+Ms@{determine\+First\+Send\+Time\+In\+Ms}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{determine\+First\+Send\+Time\+In\+Ms()}{determineFirstSendTimeInMs()}}
 {\footnotesize\ttfamily simtime\+\_\+t Simulation\+Parameters\+::determine\+First\+Send\+Time\+In\+Ms (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})}
 
+
+
+Determines the simulation time of the first broadcast of node id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Node identificator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Simulation time at which process id will broadcast its first message. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_simulation_parameters_ae7a743b60e8ac2352e4845b104038bde}\label{class_simulation_parameters_ae7a743b60e8ac2352e4845b104038bde}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!Even\+Combinations@{Even\+Combinations}}
 \index{Even\+Combinations@{Even\+Combinations}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{Even\+Combinations()}{EvenCombinations()}}
 {\footnotesize\ttfamily vector$<$ vector$<$ unsigned int $>$ $>$ Simulation\+Parameters\+::\+Even\+Combinations (\begin{DoxyParamCaption}\item[{unsigned int}]{N,  }\item[{unsigned int}]{k,  }\item[{unsigned int}]{M }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Builds vectors of \$k\$ entries to increment when broadcasting a message. 
+
+Verifies that the entries to increment are distributed almost evenly, ie that entry 0 of the probabilistic clock is contained in as much vectors as entry 1, etc. 
+\begin{DoxyParams}{Parameters}
+{\em N} & Number of nodes inside the system. \\
+\hline
+{\em k} & Number of entries to increment when broadcasting a message. \\
+\hline
+{\em M} & Size of the probabilistic clock. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing sets of PC entry indexes to increment when broadcasting a message. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_simulation_parameters_a39008b8c9ed5c7c27dbfe7c5355d8062}\label{class_simulation_parameters_a39008b8c9ed5c7c27dbfe7c5355d8062}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!get\+Dependency\+Combinations@{get\+Dependency\+Combinations}}
 \index{get\+Dependency\+Combinations@{get\+Dependency\+Combinations}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{get\+Dependency\+Combinations()}{getDependencyCombinations()}}
 {\footnotesize\ttfamily const vector$<$ vector$<$ bool $>$ $>$ \& Simulation\+Parameters\+::get\+Dependency\+Combinations (\begin{DoxyParamCaption}\item[{unsigned int}]{nb\+Possible\+Dependencies }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_simulation_parameters_aec302fa13d17be02d116829100ccbf70}\label{class_simulation_parameters_aec302fa13d17be02d116829100ccbf70}} 
+
+
+Returns the sets of dependency combinations for a given number of possible dependencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nb\+Possible\+Dependencies} & Number of possible dependencies. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector containing vectors \$v\$ of booleans, with \$v\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}=false\$ meaning that the dependency \$j\$ should not be considered in the \$ith\$ hash computed for a message with nb\+Possible\+Dep possible dependencies. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulation_parameters_aa8a52acbc3c5d374decafb59dcf0e971}\label{class_simulation_parameters_aa8a52acbc3c5d374decafb59dcf0e971}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!get\+Entries\+Incremented\+By\+Process@{get\+Entries\+Incremented\+By\+Process}}
 \index{get\+Entries\+Incremented\+By\+Process@{get\+Entries\+Incremented\+By\+Process}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{get\+Entries\+Incremented\+By\+Process()}{getEntriesIncrementedByProcess()}}
-{\footnotesize\ttfamily const vector$<$ unsigned int $>$ \& Simulation\+Parameters\+::get\+Entries\+Incremented\+By\+Process (\begin{DoxyParamCaption}\item[{unsigned int}]{process\+Id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const vector$<$ unsigned int $>$ \& Simulation\+Parameters\+::get\+Entries\+Incremented\+By\+Process (\begin{DoxyParamCaption}\item[{unsigned int}]{node\+Id }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_simulation_parameters_a9966d132ac2b5dc248973185a1a8deb4}\label{class_simulation_parameters_a9966d132ac2b5dc248973185a1a8deb4}} 
+
+
+Getter of the entries incremented by nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+Id} & Identificator of the node of which requests the entries incremented when it broadcasts a message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+set of entries incremented by node\+Id when it broadcasts a message. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_simulation_parameters_a8983c7bf9d840f8b4a9a4d55c04d581a}\label{class_simulation_parameters_a8983c7bf9d840f8b4a9a4d55c04d581a}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!handle\+Message@{handle\+Message}}
 \index{handle\+Message@{handle\+Message}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{handle\+Message()}{handleMessage()}}
-{\footnotesize\ttfamily void Simulation\+Parameters\+::handle\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual void Simulation\+Parameters\+::handle\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 \mbox{\Hypertarget{class_simulation_parameters_a1fa495ef59a10cb9a0aff42f3e2625ef}\label{class_simulation_parameters_a1fa495ef59a10cb9a0aff42f3e2625ef}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!initialize@{initialize}}
@@ -220,17 +330,29 @@ Partial&\\
 \subsubsection{\texorpdfstring{initialize()}{initialize()}}
 {\footnotesize\ttfamily void Simulation\+Parameters\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Initializes \hyperlink{class_stats}{Stats} by reading the simulation parameters, and by computing the dependencies to increment as well as the dependencies sets to test. 
+
 \mbox{\Hypertarget{class_simulation_parameters_aeef091d6ca357795fa7ff6b3661fb2fd}\label{class_simulation_parameters_aeef091d6ca357795fa7ff6b3661fb2fd}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!initialize\+Clock\+Entries\+To\+Increment@{initialize\+Clock\+Entries\+To\+Increment}}
 \index{initialize\+Clock\+Entries\+To\+Increment@{initialize\+Clock\+Entries\+To\+Increment}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{initialize\+Clock\+Entries\+To\+Increment()}{initializeClockEntriesToIncrement()}}
 {\footnotesize\ttfamily void Simulation\+Parameters\+::initialize\+Clock\+Entries\+To\+Increment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_simulation_parameters_afec1fdd41805feba54ad575a4542aab1}\label{class_simulation_parameters_afec1fdd41805feba54ad575a4542aab1}} 
+
+
+Uses the formula given by Mostéfaoui to determine the number of entries \$k\$ a process increments when broadcasting a message. 
+
+Then builds vectors of \$k\$ random entries to increment and shuffles them to have a more random distribution. \mbox{\Hypertarget{class_simulation_parameters_afec1fdd41805feba54ad575a4542aab1}\label{class_simulation_parameters_afec1fdd41805feba54ad575a4542aab1}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!initialize\+Delivery\+Controller@{initialize\+Delivery\+Controller}}
 \index{initialize\+Delivery\+Controller@{initialize\+Delivery\+Controller}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{initialize\+Delivery\+Controller()}{initializeDeliveryController()}}
 {\footnotesize\ttfamily void Simulation\+Parameters\+::initialize\+Delivery\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Converts the delivery\+Option simulation parameter into the \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307}{Simulation\+Parameters\+::\+Delivery} enum type. 
 
 
 
@@ -241,11 +363,19 @@ Partial&\\
 \subsubsection{\texorpdfstring{clock\+Length}{clockLength}}
 {\footnotesize\ttfamily unsigned int Simulation\+Parameters\+::clock\+Length}
 
+
+
+Clock size that process use to track causality. 
+
 \mbox{\Hypertarget{class_simulation_parameters_ae02521fdf6d81eff5e620a6a021106d3}\label{class_simulation_parameters_ae02521fdf6d81eff5e620a6a021106d3}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!delay\+Send@{delay\+Send}}
 \index{delay\+Send@{delay\+Send}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{delay\+Send}{delaySend}}
 {\footnotesize\ttfamily double Simulation\+Parameters\+::delay\+Send}
+
+
+
+All nodes broadcast a message in delay\+Send ms. 
 
 \mbox{\Hypertarget{class_simulation_parameters_ab379e91439dd9d4179096d30f930d459}\label{class_simulation_parameters_ab379e91439dd9d4179096d30f930d459}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!Delivery\+Controller@{Delivery\+Controller}}
@@ -253,11 +383,19 @@ Partial&\\
 \subsubsection{\texorpdfstring{Delivery\+Controller}{DeliveryController}}
 {\footnotesize\ttfamily \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307}{Simulation\+Parameters\+::\+Delivery} Simulation\+Parameters\+::\+Delivery\+Controller = \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307a9a46ad9fb926b8b78ba9395f96aa6af0}{Simulation\+Parameters\+::\+Delivery\+::\+Hash\+Clock\+Difference}\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Determines the type of the simulation\textquotesingle{}s delivery control. 
+
 \mbox{\Hypertarget{class_simulation_parameters_ad0c30ae3194fb07ca8a456331fce1add}\label{class_simulation_parameters_ad0c30ae3194fb07ca8a456331fce1add}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!dep\+Appended@{dep\+Appended}}
 \index{dep\+Appended@{dep\+Appended}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{dep\+Appended}{depAppended}}
 {\footnotesize\ttfamily \hyperlink{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dff}{Simulation\+Parameters\+::\+Dependencies} Simulation\+Parameters\+::dep\+Appended = \hyperlink{class_simulation_parameters_afb3b6aaecd4b19ef1991c870c8402dffa44ffd38a6dea695cbe2b34efdcc6cf27}{Simulation\+Parameters\+::\+Dependencies\+::\+Partial}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determines the type of dependencies used by hash-\/based error detectors. 
 
 \mbox{\Hypertarget{class_simulation_parameters_a1e884901020cad738db1aceaa6700d9f}\label{class_simulation_parameters_a1e884901020cad738db1aceaa6700d9f}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!dependency\+Combinations@{dependency\+Combinations}}
@@ -265,23 +403,29 @@ Partial&\\
 \subsubsection{\texorpdfstring{dependency\+Combinations}{dependencyCombinations}}
 {\footnotesize\ttfamily vector$<$vector$<$vector$<$bool$>$ $>$ $>$ Simulation\+Parameters\+::dependency\+Combinations}
 
+
+
+Vector containing the dependencies to set in the hash computation of hash-\/based error detectors following the number of messages that are considered of might being causal dependencies of the message to deliver. 
+
 \mbox{\Hypertarget{class_simulation_parameters_a069a04754400916fc6b5f9f5baff2d32}\label{class_simulation_parameters_a069a04754400916fc6b5f9f5baff2d32}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!entries\+Incremented\+By\+Process@{entries\+Incremented\+By\+Process}}
 \index{entries\+Incremented\+By\+Process@{entries\+Incremented\+By\+Process}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{entries\+Incremented\+By\+Process}{entriesIncrementedByProcess}}
 {\footnotesize\ttfamily vector$<$vector$<$unsigned int$>$ $>$ Simulation\+Parameters\+::entries\+Incremented\+By\+Process}
 
-\mbox{\Hypertarget{class_simulation_parameters_a8f1c0671b131ea807d8a04cd9b15d9b8}\label{class_simulation_parameters_a8f1c0671b131ea807d8a04cd9b15d9b8}} 
-\index{Simulation\+Parameters@{Simulation\+Parameters}!nb\+Combinations@{nb\+Combinations}}
-\index{nb\+Combinations@{nb\+Combinations}!Simulation\+Parameters@{Simulation\+Parameters}}
-\subsubsection{\texorpdfstring{nb\+Combinations}{nbCombinations}}
-{\footnotesize\ttfamily unsigned int Simulation\+Parameters\+::nb\+Combinations}
 
-\mbox{\Hypertarget{class_simulation_parameters_a96391a1b611de11ca4d0babba7117872}\label{class_simulation_parameters_a96391a1b611de11ca4d0babba7117872}} 
+
+Vector containing the set of entries incremented by processes when broadcasting a message. 
+
+entries\+Incremented\+By\+Process\mbox{[}0\mbox{]} contains the entries p\+\_\+0 increments when broadcasting a message. \mbox{\Hypertarget{class_simulation_parameters_a96391a1b611de11ca4d0babba7117872}\label{class_simulation_parameters_a96391a1b611de11ca4d0babba7117872}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!nb\+Nodes@{nb\+Nodes}}
 \index{nb\+Nodes@{nb\+Nodes}!Simulation\+Parameters@{Simulation\+Parameters}}
 \subsubsection{\texorpdfstring{nb\+Nodes}{nbNodes}}
 {\footnotesize\ttfamily unsigned int Simulation\+Parameters\+::nb\+Nodes}
+
+
+
+Number of nodes the system contains. 
 
 \mbox{\Hypertarget{class_simulation_parameters_a57cd536ac7c057b5c2d5c85faa4d846d}\label{class_simulation_parameters_a57cd536ac7c057b5c2d5c85faa4d846d}} 
 \index{Simulation\+Parameters@{Simulation\+Parameters}!P\+E\+A\+K\+S\+P\+E\+R\+D\+E\+L\+AY@{P\+E\+A\+K\+S\+P\+E\+R\+D\+E\+L\+AY}}
@@ -289,13 +433,11 @@ Partial&\\
 \subsubsection{\texorpdfstring{P\+E\+A\+K\+S\+P\+E\+R\+D\+E\+L\+AY}{PEAKSPERDELAY}}
 {\footnotesize\ttfamily double Simulation\+Parameters\+::\+P\+E\+A\+K\+S\+P\+E\+R\+D\+E\+L\+AY}
 
-\mbox{\Hypertarget{class_simulation_parameters_a637db4137ba6b25de7e75db1582d6532}\label{class_simulation_parameters_a637db4137ba6b25de7e75db1582d6532}} 
-\index{Simulation\+Parameters@{Simulation\+Parameters}!recovering@{recovering}}
-\index{recovering@{recovering}!Simulation\+Parameters@{Simulation\+Parameters}}
-\subsubsection{\texorpdfstring{recovering}{recovering}}
-{\footnotesize\ttfamily bool Simulation\+Parameters\+::recovering}
 
 
+Number of broadcast peaks per delay\+Send, i.\+e. 
+
+there are P\+E\+A\+K\+S\+P\+E\+R\+D\+E\+L\+AY bell distributions per delay\+Send 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

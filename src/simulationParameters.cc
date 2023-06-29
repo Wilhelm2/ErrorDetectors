@@ -1,3 +1,4 @@
+/** @file*/
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -19,6 +20,8 @@ Define_Module(SimulationParameters);
 SimulationParameters::Delivery SimulationParameters::DeliveryController = SimulationParameters::Delivery::HashClockDifference;
 SimulationParameters::Dependencies SimulationParameters::depAppended = SimulationParameters::Dependencies::Partial;
 
+/** Initializes Stats by reading the simulation parameters, and by computing the dependencies to increment as well as the dependencies sets to test
+ */
 void SimulationParameters::initialize()
 {
     cSimpleModule::initialize();
@@ -27,13 +30,15 @@ void SimulationParameters::initialize()
     delaySend = par("delaySend");
     clockLength = par("clockLength");
     vector<vector<unsigned int>>  entriesIncrementedByProcess;
-    recovering = par("recovering");
+//    recovering = par("recovering");
 
     initializeDeliveryController();
     initializeClockEntriesToIncrement();
     computeDependecyCombinationsArray();
 }
 
+/** Converts the deliveryOption simulation parameter into the SimulationParameters::Delivery enum type.
+ */
 void SimulationParameters::initializeDeliveryController()
 {
     unsigned int deliveryOption = par("deliveryOption");
@@ -49,11 +54,9 @@ void SimulationParameters::initializeDeliveryController()
         DeliveryController = SimulationParameters::Delivery::HashClockDifference;
 }
 
-void SimulationParameters::handleMessage(cMessage *msg)
-{
-    // TODO - Generated method body
-}
-
+/** Uses the formula given by Mostéfaoui to determine the number of entries $k$ a process increments when broadcasting a message.
+ *  Then builds vectors of $k$ random entries to increment and shuffles them to have a more random distribution.
+ */
 void SimulationParameters::initializeClockEntriesToIncrement()
 {
     // use following formula to compute the number of entries incremented by each process ln(2)*R/X with R:clocksize, X:nbConcurrentMessages
@@ -66,9 +69,8 @@ void SimulationParameters::initializeClockEntriesToIncrement()
     std::cerr << "Number of entries to increment " << k<<endl;
 //    entriesIncrementedByProcess = computeEntryCombinations(clockLength, k);
     entriesIncrementedByProcess = EvenCombinations(nbNodes, k, clockLength);
-    nbCombinations = entriesIncrementedByProcess.size();
 
-    cerr<< "Number of combinations of incrementEntry sets  " << nbCombinations<<endl;
+    cerr<< "Number of combinations of incrementEntry sets  " << entriesIncrementedByProcess.size()<<endl;
     std::shuffle(entriesIncrementedByProcess.begin(), entriesIncrementedByProcess.end(),  std::default_random_engine {} );
     /*for(int i=0; i< clockEntries.size();i++)
             {
@@ -79,15 +81,19 @@ void SimulationParameters::initializeClockEntriesToIncrement()
     for(unsigned int i=0; i< nbNodes;i++)
     {
         cerr<< "Node " <<i << " increments entries " ;
-        for(unsigned int j : entriesIncrementedByProcess[i%nbCombinations])
+        for(unsigned int j : entriesIncrementedByProcess[i%entriesIncrementedByProcess.size()])
             cerr << j << " " ;
         cerr <<endl;
     }
 }
 
 
-
-// N = nbNodes, k = nb entries to increment when broadcasting a message, M = size of clock
+/** Builds vectors of $k$ entries to increment when broadcasting a message. Verifies that the entries to increment are distributed almost evenly, ie that entry 0 of the probabilistic clock is contained in as much vectors as entry 1, etc.
+ * @param N Number of nodes inside the system.
+ * @param k Number of entries to increment when broadcasting a message.
+ * @param M Size of the probabilistic clock.
+ * @return Vector containing sets of PC entry indexes to increment when broadcasting a message.
+ */
 vector<vector<unsigned int>> SimulationParameters::EvenCombinations(unsigned int N, unsigned int k, unsigned int M)
 {
     unsigned int nbIncrements = N*k/M +1; // number of times that each entry should be affected at maximum to a process (added +1 so that if nbIncrements = x.y then will not block)
@@ -126,16 +132,20 @@ vector<vector<unsigned int>> SimulationParameters::EvenCombinations(unsigned int
     return combinations;
 }
 
-
-vector<vector<unsigned int>> SimulationParameters::computeEntryCombinations(unsigned int N, unsigned int K)
+/** Builds vectors of $k$ entries to increment when broadcasting a message. This function does not ensure an even distribution.
+ *  @param M Size of the Probabilistic clock.
+ *  @param Number of entries nodes increment when broadcasting a message.
+ *  @return Vector containing sets of PC entry indexes to increment when broadcasting a message.
+ */
+vector<vector<unsigned int>> SimulationParameters::computeEntryCombinations(unsigned int M, unsigned int K)
 {
     std::string bitmask(K, 1); // K leading 1's
-    bitmask.resize(N, 0); // N-K trailing 0's
+    bitmask.resize(M, 0); // M-K trailing 0's
     vector<vector<unsigned int>> res;
 
     do {
         vector<unsigned int> v;
-        for (unsigned int i = 0; i < N; ++i) // [0..N-1] integers
+        for (unsigned int i = 0; i < M; ++i) // [0..M-1] integers
         {
             if (bitmask[i])
                 v.push_back(i);
@@ -146,7 +156,10 @@ vector<vector<unsigned int>> SimulationParameters::computeEntryCombinations(unsi
     return res;
 }
 
-
+/** Determines the simulation time of the first broadcast of node id.
+ * @param id Node identificator.
+ * @return Simulation time at which process id will broadcast its first message.
+ */
 simtime_t SimulationParameters::determineFirstSendTimeInMs(unsigned int id)
 {
     float nodesPerPeak = nbNodes / PEAKSPERDELAY;
@@ -157,11 +170,17 @@ simtime_t SimulationParameters::determineFirstSendTimeInMs(unsigned int id)
     return SimTime(nodeWillBroadcastAt,SIMTIME_US);
 }
 
-const vector<unsigned int>& SimulationParameters::getEntriesIncrementedByProcess(unsigned int processId)
+/** Getter of the entries incremented by nodes.
+ *  @param nodeId Identificator of the node of which requests the entries incremented when it broadcasts a message.
+ *  @return set of entries incremented by nodeId when it broadcasts a message.
+ */
+const vector<unsigned int>& SimulationParameters::getEntriesIncrementedByProcess(unsigned int nodeId)
 {
-    return entriesIncrementedByProcess[processId%nbCombinations];
+    return entriesIncrementedByProcess[nodeId%entriesIncrementedByProcess.size()];
 }
 
+/** Computes the dependency combinations for dependecies sets going from 1 to 1000 dependencies.
+ */
 void SimulationParameters::computeDependecyCombinationsArray()
 {
     dependencyCombinations.resize(1000);
@@ -172,6 +191,12 @@ void SimulationParameters::computeDependecyCombinationsArray()
     }
 }
 
+/** Computes the set of dependencies combinations for a given number of possible dependencies.
+ * For example, with 4 possible dependencies the returned vector (with 1=true and 0=false) will be:
+ * { {1111}, {0111}, {1011}, {0011}, {1101}, {0101}, {1001}, {0001}, {1110}, {0110}, {1010}, {0010}, {1100}, {0100}, {1000}, {0000}.
+ *  @param nbPossibleDep Number of possible dependencies.
+ *  @return Vector containing vectors $v$ of booleans, with $v[i][j]=false$ meaning that the dependency $j$ should not be considered in the $ith$ hash computed for a message with nbPossibleDep possible dependencies.
+ */
 vector<vector<bool>> SimulationParameters::DependencyCombinations(unsigned int nbPossibleDep)
 {
     vector<vector<bool>> res;
@@ -199,6 +224,12 @@ vector<vector<bool>> SimulationParameters::DependencyCombinations(unsigned int n
     return res;
 }
 
+/** Computes the set of dependencies combinations for a given number of possible dependencies.
+ * For example, with 4 possible dependencies the returned vector (with 1=true and 0=false) will be:
+ * { {1111}, {0111}, {1011}, {1101}, {1110}, {0011}, {1001}, {1100}, {1010}, {0110}, {0101}, {0001}, {1000}, {0100}, {0010}, {0000}.
+ *  @param nbPossibleDep Number of possible dependencies.
+ *  @return Vector containing vectors $v$ of booleans, with $v[i][j]=false$ meaning that the dependency $j$ should not be considered in the $ith$ hash computed for a message with nbPossibleDep possible dependencies.
+ */
 vector<vector<bool>> SimulationParameters::DependencyCombinationsTwo(unsigned int nbPossibleDep)
 {
     vector<vector<bool>> res;
@@ -213,6 +244,11 @@ vector<vector<bool>> SimulationParameters::DependencyCombinationsTwo(unsigned in
     return res;
 }
 
+/* Builds vectors of booleans used to test combinations of dependencies sets.
+ * @param N number of possible dependencies.
+ * @param K number of dependencies to set to false.
+ *  @return Vector containing vectors $v$ of booleans, with $v[i][j]=false$ meaning that the dependency $j$ should not be considered in the $ith$ hash computed for a message with nbPossibleDep possible dependencies.
+ */
 vector<vector<bool>> SimulationParameters::binominalCoefficient(unsigned int N, unsigned int K)
 {
     std::string bitmask(K, 1); // K leading 1's
@@ -232,6 +268,10 @@ vector<vector<bool>> SimulationParameters::binominalCoefficient(unsigned int N, 
     return res;
 }
 
+/** Returns the sets of dependency combinations for a given number of possible dependencies.
+ * @param nbPossibleDependencies Number of possible dependencies.
+ *  @return Vector containing vectors $v$ of booleans, with $v[i][j]=false$ meaning that the dependency $j$ should not be considered in the $ith$ hash computed for a message with nbPossibleDep possible dependencies.
+ */
 const vector<vector<bool>>& SimulationParameters::getDependencyCombinations(unsigned int nbPossibleDependencies)
 {
     if(nbPossibleDependencies >= dependencyCombinations.size())

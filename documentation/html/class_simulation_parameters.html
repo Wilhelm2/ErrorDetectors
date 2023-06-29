@@ -70,7 +70,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>TODO - Generated class.  
+<p>Contains the simulation parameters set in the .ini file found in the simulations folder.  
  <a href="class_simulation_parameters.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="simulation_parameters_8h_source.html">simulationParameters.h</a>&gt;</code></p>
@@ -96,75 +96,95 @@ Public Types</h2></td></tr>
 <a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307a59feb63389b0898ec47a4ab58d1be6f6">Delivery::Mostefaoui</a>, 
 <a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307a9a46ad9fb926b8b78ba9395f96aa6af0">Delivery::HashClockDifference</a>, 
 <br />
-&#160;&#160;<a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307ae3d02f7a43cb7e3e7d667a67f84c3e32">Delivery::HashIntervalDifference</a>
+&#160;&#160;<a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307ae3d02f7a43cb7e3e7d667a67f84c3e32">Delivery::HashIntervalDifference</a>, 
+<a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307ad8afbc541b39d23648c823057cffe3a5">Delivery::Recovery</a>, 
+<a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307a54bac2e6b76064db3dcf3d7c3a7b787b">Delivery::RecoveryTest</a>
 <br />
- }</td></tr>
+ }<tr class="memdesc:ae08444273809241f502aa422205f7307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the simulation's type of delivery control.  <a href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:ae08444273809241f502aa422205f7307"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb3b6aaecd4b19ef1991c870c8402dff"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#afb3b6aaecd4b19ef1991c870c8402dff">Dependencies</a> { <a class="el" href="class_simulation_parameters.html#afb3b6aaecd4b19ef1991c870c8402dffa96b0141273eabab320119c467cdcaf17">Dependencies::Total</a>, 
 <a class="el" href="class_simulation_parameters.html#afb3b6aaecd4b19ef1991c870c8402dffa44ffd38a6dea695cbe2b34efdcc6cf27">Dependencies::Partial</a>
- }</td></tr>
+ }<tr class="memdesc:afb3b6aaecd4b19ef1991c870c8402dff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the type of dependencies used by hash-based error detectors to compute the hash of broadcasted messages.  <a href="class_simulation_parameters.html#afb3b6aaecd4b19ef1991c870c8402dff">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:afb3b6aaecd4b19ef1991c870c8402dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acf83b84e172a799e1db3bf9554c4787f"><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#acf83b84e172a799e1db3bf9554c4787f">determineFirstSendTimeInMs</a> (unsigned int id)</td></tr>
+<tr class="memdesc:acf83b84e172a799e1db3bf9554c4787f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the simulation time of the first broadcast of node id.  <a href="#acf83b84e172a799e1db3bf9554c4787f">More...</a><br /></td></tr>
 <tr class="separator:acf83b84e172a799e1db3bf9554c4787f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec302fa13d17be02d116829100ccbf70"><td class="memItemLeft" align="right" valign="top">const vector&lt; unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#aec302fa13d17be02d116829100ccbf70">getEntriesIncrementedByProcess</a> (unsigned int processId)</td></tr>
-<tr class="separator:aec302fa13d17be02d116829100ccbf70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a52acbc3c5d374decafb59dcf0e971"><td class="memItemLeft" align="right" valign="top">const vector&lt; unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#aa8a52acbc3c5d374decafb59dcf0e971">getEntriesIncrementedByProcess</a> (unsigned int nodeId)</td></tr>
+<tr class="memdesc:aa8a52acbc3c5d374decafb59dcf0e971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the entries incremented by nodes.  <a href="#aa8a52acbc3c5d374decafb59dcf0e971">More...</a><br /></td></tr>
+<tr class="separator:aa8a52acbc3c5d374decafb59dcf0e971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39008b8c9ed5c7c27dbfe7c5355d8062"><td class="memItemLeft" align="right" valign="top">const vector&lt; vector&lt; bool &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a39008b8c9ed5c7c27dbfe7c5355d8062">getDependencyCombinations</a> (unsigned int nbPossibleDependencies)</td></tr>
+<tr class="memdesc:a39008b8c9ed5c7c27dbfe7c5355d8062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sets of dependency combinations for a given number of possible dependencies.  <a href="#a39008b8c9ed5c7c27dbfe7c5355d8062">More...</a><br /></td></tr>
 <tr class="separator:a39008b8c9ed5c7c27dbfe7c5355d8062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a96391a1b611de11ca4d0babba7117872"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a96391a1b611de11ca4d0babba7117872">nbNodes</a></td></tr>
+<tr class="memdesc:a96391a1b611de11ca4d0babba7117872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of nodes the system contains.  <a href="#a96391a1b611de11ca4d0babba7117872">More...</a><br /></td></tr>
 <tr class="separator:a96391a1b611de11ca4d0babba7117872"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34b25081ba9b20aa461c03ab3ade034b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a34b25081ba9b20aa461c03ab3ade034b">clockLength</a></td></tr>
+<tr class="memdesc:a34b25081ba9b20aa461c03ab3ade034b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock size that process use to track causality.  <a href="#a34b25081ba9b20aa461c03ab3ade034b">More...</a><br /></td></tr>
 <tr class="separator:a34b25081ba9b20aa461c03ab3ade034b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57cd536ac7c057b5c2d5c85faa4d846d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a57cd536ac7c057b5c2d5c85faa4d846d">PEAKSPERDELAY</a></td></tr>
-<tr class="separator:a57cd536ac7c057b5c2d5c85faa4d846d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae02521fdf6d81eff5e620a6a021106d3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#ae02521fdf6d81eff5e620a6a021106d3">delaySend</a></td></tr>
+<tr class="memdesc:ae02521fdf6d81eff5e620a6a021106d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">All nodes broadcast a message in delaySend ms.  <a href="#ae02521fdf6d81eff5e620a6a021106d3">More...</a><br /></td></tr>
 <tr class="separator:ae02521fdf6d81eff5e620a6a021106d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57cd536ac7c057b5c2d5c85faa4d846d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a57cd536ac7c057b5c2d5c85faa4d846d">PEAKSPERDELAY</a></td></tr>
+<tr class="memdesc:a57cd536ac7c057b5c2d5c85faa4d846d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of broadcast peaks per delaySend, i.e.  <a href="#a57cd536ac7c057b5c2d5c85faa4d846d">More...</a><br /></td></tr>
+<tr class="separator:a57cd536ac7c057b5c2d5c85faa4d846d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a069a04754400916fc6b5f9f5baff2d32"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a069a04754400916fc6b5f9f5baff2d32">entriesIncrementedByProcess</a></td></tr>
+<tr class="memdesc:a069a04754400916fc6b5f9f5baff2d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector containing the set of entries incremented by processes when broadcasting a message.  <a href="#a069a04754400916fc6b5f9f5baff2d32">More...</a><br /></td></tr>
 <tr class="separator:a069a04754400916fc6b5f9f5baff2d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f1c0671b131ea807d8a04cd9b15d9b8"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a8f1c0671b131ea807d8a04cd9b15d9b8">nbCombinations</a></td></tr>
-<tr class="separator:a8f1c0671b131ea807d8a04cd9b15d9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e884901020cad738db1aceaa6700d9f"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; vector&lt; bool &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a1e884901020cad738db1aceaa6700d9f">dependencyCombinations</a></td></tr>
+<tr class="memdesc:a1e884901020cad738db1aceaa6700d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector containing the dependencies to set in the hash computation of hash-based error detectors following the number of messages that are considered of might being causal dependencies of the message to deliver.  <a href="#a1e884901020cad738db1aceaa6700d9f">More...</a><br /></td></tr>
 <tr class="separator:a1e884901020cad738db1aceaa6700d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a637db4137ba6b25de7e75db1582d6532"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a637db4137ba6b25de7e75db1582d6532">recovering</a></td></tr>
-<tr class="separator:a637db4137ba6b25de7e75db1582d6532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ab379e91439dd9d4179096d30f930d459"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307">Delivery</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#ab379e91439dd9d4179096d30f930d459">DeliveryController</a> = <a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307a9a46ad9fb926b8b78ba9395f96aa6af0">SimulationParameters::Delivery::HashClockDifference</a></td></tr>
+<tr class="memdesc:ab379e91439dd9d4179096d30f930d459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the type of the simulation's delivery control.  <a href="#ab379e91439dd9d4179096d30f930d459">More...</a><br /></td></tr>
 <tr class="separator:ab379e91439dd9d4179096d30f930d459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0c30ae3194fb07ca8a456331fce1add"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_simulation_parameters.html#afb3b6aaecd4b19ef1991c870c8402dff">Dependencies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#ad0c30ae3194fb07ca8a456331fce1add">depAppended</a> = <a class="el" href="class_simulation_parameters.html#afb3b6aaecd4b19ef1991c870c8402dffa44ffd38a6dea695cbe2b34efdcc6cf27">SimulationParameters::Dependencies::Partial</a></td></tr>
+<tr class="memdesc:ad0c30ae3194fb07ca8a456331fce1add"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the type of dependencies used by hash-based error detectors.  <a href="#ad0c30ae3194fb07ca8a456331fce1add">More...</a><br /></td></tr>
 <tr class="separator:ad0c30ae3194fb07ca8a456331fce1add"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a1fa495ef59a10cb9a0aff42f3e2625ef"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a1fa495ef59a10cb9a0aff42f3e2625ef">initialize</a> ()</td></tr>
+<tr class="memdesc:a1fa495ef59a10cb9a0aff42f3e2625ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes <a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> by reading the simulation parameters, and by computing the dependencies to increment as well as the dependencies sets to test.  <a href="#a1fa495ef59a10cb9a0aff42f3e2625ef">More...</a><br /></td></tr>
 <tr class="separator:a1fa495ef59a10cb9a0aff42f3e2625ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9966d132ac2b5dc248973185a1a8deb4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a9966d132ac2b5dc248973185a1a8deb4">handleMessage</a> (cMessage *<a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a>)</td></tr>
-<tr class="separator:a9966d132ac2b5dc248973185a1a8deb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8983c7bf9d840f8b4a9a4d55c04d581a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a8983c7bf9d840f8b4a9a4d55c04d581a">handleMessage</a> (cMessage *<a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a>)</td></tr>
+<tr class="separator:a8983c7bf9d840f8b4a9a4d55c04d581a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afec1fdd41805feba54ad575a4542aab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#afec1fdd41805feba54ad575a4542aab1">initializeDeliveryController</a> ()</td></tr>
+<tr class="memdesc:afec1fdd41805feba54ad575a4542aab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the deliveryOption simulation parameter into the <a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307" title="Defines the simulation&#39;s type of delivery control. ">SimulationParameters::Delivery</a> enum type.  <a href="#afec1fdd41805feba54ad575a4542aab1">More...</a><br /></td></tr>
 <tr class="separator:afec1fdd41805feba54ad575a4542aab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeef091d6ca357795fa7ff6b3661fb2fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#aeef091d6ca357795fa7ff6b3661fb2fd">initializeClockEntriesToIncrement</a> ()</td></tr>
+<tr class="memdesc:aeef091d6ca357795fa7ff6b3661fb2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses the formula given by Mostéfaoui to determine the number of entries $k$ a process increments when broadcasting a message.  <a href="#aeef091d6ca357795fa7ff6b3661fb2fd">More...</a><br /></td></tr>
 <tr class="separator:aeef091d6ca357795fa7ff6b3661fb2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7a743b60e8ac2352e4845b104038bde"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#ae7a743b60e8ac2352e4845b104038bde">EvenCombinations</a> (unsigned int N, unsigned int k, unsigned int M)</td></tr>
+<tr class="memdesc:ae7a743b60e8ac2352e4845b104038bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds vectors of $k$ entries to increment when broadcasting a message.  <a href="#ae7a743b60e8ac2352e4845b104038bde">More...</a><br /></td></tr>
 <tr class="separator:ae7a743b60e8ac2352e4845b104038bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6157da0870526895f7619d614e3b72d0"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a6157da0870526895f7619d614e3b72d0">computeEntryCombinations</a> (unsigned int N, unsigned int K)</td></tr>
-<tr class="separator:a6157da0870526895f7619d614e3b72d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae665fb3295f28d46514597f88c690d4a"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#ae665fb3295f28d46514597f88c690d4a">computeEntryCombinations</a> (unsigned int M, unsigned int K)</td></tr>
+<tr class="memdesc:ae665fb3295f28d46514597f88c690d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds vectors of $k$ entries to increment when broadcasting a message.  <a href="#ae665fb3295f28d46514597f88c690d4a">More...</a><br /></td></tr>
+<tr class="separator:ae665fb3295f28d46514597f88c690d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09bec9dc793646bd71f610eee824dc21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a09bec9dc793646bd71f610eee824dc21">computeDependecyCombinationsArray</a> ()</td></tr>
+<tr class="memdesc:a09bec9dc793646bd71f610eee824dc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dependency combinations for dependecies sets going from 1 to 1000 dependencies.  <a href="#a09bec9dc793646bd71f610eee824dc21">More...</a><br /></td></tr>
 <tr class="separator:a09bec9dc793646bd71f610eee824dc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9694dd5f7c2028efe03dc273d8fdcbd7"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a9694dd5f7c2028efe03dc273d8fdcbd7">DependencyCombinations</a> (unsigned int nbPossibleDep)</td></tr>
+<tr class="memdesc:a9694dd5f7c2028efe03dc273d8fdcbd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the set of dependencies combinations for a given number of possible dependencies.  <a href="#a9694dd5f7c2028efe03dc273d8fdcbd7">More...</a><br /></td></tr>
 <tr class="separator:a9694dd5f7c2028efe03dc273d8fdcbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e6bb792e1487214e5cf1d64c8841064"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a4e6bb792e1487214e5cf1d64c8841064">DependencyCombinationsTwo</a> (unsigned int nbPossibleDep)</td></tr>
+<tr class="memdesc:a4e6bb792e1487214e5cf1d64c8841064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the set of dependencies combinations for a given number of possible dependencies.  <a href="#a4e6bb792e1487214e5cf1d64c8841064">More...</a><br /></td></tr>
 <tr class="separator:a4e6bb792e1487214e5cf1d64c8841064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0615d3df4a78df81566d219e6e9529f"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#ab0615d3df4a78df81566d219e6e9529f">binominalCoefficient</a> (unsigned int N, unsigned int K)</td></tr>
 <tr class="separator:ab0615d3df4a78df81566d219e6e9529f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>TODO - Generated class. </p>
+<div class="textblock"><p>Contains the simulation parameters set in the .ini file found in the simulations folder. </p>
+<p>The class reads the simulation parameters at the beginning of the simulation and other classes get access to those parameters through this class. </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ae08444273809241f502aa422205f7307"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae08444273809241f502aa422205f7307">&#9670;&nbsp;</a></span>Delivery</h2>
@@ -185,12 +205,23 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Defines the simulation's type of delivery control. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307a8697250efc73639dd2a6e7da243ac68b"></a>NOTHING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307a3ccf7e50009c796055e4814c7219f2df"></a>ClockComparison&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307a59feb63389b0898ec47a4ab58d1be6f6"></a>Mostefaoui&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307a9a46ad9fb926b8b78ba9395f96aa6af0"></a>HashClockDifference&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307ae3d02f7a43cb7e3e7d667a67f84c3e32"></a>HashIntervalDifference&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307a8697250efc73639dd2a6e7da243ac68b"></a>NOTHING&#160;</td><td class="fielddoc"><p>No control, meaning that messages are delivered straight upon reception without any control. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307a3ccf7e50009c796055e4814c7219f2df"></a>ClockComparison&#160;</td><td class="fielddoc"><p>Uses Probabilistic clocks to causally order messages. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307a59feb63389b0898ec47a4ab58d1be6f6"></a>Mostefaoui&#160;</td><td class="fielddoc"><p>Uses Probabilistic clocks to causally order messages and executes the error detector of Mostéfaoui on a message $m$'s clock before delivering $m$. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307a9a46ad9fb926b8b78ba9395f96aa6af0"></a>HashClockDifference&#160;</td><td class="fielddoc"><p>Uses Probabilistic clocks to causally order messages and executes the hash-based error detector with the clock difference technique on a message $m$'s clock before delivering $m$. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307ae3d02f7a43cb7e3e7d667a67f84c3e32"></a>HashIntervalDifference&#160;</td><td class="fielddoc"><p>Uses Probabilistic clocks to causally order messages and executes the hash-based error detector with the interval technique on a message $m$'s clock before delivering $m$. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307ad8afbc541b39d23648c823057cffe3a5"></a>Recovery&#160;</td><td class="fielddoc"><p>Uses Probabilistic clocks to causally order messages and executes the hash-based error detector with the clock difference technique on a message $m$'s clock before delivering $m$, and recovers the dependencies of $m$ if the error detector concludes that $m$ might not be causally ordered. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae08444273809241f502aa422205f7307a54bac2e6b76064db3dcf3d7c3a7b787b"></a>RecoveryTest&#160;</td><td class="fielddoc"><p>Uses Probabilistic clocks to causally order messages and executes the hash-based error detector with the clock difference technique on a message $m$'s clock before delivering $m$, executes the recoveryTest if the error detector concludes that $m$ might not be causally ordered, and recovers the dependencies of $m$ if the recovery test does not succeed in finding a dependencies set for $m$. </p>
+</td></tr>
 </table>
 
 </div>
@@ -214,9 +245,13 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Defines the type of dependencies used by hash-based error detectors to compute the hash of broadcasted messages. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afb3b6aaecd4b19ef1991c870c8402dffa96b0141273eabab320119c467cdcaf17"></a>Total&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="afb3b6aaecd4b19ef1991c870c8402dffa44ffd38a6dea695cbe2b34efdcc6cf27"></a>Partial&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afb3b6aaecd4b19ef1991c870c8402dffa96b0141273eabab320119c467cdcaf17"></a>Total&#160;</td><td class="fielddoc"><p>A node computes the hash of messages it broadcasts with the full dependency vector of the message to broadcast, ie with a dependency vector containing one entry per process in the system. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afb3b6aaecd4b19ef1991c870c8402dffa44ffd38a6dea695cbe2b34efdcc6cf27"></a>Partial&#160;</td><td class="fielddoc"><p>A node computes the hash of messages it broadcasts with only a subset of dependencies of the message to broadcast. </p>
+</td></tr>
 </table>
 
 </div>
@@ -281,10 +316,12 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Computes the dependency combinations for dependecies sets going from 1 to 1000 dependencies. </p>
+
 </div>
 </div>
-<a id="a6157da0870526895f7619d614e3b72d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6157da0870526895f7619d614e3b72d0">&#9670;&nbsp;</a></span>computeEntryCombinations()</h2>
+<a id="ae665fb3295f28d46514597f88c690d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae665fb3295f28d46514597f88c690d4a">&#9670;&nbsp;</a></span>computeEntryCombinations()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,7 +333,7 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">vector&lt; vector&lt; unsigned int &gt; &gt; SimulationParameters::computeEntryCombinations </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
+          <td class="paramname"><em>M</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -316,6 +353,16 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Builds vectors of $k$ entries to increment when broadcasting a message. </p>
+<p>This function does not ensure an even distribution. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">M</td><td>Size of the Probabilistic clock. </td></tr>
+    <tr><td class="paramname">Number</td><td>of entries nodes increment when broadcasting a message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector containing sets of PC entry indexes to increment when broadcasting a message. </dd></dl>
 
 </div>
 </div>
@@ -343,6 +390,15 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Computes the set of dependencies combinations for a given number of possible dependencies. </p>
+<p>For example, with 4 possible dependencies the returned vector (with 1=true and 0=false) will be: { {1111}, {0111}, {1011}, {0011}, {1101}, {0101}, {1001}, {0001}, {1110}, {0110}, {1010}, {0010}, {1100}, {0100}, {1000}, {0000}. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nbPossibleDep</td><td>Number of possible dependencies. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector containing vectors $v$ of booleans, with $v[i][j]=false$ meaning that the dependency $j$ should not be considered in the $ith$ hash computed for a message with nbPossibleDep possible dependencies. </dd></dl>
+
 </div>
 </div>
 <a id="a4e6bb792e1487214e5cf1d64c8841064"></a>
@@ -369,6 +425,15 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Computes the set of dependencies combinations for a given number of possible dependencies. </p>
+<p>For example, with 4 possible dependencies the returned vector (with 1=true and 0=false) will be: { {1111}, {0111}, {1011}, {1101}, {1110}, {0011}, {1001}, {1100}, {1010}, {0110}, {0101}, {0001}, {1000}, {0100}, {0010}, {0000}. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nbPossibleDep</td><td>Number of possible dependencies. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector containing vectors $v$ of booleans, with $v[i][j]=false$ meaning that the dependency $j$ should not be considered in the $ith$ hash computed for a message with nbPossibleDep possible dependencies. </dd></dl>
+
 </div>
 </div>
 <a id="acf83b84e172a799e1db3bf9554c4787f"></a>
@@ -386,6 +451,15 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Determines the simulation time of the first broadcast of node id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Node identificator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Simulation time at which process id will broadcast its first message. </dd></dl>
 
 </div>
 </div>
@@ -429,6 +503,17 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Builds vectors of $k$ entries to increment when broadcasting a message. </p>
+<p>Verifies that the entries to increment are distributed almost evenly, ie that entry 0 of the probabilistic clock is contained in as much vectors as entry 1, etc. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>Number of nodes inside the system. </td></tr>
+    <tr><td class="paramname">k</td><td>Number of entries to increment when broadcasting a message. </td></tr>
+    <tr><td class="paramname">M</td><td>Size of the probabilistic clock. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector containing sets of PC entry indexes to increment when broadcasting a message. </dd></dl>
+
 </div>
 </div>
 <a id="a39008b8c9ed5c7c27dbfe7c5355d8062"></a>
@@ -447,10 +532,19 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the sets of dependency combinations for a given number of possible dependencies. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nbPossibleDependencies</td><td>Number of possible dependencies. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector containing vectors $v$ of booleans, with $v[i][j]=false$ meaning that the dependency $j$ should not be considered in the $ith$ hash computed for a message with nbPossibleDep possible dependencies. </dd></dl>
+
 </div>
 </div>
-<a id="aec302fa13d17be02d116829100ccbf70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec302fa13d17be02d116829100ccbf70">&#9670;&nbsp;</a></span>getEntriesIncrementedByProcess()</h2>
+<a id="aa8a52acbc3c5d374decafb59dcf0e971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a52acbc3c5d374decafb59dcf0e971">&#9670;&nbsp;</a></span>getEntriesIncrementedByProcess()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -459,16 +553,25 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">const vector&lt; unsigned int &gt; &amp; SimulationParameters::getEntriesIncrementedByProcess </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>processId</em></td><td>)</td>
+          <td class="paramname"><em>nodeId</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Getter of the entries incremented by nodes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nodeId</td><td>Identificator of the node of which requests the entries incremented when it broadcasts a message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>set of entries incremented by nodeId when it broadcasts a message. </dd></dl>
+
 </div>
 </div>
-<a id="a9966d132ac2b5dc248973185a1a8deb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9966d132ac2b5dc248973185a1a8deb4">&#9670;&nbsp;</a></span>handleMessage()</h2>
+<a id="a8983c7bf9d840f8b4a9a4d55c04d581a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8983c7bf9d840f8b4a9a4d55c04d581a">&#9670;&nbsp;</a></span>handleMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -477,7 +580,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SimulationParameters::handleMessage </td>
+          <td class="memname">virtual void SimulationParameters::handleMessage </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -486,7 +589,7 @@ Protected Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -516,6 +619,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Initializes <a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> by reading the simulation parameters, and by computing the dependencies to increment as well as the dependencies sets to test. </p>
+
 </div>
 </div>
 <a id="aeef091d6ca357795fa7ff6b3661fb2fd"></a>
@@ -540,6 +645,9 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Uses the formula given by Mostéfaoui to determine the number of entries $k$ a process increments when broadcasting a message. </p>
+<p>Then builds vectors of $k$ random entries to increment and shuffles them to have a more random distribution. </p>
 
 </div>
 </div>
@@ -566,6 +674,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Converts the deliveryOption simulation parameter into the <a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307" title="Defines the simulation&#39;s type of delivery control. ">SimulationParameters::Delivery</a> enum type. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -581,6 +691,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Clock size that process use to track causality. </p>
+
 </div>
 </div>
 <a id="ae02521fdf6d81eff5e620a6a021106d3"></a>
@@ -594,6 +706,8 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>All nodes broadcast a message in delaySend ms. </p>
 
 </div>
 </div>
@@ -617,6 +731,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Determines the type of the simulation's delivery control. </p>
+
 </div>
 </div>
 <a id="ad0c30ae3194fb07ca8a456331fce1add"></a>
@@ -639,6 +755,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Determines the type of dependencies used by hash-based error detectors. </p>
+
 </div>
 </div>
 <a id="a1e884901020cad738db1aceaa6700d9f"></a>
@@ -652,6 +770,8 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Vector containing the dependencies to set in the hash computation of hash-based error detectors following the number of messages that are considered of might being causal dependencies of the message to deliver. </p>
 
 </div>
 </div>
@@ -667,19 +787,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a8f1c0671b131ea807d8a04cd9b15d9b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f1c0671b131ea807d8a04cd9b15d9b8">&#9670;&nbsp;</a></span>nbCombinations</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int SimulationParameters::nbCombinations</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Vector containing the set of entries incremented by processes when broadcasting a message. </p>
+<p>entriesIncrementedByProcess[0] contains the entries p_0 increments when broadcasting a message. </p>
 
 </div>
 </div>
@@ -695,6 +804,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Number of nodes the system contains. </p>
+
 </div>
 </div>
 <a id="a57cd536ac7c057b5c2d5c85faa4d846d"></a>
@@ -709,19 +820,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a637db4137ba6b25de7e75db1582d6532"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a637db4137ba6b25de7e75db1582d6532">&#9670;&nbsp;</a></span>recovering</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool SimulationParameters::recovering</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Number of broadcast peaks per delaySend, i.e. </p>
+<p>there are PEAKSPERDELAY bell distributions per delaySend </p>
 
 </div>
 </div>

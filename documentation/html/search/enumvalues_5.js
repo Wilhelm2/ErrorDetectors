@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['total',['Total',['../class_simulation_parameters.html#afb3b6aaecd4b19ef1991c870c8402dffa96b0141273eabab320119c467cdcaf17',1,'SimulationParameters']]]
+  ['recovery',['Recovery',['../class_simulation_parameters.html#ae08444273809241f502aa422205f7307ad8afbc541b39d23648c823057cffe3a5',1,'SimulationParameters']]],
+  ['recoverytest',['RecoveryTest',['../class_simulation_parameters.html#ae08444273809241f502aa422205f7307a54bac2e6b76064db3dcf3d7c3a7b787b',1,'SimulationParameters']]]
 ];

@@ -2,6 +2,11 @@
 \label{class_node_base}\index{Node\+Base@{Node\+Base}}
 
 
+Base class of Nodes.  
+
+
+
+
 {\ttfamily \#include $<$Node\+Base.\+h$>$}
 
 
@@ -15,7 +20,8 @@ Inheritance diagram for Node\+Base\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Node\+Base\+:\nopagebreak
+Collaboration diagram for Node\+Base\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,51 +36,61 @@ Collaboration diagram for Node\+Base\+:\nopagebreak
 virtual \hyperlink{class_node_base_a2fd7f7080282b6af95ba0b09fd30679d}{$\sim$\+Node\+Base} ()
 \item 
 virtual void \hyperlink{class_node_base_af7910c39553111295b66c88742d1198a}{initialize} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes the node by scheduling it\textquotesingle{}s broadcast\+Timer, initializing its connection with the communication dispatcher and looking up the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} and \hyperlink{class_controller}{Controller} modules. \end{DoxyCompactList}\item 
 void \hyperlink{class_node_base_a2077b2a599f55050603268dbf8fff6a7}{initialize\+Communications} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes the connection with the communication\+Dispatcher by sending an \hyperlink{class_init}{Init} message containing the node\textquotesingle{}s id, such that the communication\+Dispatcher can associate the gates to the right nodes. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_node_base_add2450264be5dd616f9f9ac94e83b988}{handle\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg}) override
-\item 
+\begin{DoxyCompactList}\small\item\em Called upon reception of a message to proecss it, whether it be a selfmsg (broadcast\+Timer) or a message received from another process. \end{DoxyCompactList}\item 
+void \hyperlink{class_node_base_a65273f043d18d6f021199fba050700b5}{handle\+Broadcast\+Timer} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})
+\begin{DoxyCompactList}\small\item\em Called to handle the broadcast\+Timer. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_base_a66c1dee9d15119bc3e68da71067ff6cd}{prepare\+Broadcast} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_base_ac8b9e21b1cc32fd86aaa6c956b93a7c3}{create\+App\+Msg} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates an application message and initializes it. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_node_base_ae70b168f2bc7407c249594b1c614301c}{process\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})=0
-\item 
+\begin{DoxyCompactList}\small\item\em Called at reception of messages from other nodes in order to process them. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{class_node_base_a49052382add1123da26db6bfb687d254}{deliver\+Msg} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Delivers a message and verifies its delivery in causal order. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-const unsigned int \hyperlink{class_node_base_a2924723bf530b8304c5e028504aafd84}{id} = id\+Count\+Node\+Dep++
-\item 
+const unsigned int \hyperlink{class_node_base_a2924723bf530b8304c5e028504aafd84}{id} = \hyperlink{class_node_base_a3d577a517665ac5bcf9ed9495945fe31}{id\+Counter}++
+\begin{DoxyCompactList}\small\item\em Unique identificator of the process. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_node_base_a4fe5b1b7aeb49d15ec7986133346aeb7}{seq} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Sequence number counter the process uses to give a unique identificator to messages. \end{DoxyCompactList}\item 
 c\+Message $\ast$ \hyperlink{class_node_base_a8b7bd31bf2bef92de75a2b565c42fd8a}{broadcast\+Timer} = new c\+Message()
-\item 
+\begin{DoxyCompactList}\small\item\em Timer to scheduel the broadcast of application messages. \end{DoxyCompactList}\item 
 simtime\+\_\+t \hyperlink{class_node_base_a199676fc8bd0203c7241f58779c5921c}{base\+Time\+Broadcast}
-\item 
+\begin{DoxyCompactList}\small\item\em Time of first message broadcast. \end{DoxyCompactList}\item 
 std\+::default\+\_\+random\+\_\+engine \hyperlink{class_node_base_a2c488fd8adf4d208593a6e6eba4d6220}{generator\+Send\+Distribution}
-\item 
+\begin{DoxyCompactList}\small\item\em Used to have a random variation in the broadcast time of application messages. \end{DoxyCompactList}\item 
 c\+Gate $\ast$ \hyperlink{class_node_base_a2e86bd53e181f8b488130032da547f8e}{out\+Gate}
-\item 
+\begin{DoxyCompactList}\small\item\em Gate used to communicate with other nodes. \end{DoxyCompactList}\item 
 \hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$ \hyperlink{class_node_base_aa6fb61208e4f5b7a841cd46fac297058}{params}
-\item 
+\begin{DoxyCompactList}\small\item\em Reference to the simulation parameters to avoid looking them up in each function. \end{DoxyCompactList}\item 
 \hyperlink{_node_base_8h_a6d83bdf09c8e309d31f9330091b0d10d}{stats\+Node} \hyperlink{class_node_base_a12b20bca634637499bf55020c398424e}{stats}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_stats}{Stats} relevant to all types of nodes. \end{DoxyCompactList}\item 
 \hyperlink{class_controller}{Controller} $\ast$ \hyperlink{class_node_base_a89bfb79efc25d9508eb15a4184558c41}{control}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reference to the controller module to avoid looking it up every time. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static std\+::normal\+\_\+distribution$<$ double $>$ \hyperlink{class_node_base_ab8e4cc30083c58d14b22d928a78cb8ac}{send\+Distribution} = std\+::normal\+\_\+distribution$<$double$>$(0.,10000.)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to have a random variation in the broadcast time of application messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{class_node_base_a3d577a517665ac5bcf9ed9495945fe31}{id\+Counter} = 0
+\begin{DoxyCompactList}\small\item\em Counter used to give a unique identificator to every node. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_node_base_a129f65b6976377739eb6231b6962985e}{Stats}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Base class of Nodes. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_node_base_ab6ea4e77947d5b9b8da66d37dc432e7f}\label{class_node_base_ab6ea4e77947d5b9b8da66d37dc432e7f}} 
@@ -100,6 +116,13 @@ class \hyperlink{class_node_base_a129f65b6976377739eb6231b6962985e}{Stats}
 
 
 
+Creates an application message and initializes it. 
+
+\begin{DoxyReturn}{Returns}
+The application message. 
+\end{DoxyReturn}
+
+
 Reimplemented in \hyperlink{class_node_with_control_a7772568c2836f5f204952ebe659e0049}{Node\+With\+Control}, and \hyperlink{class_node_detector_a7100349647350ad5e3aeb1ed4669c723}{Node\+Detector}.
 
 \mbox{\Hypertarget{class_node_base_a49052382add1123da26db6bfb687d254}\label{class_node_base_a49052382add1123da26db6bfb687d254}} 
@@ -110,14 +133,50 @@ Reimplemented in \hyperlink{class_node_with_control_a7772568c2836f5f204952ebe659
 
 
 
+Delivers a message and verifies its delivery in causal order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The information about the message to deliver. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the message has been delivered in causal order and false otherwise. 
+\end{DoxyReturn}
+
+
 Reimplemented in \hyperlink{class_node_with_control_aada7451be61be592b27188b6249afef2}{Node\+With\+Control}.
 
+\mbox{\Hypertarget{class_node_base_a65273f043d18d6f021199fba050700b5}\label{class_node_base_a65273f043d18d6f021199fba050700b5}} 
+\index{Node\+Base@{Node\+Base}!handle\+Broadcast\+Timer@{handle\+Broadcast\+Timer}}
+\index{handle\+Broadcast\+Timer@{handle\+Broadcast\+Timer}!Node\+Base@{Node\+Base}}
+\subsubsection{\texorpdfstring{handle\+Broadcast\+Timer()}{handleBroadcastTimer()}}
+{\footnotesize\ttfamily void Node\+Base\+::handle\+Broadcast\+Timer (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Called to handle the broadcast\+Timer. 
+
+Determines the first broadcast time at the beginning of the simulation, and broadcasts messages and schedules next broadcasts otherwise. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & Timer used to schedule the next broadcast of application messages. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_node_base_add2450264be5dd616f9f9ac94e83b988}\label{class_node_base_add2450264be5dd616f9f9ac94e83b988}} 
 \index{Node\+Base@{Node\+Base}!handle\+Message@{handle\+Message}}
 \index{handle\+Message@{handle\+Message}!Node\+Base@{Node\+Base}}
 \subsubsection{\texorpdfstring{handle\+Message()}{handleMessage()}}
 {\footnotesize\ttfamily void Node\+Base\+::handle\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Called upon reception of a message to proecss it, whether it be a selfmsg (broadcast\+Timer) or a message received from another process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message the node received. \\
+\hline
+\end{DoxyParams}
 
 
 Reimplemented in \hyperlink{class_node_with_recovery_a901c89606b84898e13fe8a66228acd9f}{Node\+With\+Recovery}.
@@ -130,6 +189,10 @@ Reimplemented in \hyperlink{class_node_with_recovery_a901c89606b84898e13fe8a6622
 
 
 
+Initializes the node by scheduling it\textquotesingle{}s broadcast\+Timer, initializing its connection with the communication dispatcher and looking up the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} and \hyperlink{class_controller}{Controller} modules. 
+
+
+
 Reimplemented in \hyperlink{class_node_with_control_a08c8e80fd67b52c51c642d7c66fe729c}{Node\+With\+Control}, and \hyperlink{class_node_detector_aefa188ab0657837b1b57f24674d3ef22}{Node\+Detector}.
 
 \mbox{\Hypertarget{class_node_base_a2077b2a599f55050603268dbf8fff6a7}\label{class_node_base_a2077b2a599f55050603268dbf8fff6a7}} 
@@ -137,6 +200,10 @@ Reimplemented in \hyperlink{class_node_with_control_a08c8e80fd67b52c51c642d7c66f
 \index{initialize\+Communications@{initialize\+Communications}!Node\+Base@{Node\+Base}}
 \subsubsection{\texorpdfstring{initialize\+Communications()}{initializeCommunications()}}
 {\footnotesize\ttfamily void Node\+Base\+::initialize\+Communications (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initializes the connection with the communication\+Dispatcher by sending an \hyperlink{class_init}{Init} message containing the node\textquotesingle{}s id, such that the communication\+Dispatcher can associate the gates to the right nodes. 
 
 \mbox{\Hypertarget{class_node_base_a66c1dee9d15119bc3e68da71067ff6cd}\label{class_node_base_a66c1dee9d15119bc3e68da71067ff6cd}} 
 \index{Node\+Base@{Node\+Base}!prepare\+Broadcast@{prepare\+Broadcast}}
@@ -146,6 +213,13 @@ Reimplemented in \hyperlink{class_node_with_control_a08c8e80fd67b52c51c642d7c66f
 
 
 
+Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. 
+
+\begin{DoxyReturn}{Returns}
+The application message to broadcast. 
+\end{DoxyReturn}
+
+
 Reimplemented in \hyperlink{class_node_with_recovery_a33d8e8775fd69cb647b38a54b36e1ebe}{Node\+With\+Recovery}, \hyperlink{class_node_with_control_ab871014cf3f42d834f8d34ad5498174c}{Node\+With\+Control}, and \hyperlink{class_node_detector_af75cf37cc01fc51bc228a7a83c10cb97}{Node\+Detector}.
 
 \mbox{\Hypertarget{class_node_base_ae70b168f2bc7407c249594b1c614301c}\label{class_node_base_ae70b168f2bc7407c249594b1c614301c}} 
@@ -153,6 +227,10 @@ Reimplemented in \hyperlink{class_node_with_recovery_a33d8e8775fd69cb647b38a54b3
 \index{process\+Message@{process\+Message}!Node\+Base@{Node\+Base}}
 \subsubsection{\texorpdfstring{process\+Message()}{processMessage()}}
 {\footnotesize\ttfamily virtual void Node\+Base\+::process\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Called at reception of messages from other nodes in order to process them. 
 
 
 
@@ -176,11 +254,19 @@ Implemented in \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c
 \subsubsection{\texorpdfstring{base\+Time\+Broadcast}{baseTimeBroadcast}}
 {\footnotesize\ttfamily simtime\+\_\+t Node\+Base\+::base\+Time\+Broadcast\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Time of first message broadcast. 
+
 \mbox{\Hypertarget{class_node_base_a8b7bd31bf2bef92de75a2b565c42fd8a}\label{class_node_base_a8b7bd31bf2bef92de75a2b565c42fd8a}} 
 \index{Node\+Base@{Node\+Base}!broadcast\+Timer@{broadcast\+Timer}}
 \index{broadcast\+Timer@{broadcast\+Timer}!Node\+Base@{Node\+Base}}
 \subsubsection{\texorpdfstring{broadcast\+Timer}{broadcastTimer}}
 {\footnotesize\ttfamily c\+Message$\ast$ Node\+Base\+::broadcast\+Timer = new c\+Message()\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Timer to scheduel the broadcast of application messages. 
 
 \mbox{\Hypertarget{class_node_base_a89bfb79efc25d9508eb15a4184558c41}\label{class_node_base_a89bfb79efc25d9508eb15a4184558c41}} 
 \index{Node\+Base@{Node\+Base}!control@{control}}
@@ -188,17 +274,39 @@ Implemented in \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c
 \subsubsection{\texorpdfstring{control}{control}}
 {\footnotesize\ttfamily \hyperlink{class_controller}{Controller}$\ast$ Node\+Base\+::control\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Reference to the controller module to avoid looking it up every time. 
+
 \mbox{\Hypertarget{class_node_base_a2c488fd8adf4d208593a6e6eba4d6220}\label{class_node_base_a2c488fd8adf4d208593a6e6eba4d6220}} 
 \index{Node\+Base@{Node\+Base}!generator\+Send\+Distribution@{generator\+Send\+Distribution}}
 \index{generator\+Send\+Distribution@{generator\+Send\+Distribution}!Node\+Base@{Node\+Base}}
 \subsubsection{\texorpdfstring{generator\+Send\+Distribution}{generatorSendDistribution}}
 {\footnotesize\ttfamily std\+::default\+\_\+random\+\_\+engine Node\+Base\+::generator\+Send\+Distribution\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_node_base_a2924723bf530b8304c5e028504aafd84}\label{class_node_base_a2924723bf530b8304c5e028504aafd84}} 
+
+
+Used to have a random variation in the broadcast time of application messages. 
+
+Each node broadcast a message at base\+Time\+Broadcast + send\+Delay + variable\+Delay, with variable\+Delay generated with that random engine. \mbox{\Hypertarget{class_node_base_a2924723bf530b8304c5e028504aafd84}\label{class_node_base_a2924723bf530b8304c5e028504aafd84}} 
 \index{Node\+Base@{Node\+Base}!id@{id}}
 \index{id@{id}!Node\+Base@{Node\+Base}}
 \subsubsection{\texorpdfstring{id}{id}}
-{\footnotesize\ttfamily const unsigned int Node\+Base\+::id = id\+Count\+Node\+Dep++\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily const unsigned int Node\+Base\+::id = \hyperlink{class_node_base_a3d577a517665ac5bcf9ed9495945fe31}{id\+Counter}++\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Unique identificator of the process. 
+
+\mbox{\Hypertarget{class_node_base_a3d577a517665ac5bcf9ed9495945fe31}\label{class_node_base_a3d577a517665ac5bcf9ed9495945fe31}} 
+\index{Node\+Base@{Node\+Base}!id\+Counter@{id\+Counter}}
+\index{id\+Counter@{id\+Counter}!Node\+Base@{Node\+Base}}
+\subsubsection{\texorpdfstring{id\+Counter}{idCounter}}
+{\footnotesize\ttfamily unsigned int Node\+Base\+::id\+Counter = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Counter used to give a unique identificator to every node. 
 
 \mbox{\Hypertarget{class_node_base_a2e86bd53e181f8b488130032da547f8e}\label{class_node_base_a2e86bd53e181f8b488130032da547f8e}} 
 \index{Node\+Base@{Node\+Base}!out\+Gate@{out\+Gate}}
@@ -206,11 +314,19 @@ Implemented in \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c
 \subsubsection{\texorpdfstring{out\+Gate}{outGate}}
 {\footnotesize\ttfamily c\+Gate$\ast$ Node\+Base\+::out\+Gate\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Gate used to communicate with other nodes. 
+
 \mbox{\Hypertarget{class_node_base_aa6fb61208e4f5b7a841cd46fac297058}\label{class_node_base_aa6fb61208e4f5b7a841cd46fac297058}} 
 \index{Node\+Base@{Node\+Base}!params@{params}}
 \index{params@{params}!Node\+Base@{Node\+Base}}
 \subsubsection{\texorpdfstring{params}{params}}
 {\footnotesize\ttfamily \hyperlink{class_simulation_parameters}{Simulation\+Parameters}$\ast$ Node\+Base\+::params\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reference to the simulation parameters to avoid looking them up in each function. 
 
 \mbox{\Hypertarget{class_node_base_ab8e4cc30083c58d14b22d928a78cb8ac}\label{class_node_base_ab8e4cc30083c58d14b22d928a78cb8ac}} 
 \index{Node\+Base@{Node\+Base}!send\+Distribution@{send\+Distribution}}
@@ -218,17 +334,29 @@ Implemented in \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c
 \subsubsection{\texorpdfstring{send\+Distribution}{sendDistribution}}
 {\footnotesize\ttfamily std\+::normal\+\_\+distribution$<$ double $>$ Node\+Base\+::send\+Distribution = std\+::normal\+\_\+distribution$<$double$>$(0.,10000.)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
 
+
+
+Used to have a random variation in the broadcast time of application messages. 
+
 \mbox{\Hypertarget{class_node_base_a4fe5b1b7aeb49d15ec7986133346aeb7}\label{class_node_base_a4fe5b1b7aeb49d15ec7986133346aeb7}} 
 \index{Node\+Base@{Node\+Base}!seq@{seq}}
 \index{seq@{seq}!Node\+Base@{Node\+Base}}
 \subsubsection{\texorpdfstring{seq}{seq}}
 {\footnotesize\ttfamily unsigned int Node\+Base\+::seq = 0\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Sequence number counter the process uses to give a unique identificator to messages. 
+
 \mbox{\Hypertarget{class_node_base_a12b20bca634637499bf55020c398424e}\label{class_node_base_a12b20bca634637499bf55020c398424e}} 
 \index{Node\+Base@{Node\+Base}!stats@{stats}}
 \index{stats@{stats}!Node\+Base@{Node\+Base}}
 \subsubsection{\texorpdfstring{stats}{stats}}
 {\footnotesize\ttfamily \hyperlink{_node_base_8h_a6d83bdf09c8e309d31f9330091b0d10d}{stats\+Node} Node\+Base\+::stats\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\hyperlink{class_stats}{Stats} relevant to all types of nodes. 
 
 
 

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['id',['id',['../class_app_msg.html#aadaa93732c4df84c8b2ef13d7199f9a1',1,'AppMsg::id()'],['../class_node_base.html#a2924723bf530b8304c5e028504aafd84',1,'NodeBase::id()'],['../structs__id.html#a5c4ca3342296868576159a20ebe9909d',1,'s_id::id()'],['../structs__message_info.html#a6c2928774199848fd25b4e8ffb7870c2',1,'s_messageInfo::id()']]],
+  ['idcounter',['idCounter',['../class_node_base.html#a3d577a517665ac5bcf9ed9495945fe31',1,'NodeBase']]],
   ['iddepdeprsp',['idDepDepRsp',['../dep_rsp__m_8h.html#a3c2ceb107008eb344443aaab2eb872b8',1,'depRsp_m.h']]],
   ['iddepdeprspdescriptor',['idDepDepRspDescriptor',['../classid_dep_dep_rsp_descriptor.html',1,'idDepDepRspDescriptor'],['../classid_dep_dep_rsp_descriptor.html#a3e2274676a0c9a331848c609c9896ecf',1,'idDepDepRspDescriptor::idDepDepRspDescriptor()']]],
   ['idmsg',['idMsg',['../structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5',1,'structures.h']]],
@@ -24,7 +25,7 @@ var searchData=
   ['init_5fm_2ecc',['Init_m.cc',['../_init__m_8cc.html',1,'']]],
   ['init_5fm_2eh',['Init_m.h',['../_init__m_8h.html',1,'']]],
   ['initdescriptor',['InitDescriptor',['../class_init_descriptor.html',1,'InitDescriptor'],['../class_init_descriptor.html#ab339ad8c646e3ebd54fca1d423669bcc',1,'InitDescriptor::InitDescriptor()']]],
-  ['initialize',['initialize',['../class_communication_dispatcher.html#ab44887658841bb5ab59c554c1738c8f3',1,'CommunicationDispatcher::initialize()'],['../class_controller.html#aa813a54b625a16ee0c039838b8cdd661',1,'Controller::initialize()'],['../class_node_base.html#af7910c39553111295b66c88742d1198a',1,'NodeBase::initialize()'],['../class_node_detector.html#aefa188ab0657837b1b57f24674d3ef22',1,'NodeDetector::initialize()'],['../class_node_with_control.html#a08c8e80fd67b52c51c642d7c66fe729c',1,'NodeWithControl::initialize()'],['../class_simulation_parameters.html#a1fa495ef59a10cb9a0aff42f3e2625ef',1,'SimulationParameters::initialize()'],['../class_stats.html#a650afe7cc5721ec17cfdc94475365f89',1,'Stats::initialize()']]],
+  ['initialize',['initialize',['../class_communication_dispatcher.html#ab44887658841bb5ab59c554c1738c8f3',1,'CommunicationDispatcher::initialize()'],['../class_controller.html#a28d5755bc8fed07cebd88f857f0f83df',1,'Controller::initialize()'],['../class_node_base.html#af7910c39553111295b66c88742d1198a',1,'NodeBase::initialize()'],['../class_node_detector.html#aefa188ab0657837b1b57f24674d3ef22',1,'NodeDetector::initialize()'],['../class_node_with_control.html#a08c8e80fd67b52c51c642d7c66fe729c',1,'NodeWithControl::initialize()'],['../class_simulation_parameters.html#a1fa495ef59a10cb9a0aff42f3e2625ef',1,'SimulationParameters::initialize()'],['../class_stats.html#a650afe7cc5721ec17cfdc94475365f89',1,'Stats::initialize()']]],
   ['initializeclockentriestoincrement',['initializeClockEntriesToIncrement',['../class_simulation_parameters.html#aeef091d6ca357795fa7ff6b3661fb2fd',1,'SimulationParameters']]],
   ['initializecommunications',['initializeCommunications',['../class_node_base.html#a2077b2a599f55050603268dbf8fff6a7',1,'NodeBase']]],
   ['initializedeliverycontroller',['initializeDeliveryController',['../class_simulation_parameters.html#afec1fdd41805feba54ad575a4542aab1',1,'SimulationParameters']]],

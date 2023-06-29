@@ -2,8 +2,8 @@ var searchData=
 [
   ['recoveredmessage',['recoveredMessage',['../_node_with_recovery_8h.html#abc64f7ff8d329883ae93979292b1c996',1,'NodeWithRecovery.h']]],
   ['recoveredmessages',['recoveredMessages',['../class_node_with_recovery.html#adf6b319a727cd9ec43a6cc68cbf99bbb',1,'NodeWithRecovery']]],
-  ['recovering',['recovering',['../class_simulation_parameters.html#a637db4137ba6b25de7e75db1582d6532',1,'SimulationParameters']]],
-  ['recoverytest',['recoveryTest',['../class_node_with_recovery_test.html#a8e4f79eeb8c415ceca21b82f22eb9038',1,'NodeWithRecoveryTest']]],
+  ['recovery',['Recovery',['../class_simulation_parameters.html#ae08444273809241f502aa422205f7307ad8afbc541b39d23648c823057cffe3a5',1,'SimulationParameters']]],
+  ['recoverytest',['recoveryTest',['../class_node_with_recovery_test.html#a8e4f79eeb8c415ceca21b82f22eb9038',1,'NodeWithRecoveryTest::recoveryTest()'],['../class_simulation_parameters.html#ae08444273809241f502aa422205f7307a54bac2e6b76064db3dcf3d7c3a7b787b',1,'SimulationParameters::RecoveryTest()']]],
   ['recvappmsg',['RecvAppMsg',['../class_node_with_control.html#ae177f5f64edcc09a3875e5afdc82edd2',1,'NodeWithControl']]],
   ['recvtime',['recvtime',['../structs__message_info.html#a3600b24205dc07ce06774af44976c107',1,'s_messageInfo']]],
   ['register_5fclass',['Register_Class',['../_app_msg__m_8cc.html#ab54e266a4ec2e5df886803f05ccae80d',1,'Register_Class(AppMsg) AppMsg:&#160;AppMsg_m.cc'],['../dep_req__m_8cc.html#aa5d9d23423eaf0880a103069e6bc2758',1,'Register_Class(DepReq) DepReq:&#160;depReq_m.cc'],['../dep_rsp__m_8cc.html#a17d4cb0ee951f5b250b602fbb18eb6da',1,'Register_Class(DepRsp) DepRsp:&#160;depRsp_m.cc'],['../_init__m_8cc.html#af85515d923565769dddeaf5bcee43cf6',1,'Register_Class(Init) Init:&#160;Init_m.cc']]],

@@ -2,7 +2,6 @@ var searchData=
 [
   ['nbavoidedrecoveries',['nbAvoidedRecoveries',['../structs__stats__recovery.html#a0f21481940b624e49b0880d1bbf3df33',1,'s_stats_recovery']]],
   ['nbavoidedrecoveriesfile',['nbAvoidedRecoveriesFile',['../class_stats.html#a2c1cbc31715b84b8e40206c5b3dc7c5f',1,'Stats']]],
-  ['nbcombinations',['nbCombinations',['../class_simulation_parameters.html#a8f1c0671b131ea807d8a04cd9b15d9b8',1,'SimulationParameters']]],
   ['nbdeliveredmessages',['nbDeliveredMessages',['../structs__stats_node.html#a1e33dd5d17c1008ea127e4f86a7616e1',1,'s_statsNode']]],
   ['nbdeliveredmessagesfile',['nbDeliveredMessagesFile',['../class_stats.html#acf354d2603af85eff78594ca27e4f189',1,'Stats']]],
   ['nbfalsedeliveredfile',['nbFalseDeliveredFile',['../class_stats.html#aded312adb1d366e759f216fc4f651b4c',1,'Stats']]],
@@ -23,6 +22,8 @@ var searchData=
   ['nodebase',['NodeBase',['../class_node_base.html',1,'NodeBase'],['../class_node_base.html#ab6ea4e77947d5b9b8da66d37dc432e7f',1,'NodeBase::NodeBase()']]],
   ['nodebase_2ecc',['NodeBase.cc',['../_node_base_8cc.html',1,'']]],
   ['nodebase_2eh',['NodeBase.h',['../_node_base_8h.html',1,'']]],
+  ['nodebroadcastedmessages',['nodeBroadcastedMessages',['../class_controller.html#a4016e696420b0a6b14308b117070b506',1,'Controller']]],
+  ['nodedependencies',['nodeDependencies',['../class_controller.html#ade3eeb8e78c5307d518e3b43967c4bac',1,'Controller']]],
   ['nodedetector',['NodeDetector',['../class_node_detector.html',1,'NodeDetector'],['../class_node_detector.html#a256160d034631f4fa14a83787f504aae',1,'NodeDetector::NodeDetector()']]],
   ['nodedetector_2ecc',['NodeDetector.cc',['../_node_detector_8cc.html',1,'']]],
   ['nodedetector_2eh',['NodeDetector.h',['../_node_detector_8h.html',1,'']]],

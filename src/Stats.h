@@ -57,6 +57,7 @@ class Stats : public cSimpleModule
     void printNbMessagesToRecover();
     void printNbJumpedBroadcasts();
     bool usesHashDetector();
+    bool usesRecoveries();
 
     /** Stream to write into a file the statistics about the number of done message recoveries*/
     std::ofstream nbRecoveriesFile;

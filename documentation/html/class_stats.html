@@ -81,7 +81,7 @@ Collaboration diagram for Stats:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_stats__coll__graph.png" border="0" usemap="#_stats_coll__map" alt="Collaboration graph"/></div>
 <map name="_stats_coll__map" id="_stats_coll__map">
-<area shape="rect" id="node3" href="class_simulation_parameters.html" title="TODO &#45; Generated class. " alt="" coords="99,95,249,121"/>
+<area shape="rect" id="node3" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. " alt="" coords="99,95,249,121"/>
 <area shape="rect" id="node4" href="class_dependencies.html" title="Dependencies" alt="" coords="140,5,245,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -142,6 +142,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a509d8e8fba4312eeffe2c6cee722f30f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a509d8e8fba4312eeffe2c6cee722f30f">usesHashDetector</a> ()</td></tr>
 <tr class="memdesc:a509d8e8fba4312eeffe2c6cee722f30f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if nodes use a hash-based error detector.  <a href="#a509d8e8fba4312eeffe2c6cee722f30f">More...</a><br /></td></tr>
 <tr class="separator:a509d8e8fba4312eeffe2c6cee722f30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a876b1b2674fb82cb45b6bc4b094019ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a876b1b2674fb82cb45b6bc4b094019ae">usesRecoveries</a> ()</td></tr>
+<tr class="memdesc:a876b1b2674fb82cb45b6bc4b094019ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if nodes are recovering the causal dependencies of messages.  <a href="#a876b1b2674fb82cb45b6bc4b094019ae">More...</a><br /></td></tr>
+<tr class="separator:a876b1b2674fb82cb45b6bc4b094019ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -216,7 +219,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called when the process receives a message. </p>
-<p>The only message <a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> receives is the timeout it schedules to write statistics into files. The function writes the statistics down into files depending on the type of simulation, determined by the Delivery parameter of <a class="el" href="class_simulation_parameters.html" title="TODO - Generated class. ">SimulationParameters</a> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The only message <a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> receives is the timeout it schedules to write statistics into files. The function writes the statistics down into files depending on the type of simulation, determined by the Delivery parameter of <a class="el" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. ">SimulationParameters</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td>Received message. <a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> only receives the timeout it scheduled itself to take statistics. </td></tr>
   </table>
@@ -358,6 +361,33 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Determines if nodes use a hash-based error detector. </p>
+
+</div>
+</div>
+<a id="a876b1b2674fb82cb45b6bc4b094019ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a876b1b2674fb82cb45b6bc4b094019ae">&#9670;&nbsp;</a></span>usesRecoveries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Stats::usesRecoveries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines if nodes are recovering the causal dependencies of messages. </p>
 
 </div>
 </div>

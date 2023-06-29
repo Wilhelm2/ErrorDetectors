@@ -2,6 +2,11 @@
 \label{class_communication_dispatcher}\index{Communication\+Dispatcher@{Communication\+Dispatcher}}
 
 
+Class used to connect nodes.  
+
+
+
+
 {\ttfamily \#include $<$communication\+Dispatcher.\+h$>$}
 
 
@@ -22,11 +27,6 @@ Collaboration diagram for Communication\+Dispatcher\+:\nopagebreak
 \includegraphics[width=350pt]{class_communication_dispatcher__coll__graph}
 \end{center}
 \end{figure}
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-class \hyperlink{class_communication_dispatcher_1_1h}{h}
-\begin{DoxyCompactList}\small\item\em Class used to connect nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,6 +58,13 @@ vector$<$ int $>$ \hyperlink{class_communication_dispatcher_acd67954c5bf9280a33d
 \hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$ \hyperlink{class_communication_dispatcher_a53751662d1e770a60ddbeea9d4a5d845}{params}
 \begin{DoxyCompactList}\small\item\em Reference to the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} module which contains the simulation parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Class used to connect nodes. 
+
+The system is organized in a star formation with the communication\+Dispatcher in the midle. All nodes are connected to the communication\+Dispatcher and send messages to each other through the communication\+Dispatcher. Using this star formation graph instead of a complete graph reduces the number of communication channels from N$^\wedge$2 channels to N channels, which particularly reduces the simulation\textquotesingle{}s initialization time.
+
+The communication\+Dispatcher routes messages to the destination, handles the broadcast of application messages, and sets the propagation delays of messages. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_communication_dispatcher_a589821f510801091f753f9812e3d1ee7}\label{class_communication_dispatcher_a589821f510801091f753f9812e3d1ee7}} 

@@ -6,7 +6,8 @@
 
 
 
-Inheritance diagram for Node\+With\+Recovery\+:\nopagebreak
+Inheritance diagram for Node\+With\+Recovery\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Inheritance diagram for Node\+With\+Recovery\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Node\+With\+Recovery\+:\nopagebreak
+Collaboration diagram for Node\+With\+Recovery\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,9 +35,9 @@ virtual \hyperlink{class_node_with_recovery_a5cb1367a800cf960b96c9011ab94a616}{$
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{class_node_with_recovery_a901c89606b84898e13fe8a66228acd9f}{handle\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg}) override
-\item 
+\begin{DoxyCompactList}\small\item\em Called upon reception of a message to proecss it, whether it be a selfmsg (broadcast\+Timer) or a message received from another process. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}{process\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})
-\item 
+\begin{DoxyCompactList}\small\item\em Called at reception of messages from other nodes in order to process them. \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_recovery_a52ef51093d41e9b337987810311a7bc6}{process\+Dep\+Req} (\hyperlink{class_dep_req}{Dep\+Req} $\ast$m)
 \item 
 void \hyperlink{class_node_with_recovery_a34b5b66f90d85dd84b237b8cf81f2f7e}{process\+Rcv\+Rsp\+Dep} (\hyperlink{class_dep_rsp}{Dep\+Rsp} $\ast$m)
@@ -53,7 +55,7 @@ virtual bool \hyperlink{class_node_with_recovery_aec147b3723b3dab00f9610453ba8da
 void \hyperlink{class_node_with_recovery_a8b16bbc948fddc744a55ac548348a988}{request\+Dependencies} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&m)
 \item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_recovery_a33d8e8775fd69cb647b38a54b36e1ebe}{prepare\+Broadcast} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -103,6 +105,15 @@ class \hyperlink{class_node_with_recovery_a129f65b6976377739eb6231b6962985e}{Sta
 
 
 
+Called upon reception of a message to proecss it, whether it be a selfmsg (broadcast\+Timer) or a message received from another process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message the node received. \\
+\hline
+\end{DoxyParams}
+
+
 Reimplemented from \hyperlink{class_node_base_add2450264be5dd616f9f9ac94e83b988}{Node\+Base}.
 
 \mbox{\Hypertarget{class_node_with_recovery_a9b61912f38b62452584dc80bf261ef4e}\label{class_node_with_recovery_a9b61912f38b62452584dc80bf261ef4e}} 
@@ -123,6 +134,13 @@ Implements \hyperlink{class_node_detector_a17ecf9939fce7471f4513b66185743cc}{Nod
 
 
 
+Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. 
+
+\begin{DoxyReturn}{Returns}
+The application message to broadcast. 
+\end{DoxyReturn}
+
+
 Reimplemented from \hyperlink{class_node_detector_af75cf37cc01fc51bc228a7a83c10cb97}{Node\+Detector}.
 
 \mbox{\Hypertarget{class_node_with_recovery_a52ef51093d41e9b337987810311a7bc6}\label{class_node_with_recovery_a52ef51093d41e9b337987810311a7bc6}} 
@@ -136,6 +154,10 @@ Reimplemented from \hyperlink{class_node_detector_af75cf37cc01fc51bc228a7a83c10c
 \index{process\+Message@{process\+Message}!Node\+With\+Recovery@{Node\+With\+Recovery}}
 \subsubsection{\texorpdfstring{process\+Message()}{processMessage()}}
 {\footnotesize\ttfamily void Node\+With\+Recovery\+::process\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called at reception of messages from other nodes in order to process them. 
 
 
 

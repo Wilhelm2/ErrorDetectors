@@ -2,6 +2,11 @@
 \label{structs__msg}\index{s\+\_\+msg@{s\+\_\+msg}}
 
 
+Contains the information required to verify that the message is delivered exactly once by every node.  
+
+
+
+
 {\ttfamily \#include $<$Controller.\+h$>$}
 
 
@@ -17,18 +22,21 @@ Collaboration diagram for s\+\_\+msg\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 unsigned int \hyperlink{structs__msg_a81ee20a1e6b791fdc215d88c0418e618}{seq}
-\item 
+\begin{DoxyCompactList}\small\item\em Sequence number associated to the message to identify it uniquely. \end{DoxyCompactList}\item 
 \hyperlink{class_total_dependencies}{Total\+Dependencies} \hyperlink{structs__msg_a0683a931a64bb9e40c4da98dbd5bc836}{dependencies}
-\item 
+\begin{DoxyCompactList}\small\item\em The message\textquotesingle{}s dependencies. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{structs__msg_a88a6cac0463627f92d12acb67755186d}{delivered\+At\+Nb\+Ps} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Number of nodes that delivered the message. \end{DoxyCompactList}\item 
 vector$<$ bool $>$ \hyperlink{structs__msg_ac9b1dd0616f30d1eadfdeda272e1b238}{ps\+Has\+Delivered}
-\item 
+\begin{DoxyCompactList}\small\item\em Array to control multiple deliveries. \end{DoxyCompactList}\item 
 simtime\+\_\+t \hyperlink{structs__msg_abf4a4c8c468860dec56cb8d69aba81b3}{send\+Time}
-\item 
+\begin{DoxyCompactList}\small\item\em The message\textquotesingle{}s sending time. \end{DoxyCompactList}\item 
 vector$<$ simtime\+\_\+t $>$ \hyperlink{structs__msg_a25acd8d8afeacf207f402c8362fe452c}{delivered\+At\+Time}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Time at which each node delivers the message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Contains the information required to verify that the message is delivered exactly once by every node. 
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{structs__msg_a88a6cac0463627f92d12acb67755186d}\label{structs__msg_a88a6cac0463627f92d12acb67755186d}} 
@@ -37,17 +45,29 @@ vector$<$ simtime\+\_\+t $>$ \hyperlink{structs__msg_a25acd8d8afeacf207f402c8362
 \subsubsection{\texorpdfstring{delivered\+At\+Nb\+Ps}{deliveredAtNbPs}}
 {\footnotesize\ttfamily unsigned int s\+\_\+msg\+::delivered\+At\+Nb\+Ps = 0}
 
-\mbox{\Hypertarget{structs__msg_a25acd8d8afeacf207f402c8362fe452c}\label{structs__msg_a25acd8d8afeacf207f402c8362fe452c}} 
+
+
+Number of nodes that delivered the message. 
+
+Used to delete messages once delivered by all nodes. \mbox{\Hypertarget{structs__msg_a25acd8d8afeacf207f402c8362fe452c}\label{structs__msg_a25acd8d8afeacf207f402c8362fe452c}} 
 \index{s\+\_\+msg@{s\+\_\+msg}!delivered\+At\+Time@{delivered\+At\+Time}}
 \index{delivered\+At\+Time@{delivered\+At\+Time}!s\+\_\+msg@{s\+\_\+msg}}
 \subsubsection{\texorpdfstring{delivered\+At\+Time}{deliveredAtTime}}
 {\footnotesize\ttfamily vector$<$simtime\+\_\+t$>$ s\+\_\+msg\+::delivered\+At\+Time}
 
-\mbox{\Hypertarget{structs__msg_a0683a931a64bb9e40c4da98dbd5bc836}\label{structs__msg_a0683a931a64bb9e40c4da98dbd5bc836}} 
+
+
+Time at which each node delivers the message. 
+
+Used for statistics to compute the average delivery time \mbox{\Hypertarget{structs__msg_a0683a931a64bb9e40c4da98dbd5bc836}\label{structs__msg_a0683a931a64bb9e40c4da98dbd5bc836}} 
 \index{s\+\_\+msg@{s\+\_\+msg}!dependencies@{dependencies}}
 \index{dependencies@{dependencies}!s\+\_\+msg@{s\+\_\+msg}}
 \subsubsection{\texorpdfstring{dependencies}{dependencies}}
 {\footnotesize\ttfamily \hyperlink{class_total_dependencies}{Total\+Dependencies} s\+\_\+msg\+::dependencies}
+
+
+
+The message\textquotesingle{}s dependencies. 
 
 \mbox{\Hypertarget{structs__msg_ac9b1dd0616f30d1eadfdeda272e1b238}\label{structs__msg_ac9b1dd0616f30d1eadfdeda272e1b238}} 
 \index{s\+\_\+msg@{s\+\_\+msg}!ps\+Has\+Delivered@{ps\+Has\+Delivered}}
@@ -55,17 +75,29 @@ vector$<$ simtime\+\_\+t $>$ \hyperlink{structs__msg_a25acd8d8afeacf207f402c8362
 \subsubsection{\texorpdfstring{ps\+Has\+Delivered}{psHasDelivered}}
 {\footnotesize\ttfamily vector$<$bool$>$ s\+\_\+msg\+::ps\+Has\+Delivered}
 
+
+
+Array to control multiple deliveries. 
+
 \mbox{\Hypertarget{structs__msg_abf4a4c8c468860dec56cb8d69aba81b3}\label{structs__msg_abf4a4c8c468860dec56cb8d69aba81b3}} 
 \index{s\+\_\+msg@{s\+\_\+msg}!send\+Time@{send\+Time}}
 \index{send\+Time@{send\+Time}!s\+\_\+msg@{s\+\_\+msg}}
 \subsubsection{\texorpdfstring{send\+Time}{sendTime}}
 {\footnotesize\ttfamily simtime\+\_\+t s\+\_\+msg\+::send\+Time}
 
+
+
+The message\textquotesingle{}s sending time. 
+
 \mbox{\Hypertarget{structs__msg_a81ee20a1e6b791fdc215d88c0418e618}\label{structs__msg_a81ee20a1e6b791fdc215d88c0418e618}} 
 \index{s\+\_\+msg@{s\+\_\+msg}!seq@{seq}}
 \index{seq@{seq}!s\+\_\+msg@{s\+\_\+msg}}
 \subsubsection{\texorpdfstring{seq}{seq}}
 {\footnotesize\ttfamily unsigned int s\+\_\+msg\+::seq}
+
+
+
+Sequence number associated to the message to identify it uniquely. 
 
 
 

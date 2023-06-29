@@ -6,7 +6,8 @@
 
 
 
-Inheritance diagram for Node\+Detector\+:\nopagebreak
+Inheritance diagram for Node\+Detector\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Inheritance diagram for Node\+Detector\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Node\+Detector\+:\nopagebreak
+Collaboration diagram for Node\+Detector\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,13 +32,13 @@ Collaboration diagram for Node\+Detector\+:\nopagebreak
 virtual \hyperlink{class_node_detector_a3f8e6eedfce05ea8953ff1a41413ccfa}{$\sim$\+Node\+Detector} ()
 \item 
 virtual void \hyperlink{class_node_detector_aefa188ab0657837b1b57f24674d3ef22}{initialize} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes the node by scheduling it\textquotesingle{}s broadcast\+Timer, initializing its connection with the communication dispatcher and looking up the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} and \hyperlink{class_controller}{Controller} modules. \end{DoxyCompactList}\item 
 \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_detector_a7100349647350ad5e3aeb1ed4669c723}{create\+App\+Msg} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates an application message and initializes it. \end{DoxyCompactList}\item 
 \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_detector_af75cf37cc01fc51bc228a7a83c10cb97}{prepare\+Broadcast} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_node_detector_ab69432c6d3327a684845ec231826727e}{process\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})=0
-\item 
+\begin{DoxyCompactList}\small\item\em Called at reception of messages from other nodes in order to process them. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{class_node_detector_a51e7dccd54e94bbe937752ca39dfdba4}{test\+Deliver\+Message} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message)=0
 \item 
 virtual void \hyperlink{class_node_detector_a17ecf9939fce7471f4513b66185743cc}{iterative\+Delivery} ()=0
@@ -78,6 +80,13 @@ class \hyperlink{class_node_detector_a129f65b6976377739eb6231b6962985e}{Stats}
 
 
 
+Creates an application message and initializes it. 
+
+\begin{DoxyReturn}{Returns}
+The application message. 
+\end{DoxyReturn}
+
+
 Reimplemented from \hyperlink{class_node_with_control_a7772568c2836f5f204952ebe659e0049}{Node\+With\+Control}.
 
 \mbox{\Hypertarget{class_node_detector_aefa188ab0657837b1b57f24674d3ef22}\label{class_node_detector_aefa188ab0657837b1b57f24674d3ef22}} 
@@ -85,6 +94,10 @@ Reimplemented from \hyperlink{class_node_with_control_a7772568c2836f5f204952ebe6
 \index{initialize@{initialize}!Node\+Detector@{Node\+Detector}}
 \subsubsection{\texorpdfstring{initialize()}{initialize()}}
 {\footnotesize\ttfamily void Node\+Detector\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the node by scheduling it\textquotesingle{}s broadcast\+Timer, initializing its connection with the communication dispatcher and looking up the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} and \hyperlink{class_controller}{Controller} modules. 
 
 
 
@@ -112,6 +125,13 @@ Implemented in \hyperlink{class_node_with_recovery_a9b61912f38b62452584dc80bf261
 
 
 
+Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. 
+
+\begin{DoxyReturn}{Returns}
+The application message to broadcast. 
+\end{DoxyReturn}
+
+
 Reimplemented from \hyperlink{class_node_with_control_ab871014cf3f42d834f8d34ad5498174c}{Node\+With\+Control}.
 
 
@@ -123,6 +143,10 @@ Reimplemented in \hyperlink{class_node_with_recovery_a33d8e8775fd69cb647b38a54b3
 \index{process\+Message@{process\+Message}!Node\+Detector@{Node\+Detector}}
 \subsubsection{\texorpdfstring{process\+Message()}{processMessage()}}
 {\footnotesize\ttfamily virtual void Node\+Detector\+::process\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Called at reception of messages from other nodes in order to process them. 
 
 
 

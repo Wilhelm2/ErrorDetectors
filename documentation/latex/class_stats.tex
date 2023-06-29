@@ -65,7 +65,9 @@ void \hyperlink{class_stats_ae2c59851f26885a62c2e65fda16d47ee}{print\+Nb\+Messag
 void \hyperlink{class_stats_aaba10264a569b9240a300ddc341e6a8c}{print\+Nb\+Jumped\+Broadcasts} ()
 \begin{DoxyCompactList}\small\item\em Prints on the error console the number of message broadcasts jumped by each node. \end{DoxyCompactList}\item 
 bool \hyperlink{class_stats_a509d8e8fba4312eeffe2c6cee722f30f}{uses\+Hash\+Detector} ()
-\begin{DoxyCompactList}\small\item\em Determines if nodes use a hash-\/based error detector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Determines if nodes use a hash-\/based error detector. \end{DoxyCompactList}\item 
+bool \hyperlink{class_stats_a876b1b2674fb82cb45b6bc4b094019ae}{uses\+Recoveries} ()
+\begin{DoxyCompactList}\small\item\em Determines if nodes are recovering the causal dependencies of messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -167,6 +169,16 @@ Prints on the error console for each node the number of pending messages.
 
 
 Determines if nodes use a hash-\/based error detector. 
+
+\mbox{\Hypertarget{class_stats_a876b1b2674fb82cb45b6bc4b094019ae}\label{class_stats_a876b1b2674fb82cb45b6bc4b094019ae}} 
+\index{Stats@{Stats}!uses\+Recoveries@{uses\+Recoveries}}
+\index{uses\+Recoveries@{uses\+Recoveries}!Stats@{Stats}}
+\subsubsection{\texorpdfstring{uses\+Recoveries()}{usesRecoveries()}}
+{\footnotesize\ttfamily bool Stats\+::uses\+Recoveries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Determines if nodes are recovering the causal dependencies of messages. 
 
 \mbox{\Hypertarget{class_stats_a49086baebc806841600c8545b5315149}\label{class_stats_a49086baebc806841600c8545b5315149}} 
 \index{Stats@{Stats}!write\+Control\+Data\+Size@{write\+Control\+Data\+Size}}

@@ -2,7 +2,6 @@ var searchData=
 [
   ['nbavoidedrecoveries',['nbAvoidedRecoveries',['../structs__stats__recovery.html#a0f21481940b624e49b0880d1bbf3df33',1,'s_stats_recovery']]],
   ['nbavoidedrecoveriesfile',['nbAvoidedRecoveriesFile',['../class_stats.html#a2c1cbc31715b84b8e40206c5b3dc7c5f',1,'Stats']]],
-  ['nbcombinations',['nbCombinations',['../class_simulation_parameters.html#a8f1c0671b131ea807d8a04cd9b15d9b8',1,'SimulationParameters']]],
   ['nbdeliveredmessages',['nbDeliveredMessages',['../structs__stats_node.html#a1e33dd5d17c1008ea127e4f86a7616e1',1,'s_statsNode']]],
   ['nbdeliveredmessagesfile',['nbDeliveredMessagesFile',['../class_stats.html#acf354d2603af85eff78594ca27e4f189',1,'Stats']]],
   ['nbfalsedeliveredfile',['nbFalseDeliveredFile',['../class_stats.html#aded312adb1d366e759f216fc4f651b4c',1,'Stats']]],
@@ -20,6 +19,8 @@ var searchData=
   ['nbrecoveriesfile',['nbRecoveriesFile',['../class_stats.html#a8c4fd9f4c18e074cbc4b69d611ec4977',1,'Stats']]],
   ['nbsentdependencies',['nbSentDependencies',['../structs__stats_node.html#af01c78389a27c9eeff8033f6b3d3beee',1,'s_statsNode']]],
   ['nbsentdependenciesfile',['nbSentDependenciesFile',['../class_stats.html#a26404a5110226c52970e3c261c6d8126',1,'Stats']]],
+  ['nodebroadcastedmessages',['nodeBroadcastedMessages',['../class_controller.html#a4016e696420b0a6b14308b117070b506',1,'Controller']]],
+  ['nodedependencies',['nodeDependencies',['../class_controller.html#ade3eeb8e78c5307d518e3b43967c4bac',1,'Controller']]],
   ['nodeid',['nodeId',['../class_init.html#abc9fcf6151621f0ac808cd29e14239c9',1,'Init']]],
   ['nodes',['nodes',['../class_stats.html#a815a3aa12c1529fe3d686038a2094fb2',1,'Stats']]]
 ];

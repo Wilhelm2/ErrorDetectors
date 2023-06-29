@@ -25,15 +25,21 @@
 using namespace omnetpp;
 using namespace std;
 
-static unsigned int idCountNodeDep=0;
-
+/** Takes statistics relevant to all types of Nodes
+ */
 typedef struct s_statsNode {
+    /** Number of messages the node delivered out of causal order*/
     unsigned int nbFalseDeliveredMessages = 0;
+    /** Number of dependencies the node attached to messages*/
     unsigned int nbSentDependencies = 0;
+    /** Number of messages the node delivered */
     unsigned int nbDeliveredMessages = 0;
+    /** Size of control information attached to messages*/
     unsigned int controlDataSize = 0;
 }statsNode;
 
+/** Base class of Nodes.
+ */
 class NodeBase : public cSimpleModule
 {
     protected:
@@ -43,27 +49,42 @@ class NodeBase : public cSimpleModule
         virtual void initialize() override;
         void initializeCommunications();
         virtual void handleMessage(cMessage *msg) override;
+        void handleBroadcastTimer(cMessage* msg);
 
         virtual AppMsg* prepareBroadcast();
         virtual AppMsg* createAppMsg();
 
+        /** Called at reception of messages from other nodes in order to process them.*/
         virtual void processMessage(cMessage* msg) = 0;
         virtual bool deliverMsg(const messageInfo& message);
 
-        const unsigned int id = idCountNodeDep++;
+        /** Unique identificator of the process.*/
+        const unsigned int id = idCounter++;
+        /** Sequence number counter the process uses to give a unique identificator to messages.*/
         unsigned int seq = 0;
 
+        /** Timer to scheduel the broadcast of application messages.*/
         cMessage* broadcastTimer = new cMessage();
+        /** Time of first message broadcast.*/
         simtime_t baseTimeBroadcast ;
+        /** Used to have a random variation in the broadcast time of application messages. Each node broadcast a message at baseTimeBroadcast + sendDelay + variableDelay, with variableDelay generated with that random engine.*/
         std::default_random_engine generatorSendDistribution;
+        /** Used to have a random variation in the broadcast time of application messages. */
         static std::normal_distribution<double> sendDistribution;
+        /** Gate used to communicate with other nodes. */
         cGate* outGate;
 
+        /** Reference to the simulation parameters to avoid looking them up in each function.*/
         SimulationParameters* params;
+        /** Stats relevant to all types of nodes.*/
         statsNode stats;
+        /** Reference to the controller module to avoid looking it up every time. */
         Controller* control;
 
         friend class Stats;
+    private:
+        /** Counter used to give a unique identificator to every node.*/
+        static unsigned int idCounter;
 };
 
 #endif /* NODES_NODEBASE_H_ */

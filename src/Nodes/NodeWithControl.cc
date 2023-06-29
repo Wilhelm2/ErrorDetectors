@@ -77,5 +77,5 @@ void NodeWithControl::RecvAppMsg(AppMsg*m)
 
 const vector<unsigned int>& NodeWithControl::getIndexIncrementedEntries(unsigned int idSource)
 {
-    return params->entriesIncrementedByProcess[idSource%params->nbCombinations];
+    return params->entriesIncrementedByProcess[idSource%params->entriesIncrementedByProcess.size()];
 }

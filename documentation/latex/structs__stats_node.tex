@@ -2,20 +2,28 @@
 \label{structs__stats_node}\index{s\+\_\+stats\+Node@{s\+\_\+stats\+Node}}
 
 
+Takes statistics relevant to all types of Nodes.  
+
+
+
+
 {\ttfamily \#include $<$Node\+Base.\+h$>$}
 
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 unsigned int \hyperlink{structs__stats_node_a009b1278ace8dbe831b9a3cdfef773e0}{nb\+False\+Delivered\+Messages} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Number of messages the node delivered out of causal order. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{structs__stats_node_af01c78389a27c9eeff8033f6b3d3beee}{nb\+Sent\+Dependencies} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Number of dependencies the node attached to messages. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{structs__stats_node_a1e33dd5d17c1008ea127e4f86a7616e1}{nb\+Delivered\+Messages} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Number of messages the node delivered. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{structs__stats_node_aaffa71bc7f01bd767080163be60fbb50}{control\+Data\+Size} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Size of control information attached to messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Takes statistics relevant to all types of Nodes. 
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{structs__stats_node_aaffa71bc7f01bd767080163be60fbb50}\label{structs__stats_node_aaffa71bc7f01bd767080163be60fbb50}} 
@@ -24,11 +32,19 @@ unsigned int \hyperlink{structs__stats_node_aaffa71bc7f01bd767080163be60fbb50}{c
 \subsubsection{\texorpdfstring{control\+Data\+Size}{controlDataSize}}
 {\footnotesize\ttfamily unsigned int s\+\_\+stats\+Node\+::control\+Data\+Size = 0}
 
+
+
+Size of control information attached to messages. 
+
 \mbox{\Hypertarget{structs__stats_node_a1e33dd5d17c1008ea127e4f86a7616e1}\label{structs__stats_node_a1e33dd5d17c1008ea127e4f86a7616e1}} 
 \index{s\+\_\+stats\+Node@{s\+\_\+stats\+Node}!nb\+Delivered\+Messages@{nb\+Delivered\+Messages}}
 \index{nb\+Delivered\+Messages@{nb\+Delivered\+Messages}!s\+\_\+stats\+Node@{s\+\_\+stats\+Node}}
 \subsubsection{\texorpdfstring{nb\+Delivered\+Messages}{nbDeliveredMessages}}
 {\footnotesize\ttfamily unsigned int s\+\_\+stats\+Node\+::nb\+Delivered\+Messages = 0}
+
+
+
+Number of messages the node delivered. 
 
 \mbox{\Hypertarget{structs__stats_node_a009b1278ace8dbe831b9a3cdfef773e0}\label{structs__stats_node_a009b1278ace8dbe831b9a3cdfef773e0}} 
 \index{s\+\_\+stats\+Node@{s\+\_\+stats\+Node}!nb\+False\+Delivered\+Messages@{nb\+False\+Delivered\+Messages}}
@@ -36,11 +52,19 @@ unsigned int \hyperlink{structs__stats_node_aaffa71bc7f01bd767080163be60fbb50}{c
 \subsubsection{\texorpdfstring{nb\+False\+Delivered\+Messages}{nbFalseDeliveredMessages}}
 {\footnotesize\ttfamily unsigned int s\+\_\+stats\+Node\+::nb\+False\+Delivered\+Messages = 0}
 
+
+
+Number of messages the node delivered out of causal order. 
+
 \mbox{\Hypertarget{structs__stats_node_af01c78389a27c9eeff8033f6b3d3beee}\label{structs__stats_node_af01c78389a27c9eeff8033f6b3d3beee}} 
 \index{s\+\_\+stats\+Node@{s\+\_\+stats\+Node}!nb\+Sent\+Dependencies@{nb\+Sent\+Dependencies}}
 \index{nb\+Sent\+Dependencies@{nb\+Sent\+Dependencies}!s\+\_\+stats\+Node@{s\+\_\+stats\+Node}}
 \subsubsection{\texorpdfstring{nb\+Sent\+Dependencies}{nbSentDependencies}}
 {\footnotesize\ttfamily unsigned int s\+\_\+stats\+Node\+::nb\+Sent\+Dependencies = 0}
+
+
+
+Number of dependencies the node attached to messages. 
 
 
 

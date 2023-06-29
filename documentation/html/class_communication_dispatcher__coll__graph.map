@@ -1,5 +1,5 @@
 <map id="CommunicationDispatcher" name="CommunicationDispatcher">
-<area shape="rect" id="node3" href="$class_simulation_parameters.html" title="TODO &#45; Generated class. " alt="" coords="99,95,249,121"/>
+<area shape="rect" id="node3" href="$class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. " alt="" coords="99,95,249,121"/>
 <area shape="rect" id="node4" href="$class_dependencies.html" title="Dependencies" alt="" coords="140,5,245,32"/>
 <area shape="rect" id="node5" href="$structs__stats_communication_module.html" title="s_statsCommunicationModule" alt="" coords="273,95,472,121"/>
 </map>

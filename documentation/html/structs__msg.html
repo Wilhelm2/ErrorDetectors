@@ -66,6 +66,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Contains the information required to verify that the message is delivered exactly once by every node.  
+ <a href="structs__msg.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_controller_8h_source.html">Controller.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for s_msg:</div>
@@ -80,19 +83,27 @@ Collaboration diagram for s_msg:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a81ee20a1e6b791fdc215d88c0418e618"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__msg.html#a81ee20a1e6b791fdc215d88c0418e618">seq</a></td></tr>
+<tr class="memdesc:a81ee20a1e6b791fdc215d88c0418e618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sequence number associated to the message to identify it uniquely.  <a href="#a81ee20a1e6b791fdc215d88c0418e618">More...</a><br /></td></tr>
 <tr class="separator:a81ee20a1e6b791fdc215d88c0418e618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0683a931a64bb9e40c4da98dbd5bc836"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_total_dependencies.html">TotalDependencies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__msg.html#a0683a931a64bb9e40c4da98dbd5bc836">dependencies</a></td></tr>
+<tr class="memdesc:a0683a931a64bb9e40c4da98dbd5bc836"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message's dependencies.  <a href="#a0683a931a64bb9e40c4da98dbd5bc836">More...</a><br /></td></tr>
 <tr class="separator:a0683a931a64bb9e40c4da98dbd5bc836"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a6cac0463627f92d12acb67755186d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__msg.html#a88a6cac0463627f92d12acb67755186d">deliveredAtNbPs</a> = 0</td></tr>
+<tr class="memdesc:a88a6cac0463627f92d12acb67755186d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of nodes that delivered the message.  <a href="#a88a6cac0463627f92d12acb67755186d">More...</a><br /></td></tr>
 <tr class="separator:a88a6cac0463627f92d12acb67755186d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9b1dd0616f30d1eadfdeda272e1b238"><td class="memItemLeft" align="right" valign="top">vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__msg.html#ac9b1dd0616f30d1eadfdeda272e1b238">psHasDelivered</a></td></tr>
+<tr class="memdesc:ac9b1dd0616f30d1eadfdeda272e1b238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array to control multiple deliveries.  <a href="#ac9b1dd0616f30d1eadfdeda272e1b238">More...</a><br /></td></tr>
 <tr class="separator:ac9b1dd0616f30d1eadfdeda272e1b238"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf4a4c8c468860dec56cb8d69aba81b3"><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__msg.html#abf4a4c8c468860dec56cb8d69aba81b3">sendTime</a></td></tr>
+<tr class="memdesc:abf4a4c8c468860dec56cb8d69aba81b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message's sending time.  <a href="#abf4a4c8c468860dec56cb8d69aba81b3">More...</a><br /></td></tr>
 <tr class="separator:abf4a4c8c468860dec56cb8d69aba81b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25acd8d8afeacf207f402c8362fe452c"><td class="memItemLeft" align="right" valign="top">vector&lt; simtime_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__msg.html#a25acd8d8afeacf207f402c8362fe452c">deliveredAtTime</a></td></tr>
+<tr class="memdesc:a25acd8d8afeacf207f402c8362fe452c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time at which each node delivers the message.  <a href="#a25acd8d8afeacf207f402c8362fe452c">More...</a><br /></td></tr>
 <tr class="separator:a25acd8d8afeacf207f402c8362fe452c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Contains the information required to verify that the message is delivered exactly once by every node. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a88a6cac0463627f92d12acb67755186d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88a6cac0463627f92d12acb67755186d">&#9670;&nbsp;</a></span>deliveredAtNbPs</h2>
 
@@ -104,6 +115,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Number of nodes that delivered the message. </p>
+<p>Used to delete messages once delivered by all nodes. </p>
 
 </div>
 </div>
@@ -119,6 +133,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Time at which each node delivers the message. </p>
+<p>Used for statistics to compute the average delivery time </p>
+
 </div>
 </div>
 <a id="a0683a931a64bb9e40c4da98dbd5bc836"></a>
@@ -132,6 +149,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The message's dependencies. </p>
 
 </div>
 </div>
@@ -147,6 +166,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Array to control multiple deliveries. </p>
+
 </div>
 </div>
 <a id="abf4a4c8c468860dec56cb8d69aba81b3"></a>
@@ -161,6 +182,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The message's sending time. </p>
+
 </div>
 </div>
 <a id="a81ee20a1e6b791fdc215d88c0418e618"></a>
@@ -174,6 +197,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sequence number associated to the message to identify it uniquely. </p>
 
 </div>
 </div>

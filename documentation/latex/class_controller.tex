@@ -2,6 +2,11 @@
 \label{class_controller}\index{Controller@{Controller}}
 
 
+Module to control that nodes deliver application messages exactly once and in causal order.  
+
+
+
+
 {\ttfamily \#include $<$Controller.\+h$>$}
 
 
@@ -30,34 +35,37 @@ Collaboration diagram for Controller\+:\nopagebreak
 virtual \hyperlink{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}{$\sim$\+Controller} ()
 \item 
 bool \hyperlink{class_controller_ad76a99df69bf99705dc18ba72b4b04c2}{is\+Dependency} (\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} idM, \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} id\+Dep)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if a message is a causal dependency of another message. \end{DoxyCompactList}\item 
 void \hyperlink{class_controller_a7207304a07534e50a690f26c765b4a71}{notify\+Send\+Message} (unsigned int id\+Sender, unsigned int seq)
-\item 
+\begin{DoxyCompactList}\small\item\em Called by nodees when broadcasting a message to save the broadcasted message at the controller. \end{DoxyCompactList}\item 
 bool \hyperlink{class_controller_a8905abf1976e737410ac0142001e38a0}{notify\+Deliver\+Message} (\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} idM, unsigned int id\+Dest)
-\item 
+\begin{DoxyCompactList}\small\item\em Called by a node when delivering a message to notify the controller of the delivery, which verifies that the node delivers the message only once and in causal order. \end{DoxyCompactList}\item 
 bool \hyperlink{class_controller_ab57c4459f002be63b4deda1d7c3c3e29}{can\+Causally\+Deliver\+Message} (\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} idM, unsigned int id\+Dest)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Verifies that a proces can causally deliver a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{class_controller_aa813a54b625a16ee0c039838b8cdd661}{initialize} (int stage)
-\item 
+virtual void \hyperlink{class_controller_a28d5755bc8fed07cebd88f857f0f83df}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initializes the controller. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg} $>$\+::iterator \hyperlink{class_controller_aa32d5c18e9e30caf2900527e42b93d44}{search\+Message} (\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} idM)
-\item 
-void \hyperlink{class_controller_ad43f12368786278dd1171226b666395d}{print\+Delivery\+Error} (string error\+Reason, \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} idM, unsigned int dest\+Process, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&message\+Dependencies, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&\hyperlink{class_controller_ae8234cd96adbdeff4b56a59f6c54df58}{process\+Dependencies})
-\item 
+\begin{DoxyCompactList}\small\item\em Searches the structure associated to a broadcasted message. \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_aa3c4ebef8d344e10e86c1b4f95171281}{print\+Delivery\+Error} (string error\+Reason, \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} idM, unsigned int destnode, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&message\+Dependencies, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&\hyperlink{class_controller_ade3eeb8e78c5307d518e3b43967c4bac}{node\+Dependencies})
+\begin{DoxyCompactList}\small\item\em Called to print delivery errors. \end{DoxyCompactList}\item 
 void \hyperlink{class_controller_ab250759d5c511ceb8f35fdf9e42583cd}{delete\+Message} (\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} idM)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Called to remove messages delivered by all processes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-vector$<$ vector$<$ \hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg} $>$ $>$ \hyperlink{class_controller_ae96146dee6f60ecd94bfe40b9fc658ad}{process\+Broadcasted\+Messages}
-\item 
-vector$<$ \hyperlink{class_total_dependencies}{Total\+Dependencies} $>$ \hyperlink{class_controller_ae8234cd96adbdeff4b56a59f6c54df58}{process\+Dependencies}
-\item 
+vector$<$ vector$<$ \hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg} $>$ $>$ \hyperlink{class_controller_a4016e696420b0a6b14308b117070b506}{node\+Broadcasted\+Messages}
+\begin{DoxyCompactList}\small\item\em Contains for each node \$p\+\_\+i\$ a structure per message that is currently broadcasted (not yet delivered by all nodes). \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_total_dependencies}{Total\+Dependencies} $>$ \hyperlink{class_controller_ade3eeb8e78c5307d518e3b43967c4bac}{node\+Dependencies}
+\begin{DoxyCompactList}\small\item\em Contains the dependencies for each node. \end{DoxyCompactList}\item 
 \hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$ \hyperlink{class_controller_a81d7fe43b78ef7601e6b36c3df38ce79}{params}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reference to the simulation parameters to avoid looking them up in each function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Module to control that nodes deliver application messages exactly once and in causal order. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_controller_a95c56822d667e94b031451729ce069a9}\label{class_controller_a95c56822d667e94b031451729ce069a9}} 
@@ -81,17 +89,44 @@ vector$<$ \hyperlink{class_total_dependencies}{Total\+Dependencies} $>$ \hyperli
 \subsubsection{\texorpdfstring{can\+Causally\+Deliver\+Message()}{canCausallyDeliverMessage()}}
 {\footnotesize\ttfamily bool Controller\+::can\+Causally\+Deliver\+Message (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}}]{idM,  }\item[{unsigned int}]{id\+Dest }\end{DoxyParamCaption})}
 
+
+
+Verifies that a proces can causally deliver a message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idM} & The message to deliver. \\
+\hline
+{\em id\+Dest} & The process that will deliver the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the process can deliver the message in causal order and false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_controller_ab250759d5c511ceb8f35fdf9e42583cd}\label{class_controller_ab250759d5c511ceb8f35fdf9e42583cd}} 
 \index{Controller@{Controller}!delete\+Message@{delete\+Message}}
 \index{delete\+Message@{delete\+Message}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{delete\+Message()}{deleteMessage()}}
 {\footnotesize\ttfamily void Controller\+::delete\+Message (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}}]{idM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_controller_aa813a54b625a16ee0c039838b8cdd661}\label{class_controller_aa813a54b625a16ee0c039838b8cdd661}} 
+
+
+Called to remove messages delivered by all processes. 
+
+Raises an error if the message is not registered. 
+\begin{DoxyParams}{Parameters}
+{\em idM} & The message\textquotesingle{}s identificator. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_controller_a28d5755bc8fed07cebd88f857f0f83df}\label{class_controller_a28d5755bc8fed07cebd88f857f0f83df}} 
 \index{Controller@{Controller}!initialize@{initialize}}
 \index{initialize@{initialize}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{initialize()}{initialize()}}
-{\footnotesize\ttfamily void Controller\+::initialize (\begin{DoxyParamCaption}\item[{int}]{stage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Controller\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the controller. 
 
 \mbox{\Hypertarget{class_controller_ad76a99df69bf99705dc18ba72b4b04c2}\label{class_controller_ad76a99df69bf99705dc18ba72b4b04c2}} 
 \index{Controller@{Controller}!is\+Dependency@{is\+Dependency}}
@@ -99,24 +134,80 @@ vector$<$ \hyperlink{class_total_dependencies}{Total\+Dependencies} $>$ \hyperli
 \subsubsection{\texorpdfstring{is\+Dependency()}{isDependency()}}
 {\footnotesize\ttfamily bool Controller\+::is\+Dependency (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}}]{idM,  }\item[{\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}}]{id\+Dep }\end{DoxyParamCaption})}
 
+
+
+Checks if a message is a causal dependency of another message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idM} & Message of which wants to check the dependency. \\
+\hline
+{\em id\+Dep} & Dependency to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if id\+Dep is a dependency of idM and false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_controller_a8905abf1976e737410ac0142001e38a0}\label{class_controller_a8905abf1976e737410ac0142001e38a0}} 
 \index{Controller@{Controller}!notify\+Deliver\+Message@{notify\+Deliver\+Message}}
 \index{notify\+Deliver\+Message@{notify\+Deliver\+Message}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{notify\+Deliver\+Message()}{notifyDeliverMessage()}}
 {\footnotesize\ttfamily bool Controller\+::notify\+Deliver\+Message (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}}]{idM,  }\item[{unsigned int}]{id\+Dest }\end{DoxyParamCaption})}
 
+
+
+Called by a node when delivering a message to notify the controller of the delivery, which verifies that the node delivers the message only once and in causal order. 
+
+The function exists if the node has already delivered the message. 
+\begin{DoxyParams}{Parameters}
+{\em idM} & the message\textquotesingle{}s identificator. \\
+\hline
+{\em id\+Dest} & the id of the node which delivers the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean set to true if the node delivered the message in cuasal order and false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_controller_a7207304a07534e50a690f26c765b4a71}\label{class_controller_a7207304a07534e50a690f26c765b4a71}} 
 \index{Controller@{Controller}!notify\+Send\+Message@{notify\+Send\+Message}}
 \index{notify\+Send\+Message@{notify\+Send\+Message}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{notify\+Send\+Message()}{notifySendMessage()}}
 {\footnotesize\ttfamily void Controller\+::notify\+Send\+Message (\begin{DoxyParamCaption}\item[{unsigned int}]{id\+Sender,  }\item[{unsigned int}]{seq }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_controller_ad43f12368786278dd1171226b666395d}\label{class_controller_ad43f12368786278dd1171226b666395d}} 
+
+
+Called by nodees when broadcasting a message to save the broadcasted message at the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Sender} & Identificator of the node that broadcasted the message. \\
+\hline
+{\em seq} & Sequence number id\+Sender associated to the message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_controller_aa3c4ebef8d344e10e86c1b4f95171281}\label{class_controller_aa3c4ebef8d344e10e86c1b4f95171281}} 
 \index{Controller@{Controller}!print\+Delivery\+Error@{print\+Delivery\+Error}}
 \index{print\+Delivery\+Error@{print\+Delivery\+Error}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{print\+Delivery\+Error()}{printDeliveryError()}}
-{\footnotesize\ttfamily void Controller\+::print\+Delivery\+Error (\begin{DoxyParamCaption}\item[{string}]{error\+Reason,  }\item[{\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}}]{idM,  }\item[{unsigned int}]{dest\+Process,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{message\+Dependencies,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{process\+Dependencies }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Controller\+::print\+Delivery\+Error (\begin{DoxyParamCaption}\item[{string}]{error\+Reason,  }\item[{\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}}]{idM,  }\item[{unsigned int}]{destnode,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{message\+Dependencies,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{node\+Dependencies }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Called to print delivery errors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\+Reason} & The delivery error. \\
+\hline
+{\em idM} & The identificator of the wrongly delivered message. \\
+\hline
+{\em destnode} & The identificator of the process which delivered the message. \\
+\hline
+{\em message\+Dependencies} & The message\textquotesingle{}s causal dependencies. \\
+\hline
+{\em node\+Dependencies} & Tracks the messages delivered by the process. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_controller_aa32d5c18e9e30caf2900527e42b93d44}\label{class_controller_aa32d5c18e9e30caf2900527e42b93d44}} 
 \index{Controller@{Controller}!search\+Message@{search\+Message}}
 \index{search\+Message@{search\+Message}!Controller@{Controller}}
@@ -125,24 +216,48 @@ vector$<$ \hyperlink{class_total_dependencies}{Total\+Dependencies} $>$ \hyperli
 
 
 
+Searches the structure associated to a broadcasted message. 
+
+Raises an error if the message is not registered. 
+\begin{DoxyParams}{Parameters}
+{\em idM} & the message\textquotesingle{}s unique identificator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an iterator pointing to the message\textquotesingle{}s structure. 
+\end{DoxyReturn}
+
+
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_controller_a81d7fe43b78ef7601e6b36c3df38ce79}\label{class_controller_a81d7fe43b78ef7601e6b36c3df38ce79}} 
+\mbox{\Hypertarget{class_controller_a4016e696420b0a6b14308b117070b506}\label{class_controller_a4016e696420b0a6b14308b117070b506}} 
+\index{Controller@{Controller}!node\+Broadcasted\+Messages@{node\+Broadcasted\+Messages}}
+\index{node\+Broadcasted\+Messages@{node\+Broadcasted\+Messages}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{node\+Broadcasted\+Messages}{nodeBroadcastedMessages}}
+{\footnotesize\ttfamily vector$<$vector$<$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg}$>$ $>$ Controller\+::node\+Broadcasted\+Messages\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contains for each node \$p\+\_\+i\$ a structure per message that is currently broadcasted (not yet delivered by all nodes). 
+
+node\+Broadcasted\+Messages\mbox{[}0\mbox{]} contains a structure per message that \$p\+\_\+0\$ currently broadcasts. \mbox{\Hypertarget{class_controller_ade3eeb8e78c5307d518e3b43967c4bac}\label{class_controller_ade3eeb8e78c5307d518e3b43967c4bac}} 
+\index{Controller@{Controller}!node\+Dependencies@{node\+Dependencies}}
+\index{node\+Dependencies@{node\+Dependencies}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{node\+Dependencies}{nodeDependencies}}
+{\footnotesize\ttfamily vector$<$\hyperlink{class_total_dependencies}{Total\+Dependencies}$>$ Controller\+::node\+Dependencies\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contains the dependencies for each node. 
+
+node\+Dependencies\mbox{[}0\mbox{]} contains the total dependencies tracking the messages delivered by \$p\+\_\+0\$. \mbox{\Hypertarget{class_controller_a81d7fe43b78ef7601e6b36c3df38ce79}\label{class_controller_a81d7fe43b78ef7601e6b36c3df38ce79}} 
 \index{Controller@{Controller}!params@{params}}
 \index{params@{params}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{params}{params}}
 {\footnotesize\ttfamily \hyperlink{class_simulation_parameters}{Simulation\+Parameters}$\ast$ Controller\+::params\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_controller_ae96146dee6f60ecd94bfe40b9fc658ad}\label{class_controller_ae96146dee6f60ecd94bfe40b9fc658ad}} 
-\index{Controller@{Controller}!process\+Broadcasted\+Messages@{process\+Broadcasted\+Messages}}
-\index{process\+Broadcasted\+Messages@{process\+Broadcasted\+Messages}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{process\+Broadcasted\+Messages}{processBroadcastedMessages}}
-{\footnotesize\ttfamily vector$<$vector$<$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg}$>$ $>$ Controller\+::process\+Broadcasted\+Messages\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_controller_ae8234cd96adbdeff4b56a59f6c54df58}\label{class_controller_ae8234cd96adbdeff4b56a59f6c54df58}} 
-\index{Controller@{Controller}!process\+Dependencies@{process\+Dependencies}}
-\index{process\+Dependencies@{process\+Dependencies}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{process\+Dependencies}{processDependencies}}
-{\footnotesize\ttfamily vector$<$\hyperlink{class_total_dependencies}{Total\+Dependencies}$>$ Controller\+::process\+Dependencies\hspace{0.3cm}{\ttfamily [private]}}
+
+Reference to the simulation parameters to avoid looking them up in each function. 
 
 
 

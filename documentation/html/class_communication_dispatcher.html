@@ -59,7 +59,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_communication_dispatcher-members.html">List of all members</a>  </div>
@@ -67,6 +66,9 @@ $(function() {
 <div class="title">CommunicationDispatcher Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class used to connect nodes.  
+ <a href="class_communication_dispatcher.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="communication_dispatcher_8h_source.html">communicationDispatcher.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -79,18 +81,12 @@ Collaboration diagram for CommunicationDispatcher:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_communication_dispatcher__coll__graph.png" border="0" usemap="#_communication_dispatcher_coll__map" alt="Collaboration graph"/></div>
 <map name="_communication_dispatcher_coll__map" id="_communication_dispatcher_coll__map">
-<area shape="rect" id="node3" href="class_simulation_parameters.html" title="TODO &#45; Generated class. " alt="" coords="99,95,249,121"/>
+<area shape="rect" id="node3" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. " alt="" coords="99,95,249,121"/>
 <area shape="rect" id="node4" href="class_dependencies.html" title="Dependencies" alt="" coords="140,5,245,32"/>
 <area shape="rect" id="node5" href="structs__stats_communication_module.html" title="s_statsCommunicationModule" alt="" coords="273,95,472,121"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication_dispatcher_1_1h.html">h</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class used to connect nodes.  <a href="class_communication_dispatcher_1_1h.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ab44887658841bb5ab59c554c1738c8f3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication_dispatcher.html#ab44887658841bb5ab59c554c1738c8f3">initialize</a> ()</td></tr>
@@ -128,10 +124,14 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a5e01e95460682f3a31417efab24b25e4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> module to take statistics about message propagation delays.  <a href="#a5e01e95460682f3a31417efab24b25e4">More...</a><br /></td></tr>
 <tr class="separator:a5e01e95460682f3a31417efab24b25e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53751662d1e770a60ddbeea9d4a5d845"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_simulation_parameters.html">SimulationParameters</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_communication_dispatcher.html#a53751662d1e770a60ddbeea9d4a5d845">params</a></td></tr>
-<tr class="memdesc:a53751662d1e770a60ddbeea9d4a5d845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the <a class="el" href="class_simulation_parameters.html" title="TODO - Generated class. ">SimulationParameters</a> module which contains the simulation parameters.  <a href="#a53751662d1e770a60ddbeea9d4a5d845">More...</a><br /></td></tr>
+<tr class="memdesc:a53751662d1e770a60ddbeea9d4a5d845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the <a class="el" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. ">SimulationParameters</a> module which contains the simulation parameters.  <a href="#a53751662d1e770a60ddbeea9d4a5d845">More...</a><br /></td></tr>
 <tr class="separator:a53751662d1e770a60ddbeea9d4a5d845"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class used to connect nodes. </p>
+<p>The system is organized in a star formation with the communicationDispatcher in the midle. All nodes are connected to the communicationDispatcher and send messages to each other through the communicationDispatcher. Using this star formation graph instead of a complete graph reduces the number of communication channels from N^2 channels to N channels, which particularly reduces the simulation's initialization time.</p>
+<p>The communicationDispatcher routes messages to the destination, handles the broadcast of application messages, and sets the propagation delays of messages. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a589821f510801091f753f9812e3d1ee7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a589821f510801091f753f9812e3d1ee7">&#9670;&nbsp;</a></span>broadcastAppMessage()</h2>
 
@@ -444,7 +444,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reference to the <a class="el" href="class_simulation_parameters.html" title="TODO - Generated class. ">SimulationParameters</a> module which contains the simulation parameters. </p>
+<p>Reference to the <a class="el" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. ">SimulationParameters</a> module which contains the simulation parameters. </p>
 
 </div>
 </div>

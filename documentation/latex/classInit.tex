@@ -1,0 +1,160 @@
+\hypertarget{classInit}{}\section{Init Class Reference}
+\label{classInit}\index{Init@{Init}}
+
+
+{\ttfamily \#include $<$Init\+\_\+m.\+h$>$}
+
+
+
+Inheritance diagram for Init\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classInit__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Init\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classInit__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classInit_a763a386107f8ea21acfd24f243e0f73c}{Init} (const char $\ast$name=nullptr, short kind=0)
+\item 
+\hyperlink{classInit_a9d26400c5fabf20571808ad773524669}{Init} (const \hyperlink{classInit}{Init} \&other)
+\item 
+virtual \hyperlink{classInit_a67d5c94cb965fa3b774e969cfb4969d1}{$\sim$\+Init} ()
+\item 
+\hyperlink{classInit}{Init} \& \hyperlink{classInit_ab995dd231981ed97018c00b5fd8e9797}{operator=} (const \hyperlink{classInit}{Init} \&other)
+\item 
+virtual \hyperlink{classInit}{Init} $\ast$ \hyperlink{classInit_ad1e6c6b247eae6eaac5dd8e9dc9cdce0}{dup} () const override
+\item 
+virtual void \hyperlink{classInit_a73df5d54ec41b9980e98dbfc12875145}{parsim\+Pack} (omnetpp\+::c\+Comm\+Buffer $\ast$b) const override
+\item 
+virtual void \hyperlink{classInit_ab3728913400c516dbb31c8fed392d32d}{parsim\+Unpack} (omnetpp\+::c\+Comm\+Buffer $\ast$b) override
+\item 
+virtual unsigned int \hyperlink{classInit_a73d525231ae76ad98442d6f5b86bb994}{get\+Process\+Id} () const
+\item 
+virtual void \hyperlink{classInit_ae0331d367c559e5859841ab0cafb9a71}{set\+Process\+Id} (unsigned int \hyperlink{classInit_a3adbaa4c454127a34eaab69297b44585}{process\+Id})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classInit_a474b7c9ffdf72a6b2b58558ce68bb03e}{operator==} (const \hyperlink{classInit}{Init} \&)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classInit_a3adbaa4c454127a34eaab69297b44585}{process\+Id}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classInit_a045745f591e312608e5ee3639f4459ba}{copy} (const \hyperlink{classInit}{Init} \&other)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class generated from {\ttfamily Messages/\+Init.\+msg\+:19} by nedtool. 
+\begin{DoxyPre}
+//
+// TODO generated message class
+//
+packet \hyperlink{classInit}{Init}
+\{
+    unsigned int processId;
+\}
+\end{DoxyPre}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classInit_a763a386107f8ea21acfd24f243e0f73c}\label{classInit_a763a386107f8ea21acfd24f243e0f73c}} 
+\index{Init@{Init}!Init@{Init}}
+\index{Init@{Init}!Init@{Init}}
+\subsubsection{\texorpdfstring{Init()}{Init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Init\+::\+Init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily nullptr},  }\item[{short}]{kind = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classInit_a9d26400c5fabf20571808ad773524669}\label{classInit_a9d26400c5fabf20571808ad773524669}} 
+\index{Init@{Init}!Init@{Init}}
+\index{Init@{Init}!Init@{Init}}
+\subsubsection{\texorpdfstring{Init()}{Init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Init\+::\+Init (\begin{DoxyParamCaption}\item[{const \hyperlink{classInit}{Init} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classInit_a67d5c94cb965fa3b774e969cfb4969d1}\label{classInit_a67d5c94cb965fa3b774e969cfb4969d1}} 
+\index{Init@{Init}!````~Init@{$\sim$\+Init}}
+\index{````~Init@{$\sim$\+Init}!Init@{Init}}
+\subsubsection{\texorpdfstring{$\sim$\+Init()}{~Init()}}
+{\footnotesize\ttfamily Init\+::$\sim$\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classInit_a045745f591e312608e5ee3639f4459ba}\label{classInit_a045745f591e312608e5ee3639f4459ba}} 
+\index{Init@{Init}!copy@{copy}}
+\index{copy@{copy}!Init@{Init}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Init\+::copy (\begin{DoxyParamCaption}\item[{const \hyperlink{classInit}{Init} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classInit_ad1e6c6b247eae6eaac5dd8e9dc9cdce0}\label{classInit_ad1e6c6b247eae6eaac5dd8e9dc9cdce0}} 
+\index{Init@{Init}!dup@{dup}}
+\index{dup@{dup}!Init@{Init}}
+\subsubsection{\texorpdfstring{dup()}{dup()}}
+{\footnotesize\ttfamily virtual \hyperlink{classInit}{Init}$\ast$ Init\+::dup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classInit_a73d525231ae76ad98442d6f5b86bb994}\label{classInit_a73d525231ae76ad98442d6f5b86bb994}} 
+\index{Init@{Init}!get\+Process\+Id@{get\+Process\+Id}}
+\index{get\+Process\+Id@{get\+Process\+Id}!Init@{Init}}
+\subsubsection{\texorpdfstring{get\+Process\+Id()}{getProcessId()}}
+{\footnotesize\ttfamily unsigned int Init\+::get\+Process\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classInit_ab995dd231981ed97018c00b5fd8e9797}\label{classInit_ab995dd231981ed97018c00b5fd8e9797}} 
+\index{Init@{Init}!operator=@{operator=}}
+\index{operator=@{operator=}!Init@{Init}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classInit}{Init} \& Init\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classInit}{Init} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classInit_a474b7c9ffdf72a6b2b58558ce68bb03e}\label{classInit_a474b7c9ffdf72a6b2b58558ce68bb03e}} 
+\index{Init@{Init}!operator==@{operator==}}
+\index{operator==@{operator==}!Init@{Init}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Init\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classInit}{Init} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classInit_a73df5d54ec41b9980e98dbfc12875145}\label{classInit_a73df5d54ec41b9980e98dbfc12875145}} 
+\index{Init@{Init}!parsim\+Pack@{parsim\+Pack}}
+\index{parsim\+Pack@{parsim\+Pack}!Init@{Init}}
+\subsubsection{\texorpdfstring{parsim\+Pack()}{parsimPack()}}
+{\footnotesize\ttfamily void Init\+::parsim\+Pack (\begin{DoxyParamCaption}\item[{omnetpp\+::c\+Comm\+Buffer $\ast$}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classInit_ab3728913400c516dbb31c8fed392d32d}\label{classInit_ab3728913400c516dbb31c8fed392d32d}} 
+\index{Init@{Init}!parsim\+Unpack@{parsim\+Unpack}}
+\index{parsim\+Unpack@{parsim\+Unpack}!Init@{Init}}
+\subsubsection{\texorpdfstring{parsim\+Unpack()}{parsimUnpack()}}
+{\footnotesize\ttfamily void Init\+::parsim\+Unpack (\begin{DoxyParamCaption}\item[{omnetpp\+::c\+Comm\+Buffer $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classInit_ae0331d367c559e5859841ab0cafb9a71}\label{classInit_ae0331d367c559e5859841ab0cafb9a71}} 
+\index{Init@{Init}!set\+Process\+Id@{set\+Process\+Id}}
+\index{set\+Process\+Id@{set\+Process\+Id}!Init@{Init}}
+\subsubsection{\texorpdfstring{set\+Process\+Id()}{setProcessId()}}
+{\footnotesize\ttfamily void Init\+::set\+Process\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{process\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classInit_a3adbaa4c454127a34eaab69297b44585}\label{classInit_a3adbaa4c454127a34eaab69297b44585}} 
+\index{Init@{Init}!process\+Id@{process\+Id}}
+\index{process\+Id@{process\+Id}!Init@{Init}}
+\subsubsection{\texorpdfstring{process\+Id}{processId}}
+{\footnotesize\ttfamily unsigned int Init\+::process\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Messages/\hyperlink{Init__m_8h}{Init\+\_\+m.\+h}\item 
+src/\+Messages/\hyperlink{Init__m_8cc}{Init\+\_\+m.\+cc}\end{DoxyCompactItemize}

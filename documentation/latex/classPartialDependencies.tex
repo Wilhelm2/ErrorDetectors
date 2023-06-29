@@ -1,0 +1,173 @@
+\hypertarget{classPartialDependencies}{}\section{Partial\+Dependencies Class Reference}
+\label{classPartialDependencies}\index{Partial\+Dependencies@{Partial\+Dependencies}}
+
+
+{\ttfamily \#include $<$Partial\+Dependencies.\+h$>$}
+
+
+
+Inheritance diagram for Partial\+Dependencies\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classPartialDependencies__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Partial\+Dependencies\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classPartialDependencies__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPartialDependencies_aefb05dec194a9ab63482df6645cbd842}{Partial\+Dependencies} ()
+\item 
+\hyperlink{classPartialDependencies_a1f17aad6d01c7e8cdc40bf99138eb528}{Partial\+Dependencies} (const map$<$ unsigned int, \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \&\hyperlink{classPartialDependencies_a4b72531ce3a3b7c4b6f02d0fe8ea1a7c}{dependencies})
+\item 
+virtual \hyperlink{classPartialDependencies_a8fa3da23d89db5b71b42e234617755f7}{$\sim$\+Partial\+Dependencies} ()
+\item 
+unsigned int \& \hyperlink{classPartialDependencies_afafbc86f0bc7c649bcfbddbb90125e8f}{operator\mbox{[}$\,$\mbox{]}} (unsigned int i)
+\item 
+unsigned int \hyperlink{classPartialDependencies_ac0a0d04664f3a953596ca26224f5ed7d}{at} (unsigned int i) const
+\item 
+bool \hyperlink{classPartialDependencies_a432719e4e5fdcd9cdb0d3a5ce2a5c8af}{operator==} (const \hyperlink{classPartialDependencies}{Partial\+Dependencies} \&compare\+Dep) const
+\item 
+bool \hyperlink{classPartialDependencies_af8f87bc4a622db0f56276502c6655f38}{operator$<$} (const \hyperlink{classPartialDependencies}{Partial\+Dependencies} \&compare\+Dep) const
+\item 
+map$<$ unsigned int, \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{classPartialDependencies_a816f0a770b1d6f3255a1485705e262d2}{get\+Dependencies} () const
+\item 
+bool \hyperlink{classPartialDependencies_a4cfd27959669b5b7b58ea07d38824d7b}{includes\+Dependencies} (const \hyperlink{classPartialDependencies}{Partial\+Dependencies} \&dependencies\+To\+Check)
+\item 
+void \hyperlink{classPartialDependencies_a9a9346473ba5de6a1bdffb44145f8fca}{print} ()
+\item 
+void \hyperlink{classPartialDependencies_ac4c98e7d381b9e9efa54a094d1da729d}{print\+Err} ()
+\item 
+bool \hyperlink{classPartialDependencies_a67a733dba9069541f83fecee520ccce1}{Satisfies\+Delivery\+Conditions} (const \hyperlink{classPartialDependencies}{Partial\+Dependencies} \&Message\+Dependencies, unsigned int id\+Message\+Sender)
+\item 
+void \hyperlink{classPartialDependencies_ad6e8fb1bff79b43dab24727b3511caf0}{print\+Comparision\+With} (const \hyperlink{classPartialDependencies}{Partial\+Dependencies} \&dep)
+\item 
+void \hyperlink{classPartialDependencies_a6543f75ad3391ee5d0cb0614ca97b9c0}{clear} ()
+\item 
+void \hyperlink{classPartialDependencies_ad60f5e87d6d7e027c399bd1a8206a952}{set} (\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} id)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ unsigned int, \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{classPartialDependencies_a4b72531ce3a3b7c4b6f02d0fe8ea1a7c}{dependencies}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPartialDependencies_aefb05dec194a9ab63482df6645cbd842}\label{classPartialDependencies_aefb05dec194a9ab63482df6645cbd842}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!Partial\+Dependencies@{Partial\+Dependencies}}
+\index{Partial\+Dependencies@{Partial\+Dependencies}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{Partial\+Dependencies()}{PartialDependencies()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Partial\+Dependencies\+::\+Partial\+Dependencies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPartialDependencies_a1f17aad6d01c7e8cdc40bf99138eb528}\label{classPartialDependencies_a1f17aad6d01c7e8cdc40bf99138eb528}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!Partial\+Dependencies@{Partial\+Dependencies}}
+\index{Partial\+Dependencies@{Partial\+Dependencies}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{Partial\+Dependencies()}{PartialDependencies()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Partial\+Dependencies\+::\+Partial\+Dependencies (\begin{DoxyParamCaption}\item[{const map$<$ unsigned int, \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \&}]{dependencies }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPartialDependencies_a8fa3da23d89db5b71b42e234617755f7}\label{classPartialDependencies_a8fa3da23d89db5b71b42e234617755f7}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!````~Partial\+Dependencies@{$\sim$\+Partial\+Dependencies}}
+\index{````~Partial\+Dependencies@{$\sim$\+Partial\+Dependencies}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{$\sim$\+Partial\+Dependencies()}{~PartialDependencies()}}
+{\footnotesize\ttfamily Partial\+Dependencies\+::$\sim$\+Partial\+Dependencies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPartialDependencies_ac0a0d04664f3a953596ca26224f5ed7d}\label{classPartialDependencies_ac0a0d04664f3a953596ca26224f5ed7d}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!at@{at}}
+\index{at@{at}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily unsigned int Partial\+Dependencies\+::at (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classPartialDependencies_a6543f75ad3391ee5d0cb0614ca97b9c0}\label{classPartialDependencies_a6543f75ad3391ee5d0cb0614ca97b9c0}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!clear@{clear}}
+\index{clear@{clear}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Partial\+Dependencies\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPartialDependencies_a816f0a770b1d6f3255a1485705e262d2}\label{classPartialDependencies_a816f0a770b1d6f3255a1485705e262d2}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!get\+Dependencies@{get\+Dependencies}}
+\index{get\+Dependencies@{get\+Dependencies}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{get\+Dependencies()}{getDependencies()}}
+{\footnotesize\ttfamily map$<$ unsigned int, \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ Partial\+Dependencies\+::get\+Dependencies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classPartialDependencies_a4cfd27959669b5b7b58ea07d38824d7b}\label{classPartialDependencies_a4cfd27959669b5b7b58ea07d38824d7b}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!includes\+Dependencies@{includes\+Dependencies}}
+\index{includes\+Dependencies@{includes\+Dependencies}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{includes\+Dependencies()}{includesDependencies()}}
+{\footnotesize\ttfamily bool Partial\+Dependencies\+::includes\+Dependencies (\begin{DoxyParamCaption}\item[{const \hyperlink{classPartialDependencies}{Partial\+Dependencies} \&}]{dependencies\+To\+Check }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPartialDependencies_af8f87bc4a622db0f56276502c6655f38}\label{classPartialDependencies_af8f87bc4a622db0f56276502c6655f38}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Partial\+Dependencies\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classPartialDependencies}{Partial\+Dependencies} \&}]{compare\+Dep }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classPartialDependencies_a432719e4e5fdcd9cdb0d3a5ce2a5c8af}\label{classPartialDependencies_a432719e4e5fdcd9cdb0d3a5ce2a5c8af}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!operator==@{operator==}}
+\index{operator==@{operator==}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Partial\+Dependencies\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classPartialDependencies}{Partial\+Dependencies} \&}]{compare\+Dep }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classPartialDependencies_afafbc86f0bc7c649bcfbddbb90125e8f}\label{classPartialDependencies_afafbc86f0bc7c649bcfbddbb90125e8f}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily unsigned int \& Partial\+Dependencies\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPartialDependencies_a9a9346473ba5de6a1bdffb44145f8fca}\label{classPartialDependencies_a9a9346473ba5de6a1bdffb44145f8fca}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!print@{print}}
+\index{print@{print}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Partial\+Dependencies\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPartialDependencies_ad6e8fb1bff79b43dab24727b3511caf0}\label{classPartialDependencies_ad6e8fb1bff79b43dab24727b3511caf0}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!print\+Comparision\+With@{print\+Comparision\+With}}
+\index{print\+Comparision\+With@{print\+Comparision\+With}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{print\+Comparision\+With()}{printComparisionWith()}}
+{\footnotesize\ttfamily void Partial\+Dependencies\+::print\+Comparision\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classPartialDependencies}{Partial\+Dependencies} \&}]{dep }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPartialDependencies_ac4c98e7d381b9e9efa54a094d1da729d}\label{classPartialDependencies_ac4c98e7d381b9e9efa54a094d1da729d}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!print\+Err@{print\+Err}}
+\index{print\+Err@{print\+Err}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{print\+Err()}{printErr()}}
+{\footnotesize\ttfamily void Partial\+Dependencies\+::print\+Err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPartialDependencies_a67a733dba9069541f83fecee520ccce1}\label{classPartialDependencies_a67a733dba9069541f83fecee520ccce1}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!Satisfies\+Delivery\+Conditions@{Satisfies\+Delivery\+Conditions}}
+\index{Satisfies\+Delivery\+Conditions@{Satisfies\+Delivery\+Conditions}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{Satisfies\+Delivery\+Conditions()}{SatisfiesDeliveryConditions()}}
+{\footnotesize\ttfamily bool Partial\+Dependencies\+::\+Satisfies\+Delivery\+Conditions (\begin{DoxyParamCaption}\item[{const \hyperlink{classPartialDependencies}{Partial\+Dependencies} \&}]{Message\+Dependencies,  }\item[{unsigned int}]{id\+Message\+Sender }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPartialDependencies_ad60f5e87d6d7e027c399bd1a8206a952}\label{classPartialDependencies_ad60f5e87d6d7e027c399bd1a8206a952}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!set@{set}}
+\index{set@{set}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Partial\+Dependencies\+::set (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}}]{id }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classPartialDependencies_a4b72531ce3a3b7c4b6f02d0fe8ea1a7c}\label{classPartialDependencies_a4b72531ce3a3b7c4b6f02d0fe8ea1a7c}} 
+\index{Partial\+Dependencies@{Partial\+Dependencies}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!Partial\+Dependencies@{Partial\+Dependencies}}
+\subsubsection{\texorpdfstring{dependencies}{dependencies}}
+{\footnotesize\ttfamily map$<$unsigned int,\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}$>$ Partial\+Dependencies\+::dependencies\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Dependencies/\hyperlink{PartialDependencies_8h}{Partial\+Dependencies.\+h}\item 
+src/\+Dependencies/\hyperlink{PartialDependencies_8cc}{Partial\+Dependencies.\+cc}\end{DoxyCompactItemize}

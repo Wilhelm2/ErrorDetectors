@@ -1,0 +1,235 @@
+\hypertarget{class_node_with_control}{}\section{Node\+With\+Control Class Reference}
+\label{class_node_with_control}\index{Node\+With\+Control@{Node\+With\+Control}}
+
+
+{\ttfamily \#include $<$Node\+With\+Control.\+h$>$}
+
+
+
+Inheritance diagram for Node\+With\+Control\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_node_with_control__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Node\+With\+Control\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_with_control__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_node_with_control_ab0a223aca65e289aaee682dadfbefb5c}{Node\+With\+Control} ()
+\item 
+virtual \hyperlink{class_node_with_control_a6e752e38f0e233e7debfaaf4ae26fb2d}{$\sim$\+Node\+With\+Control} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_node_with_control_a08c8e80fd67b52c51c642d7c66fe729c}{initialize} () override
+\item 
+virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_control_a7772568c2836f5f204952ebe659e0049}{create\+App\+Msg} ()
+\item 
+virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_control_ab871014cf3f42d834f8d34ad5498174c}{prepare\+Broadcast} ()
+\item 
+void \hyperlink{class_node_with_control_add681efe156d989a717d2cd979f5ac9f}{remove\+Old\+Messages} ()
+\item 
+virtual bool \hyperlink{class_node_with_control_aada7451be61be592b27188b6249afef2}{deliver\+Msg} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message)
+\item 
+void \hyperlink{class_node_with_control_ae177f5f64edcc09a3875e5afdc82edd2}{Recv\+App\+Msg} (\hyperlink{class_app_msg}{App\+Msg} $\ast$m)
+\item 
+const vector$<$ unsigned int $>$ \& \hyperlink{class_node_with_control_acf1daba46cfa16eb2bd7cbd399c2624b}{get\+Index\+Incremented\+Entries} (unsigned int id\+Source)
+\item 
+virtual void \hyperlink{class_node_with_control_af532082fab76c38d8c50ca90e991f4c3}{process\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})=0
+\item 
+virtual bool \hyperlink{class_node_with_control_a84df0beabbaed80e7da017d592480515}{test\+Deliver\+Message} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message)=0
+\item 
+virtual void \hyperlink{class_node_with_control_a4f78078272b90937e0746c797443b37d}{iterative\+Delivery} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \hyperlink{class_node_with_control_a051a7d7f2452f1f8da3bc5bfb05a7760}{clock}
+\item 
+\hyperlink{class_total_dependencies}{Total\+Dependencies} \hyperlink{class_node_with_control_a6c868fa52cca68f650dca96a788475df}{delivered\+Messages\+Tracker}
+\item 
+vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \hyperlink{class_node_with_control_af38ffbedc82038536c77314f22ea6b57}{pending\+Msg}
+\item 
+vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \hyperlink{class_node_with_control_aed34cc5a5b277c43f10f8cbbbeb59327}{delivered}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_node_with_control_a129f65b6976377739eb6231b6962985e}{Stats}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_node_with_control_ab0a223aca65e289aaee682dadfbefb5c}\label{class_node_with_control_ab0a223aca65e289aaee682dadfbefb5c}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!Node\+With\+Control@{Node\+With\+Control}}
+\index{Node\+With\+Control@{Node\+With\+Control}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{Node\+With\+Control()}{NodeWithControl()}}
+{\footnotesize\ttfamily Node\+With\+Control\+::\+Node\+With\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_node_with_control_a6e752e38f0e233e7debfaaf4ae26fb2d}\label{class_node_with_control_a6e752e38f0e233e7debfaaf4ae26fb2d}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!````~Node\+With\+Control@{$\sim$\+Node\+With\+Control}}
+\index{````~Node\+With\+Control@{$\sim$\+Node\+With\+Control}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{$\sim$\+Node\+With\+Control()}{~NodeWithControl()}}
+{\footnotesize\ttfamily Node\+With\+Control\+::$\sim$\+Node\+With\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_node_with_control_a7772568c2836f5f204952ebe659e0049}\label{class_node_with_control_a7772568c2836f5f204952ebe659e0049}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!create\+App\+Msg@{create\+App\+Msg}}
+\index{create\+App\+Msg@{create\+App\+Msg}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{create\+App\+Msg()}{createAppMsg()}}
+{\footnotesize\ttfamily \hyperlink{class_app_msg}{App\+Msg} $\ast$ Node\+With\+Control\+::create\+App\+Msg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_node_base_ac8b9e21b1cc32fd86aaa6c956b93a7c3}{Node\+Base}.
+
+
+
+Reimplemented in \hyperlink{class_node_detector_a7100349647350ad5e3aeb1ed4669c723}{Node\+Detector}.
+
+\mbox{\Hypertarget{class_node_with_control_aada7451be61be592b27188b6249afef2}\label{class_node_with_control_aada7451be61be592b27188b6249afef2}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!deliver\+Msg@{deliver\+Msg}}
+\index{deliver\+Msg@{deliver\+Msg}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{deliver\+Msg()}{deliverMsg()}}
+{\footnotesize\ttfamily bool Node\+With\+Control\+::deliver\+Msg (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_node_base_a49052382add1123da26db6bfb687d254}{Node\+Base}.
+
+\mbox{\Hypertarget{class_node_with_control_acf1daba46cfa16eb2bd7cbd399c2624b}\label{class_node_with_control_acf1daba46cfa16eb2bd7cbd399c2624b}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!get\+Index\+Incremented\+Entries@{get\+Index\+Incremented\+Entries}}
+\index{get\+Index\+Incremented\+Entries@{get\+Index\+Incremented\+Entries}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{get\+Index\+Incremented\+Entries()}{getIndexIncrementedEntries()}}
+{\footnotesize\ttfamily const vector$<$ unsigned int $>$ \& Node\+With\+Control\+::get\+Index\+Incremented\+Entries (\begin{DoxyParamCaption}\item[{unsigned int}]{id\+Source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_control_a08c8e80fd67b52c51c642d7c66fe729c}\label{class_node_with_control_a08c8e80fd67b52c51c642d7c66fe729c}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!initialize@{initialize}}
+\index{initialize@{initialize}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Node\+With\+Control\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_node_base_af7910c39553111295b66c88742d1198a}{Node\+Base}.
+
+
+
+Reimplemented in \hyperlink{class_node_detector_aefa188ab0657837b1b57f24674d3ef22}{Node\+Detector}.
+
+\mbox{\Hypertarget{class_node_with_control_a4f78078272b90937e0746c797443b37d}\label{class_node_with_control_a4f78078272b90937e0746c797443b37d}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!iterative\+Delivery@{iterative\+Delivery}}
+\index{iterative\+Delivery@{iterative\+Delivery}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{iterative\+Delivery()}{iterativeDelivery()}}
+{\footnotesize\ttfamily virtual void Node\+With\+Control\+::iterative\+Delivery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_node_with_recovery_a9b61912f38b62452584dc80bf261ef4e}{Node\+With\+Recovery}, \hyperlink{class_node_detector_a17ecf9939fce7471f4513b66185743cc}{Node\+Detector}, \hyperlink{class_node_p_c_a7ac363db597ebadd3b18dd4343440aa1}{Node\+PC}, and \hyperlink{class_node_without_recovery_a65e21db6d6b4e72b898fd567f8b4aee2}{Node\+Without\+Recovery}.
+
+\mbox{\Hypertarget{class_node_with_control_ab871014cf3f42d834f8d34ad5498174c}\label{class_node_with_control_ab871014cf3f42d834f8d34ad5498174c}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!prepare\+Broadcast@{prepare\+Broadcast}}
+\index{prepare\+Broadcast@{prepare\+Broadcast}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{prepare\+Broadcast()}{prepareBroadcast()}}
+{\footnotesize\ttfamily \hyperlink{class_app_msg}{App\+Msg} $\ast$ Node\+With\+Control\+::prepare\+Broadcast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_node_base_a66c1dee9d15119bc3e68da71067ff6cd}{Node\+Base}.
+
+
+
+Reimplemented in \hyperlink{class_node_with_recovery_a33d8e8775fd69cb647b38a54b36e1ebe}{Node\+With\+Recovery}, and \hyperlink{class_node_detector_af75cf37cc01fc51bc228a7a83c10cb97}{Node\+Detector}.
+
+\mbox{\Hypertarget{class_node_with_control_af532082fab76c38d8c50ca90e991f4c3}\label{class_node_with_control_af532082fab76c38d8c50ca90e991f4c3}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!process\+Message@{process\+Message}}
+\index{process\+Message@{process\+Message}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{process\+Message()}{processMessage()}}
+{\footnotesize\ttfamily virtual void Node\+With\+Control\+::process\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \hyperlink{class_node_base_ae70b168f2bc7407c249594b1c614301c}{Node\+Base}.
+
+
+
+Implemented in \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}{Node\+With\+Recovery}, \hyperlink{class_node_detector_ab69432c6d3327a684845ec231826727e}{Node\+Detector}, \hyperlink{class_node_p_c_aa5fedc4136104a06e2f1131f1ba16b0e}{Node\+PC}, and \hyperlink{class_node_without_recovery_a0b44132b4ebc650399711766cb050399}{Node\+Without\+Recovery}.
+
+\mbox{\Hypertarget{class_node_with_control_ae177f5f64edcc09a3875e5afdc82edd2}\label{class_node_with_control_ae177f5f64edcc09a3875e5afdc82edd2}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!Recv\+App\+Msg@{Recv\+App\+Msg}}
+\index{Recv\+App\+Msg@{Recv\+App\+Msg}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{Recv\+App\+Msg()}{RecvAppMsg()}}
+{\footnotesize\ttfamily void Node\+With\+Control\+::\+Recv\+App\+Msg (\begin{DoxyParamCaption}\item[{\hyperlink{class_app_msg}{App\+Msg} $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_control_add681efe156d989a717d2cd979f5ac9f}\label{class_node_with_control_add681efe156d989a717d2cd979f5ac9f}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!remove\+Old\+Messages@{remove\+Old\+Messages}}
+\index{remove\+Old\+Messages@{remove\+Old\+Messages}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{remove\+Old\+Messages()}{removeOldMessages()}}
+{\footnotesize\ttfamily void Node\+With\+Control\+::remove\+Old\+Messages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_control_a84df0beabbaed80e7da017d592480515}\label{class_node_with_control_a84df0beabbaed80e7da017d592480515}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!test\+Deliver\+Message@{test\+Deliver\+Message}}
+\index{test\+Deliver\+Message@{test\+Deliver\+Message}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{test\+Deliver\+Message()}{testDeliverMessage()}}
+{\footnotesize\ttfamily virtual bool Node\+With\+Control\+::test\+Deliver\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_node_with_recovery_aec147b3723b3dab00f9610453ba8daba}{Node\+With\+Recovery}, \hyperlink{class_node_detector_a51e7dccd54e94bbe937752ca39dfdba4}{Node\+Detector}, \hyperlink{class_node_without_recovery_a8cf83ec6d0af26e385dcde0bc03f5b6d}{Node\+Without\+Recovery}, \hyperlink{class_node_p_c_a54731196935596e0c6f094a5a8420134}{Node\+PC}, and \hyperlink{class_node_with_recovery_test_af9b78d0ed4fefb97e2f54c9279aa4655}{Node\+With\+Recovery\+Test}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_node_with_control_a129f65b6976377739eb6231b6962985e}\label{class_node_with_control_a129f65b6976377739eb6231b6962985e}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!Stats@{Stats}}
+\index{Stats@{Stats}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{Stats}{Stats}}
+{\footnotesize\ttfamily friend class \hyperlink{class_stats}{Stats}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_node_with_control_a051a7d7f2452f1f8da3bc5bfb05a7760}\label{class_node_with_control_a051a7d7f2452f1f8da3bc5bfb05a7760}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!clock@{clock}}
+\index{clock@{clock}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{clock}{clock}}
+{\footnotesize\ttfamily \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} Node\+With\+Control\+::clock\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_control_aed34cc5a5b277c43f10f8cbbbeb59327}\label{class_node_with_control_aed34cc5a5b277c43f10f8cbbbeb59327}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!delivered@{delivered}}
+\index{delivered@{delivered}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{delivered}{delivered}}
+{\footnotesize\ttfamily vector$<$\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}$>$ Node\+With\+Control\+::delivered\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_control_a6c868fa52cca68f650dca96a788475df}\label{class_node_with_control_a6c868fa52cca68f650dca96a788475df}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!delivered\+Messages\+Tracker@{delivered\+Messages\+Tracker}}
+\index{delivered\+Messages\+Tracker@{delivered\+Messages\+Tracker}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{delivered\+Messages\+Tracker}{deliveredMessagesTracker}}
+{\footnotesize\ttfamily \hyperlink{class_total_dependencies}{Total\+Dependencies} Node\+With\+Control\+::delivered\+Messages\+Tracker\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_control_af38ffbedc82038536c77314f22ea6b57}\label{class_node_with_control_af38ffbedc82038536c77314f22ea6b57}} 
+\index{Node\+With\+Control@{Node\+With\+Control}!pending\+Msg@{pending\+Msg}}
+\index{pending\+Msg@{pending\+Msg}!Node\+With\+Control@{Node\+With\+Control}}
+\subsubsection{\texorpdfstring{pending\+Msg}{pendingMsg}}
+{\footnotesize\ttfamily vector$<$\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}$>$ Node\+With\+Control\+::pending\+Msg\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Nodes/\hyperlink{_node_with_control_8h}{Node\+With\+Control.\+h}\item 
+src/\+Nodes/\hyperlink{_node_with_control_8cc}{Node\+With\+Control.\+cc}\end{DoxyCompactItemize}

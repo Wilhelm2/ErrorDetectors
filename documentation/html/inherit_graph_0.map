@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_app_msg.html" title="Class generated from Messages/AppMsg.msg:48 by nedtool. " alt="" coords="124,5,195,32"/>
+<area shape="rect" id="node3" href="$class_dep_req.html" title="Class generated from Messages/depReq.msg:32 by nedtool. " alt="" coords="124,56,195,83"/>
+<area shape="rect" id="node4" href="$class_dep_rsp.html" title="Class generated from Messages/depRsp.msg:42 by nedtool. " alt="" coords="124,107,195,133"/>
+<area shape="rect" id="node5" href="$class_init.html" title="Class generated from Messages/Init.msg:19 by nedtool. " alt="" coords="139,157,179,184"/>
+</map>

@@ -1,0 +1,78 @@
+\hypertarget{structures_8h}{}\section{src/structures.h File Reference}
+\label{structures_8h}\index{src/structures.\+h@{src/structures.\+h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$omnetpp.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Clocks/\+Probabilistic\+Clock.\+h\char`\"{}}\newline
+Include dependency graph for structures.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{structures_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structures_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structs__id}{s\+\_\+id}
+\item 
+struct \hyperlink{structs__message_info}{s\+\_\+message\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{structures_8h_aeb4ebf9fa93bcceb76a22540984eb53a}{I\+D\+M\+S\+G\+\_\+\+EQ}(id\+M1,  id\+M2)~(id\+M1.\+id == id\+M2.\+id \&\& id\+M1.\+seq == id\+M2.\+seq)
+\item 
+\#define \hyperlink{structures_8h_aa2bfff4413d2bdefb6cb5b708a31660b}{C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY}~100000.
+\item 
+\#define \hyperlink{structures_8h_a6759af88605a5a495bb7bfc8a44dcfb9}{P\+A\+C\+K\+A\+G\+E\+N\+A\+ME}~\char`\"{}Error\+Detector\+With\+Recovery\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structs__id}{s\+\_\+id} \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}
+\item 
+typedef struct \hyperlink{structs__message_info}{s\+\_\+message\+Info} \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{structures_8h_aa2bfff4413d2bdefb6cb5b708a31660b}\label{structures_8h_aa2bfff4413d2bdefb6cb5b708a31660b}} 
+\index{structures.\+h@{structures.\+h}!C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY@{C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY}}
+\index{C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY@{C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY}!structures.\+h@{structures.\+h}}
+\subsubsection{\texorpdfstring{C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY}{CHANNELDELAY}}
+{\footnotesize\ttfamily \#define C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY~100000.}
+
+\mbox{\Hypertarget{structures_8h_aeb4ebf9fa93bcceb76a22540984eb53a}\label{structures_8h_aeb4ebf9fa93bcceb76a22540984eb53a}} 
+\index{structures.\+h@{structures.\+h}!I\+D\+M\+S\+G\+\_\+\+EQ@{I\+D\+M\+S\+G\+\_\+\+EQ}}
+\index{I\+D\+M\+S\+G\+\_\+\+EQ@{I\+D\+M\+S\+G\+\_\+\+EQ}!structures.\+h@{structures.\+h}}
+\subsubsection{\texorpdfstring{I\+D\+M\+S\+G\+\_\+\+EQ}{IDMSG\_EQ}}
+{\footnotesize\ttfamily \#define I\+D\+M\+S\+G\+\_\+\+EQ(\begin{DoxyParamCaption}\item[{}]{id\+M1,  }\item[{}]{id\+M2 }\end{DoxyParamCaption})~(id\+M1.\+id == id\+M2.\+id \&\& id\+M1.\+seq == id\+M2.\+seq)}
+
+\mbox{\Hypertarget{structures_8h_a6759af88605a5a495bb7bfc8a44dcfb9}\label{structures_8h_a6759af88605a5a495bb7bfc8a44dcfb9}} 
+\index{structures.\+h@{structures.\+h}!P\+A\+C\+K\+A\+G\+E\+N\+A\+ME@{P\+A\+C\+K\+A\+G\+E\+N\+A\+ME}}
+\index{P\+A\+C\+K\+A\+G\+E\+N\+A\+ME@{P\+A\+C\+K\+A\+G\+E\+N\+A\+ME}!structures.\+h@{structures.\+h}}
+\subsubsection{\texorpdfstring{P\+A\+C\+K\+A\+G\+E\+N\+A\+ME}{PACKAGENAME}}
+{\footnotesize\ttfamily \#define P\+A\+C\+K\+A\+G\+E\+N\+A\+ME~\char`\"{}Error\+Detector\+With\+Recovery\char`\"{}}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}\label{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}} 
+\index{structures.\+h@{structures.\+h}!id\+Msg@{id\+Msg}}
+\index{id\+Msg@{id\+Msg}!structures.\+h@{structures.\+h}}
+\subsubsection{\texorpdfstring{id\+Msg}{idMsg}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structs__id}{s\+\_\+id}  \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}}
+
+\mbox{\Hypertarget{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}\label{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}} 
+\index{structures.\+h@{structures.\+h}!message\+Info@{message\+Info}}
+\index{message\+Info@{message\+Info}!structures.\+h@{structures.\+h}}
+\subsubsection{\texorpdfstring{message\+Info}{messageInfo}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structs__message_info}{s\+\_\+message\+Info} \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}}
+

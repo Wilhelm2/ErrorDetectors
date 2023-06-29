@@ -1,0 +1,131 @@
+\hypertarget{class_error_detector}{}\section{Error\+Detector Class Reference}
+\label{class_error_detector}\index{Error\+Detector@{Error\+Detector}}
+
+
+{\ttfamily \#include $<$Error\+Detector.\+h$>$}
+
+
+
+Inheritance diagram for Error\+Detector\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_error_detector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Error\+Detector\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{class_error_detector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_error_detector_ae851a02dff242968cd6419400271d74f}{Error\+Detector} ()
+\item 
+virtual \hyperlink{class_error_detector_a3708d713f8f7bee01aa7e5a2fb7bb652}{$\sim$\+Error\+Detector} ()=0
+\item 
+virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_error_detector_a8cac1f6ac6803da4379df7891789c490}{prepare\+Message} (\hyperlink{class_app_msg}{App\+Msg} $\ast$m, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&clock, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&process\+Dependencies)=0
+\item 
+virtual bool \hyperlink{class_error_detector_afc717d04768dd207196c08e24163115c}{test} (\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} message, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&process\+Clock, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&process\+Dependencies, \hyperlink{class_controller}{Controller} $\ast$control, \hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$params, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered)=0
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_error_detector_8h_abbc922e22c7b55f0bd58bea618eec587}{stats\+\_\+error\+Detector} \hyperlink{class_error_detector_acb550f19c1da2d61d40757351f96d4b1}{stats}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_error_detector_a129f65b6976377739eb6231b6962985e}{Stats}
+\item 
+class \hyperlink{class_error_detector_aa0495b79e94b09962892b921ae370e57}{Node\+Without\+Recovery}
+\item 
+class \hyperlink{class_error_detector_af62fbc8632478613aa92b0e55c79510e}{Node\+With\+Recovery}
+\item 
+class \hyperlink{class_error_detector_a4a759c82473f06c7e89c3d75a509a390}{Node\+With\+Recovery\+Test}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_error_detector_ae851a02dff242968cd6419400271d74f}\label{class_error_detector_ae851a02dff242968cd6419400271d74f}} 
+\index{Error\+Detector@{Error\+Detector}!Error\+Detector@{Error\+Detector}}
+\index{Error\+Detector@{Error\+Detector}!Error\+Detector@{Error\+Detector}}
+\subsubsection{\texorpdfstring{Error\+Detector()}{ErrorDetector()}}
+{\footnotesize\ttfamily Error\+Detector\+::\+Error\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_error_detector_a3708d713f8f7bee01aa7e5a2fb7bb652}\label{class_error_detector_a3708d713f8f7bee01aa7e5a2fb7bb652}} 
+\index{Error\+Detector@{Error\+Detector}!````~Error\+Detector@{$\sim$\+Error\+Detector}}
+\index{````~Error\+Detector@{$\sim$\+Error\+Detector}!Error\+Detector@{Error\+Detector}}
+\subsubsection{\texorpdfstring{$\sim$\+Error\+Detector()}{~ErrorDetector()}}
+{\footnotesize\ttfamily Error\+Detector\+::$\sim$\+Error\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_error_detector_a8cac1f6ac6803da4379df7891789c490}\label{class_error_detector_a8cac1f6ac6803da4379df7891789c490}} 
+\index{Error\+Detector@{Error\+Detector}!prepare\+Message@{prepare\+Message}}
+\index{prepare\+Message@{prepare\+Message}!Error\+Detector@{Error\+Detector}}
+\subsubsection{\texorpdfstring{prepare\+Message()}{prepareMessage()}}
+{\footnotesize\ttfamily virtual \hyperlink{class_app_msg}{App\+Msg}$\ast$ Error\+Detector\+::prepare\+Message (\begin{DoxyParamCaption}\item[{\hyperlink{class_app_msg}{App\+Msg} $\ast$}]{m,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{clock,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{process\+Dependencies }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_hash_error_detector_a2b1dad6a83a08fd7ce88e32f84638459}{Hash\+Error\+Detector}, and \hyperlink{class_mostefaoui_error_detector_adcd530d7349df19adb614ca414225214}{Mostefaoui\+Error\+Detector}.
+
+\mbox{\Hypertarget{class_error_detector_afc717d04768dd207196c08e24163115c}\label{class_error_detector_afc717d04768dd207196c08e24163115c}} 
+\index{Error\+Detector@{Error\+Detector}!test@{test}}
+\index{test@{test}!Error\+Detector@{Error\+Detector}}
+\subsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily virtual bool Error\+Detector\+::test (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}}]{message,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries,  }\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{process\+Clock,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{process\+Dependencies,  }\item[{\hyperlink{class_controller}{Controller} $\ast$}]{control,  }\item[{\hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$}]{params,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_hash_error_detector_a1c7fe649a34cf7e139ce53a248dce748}{Hash\+Error\+Detector}, and \hyperlink{class_mostefaoui_error_detector_a293f6cf144526bc8694fc4f1fc0daeb5}{Mostefaoui\+Error\+Detector}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_error_detector_aa0495b79e94b09962892b921ae370e57}\label{class_error_detector_aa0495b79e94b09962892b921ae370e57}} 
+\index{Error\+Detector@{Error\+Detector}!Node\+Without\+Recovery@{Node\+Without\+Recovery}}
+\index{Node\+Without\+Recovery@{Node\+Without\+Recovery}!Error\+Detector@{Error\+Detector}}
+\subsubsection{\texorpdfstring{Node\+Without\+Recovery}{NodeWithoutRecovery}}
+{\footnotesize\ttfamily friend class \hyperlink{class_node_without_recovery}{Node\+Without\+Recovery}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_error_detector_af62fbc8632478613aa92b0e55c79510e}\label{class_error_detector_af62fbc8632478613aa92b0e55c79510e}} 
+\index{Error\+Detector@{Error\+Detector}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!Error\+Detector@{Error\+Detector}}
+\subsubsection{\texorpdfstring{Node\+With\+Recovery}{NodeWithRecovery}}
+{\footnotesize\ttfamily friend class \hyperlink{class_node_with_recovery}{Node\+With\+Recovery}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_error_detector_a4a759c82473f06c7e89c3d75a509a390}\label{class_error_detector_a4a759c82473f06c7e89c3d75a509a390}} 
+\index{Error\+Detector@{Error\+Detector}!Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}!Error\+Detector@{Error\+Detector}}
+\subsubsection{\texorpdfstring{Node\+With\+Recovery\+Test}{NodeWithRecoveryTest}}
+{\footnotesize\ttfamily friend class \hyperlink{class_node_with_recovery_test}{Node\+With\+Recovery\+Test}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_error_detector_a129f65b6976377739eb6231b6962985e}\label{class_error_detector_a129f65b6976377739eb6231b6962985e}} 
+\index{Error\+Detector@{Error\+Detector}!Stats@{Stats}}
+\index{Stats@{Stats}!Error\+Detector@{Error\+Detector}}
+\subsubsection{\texorpdfstring{Stats}{Stats}}
+{\footnotesize\ttfamily friend class \hyperlink{class_stats}{Stats}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_error_detector_acb550f19c1da2d61d40757351f96d4b1}\label{class_error_detector_acb550f19c1da2d61d40757351f96d4b1}} 
+\index{Error\+Detector@{Error\+Detector}!stats@{stats}}
+\index{stats@{stats}!Error\+Detector@{Error\+Detector}}
+\subsubsection{\texorpdfstring{stats}{stats}}
+{\footnotesize\ttfamily \hyperlink{_error_detector_8h_abbc922e22c7b55f0bd58bea618eec587}{stats\+\_\+error\+Detector} Error\+Detector\+::stats\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Detectors/\hyperlink{_error_detector_8h}{Error\+Detector.\+h}\item 
+src/\+Detectors/\hyperlink{_error_detector_8cc}{Error\+Detector.\+cc}\end{DoxyCompactItemize}

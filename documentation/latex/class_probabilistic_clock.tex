@@ -1,0 +1,139 @@
+\hypertarget{class_probabilistic_clock}{}\section{Probabilistic\+Clock Class Reference}
+\label{class_probabilistic_clock}\index{Probabilistic\+Clock@{Probabilistic\+Clock}}
+
+
+{\ttfamily \#include $<$Probabilistic\+Clock.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_probabilistic_clock_aa879f0e457bc70644b6e4f2114215987}{Probabilistic\+Clock} ()
+\item 
+\hyperlink{class_probabilistic_clock_ab356688e8403176b4211349cba56b9b1}{Probabilistic\+Clock} (unsigned int \hyperlink{class_probabilistic_clock_ad0cdbd2ad50309fae0665df4ee5247ba}{size})
+\item 
+virtual \hyperlink{class_probabilistic_clock_a11743513addcaaa0d8f0b0d0c74ae2ae}{$\sim$\+Probabilistic\+Clock} ()
+\item 
+bool \hyperlink{class_probabilistic_clock_a071b29d8c7ebb91528db4739a846dc71}{operator$<$=} (const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&PC) const
+\item 
+unsigned int \& \hyperlink{class_probabilistic_clock_a349a0bcb8c21b89c3e6b30b043f16936}{operator\mbox{[}$\,$\mbox{]}} (unsigned int i)
+\item 
+unsigned int \hyperlink{class_probabilistic_clock_a28398d6b8c5a92b73a7d6260e3f3e7e1}{operator\mbox{[}$\,$\mbox{]}} (unsigned int i) const
+\item 
+unsigned int \hyperlink{class_probabilistic_clock_ad0cdbd2ad50309fae0665df4ee5247ba}{size} () const
+\item 
+void \hyperlink{class_probabilistic_clock_a5c510e2d21bc580468c491a71382a4d4}{increment\+Entries} (const vector$<$ unsigned int $>$ \&entries)
+\item 
+bool \hyperlink{class_probabilistic_clock_a56bced001a856aa04168d787cc2dd549}{satisfies\+Delivery\+Condition} (const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&PC, const vector$<$ unsigned int $>$ \&send\+Incremented\+Entries) const
+\item 
+void \hyperlink{class_probabilistic_clock_a1169d9d5442d55c4dd4e2e730bc2b008}{print\+Clock} () const
+\item 
+void \hyperlink{class_probabilistic_clock_aaa864cb9c0e2cfcf0bf28a3f534e0c6a}{decrease\+Entry} (unsigned int entry)
+\item 
+unsigned int \hyperlink{class_probabilistic_clock_ad119fc48edd9537cfdb0ab77e640f614}{clock\+Entry\+Difference} (const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&PC) const
+\item 
+const unsigned int \hyperlink{class_probabilistic_clock_a81a017c569c1a57e5c567b701a64e5c9}{at} (unsigned int entry) const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ unsigned int $>$ \hyperlink{class_probabilistic_clock_a4839958d0e2368cec8bb159b69ac0e76}{clock}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_probabilistic_clock_aa879f0e457bc70644b6e4f2114215987}\label{class_probabilistic_clock_aa879f0e457bc70644b6e4f2114215987}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{Probabilistic\+Clock()}{ProbabilisticClock()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Probabilistic\+Clock\+::\+Probabilistic\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_probabilistic_clock_ab356688e8403176b4211349cba56b9b1}\label{class_probabilistic_clock_ab356688e8403176b4211349cba56b9b1}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{Probabilistic\+Clock()}{ProbabilisticClock()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Probabilistic\+Clock\+::\+Probabilistic\+Clock (\begin{DoxyParamCaption}\item[{unsigned int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_probabilistic_clock_a11743513addcaaa0d8f0b0d0c74ae2ae}\label{class_probabilistic_clock_a11743513addcaaa0d8f0b0d0c74ae2ae}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!````~Probabilistic\+Clock@{$\sim$\+Probabilistic\+Clock}}
+\index{````~Probabilistic\+Clock@{$\sim$\+Probabilistic\+Clock}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{$\sim$\+Probabilistic\+Clock()}{~ProbabilisticClock()}}
+{\footnotesize\ttfamily Probabilistic\+Clock\+::$\sim$\+Probabilistic\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_probabilistic_clock_a81a017c569c1a57e5c567b701a64e5c9}\label{class_probabilistic_clock_a81a017c569c1a57e5c567b701a64e5c9}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!at@{at}}
+\index{at@{at}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily const unsigned int Probabilistic\+Clock\+::at (\begin{DoxyParamCaption}\item[{unsigned int}]{entry }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_probabilistic_clock_ad119fc48edd9537cfdb0ab77e640f614}\label{class_probabilistic_clock_ad119fc48edd9537cfdb0ab77e640f614}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!clock\+Entry\+Difference@{clock\+Entry\+Difference}}
+\index{clock\+Entry\+Difference@{clock\+Entry\+Difference}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{clock\+Entry\+Difference()}{clockEntryDifference()}}
+{\footnotesize\ttfamily unsigned int Probabilistic\+Clock\+::clock\+Entry\+Difference (\begin{DoxyParamCaption}\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{PC }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_probabilistic_clock_aaa864cb9c0e2cfcf0bf28a3f534e0c6a}\label{class_probabilistic_clock_aaa864cb9c0e2cfcf0bf28a3f534e0c6a}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!decrease\+Entry@{decrease\+Entry}}
+\index{decrease\+Entry@{decrease\+Entry}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{decrease\+Entry()}{decreaseEntry()}}
+{\footnotesize\ttfamily void Probabilistic\+Clock\+::decrease\+Entry (\begin{DoxyParamCaption}\item[{unsigned int}]{entry }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_probabilistic_clock_a5c510e2d21bc580468c491a71382a4d4}\label{class_probabilistic_clock_a5c510e2d21bc580468c491a71382a4d4}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!increment\+Entries@{increment\+Entries}}
+\index{increment\+Entries@{increment\+Entries}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{increment\+Entries()}{incrementEntries()}}
+{\footnotesize\ttfamily void Probabilistic\+Clock\+::increment\+Entries (\begin{DoxyParamCaption}\item[{const vector$<$ unsigned int $>$ \&}]{entries }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_probabilistic_clock_a071b29d8c7ebb91528db4739a846dc71}\label{class_probabilistic_clock_a071b29d8c7ebb91528db4739a846dc71}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool Probabilistic\+Clock\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{PC }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_probabilistic_clock_a349a0bcb8c21b89c3e6b30b043f16936}\label{class_probabilistic_clock_a349a0bcb8c21b89c3e6b30b043f16936}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned int \& Probabilistic\+Clock\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_probabilistic_clock_a28398d6b8c5a92b73a7d6260e3f3e7e1}\label{class_probabilistic_clock_a28398d6b8c5a92b73a7d6260e3f3e7e1}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned int Probabilistic\+Clock\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_probabilistic_clock_a1169d9d5442d55c4dd4e2e730bc2b008}\label{class_probabilistic_clock_a1169d9d5442d55c4dd4e2e730bc2b008}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!print\+Clock@{print\+Clock}}
+\index{print\+Clock@{print\+Clock}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{print\+Clock()}{printClock()}}
+{\footnotesize\ttfamily void Probabilistic\+Clock\+::print\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_probabilistic_clock_a56bced001a856aa04168d787cc2dd549}\label{class_probabilistic_clock_a56bced001a856aa04168d787cc2dd549}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!satisfies\+Delivery\+Condition@{satisfies\+Delivery\+Condition}}
+\index{satisfies\+Delivery\+Condition@{satisfies\+Delivery\+Condition}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{satisfies\+Delivery\+Condition()}{satisfiesDeliveryCondition()}}
+{\footnotesize\ttfamily bool Probabilistic\+Clock\+::satisfies\+Delivery\+Condition (\begin{DoxyParamCaption}\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{PC,  }\item[{const vector$<$ unsigned int $>$ \&}]{send\+Incremented\+Entries }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_probabilistic_clock_ad0cdbd2ad50309fae0665df4ee5247ba}\label{class_probabilistic_clock_ad0cdbd2ad50309fae0665df4ee5247ba}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!size@{size}}
+\index{size@{size}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily unsigned int Probabilistic\+Clock\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_probabilistic_clock_a4839958d0e2368cec8bb159b69ac0e76}\label{class_probabilistic_clock_a4839958d0e2368cec8bb159b69ac0e76}} 
+\index{Probabilistic\+Clock@{Probabilistic\+Clock}!clock@{clock}}
+\index{clock@{clock}!Probabilistic\+Clock@{Probabilistic\+Clock}}
+\subsubsection{\texorpdfstring{clock}{clock}}
+{\footnotesize\ttfamily vector$<$unsigned int$>$ Probabilistic\+Clock\+::clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Clocks/\hyperlink{_probabilistic_clock_8h}{Probabilistic\+Clock.\+h}\item 
+src/\+Clocks/\hyperlink{_probabilistic_clock_8cc}{Probabilistic\+Clock.\+cc}\end{DoxyCompactItemize}

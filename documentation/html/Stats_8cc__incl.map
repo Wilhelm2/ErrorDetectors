@@ -1,0 +1,23 @@
+<map id="src/Stats.cc" name="src/Stats.cc">
+<area shape="rect" id="node2" href="$Stats_8h.html" title="Stats.h" alt="" coords="1007,80,1071,107"/>
+<area shape="rect" id="node6" href="$NodeWithControl_8h.html" title="Nodes/NodeWithControl.h" alt="" coords="1051,311,1226,338"/>
+<area shape="rect" id="node10" href="$structures_8h.html" title="../structures.h" alt="" coords="559,781,662,808"/>
+<area shape="rect" id="node15" href="$simulationParameters_8h.html" title="../simulationParameters.h" alt="" coords="1551,632,1721,659"/>
+<area shape="rect" id="node21" href="$NodeDetector_8h.html" title="Nodes/NodeDetector.h" alt="" coords="795,229,951,256"/>
+<area shape="rect" id="node30" href="$NodeWithRecovery_8h.html" title="Nodes/NodeWithRecovery.h" alt="" coords="445,155,635,181"/>
+<area shape="rect" id="node7" href="$NodeBase_8h.html" title="NodeBase.h" alt="" coords="1402,483,1497,509"/>
+<area shape="rect" id="node8" href="$Init__m_8h.html" title="../Messages/Init_m.h" alt="" coords="1450,781,1595,808"/>
+<area shape="rect" id="node9" href="$AppMsg__m_8h.html" title="../Messages/AppMsg_m.h" alt="" coords="997,707,1171,733"/>
+<area shape="rect" id="node16" href="$Controller_8h.html" title="../Controller.h" alt="" coords="1212,557,1313,584"/>
+<area shape="rect" id="node12" href="$ProbabilisticClock_8h.html" title="Clocks/ProbabilisticClock.h" alt="" coords="1098,856,1281,883"/>
+<area shape="rect" id="node19" href="$Dependencies_8h.html" title="Dependencies/Dependencies.h" alt="" coords="719,707,921,733"/>
+<area shape="rect" id="node20" href="$TotalDependencies_8h.html" title="Dependencies/TotalDependencies.h" alt="" coords="544,632,776,659"/>
+<area shape="rect" id="node22" href="$HashErrorDetectorClockDifference_8h.html" title="../Detectors/HashErrorDetector\lClockDifference.h" alt="" coords="543,304,747,345"/>
+<area shape="rect" id="node28" href="$HashErrorDetectorInterval_8h.html" title="../Detectors/HashErrorDetector\lInterval.h" alt="" coords="771,304,975,345"/>
+<area shape="rect" id="node29" href="$MostefaouiErrorDetector_8h.html" title="../Detectors/MostefaouiError\lDetector.h" alt="" coords="969,393,1156,435"/>
+<area shape="rect" id="node23" href="$HashErrorDetector_8h.html" title="../Detectors/HashErrorDetector.h" alt="" coords="707,401,922,427"/>
+<area shape="rect" id="node24" href="$PartialDependencies_8h.html" title="../Dependencies/PartialDependencies.h" alt="" coords="625,557,877,584"/>
+<area shape="rect" id="node25" href="$ErrorDetector_8h.html" title="../Detectors/ErrorDetector.h" alt="" coords="971,483,1155,509"/>
+<area shape="rect" id="node31" href="$depReq__m_8h.html" title="../Messages/depReq_m.h" alt="" coords="94,707,266,733"/>
+<area shape="rect" id="node32" href="$depRsp__m_8h.html" title="../Messages/depRsp_m.h" alt="" coords="246,557,418,584"/>
+</map>

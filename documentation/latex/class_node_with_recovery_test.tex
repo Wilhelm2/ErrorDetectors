@@ -1,0 +1,103 @@
+\hypertarget{class_node_with_recovery_test}{}\section{Node\+With\+Recovery\+Test Class Reference}
+\label{class_node_with_recovery_test}\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+
+
+{\ttfamily \#include $<$Node\+With\+Recovery\+Test.\+h$>$}
+
+
+
+Inheritance diagram for Node\+With\+Recovery\+Test\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_node_with_recovery_test__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Node\+With\+Recovery\+Test\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_with_recovery_test__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_node_with_recovery_test_ae8676a479a3ad761eb6cd5069575f51f}{Node\+With\+Recovery\+Test} ()
+\item 
+virtual \hyperlink{class_node_with_recovery_test_a91ac9cad83523696aee1a5c5718a62af}{$\sim$\+Node\+With\+Recovery\+Test} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_node_with_recovery_test_af9b78d0ed4fefb97e2f54c9279aa4655}{test\+Deliver\+Message} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&m)
+\item 
+bool \hyperlink{class_node_with_recovery_test_a8e4f79eeb8c415ceca21b82f22eb9038}{recovery\+Test} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&\hyperlink{class_node_with_control_aed34cc5a5b277c43f10f8cbbbeb59327}{delivered}, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries)
+\item 
+bool \hyperlink{class_node_with_recovery_test_a5417b50e5d5e272c8ef70ff962c0ea86}{try\+Hash} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&dependencies, unsigned done\+Hashes)
+\item 
+bool \hyperlink{class_node_with_recovery_test_ae1d2089be117daef7b2ee4dfd6b92e7d}{Try\+Combinations\+Recovering\+Messages} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, unsigned int \&nb\+Hashs, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&base\+Dependencies, const vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \&messages\+To\+Combine)
+\item 
+vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{class_node_with_recovery_test_aa6b94e1bff36f3ec804d4ba136de96b8}{create\+Recovered\+Messages\+To\+Combine} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_node_with_recovery_test_ae8676a479a3ad761eb6cd5069575f51f}\label{class_node_with_recovery_test_ae8676a479a3ad761eb6cd5069575f51f}} 
+\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}!Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}!Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+\subsubsection{\texorpdfstring{Node\+With\+Recovery\+Test()}{NodeWithRecoveryTest()}}
+{\footnotesize\ttfamily Node\+With\+Recovery\+Test\+::\+Node\+With\+Recovery\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_node_with_recovery_test_a91ac9cad83523696aee1a5c5718a62af}\label{class_node_with_recovery_test_a91ac9cad83523696aee1a5c5718a62af}} 
+\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}!````~Node\+With\+Recovery\+Test@{$\sim$\+Node\+With\+Recovery\+Test}}
+\index{````~Node\+With\+Recovery\+Test@{$\sim$\+Node\+With\+Recovery\+Test}!Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+\subsubsection{\texorpdfstring{$\sim$\+Node\+With\+Recovery\+Test()}{~NodeWithRecoveryTest()}}
+{\footnotesize\ttfamily Node\+With\+Recovery\+Test\+::$\sim$\+Node\+With\+Recovery\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_node_with_recovery_test_aa6b94e1bff36f3ec804d4ba136de96b8}\label{class_node_with_recovery_test_aa6b94e1bff36f3ec804d4ba136de96b8}} 
+\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}!create\+Recovered\+Messages\+To\+Combine@{create\+Recovered\+Messages\+To\+Combine}}
+\index{create\+Recovered\+Messages\+To\+Combine@{create\+Recovered\+Messages\+To\+Combine}!Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+\subsubsection{\texorpdfstring{create\+Recovered\+Messages\+To\+Combine()}{createRecoveredMessagesToCombine()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ Node\+With\+Recovery\+Test\+::create\+Recovered\+Messages\+To\+Combine (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_test_a8e4f79eeb8c415ceca21b82f22eb9038}\label{class_node_with_recovery_test_a8e4f79eeb8c415ceca21b82f22eb9038}} 
+\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}!recovery\+Test@{recovery\+Test}}
+\index{recovery\+Test@{recovery\+Test}!Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+\subsubsection{\texorpdfstring{recovery\+Test()}{recoveryTest()}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+Test\+::recovery\+Test (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_test_af9b78d0ed4fefb97e2f54c9279aa4655}\label{class_node_with_recovery_test_af9b78d0ed4fefb97e2f54c9279aa4655}} 
+\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}!test\+Deliver\+Message@{test\+Deliver\+Message}}
+\index{test\+Deliver\+Message@{test\+Deliver\+Message}!Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+\subsubsection{\texorpdfstring{test\+Deliver\+Message()}{testDeliverMessage()}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+Test\+::test\+Deliver\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_node_with_recovery_aec147b3723b3dab00f9610453ba8daba}{Node\+With\+Recovery}.
+
+\mbox{\Hypertarget{class_node_with_recovery_test_ae1d2089be117daef7b2ee4dfd6b92e7d}\label{class_node_with_recovery_test_ae1d2089be117daef7b2ee4dfd6b92e7d}} 
+\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}!Try\+Combinations\+Recovering\+Messages@{Try\+Combinations\+Recovering\+Messages}}
+\index{Try\+Combinations\+Recovering\+Messages@{Try\+Combinations\+Recovering\+Messages}!Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+\subsubsection{\texorpdfstring{Try\+Combinations\+Recovering\+Messages()}{TryCombinationsRecoveringMessages()}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+Test\+::\+Try\+Combinations\+Recovering\+Messages (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{unsigned int \&}]{nb\+Hashs,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{base\+Dependencies,  }\item[{const vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \&}]{messages\+To\+Combine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_test_a5417b50e5d5e272c8ef70ff962c0ea86}\label{class_node_with_recovery_test_a5417b50e5d5e272c8ef70ff962c0ea86}} 
+\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}!try\+Hash@{try\+Hash}}
+\index{try\+Hash@{try\+Hash}!Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+\subsubsection{\texorpdfstring{try\+Hash()}{tryHash()}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+Test\+::try\+Hash (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{dependencies,  }\item[{unsigned}]{done\+Hashes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Nodes/\hyperlink{_node_with_recovery_test_8h}{Node\+With\+Recovery\+Test.\+h}\item 
+src/\+Nodes/\hyperlink{_node_with_recovery_test_8cc}{Node\+With\+Recovery\+Test.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_dependencies.html" title="Dependencies" alt="" coords="5,31,111,57"/>
+<area shape="rect" id="node2" href="$class_partial_dependencies.html" title="PartialDependencies" alt="" coords="159,5,301,32"/>
+<area shape="rect" id="node3" href="$class_total_dependencies.html" title="TotalDependencies" alt="" coords="163,56,297,83"/>
+</map>

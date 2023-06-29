@@ -1,0 +1,298 @@
+\hypertarget{class_hash_error_detector}{}\section{Hash\+Error\+Detector Class Reference}
+\label{class_hash_error_detector}\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+
+
+{\ttfamily \#include $<$Hash\+Error\+Detector.\+h$>$}
+
+
+
+Inheritance diagram for Hash\+Error\+Detector\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hash_error_detector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Hash\+Error\+Detector\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_hash_error_detector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_hash_error_detector_a008bd7bd3f8d202334afd51a71cbbdae}{Hash\+Error\+Detector} ()
+\item 
+virtual \hyperlink{class_hash_error_detector_a187ba4d9f902ecaa0ff8b92ec531d3f4}{$\sim$\+Hash\+Error\+Detector} ()
+\item 
+virtual bool \hyperlink{class_hash_error_detector_a1c7fe649a34cf7e139ce53a248dce748}{test} (\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} message, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&process\+Clock, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&process\+Dependencies, \hyperlink{class_controller}{Controller} $\ast$control, \hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$params, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered)
+\item 
+bool \hyperlink{class_hash_error_detector_a851c562e49f608ec3fe3e984db27bfca}{hash\+Partial\+Dependencies} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries, \hyperlink{class_controller}{Controller} $\ast$controller, \hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$params)
+\item 
+bool \hyperlink{class_hash_error_detector_a13dd5fae3ca4898bd91d1801beed24a4}{hash\+Total\+Dependencies} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&process\+Dependencies, \hyperlink{class_controller}{Controller} $\ast$controller, \hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$params)
+\item 
+bool \hyperlink{class_hash_error_detector_a93b22ebde71c18f801319b33ce30899c}{hash\+Is\+Equal} (size\+\_\+t message\+Hash, size\+\_\+t dependencies\+Hash, unsigned int nb\+Computed\+Hashes)
+\item 
+\hyperlink{class_total_dependencies}{Total\+Dependencies} \hyperlink{class_hash_error_detector_a09b0d73b3a717ddf850fe644848c15c6}{create\+Base\+Dependencies} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&process\+Dependencies)
+\item 
+bool \hyperlink{class_hash_error_detector_aaaceeb3d2d27d5f3c85a9b80f959e0fe}{is\+Possible\+Dependency} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&possible\+Dep)
+\item 
+vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \hyperlink{class_hash_error_detector_ae8605d778886baa20648a9f5955c5943}{create\+Possible\+Dependencies\+Set} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&message\+To\+Choose\+From, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries, \hyperlink{class_controller}{Controller} $\ast$controller)
+\item 
+void \hyperlink{class_hash_error_detector_a007d537bdfd329c6b23b432b58d4cf4c}{incrementnb\+Msg\+Wrongly\+Considered\+Causal\+Dep} (unsigned int entry)
+\item 
+void \hyperlink{class_hash_error_detector_a08b4518822a6beff6845da4dd36bfba1}{incrementnb\+Msg\+To\+Combine} (unsigned int entry)
+\item 
+void \hyperlink{class_hash_error_detector_a6aa56dfbb555e15093bd5d93a683fa42}{incrementnb\+Operations\+For\+Hash} (unsigned int entry)
+\item 
+size\+\_\+t \hyperlink{class_hash_error_detector_afcad668b4f0ca1c838b40a3c0584c1ee}{hash\+Total\+Dependencies} (const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&dependencies)
+\item 
+size\+\_\+t \hyperlink{class_hash_error_detector_aed8b0c6d17198a493e5b89f69c2e8713}{hash\+Partial\+Dependencies} (const \hyperlink{class_partial_dependencies}{Partial\+Dependencies} \&dependencies)
+\item 
+size\+\_\+t \hyperlink{class_hash_error_detector_a37d0ee7d8a01b530a03262e4483c53d9}{hash\+Dependencies} (const vector$<$ unsigned int $>$ \&dependencies)
+\item 
+size\+\_\+t \hyperlink{class_hash_error_detector_aa0b6a85ef4078e4851cd56b612a539c5}{hashingF} (const vector$<$ uint32\+\_\+t $>$ \&vec)
+\item 
+\hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_hash_error_detector_a2b1dad6a83a08fd7ce88e32f84638459}{prepare\+Message} (\hyperlink{class_app_msg}{App\+Msg} $\ast$m, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&clock, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&process\+Dependencies)
+\item 
+virtual bool \hyperlink{class_hash_error_detector_a4693d4d5e327b19f75088cef52bcad7d}{is\+Considered\+As\+Dependency} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&possible\+Dep)=0
+\item 
+virtual bool \hyperlink{class_hash_error_detector_ac0a25b9c1e27f98223869d11ca46d18f}{is\+Considered\+As\+Possible\+Dependency} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&possible\+Dep)=0
+\item 
+virtual vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{class_hash_error_detector_ad7419eaab728b7ed3e394d5aee9eda41}{sort\+Possible\+Dependencies\+Set} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&base\+Combine\+Set, \hyperlink{class_controller}{Controller} $\ast$controller)=0
+\item 
+virtual \hyperlink{class_partial_dependencies}{Partial\+Dependencies} \hyperlink{class_hash_error_detector_a5b9f7e8a6f63b1582e912102021c2d8d}{get\+Partial\+Dependencies} (const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&clock)=0
+\item 
+virtual vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{class_hash_error_detector_ae45353331e29b50a0aa2fc6dd540ed4e}{determine\+And\+Get\+Appended\+Dependencies} (const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&clock)=0
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+hash$<$ string $>$ \hyperlink{class_hash_error_detector_a5193286d834f087e03b7299e81b60509}{hasher}
+\item 
+\hyperlink{_hash_error_detector_8h_afcf148bcfe372c25deda29220815b9e0}{stats\+\_\+hash\+Error\+Detector} \hyperlink{class_hash_error_detector_aec82c653679515b306b34eb075cf37fd}{hash\+Stats}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static map$<$ int, vector$<$ unsigned int $>$ $>$ \hyperlink{class_hash_error_detector_a662a2baf62e11d8e2468aee44b9b168e}{collision\+Controller}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_hash_error_detector_a129f65b6976377739eb6231b6962985e}{Stats}
+\item 
+class \hyperlink{class_hash_error_detector_a4a759c82473f06c7e89c3d75a509a390}{Node\+With\+Recovery\+Test}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hash_error_detector_a008bd7bd3f8d202334afd51a71cbbdae}\label{class_hash_error_detector_a008bd7bd3f8d202334afd51a71cbbdae}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{Hash\+Error\+Detector()}{HashErrorDetector()}}
+{\footnotesize\ttfamily Hash\+Error\+Detector\+::\+Hash\+Error\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_a187ba4d9f902ecaa0ff8b92ec531d3f4}\label{class_hash_error_detector_a187ba4d9f902ecaa0ff8b92ec531d3f4}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!````~Hash\+Error\+Detector@{$\sim$\+Hash\+Error\+Detector}}
+\index{````~Hash\+Error\+Detector@{$\sim$\+Hash\+Error\+Detector}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{$\sim$\+Hash\+Error\+Detector()}{~HashErrorDetector()}}
+{\footnotesize\ttfamily Hash\+Error\+Detector\+::$\sim$\+Hash\+Error\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hash_error_detector_a09b0d73b3a717ddf850fe644848c15c6}\label{class_hash_error_detector_a09b0d73b3a717ddf850fe644848c15c6}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!create\+Base\+Dependencies@{create\+Base\+Dependencies}}
+\index{create\+Base\+Dependencies@{create\+Base\+Dependencies}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{create\+Base\+Dependencies()}{createBaseDependencies()}}
+{\footnotesize\ttfamily \hyperlink{class_total_dependencies}{Total\+Dependencies} Hash\+Error\+Detector\+::create\+Base\+Dependencies (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{process\+Dependencies }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_ae8605d778886baa20648a9f5955c5943}\label{class_hash_error_detector_ae8605d778886baa20648a9f5955c5943}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!create\+Possible\+Dependencies\+Set@{create\+Possible\+Dependencies\+Set}}
+\index{create\+Possible\+Dependencies\+Set@{create\+Possible\+Dependencies\+Set}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{create\+Possible\+Dependencies\+Set()}{createPossibleDependenciesSet()}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ Hash\+Error\+Detector\+::create\+Possible\+Dependencies\+Set (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{message\+To\+Choose\+From,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries,  }\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_ae45353331e29b50a0aa2fc6dd540ed4e}\label{class_hash_error_detector_ae45353331e29b50a0aa2fc6dd540ed4e}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!determine\+And\+Get\+Appended\+Dependencies@{determine\+And\+Get\+Appended\+Dependencies}}
+\index{determine\+And\+Get\+Appended\+Dependencies@{determine\+And\+Get\+Appended\+Dependencies}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{determine\+And\+Get\+Appended\+Dependencies()}{determineAndGetAppendedDependencies()}}
+{\footnotesize\ttfamily virtual vector$<$\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}$>$ Hash\+Error\+Detector\+::determine\+And\+Get\+Appended\+Dependencies (\begin{DoxyParamCaption}\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_error_detector_clock_difference_a15406c8d7652f3b9358b1958d3723933}{Error\+Detector\+Clock\+Difference}, and \hyperlink{class_error_detector_interval_a6cb5dc28ef7349060d15727e92a6780a}{Error\+Detector\+Interval}.
+
+\mbox{\Hypertarget{class_hash_error_detector_a5b9f7e8a6f63b1582e912102021c2d8d}\label{class_hash_error_detector_a5b9f7e8a6f63b1582e912102021c2d8d}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!get\+Partial\+Dependencies@{get\+Partial\+Dependencies}}
+\index{get\+Partial\+Dependencies@{get\+Partial\+Dependencies}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{get\+Partial\+Dependencies()}{getPartialDependencies()}}
+{\footnotesize\ttfamily virtual \hyperlink{class_partial_dependencies}{Partial\+Dependencies} Hash\+Error\+Detector\+::get\+Partial\+Dependencies (\begin{DoxyParamCaption}\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_error_detector_clock_difference_a26f4c2905859947201d0a18146f2e961}{Error\+Detector\+Clock\+Difference}, and \hyperlink{class_error_detector_interval_a9494a918f551eb1efcab39ffd68316d6}{Error\+Detector\+Interval}.
+
+\mbox{\Hypertarget{class_hash_error_detector_a37d0ee7d8a01b530a03262e4483c53d9}\label{class_hash_error_detector_a37d0ee7d8a01b530a03262e4483c53d9}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!hash\+Dependencies@{hash\+Dependencies}}
+\index{hash\+Dependencies@{hash\+Dependencies}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{hash\+Dependencies()}{hashDependencies()}}
+{\footnotesize\ttfamily size\+\_\+t Hash\+Error\+Detector\+::hash\+Dependencies (\begin{DoxyParamCaption}\item[{const vector$<$ unsigned int $>$ \&}]{dependencies }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_aa0b6a85ef4078e4851cd56b612a539c5}\label{class_hash_error_detector_aa0b6a85ef4078e4851cd56b612a539c5}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!hashingF@{hashingF}}
+\index{hashingF@{hashingF}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{hashing\+F()}{hashingF()}}
+{\footnotesize\ttfamily size\+\_\+t Hash\+Error\+Detector\+::hashingF (\begin{DoxyParamCaption}\item[{const vector$<$ uint32\+\_\+t $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_a93b22ebde71c18f801319b33ce30899c}\label{class_hash_error_detector_a93b22ebde71c18f801319b33ce30899c}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!hash\+Is\+Equal@{hash\+Is\+Equal}}
+\index{hash\+Is\+Equal@{hash\+Is\+Equal}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{hash\+Is\+Equal()}{hashIsEqual()}}
+{\footnotesize\ttfamily bool Hash\+Error\+Detector\+::hash\+Is\+Equal (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{message\+Hash,  }\item[{size\+\_\+t}]{dependencies\+Hash,  }\item[{unsigned int}]{nb\+Computed\+Hashes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_a851c562e49f608ec3fe3e984db27bfca}\label{class_hash_error_detector_a851c562e49f608ec3fe3e984db27bfca}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!hash\+Partial\+Dependencies@{hash\+Partial\+Dependencies}}
+\index{hash\+Partial\+Dependencies@{hash\+Partial\+Dependencies}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{hash\+Partial\+Dependencies()}{hashPartialDependencies()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Hash\+Error\+Detector\+::hash\+Partial\+Dependencies (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries,  }\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller,  }\item[{\hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$}]{params }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_aed8b0c6d17198a493e5b89f69c2e8713}\label{class_hash_error_detector_aed8b0c6d17198a493e5b89f69c2e8713}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!hash\+Partial\+Dependencies@{hash\+Partial\+Dependencies}}
+\index{hash\+Partial\+Dependencies@{hash\+Partial\+Dependencies}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{hash\+Partial\+Dependencies()}{hashPartialDependencies()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t Hash\+Error\+Detector\+::hash\+Partial\+Dependencies (\begin{DoxyParamCaption}\item[{const \hyperlink{class_partial_dependencies}{Partial\+Dependencies} \&}]{dependencies }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_a13dd5fae3ca4898bd91d1801beed24a4}\label{class_hash_error_detector_a13dd5fae3ca4898bd91d1801beed24a4}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!hash\+Total\+Dependencies@{hash\+Total\+Dependencies}}
+\index{hash\+Total\+Dependencies@{hash\+Total\+Dependencies}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{hash\+Total\+Dependencies()}{hashTotalDependencies()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Hash\+Error\+Detector\+::hash\+Total\+Dependencies (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{process\+Dependencies,  }\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller,  }\item[{\hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$}]{params }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_afcad668b4f0ca1c838b40a3c0584c1ee}\label{class_hash_error_detector_afcad668b4f0ca1c838b40a3c0584c1ee}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!hash\+Total\+Dependencies@{hash\+Total\+Dependencies}}
+\index{hash\+Total\+Dependencies@{hash\+Total\+Dependencies}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{hash\+Total\+Dependencies()}{hashTotalDependencies()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t Hash\+Error\+Detector\+::hash\+Total\+Dependencies (\begin{DoxyParamCaption}\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{dependencies }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_a08b4518822a6beff6845da4dd36bfba1}\label{class_hash_error_detector_a08b4518822a6beff6845da4dd36bfba1}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!incrementnb\+Msg\+To\+Combine@{incrementnb\+Msg\+To\+Combine}}
+\index{incrementnb\+Msg\+To\+Combine@{incrementnb\+Msg\+To\+Combine}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{incrementnb\+Msg\+To\+Combine()}{incrementnbMsgToCombine()}}
+{\footnotesize\ttfamily void Hash\+Error\+Detector\+::incrementnb\+Msg\+To\+Combine (\begin{DoxyParamCaption}\item[{unsigned int}]{entry }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_a007d537bdfd329c6b23b432b58d4cf4c}\label{class_hash_error_detector_a007d537bdfd329c6b23b432b58d4cf4c}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!incrementnb\+Msg\+Wrongly\+Considered\+Causal\+Dep@{incrementnb\+Msg\+Wrongly\+Considered\+Causal\+Dep}}
+\index{incrementnb\+Msg\+Wrongly\+Considered\+Causal\+Dep@{incrementnb\+Msg\+Wrongly\+Considered\+Causal\+Dep}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{incrementnb\+Msg\+Wrongly\+Considered\+Causal\+Dep()}{incrementnbMsgWronglyConsideredCausalDep()}}
+{\footnotesize\ttfamily void Hash\+Error\+Detector\+::incrementnb\+Msg\+Wrongly\+Considered\+Causal\+Dep (\begin{DoxyParamCaption}\item[{unsigned int}]{entry }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_a6aa56dfbb555e15093bd5d93a683fa42}\label{class_hash_error_detector_a6aa56dfbb555e15093bd5d93a683fa42}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!incrementnb\+Operations\+For\+Hash@{incrementnb\+Operations\+For\+Hash}}
+\index{incrementnb\+Operations\+For\+Hash@{incrementnb\+Operations\+For\+Hash}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{incrementnb\+Operations\+For\+Hash()}{incrementnbOperationsForHash()}}
+{\footnotesize\ttfamily void Hash\+Error\+Detector\+::incrementnb\+Operations\+For\+Hash (\begin{DoxyParamCaption}\item[{unsigned int}]{entry }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_a4693d4d5e327b19f75088cef52bcad7d}\label{class_hash_error_detector_a4693d4d5e327b19f75088cef52bcad7d}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!is\+Considered\+As\+Dependency@{is\+Considered\+As\+Dependency}}
+\index{is\+Considered\+As\+Dependency@{is\+Considered\+As\+Dependency}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{is\+Considered\+As\+Dependency()}{isConsideredAsDependency()}}
+{\footnotesize\ttfamily virtual bool Hash\+Error\+Detector\+::is\+Considered\+As\+Dependency (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{possible\+Dep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_error_detector_clock_difference_a4d399849b1872d3273fa757ee9dc9bd9}{Error\+Detector\+Clock\+Difference}, and \hyperlink{class_error_detector_interval_a27cb3ca9d7e5c3ddda9ee5ee66f182ed}{Error\+Detector\+Interval}.
+
+\mbox{\Hypertarget{class_hash_error_detector_ac0a25b9c1e27f98223869d11ca46d18f}\label{class_hash_error_detector_ac0a25b9c1e27f98223869d11ca46d18f}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!is\+Considered\+As\+Possible\+Dependency@{is\+Considered\+As\+Possible\+Dependency}}
+\index{is\+Considered\+As\+Possible\+Dependency@{is\+Considered\+As\+Possible\+Dependency}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{is\+Considered\+As\+Possible\+Dependency()}{isConsideredAsPossibleDependency()}}
+{\footnotesize\ttfamily virtual bool Hash\+Error\+Detector\+::is\+Considered\+As\+Possible\+Dependency (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{possible\+Dep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_error_detector_clock_difference_ab20aa1671eb558dea6f06b2440e97e41}{Error\+Detector\+Clock\+Difference}, and \hyperlink{class_error_detector_interval_a33bf470042fb65d833fd0f091374a046}{Error\+Detector\+Interval}.
+
+\mbox{\Hypertarget{class_hash_error_detector_aaaceeb3d2d27d5f3c85a9b80f959e0fe}\label{class_hash_error_detector_aaaceeb3d2d27d5f3c85a9b80f959e0fe}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!is\+Possible\+Dependency@{is\+Possible\+Dependency}}
+\index{is\+Possible\+Dependency@{is\+Possible\+Dependency}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{is\+Possible\+Dependency()}{isPossibleDependency()}}
+{\footnotesize\ttfamily bool Hash\+Error\+Detector\+::is\+Possible\+Dependency (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{possible\+Dep }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hash_error_detector_a2b1dad6a83a08fd7ce88e32f84638459}\label{class_hash_error_detector_a2b1dad6a83a08fd7ce88e32f84638459}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!prepare\+Message@{prepare\+Message}}
+\index{prepare\+Message@{prepare\+Message}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{prepare\+Message()}{prepareMessage()}}
+{\footnotesize\ttfamily \hyperlink{class_app_msg}{App\+Msg} $\ast$ Hash\+Error\+Detector\+::prepare\+Message (\begin{DoxyParamCaption}\item[{\hyperlink{class_app_msg}{App\+Msg} $\ast$}]{m,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{clock,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{process\+Dependencies }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_error_detector_a8cac1f6ac6803da4379df7891789c490}{Error\+Detector}.
+
+\mbox{\Hypertarget{class_hash_error_detector_ad7419eaab728b7ed3e394d5aee9eda41}\label{class_hash_error_detector_ad7419eaab728b7ed3e394d5aee9eda41}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!sort\+Possible\+Dependencies\+Set@{sort\+Possible\+Dependencies\+Set}}
+\index{sort\+Possible\+Dependencies\+Set@{sort\+Possible\+Dependencies\+Set}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{sort\+Possible\+Dependencies\+Set()}{sortPossibleDependenciesSet()}}
+{\footnotesize\ttfamily virtual vector$<$\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}$>$ Hash\+Error\+Detector\+::sort\+Possible\+Dependencies\+Set (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{base\+Combine\+Set,  }\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_error_detector_clock_difference_a740f6bd74b30e0b194c4b64d79bb8caf}{Error\+Detector\+Clock\+Difference}, and \hyperlink{class_error_detector_interval_abe98fbb4f13aeb919d2c2e8755f003ae}{Error\+Detector\+Interval}.
+
+\mbox{\Hypertarget{class_hash_error_detector_a1c7fe649a34cf7e139ce53a248dce748}\label{class_hash_error_detector_a1c7fe649a34cf7e139ce53a248dce748}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!test@{test}}
+\index{test@{test}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily bool Hash\+Error\+Detector\+::test (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}}]{message,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries,  }\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{process\+Clock,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{process\+Dependencies,  }\item[{\hyperlink{class_controller}{Controller} $\ast$}]{control,  }\item[{\hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$}]{params,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_error_detector_afc717d04768dd207196c08e24163115c}{Error\+Detector}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_hash_error_detector_a4a759c82473f06c7e89c3d75a509a390}\label{class_hash_error_detector_a4a759c82473f06c7e89c3d75a509a390}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}}
+\index{Node\+With\+Recovery\+Test@{Node\+With\+Recovery\+Test}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{Node\+With\+Recovery\+Test}{NodeWithRecoveryTest}}
+{\footnotesize\ttfamily friend class \hyperlink{class_node_with_recovery_test}{Node\+With\+Recovery\+Test}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_hash_error_detector_a129f65b6976377739eb6231b6962985e}\label{class_hash_error_detector_a129f65b6976377739eb6231b6962985e}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!Stats@{Stats}}
+\index{Stats@{Stats}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{Stats}{Stats}}
+{\footnotesize\ttfamily friend class \hyperlink{class_stats}{Stats}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hash_error_detector_a662a2baf62e11d8e2468aee44b9b168e}\label{class_hash_error_detector_a662a2baf62e11d8e2468aee44b9b168e}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!collision\+Controller@{collision\+Controller}}
+\index{collision\+Controller@{collision\+Controller}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{collision\+Controller}{collisionController}}
+{\footnotesize\ttfamily map$<$ int, vector$<$ unsigned int $>$ $>$ Hash\+Error\+Detector\+::collision\+Controller\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_hash_error_detector_a5193286d834f087e03b7299e81b60509}\label{class_hash_error_detector_a5193286d834f087e03b7299e81b60509}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!hasher@{hasher}}
+\index{hasher@{hasher}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{hasher}{hasher}}
+{\footnotesize\ttfamily hash$<$string$>$ Hash\+Error\+Detector\+::hasher\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_hash_error_detector_aec82c653679515b306b34eb075cf37fd}\label{class_hash_error_detector_aec82c653679515b306b34eb075cf37fd}} 
+\index{Hash\+Error\+Detector@{Hash\+Error\+Detector}!hash\+Stats@{hash\+Stats}}
+\index{hash\+Stats@{hash\+Stats}!Hash\+Error\+Detector@{Hash\+Error\+Detector}}
+\subsubsection{\texorpdfstring{hash\+Stats}{hashStats}}
+{\footnotesize\ttfamily \hyperlink{_hash_error_detector_8h_afcf148bcfe372c25deda29220815b9e0}{stats\+\_\+hash\+Error\+Detector} Hash\+Error\+Detector\+::hash\+Stats\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Detectors/\hyperlink{_hash_error_detector_8h}{Hash\+Error\+Detector.\+h}\item 
+src/\+Detectors/\hyperlink{_hash_error_detector_8cc}{Hash\+Error\+Detector.\+cc}\end{DoxyCompactItemize}

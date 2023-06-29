@@ -1,0 +1,107 @@
+\hypertarget{AppMsg__m_8h}{}\section{src/\+Messages/\+App\+Msg\+\_\+m.h File Reference}
+\label{AppMsg__m_8h}\index{src/\+Messages/\+App\+Msg\+\_\+m.\+h@{src/\+Messages/\+App\+Msg\+\_\+m.\+h}}
+{\ttfamily \#include $<$omnetpp.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../structures.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}../\+Clocks/\+Probabilistic\+Clock.\+h\char`\"{}}\newline
+Include dependency graph for App\+Msg\+\_\+m.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{AppMsg__m_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{AppMsg__m_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classAppMsg}{App\+Msg}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{AppMsg__m_8h_a77f5ea746b531cbdbc322a93741e33a6}{M\+S\+G\+C\+\_\+\+V\+E\+R\+S\+I\+ON}~0x0505
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} \hyperlink{AppMsg__m_8h_a0bd5e3a5ba85ac1fa0fd0fae34d903c1}{id\+Msg\+App\+Msg}
+\item 
+typedef std\+::vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{AppMsg__m_8h_a2b8cadfd13c916ddccf5a213ca34d8ee}{App\+Msg\+False\+Dep}
+\item 
+typedef std\+::vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{AppMsg__m_8h_a39bb58326d7e24febcd7397c022ada6a}{App\+Msg\+Dep}
+\item 
+typedef \hyperlink{classProbabilisticClock}{Probabilistic\+Clock} \hyperlink{AppMsg__m_8h_abcd76636e4b750d033ffc348601dd7a2}{App\+Msg\+PC}
+\item 
+typedef omnetpp\+::simtime\+\_\+t \hyperlink{AppMsg__m_8h_afd955b091e7d9b98cff80a090db1eb09}{App\+Msg\+Time}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{AppMsg__m_8h_a845747954047d1de33552bb652742f26}{do\+Parsim\+Packing} (omnetpp\+::c\+Comm\+Buffer $\ast$b, const \hyperlink{classAppMsg}{App\+Msg} \&obj)
+\item 
+void \hyperlink{AppMsg__m_8h_a6741bc1a49bb9bcfc7a3094c0a451aeb}{do\+Parsim\+Unpacking} (omnetpp\+::c\+Comm\+Buffer $\ast$b, \hyperlink{classAppMsg}{App\+Msg} \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{AppMsg__m_8h_a77f5ea746b531cbdbc322a93741e33a6}\label{AppMsg__m_8h_a77f5ea746b531cbdbc322a93741e33a6}} 
+\index{App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}!M\+S\+G\+C\+\_\+\+V\+E\+R\+S\+I\+ON@{M\+S\+G\+C\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{M\+S\+G\+C\+\_\+\+V\+E\+R\+S\+I\+ON@{M\+S\+G\+C\+\_\+\+V\+E\+R\+S\+I\+ON}!App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}}
+\subsubsection{\texorpdfstring{M\+S\+G\+C\+\_\+\+V\+E\+R\+S\+I\+ON}{MSGC\_VERSION}}
+{\footnotesize\ttfamily \#define M\+S\+G\+C\+\_\+\+V\+E\+R\+S\+I\+ON~0x0505}
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{AppMsg__m_8h_a39bb58326d7e24febcd7397c022ada6a}\label{AppMsg__m_8h_a39bb58326d7e24febcd7397c022ada6a}} 
+\index{App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}!App\+Msg\+Dep@{App\+Msg\+Dep}}
+\index{App\+Msg\+Dep@{App\+Msg\+Dep}!App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}}
+\subsubsection{\texorpdfstring{App\+Msg\+Dep}{AppMsgDep}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}$>$ \hyperlink{AppMsg__m_8h_a39bb58326d7e24febcd7397c022ada6a}{App\+Msg\+Dep}}
+
+\mbox{\Hypertarget{AppMsg__m_8h_a2b8cadfd13c916ddccf5a213ca34d8ee}\label{AppMsg__m_8h_a2b8cadfd13c916ddccf5a213ca34d8ee}} 
+\index{App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}!App\+Msg\+False\+Dep@{App\+Msg\+False\+Dep}}
+\index{App\+Msg\+False\+Dep@{App\+Msg\+False\+Dep}!App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}}
+\subsubsection{\texorpdfstring{App\+Msg\+False\+Dep}{AppMsgFalseDep}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}$>$ \hyperlink{AppMsg__m_8h_a2b8cadfd13c916ddccf5a213ca34d8ee}{App\+Msg\+False\+Dep}}
+
+\mbox{\Hypertarget{AppMsg__m_8h_abcd76636e4b750d033ffc348601dd7a2}\label{AppMsg__m_8h_abcd76636e4b750d033ffc348601dd7a2}} 
+\index{App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}!App\+Msg\+PC@{App\+Msg\+PC}}
+\index{App\+Msg\+PC@{App\+Msg\+PC}!App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}}
+\subsubsection{\texorpdfstring{App\+Msg\+PC}{AppMsgPC}}
+{\footnotesize\ttfamily typedef \hyperlink{classProbabilisticClock}{Probabilistic\+Clock} \hyperlink{AppMsg__m_8h_abcd76636e4b750d033ffc348601dd7a2}{App\+Msg\+PC}}
+
+\mbox{\Hypertarget{AppMsg__m_8h_afd955b091e7d9b98cff80a090db1eb09}\label{AppMsg__m_8h_afd955b091e7d9b98cff80a090db1eb09}} 
+\index{App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}!App\+Msg\+Time@{App\+Msg\+Time}}
+\index{App\+Msg\+Time@{App\+Msg\+Time}!App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}}
+\subsubsection{\texorpdfstring{App\+Msg\+Time}{AppMsgTime}}
+{\footnotesize\ttfamily typedef omnetpp\+::simtime\+\_\+t \hyperlink{AppMsg__m_8h_afd955b091e7d9b98cff80a090db1eb09}{App\+Msg\+Time}}
+
+\mbox{\Hypertarget{AppMsg__m_8h_a0bd5e3a5ba85ac1fa0fd0fae34d903c1}\label{AppMsg__m_8h_a0bd5e3a5ba85ac1fa0fd0fae34d903c1}} 
+\index{App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}!id\+Msg\+App\+Msg@{id\+Msg\+App\+Msg}}
+\index{id\+Msg\+App\+Msg@{id\+Msg\+App\+Msg}!App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}}
+\subsubsection{\texorpdfstring{id\+Msg\+App\+Msg}{idMsgAppMsg}}
+{\footnotesize\ttfamily typedef \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} \hyperlink{AppMsg__m_8h_a0bd5e3a5ba85ac1fa0fd0fae34d903c1}{id\+Msg\+App\+Msg}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{AppMsg__m_8h_a845747954047d1de33552bb652742f26}\label{AppMsg__m_8h_a845747954047d1de33552bb652742f26}} 
+\index{App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}!do\+Parsim\+Packing@{do\+Parsim\+Packing}}
+\index{do\+Parsim\+Packing@{do\+Parsim\+Packing}!App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}}
+\subsubsection{\texorpdfstring{do\+Parsim\+Packing()}{doParsimPacking()}}
+{\footnotesize\ttfamily void do\+Parsim\+Packing (\begin{DoxyParamCaption}\item[{omnetpp\+::c\+Comm\+Buffer $\ast$}]{b,  }\item[{const \hyperlink{classAppMsg}{App\+Msg} \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{AppMsg__m_8h_a6741bc1a49bb9bcfc7a3094c0a451aeb}\label{AppMsg__m_8h_a6741bc1a49bb9bcfc7a3094c0a451aeb}} 
+\index{App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}!do\+Parsim\+Unpacking@{do\+Parsim\+Unpacking}}
+\index{do\+Parsim\+Unpacking@{do\+Parsim\+Unpacking}!App\+Msg\+\_\+m.\+h@{App\+Msg\+\_\+m.\+h}}
+\subsubsection{\texorpdfstring{do\+Parsim\+Unpacking()}{doParsimUnpacking()}}
+{\footnotesize\ttfamily void do\+Parsim\+Unpacking (\begin{DoxyParamCaption}\item[{omnetpp\+::c\+Comm\+Buffer $\ast$}]{b,  }\item[{\hyperlink{classAppMsg}{App\+Msg} \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

@@ -1,0 +1,230 @@
+\hypertarget{class_dep_req}{}\section{Dep\+Req Class Reference}
+\label{class_dep_req}\index{Dep\+Req@{Dep\+Req}}
+
+
+Class generated from {\ttfamily Messages/dep\+Req.\+msg\+:32} by nedtool.  
+
+
+
+
+{\ttfamily \#include $<$dep\+Req\+\_\+m.\+h$>$}
+
+
+
+Inheritance diagram for Dep\+Req\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{class_dep_req__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dep\+Req\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{class_dep_req__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dep_req_a133b51d43699e8ebecccf069935d93c4}{Dep\+Req} (const char $\ast$name=nullptr, short kind=0)
+\item 
+\hyperlink{class_dep_req_adf6800c87693c1de5b88d89c577186b8}{Dep\+Req} (const \hyperlink{class_dep_req}{Dep\+Req} \&other)
+\item 
+virtual \hyperlink{class_dep_req_a6f770d0327bf43dcef5f6a58f5a32183}{$\sim$\+Dep\+Req} ()
+\item 
+\hyperlink{class_dep_req}{Dep\+Req} \& \hyperlink{class_dep_req_a343eae743e4ca183897f0af8410d5ba3}{operator=} (const \hyperlink{class_dep_req}{Dep\+Req} \&other)
+\item 
+virtual \hyperlink{class_dep_req}{Dep\+Req} $\ast$ \hyperlink{class_dep_req_a430632dbd4f70a3a1183f226f0484bf3}{dup} () const override
+\item 
+virtual void \hyperlink{class_dep_req_a94c2def7b925be45621e20fd31e28e77}{parsim\+Pack} (omnetpp\+::c\+Comm\+Buffer $\ast$b) const override
+\item 
+virtual void \hyperlink{class_dep_req_a4fa8adb572938bc44f0a04463ea2df8d}{parsim\+Unpack} (omnetpp\+::c\+Comm\+Buffer $\ast$b) override
+\item 
+virtual \hyperlink{dep_req__m_8h_a2bbb71ed0e9660ec02d81471eafd9c29}{id\+Msg\+Dep\+Req} \& \hyperlink{class_dep_req_abbf56cc3e6a0be7ff696f9216f51f968}{get\+Id\+Msg\+To\+Recover} ()
+\item 
+virtual const \hyperlink{dep_req__m_8h_a2bbb71ed0e9660ec02d81471eafd9c29}{id\+Msg\+Dep\+Req} \& \hyperlink{class_dep_req_ab173923214b88b6c4b2f1d1cee8313d0}{get\+Id\+Msg\+To\+Recover} () const
+\item 
+virtual void \hyperlink{class_dep_req_a488a57f56c5fc87aae853a2b3e469fd0}{set\+Id\+Msg\+To\+Recover} (const \hyperlink{dep_req__m_8h_a2bbb71ed0e9660ec02d81471eafd9c29}{id\+Msg\+Dep\+Req} \&\hyperlink{class_dep_req_a8547e169d4670212c0b612924dda94cc}{id\+Msg\+To\+Recover})
+\item 
+virtual unsigned int \hyperlink{class_dep_req_a68f528e65d1529da94226f8a83483d6c}{get\+Id\+Requester} () const
+\item 
+virtual void \hyperlink{class_dep_req_a27f6e58ad8dcf4902de1042322a3e6e7}{set\+Id\+Requester} (unsigned int \hyperlink{class_dep_req_a26936e95ef3fae4753d2442318646c6b}{id\+Requester})
+\item 
+virtual \hyperlink{dep_req__m_8h_ae16a4057335e3a89fda3f6019868733b}{dep\+Req\+Time} \& \hyperlink{class_dep_req_a42fa35b3ced2cd9a4afd0ddeade48c19}{get\+Delay} ()
+\item 
+virtual const \hyperlink{dep_req__m_8h_ae16a4057335e3a89fda3f6019868733b}{dep\+Req\+Time} \& \hyperlink{class_dep_req_a3f686e18997f1383d0670a271d45a37b}{get\+Delay} () const
+\item 
+virtual void \hyperlink{class_dep_req_a90ae52243ec735ebf15bdf3e8467b393}{set\+Delay} (const \hyperlink{dep_req__m_8h_ae16a4057335e3a89fda3f6019868733b}{dep\+Req\+Time} \&\hyperlink{class_dep_req_a5df5ddeac692e25c089b458faf51e0c9}{delay})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_dep_req_a0426b6cf870f2751d0933d7a9d56134c}{operator==} (const \hyperlink{class_dep_req}{Dep\+Req} \&)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dep_req__m_8h_a2bbb71ed0e9660ec02d81471eafd9c29}{id\+Msg\+Dep\+Req} \hyperlink{class_dep_req_a8547e169d4670212c0b612924dda94cc}{id\+Msg\+To\+Recover}
+\item 
+unsigned int \hyperlink{class_dep_req_a26936e95ef3fae4753d2442318646c6b}{id\+Requester}
+\item 
+\hyperlink{dep_req__m_8h_ae16a4057335e3a89fda3f6019868733b}{dep\+Req\+Time} \hyperlink{class_dep_req_a5df5ddeac692e25c089b458faf51e0c9}{delay}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_dep_req_a3ec88f2216d73f6b499ae6653a60437b}{copy} (const \hyperlink{class_dep_req}{Dep\+Req} \&other)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class generated from {\ttfamily Messages/dep\+Req.\+msg\+:32} by nedtool. 
+
+
+\begin{DoxyPre}
+packet \hyperlink{class_dep_req}{DepReq}
+\{
+    idMsgDepReq idMsgToRecover;
+    unsigned int idRequester; // debug
+    depReqTime delay; // ms 
+\}
+\end{DoxyPre}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dep_req_a133b51d43699e8ebecccf069935d93c4}\label{class_dep_req_a133b51d43699e8ebecccf069935d93c4}} 
+\index{Dep\+Req@{Dep\+Req}!Dep\+Req@{Dep\+Req}}
+\index{Dep\+Req@{Dep\+Req}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{Dep\+Req()}{DepReq()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Dep\+Req\+::\+Dep\+Req (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name = {\ttfamily nullptr},  }\item[{short}]{kind = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dep_req_adf6800c87693c1de5b88d89c577186b8}\label{class_dep_req_adf6800c87693c1de5b88d89c577186b8}} 
+\index{Dep\+Req@{Dep\+Req}!Dep\+Req@{Dep\+Req}}
+\index{Dep\+Req@{Dep\+Req}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{Dep\+Req()}{DepReq()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Dep\+Req\+::\+Dep\+Req (\begin{DoxyParamCaption}\item[{const \hyperlink{class_dep_req}{Dep\+Req} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dep_req_a6f770d0327bf43dcef5f6a58f5a32183}\label{class_dep_req_a6f770d0327bf43dcef5f6a58f5a32183}} 
+\index{Dep\+Req@{Dep\+Req}!````~Dep\+Req@{$\sim$\+Dep\+Req}}
+\index{````~Dep\+Req@{$\sim$\+Dep\+Req}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{$\sim$\+Dep\+Req()}{~DepReq()}}
+{\footnotesize\ttfamily Dep\+Req\+::$\sim$\+Dep\+Req (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dep_req_a3ec88f2216d73f6b499ae6653a60437b}\label{class_dep_req_a3ec88f2216d73f6b499ae6653a60437b}} 
+\index{Dep\+Req@{Dep\+Req}!copy@{copy}}
+\index{copy@{copy}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Dep\+Req\+::copy (\begin{DoxyParamCaption}\item[{const \hyperlink{class_dep_req}{Dep\+Req} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_dep_req_a430632dbd4f70a3a1183f226f0484bf3}\label{class_dep_req_a430632dbd4f70a3a1183f226f0484bf3}} 
+\index{Dep\+Req@{Dep\+Req}!dup@{dup}}
+\index{dup@{dup}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{dup()}{dup()}}
+{\footnotesize\ttfamily virtual \hyperlink{class_dep_req}{Dep\+Req}$\ast$ Dep\+Req\+::dup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dep_req_a42fa35b3ced2cd9a4afd0ddeade48c19}\label{class_dep_req_a42fa35b3ced2cd9a4afd0ddeade48c19}} 
+\index{Dep\+Req@{Dep\+Req}!get\+Delay@{get\+Delay}}
+\index{get\+Delay@{get\+Delay}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{get\+Delay()}{getDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{dep_req__m_8h_ae16a4057335e3a89fda3f6019868733b}{dep\+Req\+Time} \& Dep\+Req\+::get\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dep_req_a3f686e18997f1383d0670a271d45a37b}\label{class_dep_req_a3f686e18997f1383d0670a271d45a37b}} 
+\index{Dep\+Req@{Dep\+Req}!get\+Delay@{get\+Delay}}
+\index{get\+Delay@{get\+Delay}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{get\+Delay()}{getDelay()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{dep_req__m_8h_ae16a4057335e3a89fda3f6019868733b}{dep\+Req\+Time}\& Dep\+Req\+::get\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dep_req_abbf56cc3e6a0be7ff696f9216f51f968}\label{class_dep_req_abbf56cc3e6a0be7ff696f9216f51f968}} 
+\index{Dep\+Req@{Dep\+Req}!get\+Id\+Msg\+To\+Recover@{get\+Id\+Msg\+To\+Recover}}
+\index{get\+Id\+Msg\+To\+Recover@{get\+Id\+Msg\+To\+Recover}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{get\+Id\+Msg\+To\+Recover()}{getIdMsgToRecover()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{dep_req__m_8h_a2bbb71ed0e9660ec02d81471eafd9c29}{id\+Msg\+Dep\+Req} \& Dep\+Req\+::get\+Id\+Msg\+To\+Recover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dep_req_ab173923214b88b6c4b2f1d1cee8313d0}\label{class_dep_req_ab173923214b88b6c4b2f1d1cee8313d0}} 
+\index{Dep\+Req@{Dep\+Req}!get\+Id\+Msg\+To\+Recover@{get\+Id\+Msg\+To\+Recover}}
+\index{get\+Id\+Msg\+To\+Recover@{get\+Id\+Msg\+To\+Recover}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{get\+Id\+Msg\+To\+Recover()}{getIdMsgToRecover()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const \hyperlink{dep_req__m_8h_a2bbb71ed0e9660ec02d81471eafd9c29}{id\+Msg\+Dep\+Req}\& Dep\+Req\+::get\+Id\+Msg\+To\+Recover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dep_req_a68f528e65d1529da94226f8a83483d6c}\label{class_dep_req_a68f528e65d1529da94226f8a83483d6c}} 
+\index{Dep\+Req@{Dep\+Req}!get\+Id\+Requester@{get\+Id\+Requester}}
+\index{get\+Id\+Requester@{get\+Id\+Requester}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{get\+Id\+Requester()}{getIdRequester()}}
+{\footnotesize\ttfamily unsigned int Dep\+Req\+::get\+Id\+Requester (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dep_req_a343eae743e4ca183897f0af8410d5ba3}\label{class_dep_req_a343eae743e4ca183897f0af8410d5ba3}} 
+\index{Dep\+Req@{Dep\+Req}!operator=@{operator=}}
+\index{operator=@{operator=}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{class_dep_req}{Dep\+Req} \& Dep\+Req\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_dep_req}{Dep\+Req} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dep_req_a0426b6cf870f2751d0933d7a9d56134c}\label{class_dep_req_a0426b6cf870f2751d0933d7a9d56134c}} 
+\index{Dep\+Req@{Dep\+Req}!operator==@{operator==}}
+\index{operator==@{operator==}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Dep\+Req\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_dep_req}{Dep\+Req} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dep_req_a94c2def7b925be45621e20fd31e28e77}\label{class_dep_req_a94c2def7b925be45621e20fd31e28e77}} 
+\index{Dep\+Req@{Dep\+Req}!parsim\+Pack@{parsim\+Pack}}
+\index{parsim\+Pack@{parsim\+Pack}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{parsim\+Pack()}{parsimPack()}}
+{\footnotesize\ttfamily void Dep\+Req\+::parsim\+Pack (\begin{DoxyParamCaption}\item[{omnetpp\+::c\+Comm\+Buffer $\ast$}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dep_req_a4fa8adb572938bc44f0a04463ea2df8d}\label{class_dep_req_a4fa8adb572938bc44f0a04463ea2df8d}} 
+\index{Dep\+Req@{Dep\+Req}!parsim\+Unpack@{parsim\+Unpack}}
+\index{parsim\+Unpack@{parsim\+Unpack}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{parsim\+Unpack()}{parsimUnpack()}}
+{\footnotesize\ttfamily void Dep\+Req\+::parsim\+Unpack (\begin{DoxyParamCaption}\item[{omnetpp\+::c\+Comm\+Buffer $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dep_req_a90ae52243ec735ebf15bdf3e8467b393}\label{class_dep_req_a90ae52243ec735ebf15bdf3e8467b393}} 
+\index{Dep\+Req@{Dep\+Req}!set\+Delay@{set\+Delay}}
+\index{set\+Delay@{set\+Delay}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{set\+Delay()}{setDelay()}}
+{\footnotesize\ttfamily void Dep\+Req\+::set\+Delay (\begin{DoxyParamCaption}\item[{const \hyperlink{dep_req__m_8h_ae16a4057335e3a89fda3f6019868733b}{dep\+Req\+Time} \&}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dep_req_a488a57f56c5fc87aae853a2b3e469fd0}\label{class_dep_req_a488a57f56c5fc87aae853a2b3e469fd0}} 
+\index{Dep\+Req@{Dep\+Req}!set\+Id\+Msg\+To\+Recover@{set\+Id\+Msg\+To\+Recover}}
+\index{set\+Id\+Msg\+To\+Recover@{set\+Id\+Msg\+To\+Recover}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{set\+Id\+Msg\+To\+Recover()}{setIdMsgToRecover()}}
+{\footnotesize\ttfamily void Dep\+Req\+::set\+Id\+Msg\+To\+Recover (\begin{DoxyParamCaption}\item[{const \hyperlink{dep_req__m_8h_a2bbb71ed0e9660ec02d81471eafd9c29}{id\+Msg\+Dep\+Req} \&}]{id\+Msg\+To\+Recover }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dep_req_a27f6e58ad8dcf4902de1042322a3e6e7}\label{class_dep_req_a27f6e58ad8dcf4902de1042322a3e6e7}} 
+\index{Dep\+Req@{Dep\+Req}!set\+Id\+Requester@{set\+Id\+Requester}}
+\index{set\+Id\+Requester@{set\+Id\+Requester}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{set\+Id\+Requester()}{setIdRequester()}}
+{\footnotesize\ttfamily void Dep\+Req\+::set\+Id\+Requester (\begin{DoxyParamCaption}\item[{unsigned int}]{id\+Requester }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_dep_req_a5df5ddeac692e25c089b458faf51e0c9}\label{class_dep_req_a5df5ddeac692e25c089b458faf51e0c9}} 
+\index{Dep\+Req@{Dep\+Req}!delay@{delay}}
+\index{delay@{delay}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{delay}{delay}}
+{\footnotesize\ttfamily \hyperlink{dep_req__m_8h_ae16a4057335e3a89fda3f6019868733b}{dep\+Req\+Time} Dep\+Req\+::delay\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dep_req_a8547e169d4670212c0b612924dda94cc}\label{class_dep_req_a8547e169d4670212c0b612924dda94cc}} 
+\index{Dep\+Req@{Dep\+Req}!id\+Msg\+To\+Recover@{id\+Msg\+To\+Recover}}
+\index{id\+Msg\+To\+Recover@{id\+Msg\+To\+Recover}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{id\+Msg\+To\+Recover}{idMsgToRecover}}
+{\footnotesize\ttfamily \hyperlink{dep_req__m_8h_a2bbb71ed0e9660ec02d81471eafd9c29}{id\+Msg\+Dep\+Req} Dep\+Req\+::id\+Msg\+To\+Recover\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dep_req_a26936e95ef3fae4753d2442318646c6b}\label{class_dep_req_a26936e95ef3fae4753d2442318646c6b}} 
+\index{Dep\+Req@{Dep\+Req}!id\+Requester@{id\+Requester}}
+\index{id\+Requester@{id\+Requester}!Dep\+Req@{Dep\+Req}}
+\subsubsection{\texorpdfstring{id\+Requester}{idRequester}}
+{\footnotesize\ttfamily unsigned int Dep\+Req\+::id\+Requester\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Messages/\hyperlink{dep_req__m_8h}{dep\+Req\+\_\+m.\+h}\item 
+src/\+Messages/\hyperlink{dep_req__m_8cc}{dep\+Req\+\_\+m.\+cc}\end{DoxyCompactItemize}

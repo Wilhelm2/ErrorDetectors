@@ -1,0 +1,6 @@
+<map id="ErrorDetectorInterval" name="ErrorDetectorInterval">
+<area shape="rect" id="node2" href="$classHashErrorDetector.html" title="{HashErrorDetector\n|&#45; hasher\l&#45; collisionController\l|+ HashErrorDetector()\l+ ~HashErrorDetector()\l+ test()\l+ hashPartialDependencies()\l+ hashTotalDependencies()\l+ hashIsEqual()\l+ createBaseDependencies()\l+ isPossibleDependency()\l+ createPossibleDependenciesSet()\l+ incrementnbMsgWronglyConsidered\lCausalDep()\land 12 more...\l}" alt="" coords="67,359,311,612"/>
+<area shape="rect" id="node3" href="$classErrorDetector.html" title="{ErrorDetector\n||+ ErrorDetector()\l+ ~ErrorDetector()\l+ prepareMessage()\l+ test()\l}" alt="" coords="10,167,149,289"/>
+<area shape="rect" id="node4" href="$structs__stats__errorDetector.html" title="{s_stats_errorDetector\n|+ falseNegative\l+ trueNegative\l|}" alt="" coords="5,5,153,97"/>
+<area shape="rect" id="node5" href="$structs__stats__hashErrorDetector.html" title="{s_stats_hashErrorDetector\n|+ nbHash\l+ nbMsgWronglyConsideredCausalDep\l+ nbMsgToCombine\l+ doneCombinationsToFindHash\l+ nbOperationsForHash\l|}" alt="" coords="173,160,425,296"/>
+</map>

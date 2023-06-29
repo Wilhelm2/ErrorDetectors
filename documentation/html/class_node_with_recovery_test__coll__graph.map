@@ -1,0 +1,17 @@
+<map id="NodeWithRecoveryTest" name="NodeWithRecoveryTest">
+<area shape="rect" id="node2" href="$class_node_with_recovery.html" title="NodeWithRecovery" alt="" coords="189,553,325,580"/>
+<area shape="rect" id="node3" href="$class_node_detector.html" title="NodeDetector" alt="" coords="205,464,308,491"/>
+<area shape="rect" id="node4" href="$class_node_with_control.html" title="NodeWithControl" alt="" coords="186,375,309,401"/>
+<area shape="rect" id="node5" href="$class_node_base.html" title="NodeBase" alt="" coords="422,285,505,312"/>
+<area shape="rect" id="node7" href="$class_simulation_parameters.html" title="TODO &#45; Generated class. " alt="" coords="404,95,555,121"/>
+<area shape="rect" id="node9" href="$class_controller.html" title="Controller" alt="" coords="576,196,655,223"/>
+<area shape="rect" id="node8" href="$class_dependencies.html" title="Dependencies" alt="" coords="329,5,435,32"/>
+<area shape="rect" id="node12" href="$class_total_dependencies.html" title="TotalDependencies" alt="" coords="220,145,355,172"/>
+<area shape="rect" id="node10" href="$structs__stats_node.html" title="s_statsNode" alt="" coords="455,196,551,223"/>
+<area shape="rect" id="node11" href="$class_probabilistic_clock.html" title="ProbabilisticClock" alt="" coords="76,285,203,312"/>
+<area shape="rect" id="node15" href="$structs__message_info.html" title="s_messageInfo" alt="" coords="43,375,153,401"/>
+<area shape="rect" id="node13" href="$class_error_detector.html" title="ErrorDetector" alt="" coords="480,375,580,401"/>
+<area shape="rect" id="node14" href="$structs__stats__error_detector.html" title="s_stats_errorDetector" alt="" coords="529,285,677,312"/>
+<area shape="rect" id="node16" href="$structs__id.html" title="s_id" alt="" coords="5,285,52,312"/>
+<area shape="rect" id="node17" href="$structs__stats__recovery.html" title="s_stats_recovery" alt="" coords="333,464,455,491"/>
+</map>

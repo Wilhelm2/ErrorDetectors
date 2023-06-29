@@ -17,6 +17,8 @@
 
 Define_Module(CommunicationDispatcher);
 
+/** @brief Initializes the communicationDispatcher
+*/
 void CommunicationDispatcher::initialize()
 {
     cSimpleModule::initialize();
@@ -27,6 +29,9 @@ void CommunicationDispatcher::initialize()
         channelRandNumber.push_back(rand()%2);
 }
 
+/** @brief handles messages to forward 
+ * @param msg Message to forward 
+*/
 void CommunicationDispatcher::handleMessage(cMessage *msg)
 {
     if(Init* m = dynamic_cast<Init*> (msg) )
@@ -57,6 +62,9 @@ void CommunicationDispatcher::handleMessage(cMessage *msg)
     }
 }
 
+/** @brief Broadcasts an application message to all nodes.
+ * @param m Message to broadcast
+*/
 void CommunicationDispatcher::broadcastAppMessage(AppMsg* m)
 {
     for(unsigned int i = 0; i < params->nbNodes; i++)
@@ -70,6 +78,11 @@ void CommunicationDispatcher::broadcastAppMessage(AppMsg* m)
     }
 }
 
+/** @brief Computes the propagation delay of a message following the node id of the source and target processes
+ * @param idSourceProcess node id of the process that sent the message
+ * @param idTargetProcess node id of the destination process of the message
+ * @return message propagation delay
+*/
 simtime_t CommunicationDispatcher::computeDelay(unsigned int idSourceProcess, unsigned int idTargetProcess)
 {
     int delayInUs;
@@ -82,6 +95,9 @@ simtime_t CommunicationDispatcher::computeDelay(unsigned int idSourceProcess, un
     return SimTime(delayInUs,SIMTIME_US);
 }
 
+/** @brief Takes statistics of the propagation delay interval 
+ * @param entry propagation interval to increment
+*/
 void CommunicationDispatcher::incrementDelayIntervals(unsigned int entry)
 {
     if(entry < (sizeof(stats.delayIntervals)/sizeof(int)))

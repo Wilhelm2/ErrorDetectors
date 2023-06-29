@@ -1,0 +1,4 @@
+<map id="MostefaouiErrorDetector" name="MostefaouiErrorDetector">
+<area shape="rect" id="node2" href="$classErrorDetector.html" title="{ErrorDetector\n||+ ErrorDetector()\l+ ~ErrorDetector()\l+ prepareMessage()\l+ test()\l}" alt="" coords="32,160,171,281"/>
+<area shape="rect" id="node3" href="$structs__stats__errorDetector.html" title="{s_stats_errorDetector\n|+ falseNegative\l+ trueNegative\l|}" alt="" coords="27,5,175,97"/>
+</map>

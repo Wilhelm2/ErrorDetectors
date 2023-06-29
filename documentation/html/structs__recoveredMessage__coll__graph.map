@@ -1,0 +1,7 @@
+<map id="s_recoveredMessage" name="s_recoveredMessage">
+<area shape="rect" id="node2" href="$structs__messageInfo.html" title="{s_messageInfo\n|+ recvtime\l+ hash\l+ dependencies\l|+ s_messageInfo()\l+ s_messageInfo()\l}" alt="" coords="157,373,288,494"/>
+<area shape="rect" id="node3" href="$classProbabilisticClock.html" title="{ProbabilisticClock\n|&#45; clock\l|+ ProbabilisticClock()\l+ ProbabilisticClock()\l+ ~ProbabilisticClock()\l+ operator\&lt;=()\l+ operator[]()\l+ operator[]()\l+ size()\l+ incrementEntries()\l+ satisfiesDeliveryCondition()\l+ printClock()\l+ decreaseEntry()\l+ clockEntryDifference()\l+ at()\l}" alt="" coords="5,5,200,259"/>
+<area shape="rect" id="node4" href="$structs__id.html" title="{s_id\n|+ id\l+ seq\l|}" alt="" coords="225,86,279,178"/>
+<area shape="rect" id="node5" href="$classTotalDependencies.html" title="{TotalDependencies\n|&#45; dependencies\l|+ TotalDependencies()\l+ TotalDependencies()\l+ TotalDependencies()\l+ ~TotalDependencies()\l+ operator[]()\l+ operator[]()\l+ operator==()\l+ operator\&lt;()\l+ getDependencies()\l+ includesDependencies()\land 6 more...\l}" alt="" coords="312,321,485,545"/>
+<area shape="rect" id="node6" href="$classDependencies.html" title="{Dependencies\n||+ Dependencies()\l+ ~Dependencies()\l}" alt="" coords="332,86,465,178"/>
+</map>

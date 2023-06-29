@@ -1,0 +1,140 @@
+\hypertarget{classDCS}{}\section{D\+CS Class Reference}
+\label{classDCS}\index{D\+CS@{D\+CS}}
+
+
+{\ttfamily \#include $<$D\+C\+S.\+h$>$}
+
+
+
+Collaboration diagram for D\+CS\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classDCS__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDCS_a9b4fbb5c80ef6b265669082703312cd6}{D\+CS} ()
+\item 
+\hyperlink{classDCS_ad923153aa60c70d718c1be1b47e45a61}{D\+CS} (unsigned int \hyperlink{classDCS_af256dc5d9b30241bfce2e12d57824bec}{component\+Size})
+\item 
+virtual \hyperlink{classDCS_a7e6e0c1df0b016e246801b4347f3a208}{$\sim$\+D\+CS} ()
+\item 
+void \hyperlink{classDCS_a7e537421b8edf48c1d00c859c9be53da}{increment\+Entries} (const vector$<$ unsigned int $>$ \&S\+\_\+incr, const vector$<$ unsigned int $>$ \&entries)
+\item 
+bool \hyperlink{classDCS_aeb765d2361e829ba54620d99e2fb4bf1}{satisfies\+Delivery\+Conditions} (const \hyperlink{classDCS}{D\+CS} \&compare\+Clock, const vector$<$ unsigned int $>$ \&S\+\_\+incr, const vector$<$ unsigned int $>$ \&entries) const
+\item 
+unsigned int \hyperlink{classDCS_ac428129bbebba59be9a09c09c1096323}{size} () const
+\item 
+\hyperlink{DCS_8h_aff5561f7728e7d2c203fbfeac4a73866}{component} \hyperlink{classDCS_af1f82450ff5c80deff0fb2d270bf6276}{get\+Component} (unsigned int k) const
+\item 
+bool \hyperlink{classDCS_a8d66ffc382de5519aa7fb3844b6790af}{prepare\+Comparison} (\hyperlink{classDCS}{D\+CS} clock\+Compare)
+\item 
+void \hyperlink{classDCS_a8d3778638a4104c2c41569aca7ed17b1}{Add} ()
+\item 
+void \hyperlink{classDCS_a3c4c817b466389070cb7d8051c2ec38f}{Activate\+Component} (unsigned int i)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{DCS_8h_aff5561f7728e7d2c203fbfeac4a73866}{component} $>$ \hyperlink{classDCS_adde0f06e934657f25a92b13e04d3fd7d}{clock}
+\item 
+unsigned int \hyperlink{classDCS_af256dc5d9b30241bfce2e12d57824bec}{component\+Size} = 0
+\item 
+unsigned int \hyperlink{classDCS_a0922c1733e23bf6098b71890da57e762}{active\+Components} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDCS_a9b4fbb5c80ef6b265669082703312cd6}\label{classDCS_a9b4fbb5c80ef6b265669082703312cd6}} 
+\index{D\+CS@{D\+CS}!D\+CS@{D\+CS}}
+\index{D\+CS@{D\+CS}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{D\+C\+S()}{DCS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily D\+C\+S\+::\+D\+CS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDCS_ad923153aa60c70d718c1be1b47e45a61}\label{classDCS_ad923153aa60c70d718c1be1b47e45a61}} 
+\index{D\+CS@{D\+CS}!D\+CS@{D\+CS}}
+\index{D\+CS@{D\+CS}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{D\+C\+S()}{DCS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily D\+C\+S\+::\+D\+CS (\begin{DoxyParamCaption}\item[{unsigned int}]{component\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDCS_a7e6e0c1df0b016e246801b4347f3a208}\label{classDCS_a7e6e0c1df0b016e246801b4347f3a208}} 
+\index{D\+CS@{D\+CS}!````~D\+CS@{$\sim$\+D\+CS}}
+\index{````~D\+CS@{$\sim$\+D\+CS}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{$\sim$\+D\+C\+S()}{~DCS()}}
+{\footnotesize\ttfamily D\+C\+S\+::$\sim$\+D\+CS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDCS_a3c4c817b466389070cb7d8051c2ec38f}\label{classDCS_a3c4c817b466389070cb7d8051c2ec38f}} 
+\index{D\+CS@{D\+CS}!Activate\+Component@{Activate\+Component}}
+\index{Activate\+Component@{Activate\+Component}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{Activate\+Component()}{ActivateComponent()}}
+{\footnotesize\ttfamily void D\+C\+S\+::\+Activate\+Component (\begin{DoxyParamCaption}\item[{unsigned int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDCS_a8d3778638a4104c2c41569aca7ed17b1}\label{classDCS_a8d3778638a4104c2c41569aca7ed17b1}} 
+\index{D\+CS@{D\+CS}!Add@{Add}}
+\index{Add@{Add}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void D\+C\+S\+::\+Add (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDCS_af1f82450ff5c80deff0fb2d270bf6276}\label{classDCS_af1f82450ff5c80deff0fb2d270bf6276}} 
+\index{D\+CS@{D\+CS}!get\+Component@{get\+Component}}
+\index{get\+Component@{get\+Component}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{get\+Component()}{getComponent()}}
+{\footnotesize\ttfamily \hyperlink{DCS_8h_aff5561f7728e7d2c203fbfeac4a73866}{component} D\+C\+S\+::get\+Component (\begin{DoxyParamCaption}\item[{unsigned int}]{k }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDCS_a7e537421b8edf48c1d00c859c9be53da}\label{classDCS_a7e537421b8edf48c1d00c859c9be53da}} 
+\index{D\+CS@{D\+CS}!increment\+Entries@{increment\+Entries}}
+\index{increment\+Entries@{increment\+Entries}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{increment\+Entries()}{incrementEntries()}}
+{\footnotesize\ttfamily void D\+C\+S\+::increment\+Entries (\begin{DoxyParamCaption}\item[{const vector$<$ unsigned int $>$ \&}]{S\+\_\+incr,  }\item[{const vector$<$ unsigned int $>$ \&}]{entries }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDCS_a8d66ffc382de5519aa7fb3844b6790af}\label{classDCS_a8d66ffc382de5519aa7fb3844b6790af}} 
+\index{D\+CS@{D\+CS}!prepare\+Comparison@{prepare\+Comparison}}
+\index{prepare\+Comparison@{prepare\+Comparison}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{prepare\+Comparison()}{prepareComparison()}}
+{\footnotesize\ttfamily bool D\+C\+S\+::prepare\+Comparison (\begin{DoxyParamCaption}\item[{\hyperlink{classDCS}{D\+CS}}]{clock\+Compare }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDCS_aeb765d2361e829ba54620d99e2fb4bf1}\label{classDCS_aeb765d2361e829ba54620d99e2fb4bf1}} 
+\index{D\+CS@{D\+CS}!satisfies\+Delivery\+Conditions@{satisfies\+Delivery\+Conditions}}
+\index{satisfies\+Delivery\+Conditions@{satisfies\+Delivery\+Conditions}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{satisfies\+Delivery\+Conditions()}{satisfiesDeliveryConditions()}}
+{\footnotesize\ttfamily bool D\+C\+S\+::satisfies\+Delivery\+Conditions (\begin{DoxyParamCaption}\item[{const \hyperlink{classDCS}{D\+CS} \&}]{compare\+Clock,  }\item[{const vector$<$ unsigned int $>$ \&}]{S\+\_\+incr,  }\item[{const vector$<$ unsigned int $>$ \&}]{entries }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDCS_ac428129bbebba59be9a09c09c1096323}\label{classDCS_ac428129bbebba59be9a09c09c1096323}} 
+\index{D\+CS@{D\+CS}!size@{size}}
+\index{size@{size}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily unsigned int D\+C\+S\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classDCS_a0922c1733e23bf6098b71890da57e762}\label{classDCS_a0922c1733e23bf6098b71890da57e762}} 
+\index{D\+CS@{D\+CS}!active\+Components@{active\+Components}}
+\index{active\+Components@{active\+Components}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{active\+Components}{activeComponents}}
+{\footnotesize\ttfamily unsigned int D\+C\+S\+::active\+Components = 1}
+
+\mbox{\Hypertarget{classDCS_adde0f06e934657f25a92b13e04d3fd7d}\label{classDCS_adde0f06e934657f25a92b13e04d3fd7d}} 
+\index{D\+CS@{D\+CS}!clock@{clock}}
+\index{clock@{clock}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{clock}{clock}}
+{\footnotesize\ttfamily vector$<$\hyperlink{DCS_8h_aff5561f7728e7d2c203fbfeac4a73866}{component}$>$ D\+C\+S\+::clock}
+
+\mbox{\Hypertarget{classDCS_af256dc5d9b30241bfce2e12d57824bec}\label{classDCS_af256dc5d9b30241bfce2e12d57824bec}} 
+\index{D\+CS@{D\+CS}!component\+Size@{component\+Size}}
+\index{component\+Size@{component\+Size}!D\+CS@{D\+CS}}
+\subsubsection{\texorpdfstring{component\+Size}{componentSize}}
+{\footnotesize\ttfamily unsigned int D\+C\+S\+::component\+Size = 0}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Clocks/\hyperlink{DCS_8h}{D\+C\+S.\+h}\item 
+src/\+Clocks/\hyperlink{DCS_8cc}{D\+C\+S.\+cc}\end{DoxyCompactItemize}

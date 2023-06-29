@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['nbavoidedrecoveries',['nbAvoidedRecoveries',['../structs__stats__recovery.html#a0f21481940b624e49b0880d1bbf3df33',1,'s_stats_recovery']]],
+  ['nbavoidedrecoveriesfile',['nbAvoidedRecoveriesFile',['../class_stats.html#a2c1cbc31715b84b8e40206c5b3dc7c5f',1,'Stats']]],
+  ['nbcombinations',['nbCombinations',['../class_simulation_parameters.html#a8f1c0671b131ea807d8a04cd9b15d9b8',1,'SimulationParameters']]],
+  ['nbdeliveredmessages',['nbDeliveredMessages',['../structs__stats_node.html#a1e33dd5d17c1008ea127e4f86a7616e1',1,'s_statsNode']]],
+  ['nbdeliveredmessagesfile',['nbDeliveredMessagesFile',['../class_stats.html#acf354d2603af85eff78594ca27e4f189',1,'Stats']]],
+  ['nbfalsedeliveredfile',['nbFalseDeliveredFile',['../class_stats.html#aded312adb1d366e759f216fc4f651b4c',1,'Stats']]],
+  ['nbfalsedeliveredmessages',['nbFalseDeliveredMessages',['../structs__stats_node.html#a009b1278ace8dbe831b9a3cdfef773e0',1,'s_statsNode']]],
+  ['nbhash',['nbHash',['../structs__stats__hash_error_detector.html#a10b1af7c249bf232e739b50c5faed021',1,'s_stats_hashErrorDetector']]],
+  ['nbhashsfile',['nbHashsFile',['../class_stats.html#a47e0155a0aa3c62997eba6ebcdf77975',1,'Stats']]],
+  ['nbmsgtocombine',['nbMsgToCombine',['../structs__stats__hash_error_detector.html#ab765b1ecec0ec33fec5968fb28d5e4fb',1,'s_stats_hashErrorDetector']]],
+  ['nbmsgtocombinefile',['nbMsgToCombineFile',['../class_stats.html#aca527547cfdce19906610acd9a3d26ca',1,'Stats']]],
+  ['nbmsgwronglyconsideredcausaldep',['nbMsgWronglyConsideredCausalDep',['../structs__stats__hash_error_detector.html#ac8f99ce678b3938dc049ff074040b999',1,'s_stats_hashErrorDetector']]],
+  ['nbmsgwronglyconsideredcausaldepfile',['nbMsgWronglyConsideredCausalDepFile',['../class_stats.html#a3083f3da94481b94aaa8f53742834b97',1,'Stats']]],
+  ['nbnodes',['nbNodes',['../class_simulation_parameters.html#a96391a1b611de11ca4d0babba7117872',1,'SimulationParameters']]],
+  ['nboperationsforhash',['nbOperationsForHash',['../structs__stats__hash_error_detector.html#a64dab27e3314cfc2a233f620f0309782',1,'s_stats_hashErrorDetector']]],
+  ['nboperationsforhashfile',['nbOperationsForHashFile',['../class_stats.html#a80fd6543223c0e25e2dbab085b1822f6',1,'Stats']]],
+  ['nbrecoveries',['nbRecoveries',['../structs__stats__recovery.html#a89b2e116cf913c2939d186a2cd4f865b',1,'s_stats_recovery']]],
+  ['nbrecoveriesfile',['nbRecoveriesFile',['../class_stats.html#a8c4fd9f4c18e074cbc4b69d611ec4977',1,'Stats']]],
+  ['nbsentdependencies',['nbSentDependencies',['../structs__stats_node.html#af01c78389a27c9eeff8033f6b3d3beee',1,'s_statsNode']]],
+  ['nbsentdependenciesfile',['nbSentDependenciesFile',['../class_stats.html#a26404a5110226c52970e3c261c6d8126',1,'Stats']]],
+  ['nodes',['nodes',['../class_stats.html#a815a3aa12c1529fe3d686038a2094fb2',1,'Stats']]]
+];

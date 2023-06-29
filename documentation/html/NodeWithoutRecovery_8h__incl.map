@@ -1,0 +1,19 @@
+<map id="src/Nodes/NodeWithoutRecovery.h" name="src/Nodes/NodeWithoutRecovery.h">
+<area shape="rect" id="node2" href="$NodeDetector_8h.html" title="NodeDetector.h" alt="" coords="626,80,740,107"/>
+<area shape="rect" id="node3" href="$NodeWithControl_8h.html" title="NodeWithControl.h" alt="" coords="950,162,1083,189"/>
+<area shape="rect" id="node8" href="$structures_8h.html" title="../structures.h" alt="" coords="456,632,558,659"/>
+<area shape="rect" id="node20" href="$HashErrorDetectorClockDifference_8h.html" title="../Detectors/HashErrorDetector\lClockDifference.h" alt="" coords="353,155,557,196"/>
+<area shape="rect" id="node26" href="$HashErrorDetectorInterval_8h.html" title="../Detectors/HashErrorDetector\lInterval.h" alt="" coords="581,155,785,196"/>
+<area shape="rect" id="node27" href="$MostefaouiErrorDetector_8h.html" title="../Detectors/MostefaouiError\lDetector.h" alt="" coords="136,244,323,285"/>
+<area shape="rect" id="node4" href="$NodeBase_8h.html" title="NodeBase.h" alt="" coords="1025,333,1120,360"/>
+<area shape="rect" id="node6" href="$Init__m_8h.html" title="../Messages/Init_m.h" alt="" coords="1028,632,1173,659"/>
+<area shape="rect" id="node7" href="$AppMsg__m_8h.html" title="../Messages/AppMsg_m.h" alt="" coords="977,557,1152,584"/>
+<area shape="rect" id="node13" href="$simulationParameters_8h.html" title="../simulationParameters.h" alt="" coords="580,557,751,584"/>
+<area shape="rect" id="node15" href="$Controller_8h.html" title="../Controller.h" alt="" coords="638,408,739,435"/>
+<area shape="rect" id="node10" href="$ProbabilisticClock_8h.html" title="Clocks/ProbabilisticClock.h" alt="" coords="197,707,380,733"/>
+<area shape="rect" id="node18" href="$Dependencies_8h.html" title="Dependencies/Dependencies.h" alt="" coords="156,557,359,584"/>
+<area shape="rect" id="node19" href="$TotalDependencies_8h.html" title="Dependencies/TotalDependencies.h" alt="" coords="71,483,303,509"/>
+<area shape="rect" id="node21" href="$HashErrorDetector_8h.html" title="../Detectors/HashErrorDetector.h" alt="" coords="348,251,562,278"/>
+<area shape="rect" id="node22" href="$PartialDependencies_8h.html" title="../Dependencies/PartialDependencies.h" alt="" coords="21,408,273,435"/>
+<area shape="rect" id="node23" href="$ErrorDetector_8h.html" title="../Detectors/ErrorDetector.h" alt="" coords="479,333,663,360"/>
+</map>

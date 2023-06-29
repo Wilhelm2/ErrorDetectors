@@ -1,0 +1,79 @@
+\hypertarget{classMostefaouiErrorDetector}{}\section{Mostefaoui\+Error\+Detector Class Reference}
+\label{classMostefaouiErrorDetector}\index{Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}}
+
+
+{\ttfamily \#include $<$Mostefaoui\+Error\+Detector.\+h$>$}
+
+
+
+Inheritance diagram for Mostefaoui\+Error\+Detector\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classMostefaouiErrorDetector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mostefaoui\+Error\+Detector\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classMostefaouiErrorDetector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMostefaouiErrorDetector_a2a76ea0d2e986ce379c5686f48f887dc}{Mostefaoui\+Error\+Detector} ()
+\item 
+virtual \hyperlink{classMostefaouiErrorDetector_a8658848d90c291c1364962c0759ca806}{$\sim$\+Mostefaoui\+Error\+Detector} ()
+\item 
+virtual bool \hyperlink{classMostefaouiErrorDetector_a293f6cf144526bc8694fc4f1fc0daeb5}{test} (\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} message, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries, const \hyperlink{classProbabilisticClock}{Probabilistic\+Clock} \&process\+Clock, const \hyperlink{classTotalDependencies}{Total\+Dependencies} \&process\+Dependencies, \hyperlink{classController}{Controller} $\ast$control, \hyperlink{classSimulationParameters}{Simulation\+Parameters} $\ast$params, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered)
+\item 
+virtual \hyperlink{classAppMsg}{App\+Msg} $\ast$ \hyperlink{classMostefaouiErrorDetector_adcd530d7349df19adb614ca414225214}{prepare\+Message} (\hyperlink{classAppMsg}{App\+Msg} $\ast$m, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{classProbabilisticClock}{Probabilistic\+Clock} \&clock, const \hyperlink{classTotalDependencies}{Total\+Dependencies} \&process\+Dependencies)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMostefaouiErrorDetector_a2a76ea0d2e986ce379c5686f48f887dc}\label{classMostefaouiErrorDetector_a2a76ea0d2e986ce379c5686f48f887dc}} 
+\index{Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}!Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}}
+\index{Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}!Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}}
+\subsubsection{\texorpdfstring{Mostefaoui\+Error\+Detector()}{MostefaouiErrorDetector()}}
+{\footnotesize\ttfamily Mostefaoui\+Error\+Detector\+::\+Mostefaoui\+Error\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMostefaouiErrorDetector_a8658848d90c291c1364962c0759ca806}\label{classMostefaouiErrorDetector_a8658848d90c291c1364962c0759ca806}} 
+\index{Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}!````~Mostefaoui\+Error\+Detector@{$\sim$\+Mostefaoui\+Error\+Detector}}
+\index{````~Mostefaoui\+Error\+Detector@{$\sim$\+Mostefaoui\+Error\+Detector}!Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}}
+\subsubsection{\texorpdfstring{$\sim$\+Mostefaoui\+Error\+Detector()}{~MostefaouiErrorDetector()}}
+{\footnotesize\ttfamily Mostefaoui\+Error\+Detector\+::$\sim$\+Mostefaoui\+Error\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMostefaouiErrorDetector_adcd530d7349df19adb614ca414225214}\label{classMostefaouiErrorDetector_adcd530d7349df19adb614ca414225214}} 
+\index{Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}!prepare\+Message@{prepare\+Message}}
+\index{prepare\+Message@{prepare\+Message}!Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}}
+\subsubsection{\texorpdfstring{prepare\+Message()}{prepareMessage()}}
+{\footnotesize\ttfamily \hyperlink{classAppMsg}{App\+Msg} $\ast$ Mostefaoui\+Error\+Detector\+::prepare\+Message (\begin{DoxyParamCaption}\item[{\hyperlink{classAppMsg}{App\+Msg} $\ast$}]{m,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const \hyperlink{classProbabilisticClock}{Probabilistic\+Clock} \&}]{clock,  }\item[{const \hyperlink{classTotalDependencies}{Total\+Dependencies} \&}]{process\+Dependencies }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classErrorDetector_a8cac1f6ac6803da4379df7891789c490}{Error\+Detector}.
+
+\mbox{\Hypertarget{classMostefaouiErrorDetector_a293f6cf144526bc8694fc4f1fc0daeb5}\label{classMostefaouiErrorDetector_a293f6cf144526bc8694fc4f1fc0daeb5}} 
+\index{Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}!test@{test}}
+\index{test@{test}!Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}}
+\subsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily bool Mostefaoui\+Error\+Detector\+::test (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}}]{message,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries,  }\item[{const \hyperlink{classProbabilisticClock}{Probabilistic\+Clock} \&}]{process\+Clock,  }\item[{const \hyperlink{classTotalDependencies}{Total\+Dependencies} \&}]{process\+Dependencies,  }\item[{\hyperlink{classController}{Controller} $\ast$}]{control,  }\item[{\hyperlink{classSimulationParameters}{Simulation\+Parameters} $\ast$}]{params,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{classErrorDetector_afc717d04768dd207196c08e24163115c}{Error\+Detector}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Detectors/\hyperlink{MostefaouiErrorDetector_8h}{Mostefaoui\+Error\+Detector.\+h}\item 
+src/\+Detectors/\hyperlink{MostefaouiErrorDetector_8cc}{Mostefaoui\+Error\+Detector.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="Dependencies" name="Dependencies">
+<area shape="rect" id="node2" href="$classPartialDependencies.html" title="{PartialDependencies\n|&#45; dependencies\l|+ PartialDependencies()\l+ PartialDependencies()\l+ ~PartialDependencies()\l+ operator[]()\l+ at()\l+ operator==()\l+ operator\&lt;()\l+ getDependencies()\l+ includesDependencies()\l+ print()\l+ printErr()\l+ SatisfiesDeliveryConditions()\l+ printComparisionWith()\l+ clear()\l+ set()\l}" alt="" coords="5,145,208,428"/>
+<area shape="rect" id="node3" href="$classTotalDependencies.html" title="{TotalDependencies\n|&#45; dependencies\l|+ TotalDependencies()\l+ TotalDependencies()\l+ TotalDependencies()\l+ ~TotalDependencies()\l+ operator[]()\l+ operator[]()\l+ operator==()\l+ operator\&lt;()\l+ getDependencies()\l+ includesDependencies()\land 6 more...\l}" alt="" coords="232,175,405,399"/>
+</map>

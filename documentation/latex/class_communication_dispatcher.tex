@@ -1,0 +1,208 @@
+\hypertarget{class_communication_dispatcher}{}\section{Communication\+Dispatcher Class Reference}
+\label{class_communication_dispatcher}\index{Communication\+Dispatcher@{Communication\+Dispatcher}}
+
+
+{\ttfamily \#include $<$communication\+Dispatcher.\+h$>$}
+
+
+
+Inheritance diagram for Communication\+Dispatcher\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_communication_dispatcher__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Communication\+Dispatcher\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_communication_dispatcher__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_communication_dispatcher_1_1h}{h}
+\begin{DoxyCompactList}\small\item\em Class used to connect nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_communication_dispatcher_ab44887658841bb5ab59c554c1738c8f3}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initializes the communication\+Dispatcher. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_communication_dispatcher_af7be3dbf46282e78d41d3d194f5ff246}{handle\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})
+\begin{DoxyCompactList}\small\item\em handles messages to forward \end{DoxyCompactList}\item 
+void \hyperlink{class_communication_dispatcher_a589821f510801091f753f9812e3d1ee7}{broadcast\+App\+Message} (\hyperlink{class_app_msg}{App\+Msg} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Broadcasts an application message to all nodes. \end{DoxyCompactList}\item 
+simtime\+\_\+t \hyperlink{class_communication_dispatcher_acf6f743d35e72c71d61275ad25cdc306}{compute\+Delay} (unsigned int id\+Source\+Process, unsigned int id\+Target\+Process)
+\begin{DoxyCompactList}\small\item\em Computes the propagation delay of a message following the node id of the source and target processes. \end{DoxyCompactList}\item 
+void \hyperlink{class_communication_dispatcher_ab87c3d69a5953f9bda369d53c2de90d7}{increment\+Delay\+Intervals} (unsigned int entry)
+\begin{DoxyCompactList}\small\item\em Takes statistics of the propagation delay interval. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ c\+Gate $\ast$ $>$ \hyperlink{class_communication_dispatcher_adf9f3838d1a7310757886421bb0e5bf7}{gates}
+\begin{DoxyCompactList}\small\item\em vector containing a gate reference to each node. \end{DoxyCompactList}\item 
+std\+::default\+\_\+random\+\_\+engine \hyperlink{class_communication_dispatcher_a9272f7c52493b1d2ac49c0954174ed1f}{generator\+Channel\+Delay}
+\begin{DoxyCompactList}\small\item\em Used to generate channel propagation delays. \end{DoxyCompactList}\item 
+std\+::normal\+\_\+distribution$<$ double $>$ \hyperlink{class_communication_dispatcher_a2505530ff3016939eef2ce9005847db1}{distribution\+Channel\+Delay\+Pair} = std\+::normal\+\_\+distribution$<$double$>$(\hyperlink{structures_8h_aa2bfff4413d2bdefb6cb5b708a31660b}{C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY},30000.)
+\item 
+std\+::normal\+\_\+distribution$<$ double $>$ \hyperlink{class_communication_dispatcher_a12848fe0cdce112381265d7c4ba5d62a}{distribution\+Channel\+Delay\+Impair} = std\+::normal\+\_\+distribution$<$double$>$(\hyperlink{structures_8h_aa2bfff4413d2bdefb6cb5b708a31660b}{C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY},30000.)
+\item 
+vector$<$ int $>$ \hyperlink{class_communication_dispatcher_acd67954c5bf9280a33d069ae4b217e1c}{channel\+Rand\+Number}
+\begin{DoxyCompactList}\small\item\em Used to attribute a different channel number to each gate. \end{DoxyCompactList}\item 
+\hyperlink{communication_dispatcher_8h_a9d0242025c5ba7fecd1b0c41f4777c06}{stats\+Communication\+Module} \hyperlink{class_communication_dispatcher_a5e01e95460682f3a31417efab24b25e4}{stats}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_stats}{Stats} module to take statistics about message propagation delays. \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$ \hyperlink{class_communication_dispatcher_a53751662d1e770a60ddbeea9d4a5d845}{params}
+\begin{DoxyCompactList}\small\item\em Reference to the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} module which contains the simulation parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_communication_dispatcher_a589821f510801091f753f9812e3d1ee7}\label{class_communication_dispatcher_a589821f510801091f753f9812e3d1ee7}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!broadcast\+App\+Message@{broadcast\+App\+Message}}
+\index{broadcast\+App\+Message@{broadcast\+App\+Message}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{broadcast\+App\+Message()}{broadcastAppMessage()}}
+{\footnotesize\ttfamily void Communication\+Dispatcher\+::broadcast\+App\+Message (\begin{DoxyParamCaption}\item[{\hyperlink{class_app_msg}{App\+Msg} $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Broadcasts an application message to all nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Message to broadcast \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_dispatcher_acf6f743d35e72c71d61275ad25cdc306}\label{class_communication_dispatcher_acf6f743d35e72c71d61275ad25cdc306}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!compute\+Delay@{compute\+Delay}}
+\index{compute\+Delay@{compute\+Delay}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{compute\+Delay()}{computeDelay()}}
+{\footnotesize\ttfamily simtime\+\_\+t Communication\+Dispatcher\+::compute\+Delay (\begin{DoxyParamCaption}\item[{unsigned int}]{id\+Source\+Process,  }\item[{unsigned int}]{id\+Target\+Process }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Computes the propagation delay of a message following the node id of the source and target processes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Source\+Process} & node id of the process that sent the message \\
+\hline
+{\em id\+Target\+Process} & node id of the destination process of the message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+message propagation delay 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_communication_dispatcher_af7be3dbf46282e78d41d3d194f5ff246}\label{class_communication_dispatcher_af7be3dbf46282e78d41d3d194f5ff246}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!handle\+Message@{handle\+Message}}
+\index{handle\+Message@{handle\+Message}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{handle\+Message()}{handleMessage()}}
+{\footnotesize\ttfamily void Communication\+Dispatcher\+::handle\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+handles messages to forward 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Message to forward \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_dispatcher_ab87c3d69a5953f9bda369d53c2de90d7}\label{class_communication_dispatcher_ab87c3d69a5953f9bda369d53c2de90d7}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!increment\+Delay\+Intervals@{increment\+Delay\+Intervals}}
+\index{increment\+Delay\+Intervals@{increment\+Delay\+Intervals}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{increment\+Delay\+Intervals()}{incrementDelayIntervals()}}
+{\footnotesize\ttfamily void Communication\+Dispatcher\+::increment\+Delay\+Intervals (\begin{DoxyParamCaption}\item[{unsigned int}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Takes statistics of the propagation delay interval. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & propagation interval to increment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_communication_dispatcher_ab44887658841bb5ab59c554c1738c8f3}\label{class_communication_dispatcher_ab44887658841bb5ab59c554c1738c8f3}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!initialize@{initialize}}
+\index{initialize@{initialize}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Communication\+Dispatcher\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Initializes the communication\+Dispatcher. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_communication_dispatcher_acd67954c5bf9280a33d069ae4b217e1c}\label{class_communication_dispatcher_acd67954c5bf9280a33d069ae4b217e1c}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!channel\+Rand\+Number@{channel\+Rand\+Number}}
+\index{channel\+Rand\+Number@{channel\+Rand\+Number}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{channel\+Rand\+Number}{channelRandNumber}}
+{\footnotesize\ttfamily vector$<$int$>$ Communication\+Dispatcher\+::channel\+Rand\+Number\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Used to attribute a different channel number to each gate. 
+
+\mbox{\Hypertarget{class_communication_dispatcher_a12848fe0cdce112381265d7c4ba5d62a}\label{class_communication_dispatcher_a12848fe0cdce112381265d7c4ba5d62a}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!distribution\+Channel\+Delay\+Impair@{distribution\+Channel\+Delay\+Impair}}
+\index{distribution\+Channel\+Delay\+Impair@{distribution\+Channel\+Delay\+Impair}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{distribution\+Channel\+Delay\+Impair}{distributionChannelDelayImpair}}
+{\footnotesize\ttfamily std\+::normal\+\_\+distribution$<$double$>$ Communication\+Dispatcher\+::distribution\+Channel\+Delay\+Impair = std\+::normal\+\_\+distribution$<$double$>$(\hyperlink{structures_8h_aa2bfff4413d2bdefb6cb5b708a31660b}{C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY},30000.)\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_communication_dispatcher_a2505530ff3016939eef2ce9005847db1}\label{class_communication_dispatcher_a2505530ff3016939eef2ce9005847db1}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!distribution\+Channel\+Delay\+Pair@{distribution\+Channel\+Delay\+Pair}}
+\index{distribution\+Channel\+Delay\+Pair@{distribution\+Channel\+Delay\+Pair}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{distribution\+Channel\+Delay\+Pair}{distributionChannelDelayPair}}
+{\footnotesize\ttfamily std\+::normal\+\_\+distribution$<$double$>$ Communication\+Dispatcher\+::distribution\+Channel\+Delay\+Pair = std\+::normal\+\_\+distribution$<$double$>$(\hyperlink{structures_8h_aa2bfff4413d2bdefb6cb5b708a31660b}{C\+H\+A\+N\+N\+E\+L\+D\+E\+L\+AY},30000.)\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_communication_dispatcher_adf9f3838d1a7310757886421bb0e5bf7}\label{class_communication_dispatcher_adf9f3838d1a7310757886421bb0e5bf7}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!gates@{gates}}
+\index{gates@{gates}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{gates}{gates}}
+{\footnotesize\ttfamily vector$<$c\+Gate$\ast$$>$ Communication\+Dispatcher\+::gates\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vector containing a gate reference to each node. 
+
+\mbox{\Hypertarget{class_communication_dispatcher_a9272f7c52493b1d2ac49c0954174ed1f}\label{class_communication_dispatcher_a9272f7c52493b1d2ac49c0954174ed1f}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!generator\+Channel\+Delay@{generator\+Channel\+Delay}}
+\index{generator\+Channel\+Delay@{generator\+Channel\+Delay}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{generator\+Channel\+Delay}{generatorChannelDelay}}
+{\footnotesize\ttfamily std\+::default\+\_\+random\+\_\+engine Communication\+Dispatcher\+::generator\+Channel\+Delay\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Used to generate channel propagation delays. 
+
+\mbox{\Hypertarget{class_communication_dispatcher_a53751662d1e770a60ddbeea9d4a5d845}\label{class_communication_dispatcher_a53751662d1e770a60ddbeea9d4a5d845}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!params@{params}}
+\index{params@{params}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{params}{params}}
+{\footnotesize\ttfamily \hyperlink{class_simulation_parameters}{Simulation\+Parameters}$\ast$ Communication\+Dispatcher\+::params\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} module which contains the simulation parameters. 
+
+\mbox{\Hypertarget{class_communication_dispatcher_a5e01e95460682f3a31417efab24b25e4}\label{class_communication_dispatcher_a5e01e95460682f3a31417efab24b25e4}} 
+\index{Communication\+Dispatcher@{Communication\+Dispatcher}!stats@{stats}}
+\index{stats@{stats}!Communication\+Dispatcher@{Communication\+Dispatcher}}
+\subsubsection{\texorpdfstring{stats}{stats}}
+{\footnotesize\ttfamily \hyperlink{communication_dispatcher_8h_a9d0242025c5ba7fecd1b0c41f4777c06}{stats\+Communication\+Module} Communication\+Dispatcher\+::stats\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{class_stats}{Stats} module to take statistics about message propagation delays. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{communication_dispatcher_8h}{communication\+Dispatcher.\+h}\item 
+src/\hyperlink{communication_dispatcher_8cc}{communication\+Dispatcher.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,23 @@
+\hypertarget{classcommunication_dispatcher_1_1h}{}\section{communication\+Dispatcher\+:\+:h Class Reference}
+\label{classcommunication_dispatcher_1_1h}\index{communication\+Dispatcher\+::h@{communication\+Dispatcher\+::h}}
+
+
+Class used to connect nodes.  
+
+
+
+
+{\ttfamily \#include $<$communication\+Dispatcher.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+Class used to connect nodes. 
+
+The system is organized in a star formation with the \hyperlink{namespacecommunication_dispatcher}{communication\+Dispatcher} in the midle. All nodes are connected to the \hyperlink{namespacecommunication_dispatcher}{communication\+Dispatcher} and send messages to each other through the \hyperlink{namespacecommunication_dispatcher}{communication\+Dispatcher}. Using this star formation graph instead of a complete graph reduces the number of communication channels from N$^\wedge$2 channels to N channels, which particularly reduces the simulation\textquotesingle{}s initialization time.
+
+The \hyperlink{namespacecommunication_dispatcher}{communication\+Dispatcher} routes messages to the destination, handles the broadcast of application messages, and sets the propagation delays of messages. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{communication_dispatcher_8h}{communication\+Dispatcher.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,21 @@
+<map id="src/Detectors/ErrorDetector.h" name="src/Detectors/ErrorDetector.h">
+<area shape="rect" id="node2" href="$ErrorDetector_8cc.html" title="src/Detectors/ErrorDetector.cc" alt="" coords="176,87,377,114"/>
+<area shape="rect" id="node3" href="$HashErrorDetector_8h.html" title="src/Detectors/HashErrorDetector.h" alt="" coords="676,87,901,114"/>
+<area shape="rect" id="node19" href="$MostefaouiErrorDetector_8h.html" title="src/Detectors/Mostefaoui\lErrorDetector.h" alt="" coords="401,80,571,121"/>
+<area shape="rect" id="node4" href="$HashErrorDetector_8cc.html" title="src/Detectors/HashErrorDetector.cc" alt="" coords="1002,177,1234,203"/>
+<area shape="rect" id="node5" href="$HashErrorDetectorClockDifference_8h.html" title="src/Detectors/HashErrorDetector\lClockDifference.h" alt="" coords="763,169,977,211"/>
+<area shape="rect" id="node17" href="$HashErrorDetectorInterval_8h.html" title="src/Detectors/HashErrorDetector\lInterval.h" alt="" coords="524,169,739,211"/>
+<area shape="rect" id="node6" href="$HashErrorDetectorClockDifference_8cc.html" title="src/Detectors/HashErrorDetector\lClockDifference.cc" alt="" coords="839,259,1053,300"/>
+<area shape="rect" id="node7" href="$NodeDetector_8h.html" title="src/Nodes/NodeDetector.h" alt="" coords="397,266,575,293"/>
+<area shape="rect" id="node8" href="$NodeDetector_8cc.html" title="src/Nodes/NodeDetector.cc" alt="" coords="40,348,225,375"/>
+<area shape="rect" id="node9" href="$NodeWithoutRecovery_8h.html" title="src/Nodes/NodeWithoutRecovery.h" alt="" coords="250,348,479,375"/>
+<area shape="rect" id="node11" href="$NodeWithRecovery_8h.html" title="src/Nodes/NodeWithRecovery.h" alt="" coords="503,348,714,375"/>
+<area shape="rect" id="node15" href="$Stats_8h.html" title="src/Stats.h" alt="" coords="732,430,819,457"/>
+<area shape="rect" id="node10" href="$NodeWithoutRecovery_8cc.html" title="src/Nodes/NodeWithoutRecovery.cc" alt="" coords="5,430,241,457"/>
+<area shape="rect" id="node12" href="$NodeWithRecovery_8cc.html" title="src/Nodes/NodeWithRecovery.cc" alt="" coords="266,430,485,457"/>
+<area shape="rect" id="node13" href="$NodeWithRecoveryTest_8h.html" title="src/Nodes/NodeWithRecovery\lTest.h" alt="" coords="509,423,709,464"/>
+<area shape="rect" id="node14" href="$NodeWithRecoveryTest_8cc.html" title="src/Nodes/NodeWithRecovery\lTest.cc" alt="" coords="506,512,706,553"/>
+<area shape="rect" id="node16" href="$Stats_8cc.html" title="src/Stats.cc" alt="" coords="730,519,823,546"/>
+<area shape="rect" id="node18" href="$HashErrorDetectorInterval_8cc.html" title="src/Detectors/HashErrorDetector\lInterval.cc" alt="" coords="600,259,815,300"/>
+<area shape="rect" id="node20" href="$MostefaouiErrorDetector_8cc.html" title="src/Detectors/Mostefaoui\lErrorDetector.cc" alt="" coords="279,169,448,211"/>
+</map>

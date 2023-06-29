@@ -1,0 +1,3 @@
+<map id="NodeNoControl" name="NodeNoControl">
+<area shape="rect" id="node2" href="$classNodeBase.html" title="{NodeBase\n|# id\l# seq\l# broadcastTimer\l# baseTimeBroadcast\l# generatorSendDistribution\l# outGate\l# params\l# stats\l# control\l# sendDistribution\l|# NodeBase()\l# ~NodeBase()\l# initialize()\l# initializeCommunications()\l# handleMessage()\l# prepareBroadcast()\l# createAppMsg()\l# processMessage()\l# deliverMsg()\l}" alt="" coords="5,131,192,457"/>
+</map>

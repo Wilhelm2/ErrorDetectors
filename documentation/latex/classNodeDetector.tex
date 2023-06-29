@@ -1,0 +1,172 @@
+\hypertarget{classNodeDetector}{}\section{Node\+Detector Class Reference}
+\label{classNodeDetector}\index{Node\+Detector@{Node\+Detector}}
+
+
+{\ttfamily \#include $<$Node\+Detector.\+h$>$}
+
+
+
+Inheritance diagram for Node\+Detector\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classNodeDetector__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Node\+Detector\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classNodeDetector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNodeDetector_a256160d034631f4fa14a83787f504aae}{Node\+Detector} ()
+\item 
+virtual \hyperlink{classNodeDetector_a3f8e6eedfce05ea8953ff1a41413ccfa}{$\sim$\+Node\+Detector} ()
+\item 
+virtual void \hyperlink{classNodeDetector_aefa188ab0657837b1b57f24674d3ef22}{initialize} () override
+\item 
+\hyperlink{classAppMsg}{App\+Msg} $\ast$ \hyperlink{classNodeDetector_a7100349647350ad5e3aeb1ed4669c723}{create\+App\+Msg} ()
+\item 
+\hyperlink{classAppMsg}{App\+Msg} $\ast$ \hyperlink{classNodeDetector_af75cf37cc01fc51bc228a7a83c10cb97}{prepare\+Broadcast} ()
+\item 
+virtual void \hyperlink{classNodeDetector_ab69432c6d3327a684845ec231826727e}{process\+Message} (c\+Message $\ast$\hyperlink{Controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})=0
+\item 
+virtual bool \hyperlink{classNodeDetector_a51e7dccd54e94bbe937752ca39dfdba4}{test\+Deliver\+Message} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message)=0
+\item 
+virtual void \hyperlink{classNodeDetector_a17ecf9939fce7471f4513b66185743cc}{iterative\+Delivery} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classErrorDetector}{Error\+Detector} $\ast$ \hyperlink{classNodeDetector_a711fd643dc29b74e6dfe87e1aeb1b227}{detector}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classNodeDetector_a129f65b6976377739eb6231b6962985e}{Stats}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNodeDetector_a256160d034631f4fa14a83787f504aae}\label{classNodeDetector_a256160d034631f4fa14a83787f504aae}} 
+\index{Node\+Detector@{Node\+Detector}!Node\+Detector@{Node\+Detector}}
+\index{Node\+Detector@{Node\+Detector}!Node\+Detector@{Node\+Detector}}
+\subsubsection{\texorpdfstring{Node\+Detector()}{NodeDetector()}}
+{\footnotesize\ttfamily Node\+Detector\+::\+Node\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classNodeDetector_a3f8e6eedfce05ea8953ff1a41413ccfa}\label{classNodeDetector_a3f8e6eedfce05ea8953ff1a41413ccfa}} 
+\index{Node\+Detector@{Node\+Detector}!````~Node\+Detector@{$\sim$\+Node\+Detector}}
+\index{````~Node\+Detector@{$\sim$\+Node\+Detector}!Node\+Detector@{Node\+Detector}}
+\subsubsection{\texorpdfstring{$\sim$\+Node\+Detector()}{~NodeDetector()}}
+{\footnotesize\ttfamily Node\+Detector\+::$\sim$\+Node\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeDetector_a7100349647350ad5e3aeb1ed4669c723}\label{classNodeDetector_a7100349647350ad5e3aeb1ed4669c723}} 
+\index{Node\+Detector@{Node\+Detector}!create\+App\+Msg@{create\+App\+Msg}}
+\index{create\+App\+Msg@{create\+App\+Msg}!Node\+Detector@{Node\+Detector}}
+\subsubsection{\texorpdfstring{create\+App\+Msg()}{createAppMsg()}}
+{\footnotesize\ttfamily \hyperlink{classAppMsg}{App\+Msg} $\ast$ Node\+Detector\+::create\+App\+Msg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{classNodeWithControl_a7772568c2836f5f204952ebe659e0049}{Node\+With\+Control}.
+
+\mbox{\Hypertarget{classNodeDetector_aefa188ab0657837b1b57f24674d3ef22}\label{classNodeDetector_aefa188ab0657837b1b57f24674d3ef22}} 
+\index{Node\+Detector@{Node\+Detector}!initialize@{initialize}}
+\index{initialize@{initialize}!Node\+Detector@{Node\+Detector}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Node\+Detector\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{classNodeWithControl_a08c8e80fd67b52c51c642d7c66fe729c}{Node\+With\+Control}.
+
+\mbox{\Hypertarget{classNodeDetector_a17ecf9939fce7471f4513b66185743cc}\label{classNodeDetector_a17ecf9939fce7471f4513b66185743cc}} 
+\index{Node\+Detector@{Node\+Detector}!iterative\+Delivery@{iterative\+Delivery}}
+\index{iterative\+Delivery@{iterative\+Delivery}!Node\+Detector@{Node\+Detector}}
+\subsubsection{\texorpdfstring{iterative\+Delivery()}{iterativeDelivery()}}
+{\footnotesize\ttfamily virtual void Node\+Detector\+::iterative\+Delivery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \hyperlink{classNodeWithControl_a4f78078272b90937e0746c797443b37d}{Node\+With\+Control}.
+
+
+
+Implemented in \hyperlink{classNodeWithRecovery_a9b61912f38b62452584dc80bf261ef4e}{Node\+With\+Recovery}, and \hyperlink{classNodeWithoutRecovery_a65e21db6d6b4e72b898fd567f8b4aee2}{Node\+Without\+Recovery}.
+
+\mbox{\Hypertarget{classNodeDetector_af75cf37cc01fc51bc228a7a83c10cb97}\label{classNodeDetector_af75cf37cc01fc51bc228a7a83c10cb97}} 
+\index{Node\+Detector@{Node\+Detector}!prepare\+Broadcast@{prepare\+Broadcast}}
+\index{prepare\+Broadcast@{prepare\+Broadcast}!Node\+Detector@{Node\+Detector}}
+\subsubsection{\texorpdfstring{prepare\+Broadcast()}{prepareBroadcast()}}
+{\footnotesize\ttfamily \hyperlink{classAppMsg}{App\+Msg} $\ast$ Node\+Detector\+::prepare\+Broadcast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{classNodeWithControl_ab871014cf3f42d834f8d34ad5498174c}{Node\+With\+Control}.
+
+
+
+Reimplemented in \hyperlink{classNodeWithRecovery_a33d8e8775fd69cb647b38a54b36e1ebe}{Node\+With\+Recovery}.
+
+\mbox{\Hypertarget{classNodeDetector_ab69432c6d3327a684845ec231826727e}\label{classNodeDetector_ab69432c6d3327a684845ec231826727e}} 
+\index{Node\+Detector@{Node\+Detector}!process\+Message@{process\+Message}}
+\index{process\+Message@{process\+Message}!Node\+Detector@{Node\+Detector}}
+\subsubsection{\texorpdfstring{process\+Message()}{processMessage()}}
+{\footnotesize\ttfamily virtual void Node\+Detector\+::process\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \hyperlink{classNodeWithControl_af532082fab76c38d8c50ca90e991f4c3}{Node\+With\+Control}.
+
+
+
+Implemented in \hyperlink{classNodeWithRecovery_a216c29d76ddb0e94cd5701ff208c7f5b}{Node\+With\+Recovery}, and \hyperlink{classNodeWithoutRecovery_a0b44132b4ebc650399711766cb050399}{Node\+Without\+Recovery}.
+
+\mbox{\Hypertarget{classNodeDetector_a51e7dccd54e94bbe937752ca39dfdba4}\label{classNodeDetector_a51e7dccd54e94bbe937752ca39dfdba4}} 
+\index{Node\+Detector@{Node\+Detector}!test\+Deliver\+Message@{test\+Deliver\+Message}}
+\index{test\+Deliver\+Message@{test\+Deliver\+Message}!Node\+Detector@{Node\+Detector}}
+\subsubsection{\texorpdfstring{test\+Deliver\+Message()}{testDeliverMessage()}}
+{\footnotesize\ttfamily virtual bool Node\+Detector\+::test\+Deliver\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implements \hyperlink{classNodeWithControl_a84df0beabbaed80e7da017d592480515}{Node\+With\+Control}.
+
+
+
+Implemented in \hyperlink{classNodeWithRecovery_aec147b3723b3dab00f9610453ba8daba}{Node\+With\+Recovery}, \hyperlink{classNodeWithoutRecovery_a8cf83ec6d0af26e385dcde0bc03f5b6d}{Node\+Without\+Recovery}, and \hyperlink{classNodeWithRecoveryTest_af9b78d0ed4fefb97e2f54c9279aa4655}{Node\+With\+Recovery\+Test}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classNodeDetector_a129f65b6976377739eb6231b6962985e}\label{classNodeDetector_a129f65b6976377739eb6231b6962985e}} 
+\index{Node\+Detector@{Node\+Detector}!Stats@{Stats}}
+\index{Stats@{Stats}!Node\+Detector@{Node\+Detector}}
+\subsubsection{\texorpdfstring{Stats}{Stats}}
+{\footnotesize\ttfamily friend class \hyperlink{classStats}{Stats}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classNodeDetector_a711fd643dc29b74e6dfe87e1aeb1b227}\label{classNodeDetector_a711fd643dc29b74e6dfe87e1aeb1b227}} 
+\index{Node\+Detector@{Node\+Detector}!detector@{detector}}
+\index{detector@{detector}!Node\+Detector@{Node\+Detector}}
+\subsubsection{\texorpdfstring{detector}{detector}}
+{\footnotesize\ttfamily \hyperlink{classErrorDetector}{Error\+Detector}$\ast$ Node\+Detector\+::detector\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Nodes/\hyperlink{NodeDetector_8h}{Node\+Detector.\+h}\item 
+src/\+Nodes/\hyperlink{NodeDetector_8cc}{Node\+Detector.\+cc}\end{DoxyCompactItemize}

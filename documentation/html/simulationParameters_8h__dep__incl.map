@@ -1,0 +1,35 @@
+<map id="src/simulationParameters.h" name="src/simulationParameters.h">
+<area shape="rect" id="node2" href="$Controller_8h.html" title="src/Controller.h" alt="" coords="791,80,902,107"/>
+<area shape="rect" id="node3" href="$communicationDispatcher_8h.html" title="src/communicationDispatcher.h" alt="" coords="307,155,514,181"/>
+<area shape="rect" id="node20" href="$Stats_8h.html" title="src/Stats.h" alt="" coords="1033,579,1119,606"/>
+<area shape="rect" id="node26" href="$NodeBase_8h.html" title="src/Nodes/NodeBase.h" alt="" coords="1010,155,1169,181"/>
+<area shape="rect" id="node34" href="$simulationParameters_8cc.html" title="src/simulationParameters.cc" alt="" coords="1565,80,1753,107"/>
+<area shape="rect" id="node5" href="$Controller_8cc.html" title="src/Controller.cc" alt="" coords="538,155,657,181"/>
+<area shape="rect" id="node6" href="$ErrorDetector_8h.html" title="src/Detectors/ErrorDetector.h" alt="" coords="681,155,876,181"/>
+<area shape="rect" id="node8" href="$HashErrorDetector_8h.html" title="src/Detectors/HashErrorDetector.h" alt="" coords="705,237,930,263"/>
+<area shape="rect" id="node4" href="$communicationDispatcher_8cc.html" title="src/communicationDispatcher.cc" alt="" coords="5,237,219,263"/>
+<area shape="rect" id="node7" href="$ErrorDetector_8cc.html" title="src/Detectors/ErrorDetector.cc" alt="" coords="479,237,681,263"/>
+<area shape="rect" id="node24" href="$MostefaouiErrorDetector_8h.html" title="src/Detectors/Mostefaoui\lErrorDetector.h" alt="" coords="243,229,413,271"/>
+<area shape="rect" id="node9" href="$HashErrorDetector_8cc.html" title="src/Detectors/HashErrorDetector.cc" alt="" coords="339,326,571,353"/>
+<area shape="rect" id="node10" href="$HashErrorDetectorClockDifference_8h.html" title="src/Detectors/HashErrorDetector\lClockDifference.h" alt="" coords="595,319,810,360"/>
+<area shape="rect" id="node22" href="$HashErrorDetectorInterval_8h.html" title="src/Detectors/HashErrorDetector\lInterval.h" alt="" coords="834,319,1049,360"/>
+<area shape="rect" id="node11" href="$HashErrorDetectorClockDifference_8cc.html" title="src/Detectors/HashErrorDetector\lClockDifference.cc" alt="" coords="381,408,595,449"/>
+<area shape="rect" id="node12" href="$NodeDetector_8h.html" title="src/Nodes/NodeDetector.h" alt="" coords="620,415,799,442"/>
+<area shape="rect" id="node13" href="$NodeDetector_8cc.html" title="src/Nodes/NodeDetector.cc" alt="" coords="853,497,1038,524"/>
+<area shape="rect" id="node14" href="$NodeWithoutRecovery_8h.html" title="src/Nodes/NodeWithoutRecovery.h" alt="" coords="309,497,539,524"/>
+<area shape="rect" id="node16" href="$NodeWithRecovery_8h.html" title="src/Nodes/NodeWithRecovery.h" alt="" coords="567,497,777,524"/>
+<area shape="rect" id="node15" href="$NodeWithoutRecovery_8cc.html" title="src/Nodes/NodeWithoutRecovery.cc" alt="" coords="302,579,538,606"/>
+<area shape="rect" id="node17" href="$NodeWithRecovery_8cc.html" title="src/Nodes/NodeWithRecovery.cc" alt="" coords="563,579,781,606"/>
+<area shape="rect" id="node18" href="$NodeWithRecoveryTest_8h.html" title="src/Nodes/NodeWithRecovery\lTest.h" alt="" coords="805,572,1005,613"/>
+<area shape="rect" id="node19" href="$NodeWithRecoveryTest_8cc.html" title="src/Nodes/NodeWithRecovery\lTest.cc" alt="" coords="805,661,1005,703"/>
+<area shape="rect" id="node21" href="$Stats_8cc.html" title="src/Stats.cc" alt="" coords="1029,669,1123,695"/>
+<area shape="rect" id="node23" href="$HashErrorDetectorInterval_8cc.html" title="src/Detectors/HashErrorDetector\lInterval.cc" alt="" coords="823,408,1038,449"/>
+<area shape="rect" id="node25" href="$MostefaouiErrorDetector_8cc.html" title="src/Detectors/Mostefaoui\lErrorDetector.cc" alt="" coords="94,319,263,360"/>
+<area shape="rect" id="node27" href="$NodeBase_8cc.html" title="src/Nodes/NodeBase.cc" alt="" coords="969,237,1135,263"/>
+<area shape="rect" id="node28" href="$NodeWithControl_8h.html" title="src/Nodes/NodeWithControl.h" alt="" coords="1073,326,1271,353"/>
+<area shape="rect" id="node32" href="$NodeNoControl_8h.html" title="src/Nodes/NodeNoControl.h" alt="" coords="1255,237,1441,263"/>
+<area shape="rect" id="node29" href="$NodePC_8h.html" title="src/Nodes/NodePC.h" alt="" coords="1113,415,1260,442"/>
+<area shape="rect" id="node31" href="$NodeWithControl_8cc.html" title="src/Nodes/NodeWithControl.cc" alt="" coords="1285,415,1489,442"/>
+<area shape="rect" id="node30" href="$NodePC_8cc.html" title="src/Nodes/NodePC.cc" alt="" coords="1113,497,1268,524"/>
+<area shape="rect" id="node33" href="$NodeNoControl_8cc.html" title="src/Nodes/NodeNoControl.cc" alt="" coords="1295,326,1489,353"/>
+</map>

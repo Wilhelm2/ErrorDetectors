@@ -1,0 +1,247 @@
+\hypertarget{class_node_with_recovery}{}\section{Node\+With\+Recovery Class Reference}
+\label{class_node_with_recovery}\index{Node\+With\+Recovery@{Node\+With\+Recovery}}
+
+
+{\ttfamily \#include $<$Node\+With\+Recovery.\+h$>$}
+
+
+
+Inheritance diagram for Node\+With\+Recovery\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_node_with_recovery__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Node\+With\+Recovery\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node_with_recovery__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_node_with_recovery_aed1d9b2cfa7729902c90c103ab3075ff}{Node\+With\+Recovery} ()
+\item 
+virtual \hyperlink{class_node_with_recovery_a5cb1367a800cf960b96c9011ab94a616}{$\sim$\+Node\+With\+Recovery} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_node_with_recovery_a901c89606b84898e13fe8a66228acd9f}{handle\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg}) override
+\item 
+virtual void \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}{process\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})
+\item 
+void \hyperlink{class_node_with_recovery_a52ef51093d41e9b337987810311a7bc6}{process\+Dep\+Req} (\hyperlink{class_dep_req}{Dep\+Req} $\ast$m)
+\item 
+void \hyperlink{class_node_with_recovery_a34b5b66f90d85dd84b237b8cf81f2f7e}{process\+Rcv\+Rsp\+Dep} (\hyperlink{class_dep_rsp}{Dep\+Rsp} $\ast$m)
+\item 
+void \hyperlink{class_node_with_recovery_a261e41c94a93113168f8f81411b7c100}{pushback\+Messages\+In\+Recovery} ()
+\item 
+virtual void \hyperlink{class_node_with_recovery_a9b61912f38b62452584dc80bf261ef4e}{iterative\+Delivery} ()
+\item 
+bool \hyperlink{class_node_with_recovery_a87a1ce8071c9c587b878636f79163e7e}{try\+Deliver\+Message\+In\+Recovery} ()
+\item 
+bool \hyperlink{class_node_with_recovery_a462d825601a3c85ee4ef95be673790f8}{try\+Deliver\+Pending\+Messages} ()
+\item 
+virtual bool \hyperlink{class_node_with_recovery_aec147b3723b3dab00f9610453ba8daba}{test\+Deliver\+Message} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&m)
+\item 
+void \hyperlink{class_node_with_recovery_a8b16bbc948fddc744a55ac548348a988}{request\+Dependencies} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&m)
+\item 
+virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_recovery_a33d8e8775fd69cb647b38a54b36e1ebe}{prepare\+Broadcast} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_node_with_recovery_8h_a8724f9aa35500c4029d1757428ade746}{stats\+\_\+recovery} \hyperlink{class_node_with_recovery_abaecd0d1b36ad0305c281905a3465dd6}{stats\+Recovery}
+\item 
+bool \hyperlink{class_node_with_recovery_a4e8a29d0f69da296e9971bb5d8882cfb}{in\+Recovery} = false
+\item 
+bool \hyperlink{class_node_with_recovery_aae44e6b605047932d21cd5be25671963}{delayed\+App\+Mgs\+Broadcast} = false
+\item 
+\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \hyperlink{class_node_with_recovery_a2e574321bd92cb51ef3346168057fe0f}{curr\+Recovery}
+\item 
+vector$<$ \hyperlink{_node_with_recovery_8h_a7a7c744666781dbc85c00bb4ccb4a60f}{msg\+Dependency} $>$ \hyperlink{class_node_with_recovery_a6b143ca2c401bbb2689443091d4d7e17}{local\+Sent\+Msg\+Dependencies}
+\item 
+vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \hyperlink{class_node_with_recovery_a9ed4ac06c68ac579d7848a98b145b5ae}{messages\+To\+Recover}
+\item 
+vector$<$ \hyperlink{_node_with_recovery_8h_abc64f7ff8d329883ae93979292b1c996}{recovered\+Message} $>$ \hyperlink{class_node_with_recovery_adf6b319a727cd9ec43a6cc68cbf99bbb}{recovered\+Messages}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_node_with_recovery_a129f65b6976377739eb6231b6962985e}{Stats}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_node_with_recovery_aed1d9b2cfa7729902c90c103ab3075ff}\label{class_node_with_recovery_aed1d9b2cfa7729902c90c103ab3075ff}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{Node\+With\+Recovery()}{NodeWithRecovery()}}
+{\footnotesize\ttfamily Node\+With\+Recovery\+::\+Node\+With\+Recovery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_node_with_recovery_a5cb1367a800cf960b96c9011ab94a616}\label{class_node_with_recovery_a5cb1367a800cf960b96c9011ab94a616}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!````~Node\+With\+Recovery@{$\sim$\+Node\+With\+Recovery}}
+\index{````~Node\+With\+Recovery@{$\sim$\+Node\+With\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{$\sim$\+Node\+With\+Recovery()}{~NodeWithRecovery()}}
+{\footnotesize\ttfamily Node\+With\+Recovery\+::$\sim$\+Node\+With\+Recovery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_node_with_recovery_a901c89606b84898e13fe8a66228acd9f}\label{class_node_with_recovery_a901c89606b84898e13fe8a66228acd9f}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!handle\+Message@{handle\+Message}}
+\index{handle\+Message@{handle\+Message}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{handle\+Message()}{handleMessage()}}
+{\footnotesize\ttfamily void Node\+With\+Recovery\+::handle\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_node_base_add2450264be5dd616f9f9ac94e83b988}{Node\+Base}.
+
+\mbox{\Hypertarget{class_node_with_recovery_a9b61912f38b62452584dc80bf261ef4e}\label{class_node_with_recovery_a9b61912f38b62452584dc80bf261ef4e}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!iterative\+Delivery@{iterative\+Delivery}}
+\index{iterative\+Delivery@{iterative\+Delivery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{iterative\+Delivery()}{iterativeDelivery()}}
+{\footnotesize\ttfamily void Node\+With\+Recovery\+::iterative\+Delivery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_node_detector_a17ecf9939fce7471f4513b66185743cc}{Node\+Detector}.
+
+\mbox{\Hypertarget{class_node_with_recovery_a33d8e8775fd69cb647b38a54b36e1ebe}\label{class_node_with_recovery_a33d8e8775fd69cb647b38a54b36e1ebe}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!prepare\+Broadcast@{prepare\+Broadcast}}
+\index{prepare\+Broadcast@{prepare\+Broadcast}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{prepare\+Broadcast()}{prepareBroadcast()}}
+{\footnotesize\ttfamily \hyperlink{class_app_msg}{App\+Msg} $\ast$ Node\+With\+Recovery\+::prepare\+Broadcast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_node_detector_af75cf37cc01fc51bc228a7a83c10cb97}{Node\+Detector}.
+
+\mbox{\Hypertarget{class_node_with_recovery_a52ef51093d41e9b337987810311a7bc6}\label{class_node_with_recovery_a52ef51093d41e9b337987810311a7bc6}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!process\+Dep\+Req@{process\+Dep\+Req}}
+\index{process\+Dep\+Req@{process\+Dep\+Req}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{process\+Dep\+Req()}{processDepReq()}}
+{\footnotesize\ttfamily void Node\+With\+Recovery\+::process\+Dep\+Req (\begin{DoxyParamCaption}\item[{\hyperlink{class_dep_req}{Dep\+Req} $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}\label{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!process\+Message@{process\+Message}}
+\index{process\+Message@{process\+Message}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{process\+Message()}{processMessage()}}
+{\footnotesize\ttfamily void Node\+With\+Recovery\+::process\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_node_detector_ab69432c6d3327a684845ec231826727e}{Node\+Detector}.
+
+\mbox{\Hypertarget{class_node_with_recovery_a34b5b66f90d85dd84b237b8cf81f2f7e}\label{class_node_with_recovery_a34b5b66f90d85dd84b237b8cf81f2f7e}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!process\+Rcv\+Rsp\+Dep@{process\+Rcv\+Rsp\+Dep}}
+\index{process\+Rcv\+Rsp\+Dep@{process\+Rcv\+Rsp\+Dep}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{process\+Rcv\+Rsp\+Dep()}{processRcvRspDep()}}
+{\footnotesize\ttfamily void Node\+With\+Recovery\+::process\+Rcv\+Rsp\+Dep (\begin{DoxyParamCaption}\item[{\hyperlink{class_dep_rsp}{Dep\+Rsp} $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_a261e41c94a93113168f8f81411b7c100}\label{class_node_with_recovery_a261e41c94a93113168f8f81411b7c100}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!pushback\+Messages\+In\+Recovery@{pushback\+Messages\+In\+Recovery}}
+\index{pushback\+Messages\+In\+Recovery@{pushback\+Messages\+In\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{pushback\+Messages\+In\+Recovery()}{pushbackMessagesInRecovery()}}
+{\footnotesize\ttfamily void Node\+With\+Recovery\+::pushback\+Messages\+In\+Recovery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_a8b16bbc948fddc744a55ac548348a988}\label{class_node_with_recovery_a8b16bbc948fddc744a55ac548348a988}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!request\+Dependencies@{request\+Dependencies}}
+\index{request\+Dependencies@{request\+Dependencies}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{request\+Dependencies()}{requestDependencies()}}
+{\footnotesize\ttfamily void Node\+With\+Recovery\+::request\+Dependencies (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_aec147b3723b3dab00f9610453ba8daba}\label{class_node_with_recovery_aec147b3723b3dab00f9610453ba8daba}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!test\+Deliver\+Message@{test\+Deliver\+Message}}
+\index{test\+Deliver\+Message@{test\+Deliver\+Message}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{test\+Deliver\+Message()}{testDeliverMessage()}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+::test\+Deliver\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_node_detector_a51e7dccd54e94bbe937752ca39dfdba4}{Node\+Detector}.
+
+
+
+Reimplemented in \hyperlink{class_node_with_recovery_test_af9b78d0ed4fefb97e2f54c9279aa4655}{Node\+With\+Recovery\+Test}.
+
+\mbox{\Hypertarget{class_node_with_recovery_a87a1ce8071c9c587b878636f79163e7e}\label{class_node_with_recovery_a87a1ce8071c9c587b878636f79163e7e}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!try\+Deliver\+Message\+In\+Recovery@{try\+Deliver\+Message\+In\+Recovery}}
+\index{try\+Deliver\+Message\+In\+Recovery@{try\+Deliver\+Message\+In\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{try\+Deliver\+Message\+In\+Recovery()}{tryDeliverMessageInRecovery()}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+::try\+Deliver\+Message\+In\+Recovery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_a462d825601a3c85ee4ef95be673790f8}\label{class_node_with_recovery_a462d825601a3c85ee4ef95be673790f8}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!try\+Deliver\+Pending\+Messages@{try\+Deliver\+Pending\+Messages}}
+\index{try\+Deliver\+Pending\+Messages@{try\+Deliver\+Pending\+Messages}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{try\+Deliver\+Pending\+Messages()}{tryDeliverPendingMessages()}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+::try\+Deliver\+Pending\+Messages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_node_with_recovery_a129f65b6976377739eb6231b6962985e}\label{class_node_with_recovery_a129f65b6976377739eb6231b6962985e}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!Stats@{Stats}}
+\index{Stats@{Stats}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{Stats}{Stats}}
+{\footnotesize\ttfamily friend class \hyperlink{class_stats}{Stats}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_node_with_recovery_a2e574321bd92cb51ef3346168057fe0f}\label{class_node_with_recovery_a2e574321bd92cb51ef3346168057fe0f}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!curr\+Recovery@{curr\+Recovery}}
+\index{curr\+Recovery@{curr\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{curr\+Recovery}{currRecovery}}
+{\footnotesize\ttfamily \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} Node\+With\+Recovery\+::curr\+Recovery\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_aae44e6b605047932d21cd5be25671963}\label{class_node_with_recovery_aae44e6b605047932d21cd5be25671963}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!delayed\+App\+Mgs\+Broadcast@{delayed\+App\+Mgs\+Broadcast}}
+\index{delayed\+App\+Mgs\+Broadcast@{delayed\+App\+Mgs\+Broadcast}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{delayed\+App\+Mgs\+Broadcast}{delayedAppMgsBroadcast}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+::delayed\+App\+Mgs\+Broadcast = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_a4e8a29d0f69da296e9971bb5d8882cfb}\label{class_node_with_recovery_a4e8a29d0f69da296e9971bb5d8882cfb}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!in\+Recovery@{in\+Recovery}}
+\index{in\+Recovery@{in\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{in\+Recovery}{inRecovery}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+::in\+Recovery = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_a6b143ca2c401bbb2689443091d4d7e17}\label{class_node_with_recovery_a6b143ca2c401bbb2689443091d4d7e17}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!local\+Sent\+Msg\+Dependencies@{local\+Sent\+Msg\+Dependencies}}
+\index{local\+Sent\+Msg\+Dependencies@{local\+Sent\+Msg\+Dependencies}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{local\+Sent\+Msg\+Dependencies}{localSentMsgDependencies}}
+{\footnotesize\ttfamily vector$<$\hyperlink{_node_with_recovery_8h_a7a7c744666781dbc85c00bb4ccb4a60f}{msg\+Dependency}$>$ Node\+With\+Recovery\+::local\+Sent\+Msg\+Dependencies\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_a9ed4ac06c68ac579d7848a98b145b5ae}\label{class_node_with_recovery_a9ed4ac06c68ac579d7848a98b145b5ae}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!messages\+To\+Recover@{messages\+To\+Recover}}
+\index{messages\+To\+Recover@{messages\+To\+Recover}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{messages\+To\+Recover}{messagesToRecover}}
+{\footnotesize\ttfamily vector$<$\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}$>$ Node\+With\+Recovery\+::messages\+To\+Recover\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_adf6b319a727cd9ec43a6cc68cbf99bbb}\label{class_node_with_recovery_adf6b319a727cd9ec43a6cc68cbf99bbb}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!recovered\+Messages@{recovered\+Messages}}
+\index{recovered\+Messages@{recovered\+Messages}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{recovered\+Messages}{recoveredMessages}}
+{\footnotesize\ttfamily vector$<$\hyperlink{_node_with_recovery_8h_abc64f7ff8d329883ae93979292b1c996}{recovered\+Message}$>$ Node\+With\+Recovery\+::recovered\+Messages\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_node_with_recovery_abaecd0d1b36ad0305c281905a3465dd6}\label{class_node_with_recovery_abaecd0d1b36ad0305c281905a3465dd6}} 
+\index{Node\+With\+Recovery@{Node\+With\+Recovery}!stats\+Recovery@{stats\+Recovery}}
+\index{stats\+Recovery@{stats\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
+\subsubsection{\texorpdfstring{stats\+Recovery}{statsRecovery}}
+{\footnotesize\ttfamily \hyperlink{_node_with_recovery_8h_a8724f9aa35500c4029d1757428ade746}{stats\+\_\+recovery} Node\+With\+Recovery\+::stats\+Recovery\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Nodes/\hyperlink{_node_with_recovery_8h}{Node\+With\+Recovery.\+h}\item 
+src/\+Nodes/\hyperlink{_node_with_recovery_8cc}{Node\+With\+Recovery.\+cc}\end{DoxyCompactItemize}

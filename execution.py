@@ -10,7 +10,7 @@ subprocess.check_call(["bash","-c","make "])
 nbNodes 	= [300]#,300] #[200,300,400,500]# [200,300,400]#,500,1000]#[50,125,250,375,500,750] #[100,150,200,250,300,350,400] 
 clockSize	= [50]#25,50,75]
 
-deliveryOption = 5 # 0: no control ; 1: Probabilistic clock comparison; 2: Probabilistic clock with mostefaoui error detector, 3: Probabilistic clock with hash detector (difference); 4: Probabilistic clock with hash detector (interval); 5: Probablistic clock + hash(difference) + recovery; 6: Probablistic clock + hash(difference) + recovery + recoveryTest
+deliveryOption = 3 # 0: no control ; 1: Probabilistic clock comparison; 2: Probabilistic clock with mostefaoui error detector, 3: Probabilistic clock with hash detector (difference); 4: Probabilistic clock with hash detector (interval); 5: Probablistic clock + hash(difference) + recovery; 6: Probablistic clock + hash(difference) + recovery + recoveryTest
 
 delaySend = 2 # seconds
 #PEAKSPERDELAY = nbNodes[0]

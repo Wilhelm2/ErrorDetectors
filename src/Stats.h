@@ -45,7 +45,7 @@ class Stats : public cSimpleModule
     void writeNbFalseDeliveredMessages();
     void writeNbSentDependencies();
     void writeControlDataSize();
-    void printBuffersStates();
+    void printPendingAppSize();
     void writeTrueFalseNegatives();
     void WriteTotalNbHashs();
     void writeNbMsgToCombine();
@@ -66,24 +66,26 @@ class Stats : public cSimpleModule
     std::ofstream nbMsgToCombineFile;
     /** Stream to write into a file the statistics about the number of messages delivered out of causal order*/
     std::ofstream nbFalseDeliveredFile;
-    /** Stream to write into a file the statistics about */
+    /** Stream to write into a file the statistics about the number of avoided message recovery procedures*/
     std::ofstream nbAvoidedRecoveriesFile;
-    /** Stream to write into a file the statistics about */
+    /** Stream to write into a file the statistics about the average number of dependencies attached to messages*/
     std::ofstream nbSentDependenciesFile;
-    /** Stream to write into a file the statistics about */
+    /** Stream to write into a file the statistics about the number of messages delivered by processes*/
     std::ofstream nbDeliveredMessagesFile;
-    /** Stream to write into a file the statistics about */
+    /** Stream to write into a file the statistics about the size of control information attached to messages*/
     std::ofstream controlDataSizeFile;
-    /** Stream to write into a file the statistics about */
+    /** Stream to write into a file the statistics about the number of messages wrongly considered as message dependencies in the hash computation*/
     std::ofstream nbMsgWronglyConsideredCausalDepFile;
-    /** Stream to write into a file the statistics about */
+    /** Stream to write into a file the statistics about the number of computed hashes by the hash error detector to find the hash appended to messages*/
     std::ofstream doneCombinationsToFindHashFile;
-    /** Stream to write into a file the statistics about */
+    /** Stream to write into a file the statistics about the number of true and false positives of the error detectors*/
     std::ofstream trueFalseNegativesFile;
-    /** Stream to write into a file the statistics about */
+    /** Stream to write into a file the statistics about the number of operations done by hash error detectors to find the hash of messages */
     std::ofstream nbOperationsForHashFile;
 
+    /** Vector containing a reference to each node in the system to avoid looking them up in each function.*/
     vector<NodeBase*> nodes;
+    /** Reference to the simulation parameters to avoid looking them up in each function.*/
     SimulationParameters* params;
 
 };

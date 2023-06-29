@@ -1,3 +1,6 @@
+/** @file Stats.cc
+ * @brief File containing source code for the Stats class
+ */
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -17,6 +20,11 @@
 
 Define_Module(Stats);
 
+/** @brief Initializes Stats.
+ *  It looks up the simulation parameters as well as the nodes.
+ *  It schedules a timer to take statistics.
+ *  Finally, it opens the files to which the statistics will be written.
+ */
 void Stats::initialize()
 {
     char tmp[40];
@@ -52,6 +60,11 @@ void Stats::initialize()
     }
 }
 
+/** @brief Called when the process receives a message.
+ * The only message Stats receives is the timeout it schedules to write statistics into files.
+ * The function writes the statistics down into files depending on the type of simulation, determined by the Delivery parameter of SimulationParameters
+ * @param msg Received message. Stats only receives the timeout it scheduled itself to take statistics.
+ */
 void Stats::handleMessage(cMessage *msg)
 {
     std::cerr << "Simulation time: " << simTime()<<endl;
@@ -64,7 +77,7 @@ void Stats::handleMessage(cMessage *msg)
 
     if(params->DeliveryController != SimulationParameters::Delivery::NOTHING)
     {
-        printBuffersStates();
+        printPendingAppSize();
     }
     if(params->DeliveryController == SimulationParameters::Delivery::Mostefaoui || usesHashDetector())
     {
@@ -90,6 +103,8 @@ void Stats::handleMessage(cMessage *msg)
         exit(0);
 }
 
+/**@brief Writes into a file as well as on the error console the number of messages nodes have delivered.
+ */
 void Stats::writeNbDeliveredMessages()
 {
     unsigned int nbDeliveredMessages = 0;
@@ -103,6 +118,8 @@ void Stats::writeNbDeliveredMessages()
     nbDeliveredMessagesFile << nbDeliveredMessages<<endl;
 }
 
+/** @brief Writes into a file as well as on the error console the number of messages nodes have delivered out of causal order.
+ */
 void Stats::writeNbFalseDeliveredMessages()
 {
     unsigned int nbFalseDeliveredMessages = 0;
@@ -116,6 +133,8 @@ void Stats::writeNbFalseDeliveredMessages()
     nbFalseDeliveredFile << nbFalseDeliveredMessages<<endl;
 }
 
+/** @brief Writes into a file as well as on the error console the number of dependencies processes appended on messages.
+ */
 void Stats::writeNbSentDependencies()
 {
     unsigned int nbSentDependencies = 0;
@@ -125,6 +144,8 @@ void Stats::writeNbSentDependencies()
     cerr << "Number of sent dependencies " << nbSentDependencies << endl;
 }
 
+/** @brief Writes into a file the size of control information appended on messages.
+ */
 void Stats::writeControlDataSize()
 {
     unsigned int controlDataSize = 0;
@@ -133,7 +154,9 @@ void Stats::writeControlDataSize()
     controlDataSizeFile << controlDataSize<<endl;
 }
 
-void Stats::printBuffersStates()
+/** @brief Prints on the error console for each node the number of pending messages.
+ */
+void Stats::printPendingAppSize()
 {
     cerr<< "Number of messages in pendingApp for each process :"<<endl;
     for(NodeBase* n : nodes)
@@ -144,6 +167,8 @@ void Stats::printBuffersStates()
     cerr<<endl;
 }
 
+/** @brief Writes into a file the number of true and false positives of the error detectors.
+ */
 void Stats::writeTrueFalseNegatives()
 {
     unsigned int falseNegative = 0;
@@ -157,6 +182,8 @@ void Stats::writeTrueFalseNegatives()
     trueFalseNegativesFile << falseNegative << " " << trueNegative <<endl;
 }
 
+/** @brief Writes into a file for each node the number of computed hashes, as well as in total the average of computed hashes per message delivery.
+ */
 void Stats::WriteTotalNbHashs()
 {
     unsigned int totalNbHashs = 0;
@@ -173,6 +200,8 @@ void Stats::WriteTotalNbHashs()
     nbHashsFile << ((float)totalNbHashs)/totalNbDelivered<<endl;
 }
 
+/** @brief Writes into a file the number of messages to combine by hash error detectors when computing the hash of messages.
+ */
 void Stats::writeNbMsgToCombine()
 {
     vector<unsigned int> nbMsgToCombine;
@@ -191,6 +220,8 @@ void Stats::writeNbMsgToCombine()
         nbMsgToCombineFile << i << " ";
 }
 
+/** @brief Writes into a file the number of messages wrongly considered as causal dependencies by hash error detectors.
+ */
 void Stats::writeNbMsgWronglyConsideredCausalDep()
 {
     vector<unsigned int> nbMsgWronglyConsideredCausalDep;
@@ -209,6 +240,8 @@ void Stats::writeNbMsgWronglyConsideredCausalDep()
         nbMsgWronglyConsideredCausalDepFile << i << " ";
 }
 
+/** @brief Writes into a file the number of message combinations done by hash error detectors when finding the hash of messages.
+ */
 void Stats::writeDoneCombinationsToFindHash()
 {
     vector<unsigned int> doneCombinationsToFindHash;
@@ -228,6 +261,8 @@ void Stats::writeDoneCombinationsToFindHash()
     doneCombinationsToFindHashFile << endl;
 }
 
+/** @brief Writes into a file the number of operations done by hash error detectors to find the hash of messages.
+ */
 void Stats::writeNbOperationsForHashFile()
 {
     NodeDetector* nd = dynamic_cast<NodeDetector*>(nodes[0]);
@@ -252,6 +287,8 @@ void Stats::writeNbOperationsForHashFile()
     nbOperationsForHashFile << ((float) nbOperations / totalComputedHashes)<<endl;
 }
 
+/** @brief Writes into a file the number of message recoveries done by each node, as well as total number of recoveries and the recovery rate compared to the total number of message deliveries.
+ */
 void Stats::WriteTotalNbRecoveries()
 {
     unsigned int totalNbRecoveries = 0;
@@ -270,6 +307,8 @@ void Stats::WriteTotalNbRecoveries()
     cerr << "Rate of recoveries " << ((float)totalNbRecoveries) / totalNbDeliveries << endl;
 }
 
+/** @brief Writes into a file the number of avoided recoveries as well as its rate compared to the total number of message deliveries.
+ */
 void Stats::writeNbAvoidedRecoveries()
 {
     unsigned int nbAvoidedRecoveries = 0;
@@ -283,6 +322,8 @@ void Stats::writeNbAvoidedRecoveries()
     nbAvoidedRecoveriesFile << nbAvoidedRecoveries << " " << ((float)nbAvoidedRecoveries)/totalNbDeliveries<<endl;
 }
 
+/** @brief Prints on the error console the number of messages to recover by each node.
+ */
 void Stats::printNbMessagesToRecover()
 {
     cerr<< "Number of messages to recover for each process :"<<endl;
@@ -294,6 +335,8 @@ void Stats::printNbMessagesToRecover()
     cerr<<endl;
 }
 
+/** @brief Prints on the error console the number of message broadcasts jumped by each node.
+ */
 void Stats::printNbJumpedBroadcasts()
 {
     cerr<< "Number of jumped broadcasts for each process :"<<endl;
@@ -305,6 +348,8 @@ void Stats::printNbJumpedBroadcasts()
     cerr<<endl;
 }
 
+/** @brief Determines if nodes use a hash-based error detector.
+ */
 bool Stats::usesHashDetector()
 {
     return params->DeliveryController == SimulationParameters::Delivery::HashClockDifference ||params->DeliveryController == SimulationParameters::Delivery::HashIntervalDifference;

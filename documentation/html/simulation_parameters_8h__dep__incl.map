@@ -1,7 +1,7 @@
 <map id="src/simulationParameters.h" name="src/simulationParameters.h">
 <area shape="rect" id="node2" href="$_controller_8h.html" title="src/Controller.h" alt="" coords="791,80,902,107"/>
 <area shape="rect" id="node3" href="$communication_dispatcher_8h.html" title="File that contains the class used to connect nodes. " alt="" coords="307,155,514,181"/>
-<area shape="rect" id="node20" href="$_stats_8h.html" title="src/Stats.h" alt="" coords="1033,579,1119,606"/>
+<area shape="rect" id="node20" href="$_stats_8h.html" title="Stats module used to collect statistics and write them into files. " alt="" coords="1033,579,1119,606"/>
 <area shape="rect" id="node26" href="$_node_base_8h.html" title="src/Nodes/NodeBase.h" alt="" coords="1010,155,1169,181"/>
 <area shape="rect" id="node34" href="$simulation_parameters_8cc.html" title="src/simulationParameters.cc" alt="" coords="1565,80,1753,107"/>
 <area shape="rect" id="node5" href="$_controller_8cc.html" title="src/Controller.cc" alt="" coords="538,155,657,181"/>
@@ -22,7 +22,7 @@
 <area shape="rect" id="node17" href="$_node_with_recovery_8cc.html" title="src/Nodes/NodeWithRecovery.cc" alt="" coords="563,579,781,606"/>
 <area shape="rect" id="node18" href="$_node_with_recovery_test_8h.html" title="src/Nodes/NodeWithRecovery\lTest.h" alt="" coords="805,572,1005,613"/>
 <area shape="rect" id="node19" href="$_node_with_recovery_test_8cc.html" title="src/Nodes/NodeWithRecovery\lTest.cc" alt="" coords="805,661,1005,703"/>
-<area shape="rect" id="node21" href="$_stats_8cc.html" title="src/Stats.cc" alt="" coords="1029,669,1123,695"/>
+<area shape="rect" id="node21" href="$_stats_8cc.html" title="File containing source code for the Stats class. " alt="" coords="1029,669,1123,695"/>
 <area shape="rect" id="node23" href="$_hash_error_detector_interval_8cc.html" title="src/Detectors/HashErrorDetector\lInterval.cc" alt="" coords="823,408,1038,449"/>
 <area shape="rect" id="node25" href="$_mostefaoui_error_detector_8cc.html" title="src/Detectors/Mostefaoui\lErrorDetector.cc" alt="" coords="94,319,263,360"/>
 <area shape="rect" id="node27" href="$_node_base_8cc.html" title="src/Nodes/NodeBase.cc" alt="" coords="969,237,1135,263"/>

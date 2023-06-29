@@ -11,7 +11,7 @@ network ErrorDetectorWithRecovery
 
 	submodules:
 		simParams: SimulationParameters;
-		Nodes[300]: NodeWithRecovery;
+		Nodes[300]: NodeWithoutRecovery;
 		control: Controller;
 		stat: Stats;
 		Communications: CommunicationDispatcher;

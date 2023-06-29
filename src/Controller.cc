@@ -75,27 +75,15 @@ vector<msg>::iterator Controller::searchMessage(idMsg idM)
 bool Controller::notifyDeliverMessage(idMsg idM, unsigned int idDest)
 {
     vector<msg>::iterator m = searchMessage(idM);
-    bool correctDelivery = canCausallyDeliverMessage(idM,idDest);
+    bool deliverInCausalOrder= canCausallyDeliverMessage(idM,idDest);
 
-    if(!correctDelivery) // process wants to deliver message out of causal order
-    {
+//    if(!deliverInCausalOrder)
 //        printDeliveryError("Out of causal order delivery", idM, idDest, m.dependencies, processDependencies[idDest]);
-        for(unsigned int i=0; i < params->nbNodes; i++)
-        {
-//            if( ( (m.dependencies[i]>processDependencies[idDest][i]) && (i!=idM.id) ) || ( (m.dependencies[i]>(processDependencies[idDest][i]+1)) && (i==idM.id) ) )
-  //              std::cerr<< "Not delivered dependencies from Node "<<i<<" seq "<<processDependencies[idDest][i]<< " to " << m.dependencies[i]<<endl;
-            processDependencies[idDest][i] = max(m->dependencies[i],processDependencies[idDest][i]);
-        }
-    }
-    else
+    processDependencies[idDest][idM.id] = max(m->dependencies[idM.id],processDependencies[idDest][idM.id]); // increments local clock of idDest MUST BE MAX TO HANDLE THE CASE WHERE DELIVERED A MESSAGE OUT OF CAUSAL ORDER
+    if(m->psHasDelivered[idDest])
     {
-        processDependencies[idDest][idM.id] = max(m->dependencies[idM.id],processDependencies[idDest][idM.id]); // increments local clock of idDest MUST BE MAX TO HANDLE THE CASE WHERE DELIVERED A MESSAGE OUT OF CAUSAL ORDER
-//        processDependencies[idDest][idM.id]++; // increments local clock of idDest
-        if(m->psHasDelivered[idDest])
-        {
-            printDeliveryError("Multiple delivery", idM, idDest, m->dependencies, processDependencies[idDest]);
-            exit(0);
-        }
+        printDeliveryError("Multiple delivery", idM, idDest, m->dependencies, processDependencies[idDest]);
+        exit(0);
     }
 
     m->deliveredAtNbPs++;
@@ -103,7 +91,7 @@ bool Controller::notifyDeliverMessage(idMsg idM, unsigned int idDest)
     m->deliveredAtTime[idDest] = simTime();
     if(m->deliveredAtNbPs == params->nbNodes) // delete le message car reçu par tous les mobiles ET stations
         deleteMessage(idM);
-    return correctDelivery;
+    return deliverInCausalOrder;
 }
 
 void Controller::printDeliveryError(string errorReason, idMsg idM, unsigned int destProcess, const TotalDependencies& messageDependencies, const TotalDependencies& processDependencies)

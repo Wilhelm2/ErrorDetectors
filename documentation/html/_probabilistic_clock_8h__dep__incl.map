@@ -7,7 +7,7 @@
 <area shape="rect" id="node3" href="$_d_c_s_8cc.html" title="src/Clocks/DCS.cc" alt="" coords="5,184,141,211"/>
 <area shape="rect" id="node11" href="$_hash_error_detector_8h.html" title="src/Detectors/HashErrorDetector.h" alt="" coords="1842,519,2067,546"/>
 <area shape="rect" id="node15" href="$_node_detector_8h.html" title="src/Nodes/NodeDetector.h" alt="" coords="1685,698,1864,725"/>
-<area shape="rect" id="node23" href="$_stats_8h.html" title="src/Stats.h" alt="" coords="439,862,526,889"/>
+<area shape="rect" id="node23" href="$_stats_8h.html" title="Stats module used to collect statistics and write them into files. " alt="" coords="439,862,526,889"/>
 <area shape="rect" id="node35" href="$_node_no_control_8h.html" title="src/Nodes/NodeNoControl.h" alt="" coords="269,519,456,546"/>
 <area shape="rect" id="node37" href="$dep_req__m_8h.html" title="src/Messages/depReq_m.h" alt="" coords="893,341,1075,367"/>
 <area shape="rect" id="node39" href="$dep_rsp__m_8h.html" title="src/Messages/depRsp_m.h" alt="" coords="1482,341,1665,367"/>
@@ -31,7 +31,7 @@
 <area shape="rect" id="node20" href="$_node_with_recovery_8cc.html" title="src/Nodes/NodeWithRecovery.cc" alt="" coords="1149,862,1368,889"/>
 <area shape="rect" id="node21" href="$_node_with_recovery_test_8h.html" title="src/Nodes/NodeWithRecovery\lTest.h" alt="" coords="925,855,1125,896"/>
 <area shape="rect" id="node22" href="$_node_with_recovery_test_8cc.html" title="src/Nodes/NodeWithRecovery\lTest.cc" alt="" coords="925,944,1125,985"/>
-<area shape="rect" id="node24" href="$_stats_8cc.html" title="src/Stats.cc" alt="" coords="436,951,529,978"/>
+<area shape="rect" id="node24" href="$_stats_8cc.html" title="File containing source code for the Stats class. " alt="" coords="436,951,529,978"/>
 <area shape="rect" id="node26" href="$_hash_error_detector_interval_8cc.html" title="src/Detectors/HashErrorDetector\lInterval.cc" alt="" coords="1446,691,1661,732"/>
 <area shape="rect" id="node28" href="$_mostefaoui_error_detector_8cc.html" title="src/Detectors/Mostefaoui\lErrorDetector.cc" alt="" coords="1485,601,1654,643"/>
 <area shape="rect" id="node31" href="$_node_base_8cc.html" title="src/Nodes/NodeBase.cc" alt="" coords="531,519,696,546"/>

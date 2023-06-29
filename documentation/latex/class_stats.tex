@@ -2,6 +2,11 @@
 \label{class_stats}\index{Stats@{Stats}}
 
 
+\hyperlink{class_stats}{Stats} is used to collect statistics and write them into files.  
+
+
+
+
 {\ttfamily \#include $<$Stats.\+h$>$}
 
 
@@ -26,73 +31,76 @@ Collaboration diagram for Stats\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{class_stats_a650afe7cc5721ec17cfdc94475365f89}{initialize} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes \hyperlink{class_stats}{Stats}. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_stats_adaf8eb884008cdcb1f8a08df41566d16}{handle\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})
-\item 
+\begin{DoxyCompactList}\small\item\em Called when the process receives a message. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_afff16579776ca8a5e5dbc4483689c2e4}{write\+Nb\+Delivered\+Messages} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file as well as on the error console the number of messages nodes have delivered. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_a45fda4fde87dda93eaa44357d077d48c}{write\+Nb\+False\+Delivered\+Messages} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file as well as on the error console the number of messages nodes have delivered out of causal order. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_a5e7dc3debec2bdc35b11e713283ab0b3}{write\+Nb\+Sent\+Dependencies} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file as well as on the error console the number of dependencies processes appended on messages. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_a49086baebc806841600c8545b5315149}{write\+Control\+Data\+Size} ()
-\item 
-void \hyperlink{class_stats_a890d6dea5350042fd71313826b103583}{print\+Buffers\+States} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file the size of control information appended on messages. \end{DoxyCompactList}\item 
+void \hyperlink{class_stats_a5b65312e84788b3fe5e19c8e535a03f4}{print\+Pending\+App\+Size} ()
+\begin{DoxyCompactList}\small\item\em Prints on the error console for each node the number of pending messages. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_aa76e3bfd22087fad066c5a628a269d06}{write\+True\+False\+Negatives} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file the number of true and false positives of the error detectors. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_a89cedfe36937b0f9a5f525a8858e54f2}{Write\+Total\+Nb\+Hashs} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file for each node the number of computed hashes, as well as in total the average of computed hashes per message delivery. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_ae91ab66504445b9e703966b505a55eaa}{write\+Nb\+Msg\+To\+Combine} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file the number of messages to combine by hash error detectors when computing the hash of messages. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_a04ae8a18f5e0713f9275a3cf7b20d181}{write\+Nb\+Msg\+Wrongly\+Considered\+Causal\+Dep} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file the number of messages wrongly considered as causal dependencies by hash error detectors. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_a73a83aa6b190ceb71e8ed2b131338d81}{write\+Done\+Combinations\+To\+Find\+Hash} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file the number of message combinations done by hash error detectors when finding the hash of messages. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_af07c3564deda3a19d1efe92108a20c19}{write\+Nb\+Operations\+For\+Hash\+File} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file the number of operations done by hash error detectors to find the hash of messages. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_a75689d1481b0605ce74d775e36c21740}{Write\+Total\+Nb\+Recoveries} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file the number of message recoveries done by each node, as well as total number of recoveries and the recovery rate compared to the total number of message deliveries. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_ac6a0fdf44cc2a3dc11ff22eb75faacf2}{write\+Nb\+Avoided\+Recoveries} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Writes into a file the number of avoided recoveries as well as its rate compared to the total number of message deliveries. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_ae2c59851f26885a62c2e65fda16d47ee}{print\+Nb\+Messages\+To\+Recover} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prints on the error console the number of messages to recover by each node. \end{DoxyCompactList}\item 
 void \hyperlink{class_stats_aaba10264a569b9240a300ddc341e6a8c}{print\+Nb\+Jumped\+Broadcasts} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prints on the error console the number of message broadcasts jumped by each node. \end{DoxyCompactList}\item 
 bool \hyperlink{class_stats_a509d8e8fba4312eeffe2c6cee722f30f}{uses\+Hash\+Detector} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Determines if nodes use a hash-\/based error detector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-vector$<$ \hyperlink{class_node_base}{Node\+Base} $\ast$ $>$ \hyperlink{class_stats_a815a3aa12c1529fe3d686038a2094fb2}{nodes}
-\item 
-\hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$ \hyperlink{class_stats_aec7570f722a5a0c6ed5f6b7208331dc1}{params}
-\item 
 std\+::ofstream \hyperlink{class_stats_a8c4fd9f4c18e074cbc4b69d611ec4977}{nb\+Recoveries\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the number of done message recoveries. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_a47e0155a0aa3c62997eba6ebcdf77975}{nb\+Hashs\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the number of computed hashes. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_aca527547cfdce19906610acd9a3d26ca}{nb\+Msg\+To\+Combine\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the number of messages to combine in the hash combination. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_aded312adb1d366e759f216fc4f651b4c}{nb\+False\+Delivered\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the number of messages delivered out of causal order. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_a2c1cbc31715b84b8e40206c5b3dc7c5f}{nb\+Avoided\+Recoveries\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the number of avoided message recovery procedures. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_a26404a5110226c52970e3c261c6d8126}{nb\+Sent\+Dependencies\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the average number of dependencies attached to messages. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_acf354d2603af85eff78594ca27e4f189}{nb\+Delivered\+Messages\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the number of messages delivered by processes. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_ac31328205361c1581099a3ed67d5ca1a}{control\+Data\+Size\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the size of control information attached to messages. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_a3083f3da94481b94aaa8f53742834b97}{nb\+Msg\+Wrongly\+Considered\+Causal\+Dep\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the number of messages wrongly considered as message dependencies in the hash computation. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_a3043ea15c3972ce785b42107fd9c1f5e}{done\+Combinations\+To\+Find\+Hash\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the number of computed hashes by the hash error detector to find the hash appended to messages. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_ac9e180c84874fabd361396f3c9a166ae}{true\+False\+Negatives\+File}
-\item 
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the number of true and false positives of the error detectors. \end{DoxyCompactList}\item 
 std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Operations\+For\+Hash\+File}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Stream to write into a file the statistics about the number of operations done by hash error detectors to find the hash of messages. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_node_base}{Node\+Base} $\ast$ $>$ \hyperlink{class_stats_a815a3aa12c1529fe3d686038a2094fb2}{nodes}
+\begin{DoxyCompactList}\small\item\em Vector containing a reference to each node in the system to avoid looking them up in each function. \end{DoxyCompactList}\item 
+\hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$ \hyperlink{class_stats_aec7570f722a5a0c6ed5f6b7208331dc1}{params}
+\begin{DoxyCompactList}\small\item\em Reference to the simulation parameters to avoid looking them up in each function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+\hyperlink{class_stats}{Stats} is used to collect statistics and write them into files. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_stats_adaf8eb884008cdcb1f8a08df41566d16}\label{class_stats_adaf8eb884008cdcb1f8a08df41566d16}} 
@@ -101,23 +109,34 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{handle\+Message()}{handleMessage()}}
 {\footnotesize\ttfamily void Stats\+::handle\+Message (\begin{DoxyParamCaption}\item[{c\+Message $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
 
+
+
+Called when the process receives a message. 
+
+The only message \hyperlink{class_stats}{Stats} receives is the timeout it schedules to write statistics into files. The function writes the statistics down into files depending on the type of simulation, determined by the Delivery parameter of \hyperlink{class_simulation_parameters}{Simulation\+Parameters} 
+\begin{DoxyParams}{Parameters}
+{\em msg} & Received message. \hyperlink{class_stats}{Stats} only receives the timeout it scheduled itself to take statistics. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_stats_a650afe7cc5721ec17cfdc94475365f89}\label{class_stats_a650afe7cc5721ec17cfdc94475365f89}} 
 \index{Stats@{Stats}!initialize@{initialize}}
 \index{initialize@{initialize}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{initialize()}{initialize()}}
 {\footnotesize\ttfamily void Stats\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
 
-\mbox{\Hypertarget{class_stats_a890d6dea5350042fd71313826b103583}\label{class_stats_a890d6dea5350042fd71313826b103583}} 
-\index{Stats@{Stats}!print\+Buffers\+States@{print\+Buffers\+States}}
-\index{print\+Buffers\+States@{print\+Buffers\+States}!Stats@{Stats}}
-\subsubsection{\texorpdfstring{print\+Buffers\+States()}{printBuffersStates()}}
-{\footnotesize\ttfamily void Stats\+::print\+Buffers\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_stats_aaba10264a569b9240a300ddc341e6a8c}\label{class_stats_aaba10264a569b9240a300ddc341e6a8c}} 
+
+Initializes \hyperlink{class_stats}{Stats}. 
+
+It looks up the simulation parameters as well as the nodes. It schedules a timer to take statistics. Finally, it opens the files to which the statistics will be written. \mbox{\Hypertarget{class_stats_aaba10264a569b9240a300ddc341e6a8c}\label{class_stats_aaba10264a569b9240a300ddc341e6a8c}} 
 \index{Stats@{Stats}!print\+Nb\+Jumped\+Broadcasts@{print\+Nb\+Jumped\+Broadcasts}}
 \index{print\+Nb\+Jumped\+Broadcasts@{print\+Nb\+Jumped\+Broadcasts}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{print\+Nb\+Jumped\+Broadcasts()}{printNbJumpedBroadcasts()}}
 {\footnotesize\ttfamily void Stats\+::print\+Nb\+Jumped\+Broadcasts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Prints on the error console the number of message broadcasts jumped by each node. 
 
 \mbox{\Hypertarget{class_stats_ae2c59851f26885a62c2e65fda16d47ee}\label{class_stats_ae2c59851f26885a62c2e65fda16d47ee}} 
 \index{Stats@{Stats}!print\+Nb\+Messages\+To\+Recover@{print\+Nb\+Messages\+To\+Recover}}
@@ -125,11 +144,29 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{print\+Nb\+Messages\+To\+Recover()}{printNbMessagesToRecover()}}
 {\footnotesize\ttfamily void Stats\+::print\+Nb\+Messages\+To\+Recover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Prints on the error console the number of messages to recover by each node. 
+
+\mbox{\Hypertarget{class_stats_a5b65312e84788b3fe5e19c8e535a03f4}\label{class_stats_a5b65312e84788b3fe5e19c8e535a03f4}} 
+\index{Stats@{Stats}!print\+Pending\+App\+Size@{print\+Pending\+App\+Size}}
+\index{print\+Pending\+App\+Size@{print\+Pending\+App\+Size}!Stats@{Stats}}
+\subsubsection{\texorpdfstring{print\+Pending\+App\+Size()}{printPendingAppSize()}}
+{\footnotesize\ttfamily void Stats\+::print\+Pending\+App\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Prints on the error console for each node the number of pending messages. 
+
 \mbox{\Hypertarget{class_stats_a509d8e8fba4312eeffe2c6cee722f30f}\label{class_stats_a509d8e8fba4312eeffe2c6cee722f30f}} 
 \index{Stats@{Stats}!uses\+Hash\+Detector@{uses\+Hash\+Detector}}
 \index{uses\+Hash\+Detector@{uses\+Hash\+Detector}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{uses\+Hash\+Detector()}{usesHashDetector()}}
 {\footnotesize\ttfamily bool Stats\+::uses\+Hash\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Determines if nodes use a hash-\/based error detector. 
 
 \mbox{\Hypertarget{class_stats_a49086baebc806841600c8545b5315149}\label{class_stats_a49086baebc806841600c8545b5315149}} 
 \index{Stats@{Stats}!write\+Control\+Data\+Size@{write\+Control\+Data\+Size}}
@@ -137,11 +174,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{write\+Control\+Data\+Size()}{writeControlDataSize()}}
 {\footnotesize\ttfamily void Stats\+::write\+Control\+Data\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Writes into a file the size of control information appended on messages. 
+
 \mbox{\Hypertarget{class_stats_a73a83aa6b190ceb71e8ed2b131338d81}\label{class_stats_a73a83aa6b190ceb71e8ed2b131338d81}} 
 \index{Stats@{Stats}!write\+Done\+Combinations\+To\+Find\+Hash@{write\+Done\+Combinations\+To\+Find\+Hash}}
 \index{write\+Done\+Combinations\+To\+Find\+Hash@{write\+Done\+Combinations\+To\+Find\+Hash}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{write\+Done\+Combinations\+To\+Find\+Hash()}{writeDoneCombinationsToFindHash()}}
 {\footnotesize\ttfamily void Stats\+::write\+Done\+Combinations\+To\+Find\+Hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes into a file the number of message combinations done by hash error detectors when finding the hash of messages. 
 
 \mbox{\Hypertarget{class_stats_ac6a0fdf44cc2a3dc11ff22eb75faacf2}\label{class_stats_ac6a0fdf44cc2a3dc11ff22eb75faacf2}} 
 \index{Stats@{Stats}!write\+Nb\+Avoided\+Recoveries@{write\+Nb\+Avoided\+Recoveries}}
@@ -149,11 +194,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{write\+Nb\+Avoided\+Recoveries()}{writeNbAvoidedRecoveries()}}
 {\footnotesize\ttfamily void Stats\+::write\+Nb\+Avoided\+Recoveries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Writes into a file the number of avoided recoveries as well as its rate compared to the total number of message deliveries. 
+
 \mbox{\Hypertarget{class_stats_afff16579776ca8a5e5dbc4483689c2e4}\label{class_stats_afff16579776ca8a5e5dbc4483689c2e4}} 
 \index{Stats@{Stats}!write\+Nb\+Delivered\+Messages@{write\+Nb\+Delivered\+Messages}}
 \index{write\+Nb\+Delivered\+Messages@{write\+Nb\+Delivered\+Messages}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{write\+Nb\+Delivered\+Messages()}{writeNbDeliveredMessages()}}
 {\footnotesize\ttfamily void Stats\+::write\+Nb\+Delivered\+Messages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes into a file as well as on the error console the number of messages nodes have delivered. 
 
 \mbox{\Hypertarget{class_stats_a45fda4fde87dda93eaa44357d077d48c}\label{class_stats_a45fda4fde87dda93eaa44357d077d48c}} 
 \index{Stats@{Stats}!write\+Nb\+False\+Delivered\+Messages@{write\+Nb\+False\+Delivered\+Messages}}
@@ -161,11 +214,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{write\+Nb\+False\+Delivered\+Messages()}{writeNbFalseDeliveredMessages()}}
 {\footnotesize\ttfamily void Stats\+::write\+Nb\+False\+Delivered\+Messages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Writes into a file as well as on the error console the number of messages nodes have delivered out of causal order. 
+
 \mbox{\Hypertarget{class_stats_ae91ab66504445b9e703966b505a55eaa}\label{class_stats_ae91ab66504445b9e703966b505a55eaa}} 
 \index{Stats@{Stats}!write\+Nb\+Msg\+To\+Combine@{write\+Nb\+Msg\+To\+Combine}}
 \index{write\+Nb\+Msg\+To\+Combine@{write\+Nb\+Msg\+To\+Combine}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{write\+Nb\+Msg\+To\+Combine()}{writeNbMsgToCombine()}}
 {\footnotesize\ttfamily void Stats\+::write\+Nb\+Msg\+To\+Combine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes into a file the number of messages to combine by hash error detectors when computing the hash of messages. 
 
 \mbox{\Hypertarget{class_stats_a04ae8a18f5e0713f9275a3cf7b20d181}\label{class_stats_a04ae8a18f5e0713f9275a3cf7b20d181}} 
 \index{Stats@{Stats}!write\+Nb\+Msg\+Wrongly\+Considered\+Causal\+Dep@{write\+Nb\+Msg\+Wrongly\+Considered\+Causal\+Dep}}
@@ -173,11 +234,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{write\+Nb\+Msg\+Wrongly\+Considered\+Causal\+Dep()}{writeNbMsgWronglyConsideredCausalDep()}}
 {\footnotesize\ttfamily void Stats\+::write\+Nb\+Msg\+Wrongly\+Considered\+Causal\+Dep (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Writes into a file the number of messages wrongly considered as causal dependencies by hash error detectors. 
+
 \mbox{\Hypertarget{class_stats_af07c3564deda3a19d1efe92108a20c19}\label{class_stats_af07c3564deda3a19d1efe92108a20c19}} 
 \index{Stats@{Stats}!write\+Nb\+Operations\+For\+Hash\+File@{write\+Nb\+Operations\+For\+Hash\+File}}
 \index{write\+Nb\+Operations\+For\+Hash\+File@{write\+Nb\+Operations\+For\+Hash\+File}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{write\+Nb\+Operations\+For\+Hash\+File()}{writeNbOperationsForHashFile()}}
 {\footnotesize\ttfamily void Stats\+::write\+Nb\+Operations\+For\+Hash\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes into a file the number of operations done by hash error detectors to find the hash of messages. 
 
 \mbox{\Hypertarget{class_stats_a5e7dc3debec2bdc35b11e713283ab0b3}\label{class_stats_a5e7dc3debec2bdc35b11e713283ab0b3}} 
 \index{Stats@{Stats}!write\+Nb\+Sent\+Dependencies@{write\+Nb\+Sent\+Dependencies}}
@@ -185,11 +254,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{write\+Nb\+Sent\+Dependencies()}{writeNbSentDependencies()}}
 {\footnotesize\ttfamily void Stats\+::write\+Nb\+Sent\+Dependencies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Writes into a file as well as on the error console the number of dependencies processes appended on messages. 
+
 \mbox{\Hypertarget{class_stats_a89cedfe36937b0f9a5f525a8858e54f2}\label{class_stats_a89cedfe36937b0f9a5f525a8858e54f2}} 
 \index{Stats@{Stats}!Write\+Total\+Nb\+Hashs@{Write\+Total\+Nb\+Hashs}}
 \index{Write\+Total\+Nb\+Hashs@{Write\+Total\+Nb\+Hashs}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{Write\+Total\+Nb\+Hashs()}{WriteTotalNbHashs()}}
 {\footnotesize\ttfamily void Stats\+::\+Write\+Total\+Nb\+Hashs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes into a file for each node the number of computed hashes, as well as in total the average of computed hashes per message delivery. 
 
 \mbox{\Hypertarget{class_stats_a75689d1481b0605ce74d775e36c21740}\label{class_stats_a75689d1481b0605ce74d775e36c21740}} 
 \index{Stats@{Stats}!Write\+Total\+Nb\+Recoveries@{Write\+Total\+Nb\+Recoveries}}
@@ -197,11 +274,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{Write\+Total\+Nb\+Recoveries()}{WriteTotalNbRecoveries()}}
 {\footnotesize\ttfamily void Stats\+::\+Write\+Total\+Nb\+Recoveries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Writes into a file the number of message recoveries done by each node, as well as total number of recoveries and the recovery rate compared to the total number of message deliveries. 
+
 \mbox{\Hypertarget{class_stats_aa76e3bfd22087fad066c5a628a269d06}\label{class_stats_aa76e3bfd22087fad066c5a628a269d06}} 
 \index{Stats@{Stats}!write\+True\+False\+Negatives@{write\+True\+False\+Negatives}}
 \index{write\+True\+False\+Negatives@{write\+True\+False\+Negatives}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{write\+True\+False\+Negatives()}{writeTrueFalseNegatives()}}
 {\footnotesize\ttfamily void Stats\+::write\+True\+False\+Negatives (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Writes into a file the number of true and false positives of the error detectors. 
 
 
 
@@ -212,11 +297,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{control\+Data\+Size\+File}{controlDataSizeFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::control\+Data\+Size\+File\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Stream to write into a file the statistics about the size of control information attached to messages. 
+
 \mbox{\Hypertarget{class_stats_a3043ea15c3972ce785b42107fd9c1f5e}\label{class_stats_a3043ea15c3972ce785b42107fd9c1f5e}} 
 \index{Stats@{Stats}!done\+Combinations\+To\+Find\+Hash\+File@{done\+Combinations\+To\+Find\+Hash\+File}}
 \index{done\+Combinations\+To\+Find\+Hash\+File@{done\+Combinations\+To\+Find\+Hash\+File}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{done\+Combinations\+To\+Find\+Hash\+File}{doneCombinationsToFindHashFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::done\+Combinations\+To\+Find\+Hash\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stream to write into a file the statistics about the number of computed hashes by the hash error detector to find the hash appended to messages. 
 
 \mbox{\Hypertarget{class_stats_a2c1cbc31715b84b8e40206c5b3dc7c5f}\label{class_stats_a2c1cbc31715b84b8e40206c5b3dc7c5f}} 
 \index{Stats@{Stats}!nb\+Avoided\+Recoveries\+File@{nb\+Avoided\+Recoveries\+File}}
@@ -224,11 +317,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{nb\+Avoided\+Recoveries\+File}{nbAvoidedRecoveriesFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::nb\+Avoided\+Recoveries\+File\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Stream to write into a file the statistics about the number of avoided message recovery procedures. 
+
 \mbox{\Hypertarget{class_stats_acf354d2603af85eff78594ca27e4f189}\label{class_stats_acf354d2603af85eff78594ca27e4f189}} 
 \index{Stats@{Stats}!nb\+Delivered\+Messages\+File@{nb\+Delivered\+Messages\+File}}
 \index{nb\+Delivered\+Messages\+File@{nb\+Delivered\+Messages\+File}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{nb\+Delivered\+Messages\+File}{nbDeliveredMessagesFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::nb\+Delivered\+Messages\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stream to write into a file the statistics about the number of messages delivered by processes. 
 
 \mbox{\Hypertarget{class_stats_aded312adb1d366e759f216fc4f651b4c}\label{class_stats_aded312adb1d366e759f216fc4f651b4c}} 
 \index{Stats@{Stats}!nb\+False\+Delivered\+File@{nb\+False\+Delivered\+File}}
@@ -236,11 +337,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{nb\+False\+Delivered\+File}{nbFalseDeliveredFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::nb\+False\+Delivered\+File\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Stream to write into a file the statistics about the number of messages delivered out of causal order. 
+
 \mbox{\Hypertarget{class_stats_a47e0155a0aa3c62997eba6ebcdf77975}\label{class_stats_a47e0155a0aa3c62997eba6ebcdf77975}} 
 \index{Stats@{Stats}!nb\+Hashs\+File@{nb\+Hashs\+File}}
 \index{nb\+Hashs\+File@{nb\+Hashs\+File}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{nb\+Hashs\+File}{nbHashsFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::nb\+Hashs\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stream to write into a file the statistics about the number of computed hashes. 
 
 \mbox{\Hypertarget{class_stats_aca527547cfdce19906610acd9a3d26ca}\label{class_stats_aca527547cfdce19906610acd9a3d26ca}} 
 \index{Stats@{Stats}!nb\+Msg\+To\+Combine\+File@{nb\+Msg\+To\+Combine\+File}}
@@ -248,11 +357,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{nb\+Msg\+To\+Combine\+File}{nbMsgToCombineFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::nb\+Msg\+To\+Combine\+File\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Stream to write into a file the statistics about the number of messages to combine in the hash combination. 
+
 \mbox{\Hypertarget{class_stats_a3083f3da94481b94aaa8f53742834b97}\label{class_stats_a3083f3da94481b94aaa8f53742834b97}} 
 \index{Stats@{Stats}!nb\+Msg\+Wrongly\+Considered\+Causal\+Dep\+File@{nb\+Msg\+Wrongly\+Considered\+Causal\+Dep\+File}}
 \index{nb\+Msg\+Wrongly\+Considered\+Causal\+Dep\+File@{nb\+Msg\+Wrongly\+Considered\+Causal\+Dep\+File}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{nb\+Msg\+Wrongly\+Considered\+Causal\+Dep\+File}{nbMsgWronglyConsideredCausalDepFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::nb\+Msg\+Wrongly\+Considered\+Causal\+Dep\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stream to write into a file the statistics about the number of messages wrongly considered as message dependencies in the hash computation. 
 
 \mbox{\Hypertarget{class_stats_a80fd6543223c0e25e2dbab085b1822f6}\label{class_stats_a80fd6543223c0e25e2dbab085b1822f6}} 
 \index{Stats@{Stats}!nb\+Operations\+For\+Hash\+File@{nb\+Operations\+For\+Hash\+File}}
@@ -260,11 +377,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{nb\+Operations\+For\+Hash\+File}{nbOperationsForHashFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::nb\+Operations\+For\+Hash\+File\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Stream to write into a file the statistics about the number of operations done by hash error detectors to find the hash of messages. 
+
 \mbox{\Hypertarget{class_stats_a8c4fd9f4c18e074cbc4b69d611ec4977}\label{class_stats_a8c4fd9f4c18e074cbc4b69d611ec4977}} 
 \index{Stats@{Stats}!nb\+Recoveries\+File@{nb\+Recoveries\+File}}
 \index{nb\+Recoveries\+File@{nb\+Recoveries\+File}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{nb\+Recoveries\+File}{nbRecoveriesFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::nb\+Recoveries\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stream to write into a file the statistics about the number of done message recoveries. 
 
 \mbox{\Hypertarget{class_stats_a26404a5110226c52970e3c261c6d8126}\label{class_stats_a26404a5110226c52970e3c261c6d8126}} 
 \index{Stats@{Stats}!nb\+Sent\+Dependencies\+File@{nb\+Sent\+Dependencies\+File}}
@@ -272,11 +397,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{nb\+Sent\+Dependencies\+File}{nbSentDependenciesFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::nb\+Sent\+Dependencies\+File\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Stream to write into a file the statistics about the average number of dependencies attached to messages. 
+
 \mbox{\Hypertarget{class_stats_a815a3aa12c1529fe3d686038a2094fb2}\label{class_stats_a815a3aa12c1529fe3d686038a2094fb2}} 
 \index{Stats@{Stats}!nodes@{nodes}}
 \index{nodes@{nodes}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{nodes}{nodes}}
 {\footnotesize\ttfamily vector$<$\hyperlink{class_node_base}{Node\+Base}$\ast$$>$ Stats\+::nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector containing a reference to each node in the system to avoid looking them up in each function. 
 
 \mbox{\Hypertarget{class_stats_aec7570f722a5a0c6ed5f6b7208331dc1}\label{class_stats_aec7570f722a5a0c6ed5f6b7208331dc1}} 
 \index{Stats@{Stats}!params@{params}}
@@ -284,11 +417,19 @@ std\+::ofstream \hyperlink{class_stats_a80fd6543223c0e25e2dbab085b1822f6}{nb\+Op
 \subsubsection{\texorpdfstring{params}{params}}
 {\footnotesize\ttfamily \hyperlink{class_simulation_parameters}{Simulation\+Parameters}$\ast$ Stats\+::params\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Reference to the simulation parameters to avoid looking them up in each function. 
+
 \mbox{\Hypertarget{class_stats_ac9e180c84874fabd361396f3c9a166ae}\label{class_stats_ac9e180c84874fabd361396f3c9a166ae}} 
 \index{Stats@{Stats}!true\+False\+Negatives\+File@{true\+False\+Negatives\+File}}
 \index{true\+False\+Negatives\+File@{true\+False\+Negatives\+File}!Stats@{Stats}}
 \subsubsection{\texorpdfstring{true\+False\+Negatives\+File}{trueFalseNegativesFile}}
 {\footnotesize\ttfamily std\+::ofstream Stats\+::true\+False\+Negatives\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stream to write into a file the statistics about the number of true and false positives of the error detectors. 
 
 
 

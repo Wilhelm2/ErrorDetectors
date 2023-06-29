@@ -67,6 +67,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> is used to collect statistics and write them into files.  
+ <a href="class_stats.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_stats_8h_source.html">Stats.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Stats:</div>
@@ -86,74 +89,108 @@ Collaboration diagram for Stats:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a650afe7cc5721ec17cfdc94475365f89"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a650afe7cc5721ec17cfdc94475365f89">initialize</a> ()</td></tr>
+<tr class="memdesc:a650afe7cc5721ec17cfdc94475365f89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes <a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a>.  <a href="#a650afe7cc5721ec17cfdc94475365f89">More...</a><br /></td></tr>
 <tr class="separator:a650afe7cc5721ec17cfdc94475365f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaf8eb884008cdcb1f8a08df41566d16"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#adaf8eb884008cdcb1f8a08df41566d16">handleMessage</a> (cMessage *<a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a>)</td></tr>
+<tr class="memdesc:adaf8eb884008cdcb1f8a08df41566d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the process receives a message.  <a href="#adaf8eb884008cdcb1f8a08df41566d16">More...</a><br /></td></tr>
 <tr class="separator:adaf8eb884008cdcb1f8a08df41566d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afff16579776ca8a5e5dbc4483689c2e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#afff16579776ca8a5e5dbc4483689c2e4">writeNbDeliveredMessages</a> ()</td></tr>
+<tr class="memdesc:afff16579776ca8a5e5dbc4483689c2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file as well as on the error console the number of messages nodes have delivered.  <a href="#afff16579776ca8a5e5dbc4483689c2e4">More...</a><br /></td></tr>
 <tr class="separator:afff16579776ca8a5e5dbc4483689c2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45fda4fde87dda93eaa44357d077d48c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a45fda4fde87dda93eaa44357d077d48c">writeNbFalseDeliveredMessages</a> ()</td></tr>
+<tr class="memdesc:a45fda4fde87dda93eaa44357d077d48c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file as well as on the error console the number of messages nodes have delivered out of causal order.  <a href="#a45fda4fde87dda93eaa44357d077d48c">More...</a><br /></td></tr>
 <tr class="separator:a45fda4fde87dda93eaa44357d077d48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e7dc3debec2bdc35b11e713283ab0b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a5e7dc3debec2bdc35b11e713283ab0b3">writeNbSentDependencies</a> ()</td></tr>
+<tr class="memdesc:a5e7dc3debec2bdc35b11e713283ab0b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file as well as on the error console the number of dependencies processes appended on messages.  <a href="#a5e7dc3debec2bdc35b11e713283ab0b3">More...</a><br /></td></tr>
 <tr class="separator:a5e7dc3debec2bdc35b11e713283ab0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49086baebc806841600c8545b5315149"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a49086baebc806841600c8545b5315149">writeControlDataSize</a> ()</td></tr>
+<tr class="memdesc:a49086baebc806841600c8545b5315149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file the size of control information appended on messages.  <a href="#a49086baebc806841600c8545b5315149">More...</a><br /></td></tr>
 <tr class="separator:a49086baebc806841600c8545b5315149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a890d6dea5350042fd71313826b103583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a890d6dea5350042fd71313826b103583">printBuffersStates</a> ()</td></tr>
-<tr class="separator:a890d6dea5350042fd71313826b103583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b65312e84788b3fe5e19c8e535a03f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a5b65312e84788b3fe5e19c8e535a03f4">printPendingAppSize</a> ()</td></tr>
+<tr class="memdesc:a5b65312e84788b3fe5e19c8e535a03f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints on the error console for each node the number of pending messages.  <a href="#a5b65312e84788b3fe5e19c8e535a03f4">More...</a><br /></td></tr>
+<tr class="separator:a5b65312e84788b3fe5e19c8e535a03f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa76e3bfd22087fad066c5a628a269d06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#aa76e3bfd22087fad066c5a628a269d06">writeTrueFalseNegatives</a> ()</td></tr>
+<tr class="memdesc:aa76e3bfd22087fad066c5a628a269d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file the number of true and false positives of the error detectors.  <a href="#aa76e3bfd22087fad066c5a628a269d06">More...</a><br /></td></tr>
 <tr class="separator:aa76e3bfd22087fad066c5a628a269d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89cedfe36937b0f9a5f525a8858e54f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a89cedfe36937b0f9a5f525a8858e54f2">WriteTotalNbHashs</a> ()</td></tr>
+<tr class="memdesc:a89cedfe36937b0f9a5f525a8858e54f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file for each node the number of computed hashes, as well as in total the average of computed hashes per message delivery.  <a href="#a89cedfe36937b0f9a5f525a8858e54f2">More...</a><br /></td></tr>
 <tr class="separator:a89cedfe36937b0f9a5f525a8858e54f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae91ab66504445b9e703966b505a55eaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#ae91ab66504445b9e703966b505a55eaa">writeNbMsgToCombine</a> ()</td></tr>
+<tr class="memdesc:ae91ab66504445b9e703966b505a55eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file the number of messages to combine by hash error detectors when computing the hash of messages.  <a href="#ae91ab66504445b9e703966b505a55eaa">More...</a><br /></td></tr>
 <tr class="separator:ae91ab66504445b9e703966b505a55eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04ae8a18f5e0713f9275a3cf7b20d181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a04ae8a18f5e0713f9275a3cf7b20d181">writeNbMsgWronglyConsideredCausalDep</a> ()</td></tr>
+<tr class="memdesc:a04ae8a18f5e0713f9275a3cf7b20d181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file the number of messages wrongly considered as causal dependencies by hash error detectors.  <a href="#a04ae8a18f5e0713f9275a3cf7b20d181">More...</a><br /></td></tr>
 <tr class="separator:a04ae8a18f5e0713f9275a3cf7b20d181"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73a83aa6b190ceb71e8ed2b131338d81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a73a83aa6b190ceb71e8ed2b131338d81">writeDoneCombinationsToFindHash</a> ()</td></tr>
+<tr class="memdesc:a73a83aa6b190ceb71e8ed2b131338d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file the number of message combinations done by hash error detectors when finding the hash of messages.  <a href="#a73a83aa6b190ceb71e8ed2b131338d81">More...</a><br /></td></tr>
 <tr class="separator:a73a83aa6b190ceb71e8ed2b131338d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af07c3564deda3a19d1efe92108a20c19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#af07c3564deda3a19d1efe92108a20c19">writeNbOperationsForHashFile</a> ()</td></tr>
+<tr class="memdesc:af07c3564deda3a19d1efe92108a20c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file the number of operations done by hash error detectors to find the hash of messages.  <a href="#af07c3564deda3a19d1efe92108a20c19">More...</a><br /></td></tr>
 <tr class="separator:af07c3564deda3a19d1efe92108a20c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75689d1481b0605ce74d775e36c21740"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a75689d1481b0605ce74d775e36c21740">WriteTotalNbRecoveries</a> ()</td></tr>
+<tr class="memdesc:a75689d1481b0605ce74d775e36c21740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file the number of message recoveries done by each node, as well as total number of recoveries and the recovery rate compared to the total number of message deliveries.  <a href="#a75689d1481b0605ce74d775e36c21740">More...</a><br /></td></tr>
 <tr class="separator:a75689d1481b0605ce74d775e36c21740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6a0fdf44cc2a3dc11ff22eb75faacf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#ac6a0fdf44cc2a3dc11ff22eb75faacf2">writeNbAvoidedRecoveries</a> ()</td></tr>
+<tr class="memdesc:ac6a0fdf44cc2a3dc11ff22eb75faacf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes into a file the number of avoided recoveries as well as its rate compared to the total number of message deliveries.  <a href="#ac6a0fdf44cc2a3dc11ff22eb75faacf2">More...</a><br /></td></tr>
 <tr class="separator:ac6a0fdf44cc2a3dc11ff22eb75faacf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2c59851f26885a62c2e65fda16d47ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#ae2c59851f26885a62c2e65fda16d47ee">printNbMessagesToRecover</a> ()</td></tr>
+<tr class="memdesc:ae2c59851f26885a62c2e65fda16d47ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints on the error console the number of messages to recover by each node.  <a href="#ae2c59851f26885a62c2e65fda16d47ee">More...</a><br /></td></tr>
 <tr class="separator:ae2c59851f26885a62c2e65fda16d47ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaba10264a569b9240a300ddc341e6a8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#aaba10264a569b9240a300ddc341e6a8c">printNbJumpedBroadcasts</a> ()</td></tr>
+<tr class="memdesc:aaba10264a569b9240a300ddc341e6a8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints on the error console the number of message broadcasts jumped by each node.  <a href="#aaba10264a569b9240a300ddc341e6a8c">More...</a><br /></td></tr>
 <tr class="separator:aaba10264a569b9240a300ddc341e6a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a509d8e8fba4312eeffe2c6cee722f30f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a509d8e8fba4312eeffe2c6cee722f30f">usesHashDetector</a> ()</td></tr>
+<tr class="memdesc:a509d8e8fba4312eeffe2c6cee722f30f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if nodes use a hash-based error detector.  <a href="#a509d8e8fba4312eeffe2c6cee722f30f">More...</a><br /></td></tr>
 <tr class="separator:a509d8e8fba4312eeffe2c6cee722f30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a815a3aa12c1529fe3d686038a2094fb2"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_node_base.html">NodeBase</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a815a3aa12c1529fe3d686038a2094fb2">nodes</a></td></tr>
-<tr class="separator:a815a3aa12c1529fe3d686038a2094fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec7570f722a5a0c6ed5f6b7208331dc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_simulation_parameters.html">SimulationParameters</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#aec7570f722a5a0c6ed5f6b7208331dc1">params</a></td></tr>
-<tr class="separator:aec7570f722a5a0c6ed5f6b7208331dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c4fd9f4c18e074cbc4b69d611ec4977"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a8c4fd9f4c18e074cbc4b69d611ec4977">nbRecoveriesFile</a></td></tr>
+<tr class="memdesc:a8c4fd9f4c18e074cbc4b69d611ec4977"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the number of done message recoveries.  <a href="#a8c4fd9f4c18e074cbc4b69d611ec4977">More...</a><br /></td></tr>
 <tr class="separator:a8c4fd9f4c18e074cbc4b69d611ec4977"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47e0155a0aa3c62997eba6ebcdf77975"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a47e0155a0aa3c62997eba6ebcdf77975">nbHashsFile</a></td></tr>
+<tr class="memdesc:a47e0155a0aa3c62997eba6ebcdf77975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the number of computed hashes.  <a href="#a47e0155a0aa3c62997eba6ebcdf77975">More...</a><br /></td></tr>
 <tr class="separator:a47e0155a0aa3c62997eba6ebcdf77975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca527547cfdce19906610acd9a3d26ca"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#aca527547cfdce19906610acd9a3d26ca">nbMsgToCombineFile</a></td></tr>
+<tr class="memdesc:aca527547cfdce19906610acd9a3d26ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the number of messages to combine in the hash combination.  <a href="#aca527547cfdce19906610acd9a3d26ca">More...</a><br /></td></tr>
 <tr class="separator:aca527547cfdce19906610acd9a3d26ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aded312adb1d366e759f216fc4f651b4c"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#aded312adb1d366e759f216fc4f651b4c">nbFalseDeliveredFile</a></td></tr>
+<tr class="memdesc:aded312adb1d366e759f216fc4f651b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the number of messages delivered out of causal order.  <a href="#aded312adb1d366e759f216fc4f651b4c">More...</a><br /></td></tr>
 <tr class="separator:aded312adb1d366e759f216fc4f651b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c1cbc31715b84b8e40206c5b3dc7c5f"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a2c1cbc31715b84b8e40206c5b3dc7c5f">nbAvoidedRecoveriesFile</a></td></tr>
+<tr class="memdesc:a2c1cbc31715b84b8e40206c5b3dc7c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the number of avoided message recovery procedures.  <a href="#a2c1cbc31715b84b8e40206c5b3dc7c5f">More...</a><br /></td></tr>
 <tr class="separator:a2c1cbc31715b84b8e40206c5b3dc7c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26404a5110226c52970e3c261c6d8126"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a26404a5110226c52970e3c261c6d8126">nbSentDependenciesFile</a></td></tr>
+<tr class="memdesc:a26404a5110226c52970e3c261c6d8126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the average number of dependencies attached to messages.  <a href="#a26404a5110226c52970e3c261c6d8126">More...</a><br /></td></tr>
 <tr class="separator:a26404a5110226c52970e3c261c6d8126"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf354d2603af85eff78594ca27e4f189"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#acf354d2603af85eff78594ca27e4f189">nbDeliveredMessagesFile</a></td></tr>
+<tr class="memdesc:acf354d2603af85eff78594ca27e4f189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the number of messages delivered by processes.  <a href="#acf354d2603af85eff78594ca27e4f189">More...</a><br /></td></tr>
 <tr class="separator:acf354d2603af85eff78594ca27e4f189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac31328205361c1581099a3ed67d5ca1a"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#ac31328205361c1581099a3ed67d5ca1a">controlDataSizeFile</a></td></tr>
+<tr class="memdesc:ac31328205361c1581099a3ed67d5ca1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the size of control information attached to messages.  <a href="#ac31328205361c1581099a3ed67d5ca1a">More...</a><br /></td></tr>
 <tr class="separator:ac31328205361c1581099a3ed67d5ca1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3083f3da94481b94aaa8f53742834b97"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a3083f3da94481b94aaa8f53742834b97">nbMsgWronglyConsideredCausalDepFile</a></td></tr>
+<tr class="memdesc:a3083f3da94481b94aaa8f53742834b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the number of messages wrongly considered as message dependencies in the hash computation.  <a href="#a3083f3da94481b94aaa8f53742834b97">More...</a><br /></td></tr>
 <tr class="separator:a3083f3da94481b94aaa8f53742834b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3043ea15c3972ce785b42107fd9c1f5e"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a3043ea15c3972ce785b42107fd9c1f5e">doneCombinationsToFindHashFile</a></td></tr>
+<tr class="memdesc:a3043ea15c3972ce785b42107fd9c1f5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the number of computed hashes by the hash error detector to find the hash appended to messages.  <a href="#a3043ea15c3972ce785b42107fd9c1f5e">More...</a><br /></td></tr>
 <tr class="separator:a3043ea15c3972ce785b42107fd9c1f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9e180c84874fabd361396f3c9a166ae"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#ac9e180c84874fabd361396f3c9a166ae">trueFalseNegativesFile</a></td></tr>
+<tr class="memdesc:ac9e180c84874fabd361396f3c9a166ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the number of true and false positives of the error detectors.  <a href="#ac9e180c84874fabd361396f3c9a166ae">More...</a><br /></td></tr>
 <tr class="separator:ac9e180c84874fabd361396f3c9a166ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80fd6543223c0e25e2dbab085b1822f6"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a80fd6543223c0e25e2dbab085b1822f6">nbOperationsForHashFile</a></td></tr>
+<tr class="memdesc:a80fd6543223c0e25e2dbab085b1822f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream to write into a file the statistics about the number of operations done by hash error detectors to find the hash of messages.  <a href="#a80fd6543223c0e25e2dbab085b1822f6">More...</a><br /></td></tr>
 <tr class="separator:a80fd6543223c0e25e2dbab085b1822f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a815a3aa12c1529fe3d686038a2094fb2"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_node_base.html">NodeBase</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#a815a3aa12c1529fe3d686038a2094fb2">nodes</a></td></tr>
+<tr class="memdesc:a815a3aa12c1529fe3d686038a2094fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector containing a reference to each node in the system to avoid looking them up in each function.  <a href="#a815a3aa12c1529fe3d686038a2094fb2">More...</a><br /></td></tr>
+<tr class="separator:a815a3aa12c1529fe3d686038a2094fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec7570f722a5a0c6ed5f6b7208331dc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_simulation_parameters.html">SimulationParameters</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stats.html#aec7570f722a5a0c6ed5f6b7208331dc1">params</a></td></tr>
+<tr class="memdesc:aec7570f722a5a0c6ed5f6b7208331dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the simulation parameters to avoid looking them up in each function.  <a href="#aec7570f722a5a0c6ed5f6b7208331dc1">More...</a><br /></td></tr>
+<tr class="separator:aec7570f722a5a0c6ed5f6b7208331dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> is used to collect statistics and write them into files. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="adaf8eb884008cdcb1f8a08df41566d16"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adaf8eb884008cdcb1f8a08df41566d16">&#9670;&nbsp;</a></span>handleMessage()</h2>
 
@@ -177,6 +214,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Called when the process receives a message. </p>
+<p>The only message <a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> receives is the timeout it schedules to write statistics into files. The function writes the statistics down into files depending on the type of simulation, determined by the Delivery parameter of <a class="el" href="class_simulation_parameters.html" title="TODO - Generated class. ">SimulationParameters</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Received message. <a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> only receives the timeout it scheduled itself to take statistics. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -203,30 +248,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a890d6dea5350042fd71313826b103583"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a890d6dea5350042fd71313826b103583">&#9670;&nbsp;</a></span>printBuffersStates()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Stats::printBuffersStates </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Initializes <a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a>. </p>
+<p>It looks up the simulation parameters as well as the nodes. It schedules a timer to take statistics. Finally, it opens the files to which the statistics will be written. </p>
 
 </div>
 </div>
@@ -253,6 +276,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Prints on the error console the number of message broadcasts jumped by each node. </p>
+
 </div>
 </div>
 <a id="ae2c59851f26885a62c2e65fda16d47ee"></a>
@@ -277,6 +302,35 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Prints on the error console the number of messages to recover by each node. </p>
+
+</div>
+</div>
+<a id="a5b65312e84788b3fe5e19c8e535a03f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b65312e84788b3fe5e19c8e535a03f4">&#9670;&nbsp;</a></span>printPendingAppSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Stats::printPendingAppSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prints on the error console for each node the number of pending messages. </p>
 
 </div>
 </div>
@@ -303,6 +357,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Determines if nodes use a hash-based error detector. </p>
+
 </div>
 </div>
 <a id="a49086baebc806841600c8545b5315149"></a>
@@ -327,6 +383,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Writes into a file the size of control information appended on messages. </p>
 
 </div>
 </div>
@@ -353,6 +411,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Writes into a file the number of message combinations done by hash error detectors when finding the hash of messages. </p>
+
 </div>
 </div>
 <a id="ac6a0fdf44cc2a3dc11ff22eb75faacf2"></a>
@@ -377,6 +437,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Writes into a file the number of avoided recoveries as well as its rate compared to the total number of message deliveries. </p>
 
 </div>
 </div>
@@ -403,6 +465,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Writes into a file as well as on the error console the number of messages nodes have delivered. </p>
+
 </div>
 </div>
 <a id="a45fda4fde87dda93eaa44357d077d48c"></a>
@@ -427,6 +491,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Writes into a file as well as on the error console the number of messages nodes have delivered out of causal order. </p>
 
 </div>
 </div>
@@ -453,6 +519,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Writes into a file the number of messages to combine by hash error detectors when computing the hash of messages. </p>
+
 </div>
 </div>
 <a id="a04ae8a18f5e0713f9275a3cf7b20d181"></a>
@@ -477,6 +545,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Writes into a file the number of messages wrongly considered as causal dependencies by hash error detectors. </p>
 
 </div>
 </div>
@@ -503,6 +573,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Writes into a file the number of operations done by hash error detectors to find the hash of messages. </p>
+
 </div>
 </div>
 <a id="a5e7dc3debec2bdc35b11e713283ab0b3"></a>
@@ -527,6 +599,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Writes into a file as well as on the error console the number of dependencies processes appended on messages. </p>
 
 </div>
 </div>
@@ -553,6 +627,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Writes into a file for each node the number of computed hashes, as well as in total the average of computed hashes per message delivery. </p>
+
 </div>
 </div>
 <a id="a75689d1481b0605ce74d775e36c21740"></a>
@@ -577,6 +653,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Writes into a file the number of message recoveries done by each node, as well as total number of recoveries and the recovery rate compared to the total number of message deliveries. </p>
 
 </div>
 </div>
@@ -603,6 +681,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Writes into a file the number of true and false positives of the error detectors. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -626,6 +706,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stream to write into a file the statistics about the size of control information attached to messages. </p>
+
 </div>
 </div>
 <a id="a3043ea15c3972ce785b42107fd9c1f5e"></a>
@@ -647,6 +729,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Stream to write into a file the statistics about the number of computed hashes by the hash error detector to find the hash appended to messages. </p>
 
 </div>
 </div>
@@ -670,6 +754,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stream to write into a file the statistics about the number of avoided message recovery procedures. </p>
+
 </div>
 </div>
 <a id="acf354d2603af85eff78594ca27e4f189"></a>
@@ -691,6 +777,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Stream to write into a file the statistics about the number of messages delivered by processes. </p>
 
 </div>
 </div>
@@ -714,6 +802,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stream to write into a file the statistics about the number of messages delivered out of causal order. </p>
+
 </div>
 </div>
 <a id="a47e0155a0aa3c62997eba6ebcdf77975"></a>
@@ -735,6 +825,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Stream to write into a file the statistics about the number of computed hashes. </p>
 
 </div>
 </div>
@@ -758,6 +850,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stream to write into a file the statistics about the number of messages to combine in the hash combination. </p>
+
 </div>
 </div>
 <a id="a3083f3da94481b94aaa8f53742834b97"></a>
@@ -779,6 +873,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Stream to write into a file the statistics about the number of messages wrongly considered as message dependencies in the hash computation. </p>
 
 </div>
 </div>
@@ -802,6 +898,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stream to write into a file the statistics about the number of operations done by hash error detectors to find the hash of messages. </p>
+
 </div>
 </div>
 <a id="a8c4fd9f4c18e074cbc4b69d611ec4977"></a>
@@ -823,6 +921,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Stream to write into a file the statistics about the number of done message recoveries. </p>
 
 </div>
 </div>
@@ -846,6 +946,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stream to write into a file the statistics about the average number of dependencies attached to messages. </p>
+
 </div>
 </div>
 <a id="a815a3aa12c1529fe3d686038a2094fb2"></a>
@@ -867,6 +969,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Vector containing a reference to each node in the system to avoid looking them up in each function. </p>
 
 </div>
 </div>
@@ -890,6 +994,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Reference to the simulation parameters to avoid looking them up in each function. </p>
+
 </div>
 </div>
 <a id="ac9e180c84874fabd361396f3c9a166ae"></a>
@@ -911,6 +1017,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Stream to write into a file the statistics about the number of true and false positives of the error detectors. </p>
 
 </div>
 </div>

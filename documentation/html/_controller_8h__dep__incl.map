@@ -15,12 +15,12 @@
 <area shape="rect" id="node12" href="$_node_detector_8cc.html" title="src/Nodes/NodeDetector.cc" alt="" coords="213,423,398,449"/>
 <area shape="rect" id="node13" href="$_node_without_recovery_8h.html" title="src/Nodes/NodeWithoutRecovery.h" alt="" coords="423,423,652,449"/>
 <area shape="rect" id="node15" href="$_node_with_recovery_8h.html" title="src/Nodes/NodeWithRecovery.h" alt="" coords="676,423,887,449"/>
-<area shape="rect" id="node19" href="$_stats_8h.html" title="src/Stats.h" alt="" coords="919,505,1006,531"/>
+<area shape="rect" id="node19" href="$_stats_8h.html" title="Stats module used to collect statistics and write them into files. " alt="" coords="919,505,1006,531"/>
 <area shape="rect" id="node14" href="$_node_without_recovery_8cc.html" title="src/Nodes/NodeWithoutRecovery.cc" alt="" coords="191,505,427,531"/>
 <area shape="rect" id="node16" href="$_node_with_recovery_8cc.html" title="src/Nodes/NodeWithRecovery.cc" alt="" coords="452,505,671,531"/>
 <area shape="rect" id="node17" href="$_node_with_recovery_test_8h.html" title="src/Nodes/NodeWithRecovery\lTest.h" alt="" coords="695,497,895,539"/>
 <area shape="rect" id="node18" href="$_node_with_recovery_test_8cc.html" title="src/Nodes/NodeWithRecovery\lTest.cc" alt="" coords="693,587,893,628"/>
-<area shape="rect" id="node20" href="$_stats_8cc.html" title="src/Stats.cc" alt="" coords="917,594,1011,621"/>
+<area shape="rect" id="node20" href="$_stats_8cc.html" title="File containing source code for the Stats class. " alt="" coords="917,594,1011,621"/>
 <area shape="rect" id="node22" href="$_hash_error_detector_interval_8cc.html" title="src/Detectors/HashErrorDetector\lInterval.cc" alt="" coords="445,333,659,375"/>
 <area shape="rect" id="node24" href="$_mostefaoui_error_detector_8cc.html" title="src/Detectors/Mostefaoui\lErrorDetector.cc" alt="" coords="803,244,973,285"/>
 <area shape="rect" id="node26" href="$_node_base_8cc.html" title="src/Nodes/NodeBase.cc" alt="" coords="1219,251,1384,278"/>

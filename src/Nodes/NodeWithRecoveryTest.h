@@ -18,6 +18,7 @@
 
 #include "NodeWithRecovery.h"
 
+/** Nodes that recover messages and which try to first retrieve the causal dependencies of a message locally before requesting its dependencies to its sending node.*/
 class NodeWithRecoveryTest : public NodeWithRecovery
 {
     public:
@@ -30,7 +31,6 @@ class NodeWithRecoveryTest : public NodeWithRecovery
         bool tryHash(const messageInfo& message, const TotalDependencies& dependencies, unsigned doneHashes);
         bool TryCombinationsRecoveringMessages(const messageInfo& message, unsigned int& nbHashs, const TotalDependencies& baseDependencies, const vector<idMsg>& messagesToCombine);
         vector<idMsg> createRecoveredMessagesToCombine(const messageInfo& message, const vector<unsigned int>& incrementedClockEntries);
-
 };
 
 #endif /* NODES_NODEWITHRECOVERYTEST_H_ */

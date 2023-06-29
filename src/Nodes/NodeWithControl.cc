@@ -24,6 +24,7 @@ NodeWithControl::~NodeWithControl() {
     // TODO Auto-generated destructor stub
 }
 
+/** Initializes the nodes Probabilistic clock and the tracker of causal information.*/
 void NodeWithControl::initialize()
 {
     NodeBase::initialize();
@@ -31,6 +32,9 @@ void NodeWithControl::initialize()
     deliveredMessagesTracker = TotalDependencies(params->nbNodes);
 }
 
+/** Attaches the local Probabilistic clock to the message to broadcast.
+ * @return Returns the message to broadcast.
+ * */
 AppMsg* NodeWithControl::createAppMsg()
 {
     AppMsg* m = NodeBase::createAppMsg();
@@ -38,6 +42,8 @@ AppMsg* NodeWithControl::createAppMsg()
     return m;
 }
 
+/** Increments the local clock and keeps track of the message broadcast.
+ * @return Returns the message to broadcast.*/
 AppMsg* NodeWithControl::prepareBroadcast()
 {
     clock.incrementEntries(params->getEntriesIncrementedByProcess(id));
@@ -49,6 +55,7 @@ AppMsg* NodeWithControl::prepareBroadcast()
     return m;
 }
 
+/** Removes information about obsolete broadcasted messages based on duration since their broadcast.*/
 void NodeWithControl::removeOldMessages()
 {
     vector<messageInfo>::iterator it = delivered.begin();
@@ -57,6 +64,9 @@ void NodeWithControl::removeOldMessages()
     delivered.erase(delivered.begin(),it);
 }
 
+/** Delivers an application message.
+ * @param message The message to deliver.
+ * @return true if the message has been delivered in causal order and false otherwise.*/
 bool NodeWithControl::deliverMsg(const messageInfo& message)
 {
     bool causallyDelivered = NodeBase::deliverMsg(message);
@@ -66,6 +76,8 @@ bool NodeWithControl::deliverMsg(const messageInfo& message)
     return causallyDelivered;
 }
 
+/** Handles application message the node receives.
+ * @param m The message the process received*/
 void NodeWithControl::RecvAppMsg(AppMsg*m)
 {
     messageInfo msg (m->getId(), simTime(), m->getHash(), m->getDependencies(), m->getPC());
@@ -75,6 +87,9 @@ void NodeWithControl::RecvAppMsg(AppMsg*m)
         pendingMsg.push_back(msg);
 }
 
+/** Getter of the Probabilistic clock indexes node idSource increments when broadcasting a message.
+ * @param idSource Identificator of the node.
+ * @return Probabilistic clock indexes*/
 const vector<unsigned int>& NodeWithControl::getIndexIncrementedEntries(unsigned int idSource)
 {
     return params->entriesIncrementedByProcess[idSource%params->entriesIncrementedByProcess.size()];

@@ -31,9 +31,9 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\hyperlink{class_node_detector}{Node\+Detector} \\*Base class to implement nodes using error detectors }{\pageref{class_node_detector}}{}
 \item\contentsline{section}{\hyperlink{class_node_no_control}{Node\+No\+Control} \\*Node which delivers messages upon reception without any control }{\pageref{class_node_no_control}}{}
 \item\contentsline{section}{\hyperlink{class_node_p_c}{Node\+PC} \\*Node using Probabilistic clocks to causally order messages (without error detectors) }{\pageref{class_node_p_c}}{}
-\item\contentsline{section}{\hyperlink{class_node_with_control}{Node\+With\+Control} }{\pageref{class_node_with_control}}{}
-\item\contentsline{section}{\hyperlink{class_node_without_recovery}{Node\+Without\+Recovery} }{\pageref{class_node_without_recovery}}{}
-\item\contentsline{section}{\hyperlink{class_node_with_recovery}{Node\+With\+Recovery} }{\pageref{class_node_with_recovery}}{}
+\item\contentsline{section}{\hyperlink{class_node_with_control}{Node\+With\+Control} \\*Base class for nodes that use probabilistic clocks to causally order application messages }{\pageref{class_node_with_control}}{}
+\item\contentsline{section}{\hyperlink{class_node_without_recovery}{Node\+Without\+Recovery} \\*Nodes using error detectors but which do not recover the dependencies of messages }{\pageref{class_node_without_recovery}}{}
+\item\contentsline{section}{\hyperlink{class_node_with_recovery}{Node\+With\+Recovery} \\*Nodes that recover the causal dependencies of messages which the error detector tags as not causally ordered }{\pageref{class_node_with_recovery}}{}
 \item\contentsline{section}{\hyperlink{class_node_with_recovery_test}{Node\+With\+Recovery\+Test} }{\pageref{class_node_with_recovery_test}}{}
 \item\contentsline{section}{\hyperlink{class_partial_dependencies}{Partial\+Dependencies} }{\pageref{class_partial_dependencies}}{}
 \item\contentsline{section}{\hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} }{\pageref{class_probabilistic_clock}}{}
@@ -41,11 +41,11 @@ Here are the classes, structs, unions and interfaces with brief descriptions\+:\
 \item\contentsline{section}{\hyperlink{structs__id}{s\+\_\+id} \\*Each message has a unique identifier composed of the id of the node \$p\+\_\+i\$ that sent it and the sequence number \$p\+\_\+i\$ associated to the message }{\pageref{structs__id}}{}
 \item\contentsline{section}{\hyperlink{structs__message_info}{s\+\_\+message\+Info} \\*Structure containing information about received messages required to causally order them as well as to execute the error detectors on them }{\pageref{structs__message_info}}{}
 \item\contentsline{section}{\hyperlink{structs__msg}{s\+\_\+msg} \\*Contains the information required to verify that the message is delivered exactly once by every node }{\pageref{structs__msg}}{}
-\item\contentsline{section}{\hyperlink{structs__recovered_message}{s\+\_\+recovered\+Message} }{\pageref{structs__recovered_message}}{}
-\item\contentsline{section}{\hyperlink{structs__sent_msg_dependency}{s\+\_\+sent\+Msg\+Dependency} }{\pageref{structs__sent_msg_dependency}}{}
+\item\contentsline{section}{\hyperlink{structs__recovered_message}{s\+\_\+recovered\+Message} \\*Contains the information about a recovered message as well as its causal dependencies }{\pageref{structs__recovered_message}}{}
+\item\contentsline{section}{\hyperlink{structs__sent_msg_dependency}{s\+\_\+sent\+Msg\+Dependency} \\*Contains the dependencies of broadcasted messages }{\pageref{structs__sent_msg_dependency}}{}
 \item\contentsline{section}{\hyperlink{structs__stats__error_detector}{s\+\_\+stats\+\_\+error\+Detector} }{\pageref{structs__stats__error_detector}}{}
 \item\contentsline{section}{\hyperlink{structs__stats__hash_error_detector}{s\+\_\+stats\+\_\+hash\+Error\+Detector} }{\pageref{structs__stats__hash_error_detector}}{}
-\item\contentsline{section}{\hyperlink{structs__stats__recovery}{s\+\_\+stats\+\_\+recovery} }{\pageref{structs__stats__recovery}}{}
+\item\contentsline{section}{\hyperlink{structs__stats__recovery}{s\+\_\+stats\+\_\+recovery} \\*Contains the statistics relevant to recoveries }{\pageref{structs__stats__recovery}}{}
 \item\contentsline{section}{\hyperlink{structs__stats_communication_module}{s\+\_\+stats\+Communication\+Module} }{\pageref{structs__stats_communication_module}}{}
 \item\contentsline{section}{\hyperlink{structs__stats_node}{s\+\_\+stats\+Node} \\*Takes statistics relevant to all types of Nodes }{\pageref{structs__stats_node}}{}
 \item\contentsline{section}{\hyperlink{class_simulation_parameters}{Simulation\+Parameters} \\*Contains the simulation parameters set in the .ini file found in the simulations folder }{\pageref{class_simulation_parameters}}{}

@@ -2,6 +2,11 @@
 \label{structs__sent_msg_dependency}\index{s\+\_\+sent\+Msg\+Dependency@{s\+\_\+sent\+Msg\+Dependency}}
 
 
+Contains the dependencies of broadcasted messages.  
+
+
+
+
 {\ttfamily \#include $<$Node\+With\+Recovery.\+h$>$}
 
 
@@ -17,10 +22,13 @@ Collaboration diagram for s\+\_\+sent\+Msg\+Dependency\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 unsigned int \hyperlink{structs__sent_msg_dependency_afd3ba2f762d695961fed00fb401bc3e7}{seq\+Msg}
-\item 
+\begin{DoxyCompactList}\small\item\em Sequence number of the message. \end{DoxyCompactList}\item 
 \hyperlink{class_total_dependencies}{Total\+Dependencies} \hyperlink{structs__sent_msg_dependency_ab7ece51991fbcba599580914571a32cc}{dependencies}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Causal dependencies of the message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Contains the dependencies of broadcasted messages. 
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{structs__sent_msg_dependency_ab7ece51991fbcba599580914571a32cc}\label{structs__sent_msg_dependency_ab7ece51991fbcba599580914571a32cc}} 
@@ -29,11 +37,19 @@ unsigned int \hyperlink{structs__sent_msg_dependency_afd3ba2f762d695961fed00fb40
 \subsubsection{\texorpdfstring{dependencies}{dependencies}}
 {\footnotesize\ttfamily \hyperlink{class_total_dependencies}{Total\+Dependencies} s\+\_\+sent\+Msg\+Dependency\+::dependencies}
 
+
+
+Causal dependencies of the message. 
+
 \mbox{\Hypertarget{structs__sent_msg_dependency_afd3ba2f762d695961fed00fb401bc3e7}\label{structs__sent_msg_dependency_afd3ba2f762d695961fed00fb401bc3e7}} 
 \index{s\+\_\+sent\+Msg\+Dependency@{s\+\_\+sent\+Msg\+Dependency}!seq\+Msg@{seq\+Msg}}
 \index{seq\+Msg@{seq\+Msg}!s\+\_\+sent\+Msg\+Dependency@{s\+\_\+sent\+Msg\+Dependency}}
 \subsubsection{\texorpdfstring{seq\+Msg}{seqMsg}}
 {\footnotesize\ttfamily unsigned int s\+\_\+sent\+Msg\+Dependency\+::seq\+Msg}
+
+
+
+Sequence number of the message. 
 
 
 

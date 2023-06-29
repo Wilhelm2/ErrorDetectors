@@ -120,6 +120,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a39008b8c9ed5c7c27dbfe7c5355d8062"><td class="memItemLeft" align="right" valign="top">const vector&lt; vector&lt; bool &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a39008b8c9ed5c7c27dbfe7c5355d8062">getDependencyCombinations</a> (unsigned int nbPossibleDependencies)</td></tr>
 <tr class="memdesc:a39008b8c9ed5c7c27dbfe7c5355d8062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sets of dependency combinations for a given number of possible dependencies.  <a href="#a39008b8c9ed5c7c27dbfe7c5355d8062">More...</a><br /></td></tr>
 <tr class="separator:a39008b8c9ed5c7c27dbfe7c5355d8062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65939e54b0e75c32489b9d27fa84848d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#a65939e54b0e75c32489b9d27fa84848d">usesHashDetector</a> ()</td></tr>
+<tr class="memdesc:a65939e54b0e75c32489b9d27fa84848d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if nodes use a hash-based error detector.  <a href="#a65939e54b0e75c32489b9d27fa84848d">More...</a><br /></td></tr>
+<tr class="separator:a65939e54b0e75c32489b9d27fa84848d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5dc96e5e8aff8ee3961abeded5e3209"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_simulation_parameters.html#ae5dc96e5e8aff8ee3961abeded5e3209">usesRecoveries</a> ()</td></tr>
+<tr class="memdesc:ae5dc96e5e8aff8ee3961abeded5e3209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if nodes are recovering the causal dependencies of messages.  <a href="#ae5dc96e5e8aff8ee3961abeded5e3209">More...</a><br /></td></tr>
+<tr class="separator:ae5dc96e5e8aff8ee3961abeded5e3209"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -675,6 +681,44 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Converts the deliveryOption simulation parameter into the <a class="el" href="class_simulation_parameters.html#ae08444273809241f502aa422205f7307" title="Defines the simulation&#39;s type of delivery control. ">SimulationParameters::Delivery</a> enum type. </p>
+
+</div>
+</div>
+<a id="a65939e54b0e75c32489b9d27fa84848d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65939e54b0e75c32489b9d27fa84848d">&#9670;&nbsp;</a></span>usesHashDetector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SimulationParameters::usesHashDetector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determines if nodes use a hash-based error detector. </p>
+
+</div>
+</div>
+<a id="ae5dc96e5e8aff8ee3961abeded5e3209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5dc96e5e8aff8ee3961abeded5e3209">&#9670;&nbsp;</a></span>usesRecoveries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SimulationParameters::usesRecoveries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determines if nodes are recovering the causal dependencies of messages. </p>
 
 </div>
 </div>

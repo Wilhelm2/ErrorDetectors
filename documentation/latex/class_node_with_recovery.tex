@@ -2,6 +2,11 @@
 \label{class_node_with_recovery}\index{Node\+With\+Recovery@{Node\+With\+Recovery}}
 
 
+Nodes that recover the causal dependencies of messages which the error detector tags as not causally ordered.  
+
+
+
+
 {\ttfamily \#include $<$Node\+With\+Recovery.\+h$>$}
 
 
@@ -15,7 +20,8 @@ Inheritance diagram for Node\+With\+Recovery\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Node\+With\+Recovery\+:\nopagebreak
+Collaboration diagram for Node\+With\+Recovery\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -58,25 +64,30 @@ virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_re
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{_node_with_recovery_8h_a8724f9aa35500c4029d1757428ade746}{stats\+\_\+recovery} \hyperlink{class_node_with_recovery_abaecd0d1b36ad0305c281905a3465dd6}{stats\+Recovery}
-\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_stats}{Stats} about the recoveries the node did. \end{DoxyCompactList}\item 
 bool \hyperlink{class_node_with_recovery_a4e8a29d0f69da296e9971bb5d8882cfb}{in\+Recovery} = false
-\item 
+\begin{DoxyCompactList}\small\item\em True during recoveries and false otherwise. \end{DoxyCompactList}\item 
 bool \hyperlink{class_node_with_recovery_aae44e6b605047932d21cd5be25671963}{delayed\+App\+Mgs\+Broadcast} = false
-\item 
+\begin{DoxyCompactList}\small\item\em Set to true if the node tries to broadcast a message during recovery. \end{DoxyCompactList}\item 
 \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \hyperlink{class_node_with_recovery_a2e574321bd92cb51ef3346168057fe0f}{curr\+Recovery}
-\item 
+\begin{DoxyCompactList}\small\item\em Message which is currently in recovery. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{_node_with_recovery_8h_a7a7c744666781dbc85c00bb4ccb4a60f}{msg\+Dependency} $>$ \hyperlink{class_node_with_recovery_a6b143ca2c401bbb2689443091d4d7e17}{local\+Sent\+Msg\+Dependencies}
-\item 
+\begin{DoxyCompactList}\small\item\em A process keeps the dependencies of messages it broadcasts to reply to recovery request. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \hyperlink{class_node_with_recovery_a9ed4ac06c68ac579d7848a98b145b5ae}{messages\+To\+Recover}
-\item 
+\begin{DoxyCompactList}\small\item\em List containing the messages to recover when a recovery is already in progress. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{_node_with_recovery_8h_abc64f7ff8d329883ae93979292b1c996}{recovered\+Message} $>$ \hyperlink{class_node_with_recovery_adf6b319a727cd9ec43a6cc68cbf99bbb}{recovered\+Messages}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em List containing messages for which the node received the dependencies list but which have some dependencies that the node has not delivered yet. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_node_with_recovery_a129f65b6976377739eb6231b6962985e}{Stats}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Nodes that recover the causal dependencies of messages which the error detector tags as not causally ordered. 
+
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -239,17 +250,29 @@ Reimplemented in \hyperlink{class_node_with_recovery_test_af9b78d0ed4fefb97e2f54
 \subsubsection{\texorpdfstring{curr\+Recovery}{currRecovery}}
 {\footnotesize\ttfamily \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} Node\+With\+Recovery\+::curr\+Recovery\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_node_with_recovery_aae44e6b605047932d21cd5be25671963}\label{class_node_with_recovery_aae44e6b605047932d21cd5be25671963}} 
+
+
+Message which is currently in recovery. 
+
+Invalid outside recoveries. \mbox{\Hypertarget{class_node_with_recovery_aae44e6b605047932d21cd5be25671963}\label{class_node_with_recovery_aae44e6b605047932d21cd5be25671963}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!delayed\+App\+Mgs\+Broadcast@{delayed\+App\+Mgs\+Broadcast}}
 \index{delayed\+App\+Mgs\+Broadcast@{delayed\+App\+Mgs\+Broadcast}!Node\+With\+Recovery@{Node\+With\+Recovery}}
 \subsubsection{\texorpdfstring{delayed\+App\+Mgs\+Broadcast}{delayedAppMgsBroadcast}}
 {\footnotesize\ttfamily bool Node\+With\+Recovery\+::delayed\+App\+Mgs\+Broadcast = false\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_node_with_recovery_a4e8a29d0f69da296e9971bb5d8882cfb}\label{class_node_with_recovery_a4e8a29d0f69da296e9971bb5d8882cfb}} 
+
+
+Set to true if the node tries to broadcast a message during recovery. 
+
+Is set to false at the end of the recovery \mbox{\Hypertarget{class_node_with_recovery_a4e8a29d0f69da296e9971bb5d8882cfb}\label{class_node_with_recovery_a4e8a29d0f69da296e9971bb5d8882cfb}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!in\+Recovery@{in\+Recovery}}
 \index{in\+Recovery@{in\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
 \subsubsection{\texorpdfstring{in\+Recovery}{inRecovery}}
 {\footnotesize\ttfamily bool Node\+With\+Recovery\+::in\+Recovery = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+True during recoveries and false otherwise. 
 
 \mbox{\Hypertarget{class_node_with_recovery_a6b143ca2c401bbb2689443091d4d7e17}\label{class_node_with_recovery_a6b143ca2c401bbb2689443091d4d7e17}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!local\+Sent\+Msg\+Dependencies@{local\+Sent\+Msg\+Dependencies}}
@@ -257,23 +280,39 @@ Reimplemented in \hyperlink{class_node_with_recovery_test_af9b78d0ed4fefb97e2f54
 \subsubsection{\texorpdfstring{local\+Sent\+Msg\+Dependencies}{localSentMsgDependencies}}
 {\footnotesize\ttfamily vector$<$\hyperlink{_node_with_recovery_8h_a7a7c744666781dbc85c00bb4ccb4a60f}{msg\+Dependency}$>$ Node\+With\+Recovery\+::local\+Sent\+Msg\+Dependencies\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+A process keeps the dependencies of messages it broadcasts to reply to recovery request. 
+
 \mbox{\Hypertarget{class_node_with_recovery_a9ed4ac06c68ac579d7848a98b145b5ae}\label{class_node_with_recovery_a9ed4ac06c68ac579d7848a98b145b5ae}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!messages\+To\+Recover@{messages\+To\+Recover}}
 \index{messages\+To\+Recover@{messages\+To\+Recover}!Node\+With\+Recovery@{Node\+With\+Recovery}}
 \subsubsection{\texorpdfstring{messages\+To\+Recover}{messagesToRecover}}
 {\footnotesize\ttfamily vector$<$\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}$>$ Node\+With\+Recovery\+::messages\+To\+Recover\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_node_with_recovery_adf6b319a727cd9ec43a6cc68cbf99bbb}\label{class_node_with_recovery_adf6b319a727cd9ec43a6cc68cbf99bbb}} 
+
+
+List containing the messages to recover when a recovery is already in progress. 
+
+The messages are pushed back to the pending message list at the end of the recovery. \mbox{\Hypertarget{class_node_with_recovery_adf6b319a727cd9ec43a6cc68cbf99bbb}\label{class_node_with_recovery_adf6b319a727cd9ec43a6cc68cbf99bbb}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!recovered\+Messages@{recovered\+Messages}}
 \index{recovered\+Messages@{recovered\+Messages}!Node\+With\+Recovery@{Node\+With\+Recovery}}
 \subsubsection{\texorpdfstring{recovered\+Messages}{recoveredMessages}}
 {\footnotesize\ttfamily vector$<$\hyperlink{_node_with_recovery_8h_abc64f7ff8d329883ae93979292b1c996}{recovered\+Message}$>$ Node\+With\+Recovery\+::recovered\+Messages\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+List containing messages for which the node received the dependencies list but which have some dependencies that the node has not delivered yet. 
 
 \mbox{\Hypertarget{class_node_with_recovery_abaecd0d1b36ad0305c281905a3465dd6}\label{class_node_with_recovery_abaecd0d1b36ad0305c281905a3465dd6}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!stats\+Recovery@{stats\+Recovery}}
 \index{stats\+Recovery@{stats\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
 \subsubsection{\texorpdfstring{stats\+Recovery}{statsRecovery}}
 {\footnotesize\ttfamily \hyperlink{_node_with_recovery_8h_a8724f9aa35500c4029d1757428ade746}{stats\+\_\+recovery} Node\+With\+Recovery\+::stats\+Recovery\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\hyperlink{class_stats}{Stats} about the recoveries the node did. 
 
 
 

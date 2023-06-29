@@ -2,6 +2,11 @@
 \label{class_node_with_control}\index{Node\+With\+Control@{Node\+With\+Control}}
 
 
+Base class for nodes that use probabilistic clocks to causally order application messages.  
+
+
+
+
 {\ttfamily \#include $<$Node\+With\+Control.\+h$>$}
 
 
@@ -34,19 +39,19 @@ virtual \hyperlink{class_node_with_control_a6e752e38f0e233e7debfaaf4ae26fb2d}{$\
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{class_node_with_control_a08c8e80fd67b52c51c642d7c66fe729c}{initialize} () override
-\begin{DoxyCompactList}\small\item\em Initializes the node by scheduling it\textquotesingle{}s broadcast\+Timer, initializing its connection with the communication dispatcher and looking up the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} and \hyperlink{class_controller}{Controller} modules. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initializes the nodes Probabilistic clock and the tracker of causal information. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_control_a7772568c2836f5f204952ebe659e0049}{create\+App\+Msg} ()
-\begin{DoxyCompactList}\small\item\em Creates an application message and initializes it. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Attaches the local Probabilistic clock to the message to broadcast. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_control_ab871014cf3f42d834f8d34ad5498174c}{prepare\+Broadcast} ()
-\begin{DoxyCompactList}\small\item\em Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Increments the local clock and keeps track of the message broadcast. \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_control_add681efe156d989a717d2cd979f5ac9f}{remove\+Old\+Messages} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Removes information about obsolete broadcasted messages based on duration since their broadcast. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{class_node_with_control_aada7451be61be592b27188b6249afef2}{deliver\+Msg} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message)
-\begin{DoxyCompactList}\small\item\em Delivers a message and verifies its delivery in causal order. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Delivers an application message. \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_control_ae177f5f64edcc09a3875e5afdc82edd2}{Recv\+App\+Msg} (\hyperlink{class_app_msg}{App\+Msg} $\ast$m)
-\item 
+\begin{DoxyCompactList}\small\item\em Handles application message the node receives. \end{DoxyCompactList}\item 
 const vector$<$ unsigned int $>$ \& \hyperlink{class_node_with_control_acf1daba46cfa16eb2bd7cbd399c2624b}{get\+Index\+Incremented\+Entries} (unsigned int id\+Source)
-\item 
+\begin{DoxyCompactList}\small\item\em Getter of the Probabilistic clock indexes node id\+Source increments when broadcasting a message. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_node_with_control_af532082fab76c38d8c50ca90e991f4c3}{process\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})=0
 \begin{DoxyCompactList}\small\item\em Called at reception of messages from other nodes in order to process them. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{class_node_with_control_a84df0beabbaed80e7da017d592480515}{test\+Deliver\+Message} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message)=0
@@ -57,13 +62,13 @@ virtual void \hyperlink{class_node_with_control_a4f78078272b90937e0746c797443b37
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \hyperlink{class_node_with_control_a051a7d7f2452f1f8da3bc5bfb05a7760}{clock}
-\item 
+\begin{DoxyCompactList}\small\item\em The node\textquotesingle{}s local Probabilistic clock. \end{DoxyCompactList}\item 
 \hyperlink{class_total_dependencies}{Total\+Dependencies} \hyperlink{class_node_with_control_a6c868fa52cca68f650dca96a788475df}{delivered\+Messages\+Tracker}
-\item 
+\begin{DoxyCompactList}\small\item\em Causal information about the messages the node has delivered. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \hyperlink{class_node_with_control_af38ffbedc82038536c77314f22ea6b57}{pending\+Msg}
-\item 
+\begin{DoxyCompactList}\small\item\em Contains the messages whose clock does not satisfy the deliver condition. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \hyperlink{class_node_with_control_aed34cc5a5b277c43f10f8cbbbeb59327}{delivered}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Contains information about the messages the node delivered. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -71,6 +76,9 @@ class \hyperlink{class_node_with_control_a129f65b6976377739eb6231b6962985e}{Stat
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
+
+\subsection{Detailed Description}
+Base class for nodes that use probabilistic clocks to causally order application messages. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_node_with_control_ab0a223aca65e289aaee682dadfbefb5c}\label{class_node_with_control_ab0a223aca65e289aaee682dadfbefb5c}} 
@@ -96,10 +104,10 @@ class \hyperlink{class_node_with_control_a129f65b6976377739eb6231b6962985e}{Stat
 
 
 
-Creates an application message and initializes it. 
+Attaches the local Probabilistic clock to the message to broadcast. 
 
 \begin{DoxyReturn}{Returns}
-The application message. 
+Returns the message to broadcast. 
 \end{DoxyReturn}
 
 
@@ -117,11 +125,11 @@ Reimplemented in \hyperlink{class_node_detector_a7100349647350ad5e3aeb1ed4669c72
 
 
 
-Delivers a message and verifies its delivery in causal order. 
+Delivers an application message. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em message} & The information about the message to deliver. \\
+{\em message} & The message to deliver. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -137,6 +145,18 @@ Reimplemented from \hyperlink{class_node_base_a49052382add1123da26db6bfb687d254}
 \subsubsection{\texorpdfstring{get\+Index\+Incremented\+Entries()}{getIndexIncrementedEntries()}}
 {\footnotesize\ttfamily const vector$<$ unsigned int $>$ \& Node\+With\+Control\+::get\+Index\+Incremented\+Entries (\begin{DoxyParamCaption}\item[{unsigned int}]{id\+Source }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Getter of the Probabilistic clock indexes node id\+Source increments when broadcasting a message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Source} & Identificator of the node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Probabilistic clock indexes 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_node_with_control_a08c8e80fd67b52c51c642d7c66fe729c}\label{class_node_with_control_a08c8e80fd67b52c51c642d7c66fe729c}} 
 \index{Node\+With\+Control@{Node\+With\+Control}!initialize@{initialize}}
 \index{initialize@{initialize}!Node\+With\+Control@{Node\+With\+Control}}
@@ -145,7 +165,7 @@ Reimplemented from \hyperlink{class_node_base_a49052382add1123da26db6bfb687d254}
 
 
 
-Initializes the node by scheduling it\textquotesingle{}s broadcast\+Timer, initializing its connection with the communication dispatcher and looking up the \hyperlink{class_simulation_parameters}{Simulation\+Parameters} and \hyperlink{class_controller}{Controller} modules. 
+Initializes the nodes Probabilistic clock and the tracker of causal information. 
 
 
 
@@ -173,10 +193,10 @@ Implemented in \hyperlink{class_node_with_recovery_a9b61912f38b62452584dc80bf261
 
 
 
-Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. 
+Increments the local clock and keeps track of the message broadcast. 
 
 \begin{DoxyReturn}{Returns}
-The application message to broadcast. 
+Returns the message to broadcast. 
 \end{DoxyReturn}
 
 
@@ -202,7 +222,7 @@ Implements \hyperlink{class_node_base_ae70b168f2bc7407c249594b1c614301c}{Node\+B
 
 
 
-Implemented in \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}{Node\+With\+Recovery}, \hyperlink{class_node_detector_ab69432c6d3327a684845ec231826727e}{Node\+Detector}, \hyperlink{class_node_p_c_aa5fedc4136104a06e2f1131f1ba16b0e}{Node\+PC}, and \hyperlink{class_node_without_recovery_a0b44132b4ebc650399711766cb050399}{Node\+Without\+Recovery}.
+Implemented in \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}{Node\+With\+Recovery}, \hyperlink{class_node_detector_ab69432c6d3327a684845ec231826727e}{Node\+Detector}, \hyperlink{class_node_without_recovery_a0b44132b4ebc650399711766cb050399}{Node\+Without\+Recovery}, and \hyperlink{class_node_p_c_aa5fedc4136104a06e2f1131f1ba16b0e}{Node\+PC}.
 
 \mbox{\Hypertarget{class_node_with_control_ae177f5f64edcc09a3875e5afdc82edd2}\label{class_node_with_control_ae177f5f64edcc09a3875e5afdc82edd2}} 
 \index{Node\+With\+Control@{Node\+With\+Control}!Recv\+App\+Msg@{Recv\+App\+Msg}}
@@ -210,11 +230,24 @@ Implemented in \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c
 \subsubsection{\texorpdfstring{Recv\+App\+Msg()}{RecvAppMsg()}}
 {\footnotesize\ttfamily void Node\+With\+Control\+::\+Recv\+App\+Msg (\begin{DoxyParamCaption}\item[{\hyperlink{class_app_msg}{App\+Msg} $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Handles application message the node receives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The message the process received \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_node_with_control_add681efe156d989a717d2cd979f5ac9f}\label{class_node_with_control_add681efe156d989a717d2cd979f5ac9f}} 
 \index{Node\+With\+Control@{Node\+With\+Control}!remove\+Old\+Messages@{remove\+Old\+Messages}}
 \index{remove\+Old\+Messages@{remove\+Old\+Messages}!Node\+With\+Control@{Node\+With\+Control}}
 \subsubsection{\texorpdfstring{remove\+Old\+Messages()}{removeOldMessages()}}
 {\footnotesize\ttfamily void Node\+With\+Control\+::remove\+Old\+Messages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Removes information about obsolete broadcasted messages based on duration since their broadcast. 
 
 \mbox{\Hypertarget{class_node_with_control_a84df0beabbaed80e7da017d592480515}\label{class_node_with_control_a84df0beabbaed80e7da017d592480515}} 
 \index{Node\+With\+Control@{Node\+With\+Control}!test\+Deliver\+Message@{test\+Deliver\+Message}}
@@ -244,11 +277,19 @@ Implemented in \hyperlink{class_node_with_recovery_aec147b3723b3dab00f9610453ba8
 \subsubsection{\texorpdfstring{clock}{clock}}
 {\footnotesize\ttfamily \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} Node\+With\+Control\+::clock\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+The node\textquotesingle{}s local Probabilistic clock. 
+
 \mbox{\Hypertarget{class_node_with_control_aed34cc5a5b277c43f10f8cbbbeb59327}\label{class_node_with_control_aed34cc5a5b277c43f10f8cbbbeb59327}} 
 \index{Node\+With\+Control@{Node\+With\+Control}!delivered@{delivered}}
 \index{delivered@{delivered}!Node\+With\+Control@{Node\+With\+Control}}
 \subsubsection{\texorpdfstring{delivered}{delivered}}
 {\footnotesize\ttfamily vector$<$\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}$>$ Node\+With\+Control\+::delivered\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Contains information about the messages the node delivered. 
 
 \mbox{\Hypertarget{class_node_with_control_a6c868fa52cca68f650dca96a788475df}\label{class_node_with_control_a6c868fa52cca68f650dca96a788475df}} 
 \index{Node\+With\+Control@{Node\+With\+Control}!delivered\+Messages\+Tracker@{delivered\+Messages\+Tracker}}
@@ -256,11 +297,19 @@ Implemented in \hyperlink{class_node_with_recovery_aec147b3723b3dab00f9610453ba8
 \subsubsection{\texorpdfstring{delivered\+Messages\+Tracker}{deliveredMessagesTracker}}
 {\footnotesize\ttfamily \hyperlink{class_total_dependencies}{Total\+Dependencies} Node\+With\+Control\+::delivered\+Messages\+Tracker\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Causal information about the messages the node has delivered. 
+
 \mbox{\Hypertarget{class_node_with_control_af38ffbedc82038536c77314f22ea6b57}\label{class_node_with_control_af38ffbedc82038536c77314f22ea6b57}} 
 \index{Node\+With\+Control@{Node\+With\+Control}!pending\+Msg@{pending\+Msg}}
 \index{pending\+Msg@{pending\+Msg}!Node\+With\+Control@{Node\+With\+Control}}
 \subsubsection{\texorpdfstring{pending\+Msg}{pendingMsg}}
 {\footnotesize\ttfamily vector$<$\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}$>$ Node\+With\+Control\+::pending\+Msg\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Contains the messages whose clock does not satisfy the deliver condition. 
 
 
 

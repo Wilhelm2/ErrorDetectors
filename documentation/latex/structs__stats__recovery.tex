@@ -2,17 +2,27 @@
 \label{structs__stats__recovery}\index{s\+\_\+stats\+\_\+recovery@{s\+\_\+stats\+\_\+recovery}}
 
 
+Contains the statistics relevant to recoveries.  
+
+
+
+
 {\ttfamily \#include $<$Node\+With\+Recovery.\+h$>$}
 
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 unsigned int \hyperlink{structs__stats__recovery_a89b2e116cf913c2939d186a2cd4f865b}{nb\+Recoveries} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Number of local recoveries. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{structs__stats__recovery_a0f21481940b624e49b0880d1bbf3df33}{nb\+Avoided\+Recoveries} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Number of recoveries avoided through the recovery\+Test. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{structs__stats__recovery_ad4ca0f06d00b8cb3a6998977ea146e10}{jumped\+Broadcasts} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Number of jumped broadcasts (because the node was in recovery). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the statistics relevant to recoveries. 
+
 
 
 \subsection{Member Data Documentation}
@@ -22,17 +32,29 @@ unsigned int \hyperlink{structs__stats__recovery_ad4ca0f06d00b8cb3a6998977ea146e
 \subsubsection{\texorpdfstring{jumped\+Broadcasts}{jumpedBroadcasts}}
 {\footnotesize\ttfamily unsigned int s\+\_\+stats\+\_\+recovery\+::jumped\+Broadcasts = 0}
 
+
+
+Number of jumped broadcasts (because the node was in recovery). 
+
 \mbox{\Hypertarget{structs__stats__recovery_a0f21481940b624e49b0880d1bbf3df33}\label{structs__stats__recovery_a0f21481940b624e49b0880d1bbf3df33}} 
 \index{s\+\_\+stats\+\_\+recovery@{s\+\_\+stats\+\_\+recovery}!nb\+Avoided\+Recoveries@{nb\+Avoided\+Recoveries}}
 \index{nb\+Avoided\+Recoveries@{nb\+Avoided\+Recoveries}!s\+\_\+stats\+\_\+recovery@{s\+\_\+stats\+\_\+recovery}}
 \subsubsection{\texorpdfstring{nb\+Avoided\+Recoveries}{nbAvoidedRecoveries}}
 {\footnotesize\ttfamily unsigned int s\+\_\+stats\+\_\+recovery\+::nb\+Avoided\+Recoveries = 0}
 
+
+
+Number of recoveries avoided through the recovery\+Test. 
+
 \mbox{\Hypertarget{structs__stats__recovery_a89b2e116cf913c2939d186a2cd4f865b}\label{structs__stats__recovery_a89b2e116cf913c2939d186a2cd4f865b}} 
 \index{s\+\_\+stats\+\_\+recovery@{s\+\_\+stats\+\_\+recovery}!nb\+Recoveries@{nb\+Recoveries}}
 \index{nb\+Recoveries@{nb\+Recoveries}!s\+\_\+stats\+\_\+recovery@{s\+\_\+stats\+\_\+recovery}}
 \subsubsection{\texorpdfstring{nb\+Recoveries}{nbRecoveries}}
 {\footnotesize\ttfamily unsigned int s\+\_\+stats\+\_\+recovery\+::nb\+Recoveries = 0}
+
+
+
+Number of local recoveries. 
 
 
 

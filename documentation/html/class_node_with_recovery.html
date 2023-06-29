@@ -69,6 +69,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Nodes that recover the causal dependencies of messages which the error detector tags as not causally ordered.  
+ <a href="class_node_with_recovery.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_node_with_recovery_8h_source.html">NodeWithRecovery.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for NodeWithRecovery:</div>
@@ -77,7 +80,7 @@ Inheritance diagram for NodeWithRecovery:</div>
 <map name="_node_with_recovery_inherit__map" id="_node_with_recovery_inherit__map">
 <area shape="rect" id="node6" href="class_node_with_recovery_test.html" title="NodeWithRecoveryTest" alt="" coords="5,379,168,405"/>
 <area shape="rect" id="node2" href="class_node_detector.html" title="Base class to implement nodes using error detectors. " alt="" coords="35,229,138,256"/>
-<area shape="rect" id="node3" href="class_node_with_control.html" title="NodeWithControl" alt="" coords="25,155,148,181"/>
+<area shape="rect" id="node3" href="class_node_with_control.html" title="Base class for nodes that use probabilistic clocks to causally order application messages. " alt="" coords="25,155,148,181"/>
 <area shape="rect" id="node4" href="class_node_base.html" title="Base class of Nodes. " alt="" coords="45,80,128,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -87,7 +90,7 @@ Collaboration diagram for NodeWithRecovery:</div>
 <div class="center"><img src="class_node_with_recovery__coll__graph.png" border="0" usemap="#_node_with_recovery_coll__map" alt="Collaboration graph"/></div>
 <map name="_node_with_recovery_coll__map" id="_node_with_recovery_coll__map">
 <area shape="rect" id="node2" href="class_node_detector.html" title="Base class to implement nodes using error detectors. " alt="" coords="205,464,308,491"/>
-<area shape="rect" id="node3" href="class_node_with_control.html" title="NodeWithControl" alt="" coords="186,375,309,401"/>
+<area shape="rect" id="node3" href="class_node_with_control.html" title="Base class for nodes that use probabilistic clocks to causally order application messages. " alt="" coords="186,375,309,401"/>
 <area shape="rect" id="node4" href="class_node_base.html" title="Base class of Nodes. " alt="" coords="422,285,505,312"/>
 <area shape="rect" id="node6" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. " alt="" coords="404,95,555,121"/>
 <area shape="rect" id="node8" href="class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order..." alt="" coords="576,196,655,223"/>
@@ -99,7 +102,7 @@ Collaboration diagram for NodeWithRecovery:</div>
 <area shape="rect" id="node12" href="class_error_detector.html" title="ErrorDetector" alt="" coords="480,375,580,401"/>
 <area shape="rect" id="node13" href="structs__stats__error_detector.html" title="s_stats_errorDetector" alt="" coords="529,285,677,312"/>
 <area shape="rect" id="node15" href="structs__id.html" title="Each message has a unique identifier composed of the id of the node $p_i$ that sent it and the sequen..." alt="" coords="5,285,52,312"/>
-<area shape="rect" id="node16" href="structs__stats__recovery.html" title="s_stats_recovery" alt="" coords="333,464,455,491"/>
+<area shape="rect" id="node16" href="structs__stats__recovery.html" title="Contains the statistics relevant to recoveries. " alt="" coords="333,464,455,491"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -157,13 +160,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a7100349647350ad5e3aeb1ed4669c723 inherit pro_methods_class_node_detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_node_with_control"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_node_with_control')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_node_with_control.html">NodeWithControl</a></td></tr>
 <tr class="memitem:add681efe156d989a717d2cd979f5ac9f inherit pro_methods_class_node_with_control"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#add681efe156d989a717d2cd979f5ac9f">removeOldMessages</a> ()</td></tr>
+<tr class="memdesc:add681efe156d989a717d2cd979f5ac9f inherit pro_methods_class_node_with_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes information about obsolete broadcasted messages based on duration since their broadcast.  <a href="class_node_with_control.html#add681efe156d989a717d2cd979f5ac9f">More...</a><br /></td></tr>
 <tr class="separator:add681efe156d989a717d2cd979f5ac9f inherit pro_methods_class_node_with_control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aada7451be61be592b27188b6249afef2 inherit pro_methods_class_node_with_control"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#aada7451be61be592b27188b6249afef2">deliverMsg</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message)</td></tr>
-<tr class="memdesc:aada7451be61be592b27188b6249afef2 inherit pro_methods_class_node_with_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delivers a message and verifies its delivery in causal order.  <a href="class_node_with_control.html#aada7451be61be592b27188b6249afef2">More...</a><br /></td></tr>
+<tr class="memdesc:aada7451be61be592b27188b6249afef2 inherit pro_methods_class_node_with_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delivers an application message.  <a href="class_node_with_control.html#aada7451be61be592b27188b6249afef2">More...</a><br /></td></tr>
 <tr class="separator:aada7451be61be592b27188b6249afef2 inherit pro_methods_class_node_with_control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae177f5f64edcc09a3875e5afdc82edd2 inherit pro_methods_class_node_with_control"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#ae177f5f64edcc09a3875e5afdc82edd2">RecvAppMsg</a> (<a class="el" href="class_app_msg.html">AppMsg</a> *m)</td></tr>
+<tr class="memdesc:ae177f5f64edcc09a3875e5afdc82edd2 inherit pro_methods_class_node_with_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles application message the node receives.  <a href="class_node_with_control.html#ae177f5f64edcc09a3875e5afdc82edd2">More...</a><br /></td></tr>
 <tr class="separator:ae177f5f64edcc09a3875e5afdc82edd2 inherit pro_methods_class_node_with_control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf1daba46cfa16eb2bd7cbd399c2624b inherit pro_methods_class_node_with_control"><td class="memItemLeft" align="right" valign="top">const vector&lt; unsigned int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#acf1daba46cfa16eb2bd7cbd399c2624b">getIndexIncrementedEntries</a> (unsigned int idSource)</td></tr>
+<tr class="memdesc:acf1daba46cfa16eb2bd7cbd399c2624b inherit pro_methods_class_node_with_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the Probabilistic clock indexes node idSource increments when broadcasting a message.  <a href="class_node_with_control.html#acf1daba46cfa16eb2bd7cbd399c2624b">More...</a><br /></td></tr>
 <tr class="separator:acf1daba46cfa16eb2bd7cbd399c2624b inherit pro_methods_class_node_with_control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_node_base"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_node_base')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_node_base.html">NodeBase</a></td></tr>
 <tr class="memitem:ab6ea4e77947d5b9b8da66d37dc432e7f inherit pro_methods_class_node_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_base.html#ab6ea4e77947d5b9b8da66d37dc432e7f">NodeBase</a> ()</td></tr>
@@ -180,18 +186,25 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:abaecd0d1b36ad0305c281905a3465dd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_node_with_recovery_8h.html#a8724f9aa35500c4029d1757428ade746">stats_recovery</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#abaecd0d1b36ad0305c281905a3465dd6">statsRecovery</a></td></tr>
+<tr class="memdesc:abaecd0d1b36ad0305c281905a3465dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> about the recoveries the node did.  <a href="#abaecd0d1b36ad0305c281905a3465dd6">More...</a><br /></td></tr>
 <tr class="separator:abaecd0d1b36ad0305c281905a3465dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e8a29d0f69da296e9971bb5d8882cfb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a4e8a29d0f69da296e9971bb5d8882cfb">inRecovery</a> = false</td></tr>
+<tr class="memdesc:a4e8a29d0f69da296e9971bb5d8882cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">True during recoveries and false otherwise.  <a href="#a4e8a29d0f69da296e9971bb5d8882cfb">More...</a><br /></td></tr>
 <tr class="separator:a4e8a29d0f69da296e9971bb5d8882cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae44e6b605047932d21cd5be25671963"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#aae44e6b605047932d21cd5be25671963">delayedAppMgsBroadcast</a> = false</td></tr>
+<tr class="memdesc:aae44e6b605047932d21cd5be25671963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to true if the node tries to broadcast a message during recovery.  <a href="#aae44e6b605047932d21cd5be25671963">More...</a><br /></td></tr>
 <tr class="separator:aae44e6b605047932d21cd5be25671963"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e574321bd92cb51ef3346168057fe0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a2e574321bd92cb51ef3346168057fe0f">currRecovery</a></td></tr>
+<tr class="memdesc:a2e574321bd92cb51ef3346168057fe0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message which is currently in recovery.  <a href="#a2e574321bd92cb51ef3346168057fe0f">More...</a><br /></td></tr>
 <tr class="separator:a2e574321bd92cb51ef3346168057fe0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b143ca2c401bbb2689443091d4d7e17"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="_node_with_recovery_8h.html#a7a7c744666781dbc85c00bb4ccb4a60f">msgDependency</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a6b143ca2c401bbb2689443091d4d7e17">localSentMsgDependencies</a></td></tr>
+<tr class="memdesc:a6b143ca2c401bbb2689443091d4d7e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">A process keeps the dependencies of messages it broadcasts to reply to recovery request.  <a href="#a6b143ca2c401bbb2689443091d4d7e17">More...</a><br /></td></tr>
 <tr class="separator:a6b143ca2c401bbb2689443091d4d7e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ed4ac06c68ac579d7848a98b145b5ae"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a9ed4ac06c68ac579d7848a98b145b5ae">messagesToRecover</a></td></tr>
+<tr class="memdesc:a9ed4ac06c68ac579d7848a98b145b5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">List containing the messages to recover when a recovery is already in progress.  <a href="#a9ed4ac06c68ac579d7848a98b145b5ae">More...</a><br /></td></tr>
 <tr class="separator:a9ed4ac06c68ac579d7848a98b145b5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf6b319a727cd9ec43a6cc68cbf99bbb"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="_node_with_recovery_8h.html#abc64f7ff8d329883ae93979292b1c996">recoveredMessage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#adf6b319a727cd9ec43a6cc68cbf99bbb">recoveredMessages</a></td></tr>
+<tr class="memdesc:adf6b319a727cd9ec43a6cc68cbf99bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">List containing messages for which the node received the dependencies list but which have some dependencies that the node has not delivered yet.  <a href="#adf6b319a727cd9ec43a6cc68cbf99bbb">More...</a><br /></td></tr>
 <tr class="separator:adf6b319a727cd9ec43a6cc68cbf99bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_node_detector"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_node_detector')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_node_detector.html">NodeDetector</a></td></tr>
 <tr class="memitem:a711fd643dc29b74e6dfe87e1aeb1b227 inherit pro_attribs_class_node_detector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_error_detector.html">ErrorDetector</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a711fd643dc29b74e6dfe87e1aeb1b227">detector</a></td></tr>
@@ -199,12 +212,16 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a711fd643dc29b74e6dfe87e1aeb1b227 inherit pro_attribs_class_node_detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_node_with_control"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_node_with_control')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_node_with_control.html">NodeWithControl</a></td></tr>
 <tr class="memitem:a051a7d7f2452f1f8da3bc5bfb05a7760 inherit pro_attribs_class_node_with_control"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#a051a7d7f2452f1f8da3bc5bfb05a7760">clock</a></td></tr>
+<tr class="memdesc:a051a7d7f2452f1f8da3bc5bfb05a7760 inherit pro_attribs_class_node_with_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">The node's local Probabilistic clock.  <a href="class_node_with_control.html#a051a7d7f2452f1f8da3bc5bfb05a7760">More...</a><br /></td></tr>
 <tr class="separator:a051a7d7f2452f1f8da3bc5bfb05a7760 inherit pro_attribs_class_node_with_control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c868fa52cca68f650dca96a788475df inherit pro_attribs_class_node_with_control"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_total_dependencies.html">TotalDependencies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#a6c868fa52cca68f650dca96a788475df">deliveredMessagesTracker</a></td></tr>
+<tr class="memdesc:a6c868fa52cca68f650dca96a788475df inherit pro_attribs_class_node_with_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causal information about the messages the node has delivered.  <a href="class_node_with_control.html#a6c868fa52cca68f650dca96a788475df">More...</a><br /></td></tr>
 <tr class="separator:a6c868fa52cca68f650dca96a788475df inherit pro_attribs_class_node_with_control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af38ffbedc82038536c77314f22ea6b57 inherit pro_attribs_class_node_with_control"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#af38ffbedc82038536c77314f22ea6b57">pendingMsg</a></td></tr>
+<tr class="memdesc:af38ffbedc82038536c77314f22ea6b57 inherit pro_attribs_class_node_with_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the messages whose clock does not satisfy the deliver condition.  <a href="class_node_with_control.html#af38ffbedc82038536c77314f22ea6b57">More...</a><br /></td></tr>
 <tr class="separator:af38ffbedc82038536c77314f22ea6b57 inherit pro_attribs_class_node_with_control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed34cc5a5b277c43f10f8cbbbeb59327 inherit pro_attribs_class_node_with_control"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#aed34cc5a5b277c43f10f8cbbbeb59327">delivered</a></td></tr>
+<tr class="memdesc:aed34cc5a5b277c43f10f8cbbbeb59327 inherit pro_attribs_class_node_with_control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains information about the messages the node delivered.  <a href="class_node_with_control.html#aed34cc5a5b277c43f10f8cbbbeb59327">More...</a><br /></td></tr>
 <tr class="separator:aed34cc5a5b277c43f10f8cbbbeb59327 inherit pro_attribs_class_node_with_control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_node_base"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_node_base')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_node_base.html">NodeBase</a></td></tr>
 <tr class="memitem:a2924723bf530b8304c5e028504aafd84 inherit pro_attribs_class_node_base"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_base.html#a2924723bf530b8304c5e028504aafd84">id</a> = <a class="el" href="class_node_base.html#a3d577a517665ac5bcf9ed9495945fe31">idCounter</a>++</td></tr>
@@ -247,7 +264,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ab8e4cc30083c58d14b22d928a78cb8ac inherit pro_static_attribs_class_node_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to have a random variation in the broadcast time of application messages.  <a href="class_node_base.html#ab8e4cc30083c58d14b22d928a78cb8ac">More...</a><br /></td></tr>
 <tr class="separator:ab8e4cc30083c58d14b22d928a78cb8ac inherit pro_static_attribs_class_node_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Nodes that recover the causal dependencies of messages which the error detector tags as not causally ordered. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aed1d9b2cfa7729902c90c103ab3075ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed1d9b2cfa7729902c90c103ab3075ff">&#9670;&nbsp;</a></span>NodeWithRecovery()</h2>
 
@@ -652,6 +671,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Message which is currently in recovery. </p>
+<p>Invalid outside recoveries. </p>
+
 </div>
 </div>
 <a id="aae44e6b605047932d21cd5be25671963"></a>
@@ -673,6 +695,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Set to true if the node tries to broadcast a message during recovery. </p>
+<p>Is set to false at the end of the recovery </p>
 
 </div>
 </div>
@@ -696,6 +721,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>True during recoveries and false otherwise. </p>
+
 </div>
 </div>
 <a id="a6b143ca2c401bbb2689443091d4d7e17"></a>
@@ -717,6 +744,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A process keeps the dependencies of messages it broadcasts to reply to recovery request. </p>
 
 </div>
 </div>
@@ -740,6 +769,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>List containing the messages to recover when a recovery is already in progress. </p>
+<p>The messages are pushed back to the pending message list at the end of the recovery. </p>
+
 </div>
 </div>
 <a id="adf6b319a727cd9ec43a6cc68cbf99bbb"></a>
@@ -762,6 +794,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>List containing messages for which the node received the dependencies list but which have some dependencies that the node has not delivered yet. </p>
+
 </div>
 </div>
 <a id="abaecd0d1b36ad0305c281905a3465dd6"></a>
@@ -783,6 +817,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> about the recoveries the node did. </p>
 
 </div>
 </div>

@@ -18,6 +18,7 @@
 
 #include "NodeDetector.h"
 
+/** Nodes using error detectors but which do not recover the dependencies of messages*/
 class NodeWithoutRecovery : public NodeDetector
 {
     public:

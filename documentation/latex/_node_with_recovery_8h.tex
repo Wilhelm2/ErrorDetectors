@@ -21,22 +21,22 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structs__stats__recovery}{s\+\_\+stats\+\_\+recovery}
-\item 
+\begin{DoxyCompactList}\small\item\em Contains the statistics relevant to recoveries. \end{DoxyCompactList}\item 
 struct \hyperlink{structs__sent_msg_dependency}{s\+\_\+sent\+Msg\+Dependency}
-\item 
+\begin{DoxyCompactList}\small\item\em Contains the dependencies of broadcasted messages. \end{DoxyCompactList}\item 
 struct \hyperlink{structs__recovered_message}{s\+\_\+recovered\+Message}
-\item 
+\begin{DoxyCompactList}\small\item\em Contains the information about a recovered message as well as its causal dependencies. \end{DoxyCompactList}\item 
 class \hyperlink{class_node_with_recovery}{Node\+With\+Recovery}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Nodes that recover the causal dependencies of messages which the error detector tags as not causally ordered. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 typedef struct \hyperlink{structs__stats__recovery}{s\+\_\+stats\+\_\+recovery} \hyperlink{_node_with_recovery_8h_a8724f9aa35500c4029d1757428ade746}{stats\+\_\+recovery}
-\item 
+\begin{DoxyCompactList}\small\item\em Contains the statistics relevant to recoveries. \end{DoxyCompactList}\item 
 typedef struct \hyperlink{structs__sent_msg_dependency}{s\+\_\+sent\+Msg\+Dependency} \hyperlink{_node_with_recovery_8h_a7a7c744666781dbc85c00bb4ccb4a60f}{msg\+Dependency}
-\item 
+\begin{DoxyCompactList}\small\item\em Contains the dependencies of broadcasted messages. \end{DoxyCompactList}\item 
 typedef struct \hyperlink{structs__recovered_message}{s\+\_\+recovered\+Message} \hyperlink{_node_with_recovery_8h_abc64f7ff8d329883ae93979292b1c996}{recovered\+Message}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Contains the information about a recovered message as well as its causal dependencies. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Typedef Documentation}
@@ -46,15 +46,27 @@ typedef struct \hyperlink{structs__recovered_message}{s\+\_\+recovered\+Message}
 \subsubsection{\texorpdfstring{msg\+Dependency}{msgDependency}}
 {\footnotesize\ttfamily typedef struct \hyperlink{structs__sent_msg_dependency}{s\+\_\+sent\+Msg\+Dependency}  \hyperlink{_node_with_recovery_8h_a7a7c744666781dbc85c00bb4ccb4a60f}{msg\+Dependency}}
 
+
+
+Contains the dependencies of broadcasted messages. 
+
 \mbox{\Hypertarget{_node_with_recovery_8h_abc64f7ff8d329883ae93979292b1c996}\label{_node_with_recovery_8h_abc64f7ff8d329883ae93979292b1c996}} 
 \index{Node\+With\+Recovery.\+h@{Node\+With\+Recovery.\+h}!recovered\+Message@{recovered\+Message}}
 \index{recovered\+Message@{recovered\+Message}!Node\+With\+Recovery.\+h@{Node\+With\+Recovery.\+h}}
 \subsubsection{\texorpdfstring{recovered\+Message}{recoveredMessage}}
 {\footnotesize\ttfamily typedef struct \hyperlink{structs__recovered_message}{s\+\_\+recovered\+Message}  \hyperlink{_node_with_recovery_8h_abc64f7ff8d329883ae93979292b1c996}{recovered\+Message}}
 
+
+
+Contains the information about a recovered message as well as its causal dependencies. 
+
 \mbox{\Hypertarget{_node_with_recovery_8h_a8724f9aa35500c4029d1757428ade746}\label{_node_with_recovery_8h_a8724f9aa35500c4029d1757428ade746}} 
 \index{Node\+With\+Recovery.\+h@{Node\+With\+Recovery.\+h}!stats\+\_\+recovery@{stats\+\_\+recovery}}
 \index{stats\+\_\+recovery@{stats\+\_\+recovery}!Node\+With\+Recovery.\+h@{Node\+With\+Recovery.\+h}}
 \subsubsection{\texorpdfstring{stats\+\_\+recovery}{stats\_recovery}}
 {\footnotesize\ttfamily typedef struct \hyperlink{structs__stats__recovery}{s\+\_\+stats\+\_\+recovery}  \hyperlink{_node_with_recovery_8h_a8724f9aa35500c4029d1757428ade746}{stats\+\_\+recovery}}
+
+
+
+Contains the statistics relevant to recoveries. 
 

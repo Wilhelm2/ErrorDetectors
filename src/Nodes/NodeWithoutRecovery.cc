@@ -18,12 +18,9 @@
 Define_Module(NodeWithoutRecovery);
 
 NodeWithoutRecovery::NodeWithoutRecovery() {
-    // TODO Auto-generated constructor stub
-
 }
 
 NodeWithoutRecovery::~NodeWithoutRecovery() {
-    // TODO Auto-generated destructor stub
 }
 
 void NodeWithoutRecovery::processMessage(cMessage* msg)
@@ -60,6 +57,9 @@ void NodeWithoutRecovery::iterativeDelivery()
     return ;
 }
 
+/** Tries to deliver the message and increments statistics to keep track of true and false error detector positives.
+ * @param message The information about the message to deliver.
+ * @return true if the process delivers the message and false otherwise. */
 bool NodeWithoutRecovery::testDeliverMessage(const messageInfo& message)
 {
     if(clock.satisfiesDeliveryCondition(message.clock, params->getEntriesIncrementedByProcess(message.id.id)))

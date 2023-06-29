@@ -18,14 +18,14 @@
 Define_Module(NodeWithRecoveryTest);
 
 NodeWithRecoveryTest::NodeWithRecoveryTest() {
-    // TODO Auto-generated constructor stub
-
 }
 
 NodeWithRecoveryTest::~NodeWithRecoveryTest() {
-    // TODO Auto-generated destructor stub
 }
 
+/** Tries to deliver a message as in NodeWithRecovery, but also tries to compute the causal depndencies of the message to deliver
+ * by also considering themessages not delivered yet before requesting the message's causal dependencies.
+ * @param m The message to deliver.*/
 bool NodeWithRecoveryTest::testDeliverMessage(const messageInfo& m)
 {
     if(clock.satisfiesDeliveryCondition(m.clock, params->getEntriesIncrementedByProcess(m.id.id)))
@@ -57,7 +57,12 @@ bool NodeWithRecoveryTest::testDeliverMessage(const messageInfo& m)
     return false;
 }
 
-// begins recovery if returns true. Returns false if all dependencies were received but not delivered yet (because of current recovery or clock delivery conditions not satisfied yet)
+/** Tries to compute the causal dependencies of the message to deliver by also considering pending messages (ie messages that the node received but has not delivered yet).
+ *  @param message Message to deliver.
+ *  @param delivered Messages the process has already delivered.
+ *  @param incrementedClockEntries Entries the sender node of the message incremented when broadcasting the message.
+ *  @return Returns false if all dependencies were received but not delivered yet (because of current recovery or clock delivery conditions not satisfied yet) and true otherwise. Requests the message's dependencies if returns true.
+ *  */
 bool NodeWithRecoveryTest::recoveryTest(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries)
 {
     HashErrorDetector* detector = dynamic_cast<HashErrorDetector*> (this->detector);
@@ -100,6 +105,11 @@ bool NodeWithRecoveryTest::recoveryTest(const messageInfo& message, const vector
     return true;
 }
 
+/** Computes the hash of the dependency set and compare it with the message's hash.
+ * @param message Information about the message to deliver.
+ * @param dependencies Dependencies set to hash.
+ * @param doneHashes Number of already tested dependencies sets for that message.
+ * @return true if the set's hash is equal to the message's hash.*/
 bool NodeWithRecoveryTest::tryHash(const messageInfo& message, const TotalDependencies& dependencies, unsigned doneHashes)
 {
     HashErrorDetector* detector = dynamic_cast<HashErrorDetector*> (this->detector);
@@ -114,7 +124,13 @@ bool NodeWithRecoveryTest::tryHash(const messageInfo& message, const TotalDepend
 }
 
 
-// tests with messages in recovery
+/** Tries to find the dependencies set of the message by also tacking into account messages the node received but did not deliver yet.
+ * @param message Information about the message to deliver.
+ * @param nbHashs Number of already computed hashes in the current search of the message's dependencies set.
+ * @param baseDependencies Messages considered as causal dependencies of the message to deliver.
+ * @param messagesToCombine Messages considered as possible causal dependencies of the message to deliver.
+ * @return true if found a dependencies set whose hash is equal to the message's hash.
+ * */
 bool NodeWithRecoveryTest::TryCombinationsRecoveringMessages(const messageInfo& message, unsigned int& nbHashs, const TotalDependencies& baseDependencies, const vector<idMsg>& messagesToCombine)
 {
     TotalDependencies tmpBaseDependencies;
@@ -134,6 +150,10 @@ bool NodeWithRecoveryTest::TryCombinationsRecoveringMessages(const messageInfo& 
     return true;
 }
 
+/** Determines the set of recovered messages that might be dependencies of the message to deliver.
+ * @param message Message to deliver.
+ * @param incrementedClockEntries Clock entries the sender node of the message to deliver incremented when broadcasting the message to deliver.
+ * @return List of messages to recover that might be causal dependencies of the message to deliver.*/
 vector<idMsg> NodeWithRecoveryTest::createRecoveredMessagesToCombine(const messageInfo& message, const vector<unsigned int>& incrementedClockEntries)
 {
     vector<messageInfo> recoveredTmp;

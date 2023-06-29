@@ -45,11 +45,11 @@ class NodeWithControl : public NodeBase
 
         /** The node's local Probabilistic clock*/
         ProbabilisticClock clock;
-        /** Information about the messages the node has delivered.*/
+        /** Causal information about the messages the node has delivered.*/
         TotalDependencies deliveredMessagesTracker ;
         /** Contains the messages whose clock does not satisfy the deliver condition.*/
         vector<messageInfo> pendingMsg;
-        /** Contains information about the messages the node delivered. Used by the hash-based error detectors.*/
+        /** Contains information about the messages the node delivered. */
         vector<messageInfo> delivered;
 
         friend class Stats;

@@ -80,11 +80,11 @@ Inheritance diagram for NodeBase:</div>
 <div class="center"><img src="class_node_base__inherit__graph.png" border="0" usemap="#_node_base_inherit__map" alt="Inheritance graph"/></div>
 <map name="_node_base_inherit__map" id="_node_base_inherit__map">
 <area shape="rect" id="node3" href="class_node_no_control.html" title="Node which delivers messages upon reception without any control. " alt="" coords="25,155,137,181"/>
-<area shape="rect" id="node4" href="class_node_with_control.html" title="NodeWithControl" alt="" coords="161,155,284,181"/>
+<area shape="rect" id="node4" href="class_node_with_control.html" title="Base class for nodes that use probabilistic clocks to causally order application messages. " alt="" coords="161,155,284,181"/>
 <area shape="rect" id="node5" href="class_node_detector.html" title="Base class to implement nodes using error detectors. " alt="" coords="115,229,218,256"/>
 <area shape="rect" id="node9" href="class_node_p_c.html" title="Node using Probabilistic clocks to causally order messages (without error detectors). " alt="" coords="243,229,315,256"/>
-<area shape="rect" id="node6" href="class_node_without_recovery.html" title="NodeWithoutRecovery" alt="" coords="5,304,160,331"/>
-<area shape="rect" id="node7" href="class_node_with_recovery.html" title="NodeWithRecovery" alt="" coords="184,304,320,331"/>
+<area shape="rect" id="node6" href="class_node_without_recovery.html" title="Nodes using error detectors but which do not recover the dependencies of messages. " alt="" coords="5,304,160,331"/>
+<area shape="rect" id="node7" href="class_node_with_recovery.html" title="Nodes that recover the causal dependencies of messages which the error detector tags as not causally ..." alt="" coords="184,304,320,331"/>
 <area shape="rect" id="node8" href="class_node_with_recovery_test.html" title="NodeWithRecoveryTest" alt="" coords="171,379,333,405"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -258,7 +258,7 @@ Friends</h2></td></tr>
 <p>Creates an application message and initializes it. </p>
 <dl class="section return"><dt>Returns</dt><dd>The application message. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_node_detector.html#a7100349647350ad5e3aeb1ed4669c723">NodeDetector</a>, and <a class="el" href="class_node_with_control.html#a7772568c2836f5f204952ebe659e0049">NodeWithControl</a>.</p>
+<p>Reimplemented in <a class="el" href="class_node_with_control.html#a7772568c2836f5f204952ebe659e0049">NodeWithControl</a>, and <a class="el" href="class_node_detector.html#a7100349647350ad5e3aeb1ed4669c723">NodeDetector</a>.</p>
 
 </div>
 </div>
@@ -394,7 +394,7 @@ Friends</h2></td></tr>
 
 <p>Initializes the node by scheduling it's broadcastTimer, initializing its connection with the communication dispatcher and looking up the <a class="el" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. ">SimulationParameters</a> and <a class="el" href="class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order...">Controller</a> modules. </p>
 
-<p>Reimplemented in <a class="el" href="class_node_detector.html#aefa188ab0657837b1b57f24674d3ef22">NodeDetector</a>, and <a class="el" href="class_node_with_control.html#a08c8e80fd67b52c51c642d7c66fe729c">NodeWithControl</a>.</p>
+<p>Reimplemented in <a class="el" href="class_node_with_control.html#a08c8e80fd67b52c51c642d7c66fe729c">NodeWithControl</a>, and <a class="el" href="class_node_detector.html#aefa188ab0657837b1b57f24674d3ef22">NodeDetector</a>.</p>
 
 </div>
 </div>
@@ -451,7 +451,7 @@ Friends</h2></td></tr>
 <p>Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. </p>
 <dl class="section return"><dt>Returns</dt><dd>The application message to broadcast. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_node_with_recovery.html#a33d8e8775fd69cb647b38a54b36e1ebe">NodeWithRecovery</a>, <a class="el" href="class_node_detector.html#af75cf37cc01fc51bc228a7a83c10cb97">NodeDetector</a>, and <a class="el" href="class_node_with_control.html#ab871014cf3f42d834f8d34ad5498174c">NodeWithControl</a>.</p>
+<p>Reimplemented in <a class="el" href="class_node_with_recovery.html#a33d8e8775fd69cb647b38a54b36e1ebe">NodeWithRecovery</a>, <a class="el" href="class_node_with_control.html#ab871014cf3f42d834f8d34ad5498174c">NodeWithControl</a>, and <a class="el" href="class_node_detector.html#af75cf37cc01fc51bc228a7a83c10cb97">NodeDetector</a>.</p>
 
 </div>
 </div>
@@ -481,7 +481,7 @@ Friends</h2></td></tr>
 
 <p>Called at reception of messages from other nodes in order to process them. </p>
 
-<p>Implemented in <a class="el" href="class_node_with_recovery.html#a216c29d76ddb0e94cd5701ff208c7f5b">NodeWithRecovery</a>, <a class="el" href="class_node_with_control.html#af532082fab76c38d8c50ca90e991f4c3">NodeWithControl</a>, <a class="el" href="class_node_detector.html#ab69432c6d3327a684845ec231826727e">NodeDetector</a>, <a class="el" href="class_node_no_control.html#aa83bc408fe3dab03f124ea5489946836">NodeNoControl</a>, <a class="el" href="class_node_p_c.html#aa5fedc4136104a06e2f1131f1ba16b0e">NodePC</a>, and <a class="el" href="class_node_without_recovery.html#a0b44132b4ebc650399711766cb050399">NodeWithoutRecovery</a>.</p>
+<p>Implemented in <a class="el" href="class_node_with_recovery.html#a216c29d76ddb0e94cd5701ff208c7f5b">NodeWithRecovery</a>, <a class="el" href="class_node_with_control.html#af532082fab76c38d8c50ca90e991f4c3">NodeWithControl</a>, <a class="el" href="class_node_detector.html#ab69432c6d3327a684845ec231826727e">NodeDetector</a>, <a class="el" href="class_node_no_control.html#aa83bc408fe3dab03f124ea5489946836">NodeNoControl</a>, <a class="el" href="class_node_without_recovery.html#a0b44132b4ebc650399711766cb050399">NodeWithoutRecovery</a>, and <a class="el" href="class_node_p_c.html#aa5fedc4136104a06e2f1131f1ba16b0e">NodePC</a>.</p>
 
 </div>
 </div>

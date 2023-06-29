@@ -18,14 +18,13 @@
 Define_Module(NodeWithRecovery);
 
 NodeWithRecovery::NodeWithRecovery() {
-    // TODO Auto-generated constructor stub
-
 }
 
 NodeWithRecovery::~NodeWithRecovery() {
-    // TODO Auto-generated destructor stub
 }
 
+/** Processes received messages as well as the broadcastTimer. Does not broadcast a message if in recovery.
+ * @param msg Message to process.*/
 void NodeWithRecovery::handleMessage(cMessage *msg)
 {
     if(msg == broadcastTimer && inRecovery)
@@ -73,6 +72,9 @@ void NodeWithRecovery::processMessage(cMessage* msg)
         delete msg;
 }
 
+/** Processes requests of message dependencies. Sends the dependencies to the requester node.
+ * Raises an error if does not have the dependencies of the requested message.
+ * @param m Dependency request. */
 void NodeWithRecovery::processDepReq(DepReq* m)
 {
 //    std::cerr<< simTime()<<"Node " << id << " receives depreq from Node "<<m->getIdRequester() << " which requests the dependencies of msg: " << m->getIdMsgToRecover().id<<","<<m->getIdMsgToRecover().seq<<endl;
@@ -92,6 +94,10 @@ void NodeWithRecovery::processDepReq(DepReq* m)
     exit(1);
 }
 
+/** Processes replies of dependency requests. Delivers the message if the node has delivered all of the messages dependencies.
+ * Otherwise pushes it to recoveredMessages.
+ * @param m Dependency request reply.
+ * */
 void NodeWithRecovery::processRcvRspDep(DepRsp* m)
 {
 //    cerr<<"node "<< id << " got reply for message " << m->getIdMsgToRecover().id <<"," << m->getIdMsgToRecover().seq<<endl;
@@ -112,6 +118,7 @@ void NodeWithRecovery::processRcvRspDep(DepRsp* m)
     }
 }
 
+/** Moves messages from the recovery list to the pending messages list while ordering them in the pending message list following their reception time.*/
 void NodeWithRecovery::pushbackMessagesInRecovery()
 {
     for(const messageInfo& msgR : messagesToRecover)
@@ -125,6 +132,10 @@ void NodeWithRecovery::pushbackMessagesInRecovery()
     return;
 }
 
+/** Tries to deliver application messages.
+ * Tries first to deliver recovered messages. Messages in recovery have a high probability to have been received some time ago.
+ * Hence, they have a high probability to be dependencies of currently pending messages. Hence, goes back to the beginning of the loop when delivers a recovered message.
+ * Loops as long as has delivered one message in the iteration.*/
 void NodeWithRecovery::iterativeDelivery()
 {
     bool messageDelivered;
@@ -142,6 +153,8 @@ void NodeWithRecovery::iterativeDelivery()
     return ;
 }
 
+/** Goes through the messages in recovery and checks if the node has delivered all of their dependencies, in order to deliver them and remove them from the recovered messages list.
+ * @return true if has delivered a message and false otherwise.*/
 bool NodeWithRecovery::tryDeliverMessageInRecovery()
 {
     vector<recoveredMessage>::iterator it;
@@ -157,6 +170,8 @@ bool NodeWithRecovery::tryDeliverMessageInRecovery()
     return false;
 }
 
+/** Tries to deliver pending messages.
+ * @return true if has delivered a message and false otherwise.*/
 bool NodeWithRecovery::tryDeliverPendingMessages()
 {
     for(vector<messageInfo>::iterator it=pendingMsg.begin(); it!=pendingMsg.end(); it++)
@@ -170,6 +185,13 @@ bool NodeWithRecovery::tryDeliverPendingMessages()
     return false;
 }
 
+/** Tries to deliver a message. First verifies that the message's clock satisfies the delivery conditions.
+ * Second executes the error detector on the message. Delivers the message if the error detector returns that the message is causally ordered.
+ * Otherwise, requests the dependencies of the message if no recovery is currently in progress, and pushes the message into the recovery list otherwise, to ensure that at most one recovery executes at any moment.
+ * Multiple recoveries are forbidden to avoid a cascade effect as described in the paper.
+ * @param m Message to deliver.
+ * @return true if has delivered the message and false otherwise.
+ */
 bool NodeWithRecovery::testDeliverMessage(const messageInfo& m)
 {
     if(clock.satisfiesDeliveryCondition(m.clock, params->getEntriesIncrementedByProcess(m.id.id)))
@@ -196,6 +218,8 @@ bool NodeWithRecovery::testDeliverMessage(const messageInfo& m)
     return false;
 }
 
+/** Sends a request for the causal dependencies of m.
+ * @param m Message of which requests the causal dependencies.*/
 void NodeWithRecovery::requestDependencies(const messageInfo& m)
 {
     statsRecovery.nbRecoveries++;
@@ -207,6 +231,8 @@ void NodeWithRecovery::requestDependencies(const messageInfo& m)
     send(req,outGate);
 }
 
+/** Saves the causal dependencies of the message to broadcast to be able to send them to nodes that might request them.
+ * @return The message to broadcast. */
 AppMsg* NodeWithRecovery::prepareBroadcast()
 {
     AppMsg* m = NodeDetector::prepareBroadcast();

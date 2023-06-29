@@ -53,7 +53,11 @@ simtime\+\_\+t \hyperlink{class_simulation_parameters_acf83b84e172a799e1db3bf955
 const vector$<$ unsigned int $>$ \& \hyperlink{class_simulation_parameters_aa8a52acbc3c5d374decafb59dcf0e971}{get\+Entries\+Incremented\+By\+Process} (unsigned int node\+Id)
 \begin{DoxyCompactList}\small\item\em Getter of the entries incremented by nodes. \end{DoxyCompactList}\item 
 const vector$<$ vector$<$ bool $>$ $>$ \& \hyperlink{class_simulation_parameters_a39008b8c9ed5c7c27dbfe7c5355d8062}{get\+Dependency\+Combinations} (unsigned int nb\+Possible\+Dependencies)
-\begin{DoxyCompactList}\small\item\em Returns the sets of dependency combinations for a given number of possible dependencies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the sets of dependency combinations for a given number of possible dependencies. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulation_parameters_a65939e54b0e75c32489b9d27fa84848d}{uses\+Hash\+Detector} ()
+\begin{DoxyCompactList}\small\item\em Determines if nodes use a hash-\/based error detector. \end{DoxyCompactList}\item 
+bool \hyperlink{class_simulation_parameters_ae5dc96e5e8aff8ee3961abeded5e3209}{uses\+Recoveries} ()
+\begin{DoxyCompactList}\small\item\em Determines if nodes are recovering the causal dependencies of messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -353,6 +357,26 @@ Then builds vectors of \$k\$ random entries to increment and shuffles them to ha
 
 
 Converts the delivery\+Option simulation parameter into the \hyperlink{class_simulation_parameters_ae08444273809241f502aa422205f7307}{Simulation\+Parameters\+::\+Delivery} enum type. 
+
+\mbox{\Hypertarget{class_simulation_parameters_a65939e54b0e75c32489b9d27fa84848d}\label{class_simulation_parameters_a65939e54b0e75c32489b9d27fa84848d}} 
+\index{Simulation\+Parameters@{Simulation\+Parameters}!uses\+Hash\+Detector@{uses\+Hash\+Detector}}
+\index{uses\+Hash\+Detector@{uses\+Hash\+Detector}!Simulation\+Parameters@{Simulation\+Parameters}}
+\subsubsection{\texorpdfstring{uses\+Hash\+Detector()}{usesHashDetector()}}
+{\footnotesize\ttfamily bool Simulation\+Parameters\+::uses\+Hash\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Determines if nodes use a hash-\/based error detector. 
+
+\mbox{\Hypertarget{class_simulation_parameters_ae5dc96e5e8aff8ee3961abeded5e3209}\label{class_simulation_parameters_ae5dc96e5e8aff8ee3961abeded5e3209}} 
+\index{Simulation\+Parameters@{Simulation\+Parameters}!uses\+Recoveries@{uses\+Recoveries}}
+\index{uses\+Recoveries@{uses\+Recoveries}!Simulation\+Parameters@{Simulation\+Parameters}}
+\subsubsection{\texorpdfstring{uses\+Recoveries()}{usesRecoveries()}}
+{\footnotesize\ttfamily bool Simulation\+Parameters\+::uses\+Recoveries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Determines if nodes are recovering the causal dependencies of messages. 
 
 
 

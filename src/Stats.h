@@ -1,3 +1,6 @@
+/** @file Stats.h
+ *  @brief Stats module used to collect statistics and write them into files
+ */
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -29,14 +32,14 @@ using namespace omnetpp;
 
 class NodeBase;
 
+/** @class Stats
+ *  @brief Stats is used to collect statistics and write them into files
+ */
 class Stats : public cSimpleModule
 {
   private:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
-
-    vector<NodeBase*> nodes;
-    SimulationParameters* params;
 
     void writeNbDeliveredMessages();
     void writeNbFalseDeliveredMessages();
@@ -55,18 +58,34 @@ class Stats : public cSimpleModule
     void printNbJumpedBroadcasts();
     bool usesHashDetector();
 
+    /** Stream to write into a file the statistics about the number of done message recoveries*/
     std::ofstream nbRecoveriesFile;
+    /** Stream to write into a file the statistics about the number of computed hashes*/
     std::ofstream nbHashsFile;
+    /** Stream to write into a file the statistics about the number of messages to combine in the hash combination*/
     std::ofstream nbMsgToCombineFile;
+    /** Stream to write into a file the statistics about the number of messages delivered out of causal order*/
     std::ofstream nbFalseDeliveredFile;
+    /** Stream to write into a file the statistics about */
     std::ofstream nbAvoidedRecoveriesFile;
+    /** Stream to write into a file the statistics about */
     std::ofstream nbSentDependenciesFile;
+    /** Stream to write into a file the statistics about */
     std::ofstream nbDeliveredMessagesFile;
+    /** Stream to write into a file the statistics about */
     std::ofstream controlDataSizeFile;
+    /** Stream to write into a file the statistics about */
     std::ofstream nbMsgWronglyConsideredCausalDepFile;
+    /** Stream to write into a file the statistics about */
     std::ofstream doneCombinationsToFindHashFile;
+    /** Stream to write into a file the statistics about */
     std::ofstream trueFalseNegativesFile;
+    /** Stream to write into a file the statistics about */
     std::ofstream nbOperationsForHashFile;
+
+    vector<NodeBase*> nodes;
+    SimulationParameters* params;
+
 };
 
 #endif /* STATS_STATS_H_ */

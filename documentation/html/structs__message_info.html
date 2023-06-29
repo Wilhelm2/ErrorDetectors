@@ -67,6 +67,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Structure containing information about received messages required to causally order them as well as to execute the error detectors on them.  
+ <a href="structs__message_info.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="structures_8h_source.html">structures.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for s_messageInfo:</div>
@@ -74,31 +77,40 @@ Collaboration diagram for s_messageInfo:</div>
 <div class="center"><img src="structs__message_info__coll__graph.png" border="0" usemap="#s__message_info_coll__map" alt="Collaboration graph"/></div>
 <map name="s__message_info_coll__map" id="s__message_info_coll__map">
 <area shape="rect" id="node2" href="class_probabilistic_clock.html" title="ProbabilisticClock" alt="" coords="5,5,132,32"/>
-<area shape="rect" id="node3" href="structs__id.html" title="s_id" alt="" coords="156,5,203,32"/>
+<area shape="rect" id="node3" href="structs__id.html" title="Each message has an unique identifier composed of the id of the node $p_i$ that sent it and the seque..." alt="" coords="156,5,203,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa626a79c3b41f14b406f8d86b87fcfb9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__message_info.html#aa626a79c3b41f14b406f8d86b87fcfb9">s_messageInfo</a> (<a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> <a class="el" href="structs__message_info.html#a6c2928774199848fd25b4e8ffb7870c2">id</a>, omnetpp::simtime_t <a class="el" href="structs__message_info.html#a3600b24205dc07ce06774af44976c107">recvtime</a>, size_t <a class="el" href="structs__message_info.html#a9b627c36e814fbbd04a89bc6e827e4ff">hash</a>, vector&lt; <a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> &gt; <a class="el" href="structs__message_info.html#a82f52cb53fb0e9b1b985f173f3a013be">dependencies</a>, <a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a> <a class="el" href="structs__message_info.html#ad35ea02bbca3d54d5b150bb6ea476888">clock</a>)</td></tr>
+<tr class="memdesc:aa626a79c3b41f14b406f8d86b87fcfb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="structs__message_info.html" title="Structure containing information about received messages required to causally order them as well as t...">s_messageInfo</a> structs.  <a href="#aa626a79c3b41f14b406f8d86b87fcfb9">More...</a><br /></td></tr>
 <tr class="separator:aa626a79c3b41f14b406f8d86b87fcfb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cde6289906418221236646ae3df77c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__message_info.html#a4cde6289906418221236646ae3df77c8">s_messageInfo</a> ()</td></tr>
+<tr class="memdesc:a4cde6289906418221236646ae3df77c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty constructor for <a class="el" href="structs__message_info.html" title="Structure containing information about received messages required to causally order them as well as t...">s_messageInfo</a> structs.  <a href="#a4cde6289906418221236646ae3df77c8">More...</a><br /></td></tr>
 <tr class="separator:a4cde6289906418221236646ae3df77c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a6c2928774199848fd25b4e8ffb7870c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__message_info.html#a6c2928774199848fd25b4e8ffb7870c2">id</a></td></tr>
+<tr class="memdesc:a6c2928774199848fd25b4e8ffb7870c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message's identificator.  <a href="#a6c2928774199848fd25b4e8ffb7870c2">More...</a><br /></td></tr>
 <tr class="separator:a6c2928774199848fd25b4e8ffb7870c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3600b24205dc07ce06774af44976c107"><td class="memItemLeft" align="right" valign="top">omnetpp::simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__message_info.html#a3600b24205dc07ce06774af44976c107">recvtime</a></td></tr>
+<tr class="memdesc:a3600b24205dc07ce06774af44976c107"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message's reception time.  <a href="#a3600b24205dc07ce06774af44976c107">More...</a><br /></td></tr>
 <tr class="separator:a3600b24205dc07ce06774af44976c107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b627c36e814fbbd04a89bc6e827e4ff"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__message_info.html#a9b627c36e814fbbd04a89bc6e827e4ff">hash</a></td></tr>
+<tr class="memdesc:a9b627c36e814fbbd04a89bc6e827e4ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message's hash.  <a href="#a9b627c36e814fbbd04a89bc6e827e4ff">More...</a><br /></td></tr>
 <tr class="separator:a9b627c36e814fbbd04a89bc6e827e4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82f52cb53fb0e9b1b985f173f3a013be"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__message_info.html#a82f52cb53fb0e9b1b985f173f3a013be">dependencies</a></td></tr>
+<tr class="memdesc:a82f52cb53fb0e9b1b985f173f3a013be"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message's causal dependencies appended.  <a href="#a82f52cb53fb0e9b1b985f173f3a013be">More...</a><br /></td></tr>
 <tr class="separator:a82f52cb53fb0e9b1b985f173f3a013be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35ea02bbca3d54d5b150bb6ea476888"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__message_info.html#ad35ea02bbca3d54d5b150bb6ea476888">clock</a></td></tr>
+<tr class="memdesc:ad35ea02bbca3d54d5b150bb6ea476888"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message's probabilistic clock.  <a href="#ad35ea02bbca3d54d5b150bb6ea476888">More...</a><br /></td></tr>
 <tr class="separator:ad35ea02bbca3d54d5b150bb6ea476888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Structure containing information about received messages required to causally order them as well as to execute the error detectors on them. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa626a79c3b41f14b406f8d86b87fcfb9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa626a79c3b41f14b406f8d86b87fcfb9">&#9670;&nbsp;</a></span>s_messageInfo() <span class="overload">[1/2]</span></h2>
 
@@ -151,6 +163,18 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor for <a class="el" href="structs__message_info.html" title="Structure containing information about received messages required to causally order them as well as t...">s_messageInfo</a> structs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The message's identificator </td></tr>
+    <tr><td class="paramname">recvtime</td><td>The message's reception time </td></tr>
+    <tr><td class="paramname">hash</td><td>The message's hash </td></tr>
+    <tr><td class="paramname">dependencies</td><td>the message's Causal dependencies </td></tr>
+    <tr><td class="paramname">clock</td><td>The message's Probabilistic clock </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a4cde6289906418221236646ae3df77c8"></a>
@@ -176,6 +200,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Empty constructor for <a class="el" href="structs__message_info.html" title="Structure containing information about received messages required to causally order them as well as t...">s_messageInfo</a> structs. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -191,6 +217,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The message's probabilistic clock. </p>
+
 </div>
 </div>
 <a id="a82f52cb53fb0e9b1b985f173f3a013be"></a>
@@ -204,6 +232,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The message's causal dependencies appended. </p>
+<p>This field only contains dependencencies when APPENDDEPENDENCIES (see <a class="el" href="simulation_parameters_8h.html">simulationParameters.h</a>) is defined as true </p>
 
 </div>
 </div>
@@ -219,6 +250,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The message's hash. </p>
+
 </div>
 </div>
 <a id="a6c2928774199848fd25b4e8ffb7870c2"></a>
@@ -233,6 +266,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The message's identificator. </p>
+
 </div>
 </div>
 <a id="a3600b24205dc07ce06774af44976c107"></a>
@@ -246,6 +281,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The message's reception time. </p>
 
 </div>
 </div>

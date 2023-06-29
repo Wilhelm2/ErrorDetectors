@@ -37,7 +37,7 @@ void CommunicationDispatcher::handleMessage(cMessage *msg)
     if(Init* m = dynamic_cast<Init*> (msg) )
     {
         std::string output = std::regex_replace(m->getArrivalGate()->getFullName(),std::regex("[^0-9]*([0-9]+).*"),std::string("$1"));
-        gates[m->getProcessId()] = this->gate("neighbour$o", stoi(output) );
+        gates[m->getNodeId()] = this->gate("neighbour$o", stoi(output) );
         delete msg;
     }
     else if(AppMsg* m = dynamic_cast<AppMsg*> (msg))
@@ -96,7 +96,7 @@ simtime_t CommunicationDispatcher::computeDelay(unsigned int idSourceProcess, un
 }
 
 /** @brief Takes statistics of the propagation delay interval 
- * @param entry propagation interval to increment
+ * @param entry propagation delay interval of message
 */
 void CommunicationDispatcher::incrementDelayIntervals(unsigned int entry)
 {

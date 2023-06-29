@@ -2,16 +2,24 @@
 \label{structs__id}\index{s\+\_\+id@{s\+\_\+id}}
 
 
+Each message has an unique identifier composed of the id of the node \$p\+\_\+i\$ that sent it and the sequence number \$p\+\_\+i\$ associated to the message.  
+
+
+
+
 {\ttfamily \#include $<$structures.\+h$>$}
 
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 unsigned int \hyperlink{structs__id_a5c4ca3342296868576159a20ebe9909d}{id}
-\item 
+\begin{DoxyCompactList}\small\item\em Identification number of the node that sent the message. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{structs__id_aa384054b68c5bfb4ed4a230e6a0e895f}{seq}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sequence number that the message\textquotesingle{}s sending node associated to the message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Each message has an unique identifier composed of the id of the node \$p\+\_\+i\$ that sent it and the sequence number \$p\+\_\+i\$ associated to the message. 
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{structs__id_a5c4ca3342296868576159a20ebe9909d}\label{structs__id_a5c4ca3342296868576159a20ebe9909d}} 
@@ -20,11 +28,19 @@ unsigned int \hyperlink{structs__id_aa384054b68c5bfb4ed4a230e6a0e895f}{seq}
 \subsubsection{\texorpdfstring{id}{id}}
 {\footnotesize\ttfamily unsigned int s\+\_\+id\+::id}
 
+
+
+Identification number of the node that sent the message. 
+
 \mbox{\Hypertarget{structs__id_aa384054b68c5bfb4ed4a230e6a0e895f}\label{structs__id_aa384054b68c5bfb4ed4a230e6a0e895f}} 
 \index{s\+\_\+id@{s\+\_\+id}!seq@{seq}}
 \index{seq@{seq}!s\+\_\+id@{s\+\_\+id}}
 \subsubsection{\texorpdfstring{seq}{seq}}
 {\footnotesize\ttfamily unsigned int s\+\_\+id\+::seq}
+
+
+
+Sequence number that the message\textquotesingle{}s sending node associated to the message. 
 
 
 

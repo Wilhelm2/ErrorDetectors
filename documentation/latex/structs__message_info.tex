@@ -2,6 +2,11 @@
 \label{structs__message_info}\index{s\+\_\+message\+Info@{s\+\_\+message\+Info}}
 
 
+Structure containing information about received messages required to causally order them as well as to execute the error detectors on them.  
+
+
+
+
 {\ttfamily \#include $<$structures.\+h$>$}
 
 
@@ -17,23 +22,26 @@ Collaboration diagram for s\+\_\+message\+Info\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structs__message_info_aa626a79c3b41f14b406f8d86b87fcfb9}{s\+\_\+message\+Info} (\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} \hyperlink{structs__message_info_a6c2928774199848fd25b4e8ffb7870c2}{id}, omnetpp\+::simtime\+\_\+t \hyperlink{structs__message_info_a3600b24205dc07ce06774af44976c107}{recvtime}, size\+\_\+t \hyperlink{structs__message_info_a9b627c36e814fbbd04a89bc6e827e4ff}{hash}, vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{structs__message_info_a82f52cb53fb0e9b1b985f173f3a013be}{dependencies}, \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \hyperlink{structs__message_info_ad35ea02bbca3d54d5b150bb6ea476888}{clock})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{structs__message_info}{s\+\_\+message\+Info} structs. \end{DoxyCompactList}\item 
 \hyperlink{structs__message_info_a4cde6289906418221236646ae3df77c8}{s\+\_\+message\+Info} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Empty constructor for \hyperlink{structs__message_info}{s\+\_\+message\+Info} structs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} \hyperlink{structs__message_info_a6c2928774199848fd25b4e8ffb7870c2}{id}
-\item 
+\begin{DoxyCompactList}\small\item\em The message\textquotesingle{}s identificator. \end{DoxyCompactList}\item 
 omnetpp\+::simtime\+\_\+t \hyperlink{structs__message_info_a3600b24205dc07ce06774af44976c107}{recvtime}
-\item 
+\begin{DoxyCompactList}\small\item\em The message\textquotesingle{}s reception time. \end{DoxyCompactList}\item 
 size\+\_\+t \hyperlink{structs__message_info_a9b627c36e814fbbd04a89bc6e827e4ff}{hash}
-\item 
+\begin{DoxyCompactList}\small\item\em The message\textquotesingle{}s hash. \end{DoxyCompactList}\item 
 std\+::vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{structs__message_info_a82f52cb53fb0e9b1b985f173f3a013be}{dependencies}
-\item 
+\begin{DoxyCompactList}\small\item\em The message\textquotesingle{}s causal dependencies appended. \end{DoxyCompactList}\item 
 \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \hyperlink{structs__message_info_ad35ea02bbca3d54d5b150bb6ea476888}{clock}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The message\textquotesingle{}s probabilistic clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Structure containing information about received messages required to causally order them as well as to execute the error detectors on them. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{structs__message_info_aa626a79c3b41f14b406f8d86b87fcfb9}\label{structs__message_info_aa626a79c3b41f14b406f8d86b87fcfb9}} 
@@ -42,11 +50,32 @@ std\+::vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\
 \subsubsection{\texorpdfstring{s\+\_\+message\+Info()}{s\_messageInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily s\+\_\+message\+Info\+::s\+\_\+message\+Info (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}}]{id,  }\item[{omnetpp\+::simtime\+\_\+t}]{recvtime,  }\item[{size\+\_\+t}]{hash,  }\item[{vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$}]{dependencies,  }\item[{\hyperlink{class_probabilistic_clock}{Probabilistic\+Clock}}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Constructor for \hyperlink{structs__message_info}{s\+\_\+message\+Info} structs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The message\textquotesingle{}s identificator \\
+\hline
+{\em recvtime} & The message\textquotesingle{}s reception time \\
+\hline
+{\em hash} & The message\textquotesingle{}s hash \\
+\hline
+{\em dependencies} & the message\textquotesingle{}s Causal dependencies \\
+\hline
+{\em clock} & The message\textquotesingle{}s Probabilistic clock \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{structs__message_info_a4cde6289906418221236646ae3df77c8}\label{structs__message_info_a4cde6289906418221236646ae3df77c8}} 
 \index{s\+\_\+message\+Info@{s\+\_\+message\+Info}!s\+\_\+message\+Info@{s\+\_\+message\+Info}}
 \index{s\+\_\+message\+Info@{s\+\_\+message\+Info}!s\+\_\+message\+Info@{s\+\_\+message\+Info}}
 \subsubsection{\texorpdfstring{s\+\_\+message\+Info()}{s\_messageInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily s\+\_\+message\+Info\+::s\+\_\+message\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Empty constructor for \hyperlink{structs__message_info}{s\+\_\+message\+Info} structs. 
 
 
 
@@ -57,17 +86,29 @@ std\+::vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\
 \subsubsection{\texorpdfstring{clock}{clock}}
 {\footnotesize\ttfamily \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} s\+\_\+message\+Info\+::clock}
 
+
+
+The message\textquotesingle{}s probabilistic clock. 
+
 \mbox{\Hypertarget{structs__message_info_a82f52cb53fb0e9b1b985f173f3a013be}\label{structs__message_info_a82f52cb53fb0e9b1b985f173f3a013be}} 
 \index{s\+\_\+message\+Info@{s\+\_\+message\+Info}!dependencies@{dependencies}}
 \index{dependencies@{dependencies}!s\+\_\+message\+Info@{s\+\_\+message\+Info}}
 \subsubsection{\texorpdfstring{dependencies}{dependencies}}
 {\footnotesize\ttfamily std\+::vector$<$\hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg}$>$ s\+\_\+message\+Info\+::dependencies}
 
-\mbox{\Hypertarget{structs__message_info_a9b627c36e814fbbd04a89bc6e827e4ff}\label{structs__message_info_a9b627c36e814fbbd04a89bc6e827e4ff}} 
+
+
+The message\textquotesingle{}s causal dependencies appended. 
+
+This field only contains dependencencies when A\+P\+P\+E\+N\+D\+D\+E\+P\+E\+N\+D\+E\+N\+C\+I\+ES (see \hyperlink{simulation_parameters_8h}{simulation\+Parameters.\+h}) is defined as true \mbox{\Hypertarget{structs__message_info_a9b627c36e814fbbd04a89bc6e827e4ff}\label{structs__message_info_a9b627c36e814fbbd04a89bc6e827e4ff}} 
 \index{s\+\_\+message\+Info@{s\+\_\+message\+Info}!hash@{hash}}
 \index{hash@{hash}!s\+\_\+message\+Info@{s\+\_\+message\+Info}}
 \subsubsection{\texorpdfstring{hash}{hash}}
 {\footnotesize\ttfamily size\+\_\+t s\+\_\+message\+Info\+::hash}
+
+
+
+The message\textquotesingle{}s hash. 
 
 \mbox{\Hypertarget{structs__message_info_a6c2928774199848fd25b4e8ffb7870c2}\label{structs__message_info_a6c2928774199848fd25b4e8ffb7870c2}} 
 \index{s\+\_\+message\+Info@{s\+\_\+message\+Info}!id@{id}}
@@ -75,11 +116,19 @@ std\+::vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\
 \subsubsection{\texorpdfstring{id}{id}}
 {\footnotesize\ttfamily \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} s\+\_\+message\+Info\+::id}
 
+
+
+The message\textquotesingle{}s identificator. 
+
 \mbox{\Hypertarget{structs__message_info_a3600b24205dc07ce06774af44976c107}\label{structs__message_info_a3600b24205dc07ce06774af44976c107}} 
 \index{s\+\_\+message\+Info@{s\+\_\+message\+Info}!recvtime@{recvtime}}
 \index{recvtime@{recvtime}!s\+\_\+message\+Info@{s\+\_\+message\+Info}}
 \subsubsection{\texorpdfstring{recvtime}{recvtime}}
 {\footnotesize\ttfamily omnetpp\+::simtime\+\_\+t s\+\_\+message\+Info\+::recvtime}
+
+
+
+The message\textquotesingle{}s reception time. 
 
 
 

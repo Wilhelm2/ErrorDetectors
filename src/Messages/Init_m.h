@@ -26,14 +26,14 @@
  * //
  * packet Init
  * {
- *     unsigned int processId;
+ *     unsigned int nodeId;
  * }
  * </pre>
  */
 class Init : public ::omnetpp::cPacket
 {
   protected:
-    unsigned int processId;
+    unsigned int nodeId;
 
   private:
     void copy(const Init& other);
@@ -52,8 +52,8 @@ class Init : public ::omnetpp::cPacket
     virtual void parsimUnpack(omnetpp::cCommBuffer *b) override;
 
     // field getter/setter methods
-    virtual unsigned int getProcessId() const;
-    virtual void setProcessId(unsigned int processId);
+    virtual unsigned int getNodeId() const;
+    virtual void setNodeId(unsigned int nodeId);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const Init& obj) {obj.parsimPack(b);}

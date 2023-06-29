@@ -100,10 +100,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a73df5d54ec41b9980e98dbfc12875145"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3728913400c516dbb31c8fed392d32d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_init.html#ab3728913400c516dbb31c8fed392d32d">parsimUnpack</a> (omnetpp::cCommBuffer *b) override</td></tr>
 <tr class="separator:ab3728913400c516dbb31c8fed392d32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73d525231ae76ad98442d6f5b86bb994"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_init.html#a73d525231ae76ad98442d6f5b86bb994">getProcessId</a> () const</td></tr>
-<tr class="separator:a73d525231ae76ad98442d6f5b86bb994"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0331d367c559e5859841ab0cafb9a71"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_init.html#ae0331d367c559e5859841ab0cafb9a71">setProcessId</a> (unsigned int <a class="el" href="class_init.html#a3adbaa4c454127a34eaab69297b44585">processId</a>)</td></tr>
-<tr class="separator:ae0331d367c559e5859841ab0cafb9a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67fdac2389d7298a742e33a6551e8eb1"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_init.html#a67fdac2389d7298a742e33a6551e8eb1">getNodeId</a> () const</td></tr>
+<tr class="separator:a67fdac2389d7298a742e33a6551e8eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b64722ff60f3ecf3b17939c0a1cb6d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_init.html#a21b64722ff60f3ecf3b17939c0a1cb6d">setNodeId</a> (unsigned int <a class="el" href="class_init.html#abc9fcf6151621f0ac808cd29e14239c9">nodeId</a>)</td></tr>
+<tr class="separator:a21b64722ff60f3ecf3b17939c0a1cb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -112,8 +112,8 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a3adbaa4c454127a34eaab69297b44585"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_init.html#a3adbaa4c454127a34eaab69297b44585">processId</a></td></tr>
-<tr class="separator:a3adbaa4c454127a34eaab69297b44585"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc9fcf6151621f0ac808cd29e14239c9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_init.html#abc9fcf6151621f0ac808cd29e14239c9">nodeId</a></td></tr>
+<tr class="separator:abc9fcf6151621f0ac808cd29e14239c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -128,7 +128,7 @@ Private Member Functions</h2></td></tr>
 //
 packet <a class="el" href="class_init.html" title="Class generated from Messages/Init.msg:19 by nedtool. ">Init</a>
 {
-    unsigned int processId;
+    unsigned int nodeId;
 }
 </pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a763a386107f8ea21acfd24f243e0f73c"></a>
@@ -254,8 +254,8 @@ packet <a class="el" href="class_init.html" title="Class generated from Messages
 
 </div>
 </div>
-<a id="a73d525231ae76ad98442d6f5b86bb994"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73d525231ae76ad98442d6f5b86bb994">&#9670;&nbsp;</a></span>getProcessId()</h2>
+<a id="a67fdac2389d7298a742e33a6551e8eb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67fdac2389d7298a742e33a6551e8eb1">&#9670;&nbsp;</a></span>getNodeId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -264,7 +264,7 @@ packet <a class="el" href="class_init.html" title="Class generated from Messages
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Init::getProcessId </td>
+          <td class="memname">unsigned int Init::getNodeId </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -375,8 +375,8 @@ packet <a class="el" href="class_init.html" title="Class generated from Messages
 
 </div>
 </div>
-<a id="ae0331d367c559e5859841ab0cafb9a71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0331d367c559e5859841ab0cafb9a71">&#9670;&nbsp;</a></span>setProcessId()</h2>
+<a id="a21b64722ff60f3ecf3b17939c0a1cb6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21b64722ff60f3ecf3b17939c0a1cb6d">&#9670;&nbsp;</a></span>setNodeId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -385,10 +385,10 @@ packet <a class="el" href="class_init.html" title="Class generated from Messages
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Init::setProcessId </td>
+          <td class="memname">void Init::setNodeId </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>processId</em></td><td>)</td>
+          <td class="paramname"><em>nodeId</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -402,8 +402,8 @@ packet <a class="el" href="class_init.html" title="Class generated from Messages
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a3adbaa4c454127a34eaab69297b44585"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3adbaa4c454127a34eaab69297b44585">&#9670;&nbsp;</a></span>processId</h2>
+<a id="abc9fcf6151621f0ac808cd29e14239c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc9fcf6151621f0ac808cd29e14239c9">&#9670;&nbsp;</a></span>nodeId</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,7 +412,7 @@ packet <a class="el" href="class_init.html" title="Class generated from Messages
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Init::processId</td>
+          <td class="memname">unsigned int Init::nodeId</td>
         </tr>
       </table>
   </td>

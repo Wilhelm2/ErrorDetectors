@@ -15,8 +15,8 @@ var searchData=
   ['setidmsgtorecover',['setIdMsgToRecover',['../class_dep_req.html#a488a57f56c5fc87aae853a2b3e469fd0',1,'DepReq::setIdMsgToRecover()'],['../class_dep_rsp.html#a6aea88bdf4ba7b9c4876823278e880b0',1,'DepRsp::setIdMsgToRecover()']]],
   ['setidrequester',['setIdRequester',['../class_dep_req.html#a27f6e58ad8dcf4902de1042322a3e6e7',1,'DepReq']]],
   ['setidrequster',['setIdRequster',['../class_dep_rsp.html#a7029f3c6f0e1b230965a0143a3c9724e',1,'DepRsp']]],
+  ['setnodeid',['setNodeId',['../class_init.html#a21b64722ff60f3ecf3b17939c0a1cb6d',1,'Init']]],
   ['setpc',['setPC',['../class_app_msg.html#a36ed2ccb047c20c26292687c44acd79b',1,'AppMsg']]],
-  ['setprocessid',['setProcessId',['../class_init.html#ae0331d367c559e5859841ab0cafb9a71',1,'Init']]],
   ['size',['size',['../class_d_c_s.html#ac428129bbebba59be9a09c09c1096323',1,'DCS::size()'],['../class_probabilistic_clock.html#ad0cdbd2ad50309fae0665df4ee5247ba',1,'ProbabilisticClock::size()'],['../class_total_dependencies.html#a00ea27540cc51d5770d6013a21a41de2',1,'TotalDependencies::size()']]],
   ['sortpossibledependenciesset',['sortPossibleDependenciesSet',['../class_hash_error_detector.html#ad7419eaab728b7ed3e394d5aee9eda41',1,'HashErrorDetector::sortPossibleDependenciesSet()'],['../class_error_detector_clock_difference.html#a740f6bd74b30e0b194c4b64d79bb8caf',1,'ErrorDetectorClockDifference::sortPossibleDependenciesSet()'],['../class_error_detector_interval.html#abe98fbb4f13aeb919d2c2e8755f003ae',1,'ErrorDetectorInterval::sortPossibleDependenciesSet()']]]
 ];

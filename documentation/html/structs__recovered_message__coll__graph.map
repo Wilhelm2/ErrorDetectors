@@ -1,7 +1,7 @@
 <map id="s_recoveredMessage" name="s_recoveredMessage">
-<area shape="rect" id="node2" href="$structs__message_info.html" title="s_messageInfo" alt="" coords="100,95,211,121"/>
+<area shape="rect" id="node2" href="$structs__message_info.html" title="Structure containing information about received messages required to causally order them as well as t..." alt="" coords="100,95,211,121"/>
 <area shape="rect" id="node3" href="$class_probabilistic_clock.html" title="ProbabilisticClock" alt="" coords="5,5,132,32"/>
-<area shape="rect" id="node4" href="$structs__id.html" title="s_id" alt="" coords="156,5,203,32"/>
+<area shape="rect" id="node4" href="$structs__id.html" title="Each message has an unique identifier composed of the id of the node $p_i$ that sent it and the seque..." alt="" coords="156,5,203,32"/>
 <area shape="rect" id="node5" href="$class_total_dependencies.html" title="TotalDependencies" alt="" coords="235,95,369,121"/>
 <area shape="rect" id="node6" href="$class_dependencies.html" title="Dependencies" alt="" coords="249,5,355,32"/>
 </map>

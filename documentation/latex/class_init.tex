@@ -44,9 +44,9 @@ virtual void \hyperlink{class_init_a73df5d54ec41b9980e98dbfc12875145}{parsim\+Pa
 \item 
 virtual void \hyperlink{class_init_ab3728913400c516dbb31c8fed392d32d}{parsim\+Unpack} (omnetpp\+::c\+Comm\+Buffer $\ast$b) override
 \item 
-virtual unsigned int \hyperlink{class_init_a73d525231ae76ad98442d6f5b86bb994}{get\+Process\+Id} () const
+virtual unsigned int \hyperlink{class_init_a67fdac2389d7298a742e33a6551e8eb1}{get\+Node\+Id} () const
 \item 
-virtual void \hyperlink{class_init_ae0331d367c559e5859841ab0cafb9a71}{set\+Process\+Id} (unsigned int \hyperlink{class_init_a3adbaa4c454127a34eaab69297b44585}{process\+Id})
+virtual void \hyperlink{class_init_a21b64722ff60f3ecf3b17939c0a1cb6d}{set\+Node\+Id} (unsigned int \hyperlink{class_init_abc9fcf6151621f0ac808cd29e14239c9}{node\+Id})
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -56,7 +56,7 @@ bool \hyperlink{class_init_a474b7c9ffdf72a6b2b58558ce68bb03e}{operator==} (const
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-unsigned int \hyperlink{class_init_a3adbaa4c454127a34eaab69297b44585}{process\+Id}
+unsigned int \hyperlink{class_init_abc9fcf6151621f0ac808cd29e14239c9}{node\+Id}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -75,7 +75,7 @@ Class generated from {\ttfamily Messages/\+Init.\+msg\+:19} by nedtool.
 //
 packet \hyperlink{class_init}{Init}
 \{
-    unsigned int processId;
+    unsigned int nodeId;
 \}
 \end{DoxyPre}
  
@@ -114,11 +114,11 @@ packet \hyperlink{class_init}{Init}
 \subsubsection{\texorpdfstring{dup()}{dup()}}
 {\footnotesize\ttfamily virtual \hyperlink{class_init}{Init}$\ast$ Init\+::dup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
-\mbox{\Hypertarget{class_init_a73d525231ae76ad98442d6f5b86bb994}\label{class_init_a73d525231ae76ad98442d6f5b86bb994}} 
-\index{Init@{Init}!get\+Process\+Id@{get\+Process\+Id}}
-\index{get\+Process\+Id@{get\+Process\+Id}!Init@{Init}}
-\subsubsection{\texorpdfstring{get\+Process\+Id()}{getProcessId()}}
-{\footnotesize\ttfamily unsigned int Init\+::get\+Process\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{class_init_a67fdac2389d7298a742e33a6551e8eb1}\label{class_init_a67fdac2389d7298a742e33a6551e8eb1}} 
+\index{Init@{Init}!get\+Node\+Id@{get\+Node\+Id}}
+\index{get\+Node\+Id@{get\+Node\+Id}!Init@{Init}}
+\subsubsection{\texorpdfstring{get\+Node\+Id()}{getNodeId()}}
+{\footnotesize\ttfamily unsigned int Init\+::get\+Node\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 \mbox{\Hypertarget{class_init_ab995dd231981ed97018c00b5fd8e9797}\label{class_init_ab995dd231981ed97018c00b5fd8e9797}} 
 \index{Init@{Init}!operator=@{operator=}}
@@ -144,20 +144,20 @@ packet \hyperlink{class_init}{Init}
 \subsubsection{\texorpdfstring{parsim\+Unpack()}{parsimUnpack()}}
 {\footnotesize\ttfamily void Init\+::parsim\+Unpack (\begin{DoxyParamCaption}\item[{omnetpp\+::c\+Comm\+Buffer $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-\mbox{\Hypertarget{class_init_ae0331d367c559e5859841ab0cafb9a71}\label{class_init_ae0331d367c559e5859841ab0cafb9a71}} 
-\index{Init@{Init}!set\+Process\+Id@{set\+Process\+Id}}
-\index{set\+Process\+Id@{set\+Process\+Id}!Init@{Init}}
-\subsubsection{\texorpdfstring{set\+Process\+Id()}{setProcessId()}}
-{\footnotesize\ttfamily void Init\+::set\+Process\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{process\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{class_init_a21b64722ff60f3ecf3b17939c0a1cb6d}\label{class_init_a21b64722ff60f3ecf3b17939c0a1cb6d}} 
+\index{Init@{Init}!set\+Node\+Id@{set\+Node\+Id}}
+\index{set\+Node\+Id@{set\+Node\+Id}!Init@{Init}}
+\subsubsection{\texorpdfstring{set\+Node\+Id()}{setNodeId()}}
+{\footnotesize\ttfamily void Init\+::set\+Node\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{node\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_init_a3adbaa4c454127a34eaab69297b44585}\label{class_init_a3adbaa4c454127a34eaab69297b44585}} 
-\index{Init@{Init}!process\+Id@{process\+Id}}
-\index{process\+Id@{process\+Id}!Init@{Init}}
-\subsubsection{\texorpdfstring{process\+Id}{processId}}
-{\footnotesize\ttfamily unsigned int Init\+::process\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{class_init_abc9fcf6151621f0ac808cd29e14239c9}\label{class_init_abc9fcf6151621f0ac808cd29e14239c9}} 
+\index{Init@{Init}!node\+Id@{node\+Id}}
+\index{node\+Id@{node\+Id}!Init@{Init}}
+\subsubsection{\texorpdfstring{node\+Id}{nodeId}}
+{\footnotesize\ttfamily unsigned int Init\+::node\+Id\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

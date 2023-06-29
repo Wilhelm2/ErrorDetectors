@@ -17,5 +17,5 @@
 // TODO generated message class
 //
 packet Init {
-	unsigned int processId;
+	unsigned int nodeId;
 }

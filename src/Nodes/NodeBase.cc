@@ -39,7 +39,7 @@ void NodeBase::initialize()
 void NodeBase::initializeCommunications()
 {
     Init* m = new Init();
-    m->setProcessId(id);
+    m->setNodeId(id);
     cModule::GateIterator i(this);
     while( !i.end() && (*i)->getType()==cGate::INPUT)
         i++;

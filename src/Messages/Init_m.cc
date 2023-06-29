@@ -181,7 +181,7 @@ Register_Class(Init)
 
 Init::Init(const char *name, short kind) : ::omnetpp::cPacket(name,kind)
 {
-    this->processId = 0;
+    this->nodeId = 0;
 }
 
 Init::Init(const Init& other) : ::omnetpp::cPacket(other)
@@ -203,29 +203,29 @@ Init& Init::operator=(const Init& other)
 
 void Init::copy(const Init& other)
 {
-    this->processId = other.processId;
+    this->nodeId = other.nodeId;
 }
 
 void Init::parsimPack(omnetpp::cCommBuffer *b) const
 {
     ::omnetpp::cPacket::parsimPack(b);
-    doParsimPacking(b,this->processId);
+    doParsimPacking(b,this->nodeId);
 }
 
 void Init::parsimUnpack(omnetpp::cCommBuffer *b)
 {
     ::omnetpp::cPacket::parsimUnpack(b);
-    doParsimUnpacking(b,this->processId);
+    doParsimUnpacking(b,this->nodeId);
 }
 
-unsigned int Init::getProcessId() const
+unsigned int Init::getNodeId() const
 {
-    return this->processId;
+    return this->nodeId;
 }
 
-void Init::setProcessId(unsigned int processId)
+void Init::setNodeId(unsigned int nodeId)
 {
-    this->processId = processId;
+    this->nodeId = nodeId;
 }
 
 class InitDescriptor : public omnetpp::cClassDescriptor
@@ -319,7 +319,7 @@ const char *InitDescriptor::getFieldName(int field) const
         field -= basedesc->getFieldCount();
     }
     static const char *fieldNames[] = {
-        "processId",
+        "nodeId",
     };
     return (field>=0 && field<1) ? fieldNames[field] : nullptr;
 }
@@ -328,7 +328,7 @@ int InitDescriptor::findField(const char *fieldName) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     int base = basedesc ? basedesc->getFieldCount() : 0;
-    if (fieldName[0]=='p' && strcmp(fieldName, "processId")==0) return base+0;
+    if (fieldName[0]=='n' && strcmp(fieldName, "nodeId")==0) return base+0;
     return basedesc ? basedesc->findField(fieldName) : -1;
 }
 
@@ -410,7 +410,7 @@ std::string InitDescriptor::getFieldValueAsString(void *object, int field, int i
     }
     Init *pp = (Init *)object; (void)pp;
     switch (field) {
-        case 0: return ulong2string(pp->getProcessId());
+        case 0: return ulong2string(pp->getNodeId());
         default: return "";
     }
 }
@@ -425,7 +425,7 @@ bool InitDescriptor::setFieldValueAsString(void *object, int field, int i, const
     }
     Init *pp = (Init *)object; (void)pp;
     switch (field) {
-        case 0: pp->setProcessId(string2ulong(value)); return true;
+        case 0: pp->setNodeId(string2ulong(value)); return true;
         default: return false;
     }
 }

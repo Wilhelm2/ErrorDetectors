@@ -26,6 +26,8 @@ NodeNoControl::~NodeNoControl() {
     // TODO Auto-generated destructor stub
 }
 
+/** Processes received messages. Delivers application messages without any control.
+ * @param msg Message to process*/
 void NodeNoControl::processMessage(cMessage* msg)
 {
     AppMsg* m = dynamic_cast<AppMsg*> (msg);

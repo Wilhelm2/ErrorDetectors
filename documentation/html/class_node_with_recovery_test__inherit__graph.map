@@ -1,6 +1,6 @@
 <map id="NodeWithRecoveryTest" name="NodeWithRecoveryTest">
 <area shape="rect" id="node2" href="$class_node_with_recovery.html" title="NodeWithRecovery" alt="" coords="19,304,155,331"/>
-<area shape="rect" id="node3" href="$class_node_detector.html" title="NodeDetector" alt="" coords="35,229,138,256"/>
+<area shape="rect" id="node3" href="$class_node_detector.html" title="Base class to implement nodes using error detectors. " alt="" coords="35,229,138,256"/>
 <area shape="rect" id="node4" href="$class_node_with_control.html" title="NodeWithControl" alt="" coords="25,155,148,181"/>
 <area shape="rect" id="node5" href="$class_node_base.html" title="Base class of Nodes. " alt="" coords="45,80,128,107"/>
 </map>

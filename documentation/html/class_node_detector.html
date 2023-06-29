@@ -68,6 +68,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Base class to implement nodes using error detectors.  
+ <a href="class_node_detector.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_node_detector_8h_source.html">NodeDetector.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for NodeDetector:</div>
@@ -106,20 +109,22 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a3f8e6eedfce05ea8953ff1a41413ccfa"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a3f8e6eedfce05ea8953ff1a41413ccfa">~NodeDetector</a> ()</td></tr>
 <tr class="separator:a3f8e6eedfce05ea8953ff1a41413ccfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefa188ab0657837b1b57f24674d3ef22"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#aefa188ab0657837b1b57f24674d3ef22">initialize</a> () override</td></tr>
-<tr class="memdesc:aefa188ab0657837b1b57f24674d3ef22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the node by scheduling it's broadcastTimer, initializing its connection with the communication dispatcher and looking up the <a class="el" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. ">SimulationParameters</a> and <a class="el" href="class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order...">Controller</a> modules.  <a href="#aefa188ab0657837b1b57f24674d3ef22">More...</a><br /></td></tr>
+<tr class="memdesc:aefa188ab0657837b1b57f24674d3ef22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the node by instantiating the error detector following the simulation parameters.  <a href="#aefa188ab0657837b1b57f24674d3ef22">More...</a><br /></td></tr>
 <tr class="separator:aefa188ab0657837b1b57f24674d3ef22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7100349647350ad5e3aeb1ed4669c723"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_app_msg.html">AppMsg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a7100349647350ad5e3aeb1ed4669c723">createAppMsg</a> ()</td></tr>
-<tr class="memdesc:a7100349647350ad5e3aeb1ed4669c723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an application message and initializes it.  <a href="#a7100349647350ad5e3aeb1ed4669c723">More...</a><br /></td></tr>
+<tr class="memdesc:a7100349647350ad5e3aeb1ed4669c723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates an application message.  <a href="#a7100349647350ad5e3aeb1ed4669c723">More...</a><br /></td></tr>
 <tr class="separator:a7100349647350ad5e3aeb1ed4669c723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af75cf37cc01fc51bc228a7a83c10cb97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_app_msg.html">AppMsg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#af75cf37cc01fc51bc228a7a83c10cb97">prepareBroadcast</a> ()</td></tr>
-<tr class="memdesc:af75cf37cc01fc51bc228a7a83c10cb97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast.  <a href="#af75cf37cc01fc51bc228a7a83c10cb97">More...</a><br /></td></tr>
+<tr class="memdesc:af75cf37cc01fc51bc228a7a83c10cb97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares the message's broadcast.  <a href="#af75cf37cc01fc51bc228a7a83c10cb97">More...</a><br /></td></tr>
 <tr class="separator:af75cf37cc01fc51bc228a7a83c10cb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab69432c6d3327a684845ec231826727e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#ab69432c6d3327a684845ec231826727e">processMessage</a> (cMessage *<a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a>)=0</td></tr>
-<tr class="memdesc:ab69432c6d3327a684845ec231826727e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at reception of messages from other nodes in order to process them.  <a href="#ab69432c6d3327a684845ec231826727e">More...</a><br /></td></tr>
+<tr class="memdesc:ab69432c6d3327a684845ec231826727e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes messages the process received (self messages and messages received from other nodes).  <a href="#ab69432c6d3327a684845ec231826727e">More...</a><br /></td></tr>
 <tr class="separator:ab69432c6d3327a684845ec231826727e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51e7dccd54e94bbe937752ca39dfdba4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a51e7dccd54e94bbe937752ca39dfdba4">testDeliverMessage</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message)=0</td></tr>
+<tr class="memdesc:a51e7dccd54e94bbe937752ca39dfdba4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to deliver a message.  <a href="#a51e7dccd54e94bbe937752ca39dfdba4">More...</a><br /></td></tr>
 <tr class="separator:a51e7dccd54e94bbe937752ca39dfdba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17ecf9939fce7471f4513b66185743cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a17ecf9939fce7471f4513b66185743cc">iterativeDelivery</a> ()=0</td></tr>
+<tr class="memdesc:a17ecf9939fce7471f4513b66185743cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to deliver pending messages.  <a href="#a17ecf9939fce7471f4513b66185743cc">More...</a><br /></td></tr>
 <tr class="separator:a17ecf9939fce7471f4513b66185743cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_node_with_control"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_node_with_control')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_node_with_control.html">NodeWithControl</a></td></tr>
 <tr class="memitem:add681efe156d989a717d2cd979f5ac9f inherit pro_methods_class_node_with_control"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#add681efe156d989a717d2cd979f5ac9f">removeOldMessages</a> ()</td></tr>
@@ -149,6 +154,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a711fd643dc29b74e6dfe87e1aeb1b227"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_error_detector.html">ErrorDetector</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a711fd643dc29b74e6dfe87e1aeb1b227">detector</a></td></tr>
+<tr class="memdesc:a711fd643dc29b74e6dfe87e1aeb1b227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error detector used to analyze messages before delivering them.  <a href="#a711fd643dc29b74e6dfe87e1aeb1b227">More...</a><br /></td></tr>
 <tr class="separator:a711fd643dc29b74e6dfe87e1aeb1b227"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_node_with_control"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_node_with_control')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_node_with_control.html">NodeWithControl</a></td></tr>
 <tr class="memitem:a051a7d7f2452f1f8da3bc5bfb05a7760 inherit pro_attribs_class_node_with_control"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#a051a7d7f2452f1f8da3bc5bfb05a7760">clock</a></td></tr>
@@ -205,7 +211,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ab8e4cc30083c58d14b22d928a78cb8ac inherit pro_static_attribs_class_node_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to have a random variation in the broadcast time of application messages.  <a href="class_node_base.html#ab8e4cc30083c58d14b22d928a78cb8ac">More...</a><br /></td></tr>
 <tr class="separator:ab8e4cc30083c58d14b22d928a78cb8ac inherit pro_static_attribs_class_node_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class to implement nodes using error detectors. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a256160d034631f4fa14a83787f504aae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a256160d034631f4fa14a83787f504aae">&#9670;&nbsp;</a></span>NodeDetector()</h2>
 
@@ -280,8 +288,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates an application message and initializes it. </p>
-<dl class="section return"><dt>Returns</dt><dd>The application message. </dd></dl>
+<p>Instantiates an application message. </p>
+<p>Calls the error detector to append on the message the information the error detector of the destination node will require to analyze the message. </p><dl class="section return"><dt>Returns</dt><dd>The instantiated application message. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_node_with_control.html#a7772568c2836f5f204952ebe659e0049">NodeWithControl</a>.</p>
 
@@ -310,7 +318,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes the node by scheduling it's broadcastTimer, initializing its connection with the communication dispatcher and looking up the <a class="el" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. ">SimulationParameters</a> and <a class="el" href="class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order...">Controller</a> modules. </p>
+<p>Initializes the node by instantiating the error detector following the simulation parameters. </p>
 
 <p>Reimplemented from <a class="el" href="class_node_with_control.html#a08c8e80fd67b52c51c642d7c66fe729c">NodeWithControl</a>.</p>
 
@@ -338,6 +346,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Tries to deliver pending messages. </p>
 
 <p>Implements <a class="el" href="class_node_with_control.html#a4f78078272b90937e0746c797443b37d">NodeWithControl</a>.</p>
 
@@ -368,7 +378,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. </p>
+<p>Prepares the message's broadcast. </p>
 <dl class="section return"><dt>Returns</dt><dd>The application message to broadcast. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_node_with_control.html#ab871014cf3f42d834f8d34ad5498174c">NodeWithControl</a>.</p>
@@ -401,7 +411,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Called at reception of messages from other nodes in order to process them. </p>
+<p>Processes messages the process received (self messages and messages received from other nodes). </p>
 
 <p>Implements <a class="el" href="class_node_with_control.html#af532082fab76c38d8c50ca90e991f4c3">NodeWithControl</a>.</p>
 
@@ -432,6 +442,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Tries to deliver a message. </p>
+<p>It verifies the message's clock delivery conditions, and delivers them message if its delivery conditions are satisfied. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Information about the message to deliver </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the node delivered the message and false otherwise. </dd></dl>
 
 <p>Implements <a class="el" href="class_node_with_control.html#a84df0beabbaed80e7da017d592480515">NodeWithControl</a>.</p>
 
@@ -482,6 +501,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Error detector used to analyze messages before delivering them. </p>
 
 </div>
 </div>

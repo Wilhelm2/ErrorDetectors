@@ -1,0 +1,134 @@
+CCCC_Module@AppMsg@@
+CCCC_Module@CommunicationDispatcher@@
+CCCC_Module@Controller@@
+CCCC_Module@SimulationParameters@@
+CCCC_Module@Stats@@
+CCCC_Module@TotalDependencies@@
+CCCC_Module@anonymous@@
+CCCC_Module@cMessage@@
+CCCC_Module@char@builtin@
+CCCC_ModExt@char@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@double@builtin@
+CCCC_ModExt@double@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@float@builtin@
+CCCC_ModExt@float@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@idMsg@@
+CCCC_Module@int@builtin@
+CCCC_ModExt@int@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@long@builtin@
+CCCC_ModExt@long@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Module@string@@
+CCCC_Module@void@builtin@
+CCCC_ModExt@void@builtin@<nofile>@0@builtin definition@d?????@@0@d@
+CCCC_Member@CommunicationDispatcher@broadcastAppMessage@@(AppMsg *)@
+CCCC_MemExt@CommunicationDispatcher@broadcastAppMessage@@(AppMsg *)@src/communicationDispatcher.cc@68@definition@F????@LOC:12 COM:4 MVG:2@?@d@
+CCCC_Member@CommunicationDispatcher@computeDelay@@(int,int)@
+CCCC_MemExt@CommunicationDispatcher@computeDelay@@(int,int)@src/communicationDispatcher.cc@86@definition@F????@LOC:11 COM:5 MVG:3@?@d@
+CCCC_Member@CommunicationDispatcher@handleMessage@@(cMessage *)@
+CCCC_MemExt@CommunicationDispatcher@handleMessage@@(cMessage *)@src/communicationDispatcher.cc@35@definition@F????@LOC:29 COM:3 MVG:4@?@d@
+CCCC_Member@CommunicationDispatcher@incrementDelayIntervals@@(int)@
+CCCC_MemExt@CommunicationDispatcher@incrementDelayIntervals@@(int)@src/communicationDispatcher.cc@101@definition@F????@LOC:10 COM:3 MVG:1@?@d@
+CCCC_Member@CommunicationDispatcher@initialize@@()@
+CCCC_MemExt@CommunicationDispatcher@initialize@@()@src/communicationDispatcher.cc@22@definition@F????@LOC:8 COM:2 MVG:1@?@d@
+CCCC_Member@Controller@Controller@@()@
+CCCC_MemExt@Controller@Controller@@()@src/Controller.cc@33@definition@F????@LOC:2 COM:27 MVG:0@?@d@
+CCCC_Member@Controller@canCausallyDeliverMessage@@(idMsg,int)@
+CCCC_MemExt@Controller@canCausallyDeliverMessage@@(idMsg,int)@src/Controller.cc@135@definition@F????@LOC:5 COM:5 MVG:1@?@d@
+CCCC_Member@Controller@deleteMessage@@(idMsg)@
+CCCC_MemExt@Controller@deleteMessage@@(idMsg)@src/Controller.cc@145@definition@F????@LOC:11 COM:5 MVG:5@?@d@
+CCCC_Member@Controller@initialize@@()@
+CCCC_MemExt@Controller@initialize@@()@src/Controller.cc@41@definition@F????@LOC:9 COM:2 MVG:1@?@d@
+CCCC_Member@Controller@isDependency@@(idMsg,idMsg)@
+CCCC_MemExt@Controller@isDependency@@(idMsg,idMsg)@src/Controller.cc@163@definition@F????@LOC:5 COM:5 MVG:1@?@d@
+CCCC_Member@Controller@notifyDeliverMessage@@(idMsg,int)@
+CCCC_MemExt@Controller@notifyDeliverMessage@@(idMsg,int)@src/Controller.cc@92@definition@F????@LOC:17 COM:10 MVG:3@?@d@
+CCCC_Member@Controller@notifySendMessage@@(int,int)@
+CCCC_MemExt@Controller@notifySendMessage@@(int,int)@src/Controller.cc@55@definition@F????@LOC:11 COM:5 MVG:0@?@d@
+CCCC_Member@Controller@printDeliveryError@@(string,idMsg,int,const TotalDependencies &,const TotalDependencies &)@
+CCCC_MemExt@Controller@printDeliveryError@@(string,idMsg,int,const TotalDependencies &,const TotalDependencies &)@src/Controller.cc@121@definition@F????@LOC:8 COM:7 MVG:0@?@d@
+CCCC_Member@Controller@searchMessage@@(idMsg)@
+CCCC_MemExt@Controller@searchMessage@@(idMsg)@src/Controller.cc@73@definition@F????@LOC:11 COM:5 MVG:4@?@d@
+CCCC_Member@Controller@~Controller@@()@
+CCCC_MemExt@Controller@~Controller@@()@src/Controller.cc@36@definition@F????@LOC:2 COM:0 MVG:0@?@d@
+CCCC_Member@SimulationParameters@computeDependecyCombinationsArray@@()@
+CCCC_MemExt@SimulationParameters@computeDependecyCombinationsArray@@()@src/simulationParameters.cc@184@definition@F????@LOC:8 COM:3 MVG:1@?@d@
+CCCC_Member@SimulationParameters@determineFirstSendTimeInMs@@(int)@
+CCCC_MemExt@SimulationParameters@determineFirstSendTimeInMs@@(int)@src/simulationParameters.cc@163@definition@F????@LOC:9 COM:5 MVG:1@?@d@
+CCCC_Member@SimulationParameters@getEntriesIncrementedByProcess@@(int)@
+CCCC_MemExt@SimulationParameters@getEntriesIncrementedByProcess@@(int)@src/simulationParameters.cc@177@definition@F????@LOC:4 COM:4 MVG:1@?@d@
+CCCC_Member@SimulationParameters@initialize@@()@
+CCCC_MemExt@SimulationParameters@initialize@@()@src/simulationParameters.cc@25@definition@F????@LOC:12 COM:3 MVG:0@?@d@
+CCCC_Member@SimulationParameters@initializeClockEntriesToIncrement@@()@
+CCCC_MemExt@SimulationParameters@initializeClockEntriesToIncrement@@()@src/simulationParameters.cc@60@definition@F????@LOC:19 COM:13 MVG:2@?@d@
+CCCC_Member@SimulationParameters@initializeDeliveryController@@()@
+CCCC_MemExt@SimulationParameters@initializeDeliveryController@@()@src/simulationParameters.cc@42@definition@F????@LOC:14 COM:2 MVG:4@?@d@
+CCCC_Member@Stats@WriteTotalNbHashs@@()@
+CCCC_MemExt@Stats@WriteTotalNbHashs@@()@src/Stats.cc@187@definition@F????@LOC:15 COM:2 MVG:1@?@d@
+CCCC_Member@Stats@WriteTotalNbRecoveries@@()@
+CCCC_MemExt@Stats@WriteTotalNbRecoveries@@()@src/Stats.cc@292@definition@F????@LOC:17 COM:2 MVG:1@?@d@
+CCCC_Member@Stats@handleMessage@@(cMessage *)@
+CCCC_MemExt@Stats@handleMessage@@(cMessage *)@src/Stats.cc@68@definition@F????@LOC:34 COM:5 MVG:6@?@d@
+CCCC_Member@Stats@initialize@@()@
+CCCC_MemExt@Stats@initialize@@()@src/Stats.cc@28@definition@F????@LOC:30 COM:5 MVG:5@?@d@
+CCCC_Member@Stats@printNbJumpedBroadcasts@@()@
+CCCC_MemExt@Stats@printNbJumpedBroadcasts@@()@src/Stats.cc@340@definition@F????@LOC:10 COM:2 MVG:1@?@d@
+CCCC_Member@Stats@printNbMessagesToRecover@@()@
+CCCC_MemExt@Stats@printNbMessagesToRecover@@()@src/Stats.cc@327@definition@F????@LOC:10 COM:2 MVG:1@?@d@
+CCCC_Member@Stats@printPendingAppSize@@()@
+CCCC_MemExt@Stats@printPendingAppSize@@()@src/Stats.cc@159@definition@F????@LOC:10 COM:2 MVG:1@?@d@
+CCCC_Member@Stats@usesHashDetector@@()@
+CCCC_MemExt@Stats@usesHashDetector@@()@src/Stats.cc@353@definition@F????@LOC:4 COM:2 MVG:4@?@d@
+CCCC_Member@Stats@usesRecoveries@@()@
+CCCC_MemExt@Stats@usesRecoveries@@()@src/Stats.cc@360@definition@F????@LOC:4 COM:2 MVG:2@?@d@
+CCCC_Member@Stats@writeControlDataSize@@()@
+CCCC_MemExt@Stats@writeControlDataSize@@()@src/Stats.cc@149@definition@F????@LOC:7 COM:2 MVG:1@?@d@
+CCCC_Member@Stats@writeDoneCombinationsToFindHash@@()@
+CCCC_MemExt@Stats@writeDoneCombinationsToFindHash@@()@src/Stats.cc@245@definition@F????@LOC:17 COM:2 MVG:3@?@d@
+CCCC_Member@Stats@writeNbAvoidedRecoveries@@()@
+CCCC_MemExt@Stats@writeNbAvoidedRecoveries@@()@src/Stats.cc@312@definition@F????@LOC:12 COM:2 MVG:1@?@d@
+CCCC_Member@Stats@writeNbDeliveredMessages@@()@
+CCCC_MemExt@Stats@writeNbDeliveredMessages@@()@src/Stats.cc@108@definition@F????@LOC:12 COM:2 MVG:1@?@d@
+CCCC_Member@Stats@writeNbFalseDeliveredMessages@@()@
+CCCC_MemExt@Stats@writeNbFalseDeliveredMessages@@()@src/Stats.cc@123@definition@F????@LOC:12 COM:2 MVG:1@?@d@
+CCCC_Member@Stats@writeNbMsgToCombine@@()@
+CCCC_MemExt@Stats@writeNbMsgToCombine@@()@src/Stats.cc@205@definition@F????@LOC:16 COM:2 MVG:3@?@d@
+CCCC_Member@Stats@writeNbMsgWronglyConsideredCausalDep@@()@
+CCCC_MemExt@Stats@writeNbMsgWronglyConsideredCausalDep@@()@src/Stats.cc@225@definition@F????@LOC:16 COM:2 MVG:3@?@d@
+CCCC_Member@Stats@writeNbOperationsForHashFile@@()@
+CCCC_MemExt@Stats@writeNbOperationsForHashFile@@()@src/Stats.cc@266@definition@F????@LOC:23 COM:2 MVG:3@?@d@
+CCCC_Member@Stats@writeNbSentDependencies@@()@
+CCCC_MemExt@Stats@writeNbSentDependencies@@()@src/Stats.cc@138@definition@F????@LOC:8 COM:2 MVG:1@?@d@
+CCCC_Member@Stats@writeTrueFalseNegatives@@()@
+CCCC_MemExt@Stats@writeTrueFalseNegatives@@()@src/Stats.cc@172@definition@F????@LOC:12 COM:2 MVG:1@?@d@
+CCCC_Member@anonymous@Define_Module@@(CommunicationDispatcher)@
+CCCC_MemExt@anonymous@Define_Module@@(CommunicationDispatcher)@src/communicationDispatcher.cc@18@declaration@F????@LOC:1 COM:14 MVG:0@?@D@
+CCCC_Member@anonymous@Define_Module@@(SimulationParameters)@
+CCCC_MemExt@anonymous@Define_Module@@(SimulationParameters)@src/simulationParameters.cc@19@declaration@F????@LOC:1 COM:14 MVG:0@?@D@
+CCCC_Member@anonymous@Define_Module@@(Stats)@
+CCCC_MemExt@anonymous@Define_Module@@(Stats)@src/Stats.cc@21@declaration@F????@LOC:1 COM:16 MVG:0@?@D@
+CCCC_UseRel@AppMsg@CommunicationDispatcher@
+CCCC_UseExt@AppMsg@CommunicationDispatcher@src/communicationDispatcher.cc@68@pass by reference@F????@*@?@p@
+CCCC_UseRel@cMessage@CommunicationDispatcher@
+CCCC_UseExt@cMessage@CommunicationDispatcher@src/communicationDispatcher.cc@35@pass by reference@F????@*@?@p@
+CCCC_UseRel@TotalDependencies@Controller@
+CCCC_UseExt@TotalDependencies@Controller@src/Controller.cc@121@pass by reference@F????@*@?@p@
+CCCC_UseExt@TotalDependencies@Controller@src/Controller.cc@121@pass by reference@F????@*@?@p@
+CCCC_UseRel@idMsg@Controller@
+CCCC_UseExt@idMsg@Controller@src/Controller.cc@73@pass by value@F????@*@?@P@
+CCCC_UseExt@idMsg@Controller@src/Controller.cc@92@pass by value@F????@*@?@P@
+CCCC_UseExt@idMsg@Controller@src/Controller.cc@121@pass by value@F????@*@?@P@
+CCCC_UseExt@idMsg@Controller@src/Controller.cc@135@pass by value@F????@*@?@P@
+CCCC_UseExt@idMsg@Controller@src/Controller.cc@145@pass by value@F????@*@?@P@
+CCCC_UseExt@idMsg@Controller@src/Controller.cc@163@pass by value@F????@*@?@P@
+CCCC_UseExt@idMsg@Controller@src/Controller.cc@163@pass by value@F????@*@?@P@
+CCCC_UseRel@string@Controller@
+CCCC_UseExt@string@Controller@src/Controller.cc@121@pass by value@F????@*@?@P@
+CCCC_UseRel@cMessage@Stats@
+CCCC_UseExt@cMessage@Stats@src/Stats.cc@68@pass by reference@F????@*@?@p@
+CCCC_RejExt@src/communicationDispatcher.cc@1@<file scope items>@F????@LOC:0 COM:0 MVG:0@?@r@
+CCCC_RejExt@src/Controller.cc@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@
+CCCC_RejExt@src/simulationParameters.cc@97@vector < vector @F????@LOC:22 COM:23 MVG:5@?@r@
+CCCC_RejExt@src/simulationParameters.cc@140@vector < vector @F????@LOC:17 COM:10 MVG:4@?@r@
+CCCC_RejExt@src/simulationParameters.cc@200@vector < vector @F????@LOC:23 COM:7 MVG:6@?@r@
+CCCC_RejExt@src/simulationParameters.cc@233@vector < vector @F????@LOC:12 COM:6 MVG:4@?@r@
+CCCC_RejExt@src/Stats.cc@1@<file scope items>@F????@LOC:1 COM:1 MVG:0@?@r@

@@ -76,7 +76,7 @@ Inheritance diagram for NodeWithRecovery:</div>
 <div class="center"><img src="class_node_with_recovery__inherit__graph.png" border="0" usemap="#_node_with_recovery_inherit__map" alt="Inheritance graph"/></div>
 <map name="_node_with_recovery_inherit__map" id="_node_with_recovery_inherit__map">
 <area shape="rect" id="node6" href="class_node_with_recovery_test.html" title="NodeWithRecoveryTest" alt="" coords="5,379,168,405"/>
-<area shape="rect" id="node2" href="class_node_detector.html" title="NodeDetector" alt="" coords="35,229,138,256"/>
+<area shape="rect" id="node2" href="class_node_detector.html" title="Base class to implement nodes using error detectors. " alt="" coords="35,229,138,256"/>
 <area shape="rect" id="node3" href="class_node_with_control.html" title="NodeWithControl" alt="" coords="25,155,148,181"/>
 <area shape="rect" id="node4" href="class_node_base.html" title="Base class of Nodes. " alt="" coords="45,80,128,107"/>
 </map>
@@ -86,7 +86,7 @@ Collaboration diagram for NodeWithRecovery:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_node_with_recovery__coll__graph.png" border="0" usemap="#_node_with_recovery_coll__map" alt="Collaboration graph"/></div>
 <map name="_node_with_recovery_coll__map" id="_node_with_recovery_coll__map">
-<area shape="rect" id="node2" href="class_node_detector.html" title="NodeDetector" alt="" coords="205,464,308,491"/>
+<area shape="rect" id="node2" href="class_node_detector.html" title="Base class to implement nodes using error detectors. " alt="" coords="205,464,308,491"/>
 <area shape="rect" id="node3" href="class_node_with_control.html" title="NodeWithControl" alt="" coords="186,375,309,401"/>
 <area shape="rect" id="node4" href="class_node_base.html" title="Base class of Nodes. " alt="" coords="422,285,505,312"/>
 <area shape="rect" id="node6" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. " alt="" coords="404,95,555,121"/>
@@ -121,7 +121,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a901c89606b84898e13fe8a66228acd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called upon reception of a message to proecss it, whether it be a selfmsg (broadcastTimer) or a message received from another process.  <a href="#a901c89606b84898e13fe8a66228acd9f">More...</a><br /></td></tr>
 <tr class="separator:a901c89606b84898e13fe8a66228acd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a216c29d76ddb0e94cd5701ff208c7f5b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a216c29d76ddb0e94cd5701ff208c7f5b">processMessage</a> (cMessage *<a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a>)</td></tr>
-<tr class="memdesc:a216c29d76ddb0e94cd5701ff208c7f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at reception of messages from other nodes in order to process them.  <a href="#a216c29d76ddb0e94cd5701ff208c7f5b">More...</a><br /></td></tr>
+<tr class="memdesc:a216c29d76ddb0e94cd5701ff208c7f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes messages the process received (self messages and messages received from other nodes).  <a href="#a216c29d76ddb0e94cd5701ff208c7f5b">More...</a><br /></td></tr>
 <tr class="separator:a216c29d76ddb0e94cd5701ff208c7f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52ef51093d41e9b337987810311a7bc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a52ef51093d41e9b337987810311a7bc6">processDepReq</a> (<a class="el" href="class_dep_req.html">DepReq</a> *m)</td></tr>
 <tr class="separator:a52ef51093d41e9b337987810311a7bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,17 +130,19 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a261e41c94a93113168f8f81411b7c100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a261e41c94a93113168f8f81411b7c100">pushbackMessagesInRecovery</a> ()</td></tr>
 <tr class="separator:a261e41c94a93113168f8f81411b7c100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b61912f38b62452584dc80bf261ef4e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a9b61912f38b62452584dc80bf261ef4e">iterativeDelivery</a> ()</td></tr>
+<tr class="memdesc:a9b61912f38b62452584dc80bf261ef4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to deliver pending messages.  <a href="#a9b61912f38b62452584dc80bf261ef4e">More...</a><br /></td></tr>
 <tr class="separator:a9b61912f38b62452584dc80bf261ef4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87a1ce8071c9c587b878636f79163e7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a87a1ce8071c9c587b878636f79163e7e">tryDeliverMessageInRecovery</a> ()</td></tr>
 <tr class="separator:a87a1ce8071c9c587b878636f79163e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a462d825601a3c85ee4ef95be673790f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a462d825601a3c85ee4ef95be673790f8">tryDeliverPendingMessages</a> ()</td></tr>
 <tr class="separator:a462d825601a3c85ee4ef95be673790f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec147b3723b3dab00f9610453ba8daba"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#aec147b3723b3dab00f9610453ba8daba">testDeliverMessage</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;m)</td></tr>
+<tr class="memdesc:aec147b3723b3dab00f9610453ba8daba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to deliver a message.  <a href="#aec147b3723b3dab00f9610453ba8daba">More...</a><br /></td></tr>
 <tr class="separator:aec147b3723b3dab00f9610453ba8daba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b16bbc948fddc744a55ac548348a988"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a8b16bbc948fddc744a55ac548348a988">requestDependencies</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;m)</td></tr>
 <tr class="separator:a8b16bbc948fddc744a55ac548348a988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33d8e8775fd69cb647b38a54b36e1ebe"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_app_msg.html">AppMsg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a33d8e8775fd69cb647b38a54b36e1ebe">prepareBroadcast</a> ()</td></tr>
-<tr class="memdesc:a33d8e8775fd69cb647b38a54b36e1ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast.  <a href="#a33d8e8775fd69cb647b38a54b36e1ebe">More...</a><br /></td></tr>
+<tr class="memdesc:a33d8e8775fd69cb647b38a54b36e1ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares the message's broadcast.  <a href="#a33d8e8775fd69cb647b38a54b36e1ebe">More...</a><br /></td></tr>
 <tr class="separator:a33d8e8775fd69cb647b38a54b36e1ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_node_detector"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_node_detector')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_node_detector.html">NodeDetector</a></td></tr>
 <tr class="memitem:a256160d034631f4fa14a83787f504aae inherit pro_methods_class_node_detector"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a256160d034631f4fa14a83787f504aae">NodeDetector</a> ()</td></tr>
@@ -148,10 +150,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a3f8e6eedfce05ea8953ff1a41413ccfa inherit pro_methods_class_node_detector"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a3f8e6eedfce05ea8953ff1a41413ccfa">~NodeDetector</a> ()</td></tr>
 <tr class="separator:a3f8e6eedfce05ea8953ff1a41413ccfa inherit pro_methods_class_node_detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefa188ab0657837b1b57f24674d3ef22 inherit pro_methods_class_node_detector"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#aefa188ab0657837b1b57f24674d3ef22">initialize</a> () override</td></tr>
-<tr class="memdesc:aefa188ab0657837b1b57f24674d3ef22 inherit pro_methods_class_node_detector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the node by scheduling it's broadcastTimer, initializing its connection with the communication dispatcher and looking up the <a class="el" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. ">SimulationParameters</a> and <a class="el" href="class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order...">Controller</a> modules.  <a href="class_node_detector.html#aefa188ab0657837b1b57f24674d3ef22">More...</a><br /></td></tr>
+<tr class="memdesc:aefa188ab0657837b1b57f24674d3ef22 inherit pro_methods_class_node_detector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the node by instantiating the error detector following the simulation parameters.  <a href="class_node_detector.html#aefa188ab0657837b1b57f24674d3ef22">More...</a><br /></td></tr>
 <tr class="separator:aefa188ab0657837b1b57f24674d3ef22 inherit pro_methods_class_node_detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7100349647350ad5e3aeb1ed4669c723 inherit pro_methods_class_node_detector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_app_msg.html">AppMsg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a7100349647350ad5e3aeb1ed4669c723">createAppMsg</a> ()</td></tr>
-<tr class="memdesc:a7100349647350ad5e3aeb1ed4669c723 inherit pro_methods_class_node_detector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an application message and initializes it.  <a href="class_node_detector.html#a7100349647350ad5e3aeb1ed4669c723">More...</a><br /></td></tr>
+<tr class="memdesc:a7100349647350ad5e3aeb1ed4669c723 inherit pro_methods_class_node_detector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates an application message.  <a href="class_node_detector.html#a7100349647350ad5e3aeb1ed4669c723">More...</a><br /></td></tr>
 <tr class="separator:a7100349647350ad5e3aeb1ed4669c723 inherit pro_methods_class_node_detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_node_with_control"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_node_with_control')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_node_with_control.html">NodeWithControl</a></td></tr>
 <tr class="memitem:add681efe156d989a717d2cd979f5ac9f inherit pro_methods_class_node_with_control"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#add681efe156d989a717d2cd979f5ac9f">removeOldMessages</a> ()</td></tr>
@@ -193,6 +195,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:adf6b319a727cd9ec43a6cc68cbf99bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_node_detector"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_node_detector')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_node_detector.html">NodeDetector</a></td></tr>
 <tr class="memitem:a711fd643dc29b74e6dfe87e1aeb1b227 inherit pro_attribs_class_node_detector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_error_detector.html">ErrorDetector</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a711fd643dc29b74e6dfe87e1aeb1b227">detector</a></td></tr>
+<tr class="memdesc:a711fd643dc29b74e6dfe87e1aeb1b227 inherit pro_attribs_class_node_detector"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error detector used to analyze messages before delivering them.  <a href="class_node_detector.html#a711fd643dc29b74e6dfe87e1aeb1b227">More...</a><br /></td></tr>
 <tr class="separator:a711fd643dc29b74e6dfe87e1aeb1b227 inherit pro_attribs_class_node_detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_node_with_control"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_node_with_control')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_node_with_control.html">NodeWithControl</a></td></tr>
 <tr class="memitem:a051a7d7f2452f1f8da3bc5bfb05a7760 inherit pro_attribs_class_node_with_control"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#a051a7d7f2452f1f8da3bc5bfb05a7760">clock</a></td></tr>
@@ -347,6 +350,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Tries to deliver pending messages. </p>
+
 <p>Implements <a class="el" href="class_node_detector.html#a17ecf9939fce7471f4513b66185743cc">NodeDetector</a>.</p>
 
 </div>
@@ -374,7 +379,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. </p>
+<p>Prepares the message's broadcast. </p>
 <dl class="section return"><dt>Returns</dt><dd>The application message to broadcast. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_node_detector.html#af75cf37cc01fc51bc228a7a83c10cb97">NodeDetector</a>.</p>
@@ -431,7 +436,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Called at reception of messages from other nodes in order to process them. </p>
+<p>Processes messages the process received (self messages and messages received from other nodes). </p>
 
 <p>Implements <a class="el" href="class_node_detector.html#ab69432c6d3327a684845ec231826727e">NodeDetector</a>.</p>
 
@@ -527,7 +532,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">bool NodeWithRecovery::testDeliverMessage </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>m</em></td><td>)</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -537,6 +542,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Tries to deliver a message. </p>
+<p>It verifies the message's clock delivery conditions, and delivers them message if its delivery conditions are satisfied. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Information about the message to deliver </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the node delivered the message and false otherwise. </dd></dl>
 
 <p>Implements <a class="el" href="class_node_detector.html#a51e7dccd54e94bbe937752ca39dfdba4">NodeDetector</a>.</p>
 

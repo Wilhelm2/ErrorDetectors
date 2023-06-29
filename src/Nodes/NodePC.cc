@@ -40,6 +40,10 @@ void NodePC::processMessage(cMessage* msg)
         scheduleAt(simTime()+ delay, msg);
 }
 
+/** Delivers a message if its clock satisfies the delivery conditions.
+ * @param message Information about the message to deliver
+ * @return true if the node delivered the message and false otherwise.
+ */
 bool NodePC::testDeliverMessage(const messageInfo& message)
 {
     if(clock.satisfiesDeliveryCondition(message.clock, getIndexIncrementedEntries(message.id.id)))
@@ -51,6 +55,8 @@ bool NodePC::testDeliverMessage(const messageInfo& message)
         return false;
 }
 
+/** Tries to deliver pending messages.
+ */
 void NodePC::iterativeDelivery()
 {
     bool hasDeliveredMessage;

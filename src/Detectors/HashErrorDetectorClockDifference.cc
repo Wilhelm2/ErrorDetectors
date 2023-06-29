@@ -7,9 +7,7 @@
 
 #include "../Detectors/HashErrorDetectorClockDifference.h"
 
-ErrorDetectorClockDifference::ErrorDetectorClockDifference() {
-    // TODO Auto-generated constructor stub
-
+ErrorDetectorClockDifference::ErrorDetectorClockDifference(){
 }
 
 ErrorDetectorClockDifference::~ErrorDetectorClockDifference() {

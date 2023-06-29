@@ -6,8 +6,7 @@
 
 
 
-Inheritance diagram for Node\+With\+Recovery\+:
-\nopagebreak
+Inheritance diagram for Node\+With\+Recovery\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +15,7 @@ Inheritance diagram for Node\+With\+Recovery\+:
 \end{figure}
 
 
-Collaboration diagram for Node\+With\+Recovery\+:
-\nopagebreak
+Collaboration diagram for Node\+With\+Recovery\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,7 +35,7 @@ virtual \hyperlink{class_node_with_recovery_a5cb1367a800cf960b96c9011ab94a616}{$
 virtual void \hyperlink{class_node_with_recovery_a901c89606b84898e13fe8a66228acd9f}{handle\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg}) override
 \begin{DoxyCompactList}\small\item\em Called upon reception of a message to proecss it, whether it be a selfmsg (broadcast\+Timer) or a message received from another process. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}{process\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})
-\begin{DoxyCompactList}\small\item\em Called at reception of messages from other nodes in order to process them. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Processes messages the process received (self messages and messages received from other nodes). \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_recovery_a52ef51093d41e9b337987810311a7bc6}{process\+Dep\+Req} (\hyperlink{class_dep_req}{Dep\+Req} $\ast$m)
 \item 
 void \hyperlink{class_node_with_recovery_a34b5b66f90d85dd84b237b8cf81f2f7e}{process\+Rcv\+Rsp\+Dep} (\hyperlink{class_dep_rsp}{Dep\+Rsp} $\ast$m)
@@ -45,17 +43,17 @@ void \hyperlink{class_node_with_recovery_a34b5b66f90d85dd84b237b8cf81f2f7e}{proc
 void \hyperlink{class_node_with_recovery_a261e41c94a93113168f8f81411b7c100}{pushback\+Messages\+In\+Recovery} ()
 \item 
 virtual void \hyperlink{class_node_with_recovery_a9b61912f38b62452584dc80bf261ef4e}{iterative\+Delivery} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Tries to deliver pending messages. \end{DoxyCompactList}\item 
 bool \hyperlink{class_node_with_recovery_a87a1ce8071c9c587b878636f79163e7e}{try\+Deliver\+Message\+In\+Recovery} ()
 \item 
 bool \hyperlink{class_node_with_recovery_a462d825601a3c85ee4ef95be673790f8}{try\+Deliver\+Pending\+Messages} ()
 \item 
 virtual bool \hyperlink{class_node_with_recovery_aec147b3723b3dab00f9610453ba8daba}{test\+Deliver\+Message} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&m)
-\item 
+\begin{DoxyCompactList}\small\item\em Tries to deliver a message. \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_recovery_a8b16bbc948fddc744a55ac548348a988}{request\+Dependencies} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&m)
 \item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_recovery_a33d8e8775fd69cb647b38a54b36e1ebe}{prepare\+Broadcast} ()
-\begin{DoxyCompactList}\small\item\em Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prepares the message\textquotesingle{}s broadcast. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -124,6 +122,10 @@ Reimplemented from \hyperlink{class_node_base_add2450264be5dd616f9f9ac94e83b988}
 
 
 
+Tries to deliver pending messages. 
+
+
+
 Implements \hyperlink{class_node_detector_a17ecf9939fce7471f4513b66185743cc}{Node\+Detector}.
 
 \mbox{\Hypertarget{class_node_with_recovery_a33d8e8775fd69cb647b38a54b36e1ebe}\label{class_node_with_recovery_a33d8e8775fd69cb647b38a54b36e1ebe}} 
@@ -134,7 +136,7 @@ Implements \hyperlink{class_node_detector_a17ecf9939fce7471f4513b66185743cc}{Nod
 
 
 
-Prepares the broadcast of an application message by creating it and notifying the controller of the broadcast. 
+Prepares the message\textquotesingle{}s broadcast. 
 
 \begin{DoxyReturn}{Returns}
 The application message to broadcast. 
@@ -157,7 +159,7 @@ Reimplemented from \hyperlink{class_node_detector_af75cf37cc01fc51bc228a7a83c10c
 
 
 
-Called at reception of messages from other nodes in order to process them. 
+Processes messages the process received (self messages and messages received from other nodes). 
 
 
 
@@ -185,8 +187,20 @@ Implements \hyperlink{class_node_detector_ab69432c6d3327a684845ec231826727e}{Nod
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!test\+Deliver\+Message@{test\+Deliver\+Message}}
 \index{test\+Deliver\+Message@{test\+Deliver\+Message}!Node\+With\+Recovery@{Node\+With\+Recovery}}
 \subsubsection{\texorpdfstring{test\+Deliver\+Message()}{testDeliverMessage()}}
-{\footnotesize\ttfamily bool Node\+With\+Recovery\+::test\+Deliver\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+::test\+Deliver\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Tries to deliver a message. 
+
+It verifies the message\textquotesingle{}s clock delivery conditions, and delivers them message if its delivery conditions are satisfied. 
+\begin{DoxyParams}{Parameters}
+{\em message} & Information about the message to deliver \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the node delivered the message and false otherwise. 
+\end{DoxyReturn}
 
 
 Implements \hyperlink{class_node_detector_a51e7dccd54e94bbe937752ca39dfdba4}{Node\+Detector}.

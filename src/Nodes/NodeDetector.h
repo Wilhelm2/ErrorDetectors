@@ -22,6 +22,8 @@
 #include "../Detectors/HashErrorDetectorInterval.h"
 #include "../Detectors/MostefaouiErrorDetector.h"
 
+/** Base class to implement nodes using error detectors.
+ */
 class NodeDetector : public NodeWithControl
 {
     protected:
@@ -32,10 +34,16 @@ class NodeDetector : public NodeWithControl
         AppMsg* createAppMsg();
         AppMsg* prepareBroadcast();
 
+        /** Processes messages the process received (self messages and messages received from other nodes).*/
         virtual void processMessage(cMessage* msg) = 0;
+        /** Tries to deliver a message. It verifies the message's clock delivery conditions, and delivers them message if its delivery conditions are satisfied.
+         * @param message Information about the message to deliver
+         * @return true if the node delivered the message and false otherwise.*/
         virtual bool testDeliverMessage(const messageInfo& message) = 0;
+        /** Tries to deliver pending messages. */
         virtual void iterativeDelivery() = 0;
 
+        /** Error detector used to analyze messages before delivering them.*/
         ErrorDetector* detector;
 
         friend class Stats;

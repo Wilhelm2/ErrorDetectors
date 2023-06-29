@@ -6,8 +6,7 @@
 
 
 
-Inheritance diagram for Node\+Without\+Recovery\+:
-\nopagebreak
+Inheritance diagram for Node\+Without\+Recovery\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +15,7 @@ Inheritance diagram for Node\+Without\+Recovery\+:
 \end{figure}
 
 
-Collaboration diagram for Node\+Without\+Recovery\+:
-\nopagebreak
+Collaboration diagram for Node\+Without\+Recovery\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,11 +33,11 @@ virtual \hyperlink{class_node_without_recovery_a2690cfda5b6d9998ee873babb3418870
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{class_node_without_recovery_a0b44132b4ebc650399711766cb050399}{process\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})
-\begin{DoxyCompactList}\small\item\em Called at reception of messages from other nodes in order to process them. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Processes messages the process received (self messages and messages received from other nodes). \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_node_without_recovery_a65e21db6d6b4e72b898fd567f8b4aee2}{iterative\+Delivery} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Tries to deliver pending messages. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{class_node_without_recovery_a8cf83ec6d0af26e385dcde0bc03f5b6d}{test\+Deliver\+Message} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Tries to deliver a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -67,6 +65,10 @@ virtual bool \hyperlink{class_node_without_recovery_a8cf83ec6d0af26e385dcde0bc03
 
 
 
+Tries to deliver pending messages. 
+
+
+
 Implements \hyperlink{class_node_detector_a17ecf9939fce7471f4513b66185743cc}{Node\+Detector}.
 
 \mbox{\Hypertarget{class_node_without_recovery_a0b44132b4ebc650399711766cb050399}\label{class_node_without_recovery_a0b44132b4ebc650399711766cb050399}} 
@@ -77,7 +79,7 @@ Implements \hyperlink{class_node_detector_a17ecf9939fce7471f4513b66185743cc}{Nod
 
 
 
-Called at reception of messages from other nodes in order to process them. 
+Processes messages the process received (self messages and messages received from other nodes). 
 
 
 
@@ -89,6 +91,18 @@ Implements \hyperlink{class_node_detector_ab69432c6d3327a684845ec231826727e}{Nod
 \subsubsection{\texorpdfstring{test\+Deliver\+Message()}{testDeliverMessage()}}
 {\footnotesize\ttfamily bool Node\+Without\+Recovery\+::test\+Deliver\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Tries to deliver a message. 
+
+It verifies the message\textquotesingle{}s clock delivery conditions, and delivers them message if its delivery conditions are satisfied. 
+\begin{DoxyParams}{Parameters}
+{\em message} & Information about the message to deliver \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the node delivered the message and false otherwise. 
+\end{DoxyReturn}
 
 
 Implements \hyperlink{class_node_detector_a51e7dccd54e94bbe937752ca39dfdba4}{Node\+Detector}.

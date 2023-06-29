@@ -19,6 +19,7 @@
 #include "NodeBase.h"
 #include "../structures.h"
 
+/** Node which delivers messages upon reception without any control.*/
 class NodeNoControl : public NodeBase
 {
     public:

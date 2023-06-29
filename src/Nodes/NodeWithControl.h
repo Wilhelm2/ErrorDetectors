@@ -21,7 +21,8 @@
 using namespace omnetpp;
 using namespace std;
 
-
+/** Base class for nodes that use probabilistic clocks to causally order application messages.
+ */
 class NodeWithControl : public NodeBase
 {
     public:
@@ -42,9 +43,13 @@ class NodeWithControl : public NodeBase
         virtual bool testDeliverMessage(const messageInfo& message) = 0;
         virtual void iterativeDelivery() = 0;
 
+        /** The node's local Probabilistic clock*/
         ProbabilisticClock clock;
-        TotalDependencies deliveredMessagesTracker ; // tracks dependencies of process
+        /** Information about the messages the node has delivered.*/
+        TotalDependencies deliveredMessagesTracker ;
+        /** Contains the messages whose clock does not satisfy the deliver condition.*/
         vector<messageInfo> pendingMsg;
+        /** Contains information about the messages the node delivered. Used by the hash-based error detectors.*/
         vector<messageInfo> delivered;
 
         friend class Stats;

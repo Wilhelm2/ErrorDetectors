@@ -279,3 +279,18 @@ const vector<vector<bool>>& SimulationParameters::getDependencyCombinations(unsi
     else
         return dependencyCombinations[nbPossibleDependencies];
 }
+
+
+/** @brief Determines if nodes use a hash-based error detector.
+ */
+bool SimulationParameters::usesHashDetector()
+{
+    return DeliveryController == SimulationParameters::Delivery::HashClockDifference || DeliveryController == SimulationParameters::Delivery::HashIntervalDifference || DeliveryController == SimulationParameters::Delivery::Recovery || DeliveryController == SimulationParameters::Delivery::RecoveryTest;
+}
+
+/** @brief Determines if nodes are recovering the causal dependencies of messages.
+ */
+bool SimulationParameters::usesRecoveries()
+{
+    return DeliveryController == SimulationParameters::Delivery::Recovery || DeliveryController == SimulationParameters::Delivery::RecoveryTest;
+}

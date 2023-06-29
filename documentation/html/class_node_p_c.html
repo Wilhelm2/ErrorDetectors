@@ -67,6 +67,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Node using Probabilistic clocks to causally order messages (without error detectors).  
+ <a href="class_node_p_c.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_node_p_c_8h_source.html">NodePC.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for NodePC:</div>
@@ -111,8 +114,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:aa5fedc4136104a06e2f1131f1ba16b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at reception of messages from other nodes in order to process them.  <a href="#aa5fedc4136104a06e2f1131f1ba16b0e">More...</a><br /></td></tr>
 <tr class="separator:aa5fedc4136104a06e2f1131f1ba16b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54731196935596e0c6f094a5a8420134"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_p_c.html#a54731196935596e0c6f094a5a8420134">testDeliverMessage</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message)</td></tr>
+<tr class="memdesc:a54731196935596e0c6f094a5a8420134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delivers a message if its clock satisfies the delivery conditions.  <a href="#a54731196935596e0c6f094a5a8420134">More...</a><br /></td></tr>
 <tr class="separator:a54731196935596e0c6f094a5a8420134"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ac363db597ebadd3b18dd4343440aa1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_p_c.html#a7ac363db597ebadd3b18dd4343440aa1">iterativeDelivery</a> ()</td></tr>
+<tr class="memdesc:a7ac363db597ebadd3b18dd4343440aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to deliver pending messages.  <a href="#a7ac363db597ebadd3b18dd4343440aa1">More...</a><br /></td></tr>
 <tr class="separator:a7ac363db597ebadd3b18dd4343440aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_node_with_control"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_node_with_control')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_node_with_control.html">NodeWithControl</a></td></tr>
 <tr class="memitem:a08c8e80fd67b52c51c642d7c66fe729c inherit pro_methods_class_node_with_control"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_control.html#a08c8e80fd67b52c51c642d7c66fe729c">initialize</a> () override</td></tr>
@@ -192,7 +197,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ab8e4cc30083c58d14b22d928a78cb8ac inherit pro_static_attribs_class_node_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to have a random variation in the broadcast time of application messages.  <a href="class_node_base.html#ab8e4cc30083c58d14b22d928a78cb8ac">More...</a><br /></td></tr>
 <tr class="separator:ab8e4cc30083c58d14b22d928a78cb8ac inherit pro_static_attribs_class_node_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Node using Probabilistic clocks to causally order messages (without error detectors). </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0b937d3f3d409fd1a8d1c15170d97675"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0b937d3f3d409fd1a8d1c15170d97675">&#9670;&nbsp;</a></span>NodePC()</h2>
 
@@ -259,6 +266,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Tries to deliver pending messages. </p>
+
 <p>Implements <a class="el" href="class_node_with_control.html#a4f78078272b90937e0746c797443b37d">NodeWithControl</a>.</p>
 
 </div>
@@ -316,6 +325,15 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Delivers a message if its clock satisfies the delivery conditions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Information about the message to deliver </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the node delivered the message and false otherwise. </dd></dl>
 
 <p>Implements <a class="el" href="class_node_with_control.html#a84df0beabbaed80e7da017d592480515">NodeWithControl</a>.</p>
 

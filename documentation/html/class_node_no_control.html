@@ -67,6 +67,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Node which delivers messages upon reception without any control.  
+ <a href="class_node_no_control.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_node_no_control_8h_source.html">NodeNoControl.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for NodeNoControl:</div>
@@ -99,7 +102,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aa83bc408fe3dab03f124ea5489946836"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_no_control.html#aa83bc408fe3dab03f124ea5489946836">processMessage</a> (cMessage *<a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a>)</td></tr>
-<tr class="memdesc:aa83bc408fe3dab03f124ea5489946836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called at reception of messages from other nodes in order to process them.  <a href="#aa83bc408fe3dab03f124ea5489946836">More...</a><br /></td></tr>
+<tr class="memdesc:aa83bc408fe3dab03f124ea5489946836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes received messages.  <a href="#aa83bc408fe3dab03f124ea5489946836">More...</a><br /></td></tr>
 <tr class="separator:aa83bc408fe3dab03f124ea5489946836"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -163,7 +166,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ab8e4cc30083c58d14b22d928a78cb8ac inherit pro_static_attribs_class_node_base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to have a random variation in the broadcast time of application messages.  <a href="class_node_base.html#ab8e4cc30083c58d14b22d928a78cb8ac">More...</a><br /></td></tr>
 <tr class="separator:ab8e4cc30083c58d14b22d928a78cb8ac inherit pro_static_attribs_class_node_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Node which delivers messages upon reception without any control. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae48bd313edf922a104d690959f232822"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae48bd313edf922a104d690959f232822">&#9670;&nbsp;</a></span>NodeNoControl()</h2>
 
@@ -231,7 +236,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Called at reception of messages from other nodes in order to process them. </p>
+<p>Processes received messages. </p>
+<p>Delivers application messages without any control. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Message to process </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="class_node_base.html#ae70b168f2bc7407c249594b1c614301c">NodeBase</a>.</p>
 

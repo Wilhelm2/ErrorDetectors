@@ -17,7 +17,7 @@
 #define NODES_NODEPC_H_
 
 #include "NodeWithControl.h"
-
+/** Node using Probabilistic clocks to causally order messages (without error detectors). */
 class NodePC : public NodeWithControl
 {
     public:

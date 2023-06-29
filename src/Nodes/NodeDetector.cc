@@ -24,6 +24,8 @@ NodeDetector::~NodeDetector() {
     // TODO Auto-generated destructor stub
 }
 
+/** Initializes the node by instantiating the error detector following the simulation parameters.
+ */
 void NodeDetector::initialize()
 {
     NodeWithControl::initialize();
@@ -38,6 +40,8 @@ void NodeDetector::initialize()
         detector = new ErrorDetectorInterval();
 }
 
+/** Instantiates an application message. Calls the error detector to append on the message the information the error detector of the destination node will require to analyze the message.
+ * @return The instantiated application message. */
 AppMsg* NodeDetector::createAppMsg()
 {
     AppMsg* m = NodeWithControl::createAppMsg();
@@ -45,6 +49,8 @@ AppMsg* NodeDetector::createAppMsg()
     return m;
 }
 
+/** Prepares the message's broadcast.
+ * @return The application message to broadcast.*/
 AppMsg* NodeDetector::prepareBroadcast()
 {
     AppMsg* m = NodeWithControl::prepareBroadcast();

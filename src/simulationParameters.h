@@ -50,6 +50,8 @@ class SimulationParameters : public cSimpleModule
     simtime_t determineFirstSendTimeInMs(unsigned int id);
     const vector<unsigned int>& getEntriesIncrementedByProcess(unsigned int nodeId);
     const vector<vector<bool>>& getDependencyCombinations(unsigned int nbPossibleDependencies);
+    bool usesHashDetector();
+    bool usesRecoveries();
 
     /** Number of nodes the system contains*/
     unsigned int nbNodes;

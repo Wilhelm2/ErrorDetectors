@@ -41,9 +41,9 @@ void Stats::initialize()
     nbDeliveredMessagesFile.open("data/nbDeliveredMessagesFile.dat",std::ios::out);
     nbFalseDeliveredFile.open("data/nbFalseDeliveredFile.dat",std::ios::out);
 
-    if(params->DeliveryController == SimulationParameters::Delivery::Mostefaoui || usesHashDetector())
+    if(params->DeliveryController == SimulationParameters::Delivery::Mostefaoui || params->usesHashDetector())
         trueFalseNegativesFile.open("data/trueFalseNegativesFile.dat",std::ios::out);
-    if(usesHashDetector())
+    if(params->usesHashDetector())
     {
         nbSentDependenciesFile.open("data/nbSentDependenciesFile.dat",std::ios::out);
         controlDataSizeFile.open("data/controlDataSizeFile.dat",std::ios::out);
@@ -53,7 +53,7 @@ void Stats::initialize()
         doneCombinationsToFindHashFile.open("data/doneCombinationsToFindHashFile.dat",std::ios::out);
         nbOperationsForHashFile.open("data/nbOperationsForHashFile.dat",std::ios::out);
     }
-    if(usesRecoveries())
+    if(params->usesRecoveries())
     {
         nbRecoveriesFile.open("data/nbRecoveriesFile.dat",std::ios::out);
         nbAvoidedRecoveriesFile.open("data/nbAvoidedRecoveriesFile.dat",std::ios::out);
@@ -79,11 +79,11 @@ void Stats::handleMessage(cMessage *msg)
     {
         printPendingAppSize();
     }
-    if(params->DeliveryController == SimulationParameters::Delivery::Mostefaoui || usesHashDetector())
+    if(params->DeliveryController == SimulationParameters::Delivery::Mostefaoui || params->usesHashDetector())
     {
         writeTrueFalseNegatives();
     }
-    if(usesHashDetector())
+    if(params->usesHashDetector())
     {
         WriteTotalNbHashs();
         writeNbMsgToCombine();
@@ -91,7 +91,7 @@ void Stats::handleMessage(cMessage *msg)
         writeDoneCombinationsToFindHash();
         writeNbOperationsForHashFile();
     }
-    if(usesRecoveries())
+    if(params->usesRecoveries())
     {
         WriteTotalNbRecoveries();
         writeNbAvoidedRecoveries();
@@ -348,16 +348,3 @@ void Stats::printNbJumpedBroadcasts()
     cerr<<endl;
 }
 
-/** @brief Determines if nodes use a hash-based error detector.
- */
-bool Stats::usesHashDetector()
-{
-    return params->DeliveryController == SimulationParameters::Delivery::HashClockDifference ||params->DeliveryController == SimulationParameters::Delivery::HashIntervalDifference ||params->DeliveryController == SimulationParameters::Delivery::Recovery ||params->DeliveryController == SimulationParameters::Delivery::RecoveryTest;
-}
-
-/** @brief Determines if nodes are recovering the causal dependencies of messages.
- */
-bool Stats::usesRecoveries()
-{
-    return params->DeliveryController == SimulationParameters::Delivery::Recovery ||params->DeliveryController == SimulationParameters::Delivery::RecoveryTest;
-}

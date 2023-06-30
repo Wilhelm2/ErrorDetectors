@@ -1,4 +1,4 @@
 <map id="s_msg" name="s_msg">
-<area shape="rect" id="node2" href="$class_total_dependencies.html" title="TotalDependencies" alt="" coords="5,81,140,108"/>
-<area shape="rect" id="node3" href="$class_dependencies.html" title="Dependencies" alt="" coords="20,5,125,32"/>
+<area shape="rect" id="node2" href="$class_total_dependencies.html" title="Contains the total dependencies, ie a vector with one entry per node in the system. " alt="" coords="5,81,140,108"/>
+<area shape="rect" id="node3" href="$class_dependencies.html" title="Base class for dependencies. " alt="" coords="20,5,125,32"/>
 </map>

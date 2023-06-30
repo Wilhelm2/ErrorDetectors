@@ -67,13 +67,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Partial dependencies means that it does not desribe all the dependencies of a message.  
+ <a href="class_partial_dependencies.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_partial_dependencies_8h_source.html">PartialDependencies.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for PartialDependencies:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_partial_dependencies__inherit__graph.png" border="0" usemap="#_partial_dependencies_inherit__map" alt="Inheritance graph"/></div>
 <map name="_partial_dependencies_inherit__map" id="_partial_dependencies_inherit__map">
-<area shape="rect" id="node2" href="class_dependencies.html" title="Dependencies" alt="" coords="24,5,129,32"/>
+<area shape="rect" id="node2" href="class_dependencies.html" title="Base class for dependencies. " alt="" coords="24,5,129,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -81,7 +84,7 @@ Collaboration diagram for PartialDependencies:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_partial_dependencies__coll__graph.png" border="0" usemap="#_partial_dependencies_coll__map" alt="Collaboration graph"/></div>
 <map name="_partial_dependencies_coll__map" id="_partial_dependencies_coll__map">
-<area shape="rect" id="node2" href="class_dependencies.html" title="Dependencies" alt="" coords="24,5,129,32"/>
+<area shape="rect" id="node2" href="class_dependencies.html" title="Base class for dependencies. " alt="" coords="24,5,129,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -104,15 +107,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a816f0a770b1d6f3255a1485705e262d2"><td class="memItemLeft" align="right" valign="top">map&lt; unsigned int, <a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_partial_dependencies.html#a816f0a770b1d6f3255a1485705e262d2">getDependencies</a> () const</td></tr>
 <tr class="separator:a816f0a770b1d6f3255a1485705e262d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cfd27959669b5b7b58ea07d38824d7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_partial_dependencies.html#a4cfd27959669b5b7b58ea07d38824d7b">includesDependencies</a> (const <a class="el" href="class_partial_dependencies.html">PartialDependencies</a> &amp;dependenciesToCheck)</td></tr>
+<tr class="memdesc:a4cfd27959669b5b7b58ea07d38824d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that the dependencies also include the dependencies to check, ie a node that delivered the messages described by this dependencies also delivered the dependencies to check.  <a href="#a4cfd27959669b5b7b58ea07d38824d7b">More...</a><br /></td></tr>
 <tr class="separator:a4cfd27959669b5b7b58ea07d38824d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a9346473ba5de6a1bdffb44145f8fca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_partial_dependencies.html#a9a9346473ba5de6a1bdffb44145f8fca">print</a> ()</td></tr>
+<tr class="memdesc:a9a9346473ba5de6a1bdffb44145f8fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the dependencies on the standard output.  <a href="#a9a9346473ba5de6a1bdffb44145f8fca">More...</a><br /></td></tr>
 <tr class="separator:a9a9346473ba5de6a1bdffb44145f8fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4c98e7d381b9e9efa54a094d1da729d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_partial_dependencies.html#ac4c98e7d381b9e9efa54a094d1da729d">printErr</a> ()</td></tr>
+<tr class="memdesc:ac4c98e7d381b9e9efa54a094d1da729d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the dependencies on the error output.  <a href="#ac4c98e7d381b9e9efa54a094d1da729d">More...</a><br /></td></tr>
 <tr class="separator:ac4c98e7d381b9e9efa54a094d1da729d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67a733dba9069541f83fecee520ccce1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_partial_dependencies.html#a67a733dba9069541f83fecee520ccce1">SatisfiesDeliveryConditions</a> (const <a class="el" href="class_partial_dependencies.html">PartialDependencies</a> &amp;MessageDependencies, unsigned int idMessageSender)</td></tr>
+<tr class="memdesc:a67a733dba9069541f83fecee520ccce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that the dependencies include the message's dependencies.  <a href="#a67a733dba9069541f83fecee520ccce1">More...</a><br /></td></tr>
 <tr class="separator:a67a733dba9069541f83fecee520ccce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6e8fb1bff79b43dab24727b3511caf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_partial_dependencies.html#ad6e8fb1bff79b43dab24727b3511caf0">printComparisionWith</a> (const <a class="el" href="class_partial_dependencies.html">PartialDependencies</a> &amp;dep)</td></tr>
-<tr class="separator:ad6e8fb1bff79b43dab24727b3511caf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6543f75ad3391ee5d0cb0614ca97b9c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_partial_dependencies.html#a6543f75ad3391ee5d0cb0614ca97b9c0">clear</a> ()</td></tr>
 <tr class="separator:a6543f75ad3391ee5d0cb0614ca97b9c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad60f5e87d6d7e027c399bd1a8206a952"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_partial_dependencies.html#ad60f5e87d6d7e027c399bd1a8206a952">set</a> (<a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> id)</td></tr>
@@ -126,9 +131,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a4b72531ce3a3b7c4b6f02d0fe8ea1a7c"><td class="memItemLeft" align="right" valign="top">map&lt; unsigned int, <a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_partial_dependencies.html#a4b72531ce3a3b7c4b6f02d0fe8ea1a7c">dependencies</a></td></tr>
+<tr class="memdesc:a4b72531ce3a3b7c4b6f02d0fe8ea1a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the partial dependencies.  <a href="#a4b72531ce3a3b7c4b6f02d0fe8ea1a7c">More...</a><br /></td></tr>
 <tr class="separator:a4b72531ce3a3b7c4b6f02d0fe8ea1a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Partial dependencies means that it does not desribe all the dependencies of a message. </p>
+<p>Hence, instead of a vector with one entry per node of the system, partial dependencies only have an entry for a subset of a message's dependencies. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aefb05dec194a9ab63482df6645cbd842"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aefb05dec194a9ab63482df6645cbd842">&#9670;&nbsp;</a></span>PartialDependencies() <span class="overload">[1/2]</span></h2>
 
@@ -258,6 +267,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Verifies that the dependencies also include the dependencies to check, ie a node that delivered the messages described by this dependencies also delivered the dependencies to check. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dependenciesToCheck</td><td>The dependencies to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if dependencies include dependenciesToCheck and false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="af8f87bc4a622db0f56276502c6655f38"></a>
@@ -329,23 +347,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ad6e8fb1bff79b43dab24727b3511caf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6e8fb1bff79b43dab24727b3511caf0">&#9670;&nbsp;</a></span>printComparisionWith()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PartialDependencies::printComparisionWith </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_partial_dependencies.html">PartialDependencies</a> &amp;&#160;</td>
-          <td class="paramname"><em>dep</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Prints the dependencies on the standard output. </p>
 
 </div>
 </div>
@@ -363,6 +365,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prints the dependencies on the error output. </p>
 
 </div>
 </div>
@@ -391,6 +395,16 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verifies that the dependencies include the message's dependencies. </p>
+<p>It is usually called by nodes which want to verify that they delivered all of a message dependencies. Note that the entry corresponding to idMessageSender must only be equal to MessageDependencies[i]-1 because MessageDependencies[i] describes the dependency </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">MessageDependencies</td><td>dependencies to verify. </td></tr>
+    <tr><td class="paramname">idMessageSender</td><td>Sender of the message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the dependencies include the message's dependencies and false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -432,6 +446,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Contains the partial dependencies. </p>
 
 </div>
 </div>

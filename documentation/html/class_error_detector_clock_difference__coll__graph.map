@@ -1,6 +1,6 @@
 <map id="ErrorDetectorClockDifference" name="ErrorDetectorClockDifference">
-<area shape="rect" id="node2" href="$class_hash_error_detector.html" title="HashErrorDetector" alt="" coords="95,184,226,211"/>
-<area shape="rect" id="node3" href="$class_error_detector.html" title="ErrorDetector" alt="" coords="29,95,129,121"/>
-<area shape="rect" id="node4" href="$structs__stats__error_detector.html" title="s_stats_errorDetector" alt="" coords="5,5,153,32"/>
-<area shape="rect" id="node5" href="$structs__stats__hash_error_detector.html" title="s_stats_hashErrorDetector" alt="" coords="154,95,333,121"/>
+<area shape="rect" id="node2" href="$class_hash_error_detector.html" title="Base class of Hash&#45;based error detectors. " alt="" coords="95,184,226,211"/>
+<area shape="rect" id="node3" href="$class_error_detector.html" title="Base class of error detectors. " alt="" coords="29,95,129,121"/>
+<area shape="rect" id="node4" href="$structs__stats__error_detector.html" title="Stats relevant to error detectors. " alt="" coords="5,5,153,32"/>
+<area shape="rect" id="node5" href="$structs__stats__hash_error_detector.html" title="Statistics relevant to hash error detectors. " alt="" coords="154,95,333,121"/>
 </map>

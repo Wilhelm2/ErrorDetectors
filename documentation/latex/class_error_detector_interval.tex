@@ -2,6 +2,11 @@
 \label{class_error_detector_interval}\index{Error\+Detector\+Interval@{Error\+Detector\+Interval}}
 
 
+Hash-\/based error detector that uses propagation delay hypothesises to determine the causal dependencies of messages.  
+
+
+
+
 {\ttfamily \#include $<$Hash\+Error\+Detector\+Interval.\+h$>$}
 
 
@@ -30,24 +35,29 @@ Collaboration diagram for Error\+Detector\+Interval\+:\nopagebreak
 virtual \hyperlink{class_error_detector_interval_a13501d384b2f53dd19dfa1dd9ee0f8fe}{$\sim$\+Error\+Detector\+Interval} ()
 \item 
 virtual vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{class_error_detector_interval_a6cb5dc28ef7349060d15727e92a6780a}{determine\+And\+Get\+Appended\+Dependencies} (const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&clock)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines the causal dependencies to append on the message to broadcast. \end{DoxyCompactList}\item 
 bool \hyperlink{class_error_detector_interval_a27cb3ca9d7e5c3ddda9ee5ee66f182ed}{is\+Considered\+As\+Dependency} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&possible\+Dep)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines if a message is considered as being a dependency. \end{DoxyCompactList}\item 
 bool \hyperlink{class_error_detector_interval_a33bf470042fb65d833fd0f091374a046}{is\+Considered\+As\+Possible\+Dependency} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&possible\+Dep)
-\item 
-vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{class_error_detector_interval_abe98fbb4f13aeb919d2c2e8755f003ae}{sort\+Possible\+Dependencies\+Set} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&base\+Combine\+Set, \hyperlink{class_controller}{Controller} $\ast$controller)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines if a message is considered as being a possible dependency. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{class_error_detector_interval_ae74b39e397894e3485c2f7869fca8fb0}{sort\+Possible\+Dependencies\+Set} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&base\+Combine\+Set)
+\begin{DoxyCompactList}\small\item\em Sorts the set of possible dependencies depending on the reception time of messages. \end{DoxyCompactList}\item 
 \hyperlink{class_partial_dependencies}{Partial\+Dependencies} \hyperlink{class_error_detector_interval_a9494a918f551eb1efcab39ffd68316d6}{get\+Partial\+Dependencies} (const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&clock)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get partial dependencies of the message to broadcast. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 simtime\+\_\+t \hyperlink{class_error_detector_interval_a24f229a469ae7c4314a948015cddb277}{delta\+TR} = $\ast$(new Sim\+Time(100, S\+I\+M\+T\+I\+M\+E\+\_\+\+MS))
-\item 
+\begin{DoxyCompactList}\small\item\em Assumes that messages received more than 2$\ast$delta\+TR seconds ago are causal dependencies. \end{DoxyCompactList}\item 
 simtime\+\_\+t \hyperlink{class_error_detector_interval_adb614477095a1b9753f088f28776c677}{cdelay} = $\ast$(new Sim\+Time(100, S\+I\+M\+T\+I\+M\+E\+\_\+\+MS))
-\item 
+\begin{DoxyCompactList}\small\item\em Communication channel delay. \end{DoxyCompactList}\item 
 simtime\+\_\+t \hyperlink{class_error_detector_interval_a2368ba76496cfd25487e150a961bb08b}{delta\+TS} = $\ast$(new Sim\+Time(140, S\+I\+M\+T\+I\+M\+E\+\_\+\+MS))
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Same function as delta\+TR but separates them so that delta\+TR can set to 0 when the message load is low. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Hash-\/based error detector that uses propagation delay hypothesises to determine the causal dependencies of messages. 
+
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -74,6 +84,20 @@ simtime\+\_\+t \hyperlink{class_error_detector_interval_a2368ba76496cfd25487e150
 
 
 
+Determines the causal dependencies to append on the message to broadcast. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delivered} & Messages the node has delivered, ie the causal dependencies of the message to broadcast. \\
+\hline
+{\em clock} & The clock appended to the message to broadcast. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The set of dependencies that will be appended on the message to broadcast. 
+\end{DoxyReturn}
+
+
 Implements \hyperlink{class_hash_error_detector_ae45353331e29b50a0aa2fc6dd540ed4e}{Hash\+Error\+Detector}.
 
 \mbox{\Hypertarget{class_error_detector_interval_a9494a918f551eb1efcab39ffd68316d6}\label{class_error_detector_interval_a9494a918f551eb1efcab39ffd68316d6}} 
@@ -82,6 +106,20 @@ Implements \hyperlink{class_hash_error_detector_ae45353331e29b50a0aa2fc6dd540ed4
 \subsubsection{\texorpdfstring{get\+Partial\+Dependencies()}{getPartialDependencies()}}
 {\footnotesize\ttfamily \hyperlink{class_partial_dependencies}{Partial\+Dependencies} Error\+Detector\+Interval\+::get\+Partial\+Dependencies (\begin{DoxyParamCaption}\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Get partial dependencies of the message to broadcast. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delivered} & Messages the node has delivered. \\
+\hline
+{\em clock} & The clock of the message to broadcast. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Partial dependencies of the message to broadcast. 
+\end{DoxyReturn}
 
 
 Implements \hyperlink{class_hash_error_detector_a5b9f7e8a6f63b1582e912102021c2d8d}{Hash\+Error\+Detector}.
@@ -94,6 +132,20 @@ Implements \hyperlink{class_hash_error_detector_a5b9f7e8a6f63b1582e912102021c2d8
 
 
 
+Determines if a message is considered as being a dependency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The analyzed message. \\
+\hline
+{\em possible\+Dep} & The message that is checked to be a dependency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if possible\+Dep is considered as a dependency of message and false otherwise. 
+\end{DoxyReturn}
+
+
 Implements \hyperlink{class_hash_error_detector_a4693d4d5e327b19f75088cef52bcad7d}{Hash\+Error\+Detector}.
 
 \mbox{\Hypertarget{class_error_detector_interval_a33bf470042fb65d833fd0f091374a046}\label{class_error_detector_interval_a33bf470042fb65d833fd0f091374a046}} 
@@ -104,17 +156,45 @@ Implements \hyperlink{class_hash_error_detector_a4693d4d5e327b19f75088cef52bcad7
 
 
 
+Determines if a message is considered as being a possible dependency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The analyzed message. \\
+\hline
+{\em possible\+Dep} & The message that is checked to be a possible dependency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if possible\+Dep is considered as a possible dependency of message and false otherwise. 
+\end{DoxyReturn}
+
+
 Implements \hyperlink{class_hash_error_detector_ac0a25b9c1e27f98223869d11ca46d18f}{Hash\+Error\+Detector}.
 
-\mbox{\Hypertarget{class_error_detector_interval_abe98fbb4f13aeb919d2c2e8755f003ae}\label{class_error_detector_interval_abe98fbb4f13aeb919d2c2e8755f003ae}} 
+\mbox{\Hypertarget{class_error_detector_interval_ae74b39e397894e3485c2f7869fca8fb0}\label{class_error_detector_interval_ae74b39e397894e3485c2f7869fca8fb0}} 
 \index{Error\+Detector\+Interval@{Error\+Detector\+Interval}!sort\+Possible\+Dependencies\+Set@{sort\+Possible\+Dependencies\+Set}}
 \index{sort\+Possible\+Dependencies\+Set@{sort\+Possible\+Dependencies\+Set}!Error\+Detector\+Interval@{Error\+Detector\+Interval}}
 \subsubsection{\texorpdfstring{sort\+Possible\+Dependencies\+Set()}{sortPossibleDependenciesSet()}}
-{\footnotesize\ttfamily vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ Error\+Detector\+Interval\+::sort\+Possible\+Dependencies\+Set (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{base\+Combine\+Set,  }\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ Error\+Detector\+Interval\+::sort\+Possible\+Dependencies\+Set (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{base\+Combine\+Set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Implements \hyperlink{class_hash_error_detector_ad7419eaab728b7ed3e394d5aee9eda41}{Hash\+Error\+Detector}.
+Sorts the set of possible dependencies depending on the reception time of messages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message to deliver. \\
+\hline
+{\em base\+Combine\+Set} & Set of possible dependencies to order. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sorted set of possible dependencies in increasing order of probability of being a dependency of message. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_hash_error_detector_aa7952b99e47ca7cef6dae2a271885599}{Hash\+Error\+Detector}.
 
 
 
@@ -125,17 +205,29 @@ Implements \hyperlink{class_hash_error_detector_ad7419eaab728b7ed3e394d5aee9eda4
 \subsubsection{\texorpdfstring{cdelay}{cdelay}}
 {\footnotesize\ttfamily simtime\+\_\+t Error\+Detector\+Interval\+::cdelay = $\ast$(new Sim\+Time(100, S\+I\+M\+T\+I\+M\+E\+\_\+\+MS))\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Communication channel delay. 
+
 \mbox{\Hypertarget{class_error_detector_interval_a24f229a469ae7c4314a948015cddb277}\label{class_error_detector_interval_a24f229a469ae7c4314a948015cddb277}} 
 \index{Error\+Detector\+Interval@{Error\+Detector\+Interval}!delta\+TR@{delta\+TR}}
 \index{delta\+TR@{delta\+TR}!Error\+Detector\+Interval@{Error\+Detector\+Interval}}
 \subsubsection{\texorpdfstring{delta\+TR}{deltaTR}}
 {\footnotesize\ttfamily simtime\+\_\+t Error\+Detector\+Interval\+::delta\+TR = $\ast$(new Sim\+Time(100, S\+I\+M\+T\+I\+M\+E\+\_\+\+MS))\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_error_detector_interval_a2368ba76496cfd25487e150a961bb08b}\label{class_error_detector_interval_a2368ba76496cfd25487e150a961bb08b}} 
+
+
+Assumes that messages received more than 2$\ast$delta\+TR seconds ago are causal dependencies. 
+
+Do not take a value that is too high. \mbox{\Hypertarget{class_error_detector_interval_a2368ba76496cfd25487e150a961bb08b}\label{class_error_detector_interval_a2368ba76496cfd25487e150a961bb08b}} 
 \index{Error\+Detector\+Interval@{Error\+Detector\+Interval}!delta\+TS@{delta\+TS}}
 \index{delta\+TS@{delta\+TS}!Error\+Detector\+Interval@{Error\+Detector\+Interval}}
 \subsubsection{\texorpdfstring{delta\+TS}{deltaTS}}
 {\footnotesize\ttfamily simtime\+\_\+t Error\+Detector\+Interval\+::delta\+TS = $\ast$(new Sim\+Time(140, S\+I\+M\+T\+I\+M\+E\+\_\+\+MS))\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Same function as delta\+TR but separates them so that delta\+TR can set to 0 when the message load is low. 
 
 
 

@@ -24,7 +24,6 @@ ProbabilisticClock::ProbabilisticClock(unsigned int size) {
 }
 
 ProbabilisticClock::~ProbabilisticClock() {
-    // TODO Auto-generated destructor stub
 }
 
 bool ProbabilisticClock::operator<=(const ProbabilisticClock& PC) const
@@ -51,12 +50,19 @@ unsigned int ProbabilisticClock::size() const
     return clock.size();
 }
 
+/** Increments the entries of the Probabilistic clock. Nodes call it when broadcasting or delivering messages.
+ * @param entries Entries to increment.*/
 void ProbabilisticClock::incrementEntries(const std::vector<unsigned int>& entries)
 {
     for(unsigned int i:entries)
         clock[i]++;
 }
 
+/** Verifies that the clock verifies the delivery conditions of PC.
+ * @param PC Probabilistic clock to which compare the clock.
+ * @param sendIncrementedEntries Entries the process that sent PC incremented when sending PC.
+ * @return true if the clock verifies the delivery conditions of PC, false otherwise.
+ * */
 bool ProbabilisticClock::satisfiesDeliveryCondition(const ProbabilisticClock& PC, const std::vector<unsigned int>& sendIncrementedEntries) const
 {
 //    printClock();
@@ -71,6 +77,7 @@ bool ProbabilisticClock::satisfiesDeliveryCondition(const ProbabilisticClock& PC
     return true;
 }
 
+/** Print the clock on the error output.*/
 void ProbabilisticClock::printClock() const
 {
     cerr<< "Clock: ";
@@ -79,11 +86,16 @@ void ProbabilisticClock::printClock() const
     cerr<<endl;
 }
 
+/** Decreases an entry of the Probabilistic clock.
+ * @param entry Entry to decrement.*/
 void ProbabilisticClock::decreaseEntry(unsigned int entry)
 {
     clock[entry]--;
 }
 
+/** Computes the clock difference with PC.
+ * @param PC Probabilistic clock to compare to.
+ * @return Clock difference.*/
 unsigned int ProbabilisticClock::clockEntryDifference(const ProbabilisticClock& PC) const
 {
     unsigned int difference = 0;

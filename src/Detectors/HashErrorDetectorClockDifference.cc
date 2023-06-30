@@ -11,9 +11,12 @@ ErrorDetectorClockDifference::ErrorDetectorClockDifference(){
 }
 
 ErrorDetectorClockDifference::~ErrorDetectorClockDifference() {
-    // TODO Auto-generated destructor stub
 }
 
+/** Determines the causal dependencies to append on the message to broadcast.
+ * @param delivered Messages the node has delivered, ie the causal dependencies of the message to broadcast.
+ * @param clock The clock appended to the message to broadcast.
+ * @return The set of dependencies that will be appended on the message to broadcast. */
 vector<idMsg> ErrorDetectorClockDifference::determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock)
 {
     vector<idMsg> dependencies;
@@ -25,17 +28,30 @@ vector<idMsg> ErrorDetectorClockDifference::determineAndGetAppendedDependencies(
     return dependencies;
 }
 
+/** Determines if a message is considered as being a dependency.
+ * @param message The analyzed message.
+ * @param possibleDep The message that is checked to be a dependency.
+ * @return true if possibleDep is considered as a dependency of message and false otherwise.*/
 bool ErrorDetectorClockDifference::isConsideredAsDependency(const messageInfo& message, const messageInfo& possibleDep)
 {
     return message.clock.clockEntryDifference(possibleDep.clock) >= clockDifferenceConsideredDependency;
 }
 
+/** Determines if a message is considered as being a possible dependency.
+ * @param message The analyzed message.
+ * @param possibleDep The message that is checked to be a possible dependency.
+ * @return true if possibleDep is considered as a possible dependency of message and false otherwise.*/
 bool ErrorDetectorClockDifference::isConsideredAsPossibleDependency(const messageInfo& message, const messageInfo& possibleDep)
 {
     return message.clock.clockEntryDifference(possibleDep.clock) < clockDifferenceConsideredDependency;
 }
 
-vector<idMsg> ErrorDetectorClockDifference::sortPossibleDependenciesSet(const messageInfo& message, const vector<messageInfo>& baseCombineSet, Controller* controller)
+/** Sorts the set of possible dependencies depending on the clock difference of messages with the message to broadcast.
+ * @param message Message to deliver.
+ * @param baseCombineSet Set of possible dependencies to order.
+ * @return Sorted set of possible dependencies in increasing order of probability of being a dependency of message.
+ * */
+vector<idMsg> ErrorDetectorClockDifference::sortPossibleDependenciesSet(const messageInfo& message, const vector<messageInfo>& baseCombineSet)
 {
     vector<tuple<unsigned int,messageInfo>> BaseCombineSetRes;
     vector<idMsg> res;
@@ -57,12 +73,21 @@ vector<idMsg> ErrorDetectorClockDifference::sortPossibleDependenciesSet(const me
     return res;
 }
 
+/** Sets the clock difference over which a message is considered as having been delivered by all nodes and is therefore considered as being a causal dependency of the message to deliver.
+ * See paper to get precision about the used formula.
+ * @param messageLoad Message load inside the system (average number of messages broadcasted by second.)
+ * @param nbIncrementedEntries Number of entries incremented by nodes when broadcasting a message.*/
 void ErrorDetectorClockDifference::setClockDifferenceConsideredDependency(unsigned int messageLoad, unsigned nbIncrementedEntries)
 {
     clockDifferenceConsideredDependency = (messageLoad*nbIncrementedEntries*0.15 + ASSUMED_CONCURRENT_MESSAGES*nbIncrementedEntries)*1;
     cerr<<"clockDifferenceConsideredDependency = " << clockDifferenceConsideredDependency<<endl;
 }
 
+/** Get partial dependencies of the message to broadcast.
+ * @param delivered Messages the node has delivered.
+ * @param clock The clock of the message to broadcast.
+ * @return Partial dependencies of the message to broadcast.
+ * */
 PartialDependencies ErrorDetectorClockDifference::getPartialDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock)
 {
     messageInfo message; message.clock = clock;

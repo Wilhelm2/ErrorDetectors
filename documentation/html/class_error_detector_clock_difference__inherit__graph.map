@@ -1,4 +1,4 @@
 <map id="ErrorDetectorClockDifference" name="ErrorDetectorClockDifference">
-<area shape="rect" id="node2" href="$class_hash_error_detector.html" title="HashErrorDetector" alt="" coords="37,80,168,107"/>
-<area shape="rect" id="node3" href="$class_error_detector.html" title="ErrorDetector" alt="" coords="53,5,153,32"/>
+<area shape="rect" id="node2" href="$class_hash_error_detector.html" title="Base class of Hash&#45;based error detectors. " alt="" coords="37,80,168,107"/>
+<area shape="rect" id="node3" href="$class_error_detector.html" title="Base class of error detectors. " alt="" coords="53,5,153,32"/>
 </map>

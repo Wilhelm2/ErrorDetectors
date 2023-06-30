@@ -2,6 +2,11 @@
 \label{class_error_detector}\index{Error\+Detector@{Error\+Detector}}
 
 
+Base class of error detectors.  
+
+
+
+
 {\ttfamily \#include $<$Error\+Detector.\+h$>$}
 
 
@@ -30,9 +35,9 @@ Collaboration diagram for Error\+Detector\+:\nopagebreak
 virtual \hyperlink{class_error_detector_a3708d713f8f7bee01aa7e5a2fb7bb652}{$\sim$\+Error\+Detector} ()=0
 \item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_error_detector_a8cac1f6ac6803da4379df7891789c490}{prepare\+Message} (\hyperlink{class_app_msg}{App\+Msg} $\ast$m, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&clock, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&process\+Dependencies)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Appends to the message to broadcast the information the destination error detector requires. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{class_error_detector_afc717d04768dd207196c08e24163115c}{test} (\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} message, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&process\+Clock, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&process\+Dependencies, \hyperlink{class_controller}{Controller} $\ast$control, \hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$params, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered)=0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Error detector test to determine if the message to deliver can be delivered in causal order. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -50,6 +55,9 @@ class \hyperlink{class_error_detector_af62fbc8632478613aa92b0e55c79510e}{Node\+W
 class \hyperlink{class_error_detector_a4a759c82473f06c7e89c3d75a509a390}{Node\+With\+Recovery\+Test}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Base class of error detectors. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_error_detector_ae851a02dff242968cd6419400271d74f}\label{class_error_detector_ae851a02dff242968cd6419400271d74f}} 
@@ -75,6 +83,10 @@ class \hyperlink{class_error_detector_a4a759c82473f06c7e89c3d75a509a390}{Node\+W
 
 
 
+Appends to the message to broadcast the information the destination error detector requires. 
+
+
+
 Implemented in \hyperlink{class_hash_error_detector_a2b1dad6a83a08fd7ce88e32f84638459}{Hash\+Error\+Detector}, and \hyperlink{class_mostefaoui_error_detector_adcd530d7349df19adb614ca414225214}{Mostefaoui\+Error\+Detector}.
 
 \mbox{\Hypertarget{class_error_detector_afc717d04768dd207196c08e24163115c}\label{class_error_detector_afc717d04768dd207196c08e24163115c}} 
@@ -82,6 +94,10 @@ Implemented in \hyperlink{class_hash_error_detector_a2b1dad6a83a08fd7ce88e32f846
 \index{test@{test}!Error\+Detector@{Error\+Detector}}
 \subsubsection{\texorpdfstring{test()}{test()}}
 {\footnotesize\ttfamily virtual bool Error\+Detector\+::test (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}}]{message,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries,  }\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{process\+Clock,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{process\+Dependencies,  }\item[{\hyperlink{class_controller}{Controller} $\ast$}]{control,  }\item[{\hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$}]{params,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Error detector test to determine if the message to deliver can be delivered in causal order. 
 
 
 

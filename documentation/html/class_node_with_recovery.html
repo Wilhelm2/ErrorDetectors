@@ -78,7 +78,7 @@ Inheritance diagram for NodeWithRecovery:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_node_with_recovery__inherit__graph.png" border="0" usemap="#_node_with_recovery_inherit__map" alt="Inheritance graph"/></div>
 <map name="_node_with_recovery_inherit__map" id="_node_with_recovery_inherit__map">
-<area shape="rect" id="node6" href="class_node_with_recovery_test.html" title="NodeWithRecoveryTest" alt="" coords="5,379,168,405"/>
+<area shape="rect" id="node6" href="class_node_with_recovery_test.html" title="Nodes that recover messages and which try to first retrieve the causal dependencies of a message loca..." alt="" coords="5,379,168,405"/>
 <area shape="rect" id="node2" href="class_node_detector.html" title="Base class to implement nodes using error detectors. " alt="" coords="35,229,138,256"/>
 <area shape="rect" id="node3" href="class_node_with_control.html" title="Base class for nodes that use probabilistic clocks to causally order application messages. " alt="" coords="25,155,148,181"/>
 <area shape="rect" id="node4" href="class_node_base.html" title="Base class of Nodes. " alt="" coords="45,80,128,107"/>
@@ -94,13 +94,13 @@ Collaboration diagram for NodeWithRecovery:</div>
 <area shape="rect" id="node4" href="class_node_base.html" title="Base class of Nodes. " alt="" coords="422,285,505,312"/>
 <area shape="rect" id="node6" href="class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. " alt="" coords="404,95,555,121"/>
 <area shape="rect" id="node8" href="class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order..." alt="" coords="576,196,655,223"/>
-<area shape="rect" id="node7" href="class_dependencies.html" title="Dependencies" alt="" coords="329,5,435,32"/>
-<area shape="rect" id="node11" href="class_total_dependencies.html" title="TotalDependencies" alt="" coords="220,145,355,172"/>
+<area shape="rect" id="node7" href="class_dependencies.html" title="Base class for dependencies. " alt="" coords="329,5,435,32"/>
+<area shape="rect" id="node11" href="class_total_dependencies.html" title="Contains the total dependencies, ie a vector with one entry per node in the system. " alt="" coords="220,145,355,172"/>
 <area shape="rect" id="node9" href="structs__stats_node.html" title="Takes statistics relevant to all types of Nodes. " alt="" coords="455,196,551,223"/>
-<area shape="rect" id="node10" href="class_probabilistic_clock.html" title="ProbabilisticClock" alt="" coords="76,285,203,312"/>
+<area shape="rect" id="node10" href="class_probabilistic_clock.html" title="Probabilistic clocks. " alt="" coords="76,285,203,312"/>
 <area shape="rect" id="node14" href="structs__message_info.html" title="Structure containing information about received messages required to causally order them as well as t..." alt="" coords="43,375,153,401"/>
-<area shape="rect" id="node12" href="class_error_detector.html" title="ErrorDetector" alt="" coords="480,375,580,401"/>
-<area shape="rect" id="node13" href="structs__stats__error_detector.html" title="s_stats_errorDetector" alt="" coords="529,285,677,312"/>
+<area shape="rect" id="node12" href="class_error_detector.html" title="Base class of error detectors. " alt="" coords="480,375,580,401"/>
+<area shape="rect" id="node13" href="structs__stats__error_detector.html" title="Stats relevant to error detectors. " alt="" coords="529,285,677,312"/>
 <area shape="rect" id="node15" href="structs__id.html" title="Each message has a unique identifier composed of the id of the node $p_i$ that sent it and the sequen..." alt="" coords="5,285,52,312"/>
 <area shape="rect" id="node16" href="structs__stats__recovery.html" title="Contains the statistics relevant to recoveries. " alt="" coords="333,464,455,491"/>
 </map>
@@ -121,31 +121,37 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a901c89606b84898e13fe8a66228acd9f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a901c89606b84898e13fe8a66228acd9f">handleMessage</a> (cMessage *<a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a>) override</td></tr>
-<tr class="memdesc:a901c89606b84898e13fe8a66228acd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called upon reception of a message to proecss it, whether it be a selfmsg (broadcastTimer) or a message received from another process.  <a href="#a901c89606b84898e13fe8a66228acd9f">More...</a><br /></td></tr>
+<tr class="memdesc:a901c89606b84898e13fe8a66228acd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes received messages as well as the broadcastTimer.  <a href="#a901c89606b84898e13fe8a66228acd9f">More...</a><br /></td></tr>
 <tr class="separator:a901c89606b84898e13fe8a66228acd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a216c29d76ddb0e94cd5701ff208c7f5b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a216c29d76ddb0e94cd5701ff208c7f5b">processMessage</a> (cMessage *<a class="el" href="_controller_8h.html#afa0f3b802fbc219228f7bb97996fa558">msg</a>)</td></tr>
 <tr class="memdesc:a216c29d76ddb0e94cd5701ff208c7f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes messages the process received (self messages and messages received from other nodes).  <a href="#a216c29d76ddb0e94cd5701ff208c7f5b">More...</a><br /></td></tr>
 <tr class="separator:a216c29d76ddb0e94cd5701ff208c7f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52ef51093d41e9b337987810311a7bc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a52ef51093d41e9b337987810311a7bc6">processDepReq</a> (<a class="el" href="class_dep_req.html">DepReq</a> *m)</td></tr>
+<tr class="memdesc:a52ef51093d41e9b337987810311a7bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes requests of message dependencies.  <a href="#a52ef51093d41e9b337987810311a7bc6">More...</a><br /></td></tr>
 <tr class="separator:a52ef51093d41e9b337987810311a7bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34b5b66f90d85dd84b237b8cf81f2f7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a34b5b66f90d85dd84b237b8cf81f2f7e">processRcvRspDep</a> (<a class="el" href="class_dep_rsp.html">DepRsp</a> *m)</td></tr>
+<tr class="memdesc:a34b5b66f90d85dd84b237b8cf81f2f7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes replies of dependency requests.  <a href="#a34b5b66f90d85dd84b237b8cf81f2f7e">More...</a><br /></td></tr>
 <tr class="separator:a34b5b66f90d85dd84b237b8cf81f2f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a261e41c94a93113168f8f81411b7c100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a261e41c94a93113168f8f81411b7c100">pushbackMessagesInRecovery</a> ()</td></tr>
+<tr class="memdesc:a261e41c94a93113168f8f81411b7c100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves messages from the recovery list to the pending messages list while ordering them in the pending message list following their reception time.  <a href="#a261e41c94a93113168f8f81411b7c100">More...</a><br /></td></tr>
 <tr class="separator:a261e41c94a93113168f8f81411b7c100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b61912f38b62452584dc80bf261ef4e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a9b61912f38b62452584dc80bf261ef4e">iterativeDelivery</a> ()</td></tr>
-<tr class="memdesc:a9b61912f38b62452584dc80bf261ef4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to deliver pending messages.  <a href="#a9b61912f38b62452584dc80bf261ef4e">More...</a><br /></td></tr>
+<tr class="memdesc:a9b61912f38b62452584dc80bf261ef4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to deliver application messages.  <a href="#a9b61912f38b62452584dc80bf261ef4e">More...</a><br /></td></tr>
 <tr class="separator:a9b61912f38b62452584dc80bf261ef4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87a1ce8071c9c587b878636f79163e7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a87a1ce8071c9c587b878636f79163e7e">tryDeliverMessageInRecovery</a> ()</td></tr>
+<tr class="memdesc:a87a1ce8071c9c587b878636f79163e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Goes through the messages in recovery and checks if the node has delivered all of their dependencies, in order to deliver them and remove them from the recovered messages list.  <a href="#a87a1ce8071c9c587b878636f79163e7e">More...</a><br /></td></tr>
 <tr class="separator:a87a1ce8071c9c587b878636f79163e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a462d825601a3c85ee4ef95be673790f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a462d825601a3c85ee4ef95be673790f8">tryDeliverPendingMessages</a> ()</td></tr>
+<tr class="memdesc:a462d825601a3c85ee4ef95be673790f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to deliver pending messages.  <a href="#a462d825601a3c85ee4ef95be673790f8">More...</a><br /></td></tr>
 <tr class="separator:a462d825601a3c85ee4ef95be673790f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec147b3723b3dab00f9610453ba8daba"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#aec147b3723b3dab00f9610453ba8daba">testDeliverMessage</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;m)</td></tr>
 <tr class="memdesc:aec147b3723b3dab00f9610453ba8daba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to deliver a message.  <a href="#aec147b3723b3dab00f9610453ba8daba">More...</a><br /></td></tr>
 <tr class="separator:aec147b3723b3dab00f9610453ba8daba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b16bbc948fddc744a55ac548348a988"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a8b16bbc948fddc744a55ac548348a988">requestDependencies</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;m)</td></tr>
+<tr class="memdesc:a8b16bbc948fddc744a55ac548348a988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a request for the causal dependencies of m.  <a href="#a8b16bbc948fddc744a55ac548348a988">More...</a><br /></td></tr>
 <tr class="separator:a8b16bbc948fddc744a55ac548348a988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33d8e8775fd69cb647b38a54b36e1ebe"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_app_msg.html">AppMsg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_with_recovery.html#a33d8e8775fd69cb647b38a54b36e1ebe">prepareBroadcast</a> ()</td></tr>
-<tr class="memdesc:a33d8e8775fd69cb647b38a54b36e1ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares the message's broadcast.  <a href="#a33d8e8775fd69cb647b38a54b36e1ebe">More...</a><br /></td></tr>
+<tr class="memdesc:a33d8e8775fd69cb647b38a54b36e1ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the causal dependencies of the message to broadcast to be able to send them to nodes that might request them.  <a href="#a33d8e8775fd69cb647b38a54b36e1ebe">More...</a><br /></td></tr>
 <tr class="separator:a33d8e8775fd69cb647b38a54b36e1ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_node_detector"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_node_detector')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_node_detector.html">NodeDetector</a></td></tr>
 <tr class="memitem:a256160d034631f4fa14a83787f504aae inherit pro_methods_class_node_detector"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_node_detector.html#a256160d034631f4fa14a83787f504aae">NodeDetector</a> ()</td></tr>
@@ -334,10 +340,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Called upon reception of a message to proecss it, whether it be a selfmsg (broadcastTimer) or a message received from another process. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Processes received messages as well as the broadcastTimer. </p>
+<p>Does not broadcast a message if in recovery. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">msg</td><td>The message the node received. </td></tr>
+    <tr><td class="paramname">msg</td><td>Message to process. </td></tr>
   </table>
   </dd>
 </dl>
@@ -369,7 +375,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Tries to deliver pending messages. </p>
+<p>Tries to deliver application messages. </p>
+<p>Tries first to deliver recovered messages. Messages in recovery have a high probability to have been received some time ago. Hence, they have a high probability to be dependencies of currently pending messages. Hence, goes back to the beginning of the loop when delivers a recovered message. Loops as long as has delivered one message in the iteration. </p>
 
 <p>Implements <a class="el" href="class_node_detector.html#a17ecf9939fce7471f4513b66185743cc">NodeDetector</a>.</p>
 
@@ -398,8 +405,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Prepares the message's broadcast. </p>
-<dl class="section return"><dt>Returns</dt><dd>The application message to broadcast. </dd></dl>
+<p>Saves the causal dependencies of the message to broadcast to be able to send them to nodes that might request them. </p>
+<dl class="section return"><dt>Returns</dt><dd>The message to broadcast. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_node_detector.html#af75cf37cc01fc51bc228a7a83c10cb97">NodeDetector</a>.</p>
 
@@ -428,6 +435,14 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Processes requests of message dependencies. </p>
+<p>Sends the dependencies to the requester node. Raises an error if does not have the dependencies of the requested message. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Dependency request. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -485,6 +500,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Processes replies of dependency requests. </p>
+<p>Delivers the message if the node has delivered all of the messages dependencies. Otherwise pushes it to recoveredMessages. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Dependency request reply. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a261e41c94a93113168f8f81411b7c100"></a>
@@ -509,6 +532,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Moves messages from the recovery list to the pending messages list while ordering them in the pending message list following their reception time. </p>
 
 </div>
 </div>
@@ -536,6 +561,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sends a request for the causal dependencies of m. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Message of which requests the causal dependencies. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aec147b3723b3dab00f9610453ba8daba"></a>
@@ -551,7 +584,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">bool NodeWithRecovery::testDeliverMessage </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>message</em></td><td>)</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -563,13 +596,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tries to deliver a message. </p>
-<p>It verifies the message's clock delivery conditions, and delivers them message if its delivery conditions are satisfied. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>First verifies that the message's clock satisfies the delivery conditions. Second executes the error detector on the message. Delivers the message if the error detector returns that the message is causally ordered. Otherwise, requests the dependencies of the message if no recovery is currently in progress, and pushes the message into the recovery list otherwise, to ensure that at most one recovery executes at any moment. Multiple recoveries are forbidden to avoid a cascade effect as described in the paper. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td>Information about the message to deliver </td></tr>
+    <tr><td class="paramname">m</td><td>Message to deliver. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the node delivered the message and false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if has delivered the message and false otherwise. </dd></dl>
 
 <p>Implements <a class="el" href="class_node_detector.html#a51e7dccd54e94bbe937752ca39dfdba4">NodeDetector</a>.</p>
 
@@ -600,6 +633,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Goes through the messages in recovery and checks if the node has delivered all of their dependencies, in order to deliver them and remove them from the recovered messages list. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if has delivered a message and false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="a462d825601a3c85ee4ef95be673790f8"></a>
@@ -624,6 +660,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Tries to deliver pending messages. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if has delivered a message and false otherwise. </dd></dl>
 
 </div>
 </div>

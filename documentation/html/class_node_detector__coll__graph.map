@@ -3,10 +3,10 @@
 <area shape="rect" id="node3" href="$class_node_base.html" title="Base class of Nodes. " alt="" coords="107,285,190,312"/>
 <area shape="rect" id="node5" href="$class_simulation_parameters.html" title="Contains the simulation parameters set in the .ini file found in the simulations folder. " alt="" coords="99,95,249,121"/>
 <area shape="rect" id="node7" href="$class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order..." alt="" coords="47,196,125,223"/>
-<area shape="rect" id="node6" href="$class_dependencies.html" title="Dependencies" alt="" coords="187,5,292,32"/>
-<area shape="rect" id="node10" href="$class_total_dependencies.html" title="TotalDependencies" alt="" coords="280,145,415,172"/>
+<area shape="rect" id="node6" href="$class_dependencies.html" title="Base class for dependencies. " alt="" coords="187,5,292,32"/>
+<area shape="rect" id="node10" href="$class_total_dependencies.html" title="Contains the total dependencies, ie a vector with one entry per node in the system. " alt="" coords="280,145,415,172"/>
 <area shape="rect" id="node8" href="$structs__stats_node.html" title="Takes statistics relevant to all types of Nodes. " alt="" coords="246,196,342,223"/>
-<area shape="rect" id="node9" href="$class_probabilistic_clock.html" title="ProbabilisticClock" alt="" coords="215,285,341,312"/>
-<area shape="rect" id="node11" href="$class_error_detector.html" title="ErrorDetector" alt="" coords="421,375,521,401"/>
-<area shape="rect" id="node12" href="$structs__stats__error_detector.html" title="s_stats_errorDetector" alt="" coords="417,285,565,312"/>
+<area shape="rect" id="node9" href="$class_probabilistic_clock.html" title="Probabilistic clocks. " alt="" coords="215,285,341,312"/>
+<area shape="rect" id="node11" href="$class_error_detector.html" title="Base class of error detectors. " alt="" coords="421,375,521,401"/>
+<area shape="rect" id="node12" href="$structs__stats__error_detector.html" title="Stats relevant to error detectors. " alt="" coords="417,285,565,312"/>
 </map>

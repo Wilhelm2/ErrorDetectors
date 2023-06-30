@@ -19,7 +19,7 @@
 #include "../Clocks/ProbabilisticClock.h"
 #include "../Detectors/ErrorDetector.h"
 
-
+/**Error detector proposed by Mostéfaoui and Weiss. */
 class MostefaouiErrorDetector: public ErrorDetector{
 public:
     MostefaouiErrorDetector();

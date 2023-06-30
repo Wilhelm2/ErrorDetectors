@@ -66,16 +66,23 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> relevant to error detectors.  
+ <a href="structs__stats__error_detector.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_error_detector_8h_source.html">ErrorDetector.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a612288d77cf4bd7c6244474fb738768d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__stats__error_detector.html#a612288d77cf4bd7c6244474fb738768d">falseNegative</a> = 0</td></tr>
+<tr class="memdesc:a612288d77cf4bd7c6244474fb738768d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cases where the error detector returns false even though all dependencies are delivered.  <a href="#a612288d77cf4bd7c6244474fb738768d">More...</a><br /></td></tr>
 <tr class="separator:a612288d77cf4bd7c6244474fb738768d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad37aeef79761af921bb44f31024c78ce"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__stats__error_detector.html#ad37aeef79761af921bb44f31024c78ce">trueNegative</a> = 0</td></tr>
+<tr class="memdesc:ad37aeef79761af921bb44f31024c78ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cases where the error detector returns false and message are effectively not causally ordered.  <a href="#ad37aeef79761af921bb44f31024c78ce">More...</a><br /></td></tr>
 <tr class="separator:ad37aeef79761af921bb44f31024c78ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="class_stats.html" title="Stats is used to collect statistics and write them into files. ">Stats</a> relevant to error detectors. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a612288d77cf4bd7c6244474fb738768d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a612288d77cf4bd7c6244474fb738768d">&#9670;&nbsp;</a></span>falseNegative</h2>
 
@@ -87,6 +94,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Cases where the error detector returns false even though all dependencies are delivered. </p>
 
 </div>
 </div>
@@ -101,6 +110,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Cases where the error detector returns false and message are effectively not causally ordered. </p>
 
 </div>
 </div>

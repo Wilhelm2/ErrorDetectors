@@ -22,6 +22,8 @@
 
 using namespace std;
 
+/** Probabilistic clocks. Clocks with M<N entries, where N corresponds to the number of nodes of the system.
+ * Probabilistic clocks are used as causal information appended to messages. */
 class ProbabilisticClock {
     public:
         ProbabilisticClock();
@@ -33,7 +35,6 @@ class ProbabilisticClock {
         unsigned int operator[](unsigned int i) const;
         unsigned int size() const;
 
-
         void incrementEntries(const vector<unsigned int>& entries);
         bool satisfiesDeliveryCondition(const ProbabilisticClock& PC, const vector<unsigned int>& sendIncrementedEntries) const;
 
@@ -42,6 +43,7 @@ class ProbabilisticClock {
         unsigned int clockEntryDifference(const ProbabilisticClock& PC) const;
         const unsigned int at(unsigned int entry) const;
     private:
+        /** Probabilistic clock*/
         vector<unsigned int> clock;
 };
 

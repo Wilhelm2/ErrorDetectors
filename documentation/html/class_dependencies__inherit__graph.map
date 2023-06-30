@@ -1,4 +1,4 @@
 <map id="Dependencies" name="Dependencies">
-<area shape="rect" id="node2" href="$class_partial_dependencies.html" title="PartialDependencies" alt="" coords="5,80,148,107"/>
-<area shape="rect" id="node3" href="$class_total_dependencies.html" title="TotalDependencies" alt="" coords="172,80,307,107"/>
+<area shape="rect" id="node2" href="$class_partial_dependencies.html" title="Partial dependencies means that it does not desribe all the dependencies of a message. " alt="" coords="5,80,148,107"/>
+<area shape="rect" id="node3" href="$class_total_dependencies.html" title="Contains the total dependencies, ie a vector with one entry per node in the system. " alt="" coords="172,80,307,107"/>
 </map>

@@ -25,16 +25,22 @@
 using namespace std;
 using namespace omnetpp;
 
+/** Stats relevant to error detectors. */
 typedef struct s_stats_errorDetector{
-    unsigned int falseNegative = 0; // hashTest returns false even though all dependencies are delivered
-    unsigned int trueNegative = 0; // hashTest returns false and message can effectively not be delivered
+    /** Cases where the error detector returns false even though all dependencies are delivered.*/
+    unsigned int falseNegative = 0;
+    /** Cases where the error detector returns false and message are effectively not causally ordered.*/
+    unsigned int trueNegative = 0;
 }stats_errorDetector;
 
+/** Base class of error detectors*/
 class ErrorDetector {
     public:
         ErrorDetector();
         virtual ~ErrorDetector() = 0;
+        /** Appends to the message to broadcast the information the destination error detector requires.*/
         virtual AppMsg* prepareMessage(AppMsg* m, const vector<messageInfo>& delivered, const ProbabilisticClock& clock, const TotalDependencies& processDependencies) = 0;
+        /** Error detector test to determine if the message to deliver can be delivered in causal order.*/
         virtual bool test(messageInfo message, const vector<unsigned int>& incrementedClockEntries, const ProbabilisticClock& processClock, const TotalDependencies& processDependencies, Controller* control, SimulationParameters* params, const vector<messageInfo>& delivered) = 0;
     private:
         stats_errorDetector stats;

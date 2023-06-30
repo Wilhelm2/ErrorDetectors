@@ -18,7 +18,7 @@
 
 #include "Dependencies.h"
 
-
+/** Contains the total dependencies, ie a vector with one entry per node in the system.*/
 class TotalDependencies : public Dependencies {
     public:
         TotalDependencies();
@@ -37,10 +37,10 @@ class TotalDependencies : public Dependencies {
         void print();
         void printErr() const;
         bool SatisfiesDeliveryConditions(const TotalDependencies& MessageDependencies, unsigned int idMessageSender);
-        void printComparisionWith(const TotalDependencies& dep);
         unsigned int size() const;
 
     private:
+        /** Contains the dependencies.*/
         vector<unsigned int> dependencies;
 };
 

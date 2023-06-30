@@ -67,6 +67,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Probabilistic clocks.  
+ <a href="class_probabilistic_clock.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_probabilistic_clock_8h_source.html">ProbabilisticClock.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -86,14 +89,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0cdbd2ad50309fae0665df4ee5247ba"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probabilistic_clock.html#ad0cdbd2ad50309fae0665df4ee5247ba">size</a> () const</td></tr>
 <tr class="separator:ad0cdbd2ad50309fae0665df4ee5247ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c510e2d21bc580468c491a71382a4d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probabilistic_clock.html#a5c510e2d21bc580468c491a71382a4d4">incrementEntries</a> (const vector&lt; unsigned int &gt; &amp;entries)</td></tr>
+<tr class="memdesc:a5c510e2d21bc580468c491a71382a4d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the entries of the Probabilistic clock.  <a href="#a5c510e2d21bc580468c491a71382a4d4">More...</a><br /></td></tr>
 <tr class="separator:a5c510e2d21bc580468c491a71382a4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56bced001a856aa04168d787cc2dd549"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probabilistic_clock.html#a56bced001a856aa04168d787cc2dd549">satisfiesDeliveryCondition</a> (const <a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a> &amp;PC, const vector&lt; unsigned int &gt; &amp;sendIncrementedEntries) const</td></tr>
+<tr class="memdesc:a56bced001a856aa04168d787cc2dd549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that the clock verifies the delivery conditions of PC.  <a href="#a56bced001a856aa04168d787cc2dd549">More...</a><br /></td></tr>
 <tr class="separator:a56bced001a856aa04168d787cc2dd549"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1169d9d5442d55c4dd4e2e730bc2b008"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probabilistic_clock.html#a1169d9d5442d55c4dd4e2e730bc2b008">printClock</a> () const</td></tr>
+<tr class="memdesc:a1169d9d5442d55c4dd4e2e730bc2b008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the clock on the error output.  <a href="#a1169d9d5442d55c4dd4e2e730bc2b008">More...</a><br /></td></tr>
 <tr class="separator:a1169d9d5442d55c4dd4e2e730bc2b008"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa864cb9c0e2cfcf0bf28a3f534e0c6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probabilistic_clock.html#aaa864cb9c0e2cfcf0bf28a3f534e0c6a">decreaseEntry</a> (unsigned int entry)</td></tr>
+<tr class="memdesc:aaa864cb9c0e2cfcf0bf28a3f534e0c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decreases an entry of the Probabilistic clock.  <a href="#aaa864cb9c0e2cfcf0bf28a3f534e0c6a">More...</a><br /></td></tr>
 <tr class="separator:aaa864cb9c0e2cfcf0bf28a3f534e0c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad119fc48edd9537cfdb0ab77e640f614"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probabilistic_clock.html#ad119fc48edd9537cfdb0ab77e640f614">clockEntryDifference</a> (const <a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a> &amp;PC) const</td></tr>
+<tr class="memdesc:ad119fc48edd9537cfdb0ab77e640f614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the clock difference with PC.  <a href="#ad119fc48edd9537cfdb0ab77e640f614">More...</a><br /></td></tr>
 <tr class="separator:ad119fc48edd9537cfdb0ab77e640f614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81a017c569c1a57e5c567b701a64e5c9"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probabilistic_clock.html#a81a017c569c1a57e5c567b701a64e5c9">at</a> (unsigned int entry) const</td></tr>
 <tr class="separator:a81a017c569c1a57e5c567b701a64e5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -101,9 +109,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a4839958d0e2368cec8bb159b69ac0e76"><td class="memItemLeft" align="right" valign="top">vector&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_probabilistic_clock.html#a4839958d0e2368cec8bb159b69ac0e76">clock</a></td></tr>
+<tr class="memdesc:a4839958d0e2368cec8bb159b69ac0e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Probabilistic clock.  <a href="#a4839958d0e2368cec8bb159b69ac0e76">More...</a><br /></td></tr>
 <tr class="separator:a4839958d0e2368cec8bb159b69ac0e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Probabilistic clocks. </p>
+<p>Clocks with M&lt;N entries, where N corresponds to the number of nodes of the system. Probabilistic clocks are used as causal information appended to messages. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa879f0e457bc70644b6e4f2114215987"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa879f0e457bc70644b6e4f2114215987">&#9670;&nbsp;</a></span>ProbabilisticClock() <span class="overload">[1/2]</span></h2>
 
@@ -199,6 +211,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Computes the clock difference with PC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">PC</td><td>Probabilistic clock to compare to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Clock difference. </dd></dl>
+
 </div>
 </div>
 <a id="aaa864cb9c0e2cfcf0bf28a3f534e0c6a"></a>
@@ -217,6 +238,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Decreases an entry of the Probabilistic clock. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>Entry to decrement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a5c510e2d21bc580468c491a71382a4d4"></a>
@@ -234,6 +263,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Increments the entries of the Probabilistic clock. </p>
+<p>Nodes call it when broadcasting or delivering messages. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entries</td><td>Entries to increment. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -306,6 +343,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Print the clock on the error output. </p>
+
 </div>
 </div>
 <a id="a56bced001a856aa04168d787cc2dd549"></a>
@@ -333,6 +372,16 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verifies that the clock verifies the delivery conditions of PC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">PC</td><td>Probabilistic clock to which compare the clock. </td></tr>
+    <tr><td class="paramname">sendIncrementedEntries</td><td>Entries the process that sent PC incremented when sending PC. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the clock verifies the delivery conditions of PC, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -373,6 +422,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Probabilistic clock. </p>
 
 </div>
 </div>

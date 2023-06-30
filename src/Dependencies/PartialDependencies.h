@@ -19,6 +19,8 @@
 #include "Dependencies.h"
 #include "TotalDependencies.h"
 
+/** Partial dependencies means that it does not desribe all the dependencies of a message.
+ * Hence, instead of a vector with one entry per node of the system, partial dependencies only have an entry for a subset of a message's dependencies. */
 class PartialDependencies : public Dependencies {
     public:
         PartialDependencies();
@@ -35,10 +37,10 @@ class PartialDependencies : public Dependencies {
         void print();
         void printErr();
         bool SatisfiesDeliveryConditions(const PartialDependencies& MessageDependencies, unsigned int idMessageSender);
-        void printComparisionWith(const PartialDependencies& dep);
         void clear();
         void set(idMsg id);
     private:
+        /** Contains the partial dependencies.*/
         map<unsigned int,idMsg> dependencies;
 };
 

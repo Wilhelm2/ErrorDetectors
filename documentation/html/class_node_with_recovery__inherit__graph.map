@@ -1,5 +1,5 @@
 <map id="NodeWithRecovery" name="NodeWithRecovery">
-<area shape="rect" id="node6" href="$class_node_with_recovery_test.html" title="NodeWithRecoveryTest" alt="" coords="5,379,168,405"/>
+<area shape="rect" id="node6" href="$class_node_with_recovery_test.html" title="Nodes that recover messages and which try to first retrieve the causal dependencies of a message loca..." alt="" coords="5,379,168,405"/>
 <area shape="rect" id="node2" href="$class_node_detector.html" title="Base class to implement nodes using error detectors. " alt="" coords="35,229,138,256"/>
 <area shape="rect" id="node3" href="$class_node_with_control.html" title="Base class for nodes that use probabilistic clocks to causally order application messages. " alt="" coords="25,155,148,181"/>
 <area shape="rect" id="node4" href="$class_node_base.html" title="Base class of Nodes. " alt="" coords="45,80,128,107"/>

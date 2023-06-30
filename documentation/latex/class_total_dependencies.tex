@@ -2,6 +2,11 @@
 \label{class_total_dependencies}\index{Total\+Dependencies@{Total\+Dependencies}}
 
 
+Contains the total dependencies, ie a vector with one entry per node in the system.  
+
+
+
+
 {\ttfamily \#include $<$Total\+Dependencies.\+h$>$}
 
 
@@ -44,24 +49,27 @@ bool \hyperlink{class_total_dependencies_ae5899d93bd269484c5ed6b5809d8d500}{oper
 vector$<$ unsigned int $>$ \hyperlink{class_total_dependencies_a43a89fb00be27b354a4df86f6c3c8b6e}{get\+Dependencies} () const
 \item 
 bool \hyperlink{class_total_dependencies_a66aebb100cbce0faf5551fd74b0de0d8}{includes\+Dependencies} (const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&dependencies\+To\+Check)
-\item 
+\begin{DoxyCompactList}\small\item\em Verifies that the dependencies also include the dependencies to check, ie a node that delivered the messages described by this dependencies also delivered the dependencies to check. \end{DoxyCompactList}\item 
 bool \hyperlink{class_total_dependencies_aed1c3ce4bee031ca9341d8ce4a179ef0}{includes\+Dependencies} (const vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \&dependencies\+To\+Check)
-\item 
+\begin{DoxyCompactList}\small\item\em Verifies that the dependencies also include the dependencies to check, ie a node that delivered the messages described by this dependencies also delivered the dependencies to check. \end{DoxyCompactList}\item 
 void \hyperlink{class_total_dependencies_abd5c49f26000acb2c45d8b967922c7e7}{print} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the dependencies on the standard output. \end{DoxyCompactList}\item 
 void \hyperlink{class_total_dependencies_a514df10fe452f2000ceec5e279eae802}{print\+Err} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the dependencies on the error output. \end{DoxyCompactList}\item 
 bool \hyperlink{class_total_dependencies_a6d050146cb0298091a4614610997d772}{Satisfies\+Delivery\+Conditions} (const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&Message\+Dependencies, unsigned int id\+Message\+Sender)
-\item 
-void \hyperlink{class_total_dependencies_a56c23f6400891bc8acb3a2bd03f42b12}{print\+Comparision\+With} (const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&dep)
-\item 
+\begin{DoxyCompactList}\small\item\em Verifies that the dependencies include the message\textquotesingle{}s dependencies. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_total_dependencies_a00ea27540cc51d5770d6013a21a41de2}{size} () const
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 vector$<$ unsigned int $>$ \hyperlink{class_total_dependencies_a94825b4f782c30dfebf69dd2eba0bb1f}{dependencies}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Contains the dependencies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the total dependencies, ie a vector with one entry per node in the system. 
+
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -104,12 +112,36 @@ vector$<$ unsigned int $>$ \hyperlink{class_total_dependencies_a94825b4f782c30df
 \subsubsection{\texorpdfstring{includes\+Dependencies()}{includesDependencies()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool Total\+Dependencies\+::includes\+Dependencies (\begin{DoxyParamCaption}\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{dependencies\+To\+Check }\end{DoxyParamCaption})}
 
+
+
+Verifies that the dependencies also include the dependencies to check, ie a node that delivered the messages described by this dependencies also delivered the dependencies to check. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies\+To\+Check} & The dependencies to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if dependencies include dependencies\+To\+Check and false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_total_dependencies_aed1c3ce4bee031ca9341d8ce4a179ef0}\label{class_total_dependencies_aed1c3ce4bee031ca9341d8ce4a179ef0}} 
 \index{Total\+Dependencies@{Total\+Dependencies}!includes\+Dependencies@{includes\+Dependencies}}
 \index{includes\+Dependencies@{includes\+Dependencies}!Total\+Dependencies@{Total\+Dependencies}}
 \subsubsection{\texorpdfstring{includes\+Dependencies()}{includesDependencies()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool Total\+Dependencies\+::includes\+Dependencies (\begin{DoxyParamCaption}\item[{const vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \&}]{dependencies\+To\+Check }\end{DoxyParamCaption})}
 
+
+
+Verifies that the dependencies also include the dependencies to check, ie a node that delivered the messages described by this dependencies also delivered the dependencies to check. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependencies\+To\+Check} & The dependencies to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if dependencies include dependencies\+To\+Check and false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_total_dependencies_ae5899d93bd269484c5ed6b5809d8d500}\label{class_total_dependencies_ae5899d93bd269484c5ed6b5809d8d500}} 
 \index{Total\+Dependencies@{Total\+Dependencies}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!Total\+Dependencies@{Total\+Dependencies}}
@@ -140,11 +172,9 @@ vector$<$ unsigned int $>$ \hyperlink{class_total_dependencies_a94825b4f782c30df
 \subsubsection{\texorpdfstring{print()}{print()}}
 {\footnotesize\ttfamily void Total\+Dependencies\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_total_dependencies_a56c23f6400891bc8acb3a2bd03f42b12}\label{class_total_dependencies_a56c23f6400891bc8acb3a2bd03f42b12}} 
-\index{Total\+Dependencies@{Total\+Dependencies}!print\+Comparision\+With@{print\+Comparision\+With}}
-\index{print\+Comparision\+With@{print\+Comparision\+With}!Total\+Dependencies@{Total\+Dependencies}}
-\subsubsection{\texorpdfstring{print\+Comparision\+With()}{printComparisionWith()}}
-{\footnotesize\ttfamily void Total\+Dependencies\+::print\+Comparision\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{dep }\end{DoxyParamCaption})}
+
+
+Prints the dependencies on the standard output. 
 
 \mbox{\Hypertarget{class_total_dependencies_a514df10fe452f2000ceec5e279eae802}\label{class_total_dependencies_a514df10fe452f2000ceec5e279eae802}} 
 \index{Total\+Dependencies@{Total\+Dependencies}!print\+Err@{print\+Err}}
@@ -152,12 +182,30 @@ vector$<$ unsigned int $>$ \hyperlink{class_total_dependencies_a94825b4f782c30df
 \subsubsection{\texorpdfstring{print\+Err()}{printErr()}}
 {\footnotesize\ttfamily void Total\+Dependencies\+::print\+Err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Prints the dependencies on the error output. 
+
 \mbox{\Hypertarget{class_total_dependencies_a6d050146cb0298091a4614610997d772}\label{class_total_dependencies_a6d050146cb0298091a4614610997d772}} 
 \index{Total\+Dependencies@{Total\+Dependencies}!Satisfies\+Delivery\+Conditions@{Satisfies\+Delivery\+Conditions}}
 \index{Satisfies\+Delivery\+Conditions@{Satisfies\+Delivery\+Conditions}!Total\+Dependencies@{Total\+Dependencies}}
 \subsubsection{\texorpdfstring{Satisfies\+Delivery\+Conditions()}{SatisfiesDeliveryConditions()}}
 {\footnotesize\ttfamily bool Total\+Dependencies\+::\+Satisfies\+Delivery\+Conditions (\begin{DoxyParamCaption}\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{Message\+Dependencies,  }\item[{unsigned int}]{id\+Message\+Sender }\end{DoxyParamCaption})}
 
+
+
+Verifies that the dependencies include the message\textquotesingle{}s dependencies. 
+
+It is usually called by nodes which want to verify that they delivered all of a message dependencies. Note that the entry corresponding to id\+Message\+Sender must only be equal to Message\+Dependencies\mbox{[}i\mbox{]}-\/1 because Message\+Dependencies\mbox{[}i\mbox{]} describes the dependency 
+\begin{DoxyParams}{Parameters}
+{\em Message\+Dependencies} & dependencies to verify. \\
+\hline
+{\em id\+Message\+Sender} & Sender of the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the dependencies include the message\textquotesingle{}s dependencies and false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_total_dependencies_a00ea27540cc51d5770d6013a21a41de2}\label{class_total_dependencies_a00ea27540cc51d5770d6013a21a41de2}} 
 \index{Total\+Dependencies@{Total\+Dependencies}!size@{size}}
 \index{size@{size}!Total\+Dependencies@{Total\+Dependencies}}
@@ -172,6 +220,10 @@ vector$<$ unsigned int $>$ \hyperlink{class_total_dependencies_a94825b4f782c30df
 \index{dependencies@{dependencies}!Total\+Dependencies@{Total\+Dependencies}}
 \subsubsection{\texorpdfstring{dependencies}{dependencies}}
 {\footnotesize\ttfamily vector$<$unsigned int$>$ Total\+Dependencies\+::dependencies\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contains the dependencies. 
 
 
 

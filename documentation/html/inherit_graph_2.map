@@ -10,5 +10,5 @@
 <area shape="rect" id="node11" href="$class_node_p_c.html" title="Node using Probabilistic clocks to causally order messages (without error detectors). " alt="" coords="574,157,646,184"/>
 <area shape="rect" id="node8" href="$class_node_without_recovery.html" title="Nodes using error detectors but which do not recover the dependencies of messages. " alt="" coords="709,81,864,108"/>
 <area shape="rect" id="node9" href="$class_node_with_recovery.html" title="Nodes that recover the causal dependencies of messages which the error detector tags as not causally ..." alt="" coords="719,132,855,159"/>
-<area shape="rect" id="node10" href="$class_node_with_recovery_test.html" title="NodeWithRecoveryTest" alt="" coords="912,132,1075,159"/>
+<area shape="rect" id="node10" href="$class_node_with_recovery_test.html" title="Nodes that recover messages and which try to first retrieve the causal dependencies of a message loca..." alt="" coords="912,132,1075,159"/>
 </map>

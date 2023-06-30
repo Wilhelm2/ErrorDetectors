@@ -2,6 +2,11 @@
 \label{class_mostefaoui_error_detector}\index{Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}}
 
 
+Error detector proposed by Mostéfaoui and Weiss.  
+
+
+
+
 {\ttfamily \#include $<$Mostefaoui\+Error\+Detector.\+h$>$}
 
 
@@ -30,9 +35,14 @@ Collaboration diagram for Mostefaoui\+Error\+Detector\+:\nopagebreak
 virtual \hyperlink{class_mostefaoui_error_detector_a8658848d90c291c1364962c0759ca806}{$\sim$\+Mostefaoui\+Error\+Detector} ()
 \item 
 virtual bool \hyperlink{class_mostefaoui_error_detector_a293f6cf144526bc8694fc4f1fc0daeb5}{test} (\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} message, const vector$<$ unsigned int $>$ \&incremented\+Clock\+Entries, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&process\+Clock, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&process\+Dependencies, \hyperlink{class_controller}{Controller} $\ast$control, \hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$params, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered)
-\item 
+\begin{DoxyCompactList}\small\item\em Error detector test to determine if the message to deliver can be delivered in causal order. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_mostefaoui_error_detector_adcd530d7349df19adb614ca414225214}{prepare\+Message} (\hyperlink{class_app_msg}{App\+Msg} $\ast$m, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&clock, const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&process\+Dependencies)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Appends to the message to broadcast the information the destination error detector requires. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Error detector proposed by Mostéfaoui and Weiss. 
+
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -59,6 +69,10 @@ virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_mostefaoui_e
 
 
 
+Appends to the message to broadcast the information the destination error detector requires. 
+
+
+
 Implements \hyperlink{class_error_detector_a8cac1f6ac6803da4379df7891789c490}{Error\+Detector}.
 
 \mbox{\Hypertarget{class_mostefaoui_error_detector_a293f6cf144526bc8694fc4f1fc0daeb5}\label{class_mostefaoui_error_detector_a293f6cf144526bc8694fc4f1fc0daeb5}} 
@@ -66,6 +80,10 @@ Implements \hyperlink{class_error_detector_a8cac1f6ac6803da4379df7891789c490}{Er
 \index{test@{test}!Mostefaoui\+Error\+Detector@{Mostefaoui\+Error\+Detector}}
 \subsubsection{\texorpdfstring{test()}{test()}}
 {\footnotesize\ttfamily bool Mostefaoui\+Error\+Detector\+::test (\begin{DoxyParamCaption}\item[{\hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info}}]{message,  }\item[{const vector$<$ unsigned int $>$ \&}]{incremented\+Clock\+Entries,  }\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{process\+Clock,  }\item[{const \hyperlink{class_total_dependencies}{Total\+Dependencies} \&}]{process\+Dependencies,  }\item[{\hyperlink{class_controller}{Controller} $\ast$}]{control,  }\item[{\hyperlink{class_simulation_parameters}{Simulation\+Parameters} $\ast$}]{params,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Error detector test to determine if the message to deliver can be delivered in causal order. 
 
 
 

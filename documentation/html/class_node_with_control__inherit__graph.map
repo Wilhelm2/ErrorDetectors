@@ -4,5 +4,5 @@
 <area shape="rect" id="node2" href="$class_node_base.html" title="Base class of Nodes. " alt="" coords="181,80,264,107"/>
 <area shape="rect" id="node5" href="$class_node_without_recovery.html" title="Nodes using error detectors but which do not recover the dependencies of messages. " alt="" coords="5,304,160,331"/>
 <area shape="rect" id="node6" href="$class_node_with_recovery.html" title="Nodes that recover the causal dependencies of messages which the error detector tags as not causally ..." alt="" coords="184,304,320,331"/>
-<area shape="rect" id="node7" href="$class_node_with_recovery_test.html" title="NodeWithRecoveryTest" alt="" coords="171,379,333,405"/>
+<area shape="rect" id="node7" href="$class_node_with_recovery_test.html" title="Nodes that recover messages and which try to first retrieve the causal dependencies of a message loca..." alt="" coords="171,379,333,405"/>
 </map>

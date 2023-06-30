@@ -2,6 +2,11 @@
 \label{class_probabilistic_clock}\index{Probabilistic\+Clock@{Probabilistic\+Clock}}
 
 
+Probabilistic clocks.  
+
+
+
+
 {\ttfamily \#include $<$Probabilistic\+Clock.\+h$>$}
 
 \subsection*{Public Member Functions}
@@ -22,23 +27,28 @@ unsigned int \hyperlink{class_probabilistic_clock_a28398d6b8c5a92b73a7d6260e3f3e
 unsigned int \hyperlink{class_probabilistic_clock_ad0cdbd2ad50309fae0665df4ee5247ba}{size} () const
 \item 
 void \hyperlink{class_probabilistic_clock_a5c510e2d21bc580468c491a71382a4d4}{increment\+Entries} (const vector$<$ unsigned int $>$ \&entries)
-\item 
+\begin{DoxyCompactList}\small\item\em Increments the entries of the Probabilistic clock. \end{DoxyCompactList}\item 
 bool \hyperlink{class_probabilistic_clock_a56bced001a856aa04168d787cc2dd549}{satisfies\+Delivery\+Condition} (const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&PC, const vector$<$ unsigned int $>$ \&send\+Incremented\+Entries) const
-\item 
+\begin{DoxyCompactList}\small\item\em Verifies that the clock verifies the delivery conditions of PC. \end{DoxyCompactList}\item 
 void \hyperlink{class_probabilistic_clock_a1169d9d5442d55c4dd4e2e730bc2b008}{print\+Clock} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Print the clock on the error output. \end{DoxyCompactList}\item 
 void \hyperlink{class_probabilistic_clock_aaa864cb9c0e2cfcf0bf28a3f534e0c6a}{decrease\+Entry} (unsigned int entry)
-\item 
+\begin{DoxyCompactList}\small\item\em Decreases an entry of the Probabilistic clock. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_probabilistic_clock_ad119fc48edd9537cfdb0ab77e640f614}{clock\+Entry\+Difference} (const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&PC) const
-\item 
+\begin{DoxyCompactList}\small\item\em Computes the clock difference with PC. \end{DoxyCompactList}\item 
 const unsigned int \hyperlink{class_probabilistic_clock_a81a017c569c1a57e5c567b701a64e5c9}{at} (unsigned int entry) const
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 vector$<$ unsigned int $>$ \hyperlink{class_probabilistic_clock_a4839958d0e2368cec8bb159b69ac0e76}{clock}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Probabilistic clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Probabilistic clocks. 
+
+Clocks with M$<$N entries, where N corresponds to the number of nodes of the system. Probabilistic clocks are used as causal information appended to messages. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_probabilistic_clock_aa879f0e457bc70644b6e4f2114215987}\label{class_probabilistic_clock_aa879f0e457bc70644b6e4f2114215987}} 
@@ -74,18 +84,48 @@ vector$<$ unsigned int $>$ \hyperlink{class_probabilistic_clock_a4839958d0e2368c
 \subsubsection{\texorpdfstring{clock\+Entry\+Difference()}{clockEntryDifference()}}
 {\footnotesize\ttfamily unsigned int Probabilistic\+Clock\+::clock\+Entry\+Difference (\begin{DoxyParamCaption}\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{PC }\end{DoxyParamCaption}) const}
 
+
+
+Computes the clock difference with PC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PC} & Probabilistic clock to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Clock difference. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_probabilistic_clock_aaa864cb9c0e2cfcf0bf28a3f534e0c6a}\label{class_probabilistic_clock_aaa864cb9c0e2cfcf0bf28a3f534e0c6a}} 
 \index{Probabilistic\+Clock@{Probabilistic\+Clock}!decrease\+Entry@{decrease\+Entry}}
 \index{decrease\+Entry@{decrease\+Entry}!Probabilistic\+Clock@{Probabilistic\+Clock}}
 \subsubsection{\texorpdfstring{decrease\+Entry()}{decreaseEntry()}}
 {\footnotesize\ttfamily void Probabilistic\+Clock\+::decrease\+Entry (\begin{DoxyParamCaption}\item[{unsigned int}]{entry }\end{DoxyParamCaption})}
 
+
+
+Decreases an entry of the Probabilistic clock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & Entry to decrement. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_probabilistic_clock_a5c510e2d21bc580468c491a71382a4d4}\label{class_probabilistic_clock_a5c510e2d21bc580468c491a71382a4d4}} 
 \index{Probabilistic\+Clock@{Probabilistic\+Clock}!increment\+Entries@{increment\+Entries}}
 \index{increment\+Entries@{increment\+Entries}!Probabilistic\+Clock@{Probabilistic\+Clock}}
 \subsubsection{\texorpdfstring{increment\+Entries()}{incrementEntries()}}
 {\footnotesize\ttfamily void Probabilistic\+Clock\+::increment\+Entries (\begin{DoxyParamCaption}\item[{const vector$<$ unsigned int $>$ \&}]{entries }\end{DoxyParamCaption})}
 
+
+
+Increments the entries of the Probabilistic clock. 
+
+Nodes call it when broadcasting or delivering messages. 
+\begin{DoxyParams}{Parameters}
+{\em entries} & Entries to increment. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_probabilistic_clock_a071b29d8c7ebb91528db4739a846dc71}\label{class_probabilistic_clock_a071b29d8c7ebb91528db4739a846dc71}} 
 \index{Probabilistic\+Clock@{Probabilistic\+Clock}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!Probabilistic\+Clock@{Probabilistic\+Clock}}
@@ -110,12 +150,30 @@ vector$<$ unsigned int $>$ \hyperlink{class_probabilistic_clock_a4839958d0e2368c
 \subsubsection{\texorpdfstring{print\+Clock()}{printClock()}}
 {\footnotesize\ttfamily void Probabilistic\+Clock\+::print\+Clock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Print the clock on the error output. 
+
 \mbox{\Hypertarget{class_probabilistic_clock_a56bced001a856aa04168d787cc2dd549}\label{class_probabilistic_clock_a56bced001a856aa04168d787cc2dd549}} 
 \index{Probabilistic\+Clock@{Probabilistic\+Clock}!satisfies\+Delivery\+Condition@{satisfies\+Delivery\+Condition}}
 \index{satisfies\+Delivery\+Condition@{satisfies\+Delivery\+Condition}!Probabilistic\+Clock@{Probabilistic\+Clock}}
 \subsubsection{\texorpdfstring{satisfies\+Delivery\+Condition()}{satisfiesDeliveryCondition()}}
 {\footnotesize\ttfamily bool Probabilistic\+Clock\+::satisfies\+Delivery\+Condition (\begin{DoxyParamCaption}\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{PC,  }\item[{const vector$<$ unsigned int $>$ \&}]{send\+Incremented\+Entries }\end{DoxyParamCaption}) const}
 
+
+
+Verifies that the clock verifies the delivery conditions of PC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PC} & Probabilistic clock to which compare the clock. \\
+\hline
+{\em send\+Incremented\+Entries} & Entries the process that sent PC incremented when sending PC. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the clock verifies the delivery conditions of PC, false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_probabilistic_clock_ad0cdbd2ad50309fae0665df4ee5247ba}\label{class_probabilistic_clock_ad0cdbd2ad50309fae0665df4ee5247ba}} 
 \index{Probabilistic\+Clock@{Probabilistic\+Clock}!size@{size}}
 \index{size@{size}!Probabilistic\+Clock@{Probabilistic\+Clock}}
@@ -130,6 +188,10 @@ vector$<$ unsigned int $>$ \hyperlink{class_probabilistic_clock_a4839958d0e2368c
 \index{clock@{clock}!Probabilistic\+Clock@{Probabilistic\+Clock}}
 \subsubsection{\texorpdfstring{clock}{clock}}
 {\footnotesize\ttfamily vector$<$unsigned int$>$ Probabilistic\+Clock\+::clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Probabilistic clock. 
 
 
 

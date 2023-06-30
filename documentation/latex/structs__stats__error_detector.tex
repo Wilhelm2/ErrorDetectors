@@ -2,15 +2,25 @@
 \label{structs__stats__error_detector}\index{s\+\_\+stats\+\_\+error\+Detector@{s\+\_\+stats\+\_\+error\+Detector}}
 
 
+\hyperlink{class_stats}{Stats} relevant to error detectors.  
+
+
+
+
 {\ttfamily \#include $<$Error\+Detector.\+h$>$}
 
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 unsigned int \hyperlink{structs__stats__error_detector_a612288d77cf4bd7c6244474fb738768d}{false\+Negative} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Cases where the error detector returns false even though all dependencies are delivered. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{structs__stats__error_detector_ad37aeef79761af921bb44f31024c78ce}{true\+Negative} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Cases where the error detector returns false and message are effectively not causally ordered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_stats}{Stats} relevant to error detectors. 
+
 
 
 \subsection{Member Data Documentation}
@@ -20,11 +30,19 @@ unsigned int \hyperlink{structs__stats__error_detector_ad37aeef79761af921bb44f31
 \subsubsection{\texorpdfstring{false\+Negative}{falseNegative}}
 {\footnotesize\ttfamily unsigned int s\+\_\+stats\+\_\+error\+Detector\+::false\+Negative = 0}
 
+
+
+Cases where the error detector returns false even though all dependencies are delivered. 
+
 \mbox{\Hypertarget{structs__stats__error_detector_ad37aeef79761af921bb44f31024c78ce}\label{structs__stats__error_detector_ad37aeef79761af921bb44f31024c78ce}} 
 \index{s\+\_\+stats\+\_\+error\+Detector@{s\+\_\+stats\+\_\+error\+Detector}!true\+Negative@{true\+Negative}}
 \index{true\+Negative@{true\+Negative}!s\+\_\+stats\+\_\+error\+Detector@{s\+\_\+stats\+\_\+error\+Detector}}
 \subsubsection{\texorpdfstring{true\+Negative}{trueNegative}}
 {\footnotesize\ttfamily unsigned int s\+\_\+stats\+\_\+error\+Detector\+::true\+Negative = 0}
+
+
+
+Cases where the error detector returns false and message are effectively not causally ordered. 
 
 
 

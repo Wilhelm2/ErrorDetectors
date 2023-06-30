@@ -23,6 +23,7 @@
 
 using namespace std;
 
+/** Base class for dependencies*/
 class Dependencies {
 public:
     Dependencies();

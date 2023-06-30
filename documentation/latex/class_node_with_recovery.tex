@@ -20,8 +20,7 @@ Inheritance diagram for Node\+With\+Recovery\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Node\+With\+Recovery\+:
-\nopagebreak
+Collaboration diagram for Node\+With\+Recovery\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -39,27 +38,27 @@ virtual \hyperlink{class_node_with_recovery_a5cb1367a800cf960b96c9011ab94a616}{$
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{class_node_with_recovery_a901c89606b84898e13fe8a66228acd9f}{handle\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg}) override
-\begin{DoxyCompactList}\small\item\em Called upon reception of a message to proecss it, whether it be a selfmsg (broadcast\+Timer) or a message received from another process. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Processes received messages as well as the broadcast\+Timer. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}{process\+Message} (c\+Message $\ast$\hyperlink{_controller_8h_afa0f3b802fbc219228f7bb97996fa558}{msg})
 \begin{DoxyCompactList}\small\item\em Processes messages the process received (self messages and messages received from other nodes). \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_recovery_a52ef51093d41e9b337987810311a7bc6}{process\+Dep\+Req} (\hyperlink{class_dep_req}{Dep\+Req} $\ast$m)
-\item 
+\begin{DoxyCompactList}\small\item\em Processes requests of message dependencies. \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_recovery_a34b5b66f90d85dd84b237b8cf81f2f7e}{process\+Rcv\+Rsp\+Dep} (\hyperlink{class_dep_rsp}{Dep\+Rsp} $\ast$m)
-\item 
+\begin{DoxyCompactList}\small\item\em Processes replies of dependency requests. \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_recovery_a261e41c94a93113168f8f81411b7c100}{pushback\+Messages\+In\+Recovery} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Moves messages from the recovery list to the pending messages list while ordering them in the pending message list following their reception time. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_node_with_recovery_a9b61912f38b62452584dc80bf261ef4e}{iterative\+Delivery} ()
-\begin{DoxyCompactList}\small\item\em Tries to deliver pending messages. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Tries to deliver application messages. \end{DoxyCompactList}\item 
 bool \hyperlink{class_node_with_recovery_a87a1ce8071c9c587b878636f79163e7e}{try\+Deliver\+Message\+In\+Recovery} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Goes through the messages in recovery and checks if the node has delivered all of their dependencies, in order to deliver them and remove them from the recovered messages list. \end{DoxyCompactList}\item 
 bool \hyperlink{class_node_with_recovery_a462d825601a3c85ee4ef95be673790f8}{try\+Deliver\+Pending\+Messages} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Tries to deliver pending messages. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{class_node_with_recovery_aec147b3723b3dab00f9610453ba8daba}{test\+Deliver\+Message} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&m)
 \begin{DoxyCompactList}\small\item\em Tries to deliver a message. \end{DoxyCompactList}\item 
 void \hyperlink{class_node_with_recovery_a8b16bbc948fddc744a55ac548348a988}{request\+Dependencies} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&m)
-\item 
+\begin{DoxyCompactList}\small\item\em Sends a request for the causal dependencies of m. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_app_msg}{App\+Msg} $\ast$ \hyperlink{class_node_with_recovery_a33d8e8775fd69cb647b38a54b36e1ebe}{prepare\+Broadcast} ()
-\begin{DoxyCompactList}\small\item\em Prepares the message\textquotesingle{}s broadcast. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Saves the causal dependencies of the message to broadcast to be able to send them to nodes that might request them. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -114,11 +113,11 @@ Nodes that recover the causal dependencies of messages which the error detector 
 
 
 
-Called upon reception of a message to proecss it, whether it be a selfmsg (broadcast\+Timer) or a message received from another process. 
+Processes received messages as well as the broadcast\+Timer. 
 
-
+Does not broadcast a message if in recovery. 
 \begin{DoxyParams}{Parameters}
-{\em msg} & The message the node received. \\
+{\em msg} & Message to process. \\
 \hline
 \end{DoxyParams}
 
@@ -133,9 +132,9 @@ Reimplemented from \hyperlink{class_node_base_add2450264be5dd616f9f9ac94e83b988}
 
 
 
-Tries to deliver pending messages. 
+Tries to deliver application messages. 
 
-
+Tries first to deliver recovered messages. Messages in recovery have a high probability to have been received some time ago. Hence, they have a high probability to be dependencies of currently pending messages. Hence, goes back to the beginning of the loop when delivers a recovered message. Loops as long as has delivered one message in the iteration. 
 
 Implements \hyperlink{class_node_detector_a17ecf9939fce7471f4513b66185743cc}{Node\+Detector}.
 
@@ -147,10 +146,10 @@ Implements \hyperlink{class_node_detector_a17ecf9939fce7471f4513b66185743cc}{Nod
 
 
 
-Prepares the message\textquotesingle{}s broadcast. 
+Saves the causal dependencies of the message to broadcast to be able to send them to nodes that might request them. 
 
 \begin{DoxyReturn}{Returns}
-The application message to broadcast. 
+The message to broadcast. 
 \end{DoxyReturn}
 
 
@@ -162,6 +161,15 @@ Reimplemented from \hyperlink{class_node_detector_af75cf37cc01fc51bc228a7a83c10c
 \subsubsection{\texorpdfstring{process\+Dep\+Req()}{processDepReq()}}
 {\footnotesize\ttfamily void Node\+With\+Recovery\+::process\+Dep\+Req (\begin{DoxyParamCaption}\item[{\hyperlink{class_dep_req}{Dep\+Req} $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Processes requests of message dependencies. 
+
+Sends the dependencies to the requester node. Raises an error if does not have the dependencies of the requested message. 
+\begin{DoxyParams}{Parameters}
+{\em m} & Dependency request. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}\label{class_node_with_recovery_a216c29d76ddb0e94cd5701ff208c7f5b}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!process\+Message@{process\+Message}}
 \index{process\+Message@{process\+Message}!Node\+With\+Recovery@{Node\+With\+Recovery}}
@@ -182,11 +190,24 @@ Implements \hyperlink{class_node_detector_ab69432c6d3327a684845ec231826727e}{Nod
 \subsubsection{\texorpdfstring{process\+Rcv\+Rsp\+Dep()}{processRcvRspDep()}}
 {\footnotesize\ttfamily void Node\+With\+Recovery\+::process\+Rcv\+Rsp\+Dep (\begin{DoxyParamCaption}\item[{\hyperlink{class_dep_rsp}{Dep\+Rsp} $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Processes replies of dependency requests. 
+
+Delivers the message if the node has delivered all of the messages dependencies. Otherwise pushes it to recovered\+Messages. 
+\begin{DoxyParams}{Parameters}
+{\em m} & Dependency request reply. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_node_with_recovery_a261e41c94a93113168f8f81411b7c100}\label{class_node_with_recovery_a261e41c94a93113168f8f81411b7c100}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!pushback\+Messages\+In\+Recovery@{pushback\+Messages\+In\+Recovery}}
 \index{pushback\+Messages\+In\+Recovery@{pushback\+Messages\+In\+Recovery}!Node\+With\+Recovery@{Node\+With\+Recovery}}
 \subsubsection{\texorpdfstring{pushback\+Messages\+In\+Recovery()}{pushbackMessagesInRecovery()}}
 {\footnotesize\ttfamily void Node\+With\+Recovery\+::pushback\+Messages\+In\+Recovery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Moves messages from the recovery list to the pending messages list while ordering them in the pending message list following their reception time. 
 
 \mbox{\Hypertarget{class_node_with_recovery_a8b16bbc948fddc744a55ac548348a988}\label{class_node_with_recovery_a8b16bbc948fddc744a55ac548348a988}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!request\+Dependencies@{request\+Dependencies}}
@@ -194,23 +215,32 @@ Implements \hyperlink{class_node_detector_ab69432c6d3327a684845ec231826727e}{Nod
 \subsubsection{\texorpdfstring{request\+Dependencies()}{requestDependencies()}}
 {\footnotesize\ttfamily void Node\+With\+Recovery\+::request\+Dependencies (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Sends a request for the causal dependencies of m. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Message of which requests the causal dependencies. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_node_with_recovery_aec147b3723b3dab00f9610453ba8daba}\label{class_node_with_recovery_aec147b3723b3dab00f9610453ba8daba}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!test\+Deliver\+Message@{test\+Deliver\+Message}}
 \index{test\+Deliver\+Message@{test\+Deliver\+Message}!Node\+With\+Recovery@{Node\+With\+Recovery}}
 \subsubsection{\texorpdfstring{test\+Deliver\+Message()}{testDeliverMessage()}}
-{\footnotesize\ttfamily bool Node\+With\+Recovery\+::test\+Deliver\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool Node\+With\+Recovery\+::test\+Deliver\+Message (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
 
 Tries to deliver a message. 
 
-It verifies the message\textquotesingle{}s clock delivery conditions, and delivers them message if its delivery conditions are satisfied. 
+First verifies that the message\textquotesingle{}s clock satisfies the delivery conditions. Second executes the error detector on the message. Delivers the message if the error detector returns that the message is causally ordered. Otherwise, requests the dependencies of the message if no recovery is currently in progress, and pushes the message into the recovery list otherwise, to ensure that at most one recovery executes at any moment. Multiple recoveries are forbidden to avoid a cascade effect as described in the paper. 
 \begin{DoxyParams}{Parameters}
-{\em message} & Information about the message to deliver \\
+{\em m} & Message to deliver. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if the node delivered the message and false otherwise. 
+true if has delivered the message and false otherwise. 
 \end{DoxyReturn}
 
 
@@ -226,12 +256,26 @@ Reimplemented in \hyperlink{class_node_with_recovery_test_af9b78d0ed4fefb97e2f54
 \subsubsection{\texorpdfstring{try\+Deliver\+Message\+In\+Recovery()}{tryDeliverMessageInRecovery()}}
 {\footnotesize\ttfamily bool Node\+With\+Recovery\+::try\+Deliver\+Message\+In\+Recovery (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Goes through the messages in recovery and checks if the node has delivered all of their dependencies, in order to deliver them and remove them from the recovered messages list. 
+
+\begin{DoxyReturn}{Returns}
+true if has delivered a message and false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_node_with_recovery_a462d825601a3c85ee4ef95be673790f8}\label{class_node_with_recovery_a462d825601a3c85ee4ef95be673790f8}} 
 \index{Node\+With\+Recovery@{Node\+With\+Recovery}!try\+Deliver\+Pending\+Messages@{try\+Deliver\+Pending\+Messages}}
 \index{try\+Deliver\+Pending\+Messages@{try\+Deliver\+Pending\+Messages}!Node\+With\+Recovery@{Node\+With\+Recovery}}
 \subsubsection{\texorpdfstring{try\+Deliver\+Pending\+Messages()}{tryDeliverPendingMessages()}}
 {\footnotesize\ttfamily bool Node\+With\+Recovery\+::try\+Deliver\+Pending\+Messages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Tries to deliver pending messages. 
+
+\begin{DoxyReturn}{Returns}
+true if has delivered a message and false otherwise. 
+\end{DoxyReturn}
 
 
 \subsection{Friends And Related Function Documentation}

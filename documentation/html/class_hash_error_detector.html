@@ -69,15 +69,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Base class of Hash-based error detectors.  
+ <a href="class_hash_error_detector.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_hash_error_detector_8h_source.html">HashErrorDetector.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for HashErrorDetector:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hash_error_detector__inherit__graph.png" border="0" usemap="#_hash_error_detector_inherit__map" alt="Inheritance graph"/></div>
 <map name="_hash_error_detector_inherit__map" id="_hash_error_detector_inherit__map">
-<area shape="rect" id="node3" href="class_error_detector_clock_difference.html" title="ErrorDetectorClockDifference" alt="" coords="5,155,200,181"/>
-<area shape="rect" id="node4" href="class_error_detector_interval.html" title="ErrorDetectorInterval" alt="" coords="225,155,367,181"/>
-<area shape="rect" id="node2" href="class_error_detector.html" title="ErrorDetector" alt="" coords="149,5,249,32"/>
+<area shape="rect" id="node3" href="class_error_detector_clock_difference.html" title="Hash&#45;based error detector that uses the clock difference between message to determine the causal depe..." alt="" coords="5,155,200,181"/>
+<area shape="rect" id="node4" href="class_error_detector_interval.html" title="Hash&#45;based error detector that uses propagation delay hypothesises to determine the causal dependenci..." alt="" coords="225,155,367,181"/>
+<area shape="rect" id="node2" href="class_error_detector.html" title="Base class of error detectors. " alt="" coords="149,5,249,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -85,9 +88,9 @@ Collaboration diagram for HashErrorDetector:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_hash_error_detector__coll__graph.png" border="0" usemap="#_hash_error_detector_coll__map" alt="Collaboration graph"/></div>
 <map name="_hash_error_detector_coll__map" id="_hash_error_detector_coll__map">
-<area shape="rect" id="node2" href="class_error_detector.html" title="ErrorDetector" alt="" coords="29,95,129,121"/>
-<area shape="rect" id="node3" href="structs__stats__error_detector.html" title="s_stats_errorDetector" alt="" coords="5,5,153,32"/>
-<area shape="rect" id="node4" href="structs__stats__hash_error_detector.html" title="s_stats_hashErrorDetector" alt="" coords="154,95,333,121"/>
+<area shape="rect" id="node2" href="class_error_detector.html" title="Base class of error detectors. " alt="" coords="29,95,129,121"/>
+<area shape="rect" id="node3" href="structs__stats__error_detector.html" title="Stats relevant to error detectors. " alt="" coords="5,5,153,32"/>
+<area shape="rect" id="node4" href="structs__stats__hash_error_detector.html" title="Statistics relevant to hash error detectors. " alt="" coords="154,95,333,121"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -98,41 +101,56 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a187ba4d9f902ecaa0ff8b92ec531d3f4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a187ba4d9f902ecaa0ff8b92ec531d3f4">~HashErrorDetector</a> ()</td></tr>
 <tr class="separator:a187ba4d9f902ecaa0ff8b92ec531d3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c7fe649a34cf7e139ce53a248dce748"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a1c7fe649a34cf7e139ce53a248dce748">test</a> (<a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> message, const vector&lt; unsigned int &gt; &amp;incrementedClockEntries, const <a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a> &amp;processClock, const <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &amp;processDependencies, <a class="el" href="class_controller.html">Controller</a> *control, <a class="el" href="class_simulation_parameters.html">SimulationParameters</a> *params, const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;delivered)</td></tr>
+<tr class="memdesc:a1c7fe649a34cf7e139ce53a248dce748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test executed on a message to determine if it can be causally delivered.  <a href="#a1c7fe649a34cf7e139ce53a248dce748">More...</a><br /></td></tr>
 <tr class="separator:a1c7fe649a34cf7e139ce53a248dce748"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a851c562e49f608ec3fe3e984db27bfca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a851c562e49f608ec3fe3e984db27bfca">hashPartialDependencies</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message, const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;delivered, const vector&lt; unsigned int &gt; &amp;incrementedClockEntries, <a class="el" href="class_controller.html">Controller</a> *controller, <a class="el" href="class_simulation_parameters.html">SimulationParameters</a> *params)</td></tr>
+<tr class="memdesc:a851c562e49f608ec3fe3e984db27bfca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test executed on a message when using partial dependencies to determine if it can be causally delivered.  <a href="#a851c562e49f608ec3fe3e984db27bfca">More...</a><br /></td></tr>
 <tr class="separator:a851c562e49f608ec3fe3e984db27bfca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13dd5fae3ca4898bd91d1801beed24a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a13dd5fae3ca4898bd91d1801beed24a4">hashTotalDependencies</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message, const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;delivered, const vector&lt; unsigned int &gt; &amp;incrementedClockEntries, const <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &amp;processDependencies, <a class="el" href="class_controller.html">Controller</a> *controller, <a class="el" href="class_simulation_parameters.html">SimulationParameters</a> *params)</td></tr>
+<tr class="memdesc:a13dd5fae3ca4898bd91d1801beed24a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test executed on a message when using total dependencies to determine if it can be causally delivered.  <a href="#a13dd5fae3ca4898bd91d1801beed24a4">More...</a><br /></td></tr>
 <tr class="separator:a13dd5fae3ca4898bd91d1801beed24a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93b22ebde71c18f801319b33ce30899c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a93b22ebde71c18f801319b33ce30899c">hashIsEqual</a> (size_t messageHash, size_t dependenciesHash, unsigned int nbComputedHashes)</td></tr>
+<tr class="memdesc:a93b22ebde71c18f801319b33ce30899c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies if the hash of the message and dependencies set are equal.  <a href="#a93b22ebde71c18f801319b33ce30899c">More...</a><br /></td></tr>
 <tr class="separator:a93b22ebde71c18f801319b33ce30899c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09b0d73b3a717ddf850fe644848c15c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_total_dependencies.html">TotalDependencies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a09b0d73b3a717ddf850fe644848c15c6">createBaseDependencies</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message, const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;delivered, const vector&lt; unsigned int &gt; &amp;incrementedClockEntries, const <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &amp;processDependencies)</td></tr>
+<tr class="memdesc:a09b0d73b3a717ddf850fe644848c15c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the set of messages that are considered as dependencies of the message to deliver.  <a href="#a09b0d73b3a717ddf850fe644848c15c6">More...</a><br /></td></tr>
 <tr class="separator:a09b0d73b3a717ddf850fe644848c15c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaceeb3d2d27d5f3c85a9b80f959e0fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#aaaceeb3d2d27d5f3c85a9b80f959e0fe">isPossibleDependency</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message, const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;possibleDep)</td></tr>
+<tr class="memdesc:aaaceeb3d2d27d5f3c85a9b80f959e0fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a message is a possible dependency of another message.  <a href="#aaaceeb3d2d27d5f3c85a9b80f959e0fe">More...</a><br /></td></tr>
 <tr class="separator:aaaceeb3d2d27d5f3c85a9b80f959e0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8605d778886baa20648a9f5955c5943"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#ae8605d778886baa20648a9f5955c5943">createPossibleDependenciesSet</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message, const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;messageToChooseFrom, const vector&lt; unsigned int &gt; &amp;incrementedClockEntries, <a class="el" href="class_controller.html">Controller</a> *controller)</td></tr>
+<tr class="memdesc:ae8605d778886baa20648a9f5955c5943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the set of messages that are considered as possible dependencies of the message to deliver.  <a href="#ae8605d778886baa20648a9f5955c5943">More...</a><br /></td></tr>
 <tr class="separator:ae8605d778886baa20648a9f5955c5943"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a007d537bdfd329c6b23b432b58d4cf4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a007d537bdfd329c6b23b432b58d4cf4c">incrementnbMsgWronglyConsideredCausalDep</a> (unsigned int entry)</td></tr>
+<tr class="memdesc:a007d537bdfd329c6b23b432b58d4cf4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the vector nbMsgWronglyConsideredCausalDep while avoiding out of array bounds increments.  <a href="#a007d537bdfd329c6b23b432b58d4cf4c">More...</a><br /></td></tr>
 <tr class="separator:a007d537bdfd329c6b23b432b58d4cf4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08b4518822a6beff6845da4dd36bfba1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a08b4518822a6beff6845da4dd36bfba1">incrementnbMsgToCombine</a> (unsigned int entry)</td></tr>
+<tr class="memdesc:a08b4518822a6beff6845da4dd36bfba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the vector nbMsgToCombine while avoiding out of array bounds increments.  <a href="#a08b4518822a6beff6845da4dd36bfba1">More...</a><br /></td></tr>
 <tr class="separator:a08b4518822a6beff6845da4dd36bfba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa56dfbb555e15093bd5d93a683fa42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a6aa56dfbb555e15093bd5d93a683fa42">incrementnbOperationsForHash</a> (unsigned int entry)</td></tr>
+<tr class="memdesc:a6aa56dfbb555e15093bd5d93a683fa42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the vector nbOperationsForHash while avoiding out of array bounds increments.  <a href="#a6aa56dfbb555e15093bd5d93a683fa42">More...</a><br /></td></tr>
 <tr class="separator:a6aa56dfbb555e15093bd5d93a683fa42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcad668b4f0ca1c838b40a3c0584c1ee"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#afcad668b4f0ca1c838b40a3c0584c1ee">hashTotalDependencies</a> (const <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &amp;dependencies)</td></tr>
+<tr class="memdesc:afcad668b4f0ca1c838b40a3c0584c1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hashes total dependencies.  <a href="#afcad668b4f0ca1c838b40a3c0584c1ee">More...</a><br /></td></tr>
 <tr class="separator:afcad668b4f0ca1c838b40a3c0584c1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed8b0c6d17198a493e5b89f69c2e8713"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#aed8b0c6d17198a493e5b89f69c2e8713">hashPartialDependencies</a> (const <a class="el" href="class_partial_dependencies.html">PartialDependencies</a> &amp;dependencies)</td></tr>
+<tr class="memdesc:aed8b0c6d17198a493e5b89f69c2e8713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hashes partial dependencies.  <a href="#aed8b0c6d17198a493e5b89f69c2e8713">More...</a><br /></td></tr>
 <tr class="separator:aed8b0c6d17198a493e5b89f69c2e8713"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37d0ee7d8a01b530a03262e4483c53d9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a37d0ee7d8a01b530a03262e4483c53d9">hashDependencies</a> (const vector&lt; unsigned int &gt; &amp;dependencies)</td></tr>
+<tr class="memdesc:a37d0ee7d8a01b530a03262e4483c53d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hashes the set of dependencies.  <a href="#a37d0ee7d8a01b530a03262e4483c53d9">More...</a><br /></td></tr>
 <tr class="separator:a37d0ee7d8a01b530a03262e4483c53d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0b6a85ef4078e4851cd56b612a539c5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#aa0b6a85ef4078e4851cd56b612a539c5">hashingF</a> (const vector&lt; uint32_t &gt; &amp;vec)</td></tr>
+<tr class="memdesc:aa0b6a85ef4078e4851cd56b612a539c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hashes a vector.  <a href="#aa0b6a85ef4078e4851cd56b612a539c5">More...</a><br /></td></tr>
 <tr class="separator:aa0b6a85ef4078e4851cd56b612a539c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b1dad6a83a08fd7ce88e32f84638459"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_app_msg.html">AppMsg</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a2b1dad6a83a08fd7ce88e32f84638459">prepareMessage</a> (<a class="el" href="class_app_msg.html">AppMsg</a> *m, const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;delivered, const <a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a> &amp;clock, const <a class="el" href="class_total_dependencies.html">TotalDependencies</a> &amp;processDependencies)</td></tr>
+<tr class="memdesc:a2b1dad6a83a08fd7ce88e32f84638459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares the message to broadcast when using hash-based error detectors.  <a href="#a2b1dad6a83a08fd7ce88e32f84638459">More...</a><br /></td></tr>
 <tr class="separator:a2b1dad6a83a08fd7ce88e32f84638459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4693d4d5e327b19f75088cef52bcad7d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a4693d4d5e327b19f75088cef52bcad7d">isConsideredAsDependency</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message, const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;possibleDep)=0</td></tr>
 <tr class="separator:a4693d4d5e327b19f75088cef52bcad7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0a25b9c1e27f98223869d11ca46d18f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#ac0a25b9c1e27f98223869d11ca46d18f">isConsideredAsPossibleDependency</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message, const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;possibleDep)=0</td></tr>
 <tr class="separator:ac0a25b9c1e27f98223869d11ca46d18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7419eaab728b7ed3e394d5aee9eda41"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#ad7419eaab728b7ed3e394d5aee9eda41">sortPossibleDependenciesSet</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message, const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;baseCombineSet, <a class="el" href="class_controller.html">Controller</a> *controller)=0</td></tr>
-<tr class="separator:ad7419eaab728b7ed3e394d5aee9eda41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7952b99e47ca7cef6dae2a271885599"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#aa7952b99e47ca7cef6dae2a271885599">sortPossibleDependenciesSet</a> (const <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &amp;message, const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;baseCombineSet)=0</td></tr>
+<tr class="separator:aa7952b99e47ca7cef6dae2a271885599"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b9f7e8a6f63b1582e912102021c2d8d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_partial_dependencies.html">PartialDependencies</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a5b9f7e8a6f63b1582e912102021c2d8d">getPartialDependencies</a> (const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;delivered, const <a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a> &amp;clock)=0</td></tr>
 <tr class="separator:a5b9f7e8a6f63b1582e912102021c2d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae45353331e29b50a0aa2fc6dd540ed4e"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; <a class="el" href="structures_8h.html#a83a1d9a070efa5341da84cfd8e28d3e5">idMsg</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#ae45353331e29b50a0aa2fc6dd540ed4e">determineAndGetAppendedDependencies</a> (const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;delivered, const <a class="el" href="class_probabilistic_clock.html">ProbabilisticClock</a> &amp;clock)=0</td></tr>
@@ -146,13 +164,16 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a5193286d834f087e03b7299e81b60509"><td class="memItemLeft" align="right" valign="top">hash&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a5193286d834f087e03b7299e81b60509">hasher</a></td></tr>
+<tr class="memdesc:a5193286d834f087e03b7299e81b60509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to compute hashes.  <a href="#a5193286d834f087e03b7299e81b60509">More...</a><br /></td></tr>
 <tr class="separator:a5193286d834f087e03b7299e81b60509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec82c653679515b306b34eb075cf37fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_hash_error_detector_8h.html#afcf148bcfe372c25deda29220815b9e0">stats_hashErrorDetector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#aec82c653679515b306b34eb075cf37fd">hashStats</a></td></tr>
+<tr class="memdesc:aec82c653679515b306b34eb075cf37fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statistics about hash-based error detectors.  <a href="#aec82c653679515b306b34eb075cf37fd">More...</a><br /></td></tr>
 <tr class="separator:aec82c653679515b306b34eb075cf37fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a662a2baf62e11d8e2468aee44b9b168e"><td class="memItemLeft" align="right" valign="top">static map&lt; int, vector&lt; unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a662a2baf62e11d8e2468aee44b9b168e">collisionController</a></td></tr>
+<tr class="memdesc:a662a2baf62e11d8e2468aee44b9b168e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to detect collisions when hashing dependencies sets, ie detect when different dependencies sets have the same hash.  <a href="#a662a2baf62e11d8e2468aee44b9b168e">More...</a><br /></td></tr>
 <tr class="separator:a662a2baf62e11d8e2468aee44b9b168e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -162,7 +183,9 @@ Friends</h2></td></tr>
 <tr class="memitem:a4a759c82473f06c7e89c3d75a509a390"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hash_error_detector.html#a4a759c82473f06c7e89c3d75a509a390">NodeWithRecoveryTest</a></td></tr>
 <tr class="separator:a4a759c82473f06c7e89c3d75a509a390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base class of Hash-based error detectors. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a008bd7bd3f8d202334afd51a71cbbdae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a008bd7bd3f8d202334afd51a71cbbdae">&#9670;&nbsp;</a></span>HashErrorDetector()</h2>
 
@@ -244,6 +267,18 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates the set of messages that are considered as dependencies of the message to deliver. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message to deliver. </td></tr>
+    <tr><td class="paramname">delivered</td><td>Messages delivered by the current node. </td></tr>
+    <tr><td class="paramname">incrementedClockEntries</td><td>Entries the sender node of message incremented when broadcasting message. </td></tr>
+    <tr><td class="paramname">processDependencies</td><td>Tracker of the delivered messages of the current node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The set of messages that are considered as being dependencies of message. </dd></dl>
+
 </div>
 </div>
 <a id="ae8605d778886baa20648a9f5955c5943"></a>
@@ -283,6 +318,18 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates the set of messages that are considered as possible dependencies of the message to deliver. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message to deliver. </td></tr>
+    <tr><td class="paramname">messageToChooseFrom</td><td>Set containing the messages that might be possible dependencies of message. </td></tr>
+    <tr><td class="paramname">incrementedClockEntries</td><td>Entries the sender node of message incremented when broadcasting message. </td></tr>
+    <tr><td class="paramname">controller</td><td><a class="el" href="class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order...">Controller</a> module. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The set of messages that are considered as possible dependencies of message. </dd></dl>
 
 </div>
 </div>
@@ -378,6 +425,15 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Hashes the set of dependencies. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dependencies</td><td>The dependencies to hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The hash. </dd></dl>
+
 </div>
 </div>
 <a id="aa0b6a85ef4078e4851cd56b612a539c5"></a>
@@ -395,6 +451,15 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Hashes a vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>The vector to hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The hash. </dd></dl>
 
 </div>
 </div>
@@ -429,6 +494,17 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verifies if the hash of the message and dependencies set are equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">messageHash</td><td>Hash of the message to deliver. </td></tr>
+    <tr><td class="paramname">dependenciesHash</td><td>Hash of the dependencies set. </td></tr>
+    <tr><td class="paramname">nbComputedHashes</td><td>Number of computed hashes in the current hash computation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the hash is equal, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -476,6 +552,19 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Test executed on a message when using partial dependencies to determine if it can be causally delivered. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message to deliver. </td></tr>
+    <tr><td class="paramname">delivered</td><td>Messages delivered by the current node. </td></tr>
+    <tr><td class="paramname">incrementedClockEntries</td><td>Entries the sender node of message incremented when broadcasting message. </td></tr>
+    <tr><td class="paramname">control</td><td><a class="el" href="class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order...">Controller</a> module. </td></tr>
+    <tr><td class="paramname">params</td><td>Simulation parameters. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the error detector concludes that the message can be causally delivered and false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="aed8b0c6d17198a493e5b89f69c2e8713"></a>
@@ -493,6 +582,15 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Hashes partial dependencies. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dependencies</td><td>The partial dependencies to hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The hash. </dd></dl>
 
 </div>
 </div>
@@ -546,6 +644,20 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Test executed on a message when using total dependencies to determine if it can be causally delivered. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message to deliver. </td></tr>
+    <tr><td class="paramname">delivered</td><td>Messages delivered by the current node. </td></tr>
+    <tr><td class="paramname">incrementedClockEntries</td><td>Entries the sender node of message incremented when broadcasting message. </td></tr>
+    <tr><td class="paramname">processDependencies</td><td>Tracker of the delivered messages of the current node. </td></tr>
+    <tr><td class="paramname">control</td><td><a class="el" href="class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order...">Controller</a> module. </td></tr>
+    <tr><td class="paramname">params</td><td>Simulation parameters. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the error detector concludes that the message can be causally delivered and false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="afcad668b4f0ca1c838b40a3c0584c1ee"></a>
@@ -563,6 +675,15 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Hashes total dependencies. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dependencies</td><td>The total dependencies to hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The hash. </dd></dl>
 
 </div>
 </div>
@@ -582,6 +703,14 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Increments the vector nbMsgToCombine while avoiding out of array bounds increments. </p>
+<p>Raises an error in case of out of array bounds increment. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>Entry to increment. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a007d537bdfd329c6b23b432b58d4cf4c"></a>
@@ -600,6 +729,14 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Increments the vector nbMsgWronglyConsideredCausalDep while avoiding out of array bounds increments. </p>
+<p>Raises an error in case of out of array bounds increment. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>Entry to increment. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a6aa56dfbb555e15093bd5d93a683fa42"></a>
@@ -617,6 +754,14 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Increments the vector nbOperationsForHash while avoiding out of array bounds increments. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>Entry to increment. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -722,6 +867,16 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Determines if a message is a possible dependency of another message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message of which possibleDep might be a dependency. </td></tr>
+    <tr><td class="paramname">possibleDep</td><td>Possible dependency. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if possibleDep is a possible dependency of message. </dd></dl>
+
 </div>
 </div>
 <a id="a2b1dad6a83a08fd7ce88e32f84638459"></a>
@@ -770,12 +925,24 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Prepares the message to broadcast when using hash-based error detectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>The message to broadcast. </td></tr>
+    <tr><td class="paramname">delivered</td><td>Messages delivered by the broadcasting node, ie dependencies of the message to broadcast. </td></tr>
+    <tr><td class="paramname">clock</td><td>Probabilistic clock attached to the message. </td></tr>
+    <tr><td class="paramname">processDependencies</td><td><a class="el" href="class_dependencies.html" title="Base class for dependencies. ">Dependencies</a> tracker of the broadcasting node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The application message to broadcast. </dd></dl>
+
 <p>Implements <a class="el" href="class_error_detector.html#a8cac1f6ac6803da4379df7891789c490">ErrorDetector</a>.</p>
 
 </div>
 </div>
-<a id="ad7419eaab728b7ed3e394d5aee9eda41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7419eaab728b7ed3e394d5aee9eda41">&#9670;&nbsp;</a></span>sortPossibleDependenciesSet()</h2>
+<a id="aa7952b99e47ca7cef6dae2a271885599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7952b99e47ca7cef6dae2a271885599">&#9670;&nbsp;</a></span>sortPossibleDependenciesSet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -793,13 +960,7 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const vector&lt; <a class="el" href="structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6">messageInfo</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>baseCombineSet</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_controller.html">Controller</a> *&#160;</td>
-          <td class="paramname"><em>controller</em>&#160;</td>
+          <td class="paramname"><em>baseCombineSet</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -814,7 +975,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_error_detector_clock_difference.html#a740f6bd74b30e0b194c4b64d79bb8caf">ErrorDetectorClockDifference</a>, and <a class="el" href="class_error_detector_interval.html#abe98fbb4f13aeb919d2c2e8755f003ae">ErrorDetectorInterval</a>.</p>
+<p>Implemented in <a class="el" href="class_error_detector_clock_difference.html#a6dafc330591db83f5c5fbee56b2c4937">ErrorDetectorClockDifference</a>, and <a class="el" href="class_error_detector_interval.html#ae74b39e397894e3485c2f7869fca8fb0">ErrorDetectorInterval</a>.</p>
 
 </div>
 </div>
@@ -881,6 +1042,21 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Test executed on a message to determine if it can be causally delivered. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message to deliver. </td></tr>
+    <tr><td class="paramname">incrementedClockEntries</td><td>Entries the sender node of message incremented when broadcasting message. </td></tr>
+    <tr><td class="paramname">processClock</td><td>Probabilistic clock of the current node. </td></tr>
+    <tr><td class="paramname">processDependencies</td><td>Tracker of the delivered messages of the current node. </td></tr>
+    <tr><td class="paramname">control</td><td><a class="el" href="class_controller.html" title="Module to control that nodes deliver application messages exactly once and in causal order...">Controller</a> module. </td></tr>
+    <tr><td class="paramname">params</td><td>Simulation parameters. </td></tr>
+    <tr><td class="paramname">delivered</td><td>Messages delivered by the current node. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the error detector concludes that the message can be causally delivered and false otherwise. </dd></dl>
 
 <p>Implements <a class="el" href="class_error_detector.html#afc717d04768dd207196c08e24163115c">ErrorDetector</a>.</p>
 
@@ -952,6 +1128,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Used to detect collisions when hashing dependencies sets, ie detect when different dependencies sets have the same hash. </p>
+<p>Is inactivated by default because it uses a lot of memory space. To activate, set COLLISION_CONTROL in simulatioParameters to true. </p>
+
 </div>
 </div>
 <a id="a5193286d834f087e03b7299e81b60509"></a>
@@ -974,6 +1153,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Used to compute hashes. </p>
+
 </div>
 </div>
 <a id="aec82c653679515b306b34eb075cf37fd"></a>
@@ -995,6 +1176,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Statistics about hash-based error detectors. </p>
 
 </div>
 </div>

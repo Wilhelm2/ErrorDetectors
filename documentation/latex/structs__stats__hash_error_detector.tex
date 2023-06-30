@@ -2,22 +2,30 @@
 \label{structs__stats__hash_error_detector}\index{s\+\_\+stats\+\_\+hash\+Error\+Detector@{s\+\_\+stats\+\_\+hash\+Error\+Detector}}
 
 
+Statistics relevant to hash error detectors.  
+
+
+
+
 {\ttfamily \#include $<$Hash\+Error\+Detector.\+h$>$}
 
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 unsigned int \hyperlink{structs__stats__hash_error_detector_a10b1af7c249bf232e739b50c5faed021}{nb\+Hash} =0
-\item 
+\begin{DoxyCompactList}\small\item\em Total number of hashes the node computed. \end{DoxyCompactList}\item 
 vector$<$ unsigned int $>$ \hyperlink{structs__stats__hash_error_detector_ac8f99ce678b3938dc049ff074040b999}{nb\+Msg\+Wrongly\+Considered\+Causal\+Dep}
-\item 
+\begin{DoxyCompactList}\small\item\em Number of messages the node wrongly considered as being causal dependencies in the hash computation of messages it delivered (obtained by calling the controler). \end{DoxyCompactList}\item 
 vector$<$ unsigned int $>$ \hyperlink{structs__stats__hash_error_detector_ab765b1ecec0ec33fec5968fb28d5e4fb}{nb\+Msg\+To\+Combine}
-\item 
+\begin{DoxyCompactList}\small\item\em Number of possible dependencies in the hash computation of messages. \end{DoxyCompactList}\item 
 vector$<$ unsigned int $>$ \hyperlink{structs__stats__hash_error_detector_a82622eb0b2a4d41fc33df25c6360dc79}{done\+Combinations\+To\+Find\+Hash}
-\item 
+\begin{DoxyCompactList}\small\item\em Number of done combinations to find the hash of delivere messages. \end{DoxyCompactList}\item 
 vector$<$ unsigned int $>$ \hyperlink{structs__stats__hash_error_detector_a64dab27e3314cfc2a233f620f0309782}{nb\+Operations\+For\+Hash}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Number of operations to compute a hash. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Statistics relevant to hash error detectors. 
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{structs__stats__hash_error_detector_a82622eb0b2a4d41fc33df25c6360dc79}\label{structs__stats__hash_error_detector_a82622eb0b2a4d41fc33df25c6360dc79}} 
@@ -26,11 +34,19 @@ vector$<$ unsigned int $>$ \hyperlink{structs__stats__hash_error_detector_a64dab
 \subsubsection{\texorpdfstring{done\+Combinations\+To\+Find\+Hash}{doneCombinationsToFindHash}}
 {\footnotesize\ttfamily vector$<$unsigned int$>$ s\+\_\+stats\+\_\+hash\+Error\+Detector\+::done\+Combinations\+To\+Find\+Hash}
 
-\mbox{\Hypertarget{structs__stats__hash_error_detector_a10b1af7c249bf232e739b50c5faed021}\label{structs__stats__hash_error_detector_a10b1af7c249bf232e739b50c5faed021}} 
+
+
+Number of done combinations to find the hash of delivere messages. 
+
+entry i \+: Number of times where the node computed i hashes to find a dependency set whose hash was equal to the one of the message to deliver. \mbox{\Hypertarget{structs__stats__hash_error_detector_a10b1af7c249bf232e739b50c5faed021}\label{structs__stats__hash_error_detector_a10b1af7c249bf232e739b50c5faed021}} 
 \index{s\+\_\+stats\+\_\+hash\+Error\+Detector@{s\+\_\+stats\+\_\+hash\+Error\+Detector}!nb\+Hash@{nb\+Hash}}
 \index{nb\+Hash@{nb\+Hash}!s\+\_\+stats\+\_\+hash\+Error\+Detector@{s\+\_\+stats\+\_\+hash\+Error\+Detector}}
 \subsubsection{\texorpdfstring{nb\+Hash}{nbHash}}
 {\footnotesize\ttfamily unsigned int s\+\_\+stats\+\_\+hash\+Error\+Detector\+::nb\+Hash =0}
+
+
+
+Total number of hashes the node computed. 
 
 \mbox{\Hypertarget{structs__stats__hash_error_detector_ab765b1ecec0ec33fec5968fb28d5e4fb}\label{structs__stats__hash_error_detector_ab765b1ecec0ec33fec5968fb28d5e4fb}} 
 \index{s\+\_\+stats\+\_\+hash\+Error\+Detector@{s\+\_\+stats\+\_\+hash\+Error\+Detector}!nb\+Msg\+To\+Combine@{nb\+Msg\+To\+Combine}}
@@ -38,19 +54,31 @@ vector$<$ unsigned int $>$ \hyperlink{structs__stats__hash_error_detector_a64dab
 \subsubsection{\texorpdfstring{nb\+Msg\+To\+Combine}{nbMsgToCombine}}
 {\footnotesize\ttfamily vector$<$unsigned int$>$ s\+\_\+stats\+\_\+hash\+Error\+Detector\+::nb\+Msg\+To\+Combine}
 
-\mbox{\Hypertarget{structs__stats__hash_error_detector_ac8f99ce678b3938dc049ff074040b999}\label{structs__stats__hash_error_detector_ac8f99ce678b3938dc049ff074040b999}} 
+
+
+Number of possible dependencies in the hash computation of messages. 
+
+entry i \+: Number of times where the node considered i messages as possible dependencies in the hash computation of a message m. \mbox{\Hypertarget{structs__stats__hash_error_detector_ac8f99ce678b3938dc049ff074040b999}\label{structs__stats__hash_error_detector_ac8f99ce678b3938dc049ff074040b999}} 
 \index{s\+\_\+stats\+\_\+hash\+Error\+Detector@{s\+\_\+stats\+\_\+hash\+Error\+Detector}!nb\+Msg\+Wrongly\+Considered\+Causal\+Dep@{nb\+Msg\+Wrongly\+Considered\+Causal\+Dep}}
 \index{nb\+Msg\+Wrongly\+Considered\+Causal\+Dep@{nb\+Msg\+Wrongly\+Considered\+Causal\+Dep}!s\+\_\+stats\+\_\+hash\+Error\+Detector@{s\+\_\+stats\+\_\+hash\+Error\+Detector}}
 \subsubsection{\texorpdfstring{nb\+Msg\+Wrongly\+Considered\+Causal\+Dep}{nbMsgWronglyConsideredCausalDep}}
 {\footnotesize\ttfamily vector$<$unsigned int$>$ s\+\_\+stats\+\_\+hash\+Error\+Detector\+::nb\+Msg\+Wrongly\+Considered\+Causal\+Dep}
 
-\mbox{\Hypertarget{structs__stats__hash_error_detector_a64dab27e3314cfc2a233f620f0309782}\label{structs__stats__hash_error_detector_a64dab27e3314cfc2a233f620f0309782}} 
+
+
+Number of messages the node wrongly considered as being causal dependencies in the hash computation of messages it delivered (obtained by calling the controler). 
+
+entry i \+: Number of times where in the hash computation to deliver a message \$m\$ the node wrongly considered i messages as being causal dependencies of \$m\$. \mbox{\Hypertarget{structs__stats__hash_error_detector_a64dab27e3314cfc2a233f620f0309782}\label{structs__stats__hash_error_detector_a64dab27e3314cfc2a233f620f0309782}} 
 \index{s\+\_\+stats\+\_\+hash\+Error\+Detector@{s\+\_\+stats\+\_\+hash\+Error\+Detector}!nb\+Operations\+For\+Hash@{nb\+Operations\+For\+Hash}}
 \index{nb\+Operations\+For\+Hash@{nb\+Operations\+For\+Hash}!s\+\_\+stats\+\_\+hash\+Error\+Detector@{s\+\_\+stats\+\_\+hash\+Error\+Detector}}
 \subsubsection{\texorpdfstring{nb\+Operations\+For\+Hash}{nbOperationsForHash}}
 {\footnotesize\ttfamily vector$<$unsigned int$>$ s\+\_\+stats\+\_\+hash\+Error\+Detector\+::nb\+Operations\+For\+Hash}
 
 
+
+Number of operations to compute a hash. 
+
+entry i \+: Number of times where the node did i operations to compute the hash of the causal dependencies of a message. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

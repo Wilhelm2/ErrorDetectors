@@ -1,6 +1,6 @@
 <map id="ErrorDetector" name="ErrorDetector">
-<area shape="rect" id="node2" href="$class_hash_error_detector.html" title="HashErrorDetector" alt="" coords="133,80,264,107"/>
-<area shape="rect" id="node5" href="$class_mostefaoui_error_detector.html" title="MostefaouiErrorDetector" alt="" coords="289,80,453,107"/>
-<area shape="rect" id="node3" href="$class_error_detector_clock_difference.html" title="ErrorDetectorClockDifference" alt="" coords="5,155,200,181"/>
-<area shape="rect" id="node4" href="$class_error_detector_interval.html" title="ErrorDetectorInterval" alt="" coords="225,155,367,181"/>
+<area shape="rect" id="node2" href="$class_hash_error_detector.html" title="Base class of Hash&#45;based error detectors. " alt="" coords="133,80,264,107"/>
+<area shape="rect" id="node5" href="$class_mostefaoui_error_detector.html" title="Error detector proposed by Mostéfaoui and Weiss. " alt="" coords="289,80,453,107"/>
+<area shape="rect" id="node3" href="$class_error_detector_clock_difference.html" title="Hash&#45;based error detector that uses the clock difference between message to determine the causal depe..." alt="" coords="5,155,200,181"/>
+<area shape="rect" id="node4" href="$class_error_detector_interval.html" title="Hash&#45;based error detector that uses propagation delay hypothesises to determine the causal dependenci..." alt="" coords="225,155,367,181"/>
 </map>

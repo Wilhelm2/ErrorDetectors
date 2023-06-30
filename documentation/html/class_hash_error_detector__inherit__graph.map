@@ -1,5 +1,5 @@
 <map id="HashErrorDetector" name="HashErrorDetector">
-<area shape="rect" id="node3" href="$class_error_detector_clock_difference.html" title="ErrorDetectorClockDifference" alt="" coords="5,155,200,181"/>
-<area shape="rect" id="node4" href="$class_error_detector_interval.html" title="ErrorDetectorInterval" alt="" coords="225,155,367,181"/>
-<area shape="rect" id="node2" href="$class_error_detector.html" title="ErrorDetector" alt="" coords="149,5,249,32"/>
+<area shape="rect" id="node3" href="$class_error_detector_clock_difference.html" title="Hash&#45;based error detector that uses the clock difference between message to determine the causal depe..." alt="" coords="5,155,200,181"/>
+<area shape="rect" id="node4" href="$class_error_detector_interval.html" title="Hash&#45;based error detector that uses propagation delay hypothesises to determine the causal dependenci..." alt="" coords="225,155,367,181"/>
+<area shape="rect" id="node2" href="$class_error_detector.html" title="Base class of error detectors. " alt="" coords="149,5,249,32"/>
 </map>

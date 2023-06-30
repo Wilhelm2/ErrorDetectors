@@ -2,6 +2,11 @@
 \label{class_error_detector_clock_difference}\index{Error\+Detector\+Clock\+Difference@{Error\+Detector\+Clock\+Difference}}
 
 
+Hash-\/based error detector that uses the clock difference between message to determine the causal dependencies of messages.  
+
+
+
+
 {\ttfamily \#include $<$Hash\+Error\+Detector\+Clock\+Difference.\+h$>$}
 
 
@@ -30,25 +35,30 @@ Collaboration diagram for Error\+Detector\+Clock\+Difference\+:\nopagebreak
 virtual \hyperlink{class_error_detector_clock_difference_a19bda307bcb9a8974a97fdf56fb77b8f}{$\sim$\+Error\+Detector\+Clock\+Difference} ()
 \item 
 virtual vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{class_error_detector_clock_difference_a15406c8d7652f3b9358b1958d3723933}{determine\+And\+Get\+Appended\+Dependencies} (const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&clock)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines the causal dependencies to append on the message to broadcast. \end{DoxyCompactList}\item 
 bool \hyperlink{class_error_detector_clock_difference_a4d399849b1872d3273fa757ee9dc9bd9}{is\+Considered\+As\+Dependency} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&possible\+Dep)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines if a message is considered as being a dependency. \end{DoxyCompactList}\item 
 bool \hyperlink{class_error_detector_clock_difference_ab20aa1671eb558dea6f06b2440e97e41}{is\+Considered\+As\+Possible\+Dependency} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&possible\+Dep)
-\item 
-vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{class_error_detector_clock_difference_a740f6bd74b30e0b194c4b64d79bb8caf}{sort\+Possible\+Dependencies\+Set} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&base\+Combine\+Set, \hyperlink{class_controller}{Controller} $\ast$controller)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines if a message is considered as being a possible dependency. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ \hyperlink{class_error_detector_clock_difference_a6dafc330591db83f5c5fbee56b2c4937}{sort\+Possible\+Dependencies\+Set} (const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&message, const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&base\+Combine\+Set)
+\begin{DoxyCompactList}\small\item\em Sorts the set of possible dependencies depending on the clock difference of messages with the message to broadcast. \end{DoxyCompactList}\item 
 void \hyperlink{class_error_detector_clock_difference_a529b87b6eaee9041601af1ca36b51c93}{set\+Clock\+Difference\+Considered\+Dependency} (unsigned int message\+Load, unsigned nb\+Incremented\+Entries)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the clock difference over which a message is considered as having been delivered by all nodes and is therefore considered as being a causal dependency of the message to deliver. \end{DoxyCompactList}\item 
 \hyperlink{class_partial_dependencies}{Partial\+Dependencies} \hyperlink{class_error_detector_clock_difference_a26f4c2905859947201d0a18146f2e961}{get\+Partial\+Dependencies} (const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&delivered, const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&clock)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get partial dependencies of the message to broadcast. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 unsigned int \hyperlink{class_error_detector_clock_difference_a0d2a3c4111e8bb4b3c232aacca9a0062}{clock\+Difference\+Considered\+Dependency} = 100
-\item 
+\begin{DoxyCompactList}\small\item\em The clock difference over which a message is considered as having been delivered by all nodes and is thus not taken into account in the hash computation. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_error_detector_clock_difference_aa733fc7d2023d62a7418ca20e01e9f5a}{clock\+Difference\+Considered\+Not\+Dependency} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The clock difference under which a message is considered as not being a dependency of a message to deliver, because its low clock difference indicates that it has been broadcasted in a time interval very clock to the broadcast of the message to deliver. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Hash-\/based error detector that uses the clock difference between message to determine the causal dependencies of messages. 
+
+Assumes that probabilistic clocks increase over time. Thus, the greater the clock difference between two messages, the greater the duration between their broadcast. Therefore, messages over a given clock difference are considered as having been delivered by all nodes, and are not considered in the hash computation. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_error_detector_clock_difference_a5edb355be9179cd604d3e7f946846c55}\label{class_error_detector_clock_difference_a5edb355be9179cd604d3e7f946846c55}} 
@@ -74,6 +84,20 @@ unsigned int \hyperlink{class_error_detector_clock_difference_aa733fc7d2023d62a7
 
 
 
+Determines the causal dependencies to append on the message to broadcast. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delivered} & Messages the node has delivered, ie the causal dependencies of the message to broadcast. \\
+\hline
+{\em clock} & The clock appended to the message to broadcast. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The set of dependencies that will be appended on the message to broadcast. 
+\end{DoxyReturn}
+
+
 Implements \hyperlink{class_hash_error_detector_ae45353331e29b50a0aa2fc6dd540ed4e}{Hash\+Error\+Detector}.
 
 \mbox{\Hypertarget{class_error_detector_clock_difference_a26f4c2905859947201d0a18146f2e961}\label{class_error_detector_clock_difference_a26f4c2905859947201d0a18146f2e961}} 
@@ -82,6 +106,20 @@ Implements \hyperlink{class_hash_error_detector_ae45353331e29b50a0aa2fc6dd540ed4
 \subsubsection{\texorpdfstring{get\+Partial\+Dependencies()}{getPartialDependencies()}}
 {\footnotesize\ttfamily \hyperlink{class_partial_dependencies}{Partial\+Dependencies} Error\+Detector\+Clock\+Difference\+::get\+Partial\+Dependencies (\begin{DoxyParamCaption}\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{delivered,  }\item[{const \hyperlink{class_probabilistic_clock}{Probabilistic\+Clock} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Get partial dependencies of the message to broadcast. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delivered} & Messages the node has delivered. \\
+\hline
+{\em clock} & The clock of the message to broadcast. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Partial dependencies of the message to broadcast. 
+\end{DoxyReturn}
 
 
 Implements \hyperlink{class_hash_error_detector_a5b9f7e8a6f63b1582e912102021c2d8d}{Hash\+Error\+Detector}.
@@ -94,6 +132,20 @@ Implements \hyperlink{class_hash_error_detector_a5b9f7e8a6f63b1582e912102021c2d8
 
 
 
+Determines if a message is considered as being a dependency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The analyzed message. \\
+\hline
+{\em possible\+Dep} & The message that is checked to be a dependency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if possible\+Dep is considered as a dependency of message and false otherwise. 
+\end{DoxyReturn}
+
+
 Implements \hyperlink{class_hash_error_detector_a4693d4d5e327b19f75088cef52bcad7d}{Hash\+Error\+Detector}.
 
 \mbox{\Hypertarget{class_error_detector_clock_difference_ab20aa1671eb558dea6f06b2440e97e41}\label{class_error_detector_clock_difference_ab20aa1671eb558dea6f06b2440e97e41}} 
@@ -104,6 +156,20 @@ Implements \hyperlink{class_hash_error_detector_a4693d4d5e327b19f75088cef52bcad7
 
 
 
+Determines if a message is considered as being a possible dependency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The analyzed message. \\
+\hline
+{\em possible\+Dep} & The message that is checked to be a possible dependency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if possible\+Dep is considered as a possible dependency of message and false otherwise. 
+\end{DoxyReturn}
+
+
 Implements \hyperlink{class_hash_error_detector_ac0a25b9c1e27f98223869d11ca46d18f}{Hash\+Error\+Detector}.
 
 \mbox{\Hypertarget{class_error_detector_clock_difference_a529b87b6eaee9041601af1ca36b51c93}\label{class_error_detector_clock_difference_a529b87b6eaee9041601af1ca36b51c93}} 
@@ -112,15 +178,40 @@ Implements \hyperlink{class_hash_error_detector_ac0a25b9c1e27f98223869d11ca46d18
 \subsubsection{\texorpdfstring{set\+Clock\+Difference\+Considered\+Dependency()}{setClockDifferenceConsideredDependency()}}
 {\footnotesize\ttfamily void Error\+Detector\+Clock\+Difference\+::set\+Clock\+Difference\+Considered\+Dependency (\begin{DoxyParamCaption}\item[{unsigned int}]{message\+Load,  }\item[{unsigned}]{nb\+Incremented\+Entries }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_error_detector_clock_difference_a740f6bd74b30e0b194c4b64d79bb8caf}\label{class_error_detector_clock_difference_a740f6bd74b30e0b194c4b64d79bb8caf}} 
+
+
+Sets the clock difference over which a message is considered as having been delivered by all nodes and is therefore considered as being a causal dependency of the message to deliver. 
+
+See paper to get precision about the used formula. 
+\begin{DoxyParams}{Parameters}
+{\em message\+Load} & Message load inside the system (average number of messages broadcasted by second.) \\
+\hline
+{\em nb\+Incremented\+Entries} & Number of entries incremented by nodes when broadcasting a message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_error_detector_clock_difference_a6dafc330591db83f5c5fbee56b2c4937}\label{class_error_detector_clock_difference_a6dafc330591db83f5c5fbee56b2c4937}} 
 \index{Error\+Detector\+Clock\+Difference@{Error\+Detector\+Clock\+Difference}!sort\+Possible\+Dependencies\+Set@{sort\+Possible\+Dependencies\+Set}}
 \index{sort\+Possible\+Dependencies\+Set@{sort\+Possible\+Dependencies\+Set}!Error\+Detector\+Clock\+Difference@{Error\+Detector\+Clock\+Difference}}
 \subsubsection{\texorpdfstring{sort\+Possible\+Dependencies\+Set()}{sortPossibleDependenciesSet()}}
-{\footnotesize\ttfamily vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ Error\+Detector\+Clock\+Difference\+::sort\+Possible\+Dependencies\+Set (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{base\+Combine\+Set,  }\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily vector$<$ \hyperlink{structures_8h_a83a1d9a070efa5341da84cfd8e28d3e5}{id\+Msg} $>$ Error\+Detector\+Clock\+Difference\+::sort\+Possible\+Dependencies\+Set (\begin{DoxyParamCaption}\item[{const \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} \&}]{message,  }\item[{const vector$<$ \hyperlink{structures_8h_a7e7bdc1d2fff8a9436f2f352b2711ed6}{message\+Info} $>$ \&}]{base\+Combine\+Set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Implements \hyperlink{class_hash_error_detector_ad7419eaab728b7ed3e394d5aee9eda41}{Hash\+Error\+Detector}.
+Sorts the set of possible dependencies depending on the clock difference of messages with the message to broadcast. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message to deliver. \\
+\hline
+{\em base\+Combine\+Set} & Set of possible dependencies to order. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sorted set of possible dependencies in increasing order of probability of being a dependency of message. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_hash_error_detector_aa7952b99e47ca7cef6dae2a271885599}{Hash\+Error\+Detector}.
 
 
 
@@ -131,11 +222,19 @@ Implements \hyperlink{class_hash_error_detector_ad7419eaab728b7ed3e394d5aee9eda4
 \subsubsection{\texorpdfstring{clock\+Difference\+Considered\+Dependency}{clockDifferenceConsideredDependency}}
 {\footnotesize\ttfamily unsigned int Error\+Detector\+Clock\+Difference\+::clock\+Difference\+Considered\+Dependency = 100\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+The clock difference over which a message is considered as having been delivered by all nodes and is thus not taken into account in the hash computation. 
+
 \mbox{\Hypertarget{class_error_detector_clock_difference_aa733fc7d2023d62a7418ca20e01e9f5a}\label{class_error_detector_clock_difference_aa733fc7d2023d62a7418ca20e01e9f5a}} 
 \index{Error\+Detector\+Clock\+Difference@{Error\+Detector\+Clock\+Difference}!clock\+Difference\+Considered\+Not\+Dependency@{clock\+Difference\+Considered\+Not\+Dependency}}
 \index{clock\+Difference\+Considered\+Not\+Dependency@{clock\+Difference\+Considered\+Not\+Dependency}!Error\+Detector\+Clock\+Difference@{Error\+Detector\+Clock\+Difference}}
 \subsubsection{\texorpdfstring{clock\+Difference\+Considered\+Not\+Dependency}{clockDifferenceConsideredNotDependency}}
 {\footnotesize\ttfamily unsigned int Error\+Detector\+Clock\+Difference\+::clock\+Difference\+Considered\+Not\+Dependency = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The clock difference under which a message is considered as not being a dependency of a message to deliver, because its low clock difference indicates that it has been broadcasted in a time interval very clock to the broadcast of the message to deliver. 
 
 
 

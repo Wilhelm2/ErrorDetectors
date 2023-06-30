@@ -79,7 +79,7 @@ bool NodeWithRecoveryTest::recoveryTest(const messageInfo& message, const vector
         return false;
 
     TotalDependencies tmpBaseDependencies = baseDependencies;
-    vector<idMsg> messagesToCombine = detector->sortPossibleDependenciesSet(message, detector->createPossibleDependenciesSet(message, delivered, incrementedClockEntries, control), control);
+    vector<idMsg> messagesToCombine = detector->sortPossibleDependenciesSet(message, detector->createPossibleDependenciesSet(message, delivered, incrementedClockEntries, control));
     vector<idMsg> messagesToCombineRecovery = createRecoveredMessagesToCombine(message, incrementedClockEntries);
     vector<vector<bool>> testedDependencySets = params->getDependencyCombinations(messagesToCombine.size());
     for(const vector<bool>& isDepConsideredVec : testedDependencySets)
@@ -164,8 +164,8 @@ vector<idMsg> NodeWithRecoveryTest::createRecoveredMessagesToCombine(const messa
     if(inRecovery)
         recoveredTmp.push_back(currRecovery);
 
-    vector<idMsg> recoveredMessagesToCombine = detector->sortPossibleDependenciesSet(message, detector->createPossibleDependenciesSet(message, recoveredTmp, incrementedClockEntries, control), control);
-    vector<idMsg> messagesToRecoverToCombine = detector->sortPossibleDependenciesSet(message, detector->createPossibleDependenciesSet(message, messagesToRecover, incrementedClockEntries, control), control);
+    vector<idMsg> recoveredMessagesToCombine = detector->sortPossibleDependenciesSet(message, detector->createPossibleDependenciesSet(message, recoveredTmp, incrementedClockEntries, control));
+    vector<idMsg> messagesToRecoverToCombine = detector->sortPossibleDependenciesSet(message, detector->createPossibleDependenciesSet(message, messagesToRecover, incrementedClockEntries, control));
     recoveredMessagesToCombine.insert(recoveredMessagesToCombine.end(), messagesToRecoverToCombine.begin(), messagesToRecoverToCombine.end());
     return recoveredMessagesToCombine;
 }

@@ -65,6 +65,10 @@ vector<unsigned int> TotalDependencies::getDependencies() const
     return dependencies;
 }
 
+/** Verifies that the dependencies also include the dependencies to check,
+ * ie a node that delivered the messages described by this dependencies also delivered the dependencies to check.
+ * @param dependenciesToCheck The dependencies to check.
+ * @return true if dependencies include dependenciesToCheck and false otherwise.*/
 bool TotalDependencies::includesDependencies(const TotalDependencies& dependenciesToCheck)
 {
     for(unsigned int i=0; i<dependencies.size(); i++)
@@ -73,6 +77,10 @@ bool TotalDependencies::includesDependencies(const TotalDependencies& dependenci
     return true;
 }
 
+/** Verifies that the dependencies also include the dependencies to check,
+ * ie a node that delivered the messages described by this dependencies also delivered the dependencies to check.
+ * @param dependenciesToCheck The dependencies to check.
+ * @return true if dependencies include dependenciesToCheck and false otherwise.*/
 bool TotalDependencies::includesDependencies(const vector<idMsg>& dependenciesToCheck)
 {
     for(const idMsg& id : dependenciesToCheck)
@@ -81,6 +89,7 @@ bool TotalDependencies::includesDependencies(const vector<idMsg>& dependenciesTo
     return true;
 }
 
+/** Prints the dependencies on the standard output.*/
 void TotalDependencies::print()
 {
     for(unsigned int elt : dependencies)
@@ -88,6 +97,7 @@ void TotalDependencies::print()
     cout<< endl;
 }
 
+/** Prints the dependencies on the error output.*/
 void TotalDependencies::printErr() const
 {
     for(unsigned int elt : dependencies)
@@ -95,6 +105,12 @@ void TotalDependencies::printErr() const
     cerr<< endl;
 }
 
+/** Verifies that the dependencies include the message's dependencies.
+ * It is usually called by nodes which want to verify that they delivered all of a message dependencies.
+ * Note that the entry corresponding to idMessageSender must only be equal to MessageDependencies[i]-1 because MessageDependencies[i] describes the dependency
+ * @param MessageDependencies dependencies to verify.
+ * @param idMessageSender Sender of the message.
+ * @return true if the dependencies include the message's dependencies and false otherwise.*/
 bool TotalDependencies::SatisfiesDeliveryConditions(const TotalDependencies& MessageDependencies, unsigned int idMessageSender)
 {
     for(unsigned int i=0; i < dependencies.size(); i++)
@@ -115,15 +131,8 @@ bool TotalDependencies::SatisfiesDeliveryConditions(const TotalDependencies& Mes
     return true;
 }
 
-void TotalDependencies::printComparisionWith(const TotalDependencies& dep)
-{
-    for(unsigned int i=0; i<dependencies.size(); i++)
-    {
-        if(dependencies[i] != dep[i])
-            cerr << "entry " << i << " message dependency " << dependencies[i] << " and value of compared set of dependencies " << dep[i]<<endl;
-    }
-}
-
+/** Returns the size of the dependencies.
+ * @return Size of dependencies.*/
 unsigned int TotalDependencies::size() const
 {
     return dependencies.size();

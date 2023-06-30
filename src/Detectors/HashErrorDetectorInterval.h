@@ -10,6 +10,8 @@
 
 #include "../Detectors/HashErrorDetector.h"
 
+
+/** Hash-based error detector that uses propagation delay hypothesises to determine the causal dependencies of messages. */
 class ErrorDetectorInterval : public HashErrorDetector
 {
     public:
@@ -18,13 +20,15 @@ class ErrorDetectorInterval : public HashErrorDetector
         virtual vector<idMsg> determineAndGetAppendedDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock);
         bool isConsideredAsDependency(const messageInfo& message, const messageInfo& possibleDep);
         bool isConsideredAsPossibleDependency(const messageInfo& message, const messageInfo& possibleDep);
-        vector<idMsg> sortPossibleDependenciesSet(const messageInfo& message, const vector<messageInfo>& baseCombineSet, Controller* controller);
+        vector<idMsg> sortPossibleDependenciesSet(const messageInfo& message, const vector<messageInfo>& baseCombineSet);
         PartialDependencies getPartialDependencies(const vector<messageInfo>& delivered, const ProbabilisticClock& clock);
 
     private:
-        simtime_t deltaTR = *(new SimTime(100, SIMTIME_MS)); // 2) Suppose que les messages reçues il y a plus de 2*deltaTR sont des dépendances du messages ATTENTION PAS TROP MONTER SINON IL Y A TROP DE MSG A ANALYSER ET NE TROUVE JAMAIS
+        /**Assumes that messages received more than 2*deltaTR seconds ago are causal dependencies. Do not take a value that is too high. */
+        simtime_t deltaTR = *(new SimTime(100, SIMTIME_MS));
+        /**Communication channel delay */
         simtime_t cdelay = *(new SimTime(100, SIMTIME_MS));
-        // seperate deltaTR and deltaTS so that deltaTR can be set to 0 when the message load is low
+        /**Same function as deltaTR but separates them so that deltaTR can set to 0 when the message load is low.*/
         simtime_t deltaTS = *(new SimTime(140, SIMTIME_MS));
 };
 

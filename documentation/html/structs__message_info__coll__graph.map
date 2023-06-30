@@ -1,4 +1,4 @@
 <map id="s_messageInfo" name="s_messageInfo">
-<area shape="rect" id="node2" href="$class_probabilistic_clock.html" title="ProbabilisticClock" alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$class_probabilistic_clock.html" title="Probabilistic clocks. " alt="" coords="5,5,132,32"/>
 <area shape="rect" id="node3" href="$structs__id.html" title="Each message has a unique identifier composed of the id of the node $p_i$ that sent it and the sequen..." alt="" coords="156,5,203,32"/>
 </map>

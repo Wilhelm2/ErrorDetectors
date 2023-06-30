@@ -69,11 +69,16 @@ map<unsigned int, idMsg> PartialDependencies::getDependencies() const
     return dependencies;
 }
 
+/** Verifies that the dependencies also include the dependencies to check,
+ * ie a node that delivered the messages described by this dependencies also delivered the dependencies to check.
+ * @param dependenciesToCheck The dependencies to check.
+ * @return true if dependencies include dependenciesToCheck and false otherwise.*/
 bool PartialDependencies::includesDependencies(const PartialDependencies& dependenciesToCheck)
 {
     return dependenciesToCheck < *this;
 }
 
+/** Prints the dependencies on the standard output.*/
 void PartialDependencies::print()
 {
     for(auto elt : dependencies)
@@ -81,6 +86,7 @@ void PartialDependencies::print()
     cout<< endl;
 }
 
+/** Prints the dependencies on the error output.*/
 void PartialDependencies::printErr()
 {
     for(auto elt : dependencies)
@@ -88,6 +94,12 @@ void PartialDependencies::printErr()
     cerr<< endl;
 }
 
+/** Verifies that the dependencies include the message's dependencies.
+ * It is usually called by nodes which want to verify that they delivered all of a message dependencies.
+ * Note that the entry corresponding to idMessageSender must only be equal to MessageDependencies[i]-1 because MessageDependencies[i] describes the dependency
+ * @param MessageDependencies dependencies to verify.
+ * @param idMessageSender Sender of the message.
+ * @return true if the dependencies include the message's dependencies and false otherwise.*/
 bool PartialDependencies::SatisfiesDeliveryConditions(const PartialDependencies& MessageDependencies, unsigned int idMessageSender)
 {
     for(unsigned int i=0; i < dependencies.size(); i++)
@@ -106,15 +118,6 @@ bool PartialDependencies::SatisfiesDeliveryConditions(const PartialDependencies&
         }
     }
     return true;
-}
-
-void PartialDependencies::printComparisionWith(const PartialDependencies& dep)
-{
-    for(auto d: dependencies)
-        cerr<<d.second.id << "," << d.second.seq<<endl;
-    cerr<<"----"<<endl;
-    for(auto d: dep.getDependencies())
-        cerr<<d.second.id << "," << d.second.seq<<endl;
 }
 
 void PartialDependencies::clear()

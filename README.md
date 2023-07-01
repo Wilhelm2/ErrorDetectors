@@ -13,4 +13,4 @@ Hey saluut je suis danielllll
 Hey saluut je suis danielllll
 Hey saluut je suis danielllll
 
-[!alt text] (https://github.com/Wilhelm2/ErrorDetectors/blob/master/documentation/mainpage/errorDetectorInheritance.png)
+[!Alt text] (https://github.com/Wilhelm2/ErrorDetectors/blob/master/documentation/mainpage/errorDetectorInheritance.png?raw=true)

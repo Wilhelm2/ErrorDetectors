@@ -13,4 +13,4 @@ Hey saluut je suis danielllll
 Hey saluut je suis danielllll
 Hey saluut je suis danielllll
 
-[!Alt text] (documentation/mainpage/errorDetectorInheritance.png?raw=true)
+[!Alt text](documentation/mainpage/errorDetectorInheritance.png?raw=true)

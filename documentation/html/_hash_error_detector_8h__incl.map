@@ -6,6 +6,6 @@
 <area shape="rect" id="node15" href="$_partial_dependencies_8h.html" title="../Dependencies/PartialDependencies.h" alt="" coords="5,155,257,181"/>
 <area shape="rect" id="node16" href="$_error_detector_8h.html" title="../Detectors/ErrorDetector.h" alt="" coords="645,80,829,107"/>
 <area shape="rect" id="node5" href="$_probabilistic_clock_8h.html" title="Clocks/ProbabilisticClock.h" alt="" coords="351,453,533,480"/>
-<area shape="rect" id="node11" href="$simulation_parameters_8h.html" title="simulationParameters.h" alt="" coords="543,304,701,331"/>
+<area shape="rect" id="node11" href="$simulation_parameters_8h.html" title="Contains the simulation parameters defined in the .ini file found in the simulations folder..." alt="" coords="543,304,701,331"/>
 <area shape="rect" id="node19" href="$_app_msg__m_8h.html" title="../Messages/AppMsg_m.h" alt="" coords="788,304,963,331"/>
 </map>

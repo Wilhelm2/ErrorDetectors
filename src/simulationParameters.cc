@@ -134,7 +134,7 @@ vector<vector<unsigned int>> SimulationParameters::EvenCombinations(unsigned int
 
 /** Builds vectors of $k$ entries to increment when broadcasting a message. This function does not ensure an even distribution.
  *  @param M Size of the Probabilistic clock.
- *  @param Number of entries nodes increment when broadcasting a message.
+ *  @param K Number of entries nodes increment when broadcasting a message.
  *  @return Vector containing sets of PC entry indexes to increment when broadcasting a message.
  */
 vector<vector<unsigned int>> SimulationParameters::computeEntryCombinations(unsigned int M, unsigned int K)

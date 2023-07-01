@@ -1,7 +1,7 @@
 <map id="src/Stats.h" name="src/Stats.h">
 <area shape="rect" id="node5" href="$_node_with_control_8h.html" title="Nodes/NodeWithControl.h" alt="" coords="1051,237,1226,263"/>
 <area shape="rect" id="node9" href="$structures_8h.html" title="../structures.h" alt="" coords="559,707,662,733"/>
-<area shape="rect" id="node14" href="$simulation_parameters_8h.html" title="../simulationParameters.h" alt="" coords="1551,557,1721,584"/>
+<area shape="rect" id="node14" href="$simulation_parameters_8h.html" title="Contains the simulation parameters defined in the .ini file found in the simulations folder..." alt="" coords="1551,557,1721,584"/>
 <area shape="rect" id="node20" href="$_node_detector_8h.html" title="Nodes/NodeDetector.h" alt="" coords="795,155,951,181"/>
 <area shape="rect" id="node29" href="$_node_with_recovery_8h.html" title="Nodes/NodeWithRecovery.h" alt="" coords="445,80,635,107"/>
 <area shape="rect" id="node6" href="$_node_base_8h.html" title="NodeBase.h" alt="" coords="1402,408,1497,435"/>

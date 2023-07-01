@@ -13,7 +13,7 @@
 <area shape="rect" id="node39" href="$dep_rsp__m_8h.html" title="src/Messages/depRsp_m.h" alt="" coords="1482,341,1665,367"/>
 <area shape="rect" id="node41" href="$_dependencies_8h.html" title="src/Dependencies/Dependencies.h" alt="" coords="1482,184,1707,211"/>
 <area shape="rect" id="node43" href="$_controller_8h.html" title="src/Controller.h" alt="" coords="1255,341,1366,367"/>
-<area shape="rect" id="node49" href="$simulation_parameters_8h.html" title="src/simulationParameters.h" alt="" coords="504,259,685,285"/>
+<area shape="rect" id="node49" href="$simulation_parameters_8h.html" title="Contains the simulation parameters defined in the .ini file found in the simulations folder..." alt="" coords="504,259,685,285"/>
 <area shape="rect" id="node7" href="$communication_dispatcher_8h.html" title="File that contains the class used to connect nodes. " alt="" coords="982,430,1189,457"/>
 <area shape="rect" id="node9" href="$_error_detector_8h.html" title="src/Detectors/ErrorDetector.h" alt="" coords="1213,430,1408,457"/>
 <area shape="rect" id="node29" href="$_app_msg__m_8cc.html" title="src/Messages/AppMsg_m.cc" alt="" coords="501,430,693,457"/>

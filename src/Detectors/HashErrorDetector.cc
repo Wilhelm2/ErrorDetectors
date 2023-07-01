@@ -49,7 +49,7 @@ bool HashErrorDetector::test(messageInfo message, const vector<unsigned int>& in
  * @param message Message to deliver.
  * @param delivered Messages delivered by the current node.
  * @param incrementedClockEntries Entries the sender node of message incremented when broadcasting message.
- * @param control Controller module.
+ * @param controller Controller module.
  * @param params Simulation parameters.
  * @return true if the error detector concludes that the message can be causally delivered and false otherwise. */
 bool HashErrorDetector::hashPartialDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, Controller* controller, SimulationParameters* params)
@@ -95,7 +95,7 @@ bool HashErrorDetector::hashIsEqual(size_t messageHash, size_t dependenciesHash,
  * @param delivered Messages delivered by the current node.
  * @param incrementedClockEntries Entries the sender node of message incremented when broadcasting message.
  * @param processDependencies Tracker of the delivered messages of the current node.
- * @param control Controller module.
+ * @param controller Controller module.
  * @param params Simulation parameters.
  * @return true if the error detector concludes that the message can be causally delivered and false otherwise. */
 bool HashErrorDetector::hashTotalDependencies(const messageInfo& message, const vector<messageInfo>& delivered, const vector<unsigned int>& incrementedClockEntries, const TotalDependencies& processDependencies, Controller* controller, SimulationParameters* params)

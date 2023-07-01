@@ -1,4 +1,5 @@
-/**@file Contains the simulation parameters defined in the .ini file found in the simulations folder
+/**@file
+ * Contains the simulation parameters defined in the .ini file found in the simulations folder
  */
 //
 // This program is free software: you can redistribute it and/or modify
@@ -27,8 +28,7 @@
 using namespace std;
 using namespace omnetpp;
 
-/** @class SimulationParameters
- *  @brief Contains the simulation parameters set in the .ini file found in the simulations folder.
+/** Contains the simulation parameters set in the .ini file found in the simulations folder.
  *  The class reads the simulation parameters at the beginning of the simulation and other classes get access to those parameters through this class.
  */
 class SimulationParameters : public cSimpleModule

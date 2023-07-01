@@ -5,7 +5,7 @@
 <area shape="rect" id="node15" href="$dep_rsp__m_8h.html" title="Messages/depRsp_m.h" alt="" coords="551,155,711,181"/>
 <area shape="rect" id="node18" href="$_init__m_8h.html" title="Messages/Init_m.h" alt="" coords="44,379,177,405"/>
 <area shape="rect" id="node19" href="$_controller_8h.html" title="Controller.h" alt="" coords="977,155,1066,181"/>
-<area shape="rect" id="node22" href="$simulation_parameters_8h.html" title="simulationParameters.h" alt="" coords="1142,304,1301,331"/>
+<area shape="rect" id="node22" href="$simulation_parameters_8h.html" title="Contains the simulation parameters defined in the .ini file found in the simulations folder..." alt="" coords="1142,304,1301,331"/>
 <area shape="rect" id="node11" href="$structures_8h.html" title="../structures.h" alt="" coords="661,379,763,405"/>
 <area shape="rect" id="node13" href="$_probabilistic_clock_8h.html" title="Clocks/ProbabilisticClock.h" alt="" coords="883,453,1066,480"/>
 <area shape="rect" id="node16" href="$_total_dependencies_8h.html" title="../Dependencies/TotalDependencies.h" alt="" coords="669,229,913,256"/>

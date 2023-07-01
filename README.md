@@ -1,5 +1,15 @@
-/** @mainpage HELLO
-    @author Daniel Wilhelm
+@mainpage
+@author Daniel Wilhelm
 
 
-*/
+Hey saluut je suis danielllll\n
+Hey saluut je suis danielllll
+Hey saluut je suis danielllll
+Hey saluut je suis danielllll
+Hey saluut je suis danielllll
+Hey saluut je suis danielllll
+Hey saluut je suis danielllll
+Hey saluut je suis danielllll
+Hey saluut je suis danielllll
+Hey saluut je suis danielllll
+

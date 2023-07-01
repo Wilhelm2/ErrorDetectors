@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
   ['recoveredmessage',['recoveredMessage',['../_node_with_recovery_8h.html#abc64f7ff8d329883ae93979292b1c996',1,'NodeWithRecovery.h']]],
   ['recoveredmessages',['recoveredMessages',['../class_node_with_recovery.html#adf6b319a727cd9ec43a6cc68cbf99bbb',1,'NodeWithRecovery']]],
   ['recovery',['Recovery',['../class_simulation_parameters.html#ae08444273809241f502aa422205f7307ad8afbc541b39d23648c823057cffe3a5',1,'SimulationParameters']]],

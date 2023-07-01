@@ -12,7 +12,7 @@
 <area shape="rect" id="node6" href="$_node_base_8h.html" title="NodeBase.h" alt="" coords="459,497,554,524"/>
 <area shape="rect" id="node8" href="$_init__m_8h.html" title="../Messages/Init_m.h" alt="" coords="291,796,437,823"/>
 <area shape="rect" id="node9" href="$_app_msg__m_8h.html" title="../Messages/AppMsg_m.h" alt="" coords="841,721,1015,748"/>
-<area shape="rect" id="node15" href="$simulation_parameters_8h.html" title="../simulationParameters.h" alt="" coords="392,721,563,748"/>
+<area shape="rect" id="node15" href="$simulation_parameters_8h.html" title="Contains the simulation parameters defined in the .ini file found in the simulations folder..." alt="" coords="392,721,563,748"/>
 <area shape="rect" id="node17" href="$_controller_8h.html" title="../Controller.h" alt="" coords="945,572,1047,599"/>
 <area shape="rect" id="node12" href="$_probabilistic_clock_8h.html" title="Clocks/ProbabilisticClock.h" alt="" coords="1175,871,1358,897"/>
 <area shape="rect" id="node20" href="$_dependencies_8h.html" title="Dependencies/Dependencies.h" alt="" coords="1263,721,1465,748"/>

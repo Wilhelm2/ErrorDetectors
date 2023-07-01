@@ -1,7 +1,7 @@
 @mainpage
 @author Daniel Wilhelm
 
-Implementation of error detectors for Probabilistic clocks[ [[1]](#1). 
+Implementation of error detectors for Probabilistic clocks [[1]](https://link.springer.com/chapter/10.1007/978-3-319-62932-2_31). 
 
 
 

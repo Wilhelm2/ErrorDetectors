@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['mainpage_2edox',['mainpage.dox',['../mainpage_8dox.html',1,'']]],
   ['messageinfo',['messageInfo',['../structures_8h.html#a7e7bdc1d2fff8a9436f2f352b2711ed6',1,'structures.h']]],
   ['messagestorecover',['messagesToRecover',['../class_node_with_recovery.html#a9ed4ac06c68ac579d7848a98b145b5ae',1,'NodeWithRecovery']]],
   ['mostefaoui',['Mostefaoui',['../class_simulation_parameters.html#ae08444273809241f502aa422205f7307a59feb63389b0898ec47a4ab58d1be6f6',1,'SimulationParameters']]],

@@ -15,11 +15,11 @@ This project provides implementations of causal broadcast using the following co
 6. **Probabilistic clock, an hash-based error detector using the clock difference between messages, and the recovery of messages tagged as not causally ordered:** Additionnally to **5**, a process recovers the causal dependencies of the messages *m* which its error detector tags as not causally ordered, by requesting the causal dependencies of *m* to the node that broadcasted *m*. The node then delivers *m* once it delivered all of *m*'s causal dependencies. 
 7. **Probabilistic clock, an hash-based error detector using the clock difference between messages, the recovery of messages tagged as not causally ordered, and a recovery test to avoid requesting the causal dependencies of messages:** Additionnally to **6**, before requesting the causal dependencies of a message *m*, a node first tries to find the dependency set of *m* with messages that the node did not deliver yet. 
 
+## OMNeT++
 
-The implementation was done in C++ on the OMNeT++ simulator[[4]](https://omnetpp.org/). 
+The implementation was done in C++ on the version 5.6.1 of the OMNeT++ simulator[[4]](https://omnetpp.org/). 
 OMNeT++ is an event based simulator primarly used for building network simulators. 
-The implementation was done on the version 5.6.1 of OMNeT++. 
-See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install that version of OMNeT++.
+See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install the version 5.6.1 of OMNeT++.
 
 
 

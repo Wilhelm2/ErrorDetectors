@@ -1,9 +1,9 @@
 @mainpage
 @author Daniel Wilhelm
 
-## Introduction
+# Introduction
 
-Implementation of error detectors when using probabilistic clocks [[1]](https://link.springer.com/chapter/10.1007/978-3-319-62932-2_31) to implement causal broadcast. 
+Implementation of error detectors when using probabilistic clocks [[1]](https://link.springer.com/chapter/10.1007/978-3-319-62932-2_31) to causally order broadcast messages. 
 
 This project provides implementations of causal broadcast using the following control mechanisms:
 
@@ -16,7 +16,10 @@ This project provides implementations of causal broadcast using the following co
 7. **Probabilistic clock, an hash-based error detector using the clock difference between messages, the recovery of messages tagged as not causally ordered, and a recovery test to avoid requesting the causal dependencies of messages:** Additionnally to **6**, before requesting the causal dependencies of a message *m*, a node first tries to find the dependency set of *m* with messages that the node did not deliver yet. 
 
 
-
+The implementation was done in C++ on the OMNeT++ simulator[[4]](https://omnetpp.org/). 
+OMNeT++ is an event based simulator primarly used for building network simulators. 
+The implementation was done on the version 5.6.1 of OMNeT++. 
+See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install that version of OMNeT++.
 
 
 
@@ -29,5 +32,6 @@ This project provides implementations of causal broadcast using the following co
 ## References
 
 <a id="PC">[1]</a> Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. PaCT 2017.
-<a id="PC">[1]</a> Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. Technical report 2017.
-<a id="PC">[1]</a> A probabilistic Dynamic Clock Set to capture message causality. Wilhelm, Daniel and Arantes, Luciana and Sens, Pierre. Technical report 2017.
+<a id="PC">[2]</a> Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. Technical report 2017.
+<a id="PC">[3]</a> A probabilistic Dynamic Clock Set to capture message causality. Wilhelm, Daniel and Arantes, Luciana and Sens, Pierre. Technical report 2017.
+<a id="PC">[4]</a> The OMNET++ Discrete Event Simulation System. Varga, Andras. ESM 2001.

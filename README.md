@@ -24,10 +24,15 @@ See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install the
 
 
 
-@image html documentation/mainpage/errorDetectorInheritance.png?raw=true
-![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)
-![Error Detector inheritance graph.](https://github.com/Wilhelm2/ErrorDetectors/blob/master/documentation/mainpage/errorDetectorInheritance.png?raw=true)
 
+## Node class hierarchy 
+
+![Error Detector inheritance graph.](documentation/mainpage/NodeInheritance.png?raw=true)
+
+
+## Error detectors class hierarchy
+
+![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)
 
 
 ## References

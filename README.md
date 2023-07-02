@@ -26,7 +26,7 @@ See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install the
 
 To launch the simulation:
 1. Compile the 
-2. 
+2. Execute the python script 'execution.py'
 
 
 ## Node class hierarchy 

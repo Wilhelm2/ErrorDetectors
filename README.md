@@ -33,13 +33,18 @@ To launch the simulation:
 
 This section describes the node class hierarchy. 
 
-![Error Detector inheritance graph.](documentation/mainpage/NodeInheritance.png?raw=true)
+![Error Detector inheritance graph.](documentation/mainpage/nodeInheritance.png?raw=true)
 
 
 ## Error detectors class hierarchy
 
 ![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)
 
+
+## Documentation
+
+More detailled documentation can be found in the documentation folder, which is providing documentation under the PDF and html format. 
+Documentation has been built with [Doxygen](https://www.doxygen.nl/).
 
 ## References
 

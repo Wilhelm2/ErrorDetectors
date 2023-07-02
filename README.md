@@ -33,6 +33,9 @@ See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install the
 ## References
 
 <a id="PC">[1]</a> Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. PaCT 2017.
+
 <a id="PC">[2]</a> Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. Technical report 2017.
+
 <a id="PC">[3]</a> A probabilistic Dynamic Clock Set to capture message causality. Wilhelm, Daniel and Arantes, Luciana and Sens, Pierre. Technical report 2017.
+
 <a id="PC">[4]</a> The OMNET++ Discrete Event Simulation System. Varga, Andras. ESM 2001.

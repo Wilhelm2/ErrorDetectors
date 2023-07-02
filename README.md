@@ -15,18 +15,32 @@ This project provides implementations of causal broadcast using the following co
 6. **Probabilistic clock, an hash-based error detector using the clock difference between messages, and the recovery of messages tagged as not causally ordered:** Additionnally to **5**, a process recovers the causal dependencies of the messages *m* which its error detector tags as not causally ordered, by requesting the causal dependencies of *m* to the node that broadcasted *m*. The node then delivers *m* once it delivered all of *m*'s causal dependencies. 
 7. **Probabilistic clock, an hash-based error detector using the clock difference between messages, the recovery of messages tagged as not causally ordered, and a recovery test to avoid requesting the causal dependencies of messages:** Additionnally to **6**, before requesting the causal dependencies of a message *m*, a node first tries to find the dependency set of *m* with messages that the node did not deliver yet. 
 
-## OMNeT++
+# Table of contents
+
+# OMNeT++
+
+This section gives a brief description of the simulator OMNeT++ on which the project was implemented. 
 
 The implementation was done in C++ on the version 5.6.1 of the OMNeT++ simulator[[4]](https://omnetpp.org/). 
 OMNeT++ is an event based simulator primarly used for building network simulators. 
 
+parler des modules, des fichiers ini et ned, msg 
+
 See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install the version 5.6.1 of OMNeT++.
 
-# How to launch the simulation 
+# User guide 
+
+## How to install OMNeT++, the simulator on which the project is built
+
+## How to import the project in the built in OMNeT++ IDE (based on Eclipse)
+
+## How to run the simulation 
 
 To launch the simulation:
 1. Compile the 
 2. Execute the python script 'execution.py'
+
+## Data analysis 
 
 
 ## Node class hierarchy 
@@ -45,6 +59,10 @@ This section describes the node class hierarchy.
 
 More detailled documentation can be found in the documentation folder, which is providing documentation under the PDF and html format. 
 Documentation has been built with [Doxygen](https://www.doxygen.nl/).
+
+#License
+
+# Badges
 
 ## References
 

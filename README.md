@@ -22,10 +22,16 @@ OMNeT++ is an event based simulator primarly used for building network simulator
 
 See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install the version 5.6.1 of OMNeT++.
 
+# How to launch the simulation 
 
+To launch the simulation:
+1. Compile the 
+2. 
 
 
 ## Node class hierarchy 
+
+This section describes the node class hierarchy. 
 
 ![Error Detector inheritance graph.](documentation/mainpage/NodeInheritance.png?raw=true)
 

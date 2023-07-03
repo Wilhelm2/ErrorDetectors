@@ -92,12 +92,22 @@ This section firt explains how to install the required ressources to execute the
 The installation of the version 5.6.1 of OMNeT++ is explained [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf).
 Note that OMNeT++ is not (even though mostly) retrocompatible. 
 Hence, some modifications might be required when using another version of OMNeT++. 
-Thus you should carefully install the version 5.6.1.
+Thus you should carefully install the version 5.6.1 of OMNeT++.
 
 ## Import project in OMNeT++ IDE
 
 OMNeT++ comes with a built-in IDE based on Eclipse. This section explains how to import the project in that IDE and compile it. 
- 
+
+First launch the OMNeT++ IDE with the command:
+> omnetpp
+
+
+
+1) Dans omnetpp File-> new -> project -> donner un nom au projet -> finish
+2) Dans Project Explorer (dans l'onglet de gauche) clic droit sur le projet -> import -> Archive File -> chercher l'archive du projet -> finish
+3) Dans Project Explorer (dans l'onglet de gauche) clic droit sur le projet -> Properties -> Project References -> inet -> Apply and Close (cette étape permet au projet d'utiliser le framework INET)
+4) Dans Project Explorer (dans l'onglet de gauche) clic droit sur le projet -> Properties -> OMNeT++ -> Makemake -> Options -> Custom -> ajouter MSGC:=$(MSGC) --msg6 -> ok -> Apply and close
+
 
 
 

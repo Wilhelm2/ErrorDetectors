@@ -57,10 +57,11 @@ A detailled description of the recovery of message dependencies can be found in 
 
 ## Nodes 
 
-This section briefly describes the Nodes on which the algorithm is executed. 
+The features of this project are implemenetd inside Node classes. This section briefly describes these classes. 
+The following figure descrbies the project's class diagram for Nodes: 
+![Error Detector inheritance graph.](documentation/mainpage/nodeInheritance.png?raw=true)
 
-
-
+pret
 
 
 
@@ -107,18 +108,6 @@ To launch the simulation:
 2. Execute the python script 'execution.py'
 
 ## Data analysis 
-
-
-## Node class hierarchy 
-
-This section describes the node class hierarchy. 
-
-![Error Detector inheritance graph.](documentation/mainpage/nodeInheritance.png?raw=true)
-
-
-## Error detectors class hierarchy
-
-![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)
 
 
 ## Documentation

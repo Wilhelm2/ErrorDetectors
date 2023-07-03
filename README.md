@@ -3,7 +3,7 @@
 
 # Introduction
 
-This project implements causal broadcast in a distributed system.
+This project implements a causal broadcast algorithm for distributed systems in C++ on the OMNeT++ simulator. 
 Causal order is defined by the *happened-before* relationship introduced by Lamport in 1978 [[1]](https://amturing.acm.org/p558-lamport.pdf). 
 The *happened-before* relationship orders events in distributed systems following three rules [[1]](https://amturing.acm.org/p558-lamport.pdf):
 
@@ -73,12 +73,14 @@ A brief description of the Node classes:
 
 # OMNeT++
 
-This section gives a brief description of the simulator OMNeT++ on which the project was implemented. 
+The project was implemented on the version 5.6.1 of the OMNeT++ simulator [[5]](https://omnetpp.org/). 
+This section gives a brief description of OMNeT++, which is an event based simulator primarly used for building network simulators. 
+It is organized into modules that are combined in order to form a network. 
 
-The implementation was done in C++ on the version 5.6.1 of the OMNeT++ simulator[[5]](https://omnetpp.org/). 
-OMNeT++ is an event based simulator primarly used for building network simulators. 
-
-parler des modules, des fichiers ini et ned, msg 
+OMNeT++ uses the following specific files:
+1. **Initialization file:** Contains the simulation parameters. Uses the extension *.ini*.
+2. **Network files:** Define modules as well as the simulation network which is composed of modules. Uses the extension *.ned*.
+3. **Message files:** Define the messages used by nodes. Uses the extension *.msg*.
 
 See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install the version 5.6.1 of OMNeT++.
 

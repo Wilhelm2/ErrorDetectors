@@ -4,8 +4,8 @@
 # Introduction
 
 This project implements causal broadcast in a distributed system.
-Causal order is defined by the *happened-before* relationship introduced by Lamport in 1978 [[2]](https://amturing.acm.org/p558-lamport.pdf). 
-The *happened-before* relationship orders events in distributed systems following three rules [[2]](https://amturing.acm.org/p558-lamport.pdf):
+Causal order is defined by the *happened-before* relationship introduced by Lamport in 1978 [[1]](https://amturing.acm.org/p558-lamport.pdf). 
+The *happened-before* relationship orders events in distributed systems following three rules [[1]](https://amturing.acm.org/p558-lamport.pdf):
 
 >**Happened-before relation:**
 >	Considering two events $e_1$ and $e_2$, $e_1$ causally precedes $e_2$ ($e_1 \rightarrow e_2$) iff:
@@ -28,7 +28,7 @@ Causal order ensures that any two causally related messages are delivered to app
 
 Those features are combined to provide 7 simulation settings described in Section. 
 
-## Error detectors class hierarchy
+## Error detectors
 
 This section briefly describes the error detectors implemented in this project. 
 
@@ -38,7 +38,7 @@ Error detectors for Probabilistic clocks aim to detect such messages.
 A node executes an error detector on a message *m* before delivering *m*. 
 
 The two implemented error detectors are:
-1. An error detector proposed by Mostéfaoui and Weiss whose description can be found in [this paper](https://hal.science/hal-02056349/document) [[3]](https://hal.science/hal-02056349/document). 
+1. Error detector proposed by Mostéfaoui and Weiss whose description can be found in [this paper](https://hal.science/hal-02056349/document)[3]. 
 
 
 ![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)

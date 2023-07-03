@@ -45,7 +45,7 @@ The two implemented error detectors are:
 2. Hash-based error detector proposed by Wilhelm and al. whose description can be found in [this paper](https://hal.science/hal-03984499)[4]. 
 The hash-based error detector sorts messages either based on reception times or the clock difference between messages. 
 
-The following figure describes the project's class diagram for error detectors:
+The following figure describes the project's error detector class diagram:
 ![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)
 
 ## Recovery of message dependencies
@@ -57,19 +57,26 @@ A detailled description of the recovery of message dependencies can be found in 
 
 ## Nodes 
 
-The features of this project are implemenetd inside Node classes. This section briefly describes these classes. 
-The following figure descrbies the project's class diagram for Nodes: 
+The features of this project are implemented inside Node classes. This section briefly describes these classes. 
+The following figure describes the project's Node class diagram: 
 ![Error Detector inheritance graph.](documentation/mainpage/nodeInheritance.png?raw=true)
 
-pret
+A brief description of the Node classes:
+1. **NodeBase:** Base class to implement nodes. 
+2. **NodeNoControl:** Delivers a message upon reception without any control. 
+3. **NodeWithControl:** Base class of nodes that causally orders messages with Probabilistic clocks.
+4. **NodePC:** Causally orders messages with Probabilistic clocks and without using error detectors or message recovery. 
+5. **NodeDetector:** Base class of nodes that use error detectors to analyze messages before delivering them. 
+6. **NodeWithoutRecovery:** Uses error detectors to analyze messages before delivering them without recovering causal dependencies. 
+7. **NodeWithRecovery:** Uses erorr detectors to analyze messages before delivering them, recovers the causal dependencies of message tagged by the error detector as not causally ordered, and ensures their causal order delivery.
+8. **NodeWithRecoveryTest:** Uses the hash-based error detectors using clock differences. Additionnaly to **6**, before requering the causal dependencies of a message *m* tries to find the hash of *m* with messages that the node did not deliver yet. 
 
 
 
+  
 
-#Simulation settings 
 
-1. **No control:** A node delivers a message upon its reception without any control. 
-2. **Probabilistic clocks:** Nodes use Probabilistic clocks to causally order messages. A node delivers a received message *m* once the delivery conditions of *m*'s attached Probabilistic clock are satisfies. 
+3. **Probabilistic clocks:** Nodes use Probabilistic clocks to causally order messages. A node delivers a received message *m* once the delivery conditions of *m*'s attached Probabilistic clock are satisfies. 
 3. **Probabilistic clock and the error detector of Mostéfaoui and Weiss:** Additionally to **2**, the node also executes the error detector of Mostéfaoui and Weiss  [[3]](https://hal.science/hal-02056349/document) on the Probabilistic clock of *m* before delivering *m*. 
 4. **Probabilistic clock and an hash-based error detector using an average propagation delay hypothesis:** Additionally to **2**, the node also executes an hash-based error detector proposed by Wilhelm and al.[[4]](https://hal.science/hal-03984499) on the Probabilistic clock of *m* before delivering *m*. The hash-based error detector uses the average propagation delay of messages to determine the causal dependencies of messages. 
 5. **Probabilistic clock and an hash-based error detector using the clock difference between messages:** Additionally to **2**, the node also executes an hash-based error detector proposed by Wilhelm and al.[[3]](https://hal.science/hal-03984499) on the Probabilistic clock of *m* before delivering *m*. The hash-based error detector uses the average propagation delay of messages to determine the causal dependencies of messages. 

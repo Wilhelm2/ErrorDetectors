@@ -82,14 +82,17 @@ OMNeT++ uses the following specific files:
 2. **Network files:** Define modules as well as the simulation network which is composed of modules. Have the extension *.ned*.
 3. **Message files:** Define the messages used by nodes. Have the extension *.msg*.
 
-See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install the version 5.6.1 of OMNeT++.
 
 # User guide 
 
 This section firt explains how to install the required ressources to execute the project. Then it shows how to import the project in the OMNeT++ built-in IDE based on Eclipse. Finally, it describes how to execute the simulation on the terminal.
 
 ## OMNeT++ installation 
-, the simulator on which the project is built
+
+The installation of the version 5.6.1 of OMNeT++ is explained [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf).
+Note that OMNeT++ is not (even though mostly) retrocompatible. 
+Hence, some modifications might be required when using another version of OMNeT++. 
+Thus you should carefully install the version 5.6.1.
 
 ## Import project in OMNeT++ IDE
 

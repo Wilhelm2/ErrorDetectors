@@ -45,12 +45,13 @@ The two implemented error detectors are:
 2. Hash-based error detector proposed by Wilhelm and al. whose description can be found in [this paper](https://hal.science/hal-03984499)[4]. 
 The hash-based error detector sorts messages either based on reception times or the clock difference between messages. 
 
-The project's class diagram for error detectors is as follows: 
+The following figure describes the project's class diagram for error detectors:
 ![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)
 
 ## Recovery of message dependencies
 
 The project implements a procedure to request the causal dependencies of messages. It can notably be used by a node *p* to get the causal dependencies of a message *m* that its error detector considers as not causally ordered. After getting the dependencies of *m*, *p* can postpone the delivery of *m* till it delivered all of *m*'s causal dependencies, thus ensuring that it delivers *m* in causal order. 
+
 A detailled description of the recovery of message dependencies can be found in [this paper](https://hal.science/hal-03984499)[4].
 
 

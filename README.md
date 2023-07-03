@@ -36,21 +36,35 @@ The idea behind error detectors for Probabilistic clocks comes from the fact tha
 
 Error detectors for Probabilistic clocks aim to detect such messages.
 A node executes an error detector on a message *m* before delivering *m*. 
+An error detector can yield *false positives* as well as *false negatives*. 
+A *false positive* occurs when the error detector decides that a node did not deliver all of a message's causal dependencies while it actually did, i.e. the node can deliver the message in causal order. 
+Conversely, a *false negative* occurs when the error detector decides that a node delivered all of a message's causal dependencies while it actually did not, i.e. the node cannot yet deliver the message in causal order. 
 
 The two implemented error detectors are:
 1. Error detector proposed by Mostéfaoui and Weiss whose description can be found in [this paper](https://hal.science/hal-02056349/document)[3]. 
 2. Hash-based error detector proposed by Wilhelm and al. whose description can be found in [this paper](https://hal.science/hal-03984499)[4]. 
 The hash-based error detector sorts messages either based on reception times or the clock difference between messages. 
 
-The class diagram of error detectors is as follows: 
+The project's class diagram for error detectors is as follows: 
 ![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)
 
+## Recovery of message dependencies
+
+The project implements a procedure to request the causal dependencies of messages. It can notably be used by a node *p* to get the causal dependencies of a message *m* that its error detector considers as not causally ordered. After getting the dependencies of *m*, *p* can postpone the delivery of *m* till it delivered all of *m*'s causal dependencies, thus ensuring that it delivers *m* in causal order. 
+A detailled description of the recovery of message dependencies can be found in [this paper](https://hal.science/hal-03984499)[4].
+
+
+## Nodes 
+
+This section briefly describes the Nodes on which the algorithm is executed. 
 
 
 
 
 
 
+
+#Simulation settings 
 
 1. **No control:** A node delivers a message upon its reception without any control. 
 2. **Probabilistic clocks:** Nodes use Probabilistic clocks to causally order messages. A node delivers a received message *m* once the delivery conditions of *m*'s attached Probabilistic clock are satisfies. 

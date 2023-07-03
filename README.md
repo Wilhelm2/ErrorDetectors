@@ -3,7 +3,28 @@
 
 # Introduction
 
-Implementation of error detectors when using probabilistic clocks [[1]](https://link.springer.com/chapter/10.1007/978-3-319-62932-2_31) to causally order broadcast messages. 
+This project implements causal broadcast in a distributed system using probabilistic clocks [[1]](https://link.springer.com/chapter/10.1007/978-3-319-62932-2_31) to causally order broadcast messages. 
+Furthermore, the project gives an implementations of error detectors whose purpose is to detect messages that Probabilistic clocks wrongly consider as causally ordered, as well as a procedure to recover the causal dependencies of messages in order to ensure their delivery in causal order. 
+
+Causal order is defined by the *happened-before* relationship introduced by Lamport in 1978[[0]](https://amturing.acm.org/p558-lamport.pdf). 
+The \textit{happened-before} relationship order events in distributed systems\cite{lamportTimeClocksOrdering1978}:
+
+>**Happened-before relation:**
+>	Considering two events $e_1$ and $e_2$, $e_1$ causally precedes $e_2$ ($e_1 \rightarrow e_2$) iff:
+>	1. $e_1$ and $e_2$ occur on the same process and $e_1$ precedes $e_2$ or
+>	2. for a message m $e_1$=send(m) and $e_2$=deliver(m) or
+>	3. there exists an event $e_3$ such that $e_1\rightarrow e_3$ and $e_3\rightarrow e_2$.
+
+Causal order ensures that any two causally related messages are delivered to applications respecting that order. 
+
+>**Causal order:** 
+>	Processes deliver messages while respecting the causal relation between them.
+>	For any message $m$ and $m'$, if $m$ causally precedes $m'$, denoted $m\rightarrow m'$, then all processes deliver $m$ before $m'$:
+
+>	<center>{$send(m) \rightarrow send(m') \Rightarrow deliver(m) \rightarrow deliver(m')$. </center>
+	
+
+
 
 This project provides implementations of causal broadcast using the following control mechanisms:
 
@@ -30,9 +51,15 @@ See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install the
 
 # User guide 
 
-## How to install OMNeT++, the simulator on which the project is built
+## OMNeT++ installation 
+, the simulator on which the project is built
 
-## How to import the project in the built in OMNeT++ IDE (based on Eclipse)
+## Import project in OMNeT++ IDE
+
+OMNeT++ comes with a built-in IDE based on Eclipse. This section explains how to import the project in that IDE and compile it. 
+ 
+
+
 
 ## How to run the simulation 
 
@@ -66,10 +93,12 @@ Documentation has been built with [Doxygen](https://www.doxygen.nl/).
 
 ## References
 
-<a id="PC">[1]</a> Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. PaCT 2017.
+<a id="HappenedBefore">[0]</a> Time, Clocks, and the Ordering of Events in a Distributed System. Lamport, Leslie. Communications of the ACM 1978.
 
-<a id="PC">[2]</a> Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. Technical report 2017.
+<a id="PC1">[1]</a> Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. PaCT 2017.
+
+<a id="PC2">[2]</a> Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. Technical report 2017.
 
 <a id="PC">[3]</a> A probabilistic Dynamic Clock Set to capture message causality. Wilhelm, Daniel and Arantes, Luciana and Sens, Pierre. Technical report 2017.
 
-<a id="PC">[4]</a> The OMNET++ Discrete Event Simulation System. Varga, Andras. ESM 2001.
+<a id="OMNeT++">[4]</a> The OMNET++ Discrete Event Simulation System. Varga, Andras. ESM 2001.

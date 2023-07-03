@@ -78,13 +78,15 @@ This section gives a brief description of OMNeT++, which is an event based simul
 It is organized into modules that are combined in order to form a network. 
 
 OMNeT++ uses the following specific files:
-1. **Initialization file:** Contains the simulation parameters. Uses the extension *.ini*.
-2. **Network files:** Define modules as well as the simulation network which is composed of modules. Uses the extension *.ned*.
-3. **Message files:** Define the messages used by nodes. Uses the extension *.msg*.
+1. **Initialization file:** Contains the simulation parameters. Has the extension *.ini*.
+2. **Network files:** Define modules as well as the simulation network which is composed of modules. Have the extension *.ned*.
+3. **Message files:** Define the messages used by nodes. Have the extension *.msg*.
 
 See [here](https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf) how to install the version 5.6.1 of OMNeT++.
 
 # User guide 
+
+This section firt explains how to install the required ressources to execute the project. Then it shows how to import the project in the OMNeT++ built-in IDE based on Eclipse. Finally, it describes how to execute the simulation on the terminal.
 
 ## OMNeT++ installation 
 , the simulator on which the project is built

@@ -3,11 +3,9 @@
 
 # Introduction
 
-This project implements causal broadcast in a distributed system using probabilistic clocks~[[1]](https://link.springer.com/chapter/10.1007/978-3-319-62932-2_31) to causally order broadcast messages. 
-Furthermore, the project gives an implementations of error detectors whose purpose is to detect messages that Probabilistic clocks wrongly consider as causally ordered, as well as a procedure to recover the causal dependencies of messages in order to ensure their delivery in causal order. 
-
-Causal order is defined by the *happened-before* relationship introduced by Lamport in 1978~[[2]](https://amturing.acm.org/p558-lamport.pdf). 
-The \textit{happened-before} relationship order events in distributed systems~[[2]](https://amturing.acm.org/p558-lamport.pdf):
+This project implements causal broadcast in a distributed system.
+Causal order is defined by the *happened-before* relationship introduced by Lamport in 1978 [[2]](https://amturing.acm.org/p558-lamport.pdf). 
+The *happened-before* relationship orders events in distributed systems following three rules [[2]](https://amturing.acm.org/p558-lamport.pdf):
 
 >**Happened-before relation:**
 >	Considering two events $e_1$ and $e_2$, $e_1$ causally precedes $e_2$ ($e_1 \rightarrow e_2$) iff:
@@ -22,7 +20,11 @@ Causal order ensures that any two causally related messages are delivered to app
 >	For any message $m$ and $m'$, if $m$ causally precedes $m'$, denoted $m\rightarrow m'$, then all processes deliver $m$ before $m'$:
 
 >	<center>*send(m) \rightarrow send(m') \Rightarrow deliver(m) \rightarrow deliver(m').* </center>
-	
+
+The main features implemented by the project are:
+1. Causal broadcast using Probabilstic clocks to causally order messages. 
+2. Error detectors whose purpose is to detect messages wrongly considered by Probabilistic clocks as causally ordered.
+3. A procedure to recover the causal dependencies of messages in order to ensure their delivery in causal order. 
 
 
 

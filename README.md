@@ -38,7 +38,7 @@ Error detectors for Probabilistic clocks aim to detect such messages.
 A node executes an error detector on a message *m* before delivering *m*. 
 
 The two implemented error detectors are:
-1. An error detector proposed by Mostéfaoui and Weiss whose description can be found in [this paper]((https://hal.science/hal-02056349/document) [[3]](https://hal.science/hal-02056349/document). 
+1. An error detector proposed by Mostéfaoui and Weiss whose description can be found in [this paper](https://hal.science/hal-02056349/document) [[3]](https://hal.science/hal-02056349/document). 
 
 
 ![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)

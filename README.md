@@ -26,7 +26,29 @@ Causal order ensures that any two causally related messages are delivered to app
 2. **Error detectors** whose purpose is to detect messages wrongly considered by Probabilistic clocks as causally ordered.
 3. **A procedure to recover** the causal dependencies of messages in order to ensure their delivery in causal order. 
 
-Those features are combined to provide the following simulation settings:
+Those features are combined to provide 7 simulation settings described in Section. 
+
+## Error detectors class hierarchy
+
+This section briefly describes the error detectors implemented in this project. 
+
+The idea behind error detectors for Probabilistic clocks comes from the fact that such clocks might wrongly indicate that a message can be delivered in causal order. In other words, they might indicate that all of a message's causal dependencies have been delivered at a node while the node did actually not deliver some of them yet. 
+
+Error detectors for Probabilistic clocks aim to detect such messages.
+A node executes an error detector on a message *m* before delivering *m*. 
+
+The two implemented error detectors are:
+1. An error detector proposed by Mostéfaoui and Weiss whose description can be found in [this paper]((https://hal.science/hal-02056349/document) [[3]](https://hal.science/hal-02056349/document). 
+
+
+![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)
+
+
+
+
+
+
+
 
 1. **No control:** A node delivers a message upon its reception without any control. 
 2. **Probabilistic clocks:** Nodes use Probabilistic clocks to causally order messages. A node delivers a received message *m* once the delivery conditions of *m*'s attached Probabilistic clock are satisfies. 

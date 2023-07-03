@@ -21,14 +21,12 @@ Causal order ensures that any two causally related messages are delivered to app
 
 >	<center>*send(m) \rightarrow send(m') \Rightarrow deliver(m) \rightarrow deliver(m').* </center>
 
-The main features implemented by the project are:
-1. Causal broadcast using Probabilstic clocks to causally order messages. 
-2. Error detectors whose purpose is to detect messages wrongly considered by Probabilistic clocks as causally ordered.
-3. A procedure to recover the causal dependencies of messages in order to ensure their delivery in causal order. 
+**The main features implemented by the project are:**
+1. Causal broadcast using **Probabilstic clocks** to causally order messages. 
+2. **Error detectors** whose purpose is to detect messages wrongly considered by Probabilistic clocks as causally ordered.
+3. **A procedure to recover** the causal dependencies of messages in order to ensure their delivery in causal order. 
 
-
-
-This project provides implementations of causal broadcast using the following control mechanisms:
+Those features are combined to provide the following simulation settings:
 
 1. **No control:** A node delivers a message upon its reception without any control. 
 2. **Probabilistic clocks:** Nodes use Probabilistic clocks to causally order messages. A node delivers a received message *m* once the delivery conditions of *m*'s attached Probabilistic clock are satisfies. 

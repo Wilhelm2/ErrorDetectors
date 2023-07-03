@@ -39,8 +39,10 @@ A node executes an error detector on a message *m* before delivering *m*.
 
 The two implemented error detectors are:
 1. Error detector proposed by Mostéfaoui and Weiss whose description can be found in [this paper](https://hal.science/hal-02056349/document)[3]. 
+2. Hash-based error detector proposed by Wilhelm and al. whose description can be found in [this paper](https://hal.science/hal-03984499)[4]. 
+The hash-based error detector sorts messages either based on reception times or the clock difference between messages. 
 
-
+The class diagram of error detectors is as follows: 
 ![Error Detector inheritance graph.](documentation/mainpage/errorDetectorInheritance.png?raw=true)
 
 

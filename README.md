@@ -98,15 +98,14 @@ Thus you should carefully install the version 5.6.1 of OMNeT++.
 
 OMNeT++ comes with a built-in IDE based on Eclipse. This section explains how to import the project in that IDE and compile it. 
 
-First launch the OMNeT++ IDE with the command:
+First, launch the OMNeT++ IDE with the command:
 > omnetpp
 
+Second, import the project into the IDE:
+> Menu -> import -> Existing Projects into  Workspace -> Browse -> Search source folder of project and select -> Finish.
 
-
-1) Dans omnetpp File-> new -> project -> donner un nom au projet -> finish
-2) Dans Project Explorer (dans l'onglet de gauche) clic droit sur le projet -> import -> Archive File -> chercher l'archive du projet -> finish
-3) Dans Project Explorer (dans l'onglet de gauche) clic droit sur le projet -> Properties -> Project References -> inet -> Apply and Close (cette étape permet au projet d'utiliser le framework INET)
-4) Dans Project Explorer (dans l'onglet de gauche) clic droit sur le projet -> Properties -> OMNeT++ -> Makemake -> Options -> Custom -> ajouter MSGC:=$(MSGC) --msg6 -> ok -> Apply and close
+Third, allow the compilation of the .msg files. in Project Explorer:
+> left clock on the project -> Properties -> OMNeT++ -> Makemake -> Options -> Custom -> add MSGC:=$(MSGC) --msg6 -> OK -> Apply and close.
 
 
 

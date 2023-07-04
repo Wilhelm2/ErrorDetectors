@@ -15,13 +15,10 @@ deliveryOption = sys.argv[5]
 recovering = "true" if (deliveryOption=='5' or deliveryOption=='6') else "false"
 
 def writeInitFile(nbNodes, clockSize, sendWindow, peaksPerSecond):
-	with open("omnetpp.ini","w") as f:
+	with open("simulations/omnetpp.ini","w") as f:
 		f.write("[General]\nnetwork = ErrorDetectorWithRecovery\nsim-time-limit = 1000s\n*.simParams.nbNodes =" + nbNodes + "\n*.simParams.clockLength = " + clockSize+"\n*.simParams.delaySend="+sendWindow+"\n*.simParams.PEAKSPERDELAY=" + peaksPerSecond + "\n*.simParams.deliveryOption=" + deliveryOption + "\n*.simParams.recovering=" + recovering)
 		f.write("\n**.vector-recording = false\n**.scalar-recording = false\n**.statistic-recording = false\n")
 		f.close()
-	
-	subprocess.check_call(["bash","-c","cp omnetpp.ini simulations/omnetpp.ini"])
-
 
 def writeNedFile(nbNodes):
 	copyfile("ErrorDetectorWithRecoveryTemplate.ned", "simulations/ErrorDetectorWithRecovery.ned")

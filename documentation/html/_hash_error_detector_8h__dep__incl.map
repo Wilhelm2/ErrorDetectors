@@ -1,17 +1,17 @@
-<map id="src/Detectors/HashErrorDetector.h" name="src/Detectors/HashErrorDetector.h">
-<area shape="rect" id="node2" href="$_hash_error_detector_8cc.html" title="src/Detectors/HashErrorDetector.cc" alt="" coords="5,87,237,114"/>
-<area shape="rect" id="node3" href="$_hash_error_detector_clock_difference_8h.html" title="src/Detectors/HashErrorDetector\lClockDifference.h" alt="" coords="262,80,477,121"/>
-<area shape="rect" id="node15" href="$_hash_error_detector_interval_8h.html" title="src/Detectors/HashErrorDetector\lInterval.h" alt="" coords="501,80,715,121"/>
-<area shape="rect" id="node4" href="$_hash_error_detector_clock_difference_8cc.html" title="src/Detectors/HashErrorDetector\lClockDifference.cc" alt="" coords="159,169,374,211"/>
-<area shape="rect" id="node5" href="$_node_detector_8h.html" title="src/Nodes/NodeDetector.h" alt="" coords="399,177,577,203"/>
-<area shape="rect" id="node6" href="$_node_detector_8cc.html" title="src/Nodes/NodeDetector.cc" alt="" coords="42,259,227,285"/>
-<area shape="rect" id="node7" href="$_node_without_recovery_8h.html" title="src/Nodes/NodeWithoutRecovery.h" alt="" coords="252,259,481,285"/>
-<area shape="rect" id="node9" href="$_node_with_recovery_8h.html" title="src/Nodes/NodeWithRecovery.h" alt="" coords="505,259,716,285"/>
-<area shape="rect" id="node13" href="$_stats_8h.html" title="Stats module used to collect statistics and write them into files. " alt="" coords="734,341,821,367"/>
-<area shape="rect" id="node8" href="$_node_without_recovery_8cc.html" title="src/Nodes/NodeWithoutRecovery.cc" alt="" coords="7,341,243,367"/>
-<area shape="rect" id="node10" href="$_node_with_recovery_8cc.html" title="src/Nodes/NodeWithRecovery.cc" alt="" coords="268,341,487,367"/>
-<area shape="rect" id="node11" href="$_node_with_recovery_test_8h.html" title="src/Nodes/NodeWithRecovery\lTest.h" alt="" coords="511,333,711,375"/>
-<area shape="rect" id="node12" href="$_node_with_recovery_test_8cc.html" title="src/Nodes/NodeWithRecovery\lTest.cc" alt="" coords="508,423,708,464"/>
-<area shape="rect" id="node14" href="$_stats_8cc.html" title="File containing source code for the Stats class. " alt="" coords="732,430,825,457"/>
-<area shape="rect" id="node16" href="$_hash_error_detector_interval_8cc.html" title="src/Detectors/HashErrorDetector\lInterval.cc" alt="" coords="602,169,817,211"/>
+<map id="/home/wilhelm/Documents/codeGitHub/ErrorDetectors/src/Detectors/HashErrorDetector.h" name="/home/wilhelm/Documents/codeGitHub/ErrorDetectors/src/Detectors/HashErrorDetector.h">
+<area shape="rect" id="node2" href="$_hash_error_detector_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector.cc" alt="" coords="22,117,258,173"/>
+<area shape="rect" id="node3" href="$_hash_error_detector_clock_difference_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector\lClockDifference.h" alt="" coords="283,109,501,180"/>
+<area shape="rect" id="node15" href="$_hash_error_detector_interval_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector\lInterval.h" alt="" coords="525,109,744,180"/>
+<area shape="rect" id="node4" href="$_hash_error_detector_clock_difference_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector\lClockDifference.cc" alt="" coords="179,228,397,299"/>
+<area shape="rect" id="node5" href="$_node_detector_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeDetector.h" alt="" coords="421,235,605,291"/>
+<area shape="rect" id="node6" href="$_node_detector_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeDetector.cc" alt="" coords="59,347,248,403"/>
+<area shape="rect" id="node7" href="$_node_without_recovery_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithoutRecovery.h" alt="" coords="273,347,506,403"/>
+<area shape="rect" id="node9" href="$_node_with_recovery_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecovery.h" alt="" coords="530,347,745,403"/>
+<area shape="rect" id="node13" href="$_stats_8h.html" title="Stats module used to collect statistics and write them into files. " alt="" coords="783,451,967,507"/>
+<area shape="rect" id="node8" href="$_node_without_recovery_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithoutRecovery.cc" alt="" coords="5,451,245,507"/>
+<area shape="rect" id="node10" href="$_node_with_recovery_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecovery.cc" alt="" coords="270,451,493,507"/>
+<area shape="rect" id="node11" href="$_node_with_recovery_test_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecoveryTest.h" alt="" coords="517,451,758,507"/>
+<area shape="rect" id="node12" href="$_node_with_recovery_test_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecoveryTest.cc" alt="" coords="512,555,760,611"/>
+<area shape="rect" id="node14" href="$_stats_8cc.html" title="File containing source code for the Stats class. " alt="" coords="784,555,968,611"/>
+<area shape="rect" id="node16" href="$_hash_error_detector_interval_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector\lInterval.cc" alt="" coords="629,228,848,299"/>
 </map>

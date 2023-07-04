@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Error Detectors for Probabilistic clocks: Main Page</title>
+<title>Error Detectors for Probabilistic clocks: Introduction</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -59,23 +59,112 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Error Detectors for Probabilistic clocks Documentation</div>  </div>
+<div class="title">Introduction </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Daniel Wilhelm</dd></dl>
-<p>Hey saluut je suis danielllll<br />
-Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll</p>
-<div class="image">
-<img src="errorDetectorInheritance.png" alt="errorDetectorInheritance.png"/>
-<div class="caption">
-?raw=true</div></div>
- <div class="image">
+<div class="textblock"><p>This project implements a causal broadcast algorithm for distributed systems in C++ on the OMNeT++ simulator. Causal order is defined by the <em>happened-before</em> relationship introduced by Lamport in 1978 <a href="https://amturing.acm.org/p558-lamport.pdf">[1]</a>. The <em>happened-before</em> relationship orders events in distributed systems following three rules <a href="https://amturing.acm.org/p558-lamport.pdf">[1]</a>:</p>
+<p>&gt;**Happened-before relation:** </p><blockquote class="doxtable">
+<p>Considering two events $e_1$ and $e_2$, $e_1$ causally precedes $e_2$ ($e_1  e_2$) iff:</p><ol type="1">
+<li>$e_1$ and $e_2$ occur on the same process and $e_1$ precedes $e_2$ or</li>
+<li>for a message m $e_1$=send(m) and $e_2$=deliver(m) or</li>
+<li>there exists an event $e_3$ such that $e_1 e_3$ and $e_3 e_2$. </li>
+</ol>
+</blockquote>
+<p>Causal order ensures that any two causally related messages are delivered to applications respecting that order.</p>
+<p>&gt;**Causal order:** </p><blockquote class="doxtable">
+<p>Processes deliver messages while respecting the causal relation between them. For any message $m$ and $m'$, if $m$ causally precedes $m'$, denoted $m m'$, then all processes deliver $m$ before $m'$: </p>
+</blockquote>
+<blockquote class="doxtable">
+<center>*send(m)  send(m')  deliver(m)  deliver(m').* </center> </blockquote>
+<p><b>The main features implemented by the project are:</b></p><ol type="1">
+<li>Causal broadcast using <b>Probabilstic clocks</b> to causally order messages.</li>
+<li><b>Error detectors</b> whose purpose is to detect messages wrongly considered by Probabilistic clocks as causally ordered.</li>
+<li><b>A procedure to recover</b> the causal dependencies of messages in order to ensure their delivery in causal order.</li>
+</ol>
+<p>Those features are combined to provide 7 simulation settings described in Section.</p>
+<h2>Error detectors</h2>
+<p>This section briefly describes the error detectors implemented in this project.</p>
+<p>The idea behind error detectors for Probabilistic clocks comes from the fact that such clocks might wrongly indicate that a message can be delivered in causal order. In other words, they might indicate that all of a message's causal dependencies have been delivered at a node while the node did actually not deliver some of them yet.</p>
+<p>Error detectors for Probabilistic clocks aim to detect such messages. A node executes an error detector on a message <em>m</em> before delivering <em>m</em>. An error detector can yield <em>false positives</em> as well as <em>false negatives</em>. A <em>false positive</em> occurs when the error detector decides that a node did not deliver all of a message's causal dependencies while it actually did, i.e. the node can deliver the message in causal order. Conversely, a <em>false negative</em> occurs when the error detector decides that a node delivered all of a message's causal dependencies while it actually did not, i.e. the node cannot yet deliver the message in causal order.</p>
+<p>The two implemented error detectors are:</p><ol type="1">
+<li>Error detector proposed by Mostéfaoui and Weiss whose description can be found in <a href="https://hal.science/hal-02056349/document">this paper</a>[3].</li>
+<li>Hash-based error detector proposed by Wilhelm and al. whose description can be found in <a href="https://hal.science/hal-03984499">this paper</a>[4]. The hash-based error detector sorts messages either based on reception times or the clock difference between messages.</li>
+</ol>
+<p>The following figure describes the project's error detector class diagram: </p><div class="image">
 <img src="documentation/mainpage/errorDetectorInheritance.png?raw=true" alt="Error Detector inheritance graph."/>
 </div>
- <div class="image">
-<img src="https://github.com/Wilhelm2/ErrorDetectors/blob/master/documentation/mainpage/errorDetectorInheritance.png?raw=true" alt="Error Detector inheritance graph."/>
+<h2>Recovery of message dependencies</h2>
+<p>The project implements a procedure to request the causal dependencies of messages. It can notably be used by a node <em>p</em> to get the causal dependencies of a message <em>m</em> that its error detector considers as not causally ordered. After getting the dependencies of <em>m</em>, <em>p</em> can postpone the delivery of <em>m</em> till it delivered all of <em>m</em>'s causal dependencies, thus ensuring that it delivers <em>m</em> in causal order.</p>
+<p>A detailled description of the recovery of message dependencies can be found in <a href="https://hal.science/hal-03984499">this paper</a>[4].</p>
+<h2>Nodes</h2>
+<p>The features of this project are implemented inside Node classes. This section briefly describes these classes. The following figure describes the project's Node class diagram: </p><div class="image">
+<img src="documentation/mainpage/nodeInheritance.png?raw=true" alt="Error Detector inheritance graph."/>
 </div>
- </div></div><!-- contents -->
+<p>A brief description of the Node classes:</p><ol type="1">
+<li><b><a class="el" href="class_node_base.html" title="Base class of Nodes. ">NodeBase</a>:</b> Base class to implement nodes.</li>
+<li><b><a class="el" href="class_node_no_control.html" title="Node which delivers messages upon reception without any control. ">NodeNoControl</a>:</b> Delivers a message upon reception without any control.</li>
+<li><b><a class="el" href="class_node_with_control.html" title="Base class for nodes that use probabilistic clocks to causally order application messages. ">NodeWithControl</a>:</b> Base class of nodes that causally orders messages with Probabilistic clocks.</li>
+<li><b><a class="el" href="class_node_p_c.html" title="Node using Probabilistic clocks to causally order messages (without error detectors). ">NodePC</a>:</b> Causally orders messages with Probabilistic clocks and without using error detectors or message recovery.</li>
+<li><b><a class="el" href="class_node_detector.html" title="Base class to implement nodes using error detectors. ">NodeDetector</a>:</b> Base class of nodes that use error detectors to analyze messages before delivering them.</li>
+<li><b><a class="el" href="class_node_without_recovery.html" title="Nodes using error detectors but which do not recover the dependencies of messages. ">NodeWithoutRecovery</a>:</b> Uses error detectors to analyze messages before delivering them without recovering causal dependencies.</li>
+<li><b><a class="el" href="class_node_with_recovery.html" title="Nodes that recover the causal dependencies of messages which the error detector tags as not causally ...">NodeWithRecovery</a>:</b> Uses erorr detectors to analyze messages before delivering them, recovers the causal dependencies of message tagged by the error detector as not causally ordered, and ensures their causal order delivery.</li>
+<li><b><a class="el" href="class_node_with_recovery_test.html" title="Nodes that recover messages and which try to first retrieve the causal dependencies of a message loca...">NodeWithRecoveryTest</a>:</b> Uses the hash-based error detectors using clock differences. Additionnaly to <b>6</b>, before requering the causal dependencies of a message <em>m</em> tries to find the hash of <em>m</em> with messages that the node did not deliver yet.</li>
+</ol>
+<h1>OMNeT++</h1>
+<p>The project was implemented on the version 5.6.1 of the OMNeT++ simulator <a href="https://omnetpp.org/">[5]</a>. This section gives a brief description of OMNeT++, which is an event based simulator primarly used for building network simulators. It is organized into modules that are combined in order to form a network.</p>
+<p>OMNeT++ uses the following specific files:</p><ol type="1">
+<li><b>Initialization file:</b> Contains the simulation parameters. Has the extension *.ini*.</li>
+<li><b>Network files:</b> Define modules as well as the simulation network which is composed of modules. Have the extension *.ned*.</li>
+<li><b>Message files:</b> Define the messages used by nodes. Have the extension *.msg*.</li>
+</ol>
+<h1>User guide</h1>
+<p>This section firt explains how to install the required ressources to execute the project. Then it shows how to import the project in the OMNeT++ built-in IDE based on Eclipse. Finally, it describes how to execute the simulation on the terminal.</p>
+<h2>OMNeT++ installation</h2>
+<p>The installation of the version 5.6.1 of OMNeT++ is explained <a href="https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf">here</a>. Note that OMNeT++ is not (even though mostly) retrocompatible. Hence, some modifications might be required when using another version of OMNeT++. Thus you should carefully install the version 5.6.1 of OMNeT++.</p>
+<h2>Import project in OMNeT++ IDE</h2>
+<p>OMNeT++ comes with a built-in IDE based on Eclipse. This section explains how to import the project in that IDE and compile it.</p>
+<p>First, launch the OMNeT++ IDE with the command: </p><blockquote class="doxtable">
+<p>omnetpp </p>
+</blockquote>
+<p>Second, import the project into the IDE: </p><blockquote class="doxtable">
+<p>Menu -&gt; import -&gt; Existing Projects into Workspace -&gt; Browse -&gt; Search source folder of project and select -&gt; Finish. </p>
+</blockquote>
+<p>Third, the compilation of .msg files requires to add: in Project Explorer (left bar): </p><blockquote class="doxtable">
+<p>left clock on the project -&gt; Properties -&gt; OMNeT++ -&gt; Makemake -&gt; Options -&gt; Custom -&gt; add MSGC:= &ndash;msg6 -&gt; OK -&gt; Apply and close. </p>
+</blockquote>
+<h2>How to run the simulation</h2>
+<p>The simulation can be launched from the IDE as well as from the terminal.</p>
+<p>To launch it from the IDE, click on the <em>Debug</em> or <em>Run</em> buttons in the bar under the <em>Menu</em> bar.</p>
+<p>To launch the simulation from the terminal:</p><ol type="1">
+<li>Build the simulation from the IDE to create the Makefile that builds the project.</li>
+<li>Open a terminal in the project directory</li>
+<li>Configure the files <em>omnetpp.ini</em> and <em>network.ned</em> following the desired simulation settings (number of nodes, control mechanism,...)</li>
+<li>Execute the command: &gt;../out/gcc-release/src/ErrorDetectors -f omnetpp.ini -u Cmdenv</li>
+</ol>
+<p>The python script 'execution.py' is also provided. It builds the *.ini* and *.ned* files, launches the simulation, copies the simulation statistics in folders, and builds several graphs with those statistics. Configure the simulation parameters by modifying 'execution.py'.</p>
+<p>The simulation parameter 'deliveryOption' determines the control mechanism used to deliver messages. The available control mechanisms are:</p><ol type="1">
+<li><b>No control</b> Nodes deliver messages upon reception without any control.</li>
+<li><b>Probabilistic clocks:</b> Nodes use Probabilistic clocks to causally order messages.</li>
+<li><b>Probabilistic clock and the error detector of Mostéfaoui and Weiss:</b> Nodes use Probabilistic clocks to deliver messages, and execute the error detector proposed by Mostéfaoui and Weiss <a href="https://hal.science/hal-02056349/document">[3]</a> on messages before delivering them.</li>
+<li><b>Probabilistic clock and an hash-based error detector using an average propagation delay hypothesis:</b> Nodes use Probabilistic clocks to causally order messages, and execute an hash-based error detector proposed by Wilhelm and al.<a href="https://hal.science/hal-03984499">[4]</a> on on messages before delivering them. The hash-based error detector uses the average propagation delay of messages to determine their causal relationship.</li>
+<li><b>Probabilistic clock and an hash-based error detector using the clock difference between messages:</b> Nodes use Probabilistic clocks to causally order messages, and execute an hash-based error detector proposed by Wilhelm and al.<a href="https://hal.science/hal-03984499">[4]</a> on on messages before delivering them. The hash-based error detector uses the clock difference between messages to determine their causal relationship.</li>
+<li><b>Probabilistic clock, an hash-based error detector using the clock difference between messages, and the recovery of messages tagged as not causally ordered:</b> Nodes use Probabilistic clocks to causally order messages, and execute an hash-based error detector proposed by Wilhelm and al.<a href="https://hal.science/hal-03984499">[4]</a> on on messages before delivering them. The hash-based error detector uses the average propagation delay of messages to determine their causal relationship. Moreover, nodes recover the causal dependencies of the messages <em>m</em> for that the error detector tags as not causally ordered, by requesting the causal dependencies of <em>m</em> to the node that broadcasted <em>m</em>. Such a message is then delivered once the node delivered all of the message's causal dependencies.</li>
+<li><b>Probabilistic clock, an hash-based error detector using the clock difference between messages, the recovery of messages tagged as not causally ordered, and a recovery test to avoid requesting the causal dependencies of messages:</b> Additionnally to <b>6</b>, before requesting the causal dependencies of a message <em>m</em>, a node first tries to find the dependency set of <em>m</em> with messages that it did not deliver yet.</li>
+</ol>
+<h2>Data analysis</h2>
+<p>Statistics about the simulation are collected and written in the <em>simulations/data</em> folder.</p>
+<p>The folder <em>Graphs</em> contains python scripts to build graphs from those statistics. They are mainly written to be used from the 'execution.py' script, but can also be used outside of it.</p>
+<h2>Documentation</h2>
+<p>Detailled documentation can be found in the documentation folder, which is providing documentation under the PDF and html format. Documentation has been written with <a href="https://www.doxygen.nl/">Doxygen</a>.</p>
+<h1>License</h1>
+<p>This project is distributed under the license GNU 3.0.</p>
+<h1>References</h1>
+<p>[1] Time, Clocks, and the Ordering of Events in a Distributed System. Lamport, Leslie. Communications of the ACM 1978.</p>
+<p>[2] Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. PaCT 2017.</p>
+<p>[3] Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. Technical report 2017.</p>
+<p>[4] A probabilistic Dynamic Clock Set to capture message causality. Wilhelm, Daniel and Arantes, Luciana and Sens, Pierre. Technical report 2017.</p>
+<p>[5] The OMNET++ Discrete Event Simulation System. Varga, Andras. ESM 2001. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

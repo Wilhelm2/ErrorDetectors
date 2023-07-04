@@ -1,13 +1,13 @@
-<map id="src/Nodes/NodePC.cc" name="src/Nodes/NodePC.cc">
-<area shape="rect" id="node2" href="$_node_p_c_8h.html" title="NodePC.h" alt="" coords="186,80,269,107"/>
-<area shape="rect" id="node3" href="$_node_with_control_8h.html" title="NodeWithControl.h" alt="" coords="161,155,294,181"/>
-<area shape="rect" id="node4" href="$_node_base_8h.html" title="NodeBase.h" alt="" coords="180,229,275,256"/>
-<area shape="rect" id="node6" href="$_init__m_8h.html" title="../Messages/Init_m.h" alt="" coords="44,304,189,331"/>
-<area shape="rect" id="node7" href="$_app_msg__m_8h.html" title="../Messages/AppMsg_m.h" alt="" coords="775,453,949,480"/>
-<area shape="rect" id="node13" href="$simulation_parameters_8h.html" title="Contains the simulation parameters defined in the .ini file found in the simulations folder..." alt="" coords="281,453,451,480"/>
-<area shape="rect" id="node15" href="$_controller_8h.html" title="../Controller.h" alt="" coords="482,304,583,331"/>
-<area shape="rect" id="node8" href="$structures_8h.html" title="../structures.h" alt="" coords="588,528,691,555"/>
-<area shape="rect" id="node10" href="$_probabilistic_clock_8h.html" title="Clocks/ProbabilisticClock.h" alt="" coords="548,603,731,629"/>
-<area shape="rect" id="node18" href="$_dependencies_8h.html" title="Dependencies/Dependencies.h" alt="" coords="486,453,689,480"/>
-<area shape="rect" id="node19" href="$_total_dependencies_8h.html" title="Dependencies/TotalDependencies.h" alt="" coords="417,379,649,405"/>
+<map id="/home/wilhelm/Documents/codeGitHub/ErrorDetectors/src/Nodes/NodePC.cc" name="/home/wilhelm/Documents/codeGitHub/ErrorDetectors/src/Nodes/NodePC.cc">
+<area shape="rect" id="node2" href="$_node_p_c_8h.html" title="NodePC.h" alt="" coords="186,109,269,136"/>
+<area shape="rect" id="node3" href="$_node_with_control_8h.html" title="NodeWithControl.h" alt="" coords="161,184,294,211"/>
+<area shape="rect" id="node4" href="$_node_base_8h.html" title="NodeBase.h" alt="" coords="180,259,275,285"/>
+<area shape="rect" id="node6" href="$_init__m_8h.html" title="../Messages/Init_m.h" alt="" coords="44,333,189,360"/>
+<area shape="rect" id="node7" href="$_app_msg__m_8h.html" title="../Messages/AppMsg_m.h" alt="" coords="775,483,949,509"/>
+<area shape="rect" id="node13" href="$simulation_parameters_8h.html" title="Contains the simulation parameters defined in the .ini file found in the simulations folder..." alt="" coords="281,483,451,509"/>
+<area shape="rect" id="node15" href="$_controller_8h.html" title="../Controller.h" alt="" coords="482,333,583,360"/>
+<area shape="rect" id="node8" href="$structures_8h.html" title="../structures.h" alt="" coords="588,557,691,584"/>
+<area shape="rect" id="node10" href="$_probabilistic_clock_8h.html" title="Clocks/ProbabilisticClock.h" alt="" coords="548,632,731,659"/>
+<area shape="rect" id="node18" href="$_dependencies_8h.html" title="Dependencies/Dependencies.h" alt="" coords="486,483,689,509"/>
+<area shape="rect" id="node19" href="$_total_dependencies_8h.html" title="Dependencies/TotalDependencies.h" alt="" coords="417,408,649,435"/>
 </map>

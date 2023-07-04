@@ -21,6 +21,7 @@ var searchData=
   ['incrementnbmsgtocombine',['incrementnbMsgToCombine',['../class_hash_error_detector.html#a08b4518822a6beff6845da4dd36bfba1',1,'HashErrorDetector']]],
   ['incrementnbmsgwronglyconsideredcausaldep',['incrementnbMsgWronglyConsideredCausalDep',['../class_hash_error_detector.html#a007d537bdfd329c6b23b432b58d4cf4c',1,'HashErrorDetector']]],
   ['incrementnboperationsforhash',['incrementnbOperationsForHash',['../class_hash_error_detector.html#a6aa56dfbb555e15093bd5d93a683fa42',1,'HashErrorDetector']]],
+  ['introduction',['Introduction',['../index.html',1,'']]],
   ['init',['Init',['../class_init.html',1,'Init'],['../class_init.html#a763a386107f8ea21acfd24f243e0f73c',1,'Init::Init(const char *name=nullptr, short kind=0)'],['../class_init.html#a9d26400c5fabf20571808ad773524669',1,'Init::Init(const Init &amp;other)']]],
   ['init_5fm_2ecc',['Init_m.cc',['../_init__m_8cc.html',1,'']]],
   ['init_5fm_2eh',['Init_m.h',['../_init__m_8h.html',1,'']]],

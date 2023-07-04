@@ -1,7 +1,155 @@
-\begin{DoxyAuthor}{Author}
-Daniel Wilhelm
-\end{DoxyAuthor}
-Hey saluut je suis danielllll~\newline
-Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll Hey saluut je suis danielllll
+This project implements a causal broadcast algorithm for distributed systems in C++ on the O\+M\+Ne\+T++ simulator. Causal order is defined by the {\itshape happened-\/before} relationship introduced by Lamport in 1978 \href{https://amturing.acm.org/p558-lamport.pdf}{\tt \mbox{[}1\mbox{]}}. The {\itshape happened-\/before} relationship orders events in distributed systems following three rules \href{https://amturing.acm.org/p558-lamport.pdf}{\tt \mbox{[}1\mbox{]}}\+:
 
-   
+$>$$\ast$$\ast$\+Happened-\/before relation\+:$\ast$$\ast$ \begin{quote}
+Considering two events \$e\+\_\+1\$ and \$e\+\_\+2\$, \$e\+\_\+1\$ causally precedes \$e\+\_\+2\$ (\$e\+\_\+1  e\+\_\+2\$) iff\+:
+\begin{DoxyEnumerate}
+\item \$e\+\_\+1\$ and \$e\+\_\+2\$ occur on the same process and \$e\+\_\+1\$ precedes \$e\+\_\+2\$ or
+\item for a message m \$e\+\_\+1\$=send(m) and \$e\+\_\+2\$=deliver(m) or
+\item there exists an event \$e\+\_\+3\$ such that \$e\+\_\+1 e\+\_\+3\$ and \$e\+\_\+3 e\+\_\+2\$. 
+\end{DoxyEnumerate}\end{quote}
+
+
+Causal order ensures that any two causally related messages are delivered to applications respecting that order.
+
+$>$$\ast$$\ast$\+Causal order\+:$\ast$$\ast$ \begin{quote}
+Processes deliver messages while respecting the causal relation between them. For any message \$m\$ and \$m\textquotesingle{}\$, if \$m\$ causally precedes \$m\textquotesingle{}\$, denoted \$m m\textquotesingle{}\$, then all processes deliver \$m\$ before \$m\textquotesingle{}\$\+: \end{quote}
+
+
+\begin{quote}
+\begin{center}$\ast$send(m)  send(m\textquotesingle{})  deliver(m)  deliver(m\textquotesingle{}).$\ast$ \end{center}  \end{quote}
+
+
+{\bfseries The main features implemented by the project are\+:}
+\begin{DoxyEnumerate}
+\item Causal broadcast using {\bfseries Probabilstic clocks} to causally order messages.
+\item {\bfseries Error detectors} whose purpose is to detect messages wrongly considered by Probabilistic clocks as causally ordered.
+\item {\bfseries A procedure to recover} the causal dependencies of messages in order to ensure their delivery in causal order.
+\end{DoxyEnumerate}
+
+Those features are combined to provide 7 simulation settings described in Section.
+
+\subsection*{Error detectors}
+
+This section briefly describes the error detectors implemented in this project.
+
+The idea behind error detectors for Probabilistic clocks comes from the fact that such clocks might wrongly indicate that a message can be delivered in causal order. In other words, they might indicate that all of a message\textquotesingle{}s causal dependencies have been delivered at a node while the node did actually not deliver some of them yet.
+
+Error detectors for Probabilistic clocks aim to detect such messages. A node executes an error detector on a message {\itshape m} before delivering {\itshape m}. An error detector can yield {\itshape false positives} as well as {\itshape false negatives}. A {\itshape false positive} occurs when the error detector decides that a node did not deliver all of a message\textquotesingle{}s causal dependencies while it actually did, i.\+e. the node can deliver the message in causal order. Conversely, a {\itshape false negative} occurs when the error detector decides that a node delivered all of a message\textquotesingle{}s causal dependencies while it actually did not, i.\+e. the node cannot yet deliver the message in causal order.
+
+The two implemented error detectors are\+:
+\begin{DoxyEnumerate}
+\item Error detector proposed by Mostéfaoui and Weiss whose description can be found in \href{https://hal.science/hal-02056349/document}{\tt this paper}\mbox{[}3\mbox{]}.
+\item Hash-\/based error detector proposed by Wilhelm and al. whose description can be found in \href{https://hal.science/hal-03984499}{\tt this paper}\mbox{[}4\mbox{]}. The hash-\/based error detector sorts messages either based on reception times or the clock difference between messages.
+\end{DoxyEnumerate}
+
+The following figure describes the project\textquotesingle{}s error detector class diagram\+: 
+
+\subsection*{Recovery of message dependencies}
+
+The project implements a procedure to request the causal dependencies of messages. It can notably be used by a node {\itshape p} to get the causal dependencies of a message {\itshape m} that its error detector considers as not causally ordered. After getting the dependencies of {\itshape m}, {\itshape p} can postpone the delivery of {\itshape m} till it delivered all of {\itshape m}\textquotesingle{}s causal dependencies, thus ensuring that it delivers {\itshape m} in causal order.
+
+A detailled description of the recovery of message dependencies can be found in \href{https://hal.science/hal-03984499}{\tt this paper}\mbox{[}4\mbox{]}.
+
+\subsection*{Nodes}
+
+The features of this project are implemented inside Node classes. This section briefly describes these classes. The following figure describes the project\textquotesingle{}s Node class diagram\+: 
+
+A brief description of the Node classes\+:
+\begin{DoxyEnumerate}
+\item {\bfseries \hyperlink{class_node_base}{Node\+Base}\+:} Base class to implement nodes.
+\item {\bfseries \hyperlink{class_node_no_control}{Node\+No\+Control}\+:} Delivers a message upon reception without any control.
+\item {\bfseries \hyperlink{class_node_with_control}{Node\+With\+Control}\+:} Base class of nodes that causally orders messages with Probabilistic clocks.
+\item {\bfseries \hyperlink{class_node_p_c}{Node\+PC}\+:} Causally orders messages with Probabilistic clocks and without using error detectors or message recovery.
+\item {\bfseries \hyperlink{class_node_detector}{Node\+Detector}\+:} Base class of nodes that use error detectors to analyze messages before delivering them.
+\item {\bfseries \hyperlink{class_node_without_recovery}{Node\+Without\+Recovery}\+:} Uses error detectors to analyze messages before delivering them without recovering causal dependencies.
+\item {\bfseries \hyperlink{class_node_with_recovery}{Node\+With\+Recovery}\+:} Uses erorr detectors to analyze messages before delivering them, recovers the causal dependencies of message tagged by the error detector as not causally ordered, and ensures their causal order delivery.
+\item {\bfseries \hyperlink{class_node_with_recovery_test}{Node\+With\+Recovery\+Test}\+:} Uses the hash-\/based error detectors using clock differences. Additionnaly to {\bfseries 6}, before requering the causal dependencies of a message {\itshape m} tries to find the hash of {\itshape m} with messages that the node did not deliver yet.
+\end{DoxyEnumerate}
+
+\section*{O\+M\+Ne\+T++}
+
+The project was implemented on the version 5.\+6.\+1 of the O\+M\+Ne\+T++ simulator \href{https://omnetpp.org/}{\tt \mbox{[}5\mbox{]}}. This section gives a brief description of O\+M\+Ne\+T++, which is an event based simulator primarly used for building network simulators. It is organized into modules that are combined in order to form a network.
+
+O\+M\+Ne\+T++ uses the following specific files\+:
+\begin{DoxyEnumerate}
+\item {\bfseries Initialization file\+:} Contains the simulation parameters. Has the extension $\ast$.ini$\ast$.
+\item {\bfseries Network files\+:} Define modules as well as the simulation network which is composed of modules. Have the extension $\ast$.ned$\ast$.
+\item {\bfseries Message files\+:} Define the messages used by nodes. Have the extension $\ast$.msg$\ast$.
+\end{DoxyEnumerate}
+
+\section*{User guide}
+
+This section firt explains how to install the required ressources to execute the project. Then it shows how to import the project in the O\+M\+Ne\+T++ built-\/in I\+DE based on Eclipse. Finally, it describes how to execute the simulation on the terminal.
+
+\subsection*{O\+M\+Ne\+T++ installation}
+
+The installation of the version 5.\+6.\+1 of O\+M\+Ne\+T++ is explained \href{https://doc.omnetpp.org/omnetpp5/InstallGuide.pdf}{\tt here}. Note that O\+M\+Ne\+T++ is not (even though mostly) retrocompatible. Hence, some modifications might be required when using another version of O\+M\+Ne\+T++. Thus you should carefully install the version 5.\+6.\+1 of O\+M\+Ne\+T++.
+
+\subsection*{Import project in O\+M\+Ne\+T++ I\+DE}
+
+O\+M\+Ne\+T++ comes with a built-\/in I\+DE based on Eclipse. This section explains how to import the project in that I\+DE and compile it.
+
+First, launch the O\+M\+Ne\+T++ I\+DE with the command\+: \begin{quote}
+omnetpp \end{quote}
+
+
+Second, import the project into the I\+DE\+: \begin{quote}
+Menu -\/$>$ import -\/$>$ Existing Projects into Workspace -\/$>$ Browse -\/$>$ Search source folder of project and select -\/$>$ Finish. \end{quote}
+
+
+Third, the compilation of .msg files requires to add\+: in Project Explorer (left bar)\+: \begin{quote}
+left clock on the project -\/$>$ Properties -\/$>$ O\+M\+Ne\+T++ -\/$>$ Makemake -\/$>$ Options -\/$>$ Custom -\/$>$ add M\+S\+GC\+:= --msg6 -\/$>$ OK -\/$>$ Apply and close. \end{quote}
+
+
+\subsection*{How to run the simulation}
+
+The simulation can be launched from the I\+DE as well as from the terminal.
+
+To launch it from the I\+DE, click on the {\itshape Debug} or {\itshape Run} buttons in the bar under the {\itshape Menu} bar.
+
+To launch the simulation from the terminal\+:
+\begin{DoxyEnumerate}
+\item Build the simulation from the I\+DE to create the Makefile that builds the project.
+\item Open a terminal in the project directory
+\item Configure the files {\itshape omnetpp.\+ini} and {\itshape network.\+ned} following the desired simulation settings (number of nodes, control mechanism,...)
+\item Execute the command\+: $>$../out/gcc-\/release/src/\+Error\+Detectors -\/f omnetpp.\+ini -\/u Cmdenv
+\end{DoxyEnumerate}
+
+The python script \textquotesingle{}execution.\+py\textquotesingle{} is also provided. It builds the $\ast$.ini$\ast$ and $\ast$.ned$\ast$ files, launches the simulation, copies the simulation statistics in folders, and builds several graphs with those statistics. Configure the simulation parameters by modifying \textquotesingle{}execution.\+py\textquotesingle{}.
+
+The simulation parameter \textquotesingle{}delivery\+Option\textquotesingle{} determines the control mechanism used to deliver messages. The available control mechanisms are\+:
+\begin{DoxyEnumerate}
+\item {\bfseries No control} Nodes deliver messages upon reception without any control.
+\item {\bfseries Probabilistic clocks\+:} Nodes use Probabilistic clocks to causally order messages.
+\item {\bfseries Probabilistic clock and the error detector of Mostéfaoui and Weiss\+:} Nodes use Probabilistic clocks to deliver messages, and execute the error detector proposed by Mostéfaoui and Weiss \href{https://hal.science/hal-02056349/document}{\tt \mbox{[}3\mbox{]}} on messages before delivering them.
+\item {\bfseries Probabilistic clock and an hash-\/based error detector using an average propagation delay hypothesis\+:} Nodes use Probabilistic clocks to causally order messages, and execute an hash-\/based error detector proposed by Wilhelm and al.\href{https://hal.science/hal-03984499}{\tt \mbox{[}4\mbox{]}} on on messages before delivering them. The hash-\/based error detector uses the average propagation delay of messages to determine their causal relationship.
+\item {\bfseries Probabilistic clock and an hash-\/based error detector using the clock difference between messages\+:} Nodes use Probabilistic clocks to causally order messages, and execute an hash-\/based error detector proposed by Wilhelm and al.\href{https://hal.science/hal-03984499}{\tt \mbox{[}4\mbox{]}} on on messages before delivering them. The hash-\/based error detector uses the clock difference between messages to determine their causal relationship.
+\item {\bfseries Probabilistic clock, an hash-\/based error detector using the clock difference between messages, and the recovery of messages tagged as not causally ordered\+:} Nodes use Probabilistic clocks to causally order messages, and execute an hash-\/based error detector proposed by Wilhelm and al.\href{https://hal.science/hal-03984499}{\tt \mbox{[}4\mbox{]}} on on messages before delivering them. The hash-\/based error detector uses the average propagation delay of messages to determine their causal relationship. Moreover, nodes recover the causal dependencies of the messages {\itshape m} for that the error detector tags as not causally ordered, by requesting the causal dependencies of {\itshape m} to the node that broadcasted {\itshape m}. Such a message is then delivered once the node delivered all of the message\textquotesingle{}s causal dependencies.
+\item {\bfseries Probabilistic clock, an hash-\/based error detector using the clock difference between messages, the recovery of messages tagged as not causally ordered, and a recovery test to avoid requesting the causal dependencies of messages\+:} Additionnally to {\bfseries 6}, before requesting the causal dependencies of a message {\itshape m}, a node first tries to find the dependency set of {\itshape m} with messages that it did not deliver yet.
+\end{DoxyEnumerate}
+
+\subsection*{Data analysis}
+
+Statistics about the simulation are collected and written in the {\itshape simulations/data} folder.
+
+The folder {\itshape Graphs} contains python scripts to build graphs from those statistics. They are mainly written to be used from the \textquotesingle{}execution.\+py\textquotesingle{} script, but can also be used outside of it.
+
+\subsection*{Documentation}
+
+Detailled documentation can be found in the documentation folder, which is providing documentation under the P\+DF and html format. Documentation has been written with \href{https://www.doxygen.nl/}{\tt Doxygen}.
+
+\section*{License}
+
+This project is distributed under the license G\+NU 3.\+0.
+
+\section*{References}
+
+\mbox{[}1\mbox{]} Time, Clocks, and the Ordering of Events in a Distributed System. Lamport, Leslie. Communications of the A\+CM 1978.
+
+\mbox{[}2\mbox{]} Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. Pa\+CT 2017.
+
+\mbox{[}3\mbox{]} Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. Technical report 2017.
+
+\mbox{[}4\mbox{]} A probabilistic Dynamic Clock Set to capture message causality. Wilhelm, Daniel and Arantes, Luciana and Sens, Pierre. Technical report 2017.
+
+\mbox{[}5\mbox{]} The O\+M\+N\+E\+T++ Discrete Event Simulation System. Varga, Andras. E\+SM 2001. 

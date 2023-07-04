@@ -1,41 +1,41 @@
-<map id="src/Dependencies/Dependencies.h" name="src/Dependencies/Dependencies.h">
-<area shape="rect" id="node2" href="$_total_dependencies_8h.html" title="src/Dependencies/TotalDependencies.h" alt="" coords="1491,80,1745,107"/>
-<area shape="rect" id="node13" href="$_controller_8h.html" title="src/Controller.h" alt="" coords="1325,162,1436,189"/>
-<area shape="rect" id="node17" href="$_hash_error_detector_8h.html" title="src/Detectors/HashErrorDetector.h" alt="" coords="1251,341,1476,367"/>
-<area shape="rect" id="node37" href="$_partial_dependencies_8h.html" title="src/Dependencies/Partial\lDependencies.h" alt="" coords="2007,155,2175,196"/>
-<area shape="rect" id="node40" href="$_dependencies_8cc.html" title="src/Dependencies/Dependencies.cc" alt="" coords="1821,80,2053,107"/>
-<area shape="rect" id="node3" href="$dep_rsp__m_8h.html" title="src/Messages/depRsp_m.h" alt="" coords="1797,162,1980,189"/>
-<area shape="rect" id="node39" href="$_total_dependencies_8cc.html" title="src/Dependencies/TotalDependencies.cc" alt="" coords="1511,162,1773,189"/>
-<area shape="rect" id="node4" href="$communication_dispatcher_8h.html" title="File that contains the class used to connect nodes. " alt="" coords="1512,251,1719,278"/>
-<area shape="rect" id="node6" href="$dep_rsp__m_8cc.html" title="src/Messages/depRsp_m.cc" alt="" coords="1795,251,1985,278"/>
-<area shape="rect" id="node7" href="$_node_with_recovery_8h.html" title="src/Nodes/NodeWithRecovery.h" alt="" coords="1077,601,1287,628"/>
-<area shape="rect" id="node5" href="$communication_dispatcher_8cc.html" title="src/communicationDispatcher.cc" alt="" coords="1507,341,1721,367"/>
-<area shape="rect" id="node8" href="$_node_with_recovery_8cc.html" title="src/Nodes/NodeWithRecovery.cc" alt="" coords="995,683,1214,710"/>
-<area shape="rect" id="node9" href="$_node_with_recovery_test_8h.html" title="src/Nodes/NodeWithRecovery\lTest.h" alt="" coords="1238,676,1438,717"/>
-<area shape="rect" id="node11" href="$_stats_8h.html" title="Stats module used to collect statistics and write them into files. " alt="" coords="796,683,883,710"/>
-<area shape="rect" id="node10" href="$_node_with_recovery_test_8cc.html" title="src/Nodes/NodeWithRecovery\lTest.cc" alt="" coords="1238,765,1438,807"/>
-<area shape="rect" id="node12" href="$_stats_8cc.html" title="File containing source code for the Stats class. " alt="" coords="793,773,886,799"/>
-<area shape="rect" id="node14" href="$_controller_8cc.html" title="src/Controller.cc" alt="" coords="1267,251,1385,278"/>
-<area shape="rect" id="node15" href="$_error_detector_8h.html" title="src/Detectors/ErrorDetector.h" alt="" coords="997,251,1191,278"/>
-<area shape="rect" id="node29" href="$_node_base_8h.html" title="src/Nodes/NodeBase.h" alt="" coords="468,341,627,367"/>
-<area shape="rect" id="node16" href="$_error_detector_8cc.html" title="src/Detectors/ErrorDetector.cc" alt="" coords="1009,341,1211,367"/>
-<area shape="rect" id="node27" href="$_mostefaoui_error_detector_8h.html" title="src/Detectors/Mostefaoui\lErrorDetector.h" alt="" coords="816,333,985,375"/>
-<area shape="rect" id="node18" href="$_hash_error_detector_8cc.html" title="src/Detectors/HashErrorDetector.cc" alt="" coords="1489,430,1721,457"/>
-<area shape="rect" id="node19" href="$_hash_error_detector_clock_difference_8h.html" title="src/Detectors/HashErrorDetector\lClockDifference.h" alt="" coords="1249,423,1464,464"/>
-<area shape="rect" id="node25" href="$_hash_error_detector_interval_8h.html" title="src/Detectors/HashErrorDetector\lInterval.h" alt="" coords="1011,423,1225,464"/>
-<area shape="rect" id="node20" href="$_hash_error_detector_clock_difference_8cc.html" title="src/Detectors/HashErrorDetector\lClockDifference.cc" alt="" coords="1281,512,1496,553"/>
-<area shape="rect" id="node21" href="$_node_detector_8h.html" title="src/Nodes/NodeDetector.h" alt="" coords="839,519,1018,546"/>
-<area shape="rect" id="node22" href="$_node_detector_8cc.html" title="src/Nodes/NodeDetector.cc" alt="" coords="867,601,1052,628"/>
-<area shape="rect" id="node23" href="$_node_without_recovery_8h.html" title="src/Nodes/NodeWithoutRecovery.h" alt="" coords="550,601,779,628"/>
-<area shape="rect" id="node24" href="$_node_without_recovery_8cc.html" title="src/Nodes/NodeWithoutRecovery.cc" alt="" coords="536,683,772,710"/>
-<area shape="rect" id="node26" href="$_hash_error_detector_interval_8cc.html" title="src/Detectors/HashErrorDetector\lInterval.cc" alt="" coords="1043,512,1257,553"/>
-<area shape="rect" id="node28" href="$_mostefaoui_error_detector_8cc.html" title="src/Detectors/Mostefaoui\lErrorDetector.cc" alt="" coords="765,423,935,464"/>
-<area shape="rect" id="node30" href="$_node_base_8cc.html" title="src/Nodes/NodeBase.cc" alt="" coords="365,430,530,457"/>
-<area shape="rect" id="node31" href="$_node_with_control_8h.html" title="src/Nodes/NodeWithControl.h" alt="" coords="143,430,341,457"/>
-<area shape="rect" id="node35" href="$_node_no_control_8h.html" title="src/Nodes/NodeNoControl.h" alt="" coords="554,430,741,457"/>
-<area shape="rect" id="node32" href="$_node_p_c_8h.html" title="src/Nodes/NodePC.h" alt="" coords="234,519,381,546"/>
-<area shape="rect" id="node34" href="$_node_with_control_8cc.html" title="src/Nodes/NodeWithControl.cc" alt="" coords="5,519,209,546"/>
-<area shape="rect" id="node33" href="$_node_p_c_8cc.html" title="src/Nodes/NodePC.cc" alt="" coords="230,601,385,628"/>
-<area shape="rect" id="node36" href="$_node_no_control_8cc.html" title="src/Nodes/NodeNoControl.cc" alt="" coords="550,519,745,546"/>
-<area shape="rect" id="node38" href="$_partial_dependencies_8cc.html" title="src/Dependencies/Partial\lDependencies.cc" alt="" coords="2009,244,2177,285"/>
+<map id="/home/wilhelm/Documents/codeGitHub/ErrorDetectors/src/Dependencies/Dependencies.h" name="/home/wilhelm/Documents/codeGitHub/ErrorDetectors/src/Dependencies/Dependencies.h">
+<area shape="rect" id="node2" href="$_total_dependencies_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Dependencies/TotalDependencies.h" alt="" coords="1660,109,1919,165"/>
+<area shape="rect" id="node13" href="$_controller_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Controller.h" alt="" coords="1431,213,1615,269"/>
+<area shape="rect" id="node17" href="$_hash_error_detector_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector.h" alt="" coords="1425,421,1655,477"/>
+<area shape="rect" id="node37" href="$_partial_dependencies_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Dependencies/PartialDependencies.h" alt="" coords="2195,213,2461,269"/>
+<area shape="rect" id="node40" href="$_dependencies_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Dependencies/Dependencies.cc" alt="" coords="1993,109,2229,165"/>
+<area shape="rect" id="node3" href="$dep_rsp__m_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Messages/depRsp_m.h" alt="" coords="1980,213,2167,269"/>
+<area shape="rect" id="node39" href="$_total_dependencies_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Dependencies/TotalDependencies.cc" alt="" coords="1690,213,1955,269"/>
+<area shape="rect" id="node4" href="$communication_dispatcher_8h.html" title="File that contains the class used to connect nodes. " alt="" coords="1689,317,1900,373"/>
+<area shape="rect" id="node6" href="$dep_rsp__m_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Messages/depRsp_m.cc" alt="" coords="1978,317,2171,373"/>
+<area shape="rect" id="node7" href="$_node_with_recovery_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecovery.h" alt="" coords="1290,763,1505,819"/>
+<area shape="rect" id="node5" href="$communication_dispatcher_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/communicationDispatcher.cc" alt="" coords="1685,421,1902,477"/>
+<area shape="rect" id="node8" href="$_node_with_recovery_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecovery.cc" alt="" coords="1241,867,1463,923"/>
+<area shape="rect" id="node9" href="$_node_with_recovery_test_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecoveryTest.h" alt="" coords="1487,867,1729,923"/>
+<area shape="rect" id="node11" href="$_stats_8h.html" title="Stats module used to collect statistics and write them into files. " alt="" coords="967,867,1151,923"/>
+<area shape="rect" id="node10" href="$_node_with_recovery_test_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecoveryTest.cc" alt="" coords="1484,971,1732,1027"/>
+<area shape="rect" id="node12" href="$_stats_8cc.html" title="File containing source code for the Stats class. " alt="" coords="967,971,1151,1027"/>
+<area shape="rect" id="node14" href="$_controller_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Controller.cc" alt="" coords="1380,317,1564,373"/>
+<area shape="rect" id="node15" href="$_error_detector_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/ErrorDetector.h" alt="" coords="1107,317,1306,373"/>
+<area shape="rect" id="node29" href="$_node_base_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeBase.h" alt="" coords="520,421,704,477"/>
+<area shape="rect" id="node16" href="$_error_detector_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/ErrorDetector.cc" alt="" coords="1161,421,1367,477"/>
+<area shape="rect" id="node27" href="$_mostefaoui_error_detector_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/MostefaouiErrorDetector.h" alt="" coords="874,421,1137,477"/>
+<area shape="rect" id="node18" href="$_hash_error_detector_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector.cc" alt="" coords="1667,533,1903,589"/>
+<area shape="rect" id="node19" href="$_hash_error_detector_clock_difference_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector\lClockDifference.h" alt="" coords="1424,525,1643,596"/>
+<area shape="rect" id="node25" href="$_hash_error_detector_interval_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector\lInterval.h" alt="" coords="1181,525,1400,596"/>
+<area shape="rect" id="node20" href="$_hash_error_detector_clock_difference_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector\lClockDifference.cc" alt="" coords="1464,644,1683,715"/>
+<area shape="rect" id="node21" href="$_node_detector_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeDetector.h" alt="" coords="1013,651,1197,707"/>
+<area shape="rect" id="node22" href="$_node_detector_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeDetector.cc" alt="" coords="1076,763,1265,819"/>
+<area shape="rect" id="node23" href="$_node_without_recovery_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithoutRecovery.h" alt="" coords="727,763,961,819"/>
+<area shape="rect" id="node24" href="$_node_without_recovery_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithoutRecovery.cc" alt="" coords="703,867,943,923"/>
+<area shape="rect" id="node26" href="$_hash_error_detector_interval_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/HashErrorDetector\lInterval.cc" alt="" coords="1221,644,1440,715"/>
+<area shape="rect" id="node28" href="$_mostefaoui_error_detector_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Detectors/MostefaouiErrorDetector.cc" alt="" coords="837,533,1107,589"/>
+<area shape="rect" id="node30" href="$_node_base_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeBase.cc" alt="" coords="413,533,597,589"/>
+<area shape="rect" id="node31" href="$_node_with_control_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithControl.h" alt="" coords="187,533,389,589"/>
+<area shape="rect" id="node35" href="$_node_no_control_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeNoControl.h" alt="" coords="622,533,813,589"/>
+<area shape="rect" id="node32" href="$_node_p_c_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodePC.h" alt="" coords="237,651,421,707"/>
+<area shape="rect" id="node34" href="$_node_with_control_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithControl.cc" alt="" coords="5,651,213,707"/>
+<area shape="rect" id="node33" href="$_node_p_c_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodePC.cc" alt="" coords="237,763,421,819"/>
+<area shape="rect" id="node36" href="$_node_no_control_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeNoControl.cc" alt="" coords="618,651,817,707"/>
+<area shape="rect" id="node38" href="$_partial_dependencies_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Dependencies/PartialDependencies.cc" alt="" coords="2195,317,2469,373"/>
 </map>

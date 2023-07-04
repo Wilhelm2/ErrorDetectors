@@ -1,11 +1,11 @@
-<map id="src/Messages/depRsp_m.h" name="src/Messages/depRsp_m.h">
-<area shape="rect" id="node2" href="$communication_dispatcher_8h.html" title="File that contains the class used to connect nodes. " alt="" coords="22,80,229,107"/>
-<area shape="rect" id="node4" href="$dep_rsp__m_8cc.html" title="src/Messages/depRsp_m.cc" alt="" coords="260,80,449,107"/>
-<area shape="rect" id="node5" href="$_node_with_recovery_8h.html" title="src/Nodes/NodeWithRecovery.h" alt="" coords="476,80,687,107"/>
-<area shape="rect" id="node3" href="$communication_dispatcher_8cc.html" title="src/communicationDispatcher.cc" alt="" coords="5,162,219,189"/>
-<area shape="rect" id="node6" href="$_node_with_recovery_8cc.html" title="src/Nodes/NodeWithRecovery.cc" alt="" coords="243,162,461,189"/>
-<area shape="rect" id="node7" href="$_node_with_recovery_test_8h.html" title="src/Nodes/NodeWithRecovery\lTest.h" alt="" coords="485,155,685,196"/>
-<area shape="rect" id="node9" href="$_stats_8h.html" title="Stats module used to collect statistics and write them into files. " alt="" coords="710,162,797,189"/>
-<area shape="rect" id="node8" href="$_node_with_recovery_test_8cc.html" title="src/Nodes/NodeWithRecovery\lTest.cc" alt="" coords="484,244,684,285"/>
-<area shape="rect" id="node10" href="$_stats_8cc.html" title="File containing source code for the Stats class. " alt="" coords="708,251,801,278"/>
+<map id="/home/wilhelm/Documents/codeGitHub/ErrorDetectors/src/Messages/depRsp_m.h" name="/home/wilhelm/Documents/codeGitHub/ErrorDetectors/src/Messages/depRsp_m.h">
+<area shape="rect" id="node2" href="$communication_dispatcher_8h.html" title="File that contains the class used to connect nodes. " alt="" coords="31,109,242,165"/>
+<area shape="rect" id="node4" href="$dep_rsp__m_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Messages/depRsp_m.cc" alt="" coords="277,109,471,165"/>
+<area shape="rect" id="node5" href="$_node_with_recovery_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecovery.h" alt="" coords="500,109,715,165"/>
+<area shape="rect" id="node3" href="$communication_dispatcher_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/communicationDispatcher.cc" alt="" coords="5,213,223,269"/>
+<area shape="rect" id="node6" href="$_node_with_recovery_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecovery.cc" alt="" coords="247,213,469,269"/>
+<area shape="rect" id="node7" href="$_node_with_recovery_test_8h.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecoveryTest.h" alt="" coords="493,213,735,269"/>
+<area shape="rect" id="node9" href="$_stats_8h.html" title="Stats module used to collect statistics and write them into files. " alt="" coords="761,213,945,269"/>
+<area shape="rect" id="node8" href="$_node_with_recovery_test_8cc.html" title="/home/wilhelm/Documents\l/codeGitHub/ErrorDetectors\l/src/Nodes/NodeWithRecoveryTest.cc" alt="" coords="489,317,737,373"/>
+<area shape="rect" id="node10" href="$_stats_8cc.html" title="File containing source code for the Stats class. " alt="" coords="761,317,945,373"/>
 </map>

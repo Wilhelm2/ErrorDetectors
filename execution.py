@@ -12,7 +12,7 @@ clockSize	= [50]#25,50,75]
 
 deliveryOption = 3 # 0: no control ; 1: Probabilistic clock comparison; 2: Probabilistic clock with mostefaoui error detector, 3: Probabilistic clock with hash detector (difference); 4: Probabilistic clock with hash detector (interval); 5: Probablistic clock + hash(difference) + recovery; 6: Probablistic clock + hash(difference) + recovery + recoveryTest
 
-delaySend = 2 # seconds
+delaySend = 2 # Each process sends a message every x seconds. Hence, the system's message load corresponds to nbNodes/delaySend
 #PEAKSPERDELAY = nbNodes[0]
 
 subprocess.check_call(["bash","-c","mkdir -p simulations/data"])

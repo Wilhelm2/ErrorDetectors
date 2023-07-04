@@ -42,13 +42,13 @@ void SimulationParameters::initialize()
 void SimulationParameters::initializeDeliveryController()
 {
     unsigned int deliveryOption = par("deliveryOption");
-    if(deliveryOption == 0)
+    if(deliveryOption == 1)
         DeliveryController = SimulationParameters::Delivery::NOTHING;
-    else if(deliveryOption == 1)
-        DeliveryController = SimulationParameters::Delivery::ClockComparison;
     else if(deliveryOption == 2)
+        DeliveryController = SimulationParameters::Delivery::ClockComparison;
+    else if(deliveryOption == 3)
         DeliveryController = SimulationParameters::Delivery::Mostefaoui;
-    else if(deliveryOption == 4)
+    else if(deliveryOption == 5)
         DeliveryController = SimulationParameters::Delivery::HashIntervalDifference;
     else
         DeliveryController = SimulationParameters::Delivery::HashClockDifference;

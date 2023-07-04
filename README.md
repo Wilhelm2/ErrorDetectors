@@ -97,9 +97,7 @@ OMNeT++ comes with a built-in IDE based on Eclipse. This section explains how to
 
 First, launch the OMNeT++ IDE with the command:
 > omnetpp
-
-Second, import the project into the IDE:
-> Menu -> import -> Existing Projects into  Workspace -> Browse -> Search source folder of project and select -> Finish.
+Second, see [here](http://wnss.sv.cmu.edu/teaching/14814/s15/files/hw2addendum.pdf) a guide written by Brian Ricks on how to import existing code within the Ecplise IDE.
 
 Third, the compilation of .msg files requires to add: in Project Explorer (left bar):
 > left clock on the project -> Properties -> OMNeT++ -> Makemake -> Options -> Custom -> add MSGC:=$(MSGC) --msg6 -> OK -> Apply and close.
@@ -111,10 +109,9 @@ The simulation can be launched from the IDE as well as from the terminal.
 To launch it from the IDE, click on the *Debug* or *Run* buttons in the bar under the *Menu* bar. 
 
 To launch the simulation from the terminal:
-1. Build the simulation from the IDE to create the Makefile that builds the project. 
-2. Open a terminal in the project directory
-3. Configure the files *omnetpp.ini* and *network.ned* following the desired simulation settings (number of nodes, control mechanism,...) 
-4. Execute the command: 
+1. Open a terminal in the project directory
+2. Configure the files *omnetpp.ini* and *network.ned* following the desired simulation settings (number of nodes, control mechanism,...) 
+3. Execute the command: 
 >../out/gcc-release/src/ErrorDetectors -f omnetpp.ini -u Cmdenv 
 
 The python script 'execution.py' is also provided. It builds the *.ini* and *.ned* files, launches the simulation, copies the simulation statistics in folders, and builds several graphs with those statistics.

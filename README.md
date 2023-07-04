@@ -145,9 +145,9 @@ Documentation has been written with [Doxygen](https://www.doxygen.nl/).
 
 #License
 
-# Badges
+This project is distributed under the license GNU 3.0. 
 
-## References
+# References
 
 <a id="HappenedBefore">[1]</a> Time, Clocks, and the Ordering of Events in a Distributed System. Lamport, Leslie. Communications of the ACM 1978.
 

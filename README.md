@@ -143,7 +143,7 @@ The folder *Graphs* contains python scripts to build graphs from those statistic
 Detailled documentation can be found in the documentation folder, which is providing documentation under the PDF and html format. 
 Documentation has been written with [Doxygen](https://www.doxygen.nl/).
 
-#License
+# License
 
 This project is distributed under the license GNU 3.0. 
 

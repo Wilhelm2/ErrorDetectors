@@ -124,16 +124,16 @@ The python script 'execution.py' is also provided. It builds the *.ini* and *.ne
 Configure the simulation parameters by modifying 'execution.py'. 
 
 The simulation parameter 'deliveryOption' determines the control mechanism used to deliver messages. The available control mechanisms are: 
-0. **No control** Nodes deliver messages upon reception without any control. 
-1. **Probabilistic clocks:** Nodes use Probabilistic clocks to causally order messages.
-2. **Probabilistic clock and the error detector of Mostéfaoui and Weiss:** Nodes use Probabilistic clocks to deliver messages, and execute the error detector proposed by Mostéfaoui and Weiss  [[3]](https://hal.science/hal-02056349/document) on messages before delivering them.
-3. **Probabilistic clock and an hash-based error detector using an average propagation delay hypothesis:** 
+1. **No control** Nodes deliver messages upon reception without any control. 
+2. **Probabilistic clocks:** Nodes use Probabilistic clocks to causally order messages.
+3. **Probabilistic clock and the error detector of Mostéfaoui and Weiss:** Nodes use Probabilistic clocks to deliver messages, and execute the error detector proposed by Mostéfaoui and Weiss  [[3]](https://hal.science/hal-02056349/document) on messages before delivering them.
+4. **Probabilistic clock and an hash-based error detector using an average propagation delay hypothesis:** 
 Nodes use Probabilistic clocks to causally order messages, and execute an hash-based error detector proposed by Wilhelm and al.[[4]](https://hal.science/hal-03984499) on on messages before delivering them. The hash-based error detector uses the average propagation delay of messages to determine their causal relationship. 
-4. **Probabilistic clock and an hash-based error detector using the clock difference between messages:** Nodes use Probabilistic clocks to causally order messages, and execute an hash-based error detector proposed by Wilhelm and al.[[4]](https://hal.science/hal-03984499) on on messages before delivering them. The hash-based error detector uses the clock difference between messages to determine their causal relationship. 
-5. **Probabilistic clock, an hash-based error detector using the clock difference between messages, and the recovery of messages tagged as not causally ordered:**
+5. **Probabilistic clock and an hash-based error detector using the clock difference between messages:** Nodes use Probabilistic clocks to causally order messages, and execute an hash-based error detector proposed by Wilhelm and al.[[4]](https://hal.science/hal-03984499) on on messages before delivering them. The hash-based error detector uses the clock difference between messages to determine their causal relationship. 
+6. **Probabilistic clock, an hash-based error detector using the clock difference between messages, and the recovery of messages tagged as not causally ordered:**
 Nodes use Probabilistic clocks to causally order messages, and execute an hash-based error detector proposed by Wilhelm and al.[[4]](https://hal.science/hal-03984499) on on messages before delivering them. The hash-based error detector uses the average propagation delay of messages to determine their causal relationship. Moreover, nodes 
 recover the causal dependencies of the messages *m* for that the error detector tags as not causally ordered, by requesting the causal dependencies of *m* to the node that broadcasted *m*. Such a message is then delivered once the node delivered all of the message's causal dependencies.
-6. **Probabilistic clock, an hash-based error detector using the clock difference between messages, the recovery of messages tagged as not causally ordered, and a recovery test to avoid requesting the causal dependencies of messages:** Additionnally to **6**, before requesting the causal dependencies of a message *m*, a node first tries to find the dependency set of *m* with messages that it did not deliver yet. 
+7. **Probabilistic clock, an hash-based error detector using the clock difference between messages, the recovery of messages tagged as not causally ordered, and a recovery test to avoid requesting the causal dependencies of messages:** Additionnally to **6**, before requesting the causal dependencies of a message *m*, a node first tries to find the dependency set of *m* with messages that it did not deliver yet. 
 
 ## Data analysis
 

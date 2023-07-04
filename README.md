@@ -16,7 +16,7 @@ Causal order ensures that any two causally related messages are delivered to app
 >	Processes deliver messages while respecting the causal relation between them.
 >	For any message $m$ and $m'$, if $m$ causally precedes $m'$, denoted $m\rightarrow m'$, then all processes deliver $m$ before $m'$:
 
->	<center>*send(m) \rightarrow send(m') \Rightarrow deliver(m) \rightarrow deliver(m').* </center>
+>	<center>*send(m) -> send(m') => deliver(m) -> deliver(m').* </center>
 
 **The main features implemented by the project are:**
 1. Causal broadcast using **Probabilstic clocks** to causally order messages. 

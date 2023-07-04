@@ -97,6 +97,7 @@ OMNeT++ comes with a built-in IDE based on Eclipse. This section explains how to
 
 First, launch the OMNeT++ IDE with the command:
 > omnetpp
+
 Second, see [here](http://wnss.sv.cmu.edu/teaching/14814/s15/files/hw2addendum.pdf) a guide written by Brian Ricks on how to import existing code within the Ecplise IDE.
 
 Third, the compilation of .msg files requires to add: in Project Explorer (left bar):

@@ -104,17 +104,26 @@ First, launch the OMNeT++ IDE with the command:
 Second, import the project into the IDE:
 > Menu -> import -> Existing Projects into  Workspace -> Browse -> Search source folder of project and select -> Finish.
 
-Third, allow the compilation of the .msg files. in Project Explorer:
+Third, allow the compilation of all .msg files. in Project Explorer:
 > left clock on the project -> Properties -> OMNeT++ -> Makemake -> Options -> Custom -> add MSGC:=$(MSGC) --msg6 -> OK -> Apply and close.
 
-
-
-
 ## How to run the simulation 
+
+The simulation can be launched from the IDE as well as from the terminal.
+
+To launch it from the IDE, click on the *Debug* or *Run* buttons in the bar under the *Menu* bar. 
+
+To launch the simulation from the terminal:
+1. First build the simulation inside the IDE to create the Makefile that builds the project. 
 
 To launch the simulation:
 1. Compile the 
 2. Execute the python script 'execution.py'
+3. Open a terminal
+4. Write 
+	> Go to the project directory *simulations*.
+	> Execute the command 
+		> ../out/gcc-release/src/ErrorDetectors -f omnetpp.ini -u Cmdenv 
 
 
 

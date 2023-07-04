@@ -1,0 +1,3 @@
+package ErrorDetectorWithRecovery;
+
+@license(LGPL);

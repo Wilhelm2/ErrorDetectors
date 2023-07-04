@@ -1,0 +1,3 @@
+package errordetectors;
+
+@license(LGPL);

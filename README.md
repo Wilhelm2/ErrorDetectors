@@ -1,6 +1,3 @@
-@mainpage
-@author Daniel Wilhelm
-
 # Introduction
 
 This project implements a causal broadcast algorithm for distributed systems in C++ on the OMNeT++ simulator. 
@@ -104,7 +101,7 @@ First, launch the OMNeT++ IDE with the command:
 Second, import the project into the IDE:
 > Menu -> import -> Existing Projects into  Workspace -> Browse -> Search source folder of project and select -> Finish.
 
-Third, allow the compilation of all .msg files. in Project Explorer:
+Third, the compilation of .msg files requires to add: in Project Explorer (left bar):
 > left clock on the project -> Properties -> OMNeT++ -> Makemake -> Options -> Custom -> add MSGC:=$(MSGC) --msg6 -> OK -> Apply and close.
 
 ## How to run the simulation 

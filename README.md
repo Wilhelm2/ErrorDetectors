@@ -115,15 +115,11 @@ To launch it from the IDE, click on the *Debug* or *Run* buttons in the bar unde
 
 To launch the simulation from the terminal:
 1. First build the simulation inside the IDE to create the Makefile that builds the project. 
-
-To launch the simulation:
-1. Compile the 
 2. Execute the python script 'execution.py'
 3. Open a terminal
-4. Write 
-	> Go to the project directory *simulations*.
-	> Execute the command 
-		> ../out/gcc-release/src/ErrorDetectors -f omnetpp.ini -u Cmdenv 
+4. Go to the project directory *simulations*.
+	
+> Execute the command: > ../out/gcc-release/src/ErrorDetectors -f omnetpp.ini -u Cmdenv 
 
 
 

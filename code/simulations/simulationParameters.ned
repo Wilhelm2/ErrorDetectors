@@ -15,9 +15,6 @@
 
 package ErrorDetectorWithRecovery;
 
-//
-// TODO auto-generated module
-//
 simple SimulationParameters
 {
     parameters:

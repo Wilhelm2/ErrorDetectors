@@ -13,10 +13,8 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-//
-// TODO generated message class
-//
 
+// Message to reply to the request of an application message's causal dependencies (depReq message)
 
 cplusplus{{  
     #include "../structures.h"    
@@ -40,8 +38,8 @@ class depRspTime{
 }
 
 packet DepRsp {
-    idMsgDepRsp idMsgToRecover;
-    idDepDepRsp dependencies;
+    idMsgDepRsp idMsgToRecover; // The id of the message of which requests the causal dependencies
+    idDepDepRsp dependencies; // Dependencies 
     depRspTime delay; // ms 
-    unsigned int idRequster;
+    unsigned int idRequster; // Id of the node that requested the message's causal dependencies 
 }

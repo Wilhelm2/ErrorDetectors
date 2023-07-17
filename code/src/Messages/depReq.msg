@@ -13,7 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-
+// Message to request an application message's causal dependencies
 cplusplus{{  
     #include "../structures.h"
     typedef idMsg idMsgDepReq;
@@ -30,7 +30,7 @@ class depReqTime{
 }
 
 packet DepReq {
-    idMsgDepReq idMsgToRecover;
-    unsigned int idRequester; // debug
+    idMsgDepReq idMsgToRecover; // id of the message of which request's causal dependenices
+    unsigned int idRequester; // id of the requesting node 
     depReqTime delay; // ms 
 }

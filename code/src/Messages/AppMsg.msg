@@ -13,6 +13,8 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
+// Application message
+
 cplusplus{{  
     #include "../structures.h"    
     #include <vector> 
@@ -46,10 +48,10 @@ class AppMsgTime{
     
 
 packet AppMsg {
-    idMsgAppMsg id;
-    AppMsgPC PC;
-    unsigned long hash ;
+    idMsgAppMsg id; // id of sender node
+    AppMsgPC PC; // The message's probabilistic clock
+    unsigned long hash ; // Hash appended on messages 
     AppMsgTime delay; // ms 
-    AppMsgFalseDep falseDependencies;
-    AppMsgDep dependencies;
+    AppMsgFalseDep falseDependencies; // False dependencies used when recovering
+    AppMsgDep dependencies; // Dependencies attached to messages used for high message loads
 }

@@ -13,9 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-//
-// TODO generated message class
-//
+// Message sent at the beginning of the simulation such that the communicationDispatcher can determine which gate goes to which node
 packet Init {
-	unsigned int nodeId;
+	unsigned int nodeId; // Id of the node that sent the Init message
 }

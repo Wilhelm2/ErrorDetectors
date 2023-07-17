@@ -14,9 +14,6 @@ package ErrorDetectorWithRecovery;
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-//
-// TODO auto-generated module
-//
 simple Controller
 {
 }

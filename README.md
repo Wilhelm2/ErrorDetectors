@@ -100,7 +100,7 @@ First, launch the OMNeT++ IDE with the command:
 Second, see [here](http://wnss.sv.cmu.edu/teaching/14814/s15/files/hw2addendum.pdf) a guide written by Brian Ricks on how to import existing code within the Ecplise IDE.
 
 Third, the compilation of .msg files requires to add: in Project Explorer (left bar):
-> left clock on the project -> Properties -> OMNeT++ -> Makemake -> Options -> Custom -> add MSGC:=$(MSGC) --msg6 -> OK -> Apply and close.
+> Left click on the project -> Properties -> OMNeT++ -> Makemake -> Options -> Custom -> add MSGC:=$(MSGC) --msg6 -> OK -> Apply and Close.
 
 ## How to run the simulation 
 
@@ -152,6 +152,6 @@ This project is distributed under the license GNU 3.0.
 
 <a id="PC2">[3]</a> Probabilistic Causal Message Ordering. Mostéfaoui, Achour and Weiss, Stéphane. Technical report 2017.
 
-<a id="PC">[4]</a> A probabilistic Dynamic Clock Set to capture message causality. Wilhelm, Daniel and Arantes, Luciana and Sens, Pierre. Technical report 2017.
+<a id="PC">[4]</a> A probabilistic Dynamic Clock Set to capture message causality. Wilhelm, Daniel and Arantes, Luciana and Sens, Pierre. Technical report 2022.
 
 <a id="OMNeT++">[5]</a> The OMNET++ Discrete Event Simulation System. Varga, Andras. ESM 2001.

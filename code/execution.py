@@ -7,7 +7,7 @@ import ast
 subprocess.check_call(["bash", "-c", "make MODE=debug"])
 subprocess.check_call(["bash", "-c", "make "])
 
-nbNodes = [300] 
+nbNodes = [360] 
 clockSize = [50]
 
 # 1: no control ; 2: Probabilistic clock comparison; 3: Probabilistic clock with mostefaoui error detector, 4: Probabilistic clock with hash detector (difference); 5: Probabilistic clock with hash detector (interval); 6: Probablistic clock + hash(difference) + recovery; 7: Probablistic clock + hash(difference) + recovery + recoveryTest

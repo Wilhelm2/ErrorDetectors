@@ -22,7 +22,7 @@ Causal order ensures that any two causally related messages are delivered to app
 2. **Error detectors** whose purpose is to detect messages wrongly considered by Probabilistic clocks as causally ordered.
 3. **A procedure to recover** the causal dependencies of messages in order to ensure their delivery in causal order. 
 
-Those features are combined to provide 7 simulation settings described in Section. 
+Those features are combined to provide 7 simulation settings described in the section which describes how to run the simulation. 
 
 ## Error detectors
 

@@ -1,6 +1,6 @@
 # Introduction
 
-This project implements a causal broadcast algorithm using Probabilistic clocks for distributed systems in C++ on the OMNeT++ simulator, as well as an error detector for Probabilistic clocks using hashes. 
+This project implements a causal broadcast algorithm using Probabilistic clocks for distributed systems in C++ on the OMNeT++ simulator, as well as an error detector for Probabilistic clocks using hashes and a recovery procedure of messages tagged by the proposed error detector. 
 Causal order is defined by the *happened-before* relationship introduced by Lamport in 1978 [[1]](https://amturing.acm.org/p558-lamport.pdf). 
 The *happened-before* relationship orders events in distributed systems following three rules [[1]](https://amturing.acm.org/p558-lamport.pdf):
 

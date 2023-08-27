@@ -8,7 +8,7 @@ The *happened-before* relationship orders events in distributed systems followin
 >	Considering two events *e1* and *e2*, *e1* causally precedes *e2* (*e1*$\rightarrow$ *e2*) iff:
 >	1. *e1* and *e2* occur on the same process and *e1* precedes *e2* or
 >	2. for a message m *e1*=send(m) and *e2*=deliver(m) or
->	3. there exists an event *e3* such that *e1*$\rightarrow$ *e3* and *e3*\rightarrow *e2*.
+>	3. there exists an event *e3* such that *e1*$\rightarrow$*e3* and *e3*$\rightarrow$ *e2*.
 
 Causal order ensures that any two causally related messages are delivered to applications respecting that order. 
 

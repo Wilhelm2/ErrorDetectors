@@ -5,17 +5,17 @@ Causal order is defined by the *happened-before* relationship introduced by Lamp
 The *happened-before* relationship orders events in distributed systems following three rules [[1]](https://amturing.acm.org/p558-lamport.pdf):
 
 >**Happened-before relation:**
->	Considering two events *e1* and *e2*, *e1* causally precedes *e2* (*e1 -> e2*) iff:
+>	Considering two events *e1* and *e2*, *e1* causally precedes *e2* (*e1$\rightarrow$ e2*) iff:
 >	1. *e1* and *e2* occur on the same process and *e1* precedes *e2* or
 >	2. for a message m *e1*=send(m) and *e2*=deliver(m) or
->	3. there exists an event *e3* such that *e1->e3* and *e3->e2*.
+>	3. there exists an event *e3* such that *e1\rightarrow e3* and *e3\rightarrow e2*.
 
 Causal order ensures that any two causally related messages are delivered to applications respecting that order. 
 
 >**Causal order:** 
 >	Processes deliver messages while respecting the causal relation between them.
 >	For any message $m$ and $m'$, if $m$ causally precedes $m'$, denoted $m\rightarrow m'$, then all processes deliver $m$ before $m'$:
->	<p align = "center">send(m) -> send(m') => deliver(m) -> deliver(m'). </p>
+>	<p align = "center">send(m) $\rightarrow$ send(m') $\Rightarrow$ deliver(m) $\rightarrow$ deliver(m'). </p>
 
 **The main features implemented by the project are:**
 1. Causal broadcast using **Probabilistic clocks** to causally order messages. 

@@ -51,7 +51,7 @@ void NodePC::iterativeDelivery() {
     do {
         hasDeliveredMessage = false;
         for (vector<messageInfo>::iterator it = pendingMsg.begin(); it != pendingMsg.end();
-             /*fait dans la boucle à cause du erase*/) {
+             /*done in loop because of erase*/) {
             if (testDeliverMessage(*it)) {
                 it = pendingMsg.erase(it);
                 hasDeliveredMessage = true;

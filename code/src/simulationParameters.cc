@@ -74,12 +74,6 @@ void SimulationParameters::initializeClockEntriesToIncrement() {
 
     cerr << "Number of combinations of incrementEntry sets  " << entriesIncrementedByProcess.size() << endl;
     std::shuffle(entriesIncrementedByProcess.begin(), entriesIncrementedByProcess.end(), std::default_random_engine{});
-    /*for(int i=0; i< clockEntries.size();i++)
-            {
-                for(int j : clockEntries[i])
-                    cerr << j << " " ;
-                cerr <<endl;
-            }*/
     for (unsigned int i = 0; i < nbNodes; i++) {
         cerr << "Node " << i << " increments entries ";
         for (unsigned int j : entriesIncrementedByProcess[i % entriesIncrementedByProcess.size()])
@@ -117,21 +111,6 @@ vector<vector<unsigned int>> SimulationParameters::EvenCombinations(unsigned int
         combinations.push_back(res);
     }
     std::shuffle(combinations.begin(), combinations.end(), std::default_random_engine{});
-
-    /*    vector<unsigned int> verif; verif.resize(M);
-        for(vector<unsigned int> v : combinations)
-        {
-            for(int i :v)
-                verif[i]++;
-        }
-        for(int i:verif)
-            cerr<< i << ",";
-        cerr<<endl;
-        cerr<<"sum of verif " << std::accumulate(verif.begin(), verif.end(), 0)<<endl;
-        cerr<<"size of vector " << combinations.size()<<endl;
-        cerr<<"nbIncrements "<< nbIncrements<<endl;
-        exit(0);
-    */
     return combinations;
 }
 
